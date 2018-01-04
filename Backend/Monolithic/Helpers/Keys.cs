@@ -10,7 +10,7 @@ namespace ContosoMaintenance.WebAPI.Helpers
 #region CosmosDB Keys
 
         public static string CosmosEndpoint = "https://contosomaintenance.documents.azure.com:443/";
-        public static string CosmosKey = "";
+        public static string CosmosKey = "__CosmosKey__";
         public static string CosmosDatabaseId = "contosomaintenance";
 
 #endregion
