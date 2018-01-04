@@ -1,12 +1,10 @@
-﻿using System;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 
 namespace ContosoMaintenance.WebAPI.Models
 {
     public class Job
     {
-
         [JsonProperty ("name")]
         public string Name { get; set; }
 
@@ -16,6 +14,11 @@ namespace ContosoMaintenance.WebAPI.Models
         [JsonProperty("type")]
         public JobType Type { get; set; }
 
+        [JsonProperty("status")]
+        public JobStatus Status { get; set; }
+
+        [JsonProperty("customer")]
+        public User Customer { get; set; }
 
     }
 
@@ -25,5 +28,13 @@ namespace ContosoMaintenance.WebAPI.Models
         Installation,
         Repair,
         Service
+    }
+
+    [JsonConverter(typeof(StringEnumConverter))]
+    public enum JobStatus
+    {
+        Waiting,
+        InProgress,
+        Complete
     }
 }
