@@ -7,6 +7,7 @@
   <ItemGroup>
     <Folder Include="wwwroot\" />
     <Folder Include="Services\" />
+    <Folder Include="Models\" />
   </ItemGroup>
 
   <ItemGroup>
