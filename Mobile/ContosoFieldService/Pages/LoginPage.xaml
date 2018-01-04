@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage 
+    xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    x:Class="ContosoFieldService.Pages.LoginPage"
+    BackgroundColor = "#222E38">
+	<ContentPage.Content>
+        <StackLayout>
+            <StackLayout Orientation="Vertical" VerticalOptions="StartAndExpand">
+                <Label Text="Welcome!" TextColor="White" FontSize="40" Margin="10,150,0,0" ></Label>
+                <Label Text="You'll need to login to get started." TextColor="White" Margin="15,0,0,0" FontSize="19"></Label>
+            </StackLayout>
+            <StackLayout VerticalOptions="End">
+                <Button Command="{Binding Login}" Text="Login" BackgroundColor="#00D8CB" TextColor="White" FontSize="19" BorderRadius="0" HeightRequest="55"></Button>
+            </StackLayout>
+            </StackLayout>
+	</ContentPage.Content>
+</ContentPage>

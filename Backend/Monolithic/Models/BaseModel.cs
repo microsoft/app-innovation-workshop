@@ -7,5 +7,10 @@ namespace ContosoMaintenance.WebAPI.Models
     {
         [JsonProperty("id")]
         public string Id { get; set; }    
+
+        [JsonProperty("createdAt")]
+        public DateTime CreatedAt { get; set; }    
+
+
     }
 }

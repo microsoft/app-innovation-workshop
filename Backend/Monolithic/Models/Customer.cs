@@ -3,7 +3,7 @@ using Newtonsoft.Json;
 
 namespace ContosoMaintenance.WebAPI.Models
 {
-    public class User : BaseModel
+    public class Customer : BaseModel
     {
         [JsonProperty ("firstName")]
         public string FirstName { get; set; }
@@ -17,6 +17,8 @@ namespace ContosoMaintenance.WebAPI.Models
         [JsonProperty ("cellNumber")]
         public string CellNumber { get; set; }
 
+        [JsonProperty("address")]
+        public Location Address { get; set; }
 
     }
 }

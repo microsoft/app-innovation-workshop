@@ -18,8 +18,13 @@ namespace ContosoMaintenance.WebAPI.Models
         public JobStatus Status { get; set; }
 
         [JsonProperty("customer")]
-        public User Customer { get; set; }
+        public Customer Customer { get; set; }
 
+        [JsonProperty("attachementUrls")]
+        public string[] Attachements { get; set; }
+
+        [JsonProperty("address")]
+        public Location Address { get; set; }
     }
 
     [JsonConverter(typeof(StringEnumConverter))]
