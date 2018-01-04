@@ -1,4 +1,6 @@
-﻿using Xamarin.Forms;
+﻿using ContosoFieldService.PageModels;
+using FreshMvvm;
+using Xamarin.Forms;
 
 namespace ContosoFieldService
 {
@@ -8,7 +10,9 @@ namespace ContosoFieldService
         {
             InitializeComponent();
 
-            MainPage = new ContosoFieldServicePage();
+            var tabbedNavigation = new FreshTabbedNavigationContainer();
+            tabbedNavigation.AddTab<JobsPageModel>("Jobs", null);
+            MainPage = tabbedNavigation;
         }
 
         protected override void OnStart()

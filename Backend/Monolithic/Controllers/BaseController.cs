@@ -31,7 +31,6 @@ namespace ContosoMaintenance.WebAPI.Controllers
             return new ObjectResult(items);
         }
 
-
         [HttpPost]
         public async Task<IActionResult> Create([FromBody] T item)
         {
