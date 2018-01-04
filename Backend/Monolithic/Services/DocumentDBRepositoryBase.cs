@@ -11,9 +11,9 @@ namespace ContosoMaintenance.WebAPI.Services
 {   
     public class DocumentDBRepositoryBase<T> where T : class
     {
-        string Endpoint = "";
-        string Key = "";
-        string DatabaseId = "";
+        string Endpoint = Helpers.Keys.CosmosEndpoint;
+        string Key = Helpers.Keys.CosmosKey;
+        string DatabaseId = Helpers.Keys.CosmosDatabaseId;
 
         string CollectionId;
         DocumentClient client;
