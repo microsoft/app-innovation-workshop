@@ -144,7 +144,7 @@ namespace ContosoMaintenance.WebAPI.Services
             var name = typeof(T).Name;
             if (name.ToCharArray().Last().ToString() != "s")
                 return $"{name}s";
-            return name;
+            return name.ToLower();
         }
     }
 }
