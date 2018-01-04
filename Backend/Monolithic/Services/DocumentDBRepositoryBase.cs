@@ -42,7 +42,7 @@ namespace ContosoMaintenance.WebAPI.Services
             }
         }
 
-        public async Task<T> GetItemsCount()
+        public T GetItemsCount()
         {
             try
             {
