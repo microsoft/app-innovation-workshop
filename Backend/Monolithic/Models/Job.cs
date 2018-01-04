@@ -3,7 +3,7 @@ using Newtonsoft.Json.Converters;
 
 namespace ContosoMaintenance.WebAPI.Models
 {
-    public class Job
+    public class Job : BaseModel
     {
         [JsonProperty ("name")]
         public string Name { get; set; }
