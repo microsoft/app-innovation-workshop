@@ -221,6 +221,30 @@
     <Reference Include="Awesomizer">
       <HintPath>..\..\packages\Awesomizer.1.0.2\lib\Awesomizer.dll</HintPath>
     </Reference>
+    <Reference Include="CarouselView.FormsPlugin.Abstractions">
+      <HintPath>..\..\packages\CarouselView.FormsPlugin.5.0.2\lib\Xamarin.iOS10\CarouselView.FormsPlugin.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="CarouselView.FormsPlugin.iOS">
+      <HintPath>..\..\packages\CarouselView.FormsPlugin.5.0.2\lib\Xamarin.iOS10\CarouselView.FormsPlugin.iOS.dll</HintPath>
+    </Reference>
+    <Reference Include="WebP.Touch">
+      <HintPath>..\..\packages\WebP.Touch.1.0.7\lib\Xamarin.iOS10\WebP.Touch.dll</HintPath>
+    </Reference>
+    <Reference Include="FFImageLoading">
+      <HintPath>..\..\packages\Xamarin.FFImageLoading.2.3.3\lib\Xamarin.iOS10\FFImageLoading.dll</HintPath>
+    </Reference>
+    <Reference Include="FFImageLoading.Platform">
+      <HintPath>..\..\packages\Xamarin.FFImageLoading.2.3.3\lib\Xamarin.iOS10\FFImageLoading.Platform.dll</HintPath>
+    </Reference>
+    <Reference Include="FFImageLoading.Transformations">
+      <HintPath>..\..\packages\Xamarin.FFImageLoading.Transformations.2.3.3\lib\Xamarin.iOS10\FFImageLoading.Transformations.dll</HintPath>
+    </Reference>
+    <Reference Include="FFImageLoading.Forms">
+      <HintPath>..\..\packages\Xamarin.FFImageLoading.Forms.2.3.3\lib\Xamarin.iOS10\FFImageLoading.Forms.dll</HintPath>
+    </Reference>
+    <Reference Include="FFImageLoading.Forms.Touch">
+      <HintPath>..\..\packages\Xamarin.FFImageLoading.Forms.2.3.3\lib\Xamarin.iOS10\FFImageLoading.Forms.Touch.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Contents.json" />
@@ -242,6 +266,9 @@
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />
     <Compile Include="Helpers\Settings.cs" />
+    <Compile Include="Renderers\ContentPageRenderer.cs" />
+    <Compile Include="Helpers\Extensions.cs" />
+    <Compile Include="Renderers\ColoredTabBarRenderer.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ContosoFieldService.Core\ContosoFieldService.Core.csproj">
@@ -255,6 +282,8 @@
     <BundleResource Include="Resources\progress_circle.json" />
     <BundleResource Include="Resources\Icon-Green.png" />
     <BundleResource Include="Resources\ba747.jpeg" />
+    <BundleResource Include="Resources\icon_usersettings%402x.png" />
+    <BundleResource Include="Resources\icon_comments%402x.png" />
   </ItemGroup>
   <ItemGroup>
     <ITunesArtwork Include="iTunesArtwork" />

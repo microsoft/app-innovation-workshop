@@ -1,10 +1,10 @@
 ﻿using System;
-using FreshMvvm;
-using MvvmHelpers;
+using System.Threading.Tasks;
 using ContosoFieldService.Models;
 using ContosoFieldService.Services;
+using FreshMvvm;
+using MvvmHelpers;
 using Xamarin.Forms;
-using System.Threading.Tasks;
 
 namespace ContosoFieldService.PageModels
 {
