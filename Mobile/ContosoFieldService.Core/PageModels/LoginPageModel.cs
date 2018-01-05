@@ -7,10 +7,6 @@ namespace ContosoFieldService.PageModels
 {
     public class LoginPageModel : FreshBasePageModel
     {
-        public LoginPageModel()
-        {
-        }
-
         public Command Login
         {
             get

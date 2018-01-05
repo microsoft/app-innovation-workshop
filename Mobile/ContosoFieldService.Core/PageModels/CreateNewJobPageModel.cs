@@ -3,6 +3,7 @@ using FreshMvvm;
 using Xamarin.Forms;
 using ContosoFieldService.Models;
 using ContosoFieldService.Services;
+using Microsoft.AppCenter.Analytics;
 
 namespace ContosoFieldService.PageModels
 {
@@ -13,16 +14,19 @@ namespace ContosoFieldService.PageModels
         public string Name { get; set; }
         public string Details { get; set; }
 
+
         public Command CreateJob
         {
             get
             {
                 return new Command(async () =>
                 {
-                    var job = new Job();
-                    job.Name = Name;
-                    job.Details = Details;
-
+                    var job = new Job
+                    {
+                        Name = Name,
+                        Details = Details
+                    };
+                    Analytics.TrackEvent("New Job Created");
                     await jobApiService.CreateJobAsync(job);
                 });
             }

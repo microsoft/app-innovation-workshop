@@ -5,6 +5,9 @@
     <RootNamespace>ContosoFieldService</RootNamespace>
   </PropertyGroup>
 
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <NoWarn>1701;1702;1705;1998;NU1701;</NoWarn>
+  </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="Xamarin.Forms" Version="2.5.0.121934" />
     <PackageReference Include="Xam.Plugins.Forms.ImageCircle" Version="1.8.1" />
