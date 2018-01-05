@@ -12,9 +12,24 @@ namespace ContosoFieldService.PageModels
     {
         #region Bindable Properties 
         public ObservableRangeCollection<Job> Jobs { get; set; }
-        public Job SelectedJob { get; set; }
         public bool IsRefreshing { get; set; }
         public string SearchText { get; set; }
+
+        Job selectedJob;
+        public Job SelectedJob
+        {
+            get
+            {
+                return selectedJob;
+            }
+            set
+            {
+                selectedJob = value;
+                if (value != null)
+                    JobSelected.Execute(value);
+            }
+        }
+
         #endregion
 
         #region Bindable Commands
