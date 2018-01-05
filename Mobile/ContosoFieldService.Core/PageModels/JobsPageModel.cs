@@ -10,7 +10,7 @@ namespace ContosoFieldService.PageModels
 {
     public class JobsPageModel : FreshBasePageModel
     {
-        public ObservableRangeCollection<Job> Jobs;
+        public ObservableRangeCollection<Job> Jobs { get; set; }
         JobsAPIService jobsApiService = new JobsAPIService();
 
         public override void Init(object initData)
