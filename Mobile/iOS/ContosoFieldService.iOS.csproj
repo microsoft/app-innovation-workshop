@@ -184,6 +184,36 @@
     <Reference Include="Lottie.Forms.iOS">
       <HintPath>..\..\packages\Com.Airbnb.Xamarin.Forms.Lottie.2.4.0\lib\xamarinios\Lottie.Forms.iOS.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.AppCenter">
+      <HintPath>..\..\packages\Microsoft.AppCenter.1.1.0\lib\Xamarin.iOS10\Microsoft.AppCenter.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AppCenter.iOS.Bindings">
+      <HintPath>..\..\packages\Microsoft.AppCenter.1.1.0\lib\Xamarin.iOS10\Microsoft.AppCenter.iOS.Bindings.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AppCenter.Distribute">
+      <HintPath>..\..\packages\Microsoft.AppCenter.Distribute.1.1.0\lib\Xamarin.iOS10\Microsoft.AppCenter.Distribute.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AppCenter.Distribute.iOS.Bindings">
+      <HintPath>..\..\packages\Microsoft.AppCenter.Distribute.1.1.0\lib\Xamarin.iOS10\Microsoft.AppCenter.Distribute.iOS.Bindings.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AppCenter.Push">
+      <HintPath>..\..\packages\Microsoft.AppCenter.Push.1.1.0\lib\Xamarin.iOS10\Microsoft.AppCenter.Push.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AppCenter.Push.iOS.Bindings">
+      <HintPath>..\..\packages\Microsoft.AppCenter.Push.1.1.0\lib\Xamarin.iOS10\Microsoft.AppCenter.Push.iOS.Bindings.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AppCenter.Crashes">
+      <HintPath>..\..\packages\Microsoft.AppCenter.Crashes.1.1.0\lib\Xamarin.iOS10\Microsoft.AppCenter.Crashes.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AppCenter.Crashes.iOS.Bindings">
+      <HintPath>..\..\packages\Microsoft.AppCenter.Crashes.1.1.0\lib\Xamarin.iOS10\Microsoft.AppCenter.Crashes.iOS.Bindings.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AppCenter.Analytics">
+      <HintPath>..\..\packages\Microsoft.AppCenter.Analytics.1.1.0\lib\Xamarin.iOS10\Microsoft.AppCenter.Analytics.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AppCenter.Analytics.iOS.Bindings">
+      <HintPath>..\..\packages\Microsoft.AppCenter.Analytics.1.1.0\lib\Xamarin.iOS10\Microsoft.AppCenter.Analytics.iOS.Bindings.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Contents.json" />

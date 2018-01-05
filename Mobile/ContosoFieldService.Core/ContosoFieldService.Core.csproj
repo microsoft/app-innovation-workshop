@@ -14,6 +14,11 @@
     <PackageReference Include="refit" Version="4.0.1" />
     <PackageReference Include="Refractored.MvvmHelpers" Version="1.3.0" />
     <PackageReference Include="Com.Airbnb.Xamarin.Forms.Lottie" Version="2.4.0" />
+    <PackageReference Include="Microsoft.AppCenter.Analytics" Version="1.1.0" />
+    <PackageReference Include="Microsoft.AppCenter.Crashes" Version="1.1.0" />
+    <PackageReference Include="Microsoft.AppCenter.Push" Version="1.1.0" />
+    <PackageReference Include="Microsoft.AppCenter" Version="1.1.0" />
+    <PackageReference Include="Microsoft.AppCenter.Distribute" Version="1.1.0" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Pages\" />
