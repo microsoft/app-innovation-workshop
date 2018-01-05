@@ -3,38 +3,64 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
     x:Class="ContosoFieldService.Pages.JobsPage"
     xmlns:controls="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin.Abstractions"
+    xmlns:lottie="clr-namespace:Lottie.Forms;assembly=Lottie.Forms"
     BackgroundColor="##222E38"
     Title="Jobs">
 	<ContentPage.Content>
-        <StackLayout>
-            <SearchBar></SearchBar>
-            <ListView 
-                BackgroundColor="#F7F7F7" 
-                RowHeight="65" 
-                CachingStrategy="RecycleElement" 
-                ItemsSource="{Binding Jobs}" 
-                SelectedItem="{Binding SelectedJob, Mode=TwoWay}"
-                IsPullToRefreshEnabled="True">
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <ViewCell>
-                            <Grid Padding="10">
-                                <Grid.RowDefinitions>
-                                    <RowDefinition Height="20"></RowDefinition>
-                                    <RowDefinition Height="20"></RowDefinition>
-                                </Grid.RowDefinitions>
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="50"></ColumnDefinition>
-                                    <ColumnDefinition Width="*"></ColumnDefinition>
-                                </Grid.ColumnDefinitions>
-                                <controls:CircleImage Grid.Row="0" Grid.RowSpan="2" Grid.Column="0" Source="{Binding ThumbnailImageUrl}" Aspect="AspectFill"/>
-                                <Label FontFamily="AvenirNext-Medium" Grid.Row="0" Grid.Column="1" Text="{Binding Name}" TextColor="#333333" LineBreakMode="TailTruncation"></Label>
-                                <Label FontFamily="AvenirNext-Regular" Grid.Row="1" Grid.Column="1" Text="{Binding Details}" Font="Small"  TextColor="#333333" LineBreakMode="TailTruncation"></Label>
-                            </Grid>
-                        </ViewCell>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
-        </StackLayout>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="Auto" />
+             </Grid.RowDefinitions>
+            
+            <StackLayout>
+                <SearchBar></SearchBar>
+                    <ListView 
+                        BackgroundColor="#F7F7F7" 
+                        RowHeight="65" 
+                        CachingStrategy="RecycleElement" 
+                        ItemsSource="{Binding Jobs}" 
+                        SelectedItem="{Binding SelectedJob, Mode=TwoWay}"
+                        IsPullToRefreshEnabled="True">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+                                    <Grid Padding="10">
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="20"></RowDefinition>
+                                            <RowDefinition Height="20"></RowDefinition>
+                                        </Grid.RowDefinitions>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="50"></ColumnDefinition>
+                                            <ColumnDefinition Width="*"></ColumnDefinition>
+                                        </Grid.ColumnDefinitions>
+                                        <controls:CircleImage Grid.Row="0" Grid.RowSpan="2" Grid.Column="0" Source="{Binding ThumbnailImageUrl}" Aspect="AspectFill"/>
+                                        <Label FontFamily="AvenirNext-Medium" Grid.Row="0" Grid.Column="1" Text="{Binding Name}" TextColor="#333333" LineBreakMode="TailTruncation"></Label>
+                                        <Label FontFamily="AvenirNext-Regular" Grid.Row="1" Grid.Column="1" Text="{Binding Details}" Font="Small"  TextColor="#333333" LineBreakMode="TailTruncation"></Label>
+                                    </Grid>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+            </StackLayout>
+         <Grid
+            x:Name="LoadingOverlay"
+            IsVisible="true"
+            Grid.RowSpan="2"
+            BackgroundColor="#00BB84">
+
+            <StackLayout VerticalOptions="Center">
+                <lottie:AnimationView
+                    HeightRequest="200"
+                    WidthRequest="200"
+                    x:Name="LoadingAnimation"
+                    Animation="progress_balls.json"
+                    AutoPlay="true"
+                    Loop="true" />
+                
+                <Label Text="Syncing..." TextColor="White" Margin="0,20,0,0" HorizontalTextAlignment="Center" FontAttributes="Bold"/>
+            </StackLayout>
+        </Grid>
+        </Grid>
 	</ContentPage.Content>
 </ContentPage>
