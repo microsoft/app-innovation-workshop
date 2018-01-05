@@ -7,6 +7,8 @@ using ImageCircle.Forms.Plugin.iOS;
 using Lottie.Forms.iOS.Renderers;
 using UIKit;
 
+using MikeCodesDotNET.iOS;
+
 namespace ContosoFieldService.iOS
 {
     [Register("AppDelegate")]
@@ -25,6 +27,11 @@ namespace ContosoFieldService.iOS
 
             LoadApplication(new App());
 
+            UITabBar.Appearance.BarTintColor = "#222E38".ToUIColor();
+            UITabBar.Appearance.TintColor = UIColor.White;
+
+            UINavigationBar.Appearance.BackgroundColor = "#222E38".ToUIColor();
+            UINavigationBar.Appearance.TintColor = UIColor.White;
             return base.FinishedLaunching(app, options);
         }
     }

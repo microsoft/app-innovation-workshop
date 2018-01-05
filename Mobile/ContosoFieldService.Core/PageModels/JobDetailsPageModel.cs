@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Threading.Tasks;
-using ContosoFieldService.Models;
+﻿using ContosoFieldService.Models;
 using FreshMvvm;
 
 namespace ContosoFieldService.PageModels

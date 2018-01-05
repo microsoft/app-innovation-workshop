@@ -1,5 +1,4 @@
-﻿using System;
-using FreshMvvm;
+﻿using FreshMvvm;
 using Microsoft.AppCenter.Analytics;
 using Xamarin.Forms;
 
@@ -17,7 +16,6 @@ namespace ContosoFieldService.PageModels
                     await CoreMethods.PopPageModel(true, true);
                 });
             }
-
         }
 
         public override void Init(object initData)

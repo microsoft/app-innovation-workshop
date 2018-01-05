@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 using ContosoFieldService.Models;
 using Refit;
@@ -15,7 +14,7 @@ namespace ContosoFieldService.Services
         [Get("/api/job/{id}/")]
         Task<Job> GetJobById(string id);
 
-        [Get("/api/search/jobs/{keyword}/")]
+        [Get("/api/search/jobs/?keyword={keyword}")]
         Task<List<Job>> SearchJobs(string keyword);
 
         [Post("/api/job/")]
