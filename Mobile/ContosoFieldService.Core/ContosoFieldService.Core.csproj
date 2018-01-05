@@ -13,6 +13,7 @@
     <PackageReference Include="SkiaSharp.Svg" Version="1.59.1" />
     <PackageReference Include="refit" Version="4.0.1" />
     <PackageReference Include="Refractored.MvvmHelpers" Version="1.3.0" />
+    <PackageReference Include="Com.Airbnb.Xamarin.Forms.Lottie" Version="2.4.0" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Pages\" />

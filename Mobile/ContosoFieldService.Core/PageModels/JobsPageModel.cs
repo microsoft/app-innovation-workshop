@@ -38,9 +38,13 @@ namespace ContosoFieldService.PageModels
 
         async Task ReloadData()
         {
+            IsRefreshing = true;
+
             var jobs = await jobsApiService.GetJobsAsync();
             Jobs.Clear();
-            Jobs.AddRange(jobs);        
+            Jobs.AddRange(jobs);
+
+            IsRefreshing = false;
         }
       
         public Job SelectedJob { get; set; }
@@ -54,5 +58,7 @@ namespace ContosoFieldService.PageModels
                 });
             }
         }
+
+        public bool IsRefreshing { get; set; }
     }
 }
