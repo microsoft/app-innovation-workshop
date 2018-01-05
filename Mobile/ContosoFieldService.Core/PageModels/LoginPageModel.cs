@@ -1,5 +1,6 @@
 ﻿using System;
 using FreshMvvm;
+using Microsoft.AppCenter.Analytics;
 using Xamarin.Forms;
 
 namespace ContosoFieldService.PageModels
