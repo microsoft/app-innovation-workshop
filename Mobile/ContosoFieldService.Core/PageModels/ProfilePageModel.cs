@@ -14,11 +14,12 @@ namespace ContosoFieldService.PageModels
             Statistics = new ObservableCollection<Stats>();
 
             Statistics.Add(new Stats { Title = "Jobs Completed", Label1 = "August", Label2 = "July", Value1 = "203", Value2 = "434" });
-            Statistics.Add(new Stats { Title = "Average Pace (Min/Km)", Label1 = "August", Label2 = "July", Value1 = "4:34", Value2 = "5:02" });
-            Statistics.Add(new Stats { Title = "Activities", Label1 = "August", Label2 = "July", Value1 = "1", Value2 = "6" });
-            Statistics.Add(new Stats { Title = "Calories Burned", Label1 = "August", Label2 = "July", Value1 = "341", Value2 = "1.954" });
-            Statistics.Add(new Stats { Title = "Elevation Climb (M)", Label1 = "August", Label2 = "July", Value1 = "29,3", Value2 = "221,1" });
-            Statistics.Add(new Stats { Title = "Time Spent", Label1 = "August", Label2 = "July", Value1 = "19:22", Value2 = "2:02:39" });
+            Statistics.Add(new Stats { Title = "Assigned Jobs", Label1 = "In Progress", Label2 = "Waiting", Value1 = "2", Value2 = "8" });
+            Statistics.Add(new Stats { Title = "Order Status", Label1 = "Ready", Label2 = "On Order", Value1 = "2", Value2 = "4" });
+            Statistics.Add(new Stats { Title = "Hours Worked", Label1 = "August", Label2 = "July", Value1 = "341", Value2 = "1954" });
+            Statistics.Add(new Stats { Title = "Distance Travelled)", Label1 = "August", Label2 = "July", Value1 = "293km", Value2 = "211km" });
+            Statistics.Add(new Stats { Title = "Holiday", Label1 = "Remaining", Label2 = "Used", Value1 = "20", Value2 = "4" });
+
         }
     }
 

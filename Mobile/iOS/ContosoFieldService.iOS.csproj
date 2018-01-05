@@ -284,6 +284,7 @@
     <BundleResource Include="Resources\ba747.jpeg" />
     <BundleResource Include="Resources\icon_usersettings%402x.png" />
     <BundleResource Include="Resources\icon_comments%402x.png" />
+    <BundleResource Include="Resources\icon_bot.png" />
   </ItemGroup>
   <ItemGroup>
     <ITunesArtwork Include="iTunesArtwork" />
