@@ -1,9 +1,8 @@
-﻿using System;
-using FreshMvvm;
-using Xamarin.Forms;
-using ContosoFieldService.Models;
+﻿using ContosoFieldService.Models;
 using ContosoFieldService.Services;
+using FreshMvvm;
 using Microsoft.AppCenter.Analytics;
+using Xamarin.Forms;
 
 namespace ContosoFieldService.PageModels
 {
