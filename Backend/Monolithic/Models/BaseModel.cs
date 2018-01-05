@@ -1,11 +1,13 @@
 ﻿using System;
+using Microsoft.Azure.Search.Models;
 using Newtonsoft.Json;
 
 namespace ContosoMaintenance.WebAPI.Models
 {
+    [SerializePropertyNamesAsCamelCase]
     public class BaseModel
     {
-        [JsonProperty("id")]
+        [System.ComponentModel.DataAnnotations.Key]
         public string Id { get; set; }    
 
         [JsonProperty("createdAt")]
@@ -14,3 +16,4 @@ namespace ContosoMaintenance.WebAPI.Models
 
     }
 }
+
