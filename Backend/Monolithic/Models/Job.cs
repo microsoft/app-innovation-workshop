@@ -1,32 +1,30 @@
-﻿using Newtonsoft.Json;
+﻿using Microsoft.Azure.Search;
+using Microsoft.Azure.Search.Models;
+using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 
 namespace ContosoMaintenance.WebAPI.Models
 {
+    [SerializePropertyNamesAsCamelCase]
     public class Job : BaseModel
     {
-        [JsonProperty ("name")]
+        [IsSearchable]
         public string Name { get; set; }
 
-        [JsonProperty ("details")]
         public string Details { get; set; }
 
-        [JsonProperty("type")]
+        [IsFilterable, IsFacetable]
         public JobType Type { get; set; }
 
-        [JsonProperty("status")]
+        [IsFilterable, IsSortable]
         public JobStatus Status { get; set; }
 
-        [JsonProperty("customer")]
         public Customer Customer { get; set; }
 
-        [JsonProperty("attachementUrls")]
         public string[] Attachements { get; set; }
 
-        [JsonProperty("address")]
         public Location Address { get; set; }
 
-        [JsonProperty("assignedTo")]
         public Employee AssignedTo { get; set; }
     }
 
