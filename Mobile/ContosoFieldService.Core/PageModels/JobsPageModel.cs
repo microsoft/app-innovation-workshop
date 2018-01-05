@@ -10,9 +10,49 @@ namespace ContosoFieldService.PageModels
 {
     public class JobsPageModel : FreshBasePageModel
     {
+        #region Bindable Properties 
         public ObservableRangeCollection<Job> Jobs { get; set; }
-        JobsAPIService jobsApiService = new JobsAPIService();
+        public Job SelectedJob { get; set; }
+        public bool IsRefreshing { get; set; }
+        public string SearchText { get; set; }
+        #endregion
 
+        #region Bindable Commands
+        public Command Refresh
+        {
+            get
+            {
+                return new Command(async () =>
+                {
+                    await ReloadData();
+                });
+            }
+        }
+
+        public Command<Job> JobSelected
+        {
+            get
+            {
+                return new Command<Job>(async (job) =>
+                {
+                    await CoreMethods.PushPageModel<JobDetailsPageModel>(job);
+                });
+            }
+        }
+
+        public Command Search
+        {
+            get
+            {
+                return new Command(async () =>
+                {
+                    //TODO implement search service
+                });
+            }
+        }
+        #endregion
+
+        #region Overrides
         public override void Init(object initData)
         {
             base.Init(initData);
@@ -25,17 +65,9 @@ namespace ContosoFieldService.PageModels
             base.ViewIsAppearing(sender, e);
             await ReloadData();
         }
+        #endregion
 
-        public Command Refresh
-        {
-            get
-            {
-                return new Command(async () => {
-                    await ReloadData();
-                });
-            }
-        }
-
+        #region Private Methods
         async Task ReloadData()
         {
             IsRefreshing = true;
@@ -46,19 +78,10 @@ namespace ContosoFieldService.PageModels
 
             IsRefreshing = false;
         }
-      
-        public Job SelectedJob { get; set; }
+        #endregion
 
-        public Command<Job> JobSelected
-        {
-            get
-            {
-                return new Command<Job>(async (job) => {
-                    await CoreMethods.PushPageModel<JobDetailsPageModel>(job);
-                });
-            }
-        }
-
-        public bool IsRefreshing { get; set; }
+        #region Private Fields
+        JobsAPIService jobsApiService = new JobsAPIService();
+        #endregion
     }
 }
