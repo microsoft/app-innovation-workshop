@@ -3,6 +3,7 @@ using FreshMvvm;
 using Microsoft.AppCenter;
 using Microsoft.AppCenter.Analytics;
 using Microsoft.AppCenter.Crashes;
+using Microsoft.AppCenter.Push;
 using Xamarin.Forms;
 
 namespace ContosoFieldService
@@ -14,7 +15,7 @@ namespace ContosoFieldService
             InitializeComponent();
 
             AppCenter.Start(Helpers.Constants.AppCenterIOSKey + Helpers.Constants.AppCenterUWPKey + Helpers.Constants.AppCenterAndroidKey,
-                   typeof(Analytics), typeof(Crashes));
+                            typeof(Analytics), typeof(Crashes), typeof(Push));
 
 #if DEBUG
             Helpers.Settings.UserIsLoggedIn = false;
