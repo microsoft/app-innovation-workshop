@@ -39,6 +39,7 @@ namespace ContosoFieldService.PageModels
         async Task ReloadData()
         {
             var jobs = await jobsApiService.GetJobsAsync();
+            Jobs.Clear();
             Jobs.AddRange(jobs);        
         }
       
