@@ -6,6 +6,7 @@ using Refit;
 
 namespace ContosoFieldService.Services
 {
+    [Headers(Helpers.Constants.ApiManagementKey)]
     public interface IJobServiceAPI
     {
         [Get("/api/job/")]
