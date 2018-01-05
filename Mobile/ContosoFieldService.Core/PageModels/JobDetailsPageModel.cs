@@ -2,24 +2,17 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using ContosoFieldService.Models;
+using FreshMvvm;
 
 namespace ContosoFieldService.PageModels
 {
-    public class JobDetailsPageModel
+    public class JobDetailsPageModel : FreshBasePageModel
     {
-        public JobDetailsPageModel()
+        public JobDetailsPageModel(Job job)
         {
         }
 
 
-        #region Service Calls
-
-        //TODO MOBILE APP : 101
-        async Task<List<Job>> GetJobs()
-        {
-            return new List<Job>();
-        }
-
-        #endregion
+      
     }
 }
