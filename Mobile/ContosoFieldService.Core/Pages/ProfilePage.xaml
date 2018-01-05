@@ -18,7 +18,7 @@
                     </Grid.ColumnDefinitions>
 
                     <!-- Comment Button --> 
-                    <Button Image="icon_comments.png" HeightRequest="50" Margin="0,-45,15,0" WidthRequest="50" HorizontalOptions="End" VerticalOptions="Center" BackgroundColor="#1D2730" BorderRadius="25" Grid.Column="0">
+                    <Button Image="icon_bot.png" HeightRequest="50" Margin="0,-45,15,0" WidthRequest="50" HorizontalOptions="End" VerticalOptions="Center" BackgroundColor="#1D2730" BorderRadius="25" Grid.Column="0">
                         <Button.IsVisible>
                             <OnPlatform x:TypeArguments="x:Boolean">
                               <On Platform="iOS" Value="true" />
@@ -56,12 +56,12 @@
                         </ffimageloading:CachedImage>
 
                         <!-- Full Name -->
-                        <Label Text="Mike James" Margin="0,5,0,0" TextColor="White" FontSize="16" HorizontalTextAlignment="Center" />  
+                        <Label Text="Mike James" FontFamily="AvenirNext-Regular" Margin="0,5,0,0" TextColor="White" FontSize="16" HorizontalTextAlignment="Center" />  
                     </StackLayout>
                 </Grid>
 
                 <!-- Motivational Banner --> 
-                <Button HeightRequest="50" BackgroundColor="#00D8CB" BorderRadius="0" TextColor="#ffffff" Text="You're crushing it!" Margin="0">
+                <Button HeightRequest="50" BackgroundColor="#00D8CB" BorderRadius="0" FontFamily="AvenirNext-Medium" TextColor="#ffffff" Text="You're crushing it!" Margin="0">
                     <Button.FontSize>
                         <OnPlatform x:TypeArguments="x:Double">
                           <On Platform="iOS" Value="18" />
@@ -77,11 +77,11 @@
                     <controls:CarouselViewControl.ItemTemplate>
                         <DataTemplate>
                             <StackLayout Orientation="Vertical" Padding="15,10,5,5">
-                                <Label Text="{Binding Title}" TextColor="#212121" FontSize="16" />
+                                <Label FontFamily="AvenirNext-Medium" Text="{Binding Title}" TextColor="#212121" FontSize="16" />
                                 <StackLayout Orientation="Horizontal" Margin="0,10,0,0">
                                     <StackLayout Orientation="Vertical" HorizontalOptions="CenterAndExpand">
-                                        <Label Text="{Binding Value1}" TextColor="#212121" HorizontalTextAlignment="Center" FontSize="40" />
-                                        <Label Text="{Binding Label1}" Margin="0,-5,0,0" TextColor="#777777" HorizontalTextAlignment="Center" FontSize="12" />
+                                        <Label Text="{Binding Value1}" TextColor="#212121" FontFamily="AvenirNext-Medium" HorizontalTextAlignment="Center" FontSize="40" />
+                                        <Label Text="{Binding Label1}" Margin="0,-5,0,0" FontFamily="AvenirNext-Regular" TextColor="#777777" HorizontalTextAlignment="Center" FontSize="12" />
                                     </StackLayout>
                                     <BoxView WidthRequest="1" BackgroundColor="#eeeeee" />
                                     <StackLayout Orientation="Vertical" HorizontalOptions="CenterAndExpand">
@@ -93,51 +93,52 @@
                         </DataTemplate>
                     </controls:CarouselViewControl.ItemTemplate>
                 </controls:CarouselViewControl>
-                <BoxView HeightRequest="1" Margin="15,0,5,0" BackgroundColor="#eeeeee" />
+                <BoxView HeightRequest="1" Margin="0,0,5,0" BackgroundColor="#eeeeee" />
+
                 <StackLayout Orientation="Vertical" Padding="15,10,5,20" BackgroundColor="#ffffff">
+                    
                     <StackLayout Orientation="Horizontal">
-                        <Label Text="Stats" TextColor="#212121" FontSize="16" HorizontalOptions="Start" />
-                        <Label Text="All time totals" TextColor="#777777" Margin="0,0,5,0" FontSize="12" VerticalTextAlignment="Center" HorizontalOptions="EndAndExpand" />
+                        <Label Text="Stats" TextColor="#212121" FontFamily="AvenirNext-Medium" FontSize="16" HorizontalOptions="Start" />
+                        <Label Text="All time totals" TextColor="#777777" FontFamily="AvenirNext-Regular" Margin="0,0,5,0" FontSize="12" VerticalTextAlignment="Center" HorizontalOptions="EndAndExpand" />
                     </StackLayout>
+                    
                     <StackLayout Orientation="Horizontal" Margin="0,5,0,0">
                         <Image Source="icon_list.png" Margin="5,0,10,0" />
                         <StackLayout Orientation="Vertical">
-                            <Label Text="198" TextColor="#212121" FontSize="17" />
-                            <Label Text="Jobs Completed" Margin="0,-5,0,0" TextColor="#777777" HorizontalTextAlignment="Center" FontSize="12" />
+                            <Label Text="4012" TextColor="#212121" FontSize="17" FontFamily="AvenirNext-Medium"/>
+                            <Label Text="Jobs Completed" FontFamily="AvenirNext-Regular" Margin="0,-5,0,0" TextColor="#777777" HorizontalTextAlignment="Center" FontSize="12" />
                         </StackLayout>
-                        <Image Source="icon_caret.png" HorizontalOptions="EndAndExpand" />
                     </StackLayout>
                      <StackLayout Orientation="Horizontal" Margin="0,5,0,0">
                         <Image Source="icon_list.png" Margin="5,0,10,0" />
                         <StackLayout Orientation="Vertical">
-                            <Label Text="10" TextColor="#212121" FontSize="17" />
-                            <Label Text="747 Engines Services" Margin="0,-5,0,0" TextColor="#777777" HorizontalTextAlignment="Center" FontSize="12" />
+                            <Label Text="10" TextColor="#212121" FontFamily="AvenirNext-Medium" FontSize="17" />
+                            <Label Text="747 Engines Services" FontFamily="AvenirNext-Regular" Margin="0,-5,0,0" TextColor="#777777" HorizontalTextAlignment="Center" FontSize="12" />
                         </StackLayout>
-                        <Image Source="icon_caret.png" HorizontalOptions="EndAndExpand" />
                     </StackLayout>
 
                     
                 </StackLayout>
-                <BoxView HeightRequest="1" Margin="15,0,5,0" BackgroundColor="#eeeeee" />
+                <BoxView HeightRequest="1" Margin="0,0,5,0" BackgroundColor="#eeeeee" />
                 <StackLayout Orientation="Vertical" Padding="15,10,5,20" BackgroundColor="#ffffff">
                     <StackLayout Orientation="Horizontal">
-                        <Label Text="Insights" TextColor="#212121" FontSize="16" HorizontalOptions="Start" />
-                        <Label Text="4.850 total kilometers" TextColor="#777777" Margin="0,0,5,0" FontSize="12" VerticalTextAlignment="Center" HorizontalOptions="EndAndExpand" />
+                        <Label Text="Insights" FontFamily="AvenirNext-Medium" TextColor="#212121" FontSize="16" HorizontalOptions="Start" />
+                        <Label Text="4.850 total kilometers" FontFamily="AvenirNext-Regular" TextColor="#777777" Margin="0,0,5,0" FontSize="12" VerticalTextAlignment="Center" HorizontalOptions="EndAndExpand" />
                     </StackLayout>
                     <StackLayout Orientation="Horizontal" Margin="0,5,0,0">
                         <Image Source="icon_graph.png" Margin="5,0,10,0" />
                         <StackLayout Orientation="Vertical">
-                            <Label Text="Are you progressing?" TextColor="#212121" FontSize="17" />
+                            <Label Text="Are you progressing?" FontFamily="AvenirNext-Light" TextColor="#212121" FontSize="17" />
                             <Label Text="Learn more about those 198 activities" Margin="0,0,0,0" TextColor="#777777" HorizontalTextAlignment="Center" FontSize="12" />
                         </StackLayout>
-                        <Image Source="icon_caret.png" HorizontalOptions="EndAndExpand" />
                     </StackLayout>
                 </StackLayout>
-                <BoxView HeightRequest="1" Margin="15,0,5,0" BackgroundColor="#eeeeee" />
+                <BoxView HeightRequest="1" Margin="0,0,5,0" BackgroundColor="#eeeeee" />
+                
                 <StackLayout Orientation="Vertical" Padding="15,10,5,20" BackgroundColor="#ffffff">
                     <StackLayout Orientation="Horizontal">
-                        <Label Text="Workouts per Week" TextColor="#212121" FontSize="16" HorizontalOptions="Start" />
-                        <Label Text="0 this week" TextColor="#777777" Margin="0,0,5,0" FontSize="12" VerticalTextAlignment="Center" HorizontalOptions="EndAndExpand" />
+                        <Label Text="Sync" FontFamily="AvenirNext-Medium" TextColor="#212121" FontSize="16" HorizontalOptions="Start" />
+                        <Label Text="10 minutes ago" FontFamily="AvenirNext-Regular" TextColor="#777777" Margin="0,0,5,0" FontSize="12" VerticalTextAlignment="Center" HorizontalOptions="EndAndExpand" />
                     </StackLayout>
                     <StackLayout Orientation="Horizontal" Margin="0,0,0,0">
                         <Image Source="graph.png" WidthRequest="320" HorizontalOptions="Fill">
@@ -148,7 +149,6 @@
                                 </OnPlatform>
                             </Image.WidthRequest>
                         </Image>
-                        <Image Source="icon_caret.png" HorizontalOptions="EndAndExpand" />
                     </StackLayout>
                 </StackLayout>
             </StackLayout>
