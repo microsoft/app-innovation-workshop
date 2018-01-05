@@ -1,10 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="ContosoFieldService.Pages.JobDetailsPage">
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    x:Class="ContosoFieldService.Pages.JobDetailsPage"
+    BackgroundColor="#222E38"
+    Title="Job Details">
 	<ContentPage.Content>
         <ScrollView>
             <StackLayout>
-                <Label Text="{Binding Name}"></Label>
-                <Label Text="{Binding Details}"></Label>
+                <Image Source="ba747.jpeg" Aspect="AspectFill" HeightRequest="140"></Image>
+                <Label Text="{Binding Name}" TextColor="White" FontSize="22" Margin="0,20,0,0"></Label>
+                <Label Text="{Binding Details}" TextColor="White" FontSize="16" Margin="0,5,0,0"></Label>
             </StackLayout>
         </ScrollView>
 	</ContentPage.Content>

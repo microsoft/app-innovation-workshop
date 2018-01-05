@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             x:Class="ContosoFieldService.Pages.ProfilePage"
+             BackgroundColor="#222E38"
+             Title="Me">
+	<ContentPage.Content>
+    <ScrollView>
+            <Grid ColumnSpacing="0" RowSpacing="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="AUTO" />
+                    <RowDefinition Height="AUTO" />
+                    <RowDefinition Height="AUTO" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="AUTO" />
+                </Grid.RowDefinitions>
+
+                <!--  header background  -->
+                <Image Aspect="AspectFill" Source="HeaderBackground.png" />
+
+                <!--  profile image  -->
+                <Image HeightRequest="100" HorizontalOptions="Center" Source="myface.jpg" TranslationY="50" VerticalOptions="End" WidthRequest="100" />
+
+                <!--  Profile Name  -->
+                <StackLayout Grid.Row="1" Padding="0,50,0,00" HorizontalOptions="Center">
+                    <Label Style="{StaticResource ProfileNameLabel}" Text="Mike James" />
+                    <Label Margin="0,-5" Style="{StaticResource ProfileTagLabel}" Text="Technical Solutions Professional" />
+                </StackLayout>
+
+                <!--  Social Stats Section  -->
+                <Grid Grid.Row="2" Margin="0,30" ColumnSpacing="0" RowSpacing="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+
+                    <StackLayout>
+                        <Label Style="{StaticResource StatsNumberLabel}" Text="4" />
+                        <Label Style="{StaticResource StatsCaptionLabel}" Text="Jobs" />
+                    </StackLayout>
+
+                    <StackLayout Grid.Column="1">
+                        <Label Style="{StaticResource StatsNumberLabel}" Text="34" />
+                        <Label Style="{StaticResource StatsCaptionLabel}" Text="Complete" />
+                    </StackLayout>
+
+                    <StackLayout Grid.Column="2">
+                        <Label Style="{StaticResource StatsNumberLabel}" Text="6.5" />
+                        <Label Style="{StaticResource StatsCaptionLabel}" Text="Hours" />
+                    </StackLayout>
+                </Grid>
+
+                <!--  profile description  -->
+                    <Label Margin="20,0" Grid.Row="3" Style="{StaticResource MainBodyLabel}" Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada ultricies arcu nec egestas. Nam porta fermentum aliquam. Nullam tincidunt odio purus." />
+
+                <!--  follow button  -->
+                <Button Grid.Row="4" Margin="20" Style="{StaticResource FollowButton}" Text="Follow" />
+
+            </Grid>
+        </ScrollView>
+	</ContentPage.Content>
+</ContentPage>

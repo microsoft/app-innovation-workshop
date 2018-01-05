@@ -20,11 +20,11 @@ namespace ContosoFieldService
 #if DEBUG
             Helpers.Settings.UserIsLoggedIn = false;
 #endif
-            var tabbedNavigation = new FreshTabbedFONavigationContainer("Dashboard");
+            var tabbedNavigation = new FreshTabbedFONavigationContainer(string.Empty, "authed");
             tabbedNavigation.AddTab<DashboardPageModel>("Dashboard", null);
             tabbedNavigation.AddTab<JobsPageModel>("Jobs", null);
             tabbedNavigation.AddTab<JobsPageModel>("Parts", null);
-            tabbedNavigation.AddTab<JobsPageModel>("Log", null);
+            tabbedNavigation.AddTab<ProfilePageModel>("Me", null);
 
             tabbedNavigation.BarBackgroundColor = Color.FromHex("#222E38");
             tabbedNavigation.BarTextColor = Color.White;

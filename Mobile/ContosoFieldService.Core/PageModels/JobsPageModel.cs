@@ -61,10 +61,13 @@ namespace ContosoFieldService.PageModels
             {
                 return new Command(async () =>
                 {
-                    //TODO implement search service
+                    var searchResults = await jobsApiService.SearchJobs(SearchText);
+                    Jobs.Clear();
+                    Jobs.AddRange(searchResults);
                 });
             }
         }
+
         #endregion
 
         #region Overrides
@@ -78,9 +81,19 @@ namespace ContosoFieldService.PageModels
         protected override async void ViewIsAppearing(object sender, EventArgs e)
         {
             base.ViewIsAppearing(sender, e);
+
+            if(Jobs.Count == 0)
+                await ReloadData();
+        }
+
+        public override async void ReverseInit(object returndData)
+        {
+            base.ReverseInit(returndData);
             await ReloadData();
         }
+
         #endregion
+
 
         #region Private Methods
         async Task ReloadData()

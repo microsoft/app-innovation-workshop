@@ -1,4 +1,3 @@
-// Helpers/Settings.cs
 using Plugin.Settings;
 using Plugin.Settings.Abstractions;
 

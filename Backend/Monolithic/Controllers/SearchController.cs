@@ -17,7 +17,7 @@ namespace ContosoMaintenance.WebAPI.Controllers
         {
             var sp = new SearchParameters();
             var serviceClient = new SearchServiceClient(Helpers.Keys.AzureSearchServiceName, new SearchCredentials(Helpers.Keys.AzureSearchApiKey));
-            var indexClient = serviceClient.Indexes.GetClient("documentdb-index");
+            var indexClient = serviceClient.Indexes.GetClient("job-index");
 
             var response = await indexClient.Documents.SearchAsync<Job>(keyword, sp);
 
