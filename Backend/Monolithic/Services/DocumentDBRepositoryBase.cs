@@ -141,10 +141,10 @@ namespace ContosoMaintenance.WebAPI.Services
 
         string GetCollectionName()
         {
-            var name = typeof(T).Name;
+            var name = typeof(T).Name.ToLower();
             if (name.ToCharArray().Last().ToString() != "s")
                 return $"{name}s";
-            return name.ToLower();
+            return name;
         }
     }
 }
