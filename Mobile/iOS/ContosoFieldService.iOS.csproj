@@ -170,9 +170,9 @@
     <Compile Include="Helpers\Settings.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\ContosoFieldService\ContosoFieldService.csproj">
-      <Project>{655443C7-5E82-460B-8EC9-6F12504233A7}</Project>
-      <Name>ContosoFieldService</Name>
+    <ProjectReference Include="..\ContosoFieldService.Core\ContosoFieldService.Core.csproj">
+      <Project>{5074D35B-A42A-49AB-925A-A9EBF95ED437}</Project>
+      <Name>ContosoFieldService.Core</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
