@@ -16,6 +16,7 @@ namespace ContosoFieldService.PageModels
             {
                 return new Command(async () => {
                     Helpers.Settings.UserIsLoggedIn = true;
+                    Analytics.TrackEvent("User Logged In");
                     await CoreMethods.PopPageModel(true, true);
                 });
             }
