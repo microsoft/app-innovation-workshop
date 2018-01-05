@@ -4,6 +4,7 @@ using System.Linq;
 
 using Foundation;
 using ImageCircle.Forms.Plugin.iOS;
+using Lottie.Forms.iOS.Renderers;
 using UIKit;
 
 namespace ContosoFieldService.iOS
@@ -15,6 +16,7 @@ namespace ContosoFieldService.iOS
         {
             global::Xamarin.Forms.Forms.Init();
             ImageCircleRenderer.Init();
+            AnimationViewRenderer.Init();
 
             // Code for starting up the Xamarin Test Cloud Agent
 #if DEBUG

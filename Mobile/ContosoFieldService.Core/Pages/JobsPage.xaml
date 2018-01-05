@@ -45,14 +45,14 @@
             </StackLayout>
          <Grid
             x:Name="LoadingOverlay"
-            IsVisible="true"
+            IsVisible="{Binding IsRefreshing}"
             Grid.RowSpan="2"
             BackgroundColor="#00BB84">
 
             <StackLayout VerticalOptions="Center">
                 <lottie:AnimationView
-                    HeightRequest="200"
-                    WidthRequest="200"
+                    HeightRequest="60"
+                    WidthRequest="100"
                     x:Name="LoadingAnimation"
                     Animation="progress_balls.json"
                     AutoPlay="true"
