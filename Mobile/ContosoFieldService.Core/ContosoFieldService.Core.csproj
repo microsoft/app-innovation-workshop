@@ -11,6 +11,7 @@
     <PackageReference Include="Xam.Plugins.Settings" Version="3.1.1" />
     <PackageReference Include="FreshMvvm" Version="2.2.3" />
     <PackageReference Include="SkiaSharp.Svg" Version="1.59.1" />
+    <PackageReference Include="refit" Version="4.0.1" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Pages\" />
