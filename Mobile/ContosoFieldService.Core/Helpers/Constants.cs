@@ -5,9 +5,9 @@ namespace ContosoFieldService.Helpers
     {
         public const string BaseUrl = "http://contosomaintenance.azurewebsites.net";
 
-        public const string AppCenterIOSKey = "";
-        public const string AppCenterAndroidKey = "";
-        public const string AppCenterUWPKey = "";
+        public const string AppCenterIOSKey = "__IOSKey__";
+        public const string AppCenterAndroidKey = "__AndroidKey__ ";
+        public const string AppCenterUWPKey = "__UWPKey__ ";
 
     }
 }
