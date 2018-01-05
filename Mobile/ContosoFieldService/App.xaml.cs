@@ -14,7 +14,7 @@ namespace ContosoFieldService
             Helpers.Settings.UserIsLoggedIn = false;
 #endif
             var tabbedNavigation = new FreshTabbedFONavigationContainer("Dashboard");
-            tabbedNavigation.AddTab<JobsPageModel>("Dashboard", null);
+            tabbedNavigation.AddTab<DashboardPageModel>("Dashboard", null);
             tabbedNavigation.AddTab<JobsPageModel>("Jobs", null);
             tabbedNavigation.AddTab<JobsPageModel>("Parts", null);
             tabbedNavigation.AddTab<JobsPageModel>("Log", null);
