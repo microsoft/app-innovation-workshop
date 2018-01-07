@@ -17,8 +17,8 @@
                         <ColumnDefinition Width="*" />
                     </Grid.ColumnDefinitions>
 
-                    <!-- Comment Button --> 
-                    <Button Image="icon_bot.png" HeightRequest="50" Margin="0,-45,15,0" WidthRequest="50" HorizontalOptions="End" VerticalOptions="Center" BackgroundColor="#1D2730" BorderRadius="25" Grid.Column="0">
+                    <!-- ChatBot Button --> 
+                    <Button Image="icon_bot.png" HeightRequest="50" Command="{Binding ChatToBot}" Margin="0,-45,15,0" WidthRequest="50" HorizontalOptions="End" VerticalOptions="Center" BackgroundColor="#1D2730" BorderRadius="25" Grid.Column="0">
                         <Button.IsVisible>
                             <OnPlatform x:TypeArguments="x:Boolean">
                               <On Platform="iOS" Value="true" />
@@ -28,7 +28,7 @@
                     </Button>
 
                     <!-- Settings Buttons -->
-                    <Button Image="icon_usersettings.png" HeightRequest="50" Margin="15,-45,0,0" WidthRequest="50" HorizontalOptions="Start" VerticalOptions="Center" BackgroundColor="#1D2730" BorderRadius="25" Grid.Column="2">    
+                    <Button Image="icon_usersettings.png" HeightRequest="50" Command="{Binding ShowSettings}" Margin="15,-45,0,0" WidthRequest="50" HorizontalOptions="Start" VerticalOptions="Center" BackgroundColor="#1D2730" BorderRadius="25" Grid.Column="2">    
                         <Button.IsVisible>
                             <OnPlatform x:TypeArguments="x:Boolean">
                               <On Platform="iOS" Value="true" />
@@ -93,15 +93,19 @@
                         </DataTemplate>
                     </controls:CarouselViewControl.ItemTemplate>
                 </controls:CarouselViewControl>
+
+                <!-- Line -->
                 <BoxView HeightRequest="1" Margin="0,0,5,0" BackgroundColor="#eeeeee" />
 
                 <StackLayout Orientation="Vertical" Padding="15,10,5,20" BackgroundColor="#ffffff">
-                    
+
+                    <!-- Stats Title -->
                     <StackLayout Orientation="Horizontal">
                         <Label Text="Stats" TextColor="#212121" FontFamily="AvenirNext-Medium" FontSize="16" HorizontalOptions="Start" />
                         <Label Text="All time totals" TextColor="#777777" FontFamily="AvenirNext-Regular" Margin="0,0,5,0" FontSize="12" VerticalTextAlignment="Center" HorizontalOptions="EndAndExpand" />
                     </StackLayout>
-                    
+
+                    <!-- Jobs Completed -->
                     <StackLayout Orientation="Horizontal" Margin="0,5,0,0">
                         <Image Source="icon_list.png" Margin="5,0,10,0" />
                         <StackLayout Orientation="Vertical">
@@ -109,6 +113,8 @@
                             <Label Text="Jobs Completed" FontFamily="AvenirNext-Regular" Margin="0,-5,0,0" TextColor="#777777" HorizontalTextAlignment="Center" FontSize="12" />
                         </StackLayout>
                     </StackLayout>
+
+                    <!-- 747 Engines Services -->
                      <StackLayout Orientation="Horizontal" Margin="0,5,0,0">
                         <Image Source="icon_list.png" Margin="5,0,10,0" />
                         <StackLayout Orientation="Vertical">
@@ -116,15 +122,19 @@
                             <Label Text="747 Engines Services" FontFamily="AvenirNext-Regular" Margin="0,-5,0,0" TextColor="#777777" HorizontalTextAlignment="Center" FontSize="12" />
                         </StackLayout>
                     </StackLayout>
-
-                    
                 </StackLayout>
+
+                <!-- Line -->
                 <BoxView HeightRequest="1" Margin="0,0,5,0" BackgroundColor="#eeeeee" />
+
+                <!-- Insights --> 
                 <StackLayout Orientation="Vertical" Padding="15,10,5,20" BackgroundColor="#ffffff">
                     <StackLayout Orientation="Horizontal">
                         <Label Text="Insights" FontFamily="AvenirNext-Medium" TextColor="#212121" FontSize="16" HorizontalOptions="Start" />
                         <Label Text="4.850 total kilometers" FontFamily="AvenirNext-Regular" TextColor="#777777" Margin="0,0,5,0" FontSize="12" VerticalTextAlignment="Center" HorizontalOptions="EndAndExpand" />
                     </StackLayout>
+
+                    <!-- Sub Line -->
                     <StackLayout Orientation="Horizontal" Margin="0,5,0,0">
                         <Image Source="icon_graph.png" Margin="5,0,10,0" />
                         <StackLayout Orientation="Vertical">
@@ -133,6 +143,8 @@
                         </StackLayout>
                     </StackLayout>
                 </StackLayout>
+
+                <!-- Line -->
                 <BoxView HeightRequest="1" Margin="0,0,5,0" BackgroundColor="#eeeeee" />
                 
                 <StackLayout Orientation="Vertical" Padding="15,10,5,20" BackgroundColor="#ffffff">

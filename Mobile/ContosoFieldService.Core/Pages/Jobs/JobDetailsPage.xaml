@@ -4,6 +4,9 @@
     x:Class="ContosoFieldService.Pages.JobDetailsPage"
     BackgroundColor="#222E38"
     Title="Job Details">
+     <ContentPage.ToolbarItems>
+        <ToolbarItem Icon="icon_add.png" />
+    </ContentPage.ToolbarItems>
 	<ContentPage.Content>
         <ScrollView>
             <StackLayout>

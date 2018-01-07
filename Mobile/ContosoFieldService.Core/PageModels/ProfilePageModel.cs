@@ -1,11 +1,41 @@
-﻿using System.Collections.ObjectModel;
+﻿using System;
+using System.Collections.ObjectModel;
 using FreshMvvm;
+using Microsoft.AppCenter.Analytics;
+using Xamarin.Forms;
 
 namespace ContosoFieldService.PageModels
 {
     public class ProfilePageModel : FreshBasePageModel
     {
         public ObservableCollection<Stats> Statistics { get; set; }
+
+        public int JobsCompleted = 0;
+        public int JumboEnginesServiced = 0;
+
+        public Command ChatToBot
+        {
+            get
+            {
+                return new Command(async () => {
+                    Helpers.Settings.UserIsLoggedIn = true;
+                    Analytics.TrackEvent("User chatted to bot");
+                    await CoreMethods.PushPageModel<BotPageModel>(true);
+                });
+            }
+        }
+
+        public Command ShowSettings
+        {
+            get
+            {
+                return new Command(async () => {
+                    Helpers.Settings.UserIsLoggedIn = true;
+                    Analytics.TrackEvent("User chatted to bot");
+                    await CoreMethods.PushPageModel<SettingsPageModel>(true);
+                });
+            }
+        }
 
         public override void Init(object initData)
         {

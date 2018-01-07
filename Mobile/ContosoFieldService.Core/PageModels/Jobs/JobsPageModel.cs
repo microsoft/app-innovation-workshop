@@ -61,7 +61,7 @@ namespace ContosoFieldService.PageModels
             {
                 return new Command(async () =>
                 {
-                    var searchResults = await jobsApiService.SearchJobs(SearchText);
+                    var searchResults = await jobsApiService.SearchJobsAsync(SearchText);
                     Jobs.Clear();
                     Jobs.AddRange(searchResults);
                 });
@@ -93,7 +93,6 @@ namespace ContosoFieldService.PageModels
         }
 
         #endregion
-
 
         #region Private Methods
         async Task ReloadData()
