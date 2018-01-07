@@ -22,7 +22,6 @@ namespace ContosoFieldService.Services
 
         [Post("/api/job/{id}/")]
         Task<Job> DeleteJob(string id);
-
     }
 
     public class JobsAPIService
@@ -51,7 +50,7 @@ namespace ContosoFieldService.Services
             return await contosoMaintenanceApi.DeleteJob(id);
         }
 
-        public async Task<List<Job>> SearchJobs(string keyword)
+        public async Task<List<Job>> SearchJobsAsync(string keyword)
         {
             var contosoMaintenanceApi = RestService.For<IJobServiceAPI>(Helpers.Constants.BaseUrl);
             return await contosoMaintenanceApi.SearchJobs(keyword);

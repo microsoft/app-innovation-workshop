@@ -25,6 +25,7 @@
     <PackageReference Include="CarouselView.FormsPlugin" Version="5.0.2" />
     <PackageReference Include="Xamarin.FFImageLoading.Forms" Version="2.3.3" />
     <PackageReference Include="Xamarin.FFImageLoading.Transformations" Version="2.3.3" />
+    <PackageReference Include="Humanizer" Version="2.2.0" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Pages\" />
@@ -33,11 +34,24 @@
     <Folder Include="Resources\" />
     <Folder Include="Models\" />
     <Folder Include="Services\" />
+    <Folder Include="Pages\Jobs\" />
+    <Folder Include="PageModels\Jobs\" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Remove="App.xaml" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="App.xaml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Condition=" '$(EnableDefaultCompileItems)' == 'true' " Update="Pages\Jobs\CreateNewJobPage.xaml.cs">
+      <DependentUpon>..\Pages\CreateNewJobPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Condition=" '$(EnableDefaultCompileItems)' == 'true' " Update="Pages\Jobs\JobsPage.xaml.cs">
+      <DependentUpon>..\Pages\JobsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Condition=" '$(EnableDefaultCompileItems)' == 'true' " Update="Pages\Jobs\JobDetailsPage.xaml.cs">
+      <DependentUpon>..\Pages\JobDetailsPage.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
 </Project>

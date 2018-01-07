@@ -44,5 +44,6 @@
         <image name="icon_usersettings.png" width="32.5" height="32.5"/>
         <image name="icon_comments.png" width="32.5" height="32.5"/>
         <image name="icon_bot.png" width="32" height="32"/>
+        <image name="icon_add.png" width="25" height="25"/>
     </resources>
 </document>
