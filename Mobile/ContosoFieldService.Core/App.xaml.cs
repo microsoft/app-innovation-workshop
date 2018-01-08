@@ -1,4 +1,5 @@
-﻿using ContosoFieldService.Helpers;
+﻿using ContosoFieldService.Abstractions;
+using ContosoFieldService.Helpers;
 using ContosoFieldService.PageModels;
 using FreshMvvm;
 using Microsoft.AppCenter;
@@ -15,9 +16,6 @@ namespace ContosoFieldService
         public App()
         {
             InitializeComponent();
-
-            AppCenter.Start(Helpers.Constants.AppCenterIOSKey + Helpers.Constants.AppCenterUWPKey + Helpers.Constants.AppCenterAndroidKey,
-                            typeof(Analytics), typeof(Crashes), typeof(Push));
 
 #if DEBUG
             Settings.UserIsLoggedIn = false;
@@ -53,6 +51,17 @@ namespace ContosoFieldService
         protected override void OnStart()
         {
             // Handle when your app starts
+
+            // Only start Visual Studio App Center when running in a real-world scenario
+            var environment = DependencyService.Get<IEnvironmentService>();
+            if (environment.IsRunningInRealWorld())
+            {
+                AppCenter.Start(
+                    Helpers.Constants.AppCenterIOSKey +
+                    Helpers.Constants.AppCenterUWPKey +
+                    Helpers.Constants.AppCenterAndroidKey,
+                    typeof(Analytics), typeof(Crashes), typeof(Push));
+            }
         }
 
         protected override void OnSleep()

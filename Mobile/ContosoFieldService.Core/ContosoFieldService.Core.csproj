@@ -41,6 +41,7 @@
     <Folder Include="PageModels\Android\" />
     <Folder Include="Pages\Android\" />
     <Folder Include="Pages\Me\" />
+    <Folder Include="Abstractions\" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Remove="App.xaml" />
