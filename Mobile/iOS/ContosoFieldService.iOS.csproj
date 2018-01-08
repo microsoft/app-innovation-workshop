@@ -245,6 +245,15 @@
     <Reference Include="FFImageLoading.Forms.Touch">
       <HintPath>..\..\packages\Xamarin.FFImageLoading.Forms.2.3.3\lib\Xamarin.iOS10\FFImageLoading.Forms.Touch.dll</HintPath>
     </Reference>
+    <Reference Include="FormsToolkit">
+      <HintPath>..\..\packages\FormsToolkit.1.1.18\lib\Xamarin.iOS10\FormsToolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="FormsToolkit.iOS">
+      <HintPath>..\..\packages\FormsToolkit.1.1.18\lib\Xamarin.iOS10\FormsToolkit.iOS.dll</HintPath>
+    </Reference>
+    <Reference Include="Corcav.Behaviors">
+      <HintPath>..\..\packages\Corcav.Behaviors.2.3.7\lib\dotnet\Corcav.Behaviors.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Contents.json" />

@@ -12,8 +12,6 @@ namespace ContosoMaintenance.WebAPI.Models
 
         [JsonProperty("createdAt")]
         public DateTime CreatedAt { get; set; }    
-
-
     }
 }
 

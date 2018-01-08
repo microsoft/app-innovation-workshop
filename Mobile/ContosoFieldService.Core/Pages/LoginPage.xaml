@@ -3,7 +3,8 @@
     xmlns="http://xamarin.com/schemas/2014/forms" 
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
     x:Class="ContosoFieldService.Pages.LoginPage"
-    BackgroundColor = "#222E38">
+    BackgroundColor = "#222E38"
+    Title="Login">
 	<ContentPage.Content>
         <StackLayout>
             <StackLayout Orientation="Vertical" VerticalOptions="StartAndExpand">

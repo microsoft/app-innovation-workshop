@@ -8,11 +8,9 @@ namespace ContosoFieldService.PageModels
 {
     public class CreateNewJobPageModel : FreshBasePageModel
     {
-
         #region Bindable Properties 
         public string Name { get; set; }
         public string Details { get; set; }
-
 
         public Command CreateJob
         {

@@ -10,6 +10,8 @@ namespace ContosoFieldService.Models
         [JsonProperty("details")]
         public string Details { get; set; }
 
+
+
         [JsonProperty("type")]
         public JobType Type { get; set; }
 

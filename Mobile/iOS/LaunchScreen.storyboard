@@ -41,9 +41,7 @@
         <image name="myface.jpg" width="2944" height="1965"/>
         <image name="Icon-Green.png" width="348" height="345"/>
         <image name="ba747.jpeg" width="426" height="118"/>
-        <image name="icon_usersettings.png" width="32.5" height="32.5"/>
         <image name="icon_comments.png" width="32.5" height="32.5"/>
-        <image name="icon_bot.png" width="32" height="32"/>
         <image name="icon_add.png" width="25" height="25"/>
     </resources>
 </document>

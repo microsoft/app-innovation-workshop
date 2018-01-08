@@ -1,10 +1,12 @@
-﻿using ContosoFieldService.PageModels;
+﻿using ContosoFieldService.Helpers;
+using ContosoFieldService.PageModels;
 using FreshMvvm;
 using Microsoft.AppCenter;
 using Microsoft.AppCenter.Analytics;
 using Microsoft.AppCenter.Crashes;
 using Microsoft.AppCenter.Push;
 using Xamarin.Forms;
+using Xamarin.Forms.Xaml;
 
 namespace ContosoFieldService
 {
@@ -18,18 +20,34 @@ namespace ContosoFieldService
                             typeof(Analytics), typeof(Crashes), typeof(Push));
 
 #if DEBUG
-            Helpers.Settings.UserIsLoggedIn = false;
+            Settings.UserIsLoggedIn = false;
 #endif
-            var tabbedNavigation = new FreshTabbedFONavigationContainer(string.Empty, "authed");
-            tabbedNavigation.AddTab<DashboardPageModel>("Dashboard", null);
-            tabbedNavigation.AddTab<JobsPageModel>("Jobs", null);
-            tabbedNavigation.AddTab<JobsPageModel>("Parts", null);
-            tabbedNavigation.AddTab<ProfilePageModel>("Me", null);
 
-            tabbedNavigation.BarBackgroundColor = Color.FromHex("#222E38");
-            tabbedNavigation.BarTextColor = Color.White;
-            tabbedNavigation.BackgroundColor = Color.FromHex("#222E38");
-            MainPage = tabbedNavigation;
+            if (Xamarin.Forms.Device.RuntimePlatform == Xamarin.Forms.Device.iOS)
+            {
+                var tabbedNavigation = new FreshTabbedNavigationContainer("authed");
+                tabbedNavigation.AddTab<DashboardPageModel>("Dashboard", null);
+                tabbedNavigation.AddTab<JobsPageModel>("Jobs", null);
+                tabbedNavigation.AddTab<JobsPageModel>("Parts", null);
+                tabbedNavigation.AddTab<ProfilePageModel>("Me", null);
+
+                tabbedNavigation.BarBackgroundColor = Color.FromHex("#222E38");
+                tabbedNavigation.BarTextColor = Color.White;
+                tabbedNavigation.BackgroundColor = Color.FromHex("#222E38");
+                MainPage = tabbedNavigation;
+            }
+            else
+            {
+                var navContainer = new CustomAndroidNavigation("AndroidNavigation");
+
+                navContainer.Init("Menu", "hamburger.png");
+                navContainer.AddPage<DashboardPageModel>("Start");
+                navContainer.AddPage<JobsPageModel>("Jobs");
+                navContainer.AddPage<JobsPageModel>("Parts");
+                navContainer.AddPage<ProfilePageModel>("Me");
+
+                MainPage = navContainer;
+            }
         }
 
         protected override void OnStart()

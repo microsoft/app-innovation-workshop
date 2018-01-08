@@ -26,6 +26,8 @@
     <PackageReference Include="Xamarin.FFImageLoading.Forms" Version="2.3.3" />
     <PackageReference Include="Xamarin.FFImageLoading.Transformations" Version="2.3.3" />
     <PackageReference Include="Humanizer" Version="2.2.0" />
+    <PackageReference Include="FormsToolkit" Version="1.1.18" />
+    <PackageReference Include="Corcav.Behaviors" Version="2.3.7" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Pages\" />
@@ -36,6 +38,9 @@
     <Folder Include="Services\" />
     <Folder Include="Pages\Jobs\" />
     <Folder Include="PageModels\Jobs\" />
+    <Folder Include="PageModels\Android\" />
+    <Folder Include="Pages\Android\" />
+    <Folder Include="Pages\Me\" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Remove="App.xaml" />
@@ -52,6 +57,15 @@
     </Compile>
     <Compile Condition=" '$(EnableDefaultCompileItems)' == 'true' " Update="Pages\Jobs\JobDetailsPage.xaml.cs">
       <DependentUpon>..\Pages\JobDetailsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Condition=" '$(EnableDefaultCompileItems)' == 'true' " Update="Pages\Me\BotPage.xaml.cs">
+      <DependentUpon>..\Pages\BotPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Condition=" '$(EnableDefaultCompileItems)' == 'true' " Update="Pages\Me\ProfilePage.xaml.cs">
+      <DependentUpon>..\Pages\ProfilePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Condition=" '$(EnableDefaultCompileItems)' == 'true' " Update="Pages\Me\SettingsPage.xaml.cs">
+      <DependentUpon>..\Pages\SettingsPage.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
 </Project>
