@@ -1,7 +1,7 @@
 ﻿using System;
 using Newtonsoft.Json;
 
-namespace ContosoMaintenance.WebAPI.Models
+namespace ContosoFieldService.Models
 {
     public class Customer : BaseModel
     {

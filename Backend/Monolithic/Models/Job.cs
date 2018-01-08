@@ -26,6 +26,8 @@ namespace ContosoMaintenance.WebAPI.Models
         public Location Address { get; set; }
 
         public Employee AssignedTo { get; set; }
+
+        public List<Photo> Photos { get; set; }
     }
 
     [JsonConverter(typeof(StringEnumConverter))]
