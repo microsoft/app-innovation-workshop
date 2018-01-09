@@ -18,23 +18,31 @@
                     </Grid.ColumnDefinitions>
 
                     <!-- ChatBot Button --> 
-                    <Button Image="icon_bot.png" HeightRequest="50" Command="{Binding ChatToBot}" Margin="0,-45,15,0" WidthRequest="50" HorizontalOptions="End" VerticalOptions="Center" BackgroundColor="#1D2730" BorderRadius="25" Grid.Column="0">
-                        <Button.IsVisible>
-                            <OnPlatform x:TypeArguments="x:Boolean">
-                              <On Platform="iOS" Value="true" />
-                              <On Platform="Android" Value="false" />
-                            </OnPlatform>
-                        </Button.IsVisible>
+                    <Button 
+                        Image="icon_bot.png" 
+                        HeightRequest="50" 
+                        Command="{Binding ChatToBot}" 
+                        Margin="0,-45,15,0" 
+                        WidthRequest="50" 
+                        HorizontalOptions="End" 
+                        VerticalOptions="Center" 
+                        BackgroundColor="#1D2730" 
+                        BorderRadius="25" 
+                        Grid.Column="0">
                     </Button>
 
                     <!-- Settings Buttons -->
-                    <Button Image="icon_usersettings.png" HeightRequest="50" Command="{Binding ShowSettings}" Margin="15,-45,0,0" WidthRequest="50" HorizontalOptions="Start" VerticalOptions="Center" BackgroundColor="#1D2730" BorderRadius="25" Grid.Column="2">    
-                        <Button.IsVisible>
-                            <OnPlatform x:TypeArguments="x:Boolean">
-                              <On Platform="iOS" Value="true" />
-                              <On Platform="Android" Value="false" />
-                            </OnPlatform>
-                        </Button.IsVisible>
+                    <Button 
+                        Image="icon_usersettings.png" 
+                        HeightRequest="50" 
+                        Command="{Binding ShowSettings}" 
+                        Margin="15,-45,0,0" 
+                        WidthRequest="50" 
+                        HorizontalOptions="Start" 
+                        VerticalOptions="Center" 
+                        BackgroundColor="#1D2730" 
+                        BorderRadius="25" 
+                        Grid.Column="2">   
                     </Button>
 
                     <!-- Profile Image Grid -->
@@ -42,7 +50,7 @@
 
                         <!-- Profile Image -->
                         <ffimageloading:CachedImage VerticalOptions="Start" DownsampleToViewSize="true"
-                            Aspect="AspectFit" HeightRequest="110" WidthRequest="110" Source="myface.jpg">
+                            Aspect="AspectFit" HeightRequest="110" WidthRequest="110" Source="{Binding GravatarSource}">
                             <ffimageloading:CachedImage.Transformations>
                                 <fftransformations:CircleTransformation BorderHexColor="#FFFFFF">
                                     <fftransformations:CircleTransformation.BorderSize>
@@ -56,7 +64,7 @@
                         </ffimageloading:CachedImage>
 
                         <!-- Full Name -->
-                        <Label Text="Mike James" FontFamily="AvenirNext-Regular" Margin="0,5,0,0" TextColor="White" FontSize="16" HorizontalTextAlignment="Center" />  
+                        <Label Text="{Binding Name}" FontFamily="AvenirNext-Regular" Margin="0,5,0,0" TextColor="White" FontSize="16" HorizontalTextAlignment="Center" />  
                     </StackLayout>
                 </Grid>
 

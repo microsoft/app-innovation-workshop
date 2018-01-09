@@ -6,6 +6,11 @@ namespace ContosoFieldService.PageModels
 {
     public class LoginPageModel : FreshBasePageModel
     {
+
+        public string GravatarSource { get; set; }
+        public string Email { get; set; }
+        public string FullName { get; set; }
+
         public Command Login
         {
             get
@@ -13,6 +18,10 @@ namespace ContosoFieldService.PageModels
                 return new Command(async () => {
                     Helpers.Settings.UserIsLoggedIn = true;
                     Analytics.TrackEvent("User Logged In");
+
+                    Helpers.Settings.FullName = FullName;
+                    Helpers.Settings.Email = Email;
+
                     await CoreMethods.PopPageModel(true, true);
                 });
             }
@@ -24,5 +33,17 @@ namespace ContosoFieldService.PageModels
 
             CoreMethods.RemoveFromNavigation();
         }
+
+        public Command EmailSet
+        {
+            get
+            {
+                return new Command(async () => {
+                    GravatarSource = Helpers.Extensions.EmailToGravatarUrl(Email);
+                   
+                });
+            }
+        }
+
     }
 }

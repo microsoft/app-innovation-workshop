@@ -12,12 +12,15 @@ namespace ContosoFieldService.PageModels
 
         public int JobsCompleted = 0;
         public int JumboEnginesServiced = 0;
+        public string GravatarSource { get; set; }
+        public string Name { get; set; }
 
         public Command ChatToBot
         {
             get
             {
-                return new Command(async () => {
+                return new Command(async () =>
+                {
                     Helpers.Settings.UserIsLoggedIn = true;
                     Analytics.TrackEvent("User chatted to bot");
                     await CoreMethods.PushPageModel<BotPageModel>(true);
@@ -29,7 +32,8 @@ namespace ContosoFieldService.PageModels
         {
             get
             {
-                return new Command(async () => {
+                return new Command(async () =>
+                {
                     Helpers.Settings.UserIsLoggedIn = true;
                     Analytics.TrackEvent("User chatted to bot");
                     await CoreMethods.PushPageModel<SettingsPageModel>(true);
@@ -49,6 +53,14 @@ namespace ContosoFieldService.PageModels
             Statistics.Add(new Stats { Title = "Hours Worked", Label1 = "August", Label2 = "July", Value1 = "341", Value2 = "1954" });
             Statistics.Add(new Stats { Title = "Distance Travelled)", Label1 = "August", Label2 = "July", Value1 = "293km", Value2 = "211km" });
             Statistics.Add(new Stats { Title = "Holiday", Label1 = "Remaining", Label2 = "Used", Value1 = "20", Value2 = "4" });
+        }
+
+        protected override async void ViewIsAppearing(object sender, EventArgs e)
+        {
+            GravatarSource = Helpers.Extensions.EmailToGravatarUrl(Helpers.Settings.Email);
+            Name = Helpers.Settings.FullName;
+            RaisePropertyChanged("Name");
+            RaisePropertyChanged("GravatarSource");
 
         }
     }
