@@ -215,7 +215,8 @@
                             FontSize="18" 
                             BorderRadius="0"  
                             Text="Start Job" 
-                            FontFamily="AvenirNext-Medium">
+                            FontFamily="AvenirNext-Medium"
+                            Command="{Binding StartJobClicked}">
                         </Button>
                         
                         <Button 
@@ -227,7 +228,8 @@
                             FontSize="18" 
                             BorderRadius="0" 
                             Text="Edit Job"
-                            FontFamily="AvenirNext-Medium">
+                            FontFamily="AvenirNext-Medium"
+                            Command="{Binding EditJobClicked}">
                         </Button>
 
                         <Button
@@ -239,7 +241,8 @@
                             FontSize="18" 
                             BorderRadius="0" 
                             Text="Delete Job"
-                            FontFamily="AvenirNext-Medium">
+                            FontFamily="AvenirNext-Medium"
+                            Command="{Binding DeleteJobClicked}">
                         </Button>
 
                         <Button 

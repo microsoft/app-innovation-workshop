@@ -10,16 +10,6 @@
 	<ContentPage.Content>
         <StackLayout>
             <StackLayout Orientation="Vertical" VerticalOptions="Start" Margin="0,80,0,0">
-                 <!-- Profile Image -->
-                    <ffimageloading:CachedImage VerticalOptions="Start" DownsampleToViewSize="true"
-                        Aspect="AspectFit" HeightRequest="110" WidthRequest="110" Source="{Binding GravatarSource}">
-                        <ffimageloading:CachedImage.Transformations>
-                            <fftransformations:CircleTransformation BorderHexColor="#FFFFFF">
-                               
-                            </fftransformations:CircleTransformation>
-                        </ffimageloading:CachedImage.Transformations>
-                    </ffimageloading:CachedImage>
-            
                 <Label Text="Welcome!" TextColor="White" FontSize="40" Margin="10,25,0,0" FontFamily="AvenirNext-Medium"></Label>
                 <Label Text="You'll need to login to get started." TextColor="White" Margin="15,0,0,0" FontSize="19" FontFamily="AvenirNext-Regular"></Label>
             </StackLayout>

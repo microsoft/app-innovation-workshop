@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage 
+    xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    x:Class="ContosoFieldService.Pages.WorkingJobPage"
+    Title="Working"
+    BackgroundColor="#222E38">
+	<ContentPage.Content>
+        <ScrollView>
+            <StackLayout Padding="0" Spacing="0">
+                <StackLayout VerticalOptions="Start" HeightRequest="250" BackgroundColor="#01D8CB">
+                    <Label 
+                        Text="{Binding Duration}" 
+                        TextColor="White"
+                        FontSize="32" 
+                        HorizontalTextAlignment="Center" 
+                        Margin="0,105,0,0">
+                    </Label>
+                    
+                    <Label 
+                        Text="{Binding Billable}" 
+                        TextColor="#4A90E2" 
+                        FontAttributes="Bold" 
+                        HorizontalTextAlignment="Center">
+                    </Label>
+                </StackLayout>
+
+                <!-- Quick Break --> 
+                <Button 
+                    HeightRequest="50" 
+                    BackgroundColor="#F5A623" 
+                    BorderRadius="0" 
+                    FontFamily="AvenirNext-Medium" 
+                    TextColor="#ffffff" 
+                    Text="Quick Break">
+                </Button>
+
+                <!-- Overview Stack -->
+               <StackLayout Orientation="Vertical" Padding="15,5,5,15" BackgroundColor="#ffffff">
+
+                    <!-- Job Name-->
+                    <StackLayout Orientation="Horizontal">
+                        <Label 
+                            Text="Overview" 
+                            TextColor="#212121" 
+                            FontFamily="AvenirNext-Medium" 
+                            FontSize="16" 
+                            HorizontalOptions="Start" />
+                    </StackLayout>
+
+                    <!-- Job Name -->
+                     <StackLayout Orientation="Horizontal" Margin="0,5,0,0">
+                        <StackLayout Orientation="Vertical">
+                            <!-- Value -->
+                            <Label 
+                                Text="Replace Oil" 
+                                TextColor="#D83E01" 
+                                FontFamily="AvenirNext-Medium" 
+                                FontSize="17">
+                            </Label>
+
+                            <!-- Title -->
+                            <Label 
+                                Text="Job Name" 
+                                FontFamily="AvenirNext-Regular" 
+                                Margin="0,-5,0,0" 
+                                TextColor="#777777" 
+                                HorizontalTextAlignment="Start" 
+                                FontSize="12">
+                            </Label>
+                        </StackLayout>
+                    </StackLayout>
+
+                    <!-- Estimated Duration -->
+                     <StackLayout Orientation="Horizontal" Margin="0,5,0,0">
+                        <StackLayout Orientation="Vertical">
+                            <!-- Value -->
+                            <Label 
+                                Text="2 hours" 
+                                TextColor="#D83E01" 
+                                FontFamily="AvenirNext-Medium" 
+                                FontSize="17">
+                            </Label>
+
+                            <!-- Title -->
+                            <Label 
+                                Text="Estimated Duration" 
+                                FontFamily="AvenirNext-Regular" 
+                                Margin="0,-5,0,0" 
+                                TextColor="#777777" 
+                                HorizontalTextAlignment="Start" 
+                                FontSize="12">
+                            </Label>
+                        </StackLayout>
+                    </StackLayout>
+                </StackLayout>
+
+                <!-- Snap a Photo --> 
+                <Button 
+                    HeightRequest="50" 
+                    BackgroundColor="#4A90E2" 
+                    BorderRadius="0" 
+                    FontFamily="AvenirNext-Medium" 
+                    TextColor="#ffffff" 
+                    Text="Snap a Photo" 
+                    Margin="0">
+
+                </Button>
+
+
+                <!-- Quick Break --> 
+                <Button 
+                    HeightRequest="50" 
+                    BackgroundColor="#DD444D" 
+                    BorderRadius="0" 
+                    FontFamily="AvenirNext-Medium" 
+                    TextColor="#ffffff" 
+                    Text="Complete" 
+                    Margin="0" 
+                    Command="{Binding CompleteClicked}">
+  
+                </Button>
+
+                
+                
+            </StackLayout>
+        </ScrollView>
+	</ContentPage.Content>
+</ContentPage>

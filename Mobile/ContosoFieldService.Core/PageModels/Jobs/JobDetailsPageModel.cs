@@ -31,7 +31,7 @@ namespace ContosoFieldService.PageModels
             {
                 return new Command(async () =>
                 {
-                    //Todo
+                    await CoreMethods.PushPageModel<WorkingJobPageModel>(null, true, true);
                 });
             }
         }
