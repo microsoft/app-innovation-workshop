@@ -38,8 +38,8 @@ namespace ContosoFieldService.iOS
 
             LoadApplication(new App());
 
-            UITabBar.Appearance.BarTintColor = "#222E38".ToUIColor();
-            UITabBar.Appearance.TintColor = UIColor.White;
+            UITabBar.Appearance.BarTintColor = "#94B3CA".ToUIColor();
+            UITabBar.Appearance.TintColor = "#94B3CA".ToUIColor();
 
             UINavigationBar.Appearance.BackgroundColor = "#222E38".ToUIColor();
             UINavigationBar.Appearance.TintColor = "#00D8CB".ToUIColor();
