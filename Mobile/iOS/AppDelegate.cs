@@ -20,6 +20,8 @@ namespace ContosoFieldService.iOS
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
             global::Xamarin.Forms.Forms.Init();
+            global::Xamarin.FormsMaps.Init();
+
             ImageCircleRenderer.Init();
             AnimationViewRenderer.Init();
 

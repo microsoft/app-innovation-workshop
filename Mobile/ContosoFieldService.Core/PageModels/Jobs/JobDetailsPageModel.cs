@@ -1,5 +1,6 @@
 ﻿using ContosoFieldService.Models;
 using FreshMvvm;
+using Xamarin.Forms;
 
 namespace ContosoFieldService.PageModels
 {
@@ -23,5 +24,50 @@ namespace ContosoFieldService.PageModels
                 Job = new Job();
             }
         }
+
+        public Command StartJobClicked
+        {
+            get
+            {
+                return new Command(async () =>
+                {
+                    //Todo
+                });
+            }
+        }
+
+        public Command EditJobClicked
+        {
+            get
+            {
+                return new Command(async () =>
+                {
+                    //Todo 
+                });
+            }
+        }
+
+        public Command DeleteJobClicked
+        {
+            get
+            {
+                return new Command(async () =>
+                {
+                    //Todo
+                });
+            }
+        }
+
+        public Command OrderPartsClicked
+        {
+            get
+            {
+                return new Command(async () =>
+                {
+                    await CoreMethods.PushPageModel<JobsPageModel>();
+                });
+            }
+        }
     }
+
 }

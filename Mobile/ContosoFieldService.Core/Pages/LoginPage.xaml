@@ -2,18 +2,43 @@
 <ContentPage 
     xmlns="http://xamarin.com/schemas/2014/forms" 
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+    xmlns:fftransformations="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations"    
     x:Class="ContosoFieldService.Pages.LoginPage"
     BackgroundColor = "#222E38"
     Title="Login">
 	<ContentPage.Content>
         <StackLayout>
-            <StackLayout Orientation="Vertical" VerticalOptions="StartAndExpand">
-                <Label Text="Welcome!" TextColor="White" FontSize="40" Margin="10,150,0,0" ></Label>
-                <Label Text="You'll need to login to get started." TextColor="White" Margin="15,0,0,0" FontSize="19"></Label>
+            <StackLayout Orientation="Vertical" VerticalOptions="Start" Margin="0,80,0,0">
+                 <!-- Profile Image -->
+                    <ffimageloading:CachedImage VerticalOptions="Start" DownsampleToViewSize="true"
+                        Aspect="AspectFit" HeightRequest="110" WidthRequest="110" Source="myface.jpg">
+                        <ffimageloading:CachedImage.Transformations>
+                            <fftransformations:CircleTransformation BorderHexColor="#FFFFFF">
+                                <fftransformations:CircleTransformation.BorderSize>
+                                    <OnPlatform x:TypeArguments="x:Double">
+                                      <On Platform="iOS" Value="40" />
+                                      <On Platform="Android" Value="30" />
+                                    </OnPlatform>
+                                </fftransformations:CircleTransformation.BorderSize>
+                            </fftransformations:CircleTransformation>
+                        </ffimageloading:CachedImage.Transformations>
+                    </ffimageloading:CachedImage>
+            
+                <Label Text="Welcome!" TextColor="White" FontSize="40" Margin="10,25,0,0" FontFamily="AvenirNext-Medium"></Label>
+                <Label Text="You'll need to login to get started." TextColor="White" Margin="15,0,0,0" FontSize="19" FontFamily="AvenirNext-Regular"></Label>
             </StackLayout>
-            <StackLayout VerticalOptions="End">
-                <Button Command="{Binding Login}" Text="Login" BackgroundColor="#00D8CB" TextColor="White" FontSize="19" BorderRadius="0" HeightRequest="55"></Button>
-            </StackLayout>
-            </StackLayout>
+
+
+           <!-- Signup Stack -->
+           <StackLayout Orientation="Vertical" Padding="15,5,5,15" VerticalOptions="FillAndExpand">
+                <Entry Placeholder="Full Name" PlaceholderColor="#515151" BackgroundColor="#1C262F" TextColor="White" FontFamily="AvenirNext-Regular" HeightRequest="40"></Entry>
+                <Entry Placeholder="Email Address" PlaceholderColor="#515151" BackgroundColor="#1C262F" TextColor="White" Keyboard="Email" FontFamily="AvenirNext-Regular" HeightRequest="40"></Entry>
+          </StackLayout>  
+          <StackLayout VerticalOptions="End" Padding="15,0,15,50">
+                <Button Command="{Binding Login}" Text="Login" BackgroundColor="#00D8CB" TextColor="White" FontSize="22" BorderRadius="8" HeightRequest="55" FontFamily="AvenirNext-Medium"></Button>
+          </StackLayout>
+            
+        </StackLayout>
 	</ContentPage.Content>
 </ContentPage>

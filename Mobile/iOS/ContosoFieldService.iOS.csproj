@@ -254,6 +254,12 @@
     <Reference Include="Corcav.Behaviors">
       <HintPath>..\..\packages\Corcav.Behaviors.2.3.7\lib\dotnet\Corcav.Behaviors.dll</HintPath>
     </Reference>
+    <Reference Include="Xamarin.Forms.Maps">
+      <HintPath>..\..\packages\Xamarin.Forms.Maps.2.5.0.121934\lib\Xamarin.iOS10\Xamarin.Forms.Maps.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Forms.Maps.iOS">
+      <HintPath>..\..\packages\Xamarin.Forms.Maps.2.5.0.121934\lib\Xamarin.iOS10\Xamarin.Forms.Maps.iOS.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Contents.json" />
@@ -295,6 +301,7 @@
     <BundleResource Include="Resources\ba747.jpeg" />
     <BundleResource Include="Resources\icon_comments%402x.png" />
     <BundleResource Include="Resources\icon_add%402x.png" />
+    <BundleResource Include="Resources\trash-icon.png" />
   </ItemGroup>
   <ItemGroup>
     <ITunesArtwork Include="iTunesArtwork" />
