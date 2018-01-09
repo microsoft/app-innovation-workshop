@@ -12,15 +12,10 @@
             <StackLayout Orientation="Vertical" VerticalOptions="Start" Margin="0,80,0,0">
                  <!-- Profile Image -->
                     <ffimageloading:CachedImage VerticalOptions="Start" DownsampleToViewSize="true"
-                        Aspect="AspectFit" HeightRequest="110" WidthRequest="110" Source="myface.jpg">
+                        Aspect="AspectFit" HeightRequest="110" WidthRequest="110" Source="{Binding GravatarSource}">
                         <ffimageloading:CachedImage.Transformations>
                             <fftransformations:CircleTransformation BorderHexColor="#FFFFFF">
-                                <fftransformations:CircleTransformation.BorderSize>
-                                    <OnPlatform x:TypeArguments="x:Double">
-                                      <On Platform="iOS" Value="40" />
-                                      <On Platform="Android" Value="30" />
-                                    </OnPlatform>
-                                </fftransformations:CircleTransformation.BorderSize>
+                               
                             </fftransformations:CircleTransformation>
                         </ffimageloading:CachedImage.Transformations>
                     </ffimageloading:CachedImage>
@@ -32,8 +27,27 @@
 
            <!-- Signup Stack -->
            <StackLayout Orientation="Vertical" Padding="15,5,5,15" VerticalOptions="FillAndExpand">
-                <Entry Placeholder="Full Name" PlaceholderColor="#515151" BackgroundColor="#1C262F" TextColor="White" FontFamily="AvenirNext-Regular" HeightRequest="40"></Entry>
-                <Entry Placeholder="Email Address" PlaceholderColor="#515151" BackgroundColor="#1C262F" TextColor="White" Keyboard="Email" FontFamily="AvenirNext-Regular" HeightRequest="40"></Entry>
+                <Entry 
+                    Text="{Binding FullName}" 
+                    Placeholder="Full Name" 
+                    PlaceholderColor="#515151" 
+                    BackgroundColor="#1C262F" 
+                    TextColor="White" 
+                    FontFamily="AvenirNext-Regular" 
+                    HeightRequest="40">
+                </Entry>
+                
+                <Entry 
+                    Text="{Binding Email}" 
+                    Placeholder="Email Address" 
+                    PlaceholderColor="#515151" 
+                    BackgroundColor="#1C262F" 
+                    TextColor="White" 
+                    Keyboard="Email" 
+                    FontFamily="AvenirNext-Regular" 
+                    HeightRequest="40">
+                </Entry>
+
           </StackLayout>  
           <StackLayout VerticalOptions="End" Padding="15,0,15,50">
                 <Button Command="{Binding Login}" Text="Login" BackgroundColor="#00D8CB" TextColor="White" FontSize="22" BorderRadius="8" HeightRequest="55" FontFamily="AvenirNext-Medium"></Button>
