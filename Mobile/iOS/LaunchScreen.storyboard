@@ -26,7 +26,7 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="407" translatesAutoresizingMaskIntoConstraints="NO" usesAttributedText="YES">
-                                <rect key="frame" x="20" y="695" width="374" height="21"/>
+                                <rect key="frame" x="20" y="685" width="374" height="21"/>
                                 <color key="textColor" colorSpace="calibratedWhite" white="1" alpha="1"/>
                                 <nil key="highlightedColor"/>
                                 <constraints>
@@ -53,7 +53,7 @@
                         <constraints>
                             <constraint id="198" firstItem="197" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX"/>
                             <constraint id="199" firstItem="197" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY"/>
-                            <constraint id="408" firstItem="Ze5-6b-2t3" firstAttribute="bottom" secondItem="407" secondAttribute="bottom" constant="20"/>
+                            <constraint id="408" firstItem="Ze5-6b-2t3" firstAttribute="bottom" secondItem="407" secondAttribute="bottom" constant="30"/>
                             <constraint id="409" firstItem="407" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin"/>
                             <constraint id="410" firstItem="407" firstAttribute="trailing" secondItem="Ze5-6b-2t3" secondAttribute="trailingMargin"/>
                         </constraints>
