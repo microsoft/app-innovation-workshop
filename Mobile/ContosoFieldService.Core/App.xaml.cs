@@ -24,10 +24,10 @@ namespace ContosoFieldService
             if (Xamarin.Forms.Device.RuntimePlatform == Xamarin.Forms.Device.iOS)
             {
                 var tabbedNavigation = new FreshTabbedNavigationContainer("authed");
-                tabbedNavigation.AddTab<DashboardPageModel>("Dashboard", null);
-                tabbedNavigation.AddTab<JobsPageModel>("Jobs", null);
-                tabbedNavigation.AddTab<JobsPageModel>("Parts", null);
-                tabbedNavigation.AddTab<ProfilePageModel>("Me", null);
+                tabbedNavigation.AddTab<DashboardPageModel>("Dashboard", "icon_dashboard.png");
+                tabbedNavigation.AddTab<JobsPageModel>("Jobs", "icon_jobs.png");
+                tabbedNavigation.AddTab<JobsPageModel>("Parts", "icon_parts.png");
+                tabbedNavigation.AddTab<ProfilePageModel>("Me", "icon_user.png");
 
                 tabbedNavigation.BarBackgroundColor = Color.FromHex("#222E38");
                 tabbedNavigation.BarTextColor = Color.White;

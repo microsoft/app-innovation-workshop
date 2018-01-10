@@ -277,6 +277,26 @@
     <AndroidResource Include="Resources\drawable\icon_add.png" />
     <AndroidResource Include="Resources\drawable\icon_comments.png" />
     <AndroidResource Include="Resources\drawable\ba747.jpeg" />
+    <AndroidResource Include="Resources\drawable-hdpi\icon_user.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\icon_user.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\icon_user.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\icon_user.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\icon_user.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\icon_dashboard.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\icon_dashboard.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\icon_dashboard.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\icon_dashboard.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\icon_dashboard.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\icon_jobs.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\icon_jobs.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\icon_jobs.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\icon_jobs.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\icon_jobs.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\icon_parts.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\icon_store.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\icon_parts.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\icon_parts.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\icon_parts.png" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ContosoFieldService.Core\ContosoFieldService.Core.csproj">
