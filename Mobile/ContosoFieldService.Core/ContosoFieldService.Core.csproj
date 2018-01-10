@@ -45,6 +45,11 @@
     <Folder Include="Pages\Me\" />
     <Folder Include="Abstractions\" />
     <Folder Include="Controls\" />
+    <Folder Include="PageModels\Profile\" />
+    <Folder Include="PageModels\Parts\" />
+    <Folder Include="PageModels\Dashboard\" />
+    <Folder Include="Pages\Dashboard\" />
+    <Folder Include="Pages\Parts\" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Remove="App.xaml" />
@@ -70,6 +75,9 @@
     </Compile>
     <Compile Condition=" '$(EnableDefaultCompileItems)' == 'true' " Update="Pages\Me\SettingsPage.xaml.cs">
       <DependentUpon>..\Pages\SettingsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Condition=" '$(EnableDefaultCompileItems)' == 'true' " Update="Pages\Dashboard\DashboardPage.xaml.cs">
+      <DependentUpon>..\Pages\DashboardPage.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
 </Project>

@@ -7,7 +7,9 @@
     BackgroundColor="#222E38"
     Title="Jobs">
      <ContentPage.ToolbarItems>
-       <ToolbarItem Icon="icon_add.png" />
+       <ToolbarItem 
+            Icon="icon_add.png" 
+            Command="{Binding AddJobClicked}"/>
     </ContentPage.ToolbarItems>
 	<ContentPage.Content>
         <Grid>

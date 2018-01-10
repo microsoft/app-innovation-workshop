@@ -97,7 +97,7 @@
                 </StackLayout>
 
                 <!-- Divider -->
-                <BoxView HeightRequest="1" BackgroundColor="#777777" Opacity="0.2"  ></BoxView>
+                <BoxView HeightRequest="1" BackgroundColor="#777777" Opacity="0.2"></BoxView>
 
                 <!-- Details Stack -->
                <StackLayout Orientation="Vertical" Padding="15,5,5,15" BackgroundColor="#ffffff">

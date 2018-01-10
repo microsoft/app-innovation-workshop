@@ -68,6 +68,17 @@ namespace ContosoFieldService.PageModels
             }
         }
 
+        public Command AddJobClicked
+        {
+            get
+            {
+                return new Command(async () =>
+                {
+                    await CoreMethods.PushPageModel<CreateNewJobPageModel>(null, true, true);
+                });
+            }
+        }
+
         #endregion
 
         #region Overrides
