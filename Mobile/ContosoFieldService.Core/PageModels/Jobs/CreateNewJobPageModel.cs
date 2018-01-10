@@ -29,12 +29,13 @@ namespace ContosoFieldService.PageModels
             }
         }
 
-        public Command CancelCreation
+        public Command CancelClicked
         {
             get
             {
                 return new Command(async () =>
                 {
+                    Analytics.TrackEvent("Cancel Job Creation");
                     await CoreMethods.PopPageModel(true, true);
                 });
             }

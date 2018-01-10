@@ -16,7 +16,7 @@
 
 
            <!-- Signup Stack -->
-           <StackLayout Orientation="Vertical" Padding="15,5,5,15" VerticalOptions="FillAndExpand">
+           <StackLayout Orientation="Vertical" Padding="15,5,15,15" VerticalOptions="FillAndExpand">
                 <Entry 
                     Text="{Binding FullName}" 
                     Placeholder="Full Name" 
