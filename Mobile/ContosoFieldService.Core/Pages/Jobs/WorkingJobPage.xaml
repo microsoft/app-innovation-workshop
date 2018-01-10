@@ -95,6 +95,33 @@
                     </StackLayout>
                 </StackLayout>
 
+                <!-- Divider -->
+                <BoxView HeightRequest="1" BackgroundColor="#777777" Opacity="0.2"  ></BoxView>
+
+                <!-- Details Stack -->
+               <StackLayout Orientation="Vertical" Padding="15,5,5,15" BackgroundColor="#ffffff">
+
+                    <!-- Details Title-->
+                    <StackLayout Orientation="Horizontal">
+                        <Label 
+                            Text="Details" 
+                            TextColor="#212121" 
+                            FontFamily="AvenirNext-Medium" 
+                            FontSize="16" 
+                            HorizontalOptions="Start" />
+                    </StackLayout>
+
+                    <!-- Details Text -->
+                    <Editor
+                        Text="{Binding Details}"
+                        TextColor="#838383" 
+                        FontFamily="AvenirNext-Regular" 
+                        FontSize="17"
+                        IsEnabled="false">
+                    </Editor>
+                </StackLayout>
+
+
                 <!-- Snap a Photo --> 
                 <Button 
                     HeightRequest="50" 

@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json;
+﻿using System;
+using Newtonsoft.Json;
 
 namespace ContosoFieldService.Models
 {
@@ -10,13 +11,23 @@ namespace ContosoFieldService.Models
         [JsonProperty("details")]
         public string Details { get; set; }
 
+        [JsonProperty("dueDate")]
+        public DateTime DueDate { get; set; }
 
+        [JsonProperty("age")]
+        public DateTime CreatedAt { get; set; }
 
         [JsonProperty("type")]
         public JobType Type { get; set; }
 
         [JsonProperty("status")]
         public JobStatus Status { get; set; }
+
+        [JsonProperty("company")]
+        public string Company { get; set; }
+
+        [JsonProperty("location")]
+        public Location Location { get; set; }
     }
 
     public enum JobType
