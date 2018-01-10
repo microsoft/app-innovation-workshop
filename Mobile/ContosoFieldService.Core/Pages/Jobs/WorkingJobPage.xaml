@@ -32,7 +32,8 @@
                     BorderRadius="0" 
                     FontFamily="AvenirNext-Medium" 
                     TextColor="#ffffff" 
-                    Text="Quick Break">
+                    Text="Quick Break"
+                    Command="{Binding QuickBreakClicked}">
                 </Button>
 
                 <!-- Overview Stack -->
@@ -135,7 +136,7 @@
                 </Button>
 
 
-                <!-- Quick Break --> 
+                <!-- Complete Job --> 
                 <Button 
                     HeightRequest="50" 
                     BackgroundColor="#DD444D" 

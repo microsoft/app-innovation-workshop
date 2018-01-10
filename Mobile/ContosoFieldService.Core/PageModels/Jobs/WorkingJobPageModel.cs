@@ -16,7 +16,7 @@ namespace ContosoFieldService.PageModels
         Job selectedJob;
         DateTime startedJobTime;
         Timer timer;
-        int tenSecondCount;
+        int increment;
 
 
         public string Duration { get; set; }
@@ -27,7 +27,12 @@ namespace ContosoFieldService.PageModels
         {
             startedJobTime = DateTime.Now;
 
-            timer = new Timer(500);
+            Billable = "Billable";
+            Duration = "0 seconds";
+            RaisePropertyChanged("Billable");
+            RaisePropertyChanged("Duration");
+
+            timer = new Timer(1000);
             timer.Enabled = true;
             timer.Elapsed += Timer_Elapsed;
             timer.Start();
@@ -35,12 +40,13 @@ namespace ContosoFieldService.PageModels
  
         void Timer_Elapsed(object sender, ElapsedEventArgs e)
         {
-            
-            Duration = startedJobTime.Humanize();
+            DateTime now = DateTime.Now;
+            var timeSpan = startedJobTime - now;
+            Duration = timeSpan.Humanize();
             RaisePropertyChanged("Duration");
 
-            tenSecondCount++;
-            Billable = $"Billable ${(tenSecondCount * 10)}";
+            increment++;
+            Billable = $"Billable ${(increment * 3)}";
             RaisePropertyChanged("Billable");
         }
 
@@ -80,6 +86,19 @@ namespace ContosoFieldService.PageModels
                
                     Analytics.TrackEvent("Taking a photo");
                     await CrossMedia.Current.TakePhotoAsync(options);
+                });
+            }
+        }
+
+        public Command QuickBreakClicked
+        {
+            get
+            {
+                return new Command(async () =>
+                {
+                    Analytics.TrackEvent("Quick Break");
+                    if(increment >= 10)
+                        increment = increment - 10;
                 });
             }
         }
