@@ -26,6 +26,12 @@ namespace ContosoFieldService.Helpers
         private const string UserIsLoggedInKey = "user_is_logged_in_key";
         private static readonly bool UserIsLoggedInDefault = false;
 
+        private const string FullNameKey = "fullname_key";
+        private static readonly string FullNameDefault = string.Empty;
+
+        private const string EmailKey = "email_key";
+        private static readonly string EmailDefault = string.Empty;
+
 		#endregion
 
 
@@ -41,5 +47,28 @@ namespace ContosoFieldService.Helpers
 			}
 		}
 
+        public static string FullName
+        {
+            get
+            {
+                return AppSettings.GetValueOrDefault(FullNameKey, FullNameDefault);
+            }
+            set
+            {
+                AppSettings.AddOrUpdateValue(FullNameKey, value);
+            }
+        }
+
+        public static string Email
+        {
+            get
+            {
+                return AppSettings.GetValueOrDefault(EmailKey, EmailDefault);
+            }
+            set
+            {
+                AppSettings.AddOrUpdateValue(EmailKey, value);
+            }
+        }
 	}
 }

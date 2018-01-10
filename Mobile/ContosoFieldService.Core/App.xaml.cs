@@ -9,6 +9,7 @@ using Microsoft.AppCenter.Push;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
+[assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 namespace ContosoFieldService
 {
     public partial class App : Application
@@ -26,6 +27,10 @@ namespace ContosoFieldService
                 var tabbedNavigation = new FreshTabbedNavigationContainer("authed");
                 tabbedNavigation.AddTab<DashboardPageModel>("Dashboard", "icon_dashboard.png");
                 tabbedNavigation.AddTab<JobsPageModel>("Jobs", "icon_jobs.png");
+<<<<<<< HEAD
+
+=======
+>>>>>>> master
                 tabbedNavigation.AddTab<JobsPageModel>("Parts", "icon_parts.png");
                 tabbedNavigation.AddTab<ProfilePageModel>("Me", "icon_user.png");
 
