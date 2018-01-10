@@ -6,6 +6,8 @@ The project has been created to showcase a variety of technologies, both front e
 
 # Mobile Apps
 ## Design
+<img src="https://github.com/MikeCodesDotNet/Mobile-Cloud-Workshop/blob/master/Resources/Design/iPhone%20X%20-%20Splash.png" width="256">
+
 
 
 ## Xamarin.Forms
