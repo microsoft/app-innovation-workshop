@@ -5620,6 +5620,7 @@ namespace ContosoFieldService.Droid
 		public partial class Color
 		{
 			
+<<<<<<< HEAD
 			// aapt resource value: 0x7f07005d
 			public const int abc_background_cache_hint_selector_material_dark = 2131165277;
 			
@@ -5658,6 +5659,52 @@ namespace ContosoFieldService.Droid
 			
 			// aapt resource value: 0x7f070068
 			public const int abc_search_url_text = 2131165288;
+=======
+			// aapt resource value: 0x7f0c0056
+			public const int ListViewHighlighted = 2131492950;
+			
+			// aapt resource value: 0x7f0c0055
+			public const int ListViewSelected = 2131492949;
+			
+			// aapt resource value: 0x7f0c0057
+			public const int abc_background_cache_hint_selector_material_dark = 2131492951;
+			
+			// aapt resource value: 0x7f0c0058
+			public const int abc_background_cache_hint_selector_material_light = 2131492952;
+			
+			// aapt resource value: 0x7f0c0059
+			public const int abc_btn_colored_borderless_text_material = 2131492953;
+			
+			// aapt resource value: 0x7f0c005a
+			public const int abc_btn_colored_text_material = 2131492954;
+			
+			// aapt resource value: 0x7f0c005b
+			public const int abc_color_highlight_material = 2131492955;
+			
+			// aapt resource value: 0x7f0c005c
+			public const int abc_hint_foreground_material_dark = 2131492956;
+			
+			// aapt resource value: 0x7f0c005d
+			public const int abc_hint_foreground_material_light = 2131492957;
+			
+			// aapt resource value: 0x7f0c0005
+			public const int abc_input_method_navigation_guard = 2131492869;
+			
+			// aapt resource value: 0x7f0c005e
+			public const int abc_primary_text_disable_only_material_dark = 2131492958;
+			
+			// aapt resource value: 0x7f0c005f
+			public const int abc_primary_text_disable_only_material_light = 2131492959;
+			
+			// aapt resource value: 0x7f0c0060
+			public const int abc_primary_text_material_dark = 2131492960;
+			
+			// aapt resource value: 0x7f0c0061
+			public const int abc_primary_text_material_light = 2131492961;
+			
+			// aapt resource value: 0x7f0c0062
+			public const int abc_search_url_text = 2131492962;
+>>>>>>> master
 			
 			// aapt resource value: 0x7f07000e
 			public const int abc_search_url_text_normal = 2131165198;
@@ -5668,6 +5715,7 @@ namespace ContosoFieldService.Droid
 			// aapt resource value: 0x7f070010
 			public const int abc_search_url_text_selected = 2131165200;
 			
+<<<<<<< HEAD
 			// aapt resource value: 0x7f070069
 			public const int abc_secondary_text_material_dark = 2131165289;
 			
@@ -5694,6 +5742,34 @@ namespace ContosoFieldService.Droid
 			
 			// aapt resource value: 0x7f070071
 			public const int abc_tint_switch_track = 2131165297;
+=======
+			// aapt resource value: 0x7f0c0063
+			public const int abc_secondary_text_material_dark = 2131492963;
+			
+			// aapt resource value: 0x7f0c0064
+			public const int abc_secondary_text_material_light = 2131492964;
+			
+			// aapt resource value: 0x7f0c0065
+			public const int abc_tint_btn_checkable = 2131492965;
+			
+			// aapt resource value: 0x7f0c0066
+			public const int abc_tint_default = 2131492966;
+			
+			// aapt resource value: 0x7f0c0067
+			public const int abc_tint_edittext = 2131492967;
+			
+			// aapt resource value: 0x7f0c0068
+			public const int abc_tint_seek_thumb = 2131492968;
+			
+			// aapt resource value: 0x7f0c0069
+			public const int abc_tint_spinner = 2131492969;
+			
+			// aapt resource value: 0x7f0c006a
+			public const int abc_tint_switch_thumb = 2131492970;
+			
+			// aapt resource value: 0x7f0c006b
+			public const int abc_tint_switch_track = 2131492971;
+>>>>>>> master
 			
 			// aapt resource value: 0x7f070011
 			public const int accent_material_dark = 2131165201;
@@ -5794,8 +5870,13 @@ namespace ContosoFieldService.Droid
 			// aapt resource value: 0x7f070047
 			public const int design_bottom_navigation_shadow_color = 2131165255;
 			
+<<<<<<< HEAD
 			// aapt resource value: 0x7f070075
 			public const int design_error = 2131165301;
+=======
+			// aapt resource value: 0x7f0c006c
+			public const int design_error = 2131492972;
+>>>>>>> master
 			
 			// aapt resource value: 0x7f070048
 			public const int design_fab_shadow_end_color = 2131165256;
@@ -5827,8 +5908,13 @@ namespace ContosoFieldService.Droid
 			// aapt resource value: 0x7f070051
 			public const int design_textinput_error_color_light = 2131165265;
 			
+<<<<<<< HEAD
 			// aapt resource value: 0x7f070076
 			public const int design_tint_password_toggle = 2131165302;
+=======
+			// aapt resource value: 0x7f0c006d
+			public const int design_tint_password_toggle = 2131492973;
+>>>>>>> master
 			
 			// aapt resource value: 0x7f07001f
 			public const int dim_foreground_disabled_material_dark = 2131165215;
@@ -5947,11 +6033,19 @@ namespace ContosoFieldService.Droid
 			// aapt resource value: 0x7f070044
 			public const int switch_thumb_disabled_material_light = 2131165252;
 			
+<<<<<<< HEAD
 			// aapt resource value: 0x7f070077
 			public const int switch_thumb_material_dark = 2131165303;
 			
 			// aapt resource value: 0x7f070078
 			public const int switch_thumb_material_light = 2131165304;
+=======
+			// aapt resource value: 0x7f0c006e
+			public const int switch_thumb_material_dark = 2131492974;
+			
+			// aapt resource value: 0x7f0c006f
+			public const int switch_thumb_material_light = 2131492975;
+>>>>>>> master
 			
 			// aapt resource value: 0x7f070045
 			public const int switch_thumb_normal_material_dark = 2131165253;
@@ -6711,9 +6805,33 @@ namespace ContosoFieldService.Droid
 			// aapt resource value: 0x7f020053
 			public const int avd_hide_password = 2130837587;
 			
+<<<<<<< HEAD
 			// aapt resource value: 0x7f020054
 			public const int avd_show_password = 2130837588;
 			
+=======
+			// aapt resource value: 0x7f02011d
+			public const int avd_hide_password_1 = 2130837789;
+			
+			// aapt resource value: 0x7f02011e
+			public const int avd_hide_password_2 = 2130837790;
+			
+			// aapt resource value: 0x7f02011f
+			public const int avd_hide_password_3 = 2130837791;
+			
+			// aapt resource value: 0x7f020054
+			public const int avd_show_password = 2130837588;
+			
+			// aapt resource value: 0x7f020120
+			public const int avd_show_password_1 = 2130837792;
+			
+			// aapt resource value: 0x7f020121
+			public const int avd_show_password_2 = 2130837793;
+			
+			// aapt resource value: 0x7f020122
+			public const int avd_show_password_3 = 2130837794;
+			
+>>>>>>> master
 			// aapt resource value: 0x7f020055
 			public const int ba747 = 2130837589;
 			
@@ -7186,6 +7304,7 @@ namespace ContosoFieldService.Droid
 			public const int ic_mr_button_connecting_19_light = 2130837745;
 			
 			// aapt resource value: 0x7f0200f2
+<<<<<<< HEAD
 			public const int ic_mr_button_connecting_20_dark = 2130837746;
 			
 			// aapt resource value: 0x7f0200f3
@@ -7361,6 +7480,135 @@ namespace ContosoFieldService.Droid
 			
 			// aapt resource value: 0x7f02012a
 			public const int Up = 2130837802;
+=======
+			public const int icon_dashboard = 2130837746;
+			
+			// aapt resource value: 0x7f0200f3
+			public const int icon_jobs = 2130837747;
+			
+			// aapt resource value: 0x7f0200f4
+			public const int icon_parts = 2130837748;
+			
+			// aapt resource value: 0x7f0200f5
+			public const int icon_store = 2130837749;
+			
+			// aapt resource value: 0x7f0200f6
+			public const int icon_user = 2130837750;
+			
+			// aapt resource value: 0x7f0200f7
+			public const int icon_usersettings = 2130837751;
+			
+			// aapt resource value: 0x7f0200f8
+			public const int mr_button_connected_dark = 2130837752;
+			
+			// aapt resource value: 0x7f0200f9
+			public const int mr_button_connected_light = 2130837753;
+			
+			// aapt resource value: 0x7f0200fa
+			public const int mr_button_connecting_dark = 2130837754;
+			
+			// aapt resource value: 0x7f0200fb
+			public const int mr_button_connecting_light = 2130837755;
+			
+			// aapt resource value: 0x7f0200fc
+			public const int mr_button_dark = 2130837756;
+			
+			// aapt resource value: 0x7f0200fd
+			public const int mr_button_light = 2130837757;
+			
+			// aapt resource value: 0x7f0200fe
+			public const int mr_dialog_close_dark = 2130837758;
+			
+			// aapt resource value: 0x7f0200ff
+			public const int mr_dialog_close_light = 2130837759;
+			
+			// aapt resource value: 0x7f020100
+			public const int mr_dialog_material_background_dark = 2130837760;
+			
+			// aapt resource value: 0x7f020101
+			public const int mr_dialog_material_background_light = 2130837761;
+			
+			// aapt resource value: 0x7f020102
+			public const int mr_group_collapse = 2130837762;
+			
+			// aapt resource value: 0x7f020103
+			public const int mr_group_expand = 2130837763;
+			
+			// aapt resource value: 0x7f020104
+			public const int mr_media_pause_dark = 2130837764;
+			
+			// aapt resource value: 0x7f020105
+			public const int mr_media_pause_light = 2130837765;
+			
+			// aapt resource value: 0x7f020106
+			public const int mr_media_play_dark = 2130837766;
+			
+			// aapt resource value: 0x7f020107
+			public const int mr_media_play_light = 2130837767;
+			
+			// aapt resource value: 0x7f020108
+			public const int mr_media_stop_dark = 2130837768;
+			
+			// aapt resource value: 0x7f020109
+			public const int mr_media_stop_light = 2130837769;
+			
+			// aapt resource value: 0x7f02010a
+			public const int mr_vol_type_audiotrack_dark = 2130837770;
+			
+			// aapt resource value: 0x7f02010b
+			public const int mr_vol_type_audiotrack_light = 2130837771;
+			
+			// aapt resource value: 0x7f02010c
+			public const int myface = 2130837772;
+			
+			// aapt resource value: 0x7f02010d
+			public const int navigation_empty_icon = 2130837773;
+			
+			// aapt resource value: 0x7f02010e
+			public const int Next = 2130837774;
+			
+			// aapt resource value: 0x7f02010f
+			public const int notification_action_background = 2130837775;
+			
+			// aapt resource value: 0x7f020110
+			public const int notification_bg = 2130837776;
+			
+			// aapt resource value: 0x7f020111
+			public const int notification_bg_low = 2130837777;
+			
+			// aapt resource value: 0x7f020112
+			public const int notification_bg_low_normal = 2130837778;
+			
+			// aapt resource value: 0x7f020113
+			public const int notification_bg_low_pressed = 2130837779;
+			
+			// aapt resource value: 0x7f020114
+			public const int notification_bg_normal = 2130837780;
+			
+			// aapt resource value: 0x7f020115
+			public const int notification_bg_normal_pressed = 2130837781;
+			
+			// aapt resource value: 0x7f020116
+			public const int notification_icon_background = 2130837782;
+			
+			// aapt resource value: 0x7f02011b
+			public const int notification_template_icon_bg = 2130837787;
+			
+			// aapt resource value: 0x7f02011c
+			public const int notification_template_icon_low_bg = 2130837788;
+			
+			// aapt resource value: 0x7f020117
+			public const int notification_tile_bg = 2130837783;
+			
+			// aapt resource value: 0x7f020118
+			public const int notify_panel_notification_icon_bg = 2130837784;
+			
+			// aapt resource value: 0x7f020119
+			public const int Prev = 2130837785;
+			
+			// aapt resource value: 0x7f02011a
+			public const int Up = 2130837786;
+>>>>>>> master
 			
 			static Drawable()
 			{
