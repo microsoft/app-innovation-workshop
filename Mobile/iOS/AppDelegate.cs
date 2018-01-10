@@ -19,6 +19,7 @@ namespace ContosoFieldService.iOS
     {
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
+
             global::Xamarin.Forms.Forms.Init();
             global::Xamarin.FormsMaps.Init();
 
@@ -33,15 +34,21 @@ namespace ContosoFieldService.iOS
 
             // Code for starting up the Xamarin Test Cloud Agent
 #if DEBUG
-			Xamarin.Calabash.Start();
+            Xamarin.Calabash.Start();
 #endif
 
             LoadApplication(new App());
 
+<<<<<<< HEAD
             UITabBar.Appearance.BarTintColor = "#94B3CA".ToUIColor();
             UITabBar.Appearance.TintColor = "#94B3CA".ToUIColor();
 
 
+=======
+            UITabBar.Appearance.BarTintColor = "#222E38".ToUIColor();
+            UITabBar.Appearance.SelectedImageTintColor = "#00D8CB".ToUIColor();
+            UITabBar.Appearance.TintColor = UIColor.White;
+>>>>>>> master
 
             UINavigationBar.Appearance.BackgroundColor = "#222E38".ToUIColor();
             UINavigationBar.Appearance.TintColor = "#00D8CB".ToUIColor();

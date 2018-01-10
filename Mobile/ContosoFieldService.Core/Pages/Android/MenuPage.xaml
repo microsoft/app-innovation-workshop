@@ -1,35 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
-             x:Class="ContosoFieldService.Pages.Android.MenuPage"
-             xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
-             xmlns:fftransformations="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations"
-             xmlns:behaviors="clr-namespace:Corcav.Behaviors;assembly=Corcav.Behaviors">
+<ContentPage 
+    xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    x:Class="ContosoFieldService.Pages.Android.MenuPage"
+    xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+    xmlns:fftransformations="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations"
+    xmlns:behaviors="clr-namespace:Corcav.Behaviors;assembly=Corcav.Behaviors"
+    BackgroundColor="#333333">
+    
     <ContentPage.Content>
         <StackLayout Spacing="0">
-            <ContentView HeightRequest="24" BackgroundColor="#21939e" Margin="0" />
-            <StackLayout Orientation="Horizontal" BackgroundColor="#2dc9d7" HeightRequest="120">
-                <ffimageloading:CachedImage VerticalOptions="CenterAndExpand" Margin="20,0,0,0" DownsampleToViewSize="true"
-                    Aspect="AspectFit" HeightRequest="60" WidthRequest="60" Source="me_photo.jpg">
+            <StackLayout Orientation="Horizontal" BackgroundColor="#00A59B" HeightRequest="160">                
+                <ffimageloading:CachedImage 
+                    VerticalOptions="CenterAndExpand" Margin="20,0,0,0" DownsampleToViewSize="true"
+                    Aspect="AspectFit" HeightRequest="60" WidthRequest="60" Source="myface.jpg">
                     <ffimageloading:CachedImage.Transformations>
                         <fftransformations:CircleTransformation />
                     </ffimageloading:CachedImage.Transformations>
                 </ffimageloading:CachedImage>
+                
                 <Label VerticalOptions="CenterAndExpand" VerticalTextAlignment="Center" Margin="5,0,0,0" Text="Steven Thewissen" TextColor="#FFFFFF" FontSize="16" />
             </StackLayout>
-            <ListView x:Name="listView" RowHeight="60" ItemsSource="{Binding MenuItems}" SelectedItem="{Binding SelectedItem}" 
-                SeparatorColor="Transparent" SeparatorVisibility="None">
+            
+            <ListView 
+                x:Name="listView" HasUnevenRows="true" ItemsSource="{Binding MenuItems}" 
+                SelectedItem="{Binding SelectedItem}" SeparatorColor="Transparent" SeparatorVisibility="None">
                 <behaviors:Interaction.Behaviors>
                     <behaviors:BehaviorCollection>
                         <behaviors:EventToCommand EventName="ItemSelected" Command="{Binding NavigateCommand}" />
                     </behaviors:BehaviorCollection>
                 </behaviors:Interaction.Behaviors>
+                
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
-                            <StackLayout Padding="5,10,5,10" Orientation="Horizontal">
-                                <Image HeightRequest="45" WidthRequest="45" Source="{Binding Image}" VerticalOptions="Center" />
-                                <Label VerticalTextAlignment="Center" VerticalOptions="Center" Text="{Binding Label}" TextColor="#222222" FontSize="16" />
+                            <StackLayout Padding="20" Orientation="Horizontal">
+                                <Image HeightRequest="20" WidthRequest="30" Source="{Binding Image}" VerticalOptions="Center" />
+                                <Label Margin="10,0,0,0" VerticalTextAlignment="Center" VerticalOptions="Center" Text="{Binding Label}" TextColor="#EEEEEE" FontSize="16" />
                             </StackLayout>
                         </ViewCell>
                     </DataTemplate>
