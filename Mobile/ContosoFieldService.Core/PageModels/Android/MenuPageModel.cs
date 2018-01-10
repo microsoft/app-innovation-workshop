@@ -28,6 +28,7 @@ namespace ContosoFieldService.PageModels.Android
         void NavigateToPageModel()
         {
             MessagingService.Current.SendMessage<string>("NavigationTriggered", SelectedItem.Value);
+            SelectedItem = null;
         }
     }
 
