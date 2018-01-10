@@ -29,7 +29,7 @@
                         BackgroundColor="#1D2730" 
                         BorderRadius="25" 
                         Grid.Column="0">
-                    </Button>
+                    </Button>               
 
                     <!-- Settings Buttons -->
                     <Button 

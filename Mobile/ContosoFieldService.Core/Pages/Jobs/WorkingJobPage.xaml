@@ -103,8 +103,8 @@
                     FontFamily="AvenirNext-Medium" 
                     TextColor="#ffffff" 
                     Text="Snap a Photo" 
-                    Margin="0">
-
+                    Margin="0"
+                    IsVisible="{Binding CameraSupported}">
                 </Button>
 
 
