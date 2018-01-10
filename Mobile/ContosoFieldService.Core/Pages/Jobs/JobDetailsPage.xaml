@@ -67,7 +67,8 @@
                             Text="{Binding DueDate}" 
                             TextColor="#D83E01" 
                             FontFamily="AvenirNext-Medium" 
-                            FontSize="17">
+                            FontSize="17"
+                            HorizontalTextAlignment="Start">
                         </Label>
 
                         <!-- Title -->
@@ -76,7 +77,7 @@
                             FontFamily="AvenirNext-Regular" 
                             Margin="0,-5,0,0" 
                             TextColor="#777777" 
-                            HorizontalTextAlignment="Center" 
+                            HorizontalTextAlignment="Start" 
                             FontSize="12">
                         </Label>
                     </StackLayout>
@@ -129,7 +130,7 @@
                         <StackLayout Orientation="Vertical">
                             <!-- Value -->
                             <Label 
-                                Text="John Doe" 
+                                Text="{Binding ContactName}" 
                                 TextColor="#D83E01" 
                                 FontFamily="AvenirNext-Medium" 
                                 FontSize="17">
@@ -152,7 +153,7 @@
                         <StackLayout Orientation="Vertical">
                             <!-- Value -->
                             <Label 
-                                Text="Amsterdam Airways" 
+                                Text="{Binding CompanyName}" 
                                 TextColor="#D83E01" 
                                 FontFamily="AvenirNext-Medium" 
                                 FontSize="17">
