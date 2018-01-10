@@ -317,7 +317,7 @@
     <BundleResource Include="Resources\ba747.jpeg" />
     <BundleResource Include="Resources\icon_comments%402x.png" />
     <BundleResource Include="Resources\icon_add%402x.png" />
-<<<<<<< HEAD
+
     <BundleResource Include="Resources\trash-icon.png" />
     <BundleResource Include="Resources\icon_jobs_default.png" />
     <BundleResource Include="Resources\icon_dashboard.png" />
@@ -332,20 +332,7 @@
     <BundleResource Include="Resources\icon_jobs%403x.png" />
     <BundleResource Include="Resources\icon_dashboard%402x.png" />
     <BundleResource Include="Resources\icon_dashboard%403x.png" />
-=======
-    <BundleResource Include="Resources\icon_dashboard.png" />
-    <BundleResource Include="Resources\icon_dashboard%402x.png" />
-    <BundleResource Include="Resources\icon_dashboard%403x.png" />
-    <BundleResource Include="Resources\icon_jobs.png" />
-    <BundleResource Include="Resources\icon_jobs%402x.png" />
-    <BundleResource Include="Resources\icon_jobs%403x.png" />
-    <BundleResource Include="Resources\icon_parts.png" />
-    <BundleResource Include="Resources\icon_parts%402x.png" />
-    <BundleResource Include="Resources\icon_parts%403x.png" />
-    <BundleResource Include="Resources\icon_user.png" />
-    <BundleResource Include="Resources\icon_user%402x.png" />
-    <BundleResource Include="Resources\icon_user%403x.png" />
->>>>>>> master
+
   </ItemGroup>
   <ItemGroup>
     <ITunesArtwork Include="iTunesArtwork" />
