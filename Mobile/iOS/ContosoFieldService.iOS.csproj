@@ -280,6 +280,7 @@
     <Compile Include="Helpers\Extensions.cs" />
     <Compile Include="Renderers\ColoredTabBarRenderer.cs" />
     <Compile Include="Services\EnvironmentService.cs" />
+    <Compile Include="Renderers\SelectedViewCellRenderer.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ContosoFieldService.Core\ContosoFieldService.Core.csproj">
