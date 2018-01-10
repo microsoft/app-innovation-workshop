@@ -23,8 +23,8 @@ namespace ContosoFieldService.Models
         [JsonProperty("status")]
         public JobStatus Status { get; set; }
 
-        [JsonProperty("company")]
-        public string Company { get; set; }
+        [JsonProperty("customer")]
+        public Customer Customer { get; set; }
 
         [JsonProperty("location")]
         public Location Location { get; set; }
