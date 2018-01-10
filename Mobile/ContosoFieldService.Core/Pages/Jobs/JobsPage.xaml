@@ -6,6 +6,11 @@
     xmlns:lottie="clr-namespace:Lottie.Forms;assembly=Lottie.Forms"
     BackgroundColor="#222E38"
     Title="Jobs">
+     <ContentPage.ToolbarItems>
+       <ToolbarItem 
+            Icon="icon_add.png" 
+            Command="{Binding AddJobClicked}"/>
+    </ContentPage.ToolbarItems>
 	<ContentPage.Content>
         <Grid>
             <Grid.RowDefinitions>
