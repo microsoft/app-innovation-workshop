@@ -48,5 +48,9 @@
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Your location is used to route you to jobs</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>We access your media to allow you to upload existing photos</string>
 </dict>
 </plist>
