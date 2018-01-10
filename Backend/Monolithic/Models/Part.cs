@@ -1,7 +1,6 @@
-﻿
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 
-namespace ContosoFieldService.Models
+namespace ContosoMaintenance.WebAPI.Models
 {
     public class Part : BaseModel
     {
