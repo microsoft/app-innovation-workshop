@@ -173,8 +173,12 @@
                 </StackLayout>
 
                 <!-- Map View -->
-                <Maps:Map x:Name="mapView" HeightRequest="200" IsShowingUser="true" MapType="Street" IsEnabled="false">
-
+                <Maps:Map 
+                    x:Name="mapView" 
+                    HeightRequest="200" 
+                    IsShowingUser="true" 
+                    MapType="Street" 
+                    IsEnabled="false">
                 </Maps:Map>
 
                <!-- Job Options -->
@@ -189,7 +193,6 @@
                             FontSize="16" 
                             HorizontalOptions="Start" />
                     </StackLayout>
-
 
                     <!-- The iOS version uses a custom button and renderer -->
                     <Grid Grid.Row="1" ColumnSpacing="1" RowSpacing="1" BackgroundColor="#e0e0e0"> 
@@ -207,6 +210,8 @@
                             <ColumnDefinition Width="*" />
                             <ColumnDefinition Width="*" />
                         </Grid.ColumnDefinitions>
+
+                        <!-- Start Job -->
                         <Button 
                             Grid.Row="0" 
                             Grid.Column="0" 
@@ -219,7 +224,8 @@
                             FontFamily="AvenirNext-Medium"
                             Command="{Binding StartJobClicked}">
                         </Button>
-                        
+
+                        <!-- Edit Button -->
                         <Button 
                             Grid.Row="0" 
                             Grid.Column="1" 
@@ -233,6 +239,7 @@
                             Command="{Binding EditJobClicked}">
                         </Button>
 
+                        <!-- Delete Job -->
                         <Button
                             Grid.Row="1" 
                             Grid.Column="0" 
@@ -246,6 +253,7 @@
                             Command="{Binding DeleteJobClicked}">
                         </Button>
 
+                        <!-- Order Parts -->
                         <Button 
                             Grid.Row="1" 
                             Grid.Column="1" 
@@ -258,16 +266,9 @@
                             FontFamily="AvenirNext-Medium"
                             Command="{Binding OrderPartsClicked}">
                         </Button>
-
                    </Grid> 
-                    
-            
                 </StackLayout>
-                
-                
             </StackLayout>
-
-   
         </ScrollView>
 	</ContentPage.Content>
 </ContentPage>
