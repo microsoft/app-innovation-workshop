@@ -307,6 +307,14 @@
     <BundleResource Include="Resources\icon_jobs.png" />
     <BundleResource Include="Resources\icon_parts.png" />
     <BundleResource Include="Resources\icon_user.png" />
+    <BundleResource Include="Resources\icon_user%402x.png" />
+    <BundleResource Include="Resources\icon_user%403x.png" />
+    <BundleResource Include="Resources\icon_parts%402x.png" />
+    <BundleResource Include="Resources\icon_parts%403x.png" />
+    <BundleResource Include="Resources\icon_jobs%402x.png" />
+    <BundleResource Include="Resources\icon_jobs%403x.png" />
+    <BundleResource Include="Resources\icon_dashboard%402x.png" />
+    <BundleResource Include="Resources\icon_dashboard%403x.png" />
   </ItemGroup>
   <ItemGroup>
     <ITunesArtwork Include="iTunesArtwork" />

@@ -89,6 +89,7 @@ namespace ContosoFieldService.PageModels
         public override async void ReverseInit(object returndData)
         {
             base.ReverseInit(returndData);
+            SelectedJob = null;
             await ReloadData();
         }
 
