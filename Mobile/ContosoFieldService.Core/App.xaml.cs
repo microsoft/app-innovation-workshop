@@ -27,10 +27,7 @@ namespace ContosoFieldService
                 var tabbedNavigation = new FreshTabbedNavigationContainer("authed");
                 tabbedNavigation.AddTab<DashboardPageModel>("Dashboard", "icon_dashboard.png");
                 tabbedNavigation.AddTab<JobsPageModel>("Jobs", "icon_jobs.png");
-<<<<<<< HEAD
 
-=======
->>>>>>> master
                 tabbedNavigation.AddTab<JobsPageModel>("Parts", "icon_parts.png");
                 tabbedNavigation.AddTab<ProfilePageModel>("Me", "icon_user.png");
 
