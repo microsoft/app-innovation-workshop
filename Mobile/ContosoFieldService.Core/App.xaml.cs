@@ -28,7 +28,7 @@ namespace ContosoFieldService
                 tabbedNavigation.AddTab<DashboardPageModel>("Dashboard", "icon_dashboard.png");
                 tabbedNavigation.AddTab<JobsPageModel>("Jobs", "icon_jobs.png");
 
-                tabbedNavigation.AddTab<JobsPageModel>("Parts", "icon_parts.png");
+                tabbedNavigation.AddTab<PartsPageModel>("Parts", "icon_parts.png");
                 tabbedNavigation.AddTab<ProfilePageModel>("Me", "icon_user.png");
 
                 tabbedNavigation.BarBackgroundColor = Color.FromHex("#222E38");
@@ -43,7 +43,7 @@ namespace ContosoFieldService
                 navContainer.Init("Menu", "hamburger.png");
                 navContainer.AddPage<DashboardPageModel>("Start");
                 navContainer.AddPage<JobsPageModel>("Jobs");
-                navContainer.AddPage<JobsPageModel>("Parts");
+                navContainer.AddPage<PartsPageModel>("Parts");
                 navContainer.AddPage<ProfilePageModel>("Me");
 
                 MainPage = navContainer;
