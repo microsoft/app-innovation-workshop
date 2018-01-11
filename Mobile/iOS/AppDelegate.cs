@@ -19,10 +19,7 @@ namespace ContosoFieldService.iOS
     {
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
-
             global::Xamarin.Forms.Forms.Init();
-            global::Xamarin.FormsMaps.Init();
-
             ImageCircleRenderer.Init();
             AnimationViewRenderer.Init();
 
@@ -39,8 +36,8 @@ namespace ContosoFieldService.iOS
 
             LoadApplication(new App());
 
-            UITabBar.Appearance.BarTintColor = "#94B3CA".ToUIColor();
-            UITabBar.Appearance.TintColor = "#94B3CA".ToUIColor();
+            UITabBar.Appearance.BarTintColor = "#00D8CB".ToUIColor();
+            UITabBar.Appearance.TintColor = UIColor.White;
 
             UINavigationBar.Appearance.BackgroundColor = "#222E38".ToUIColor();
             UINavigationBar.Appearance.TintColor = "#00D8CB".ToUIColor();

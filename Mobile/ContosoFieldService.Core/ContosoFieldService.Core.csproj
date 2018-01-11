@@ -9,27 +9,27 @@
     <NoWarn>1701;1702;1705;1998;NU1701;</NoWarn>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="Xamarin.Forms" Version="2.5.0.121934" />
-    <PackageReference Include="Xam.Plugins.Forms.ImageCircle" Version="1.8.1" />
     <PackageReference Include="Xam.Plugins.Settings" Version="3.1.1" />
     <PackageReference Include="FreshMvvm" Version="2.2.3" />
     <PackageReference Include="SkiaSharp.Svg" Version="1.59.1" />
     <PackageReference Include="refit" Version="4.0.1" />
     <PackageReference Include="Refractored.MvvmHelpers" Version="1.3.0" />
-    <PackageReference Include="Com.Airbnb.Xamarin.Forms.Lottie" Version="2.4.0" />
     <PackageReference Include="Microsoft.AppCenter.Analytics" Version="1.1.0" />
     <PackageReference Include="Microsoft.AppCenter.Crashes" Version="1.1.0" />
     <PackageReference Include="Microsoft.AppCenter.Push" Version="1.1.0" />
     <PackageReference Include="Microsoft.AppCenter" Version="1.1.0" />
     <PackageReference Include="Microsoft.AppCenter.Distribute" Version="1.1.0" />
-    <PackageReference Include="CarouselView.FormsPlugin" Version="5.0.2" />
-    <PackageReference Include="Xamarin.FFImageLoading.Forms" Version="2.3.3" />
-    <PackageReference Include="Xamarin.FFImageLoading.Transformations" Version="2.3.3" />
     <PackageReference Include="Humanizer" Version="2.2.0" />
     <PackageReference Include="FormsToolkit" Version="1.1.18" />
     <PackageReference Include="Corcav.Behaviors" Version="2.3.7" />
-    <PackageReference Include="Xamarin.Forms.Maps" Version="2.5.0.121934" />
     <PackageReference Include="Xam.Plugin.Media" Version="3.1.2" />
+    <PackageReference Include="CarouselView.FormsPlugin" Version="5.1.2" />
+    <PackageReference Include="Com.Airbnb.Xamarin.Forms.Lottie" Version="2.4.1" />
+    <PackageReference Include="Xam.Plugins.Forms.ImageCircle" Version="2.0.1" />
+    <PackageReference Include="Xamarin.FFImageLoading.Forms" Version="2.3.4" />
+    <PackageReference Include="Xamarin.FFImageLoading.Transformations" Version="2.3.4" />
+    <PackageReference Include="Xamarin.Forms" Version="2.5.0.122203" />
+    <PackageReference Include="Xamarin.Forms.Maps" Version="2.5.0.122203" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Pages\" />
@@ -44,11 +44,6 @@
     <Folder Include="Pages\Android\" />
     <Folder Include="Pages\Me\" />
     <Folder Include="Abstractions\" />
-    <Folder Include="Controls\" />
-    <Folder Include="PageModels\Profile\" />
-    <Folder Include="PageModels\Parts\" />
-    <Folder Include="PageModels\Dashboard\" />
-    <Folder Include="Pages\Dashboard\" />
     <Folder Include="Pages\Parts\" />
   </ItemGroup>
   <ItemGroup>
@@ -75,9 +70,6 @@
     </Compile>
     <Compile Condition=" '$(EnableDefaultCompileItems)' == 'true' " Update="Pages\Me\SettingsPage.xaml.cs">
       <DependentUpon>..\Pages\SettingsPage.xaml</DependentUpon>
-    </Compile>
-    <Compile Condition=" '$(EnableDefaultCompileItems)' == 'true' " Update="Pages\Dashboard\DashboardPage.xaml.cs">
-      <DependentUpon>..\Pages\DashboardPage.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
 </Project>
