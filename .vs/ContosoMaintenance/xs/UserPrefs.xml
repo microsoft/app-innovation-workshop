@@ -1,0 +1,51 @@
+﻿<Properties StartupConfiguration="{911AF83C-D8B4-4E69-90B3-BC806695A117}|" NuGet.AddPackagesDialog.IncludePrerelease="True">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Backend/Functions/ContosoMaintenance.ResizeFunction/ResizeImage.cs">
+    <Files>
+      <File FileName="Mobile/ContosoFieldService.Core/App.xaml.cs" Line="1" Column="1" />
+      <File FileName="Backend/Monolithic/Services/DocumentDBRepositoryBase.cs" Line="1" Column="1" />
+      <File FileName="Backend/Monolithic/Helpers/Keys.cs" Line="1" Column="1" />
+      <File FileName="Backend/Monolithic/Controllers/BaseController.cs" Line="27" Column="50" />
+      <File FileName="Mobile/ContosoFieldService.Core/Services/JobsAPIService.cs" Line="1" Column="1" />
+      <File FileName="Mobile/iOS/Renderers/ColoredTabBarRenderer.cs" Line="1" Column="1" />
+      <File FileName="Mobile/iOS/Renderers/ContentPageRenderer.cs" Line="1" Column="1" />
+      <File FileName="Mobile/ContosoFieldService.Core/Helpers/Constants.cs" Line="1" Column="1" />
+      <File FileName="Mobile/ContosoFieldService.Core/Helpers/CustomAndroidNavigation.cs" Line="1" Column="1" />
+      <File FileName="Mobile/ContosoFieldService.Core/Helpers/Settings.cs" Line="1" Column="1" />
+      <File FileName="Backend/Monolithic/Models/Job.cs" Line="30" Column="16" />
+      <File FileName="Mobile/iOS/Main.cs" Line="21" Column="1" />
+      <File FileName="Mobile/ContosoFieldService.Core/Pages/LoginPage.xaml" Line="20" Column="1" />
+      <File FileName="Mobile/UITests/AppInitializer.cs" Line="1" Column="1" />
+      <File FileName="Mobile/ContosoFieldService.Core/Pages/Me/ProfilePage.xaml" Line="170" Column="1" />
+      <File FileName="Mobile/iOS/AppDelegate.cs" Line="1" Column="1" />
+      <File FileName="Mobile/ContosoFieldService.Core/Pages/Android/MenuPage.xaml" Line="41" Column="1" />
+      <File FileName="Mobile/ContosoFieldService.Core/PageModels/Android/MenuPageModel.cs" Line="1" Column="1" />
+      <File FileName="Mobile/Droid/Resources/values/styles.xml" Line="1" Column="1" />
+      <File FileName="Mobile/ContosoFieldService.Core/Pages/Android/MenuPage.xaml.cs" Line="13" Column="10" />
+      <File FileName="Mobile/ContosoFieldService.Core/Pages/Jobs/JobsPage.xaml" Line="70" Column="1" />
+      <File FileName="Mobile/ContosoFieldService.Core/Pages/Jobs/JobsPage.xaml.cs" Line="1" Column="1" />
+      <File FileName="Mobile/ContosoFieldService.Core/Pages/Jobs/JobDetailsPage.xaml" Line="20" Column="1" />
+      <File FileName="Mobile/ContosoFieldService.Core/Pages/Me/SettingsPage.xaml" Line="31" Column="1" />
+      <File FileName="Backend/Functions/ContosoMaintenance.ResizeFunction/local.settings.json" Line="5" Column="196" />
+      <File FileName="Backend/Functions/ContosoMaintenance.ResizeFunction/host.json" Line="1" Column="1" />
+      <File FileName="Backend/Functions/ContosoMaintenance.ResizeFunction/ContosoMaintenance.Functions.csproj" Line="1" Column="1" />
+      <File FileName="Backend/Functions/ContosoMaintenance.ResizeFunction/ResizeImage.cs" Line="37" Column="1" />
+      <File FileName="Backend/Functions/ContosoMaintenance.ResizeFunction/HttpTest.cs" Line="37" Column="2" />
+      <File FileName="Backend/Functions/ContosoMaintenance.ResizeFunction/obj/Debug/net461/ContosoMaintenance.Functions.AssemblyInfo.cs" Line="14" Column="12" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.ItemProperties.Functions.ContosoMaintenance.Functions PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.ItemProperties.Functions.TestFunct PreferredExecutionTarget="MonoDevelop.Default" />
+  <DisabledProjects>
+    <String>Backend/Monolithic/ContosoMaintenance.WebAPI.csproj</String>
+    <String>Mobile/ContosoFieldService.Core/ContosoFieldService.Core.csproj</String>
+    <String>Mobile/UITests/ContosoFieldService.UITests.csproj</String>
+    <String>Mobile/Droid/ContosoFieldService.Droid.csproj</String>
+    <String>Mobile/iOS/ContosoFieldService.iOS.csproj</String>
+  </DisabledProjects>
+</Properties>
