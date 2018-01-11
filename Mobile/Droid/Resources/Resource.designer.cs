@@ -38,6 +38,8 @@ namespace ContosoFieldService.Droid
 			global::CarouselView.FormsPlugin.Android.Resource.Animation.abc_slide_out_top = global::ContosoFieldService.Droid.Resource.Animation.abc_slide_out_top;
 			global::CarouselView.FormsPlugin.Android.Resource.Animation.design_bottom_sheet_slide_in = global::ContosoFieldService.Droid.Resource.Animation.design_bottom_sheet_slide_in;
 			global::CarouselView.FormsPlugin.Android.Resource.Animation.design_bottom_sheet_slide_out = global::ContosoFieldService.Droid.Resource.Animation.design_bottom_sheet_slide_out;
+			global::CarouselView.FormsPlugin.Android.Resource.Animation.design_fab_in = global::ContosoFieldService.Droid.Resource.Animation.design_fab_in;
+			global::CarouselView.FormsPlugin.Android.Resource.Animation.design_fab_out = global::ContosoFieldService.Droid.Resource.Animation.design_fab_out;
 			global::CarouselView.FormsPlugin.Android.Resource.Animation.design_snackbar_in = global::ContosoFieldService.Droid.Resource.Animation.design_snackbar_in;
 			global::CarouselView.FormsPlugin.Android.Resource.Animation.design_snackbar_out = global::ContosoFieldService.Droid.Resource.Animation.design_snackbar_out;
 			global::CarouselView.FormsPlugin.Android.Resource.Animator.design_appbar_state_list_animator = global::ContosoFieldService.Droid.Resource.Animator.design_appbar_state_list_animator;
@@ -421,6 +423,7 @@ namespace ContosoFieldService.Droid
 			global::CarouselView.FormsPlugin.Android.Resource.Color.abc_tint_edittext = global::ContosoFieldService.Droid.Resource.Color.abc_tint_edittext;
 			global::CarouselView.FormsPlugin.Android.Resource.Color.abc_tint_seek_thumb = global::ContosoFieldService.Droid.Resource.Color.abc_tint_seek_thumb;
 			global::CarouselView.FormsPlugin.Android.Resource.Color.abc_tint_spinner = global::ContosoFieldService.Droid.Resource.Color.abc_tint_spinner;
+			global::CarouselView.FormsPlugin.Android.Resource.Color.abc_tint_switch_thumb = global::ContosoFieldService.Droid.Resource.Color.abc_tint_switch_thumb;
 			global::CarouselView.FormsPlugin.Android.Resource.Color.abc_tint_switch_track = global::ContosoFieldService.Droid.Resource.Color.abc_tint_switch_track;
 			global::CarouselView.FormsPlugin.Android.Resource.Color.accent_material_dark = global::ContosoFieldService.Droid.Resource.Color.accent_material_dark;
 			global::CarouselView.FormsPlugin.Android.Resource.Color.accent_material_light = global::ContosoFieldService.Droid.Resource.Color.accent_material_light;
@@ -453,6 +456,8 @@ namespace ContosoFieldService.Droid
 			global::CarouselView.FormsPlugin.Android.Resource.Color.design_fab_stroke_top_inner_color = global::ContosoFieldService.Droid.Resource.Color.design_fab_stroke_top_inner_color;
 			global::CarouselView.FormsPlugin.Android.Resource.Color.design_fab_stroke_top_outer_color = global::ContosoFieldService.Droid.Resource.Color.design_fab_stroke_top_outer_color;
 			global::CarouselView.FormsPlugin.Android.Resource.Color.design_snackbar_background_color = global::ContosoFieldService.Droid.Resource.Color.design_snackbar_background_color;
+			global::CarouselView.FormsPlugin.Android.Resource.Color.design_textinput_error_color_dark = global::ContosoFieldService.Droid.Resource.Color.design_textinput_error_color_dark;
+			global::CarouselView.FormsPlugin.Android.Resource.Color.design_textinput_error_color_light = global::ContosoFieldService.Droid.Resource.Color.design_textinput_error_color_light;
 			global::CarouselView.FormsPlugin.Android.Resource.Color.design_tint_password_toggle = global::ContosoFieldService.Droid.Resource.Color.design_tint_password_toggle;
 			global::CarouselView.FormsPlugin.Android.Resource.Color.dim_foreground_disabled_material_dark = global::ContosoFieldService.Droid.Resource.Color.dim_foreground_disabled_material_dark;
 			global::CarouselView.FormsPlugin.Android.Resource.Color.dim_foreground_disabled_material_light = global::ContosoFieldService.Droid.Resource.Color.dim_foreground_disabled_material_light;
@@ -739,7 +744,13 @@ namespace ContosoFieldService.Droid
 			global::CarouselView.FormsPlugin.Android.Resource.Drawable.abc_textfield_search_material = global::ContosoFieldService.Droid.Resource.Drawable.abc_textfield_search_material;
 			global::CarouselView.FormsPlugin.Android.Resource.Drawable.abc_vector_test = global::ContosoFieldService.Droid.Resource.Drawable.abc_vector_test;
 			global::CarouselView.FormsPlugin.Android.Resource.Drawable.avd_hide_password = global::ContosoFieldService.Droid.Resource.Drawable.avd_hide_password;
+			global::CarouselView.FormsPlugin.Android.Resource.Drawable.avd_hide_password_1 = global::ContosoFieldService.Droid.Resource.Drawable.avd_hide_password_1;
+			global::CarouselView.FormsPlugin.Android.Resource.Drawable.avd_hide_password_2 = global::ContosoFieldService.Droid.Resource.Drawable.avd_hide_password_2;
+			global::CarouselView.FormsPlugin.Android.Resource.Drawable.avd_hide_password_3 = global::ContosoFieldService.Droid.Resource.Drawable.avd_hide_password_3;
 			global::CarouselView.FormsPlugin.Android.Resource.Drawable.avd_show_password = global::ContosoFieldService.Droid.Resource.Drawable.avd_show_password;
+			global::CarouselView.FormsPlugin.Android.Resource.Drawable.avd_show_password_1 = global::ContosoFieldService.Droid.Resource.Drawable.avd_show_password_1;
+			global::CarouselView.FormsPlugin.Android.Resource.Drawable.avd_show_password_2 = global::ContosoFieldService.Droid.Resource.Drawable.avd_show_password_2;
+			global::CarouselView.FormsPlugin.Android.Resource.Drawable.avd_show_password_3 = global::ContosoFieldService.Droid.Resource.Drawable.avd_show_password_3;
 			global::CarouselView.FormsPlugin.Android.Resource.Drawable.design_bottom_navigation_item_background = global::ContosoFieldService.Droid.Resource.Drawable.design_bottom_navigation_item_background;
 			global::CarouselView.FormsPlugin.Android.Resource.Drawable.design_fab_background = global::ContosoFieldService.Droid.Resource.Drawable.design_fab_background;
 			global::CarouselView.FormsPlugin.Android.Resource.Drawable.design_ic_visibility = global::ContosoFieldService.Droid.Resource.Drawable.design_ic_visibility;
@@ -1233,6 +1244,7 @@ namespace ContosoFieldService.Droid
 			global::CarouselView.FormsPlugin.Android.Resource.String.appbar_scrolling_view_behavior = global::ContosoFieldService.Droid.Resource.String.appbar_scrolling_view_behavior;
 			global::CarouselView.FormsPlugin.Android.Resource.String.bottom_sheet_behavior = global::ContosoFieldService.Droid.Resource.String.bottom_sheet_behavior;
 			global::CarouselView.FormsPlugin.Android.Resource.String.character_counter_pattern = global::ContosoFieldService.Droid.Resource.String.character_counter_pattern;
+			global::CarouselView.FormsPlugin.Android.Resource.String.library_name = global::ContosoFieldService.Droid.Resource.String.library_name;
 			global::CarouselView.FormsPlugin.Android.Resource.String.mr_button_content_description = global::ContosoFieldService.Droid.Resource.String.mr_button_content_description;
 			global::CarouselView.FormsPlugin.Android.Resource.String.mr_cast_button_connected = global::ContosoFieldService.Droid.Resource.String.mr_cast_button_connected;
 			global::CarouselView.FormsPlugin.Android.Resource.String.mr_cast_button_connecting = global::ContosoFieldService.Droid.Resource.String.mr_cast_button_connecting;
@@ -1519,6 +1531,11 @@ namespace ContosoFieldService.Droid
 			global::CarouselView.FormsPlugin.Android.Resource.Style.TextAppearance_MediaRouter_PrimaryText = global::ContosoFieldService.Droid.Resource.Style.TextAppearance_MediaRouter_PrimaryText;
 			global::CarouselView.FormsPlugin.Android.Resource.Style.TextAppearance_MediaRouter_SecondaryText = global::ContosoFieldService.Droid.Resource.Style.TextAppearance_MediaRouter_SecondaryText;
 			global::CarouselView.FormsPlugin.Android.Resource.Style.TextAppearance_MediaRouter_Title = global::ContosoFieldService.Droid.Resource.Style.TextAppearance_MediaRouter_Title;
+			global::CarouselView.FormsPlugin.Android.Resource.Style.TextAppearance_StatusBar_EventContent = global::ContosoFieldService.Droid.Resource.Style.TextAppearance_StatusBar_EventContent;
+			global::CarouselView.FormsPlugin.Android.Resource.Style.TextAppearance_StatusBar_EventContent_Info = global::ContosoFieldService.Droid.Resource.Style.TextAppearance_StatusBar_EventContent_Info;
+			global::CarouselView.FormsPlugin.Android.Resource.Style.TextAppearance_StatusBar_EventContent_Line2 = global::ContosoFieldService.Droid.Resource.Style.TextAppearance_StatusBar_EventContent_Line2;
+			global::CarouselView.FormsPlugin.Android.Resource.Style.TextAppearance_StatusBar_EventContent_Time = global::ContosoFieldService.Droid.Resource.Style.TextAppearance_StatusBar_EventContent_Time;
+			global::CarouselView.FormsPlugin.Android.Resource.Style.TextAppearance_StatusBar_EventContent_Title = global::ContosoFieldService.Droid.Resource.Style.TextAppearance_StatusBar_EventContent_Title;
 			global::CarouselView.FormsPlugin.Android.Resource.Style.TextAppearance_Widget_AppCompat_ExpandedMenu_Item = global::ContosoFieldService.Droid.Resource.Style.TextAppearance_Widget_AppCompat_ExpandedMenu_Item;
 			global::CarouselView.FormsPlugin.Android.Resource.Style.TextAppearance_Widget_AppCompat_Toolbar_Subtitle = global::ContosoFieldService.Droid.Resource.Style.TextAppearance_Widget_AppCompat_Toolbar_Subtitle;
 			global::CarouselView.FormsPlugin.Android.Resource.Style.TextAppearance_Widget_AppCompat_Toolbar_Title = global::ContosoFieldService.Droid.Resource.Style.TextAppearance_Widget_AppCompat_Toolbar_Title;
@@ -1617,6 +1634,8 @@ namespace ContosoFieldService.Droid
 			global::CarouselView.FormsPlugin.Android.Resource.Style.Widget_AppCompat_ListView = global::ContosoFieldService.Droid.Resource.Style.Widget_AppCompat_ListView;
 			global::CarouselView.FormsPlugin.Android.Resource.Style.Widget_AppCompat_ListView_DropDown = global::ContosoFieldService.Droid.Resource.Style.Widget_AppCompat_ListView_DropDown;
 			global::CarouselView.FormsPlugin.Android.Resource.Style.Widget_AppCompat_ListView_Menu = global::ContosoFieldService.Droid.Resource.Style.Widget_AppCompat_ListView_Menu;
+			global::CarouselView.FormsPlugin.Android.Resource.Style.Widget_AppCompat_NotificationActionContainer = global::ContosoFieldService.Droid.Resource.Style.Widget_AppCompat_NotificationActionContainer;
+			global::CarouselView.FormsPlugin.Android.Resource.Style.Widget_AppCompat_NotificationActionText = global::ContosoFieldService.Droid.Resource.Style.Widget_AppCompat_NotificationActionText;
 			global::CarouselView.FormsPlugin.Android.Resource.Style.Widget_AppCompat_PopupMenu = global::ContosoFieldService.Droid.Resource.Style.Widget_AppCompat_PopupMenu;
 			global::CarouselView.FormsPlugin.Android.Resource.Style.Widget_AppCompat_PopupMenu_Overflow = global::ContosoFieldService.Droid.Resource.Style.Widget_AppCompat_PopupMenu_Overflow;
 			global::CarouselView.FormsPlugin.Android.Resource.Style.Widget_AppCompat_PopupWindow = global::ContosoFieldService.Droid.Resource.Style.Widget_AppCompat_PopupWindow;
@@ -1974,6 +1993,7 @@ namespace ContosoFieldService.Droid
 			global::CarouselView.FormsPlugin.Android.Resource.Styleable.MediaRouteButton = global::ContosoFieldService.Droid.Resource.Styleable.MediaRouteButton;
 			global::CarouselView.FormsPlugin.Android.Resource.Styleable.MediaRouteButton_android_minHeight = global::ContosoFieldService.Droid.Resource.Styleable.MediaRouteButton_android_minHeight;
 			global::CarouselView.FormsPlugin.Android.Resource.Styleable.MediaRouteButton_android_minWidth = global::ContosoFieldService.Droid.Resource.Styleable.MediaRouteButton_android_minWidth;
+			global::CarouselView.FormsPlugin.Android.Resource.Styleable.MediaRouteButton_buttonTint = global::ContosoFieldService.Droid.Resource.Styleable.MediaRouteButton_buttonTint;
 			global::CarouselView.FormsPlugin.Android.Resource.Styleable.MediaRouteButton_externalRouteEnabledDrawable = global::ContosoFieldService.Droid.Resource.Styleable.MediaRouteButton_externalRouteEnabledDrawable;
 			global::CarouselView.FormsPlugin.Android.Resource.Styleable.MenuGroup = global::ContosoFieldService.Droid.Resource.Styleable.MenuGroup;
 			global::CarouselView.FormsPlugin.Android.Resource.Styleable.MenuGroup_android_checkableBehavior = global::ContosoFieldService.Droid.Resource.Styleable.MenuGroup_android_checkableBehavior;
@@ -2179,6 +2199,49 @@ namespace ContosoFieldService.Droid
 			global::CarouselView.FormsPlugin.Android.Resource.Styleable.ViewStubCompat_android_id = global::ContosoFieldService.Droid.Resource.Styleable.ViewStubCompat_android_id;
 			global::CarouselView.FormsPlugin.Android.Resource.Styleable.ViewStubCompat_android_inflatedId = global::ContosoFieldService.Droid.Resource.Styleable.ViewStubCompat_android_inflatedId;
 			global::CarouselView.FormsPlugin.Android.Resource.Styleable.ViewStubCompat_android_layout = global::ContosoFieldService.Droid.Resource.Styleable.ViewStubCompat_android_layout;
+			global::Com.Android.DeskClock.Resource.String.library_name = global::ContosoFieldService.Droid.Resource.String.library_name;
+			global::Com.ViewPagerIndicator.Resource.Attribute.vpiCentered = global::ContosoFieldService.Droid.Resource.Attribute.vpiCentered;
+			global::Com.ViewPagerIndicator.Resource.Attribute.vpiCirclePageIndicatorStyle = global::ContosoFieldService.Droid.Resource.Attribute.vpiCirclePageIndicatorStyle;
+			global::Com.ViewPagerIndicator.Resource.Attribute.vpiFillColor = global::ContosoFieldService.Droid.Resource.Attribute.vpiFillColor;
+			global::Com.ViewPagerIndicator.Resource.Attribute.vpiOrientation = global::ContosoFieldService.Droid.Resource.Attribute.vpiOrientation;
+			global::Com.ViewPagerIndicator.Resource.Attribute.vpiPageColor = global::ContosoFieldService.Droid.Resource.Attribute.vpiPageColor;
+			global::Com.ViewPagerIndicator.Resource.Attribute.vpiRadius = global::ContosoFieldService.Droid.Resource.Attribute.vpiRadius;
+			global::Com.ViewPagerIndicator.Resource.Attribute.vpiSnap = global::ContosoFieldService.Droid.Resource.Attribute.vpiSnap;
+			global::Com.ViewPagerIndicator.Resource.Attribute.vpiStrokeColor = global::ContosoFieldService.Droid.Resource.Attribute.vpiStrokeColor;
+			global::Com.ViewPagerIndicator.Resource.Attribute.vpiStrokeWidth = global::ContosoFieldService.Droid.Resource.Attribute.vpiStrokeWidth;
+			global::Com.ViewPagerIndicator.Resource.Boolean.default_circle_indicator_centered = global::ContosoFieldService.Droid.Resource.Boolean.default_circle_indicator_centered;
+			global::Com.ViewPagerIndicator.Resource.Boolean.default_circle_indicator_snap = global::ContosoFieldService.Droid.Resource.Boolean.default_circle_indicator_snap;
+			global::Com.ViewPagerIndicator.Resource.Color.default_circle_indicator_fill_color = global::ContosoFieldService.Droid.Resource.Color.default_circle_indicator_fill_color;
+			global::Com.ViewPagerIndicator.Resource.Color.default_circle_indicator_page_color = global::ContosoFieldService.Droid.Resource.Color.default_circle_indicator_page_color;
+			global::Com.ViewPagerIndicator.Resource.Color.default_circle_indicator_stroke_color = global::ContosoFieldService.Droid.Resource.Color.default_circle_indicator_stroke_color;
+			global::Com.ViewPagerIndicator.Resource.Color.vpi__background_holo_dark = global::ContosoFieldService.Droid.Resource.Color.vpi__background_holo_dark;
+			global::Com.ViewPagerIndicator.Resource.Color.vpi__background_holo_light = global::ContosoFieldService.Droid.Resource.Color.vpi__background_holo_light;
+			global::Com.ViewPagerIndicator.Resource.Color.vpi__bright_foreground_disabled_holo_dark = global::ContosoFieldService.Droid.Resource.Color.vpi__bright_foreground_disabled_holo_dark;
+			global::Com.ViewPagerIndicator.Resource.Color.vpi__bright_foreground_disabled_holo_light = global::ContosoFieldService.Droid.Resource.Color.vpi__bright_foreground_disabled_holo_light;
+			global::Com.ViewPagerIndicator.Resource.Color.vpi__bright_foreground_holo_dark = global::ContosoFieldService.Droid.Resource.Color.vpi__bright_foreground_holo_dark;
+			global::Com.ViewPagerIndicator.Resource.Color.vpi__bright_foreground_holo_light = global::ContosoFieldService.Droid.Resource.Color.vpi__bright_foreground_holo_light;
+			global::Com.ViewPagerIndicator.Resource.Color.vpi__bright_foreground_inverse_holo_dark = global::ContosoFieldService.Droid.Resource.Color.vpi__bright_foreground_inverse_holo_dark;
+			global::Com.ViewPagerIndicator.Resource.Color.vpi__bright_foreground_inverse_holo_light = global::ContosoFieldService.Droid.Resource.Color.vpi__bright_foreground_inverse_holo_light;
+			global::Com.ViewPagerIndicator.Resource.Dimension.default_circle_indicator_radius = global::ContosoFieldService.Droid.Resource.Dimension.default_circle_indicator_radius;
+			global::Com.ViewPagerIndicator.Resource.Dimension.default_circle_indicator_stroke_width = global::ContosoFieldService.Droid.Resource.Dimension.default_circle_indicator_stroke_width;
+			global::Com.ViewPagerIndicator.Resource.Id.horizontal = global::ContosoFieldService.Droid.Resource.Id.horizontal;
+			global::Com.ViewPagerIndicator.Resource.Id.vertical = global::ContosoFieldService.Droid.Resource.Id.vertical;
+			global::Com.ViewPagerIndicator.Resource.Integer.default_circle_indicator_orientation = global::ContosoFieldService.Droid.Resource.Integer.default_circle_indicator_orientation;
+			global::Com.ViewPagerIndicator.Resource.String.library_name = global::ContosoFieldService.Droid.Resource.String.library_name;
+			global::Com.ViewPagerIndicator.Resource.Style.Theme_PageIndicatorDefaults = global::ContosoFieldService.Droid.Resource.Style.Theme_PageIndicatorDefaults;
+			global::Com.ViewPagerIndicator.Resource.Style.Widget = global::ContosoFieldService.Droid.Resource.Style.Widget;
+			global::Com.ViewPagerIndicator.Resource.Style.Widget_CirclePageIndicator = global::ContosoFieldService.Droid.Resource.Style.Widget_CirclePageIndicator;
+			global::Com.ViewPagerIndicator.Resource.Styleable.CirclePageIndicator = global::ContosoFieldService.Droid.Resource.Styleable.CirclePageIndicator;
+			global::Com.ViewPagerIndicator.Resource.Styleable.CirclePageIndicator_vpiCentered = global::ContosoFieldService.Droid.Resource.Styleable.CirclePageIndicator_vpiCentered;
+			global::Com.ViewPagerIndicator.Resource.Styleable.CirclePageIndicator_vpiFillColor = global::ContosoFieldService.Droid.Resource.Styleable.CirclePageIndicator_vpiFillColor;
+			global::Com.ViewPagerIndicator.Resource.Styleable.CirclePageIndicator_vpiOrientation = global::ContosoFieldService.Droid.Resource.Styleable.CirclePageIndicator_vpiOrientation;
+			global::Com.ViewPagerIndicator.Resource.Styleable.CirclePageIndicator_vpiPageColor = global::ContosoFieldService.Droid.Resource.Styleable.CirclePageIndicator_vpiPageColor;
+			global::Com.ViewPagerIndicator.Resource.Styleable.CirclePageIndicator_vpiRadius = global::ContosoFieldService.Droid.Resource.Styleable.CirclePageIndicator_vpiRadius;
+			global::Com.ViewPagerIndicator.Resource.Styleable.CirclePageIndicator_vpiSnap = global::ContosoFieldService.Droid.Resource.Styleable.CirclePageIndicator_vpiSnap;
+			global::Com.ViewPagerIndicator.Resource.Styleable.CirclePageIndicator_vpiStrokeColor = global::ContosoFieldService.Droid.Resource.Styleable.CirclePageIndicator_vpiStrokeColor;
+			global::Com.ViewPagerIndicator.Resource.Styleable.CirclePageIndicator_vpiStrokeWidth = global::ContosoFieldService.Droid.Resource.Styleable.CirclePageIndicator_vpiStrokeWidth;
+			global::Com.ViewPagerIndicator.Resource.Styleable.ViewPagerIndicator = global::ContosoFieldService.Droid.Resource.Styleable.ViewPagerIndicator;
+			global::Com.ViewPagerIndicator.Resource.Styleable.ViewPagerIndicator_vpiCirclePageIndicatorStyle = global::ContosoFieldService.Droid.Resource.Styleable.ViewPagerIndicator_vpiCirclePageIndicatorStyle;
 			global::Lottie.Forms.Droid.Resource.Animation.abc_fade_in = global::ContosoFieldService.Droid.Resource.Animation.abc_fade_in;
 			global::Lottie.Forms.Droid.Resource.Animation.abc_fade_out = global::ContosoFieldService.Droid.Resource.Animation.abc_fade_out;
 			global::Lottie.Forms.Droid.Resource.Animation.abc_grow_fade_in_from_bottom = global::ContosoFieldService.Droid.Resource.Animation.abc_grow_fade_in_from_bottom;
@@ -2394,6 +2457,7 @@ namespace ContosoFieldService.Droid
 			global::Lottie.Forms.Droid.Resource.Attribute.lottie_imageAssetsFolder = global::ContosoFieldService.Droid.Resource.Attribute.lottie_imageAssetsFolder;
 			global::Lottie.Forms.Droid.Resource.Attribute.lottie_loop = global::ContosoFieldService.Droid.Resource.Attribute.lottie_loop;
 			global::Lottie.Forms.Droid.Resource.Attribute.lottie_progress = global::ContosoFieldService.Droid.Resource.Attribute.lottie_progress;
+			global::Lottie.Forms.Droid.Resource.Attribute.lottie_rawRes = global::ContosoFieldService.Droid.Resource.Attribute.lottie_rawRes;
 			global::Lottie.Forms.Droid.Resource.Attribute.lottie_scale = global::ContosoFieldService.Droid.Resource.Attribute.lottie_scale;
 			global::Lottie.Forms.Droid.Resource.Attribute.maxActionInlineWidth = global::ContosoFieldService.Droid.Resource.Attribute.maxActionInlineWidth;
 			global::Lottie.Forms.Droid.Resource.Attribute.maxButtonHeight = global::ContosoFieldService.Droid.Resource.Attribute.maxButtonHeight;
@@ -2879,7 +2943,13 @@ namespace ContosoFieldService.Droid
 			global::Lottie.Forms.Droid.Resource.Drawable.abc_textfield_search_material = global::ContosoFieldService.Droid.Resource.Drawable.abc_textfield_search_material;
 			global::Lottie.Forms.Droid.Resource.Drawable.abc_vector_test = global::ContosoFieldService.Droid.Resource.Drawable.abc_vector_test;
 			global::Lottie.Forms.Droid.Resource.Drawable.avd_hide_password = global::ContosoFieldService.Droid.Resource.Drawable.avd_hide_password;
+			global::Lottie.Forms.Droid.Resource.Drawable.avd_hide_password_1 = global::ContosoFieldService.Droid.Resource.Drawable.avd_hide_password_1;
+			global::Lottie.Forms.Droid.Resource.Drawable.avd_hide_password_2 = global::ContosoFieldService.Droid.Resource.Drawable.avd_hide_password_2;
+			global::Lottie.Forms.Droid.Resource.Drawable.avd_hide_password_3 = global::ContosoFieldService.Droid.Resource.Drawable.avd_hide_password_3;
 			global::Lottie.Forms.Droid.Resource.Drawable.avd_show_password = global::ContosoFieldService.Droid.Resource.Drawable.avd_show_password;
+			global::Lottie.Forms.Droid.Resource.Drawable.avd_show_password_1 = global::ContosoFieldService.Droid.Resource.Drawable.avd_show_password_1;
+			global::Lottie.Forms.Droid.Resource.Drawable.avd_show_password_2 = global::ContosoFieldService.Droid.Resource.Drawable.avd_show_password_2;
+			global::Lottie.Forms.Droid.Resource.Drawable.avd_show_password_3 = global::ContosoFieldService.Droid.Resource.Drawable.avd_show_password_3;
 			global::Lottie.Forms.Droid.Resource.Drawable.design_bottom_navigation_item_background = global::ContosoFieldService.Droid.Resource.Drawable.design_bottom_navigation_item_background;
 			global::Lottie.Forms.Droid.Resource.Drawable.design_fab_background = global::ContosoFieldService.Droid.Resource.Drawable.design_fab_background;
 			global::Lottie.Forms.Droid.Resource.Drawable.design_ic_visibility = global::ContosoFieldService.Droid.Resource.Drawable.design_ic_visibility;
@@ -4098,6 +4168,7 @@ namespace ContosoFieldService.Droid
 			global::Lottie.Forms.Droid.Resource.Styleable.LottieAnimationView_lottie_imageAssetsFolder = global::ContosoFieldService.Droid.Resource.Styleable.LottieAnimationView_lottie_imageAssetsFolder;
 			global::Lottie.Forms.Droid.Resource.Styleable.LottieAnimationView_lottie_loop = global::ContosoFieldService.Droid.Resource.Styleable.LottieAnimationView_lottie_loop;
 			global::Lottie.Forms.Droid.Resource.Styleable.LottieAnimationView_lottie_progress = global::ContosoFieldService.Droid.Resource.Styleable.LottieAnimationView_lottie_progress;
+			global::Lottie.Forms.Droid.Resource.Styleable.LottieAnimationView_lottie_rawRes = global::ContosoFieldService.Droid.Resource.Styleable.LottieAnimationView_lottie_rawRes;
 			global::Lottie.Forms.Droid.Resource.Styleable.LottieAnimationView_lottie_scale = global::ContosoFieldService.Droid.Resource.Styleable.LottieAnimationView_lottie_scale;
 			global::Lottie.Forms.Droid.Resource.Styleable.MediaRouteButton = global::ContosoFieldService.Droid.Resource.Styleable.MediaRouteButton;
 			global::Lottie.Forms.Droid.Resource.Styleable.MediaRouteButton_android_minHeight = global::ContosoFieldService.Droid.Resource.Styleable.MediaRouteButton_android_minHeight;
@@ -5033,32 +5104,35 @@ namespace ContosoFieldService.Droid
 			// aapt resource value: 0x7f010118
 			public const int logoDescription = 2130772248;
 			
-			// aapt resource value: 0x7f010173
-			public const int lottie_autoPlay = 2130772339;
-			
-			// aapt resource value: 0x7f010178
-			public const int lottie_cacheStrategy = 2130772344;
+			// aapt resource value: 0x7f010174
+			public const int lottie_autoPlay = 2130772340;
 			
 			// aapt resource value: 0x7f010179
-			public const int lottie_colorFilter = 2130772345;
+			public const int lottie_cacheStrategy = 2130772345;
 			
-			// aapt resource value: 0x7f010177
-			public const int lottie_enableMergePathsForKitKatAndAbove = 2130772343;
+			// aapt resource value: 0x7f01017a
+			public const int lottie_colorFilter = 2130772346;
+			
+			// aapt resource value: 0x7f010178
+			public const int lottie_enableMergePathsForKitKatAndAbove = 2130772344;
 			
 			// aapt resource value: 0x7f010172
 			public const int lottie_fileName = 2130772338;
 			
-			// aapt resource value: 0x7f010175
-			public const int lottie_imageAssetsFolder = 2130772341;
-			
-			// aapt resource value: 0x7f010174
-			public const int lottie_loop = 2130772340;
-			
 			// aapt resource value: 0x7f010176
-			public const int lottie_progress = 2130772342;
+			public const int lottie_imageAssetsFolder = 2130772342;
 			
-			// aapt resource value: 0x7f01017a
-			public const int lottie_scale = 2130772346;
+			// aapt resource value: 0x7f010175
+			public const int lottie_loop = 2130772341;
+			
+			// aapt resource value: 0x7f010177
+			public const int lottie_progress = 2130772343;
+			
+			// aapt resource value: 0x7f010173
+			public const int lottie_rawRes = 2130772339;
+			
+			// aapt resource value: 0x7f01017b
+			public const int lottie_scale = 2130772347;
 			
 			// aapt resource value: 0x7f010000
 			public const int mapType = 2130771968;
@@ -5513,32 +5587,32 @@ namespace ContosoFieldService.Droid
 			// aapt resource value: 0x7f0100fa
 			public const int voiceIcon = 2130772218;
 			
-			// aapt resource value: 0x7f01017c
-			public const int vpiCentered = 2130772348;
-			
-			// aapt resource value: 0x7f01017b
-			public const int vpiCirclePageIndicatorStyle = 2130772347;
-			
-			// aapt resource value: 0x7f010181
-			public const int vpiFillColor = 2130772353;
-			
-			// aapt resource value: 0x7f01017e
-			public const int vpiOrientation = 2130772350;
-			
 			// aapt resource value: 0x7f01017d
-			public const int vpiPageColor = 2130772349;
+			public const int vpiCentered = 2130772349;
 			
-			// aapt resource value: 0x7f010180
-			public const int vpiRadius = 2130772352;
-			
-			// aapt resource value: 0x7f01017f
-			public const int vpiSnap = 2130772351;
+			// aapt resource value: 0x7f01017c
+			public const int vpiCirclePageIndicatorStyle = 2130772348;
 			
 			// aapt resource value: 0x7f010182
-			public const int vpiStrokeColor = 2130772354;
+			public const int vpiFillColor = 2130772354;
+			
+			// aapt resource value: 0x7f01017f
+			public const int vpiOrientation = 2130772351;
+			
+			// aapt resource value: 0x7f01017e
+			public const int vpiPageColor = 2130772350;
+			
+			// aapt resource value: 0x7f010181
+			public const int vpiRadius = 2130772353;
+			
+			// aapt resource value: 0x7f010180
+			public const int vpiSnap = 2130772352;
 			
 			// aapt resource value: 0x7f010183
-			public const int vpiStrokeWidth = 2130772355;
+			public const int vpiStrokeColor = 2130772355;
+			
+			// aapt resource value: 0x7f010184
+			public const int vpiStrokeWidth = 2130772356;
 			
 			// aapt resource value: 0x7f010067
 			public const int windowActionBar = 2130772071;
@@ -6717,8 +6791,26 @@ namespace ContosoFieldService.Droid
 			// aapt resource value: 0x7f020053
 			public const int avd_hide_password = 2130837587;
 			
+			// aapt resource value: 0x7f020132
+			public const int avd_hide_password_1 = 2130837810;
+			
+			// aapt resource value: 0x7f020133
+			public const int avd_hide_password_2 = 2130837811;
+			
+			// aapt resource value: 0x7f020134
+			public const int avd_hide_password_3 = 2130837812;
+			
 			// aapt resource value: 0x7f020054
 			public const int avd_show_password = 2130837588;
+			
+			// aapt resource value: 0x7f020135
+			public const int avd_show_password_1 = 2130837813;
+			
+			// aapt resource value: 0x7f020136
+			public const int avd_show_password_2 = 2130837814;
+			
+			// aapt resource value: 0x7f020137
+			public const int avd_show_password_3 = 2130837815;
 			
 			// aapt resource value: 0x7f020055
 			public const int ba747 = 2130837589;
@@ -10712,14 +10804,14 @@ namespace ContosoFieldService.Droid
 			public const int CardView_contentPaddingTop = 11;
 			
 			public static int[] CirclePageIndicator = new int[] {
-					2130772348,
 					2130772349,
 					2130772350,
 					2130772351,
 					2130772352,
 					2130772353,
 					2130772354,
-					2130772355};
+					2130772355,
+					2130772356};
 			
 			// aapt resource value: 0
 			public const int CirclePageIndicator_vpiCentered = 0;
@@ -11080,34 +11172,38 @@ namespace ContosoFieldService.Droid
 					2130772343,
 					2130772344,
 					2130772345,
-					2130772346};
+					2130772346,
+					2130772347};
 			
-			// aapt resource value: 1
-			public const int LottieAnimationView_lottie_autoPlay = 1;
-			
-			// aapt resource value: 6
-			public const int LottieAnimationView_lottie_cacheStrategy = 6;
+			// aapt resource value: 2
+			public const int LottieAnimationView_lottie_autoPlay = 2;
 			
 			// aapt resource value: 7
-			public const int LottieAnimationView_lottie_colorFilter = 7;
+			public const int LottieAnimationView_lottie_cacheStrategy = 7;
 			
-			// aapt resource value: 5
-			public const int LottieAnimationView_lottie_enableMergePathsForKitKatAndAbove = 5;
+			// aapt resource value: 8
+			public const int LottieAnimationView_lottie_colorFilter = 8;
+			
+			// aapt resource value: 6
+			public const int LottieAnimationView_lottie_enableMergePathsForKitKatAndAbove = 6;
 			
 			// aapt resource value: 0
 			public const int LottieAnimationView_lottie_fileName = 0;
 			
-			// aapt resource value: 3
-			public const int LottieAnimationView_lottie_imageAssetsFolder = 3;
-			
-			// aapt resource value: 2
-			public const int LottieAnimationView_lottie_loop = 2;
-			
 			// aapt resource value: 4
-			public const int LottieAnimationView_lottie_progress = 4;
+			public const int LottieAnimationView_lottie_imageAssetsFolder = 4;
 			
-			// aapt resource value: 8
-			public const int LottieAnimationView_lottie_scale = 8;
+			// aapt resource value: 3
+			public const int LottieAnimationView_lottie_loop = 3;
+			
+			// aapt resource value: 5
+			public const int LottieAnimationView_lottie_progress = 5;
+			
+			// aapt resource value: 1
+			public const int LottieAnimationView_lottie_rawRes = 1;
+			
+			// aapt resource value: 9
+			public const int LottieAnimationView_lottie_scale = 9;
 			
 			public static int[] MapAttrs = new int[] {
 					2130771968,
@@ -11986,7 +12082,7 @@ namespace ContosoFieldService.Droid
 			public const int ViewBackgroundHelper_backgroundTintMode = 2;
 			
 			public static int[] ViewPagerIndicator = new int[] {
-					2130772347};
+					2130772348};
 			
 			// aapt resource value: 0
 			public const int ViewPagerIndicator_vpiCirclePageIndicatorStyle = 0;
