@@ -31,12 +31,12 @@ namespace ContosoFieldService.iOS
 
             // Code for starting up the Xamarin Test Cloud Agent
 #if DEBUG
-			Xamarin.Calabash.Start();
+            Xamarin.Calabash.Start();
 #endif
 
             LoadApplication(new App());
 
-            UITabBar.Appearance.BarTintColor = "#222E38".ToUIColor();
+            UITabBar.Appearance.BarTintColor = "#00D8CB".ToUIColor();
             UITabBar.Appearance.TintColor = UIColor.White;
 
             UINavigationBar.Appearance.BackgroundColor = "#222E38".ToUIColor();

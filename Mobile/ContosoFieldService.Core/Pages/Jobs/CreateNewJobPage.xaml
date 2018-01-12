@@ -1,7 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
-             x:Class="ContosoFieldService.Pages.CreateNewJobPage">
+             x:Class="ContosoFieldService.Pages.CreateNewJobPage"
+             BackgroundColor="#222E38"
+             Title="Create New Job">
 	<ContentPage.Content>
+        <ScrollView>
+            <StackLayout>
+
+                 <!-- Signup Stack -->
+               <StackLayout Orientation="Vertical" Padding="15,5,15,15" VerticalOptions="FillAndExpand">
+                    <Entry 
+                        Text="{Binding Name}" 
+                        Placeholder="Full Name" 
+                        PlaceholderColor="#515151" 
+                        BackgroundColor="#1C262F" 
+                        TextColor="White" 
+                        FontFamily="AvenirNext-Regular" 
+                        HeightRequest="40">
+                    </Entry>
+                    
+                    <Entry 
+                        Text="{Binding Details}" 
+                        Placeholder="Details" 
+                        PlaceholderColor="#515151" 
+                        BackgroundColor="#1C262F" 
+                        TextColor="White" 
+                        FontFamily="AvenirNext-Regular" 
+                        HeightRequest="40">
+                    </Entry>
+
+              </StackLayout>  
+                
+                <StackLayout VerticalOptions="End">
+                    <Button Command="{Binding CancelClicked}" Text="Cancel"></Button>
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
 	</ContentPage.Content>
 </ContentPage>

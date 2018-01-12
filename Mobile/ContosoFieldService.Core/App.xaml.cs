@@ -9,6 +9,7 @@ using Microsoft.AppCenter.Push;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
+[assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 namespace ContosoFieldService
 {
     public partial class App : Application
@@ -24,10 +25,11 @@ namespace ContosoFieldService
             if (Xamarin.Forms.Device.RuntimePlatform == Xamarin.Forms.Device.iOS)
             {
                 var tabbedNavigation = new FreshTabbedNavigationContainer("authed");
-                tabbedNavigation.AddTab<DashboardPageModel>("Dashboard", null);
-                tabbedNavigation.AddTab<JobsPageModel>("Jobs", null);
-                tabbedNavigation.AddTab<JobsPageModel>("Parts", null);
-                tabbedNavigation.AddTab<ProfilePageModel>("Me", null);
+                tabbedNavigation.AddTab<DashboardPageModel>("Dashboard", "icon_dashboard.png");
+                tabbedNavigation.AddTab<JobsPageModel>("Jobs", "icon_jobs.png");
+
+                tabbedNavigation.AddTab<PartsPageModel>("Parts", "icon_parts.png");
+                tabbedNavigation.AddTab<ProfilePageModel>("Me", "icon_user.png");
 
                 tabbedNavigation.BarBackgroundColor = Color.FromHex("#222E38");
                 tabbedNavigation.BarTextColor = Color.White;
@@ -41,7 +43,7 @@ namespace ContosoFieldService
                 navContainer.Init("Menu", "hamburger.png");
                 navContainer.AddPage<DashboardPageModel>("Start");
                 navContainer.AddPage<JobsPageModel>("Jobs");
-                navContainer.AddPage<JobsPageModel>("Parts");
+                navContainer.AddPage<PartsPageModel>("Parts");
                 navContainer.AddPage<ProfilePageModel>("Me");
 
                 MainPage = navContainer;
