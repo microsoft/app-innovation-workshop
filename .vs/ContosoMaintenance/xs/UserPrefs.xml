@@ -1,5 +1,5 @@
-﻿<Properties StartupConfiguration="{E2745280-BDD1-4F5D-B976-199B9AA7602C}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Mobile/ContosoFieldService.Core/Pages/Parts/PartsPage.xaml">
+﻿<Properties StartupConfiguration="{903A6DB8-26AB-466D-8ACD-7A7A2DE9A67F}|">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Backend/Functions/ResizeImage.cs">
     <Files>
       <File FileName="Mobile/ContosoFieldService.Core/App.xaml.cs" Line="28" Column="21" />
       <File FileName="Backend/Monolithic/Services/DocumentDBRepositoryBase.cs" Line="1" Column="1" />
@@ -11,7 +11,7 @@
       <File FileName="Mobile/ContosoFieldService.Core/Helpers/Constants.cs" Line="1" Column="1" />
       <File FileName="Mobile/ContosoFieldService.Core/Helpers/CustomAndroidNavigation.cs" Line="1" Column="1" />
       <File FileName="Mobile/ContosoFieldService.Core/Helpers/Settings.cs" Line="1" Column="1" />
-      <File FileName="Backend/Monolithic/Models/Job.cs" Line="30" Column="6" />
+      <File FileName="Backend/Monolithic/Models/Job.cs" Line="30" Column="9" />
       <File FileName="Mobile/iOS/Main.cs" Line="21" Column="1" />
       <File FileName="Mobile/ContosoFieldService.Core/Pages/LoginPage.xaml" Line="49" Column="1" />
       <File FileName="Mobile/UITests/AppInitializer.cs" Line="1" Column="1" />
@@ -29,9 +29,11 @@
       <File FileName="Mobile/ContosoFieldService.Core/obj/Debug/netstandard2.0/ContosoFieldService.Pages.Jobs.JobDetailsPage.xaml.g.cs" Line="19" Column="39" />
       <File FileName="Mobile/ContosoFieldService.Core/Pages/Parts/PartsPage.xaml" Line="6" Column="1" />
       <File FileName="Mobile/ContosoFieldService.Core/Pages/Parts/PartsPage.xaml.cs" Line="1" Column="1" />
+      <File FileName="Backend/Functions/ResizeImage.cs" Line="36" Column="74" />
       <File FileName="Mobile/ContosoFieldService.Core/Pages/Jobs/JobsPage.xaml" Line="76" Column="1" NotebookId="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.ItemProperties.Functions.ContosoMaintenance.Functions PreferredExecutionTarget="MonoDevelop.Default" />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
