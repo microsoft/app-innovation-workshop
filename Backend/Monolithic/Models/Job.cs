@@ -1,4 +1,5 @@
-﻿using Microsoft.Azure.Search;
+﻿using System.Collections.Generic;
+using Microsoft.Azure.Search;
 using Microsoft.Azure.Search.Models;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
