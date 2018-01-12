@@ -6,6 +6,11 @@
     xmlns:lottie="clr-namespace:Lottie.Forms;assembly=Lottie.Forms"
     BackgroundColor="#222E38"
     Title="Jobs">
+     <ContentPage.ToolbarItems>
+       <ToolbarItem 
+            Icon="icon_add.png" 
+            Command="{Binding AddJobClicked}"/>
+    </ContentPage.ToolbarItems>
 	<ContentPage.Content>
         <Grid>
             <Grid.RowDefinitions>
@@ -16,14 +21,15 @@
             <StackLayout>
                 <SearchBar SearchCommand="{Binding Search}" 
                            Text="{Binding SearchText}"
+                           Placeholder="Search"
                            BackgroundColor="#222E38">
                 </SearchBar>
                     <ListView 
-                        BackgroundColor="#222E38" 
+                        BackgroundColor="Transparent" 
                         RowHeight="65" 
-                        CachingStrategy="RecycleElement" 
                         ItemsSource="{Binding Jobs}" 
                         SelectedItem="{Binding SelectedJob, Mode=TwoWay}"
+                        ItemSelected="Handle_ItemSelected"
                         IsPullToRefreshEnabled="True">
                         <ListView.ItemTemplate>
                             <DataTemplate>

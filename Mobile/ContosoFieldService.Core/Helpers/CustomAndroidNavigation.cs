@@ -44,9 +44,11 @@ namespace ContosoFieldService.Helpers
         {
             var page = FreshPageModelResolver.ResolvePageModel<T>(data);
             page.GetModel().CurrentNavigationServiceName = NavigationServiceName;
+            page.Icon = "icon_user.png";
             _pagesInner.Add(page);
 
             var navigationContainer = CreateContainerPage(page);
+            navigationContainer.Icon = "icon_user.png";
             _pages.Add(title, navigationContainer);
             _pageNames.Add(title);
 

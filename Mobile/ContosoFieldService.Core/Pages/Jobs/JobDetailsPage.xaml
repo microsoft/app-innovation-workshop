@@ -2,17 +2,272 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
     x:Class="ContosoFieldService.Pages.JobDetailsPage"
-    BackgroundColor="#222E38"
+    xmlns:Maps="clr-namespace:Xamarin.Forms.Maps;assembly=Xamarin.Forms.Maps.dll"
+    xmlns:controls="clr-namespace:ContosoFieldService.Controls;assembly=ContosoFieldService.Core"
+    BackgroundColor="#ffffff"
     Title="Job Details">
-     <ContentPage.ToolbarItems>
-        <ToolbarItem Icon="icon_add.png" />
-    </ContentPage.ToolbarItems>
 	<ContentPage.Content>
         <ScrollView>
             <StackLayout>
-                <Image Source="ba747.jpeg" Aspect="AspectFill" HeightRequest="140"></Image>
-                <Label Text="{Binding Name}" TextColor="White" FontSize="22" Margin="0,20,0,0"></Label>
-                <Label Text="{Binding Details}" TextColor="White" FontSize="16" Margin="0,5,0,0"></Label>
+
+                <!-- Job Name Banner --> 
+                <Button 
+                    Text="{Binding Name}" 
+                    TextColor="#ffffff" 
+                    HeightRequest="50"
+                    BackgroundColor="#D83E01" 
+                    BorderRadius="0" 
+                    FontFamily="AvenirNext-Medium">
+                    <Button.FontSize>
+                        <OnPlatform x:TypeArguments="x:Double">
+                          <On Platform="iOS" Value="18" />
+                          <On Platform="Android" Value="16" />
+                        </OnPlatform>
+                    </Button.FontSize>
+                </Button>
+
+                <!-- Overview Stack -->
+                <StackLayout Orientation="Vertical" Padding="15,5,5,15" BackgroundColor="#ffffff">
+
+                    <!-- Overview Title -->
+                    <StackLayout Orientation="Horizontal">
+                        <Label 
+                            Text="Overview" 
+                            TextColor="#212121" 
+                            FontFamily="AvenirNext-Medium" 
+                            FontSize="16" 
+                            HorizontalOptions="Start" />
+                    </StackLayout>
+
+                    <!-- Job Age -->
+                    <StackLayout Orientation="Vertical">
+                        <!-- Value -->
+                        <Label 
+                            Text="{Binding Age}" 
+                            TextColor="#D83E01" 
+                            FontSize="17" 
+                            FontFamily="AvenirNext-Medium"
+                            HorizontalTextAlignment="Start">
+                        </Label>
+                        
+                        <!-- Title -->
+                        <Label 
+                            Text="Age" 
+                            FontFamily="AvenirNext-Regular" 
+                            Margin="0,-5,0,0" TextColor="#777777" 
+                            HorizontalTextAlignment="Start" 
+                            FontSize="12">
+                        </Label>
+                    </StackLayout>
+
+                    <!-- Due Date -->
+                    <StackLayout Orientation="Vertical">
+                        <!-- Value -->
+                        <Label 
+                            Text="{Binding DueDate}" 
+                            TextColor="#D83E01" 
+                            FontFamily="AvenirNext-Medium" 
+                            FontSize="17"
+                            HorizontalTextAlignment="Start">
+                        </Label>
+
+                        <!-- Title -->
+                        <Label 
+                            Text="Due Date" 
+                            FontFamily="AvenirNext-Regular" 
+                            Margin="0,-5,0,0" 
+                            TextColor="#777777" 
+                            HorizontalTextAlignment="Start" 
+                            FontSize="12">
+                        </Label>
+                    </StackLayout>
+                </StackLayout>
+
+                <!-- Divier -->
+                <BoxView HeightRequest="1" BackgroundColor="#777777" Opacity="0.2"  ></BoxView>
+
+               <!-- Details Stack -->
+               <StackLayout Orientation="Vertical" Padding="15,5,5,15" BackgroundColor="#ffffff">
+
+                    <!-- Details Title-->
+                    <StackLayout Orientation="Horizontal">
+                        <Label 
+                            Text="Details" 
+                            TextColor="#212121" 
+                            FontFamily="AvenirNext-Medium" 
+                            FontSize="16" 
+                            HorizontalOptions="Start" />
+                    </StackLayout>
+
+                    <!-- Details Text -->
+                    <Editor
+                        Text="{Binding Details}"
+                        TextColor="#838383" 
+                        FontFamily="AvenirNext-Regular" 
+                        FontSize="17"
+                        IsEnabled="false">
+                    </Editor>
+                </StackLayout>
+
+                <!-- Divider -->
+                <BoxView HeightRequest="1" BackgroundColor="#777777" Opacity="0.2"  ></BoxView>
+
+                <!-- Customer Info Stack -->
+               <StackLayout Orientation="Vertical" Padding="15,5,5,15" BackgroundColor="#ffffff">
+
+                    <!-- Customer Info Title -->
+                    <StackLayout Orientation="Horizontal">
+                        <Label 
+                            Text="Customer Info" 
+                            TextColor="#212121" 
+                            FontFamily="AvenirNext-Medium" 
+                            FontSize="16" 
+                            HorizontalOptions="Start" />
+                    </StackLayout>
+
+                    <!-- Contact Name -->
+                     <StackLayout Orientation="Horizontal" Margin="0,5,0,0">
+                        <StackLayout Orientation="Vertical">
+                            <!-- Value -->
+                            <Label 
+                                Text="{Binding ContactName}" 
+                                TextColor="#D83E01" 
+                                FontFamily="AvenirNext-Medium" 
+                                FontSize="17">
+                            </Label>
+
+                            <!-- Title -->
+                            <Label 
+                                Text="Contact Name" 
+                                FontFamily="AvenirNext-Regular" 
+                                Margin="0,-5,0,0" 
+                                TextColor="#777777" 
+                                HorizontalTextAlignment="Start" 
+                                FontSize="12">
+                            </Label>
+                        </StackLayout>
+                    </StackLayout>
+
+                    <!-- Company Name -->
+                     <StackLayout Orientation="Horizontal" Margin="0,5,0,0">
+                        <StackLayout Orientation="Vertical">
+                            <!-- Value -->
+                            <Label 
+                                Text="{Binding CompanyName}" 
+                                TextColor="#D83E01" 
+                                FontFamily="AvenirNext-Medium" 
+                                FontSize="17">
+                            </Label>
+
+                            <!-- Title -->
+                            <Label 
+                                Text="Company Name" 
+                                FontFamily="AvenirNext-Regular" 
+                                Margin="0,-5,0,0" 
+                                TextColor="#777777" 
+                                HorizontalTextAlignment="Start" 
+                                FontSize="12">
+                            </Label>
+                        </StackLayout>
+                    </StackLayout>
+                </StackLayout>
+
+                <!-- Map View -->
+                <Maps:Map 
+                    x:Name="mapView" 
+                    HeightRequest="200" 
+                    IsShowingUser="true" 
+                    MapType="Street" 
+                    IsEnabled="false">
+                </Maps:Map>
+
+               <!-- Job Options -->
+               <StackLayout Orientation="Vertical" Padding="15,5,5,15" BackgroundColor="#ffffff">
+
+                    <!-- Customer Info Title -->
+                    <StackLayout Orientation="Horizontal">
+                        <Label 
+                            Text="Options" 
+                            TextColor="#212121" 
+                            FontFamily="AvenirNext-Medium" 
+                            FontSize="16" 
+                            HorizontalOptions="Start" />
+                    </StackLayout>
+
+                    <!-- The iOS version uses a custom button and renderer -->
+                    <Grid Grid.Row="1" ColumnSpacing="1" RowSpacing="1" BackgroundColor="#e0e0e0"> 
+                        <Grid.IsVisible>
+                            <OnPlatform x:TypeArguments="x:Boolean">
+                                <On Platform="iOS" Value="true" />
+                                <On Platform="Android" Value="false" />
+                            </OnPlatform>
+                        </Grid.IsVisible>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+
+                        <!-- Start Job -->
+                        <Button 
+                            Grid.Row="0" 
+                            Grid.Column="0" 
+                            HeightRequest="55" 
+                            BackgroundColor="White" 
+                            TextColor="#01D8CB" 
+                            FontSize="18" 
+                            BorderRadius="0"  
+                            Text="Start Job" 
+                            FontFamily="AvenirNext-Medium"
+                            Command="{Binding StartJobClicked}">
+                        </Button>
+
+                        <!-- Edit Button -->
+                        <Button 
+                            Grid.Row="0" 
+                            Grid.Column="1" 
+                            HeightRequest="55" 
+                            BackgroundColor="White" 
+                            TextColor="#F5A623" 
+                            FontSize="18" 
+                            BorderRadius="0" 
+                            Text="Edit Job"
+                            FontFamily="AvenirNext-Medium"
+                            Command="{Binding EditJobClicked}">
+                        </Button>
+
+                        <!-- Delete Job -->
+                        <Button
+                            Grid.Row="1" 
+                            Grid.Column="0" 
+                            HeightRequest="55" 
+                            BackgroundColor="White" 
+                            TextColor="#D83E01" 
+                            FontSize="18" 
+                            BorderRadius="0" 
+                            Text="Delete Job"
+                            FontFamily="AvenirNext-Medium"
+                            Command="{Binding DeleteJobClicked}">
+                        </Button>
+
+                        <!-- Order Parts -->
+                        <Button 
+                            Grid.Row="1" 
+                            Grid.Column="1" 
+                            TextColor="#0193D8"
+                            HeightRequest="55" 
+                            BackgroundColor="White" 
+                            FontSize="18" 
+                            BorderRadius="0" 
+                            Text="Order Parts"
+                            FontFamily="AvenirNext-Medium"
+                            Command="{Binding OrderPartsClicked}">
+                        </Button>
+                   </Grid> 
+                </StackLayout>
             </StackLayout>
         </ScrollView>
 	</ContentPage.Content>

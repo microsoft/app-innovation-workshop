@@ -25,10 +25,37 @@
                                     <constraint id="201" firstItem="197" firstAttribute="width" constant="206"/>
                                 </constraints>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="407" translatesAutoresizingMaskIntoConstraints="NO" usesAttributedText="YES">
+                                <rect key="frame" x="20" y="685" width="374" height="21"/>
+                                <color key="textColor" colorSpace="calibratedWhite" white="1" alpha="1"/>
+                                <nil key="highlightedColor"/>
+                                <constraints>
+                                    <constraint id="411" firstItem="407" firstAttribute="height" constant="21"/>
+                                </constraints>
+                                <attributedString key="attributedText">
+                                    <fragment content="Powered by">
+                                        <attributes>
+                                            <color key="NSColor" colorSpace="calibratedRGB" red="0.4" green="0.4" blue="0.4" alpha="1"/>
+                                            <font key="NSFont" name="Avenir-Heavy" family="Avenir" size="17"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content=" Microsoft">
+                                        <attributes>
+                                            <color key="NSColor" colorSpace="calibratedWhite" white="1" alpha="1"/>
+                                            <font key="NSFont" name="Avenir-Heavy" family="Avenir" size="17"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                            </label>
                         </subviews>
                         <constraints>
                             <constraint id="198" firstItem="197" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX"/>
                             <constraint id="199" firstItem="197" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY"/>
+                            <constraint id="408" firstItem="Ze5-6b-2t3" firstAttribute="bottom" secondItem="407" secondAttribute="bottom" constant="30"/>
+                            <constraint id="409" firstItem="407" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin"/>
+                            <constraint id="410" firstItem="407" firstAttribute="trailing" secondItem="Ze5-6b-2t3" secondAttribute="trailingMargin"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -43,5 +70,11 @@
         <image name="ba747.jpeg" width="426" height="118"/>
         <image name="icon_comments.png" width="32.5" height="32.5"/>
         <image name="icon_add.png" width="25" height="25"/>
+        <image name="trash-icon.png" width="36" height="36"/>
+        <image name="icon_jobs_default.png" width="47" height="41"/>
+        <image name="icon_dashboard.png" width="22" height="22"/>
+        <image name="icon_jobs.png" width="22" height="20"/>
+        <image name="icon_parts.png" width="22" height="22"/>
+        <image name="icon_user.png" width="22" height="22"/>
     </resources>
 </document>

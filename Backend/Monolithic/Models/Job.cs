@@ -28,7 +28,6 @@ namespace ContosoMaintenance.WebAPI.Models
 
         public Employee AssignedTo { get; set; }
 
-        public List<Photo> Photos { get; set; }
     }
 
     [JsonConverter(typeof(StringEnumConverter))]

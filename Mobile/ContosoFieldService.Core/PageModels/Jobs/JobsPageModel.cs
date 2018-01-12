@@ -68,6 +68,17 @@ namespace ContosoFieldService.PageModels
             }
         }
 
+        public Command AddJobClicked
+        {
+            get
+            {
+                return new Command(async () =>
+                {
+                    await CoreMethods.PushPageModel<CreateNewJobPageModel>(null, true, true);
+                });
+            }
+        }
+
         #endregion
 
         #region Overrides
@@ -89,6 +100,7 @@ namespace ContosoFieldService.PageModels
         public override async void ReverseInit(object returndData)
         {
             base.ReverseInit(returndData);
+            SelectedJob = null;
             await ReloadData();
         }
 
