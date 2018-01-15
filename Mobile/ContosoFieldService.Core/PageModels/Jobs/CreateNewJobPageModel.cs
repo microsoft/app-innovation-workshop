@@ -1,4 +1,5 @@
-﻿using ContosoFieldService.Models;
+﻿using System;
+using ContosoFieldService.Models;
 using ContosoFieldService.Services;
 using FreshMvvm;
 using Microsoft.AppCenter.Analytics;
@@ -24,7 +25,14 @@ namespace ContosoFieldService.PageModels
                         Details = Details
                     };
                     Analytics.TrackEvent("New Job Created");
-                    await jobApiService.CreateJobAsync(job);
+                    try
+                    {
+                        await jobApiService.CreateJobAsync(job);
+                    }
+                    catch(Exception)
+                    {
+                        await CoreMethods.DisplayAlert("Network Error", "No connectivity", "OK");
+                    }
                 });
             }
         }

@@ -39,7 +39,7 @@ namespace ContosoMaintenance.WebAPI.Controllers
 
             if (string.IsNullOrEmpty(item.Id))
                 item.Id = Guid.NewGuid().ToString();
-
+            
             await DBRepository.CreateItemAsync(item);
             return new ObjectResult(item);
         }
