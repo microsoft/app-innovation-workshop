@@ -12,6 +12,8 @@
 
                 <!-- Job Name Banner --> 
                 <Button 
+                    x:Name="JobName"
+                    AutomationId="JobName"
                     Text="{Binding Name}" 
                     TextColor="#ffffff" 
                     HeightRequest="50"
@@ -32,6 +34,8 @@
                     <!-- Overview Title -->
                     <StackLayout Orientation="Horizontal">
                         <Label 
+                            x:Name="lblOverview"
+                            AutomationId="lblOverview"
                             Text="Overview" 
                             TextColor="#212121" 
                             FontFamily="AvenirNext-Medium" 
@@ -43,6 +47,8 @@
                     <StackLayout Orientation="Vertical">
                         <!-- Value -->
                         <Label 
+                            x:Name="lblAgeV"
+                            AutomationId="lblAge"
                             Text="{Binding Age}" 
                             TextColor="#D83E01" 
                             FontSize="17" 
@@ -52,6 +58,8 @@
                         
                         <!-- Title -->
                         <Label 
+                            x:Name="lblAgeTitle"
+                            AutomationId="lblAgeTitle"
                             Text="Age" 
                             FontFamily="AvenirNext-Regular" 
                             Margin="0,-5,0,0" TextColor="#777777" 
@@ -64,6 +72,8 @@
                     <StackLayout Orientation="Vertical">
                         <!-- Value -->
                         <Label 
+                            x:Name="lblDueDate"
+                            AutomationId="lblDueDate"
                             Text="{Binding DueDate}" 
                             TextColor="#D83E01" 
                             FontFamily="AvenirNext-Medium" 
@@ -73,6 +83,8 @@
 
                         <!-- Title -->
                         <Label 
+                            x:Name="lblDueDateTitle"
+                            AutomationId="lblDueDateTite"
                             Text="Due Date" 
                             FontFamily="AvenirNext-Regular" 
                             Margin="0,-5,0,0" 
@@ -92,6 +104,8 @@
                     <!-- Details Title-->
                     <StackLayout Orientation="Horizontal">
                         <Label 
+                            x:Name="lblDetails"
+                            AutomationId="lblDetails"
                             Text="Details" 
                             TextColor="#212121" 
                             FontFamily="AvenirNext-Medium" 
@@ -101,6 +115,8 @@
 
                     <!-- Details Text -->
                     <Editor
+                        x:Name="lblDetailsTitle"
+                        AutomationId="lblDetailsTitle"
                         Text="{Binding Details}"
                         TextColor="#838383" 
                         FontFamily="AvenirNext-Regular" 
@@ -118,6 +134,8 @@
                     <!-- Customer Info Title -->
                     <StackLayout Orientation="Horizontal">
                         <Label 
+                            x:Name="lblCustomerInfo"
+                            AutomationId="lblCustomerInfo"
                             Text="Customer Info" 
                             TextColor="#212121" 
                             FontFamily="AvenirNext-Medium" 
@@ -130,6 +148,8 @@
                         <StackLayout Orientation="Vertical">
                             <!-- Value -->
                             <Label 
+                                x:Name="lblContactName"
+                                AutomationId="lblContactName"
                                 Text="{Binding ContactName}" 
                                 TextColor="#D83E01" 
                                 FontFamily="AvenirNext-Medium" 
@@ -138,6 +158,8 @@
 
                             <!-- Title -->
                             <Label 
+                                x:Name="lblContactNameTitle"
+                                AutomationId="lblContactNameTitle"
                                 Text="Contact Name" 
                                 FontFamily="AvenirNext-Regular" 
                                 Margin="0,-5,0,0" 
@@ -153,6 +175,8 @@
                         <StackLayout Orientation="Vertical">
                             <!-- Value -->
                             <Label 
+                                x:Name="lblCompanyName"
+                                AutomationId="lblCompanyNameTitle"
                                 Text="{Binding CompanyName}" 
                                 TextColor="#D83E01" 
                                 FontFamily="AvenirNext-Medium" 
@@ -161,6 +185,8 @@
 
                             <!-- Title -->
                             <Label 
+                                x:Name="lblCompnyNameTitle"
+                                AutomationId="lblCompanyNameTitle"
                                 Text="Company Name" 
                                 FontFamily="AvenirNext-Regular" 
                                 Margin="0,-5,0,0" 
@@ -175,6 +201,7 @@
                 <!-- Map View -->
                 <Maps:Map 
                     x:Name="mapView" 
+                    AutomationId="mapView"
                     HeightRequest="200" 
                     IsShowingUser="true" 
                     MapType="Street" 
@@ -187,6 +214,8 @@
                     <!-- Customer Info Title -->
                     <StackLayout Orientation="Horizontal">
                         <Label 
+                            x:Name="lblOptionsTitle"
+                            AutomationId="lblOptionsTitle"
                             Text="Options" 
                             TextColor="#212121" 
                             FontFamily="AvenirNext-Medium" 
@@ -213,6 +242,8 @@
 
                         <!-- Start Job -->
                         <Button 
+                            x:Name="btnStartJob"
+                            AutomationId="btnStartJob"
                             Grid.Row="0" 
                             Grid.Column="0" 
                             HeightRequest="55" 
@@ -227,6 +258,8 @@
 
                         <!-- Edit Button -->
                         <Button 
+                            x:Name="btnEditJob"
+                            AutomationId="btnEditJob"
                             Grid.Row="0" 
                             Grid.Column="1" 
                             HeightRequest="55" 
@@ -241,6 +274,8 @@
 
                         <!-- Delete Job -->
                         <Button
+                            x:Name="btnDeleteJob"
+                            AutomationId="btnDeleteJob"
                             Grid.Row="1" 
                             Grid.Column="0" 
                             HeightRequest="55" 
@@ -255,6 +290,8 @@
 
                         <!-- Order Parts -->
                         <Button 
+                            x:Name="btnOrderParts"
+                            AutomationId="btnOrderParts"
                             Grid.Row="1" 
                             Grid.Column="1" 
                             TextColor="#0193D8"
