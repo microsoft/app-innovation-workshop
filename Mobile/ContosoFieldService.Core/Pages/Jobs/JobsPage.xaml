@@ -8,6 +8,8 @@
     Title="Jobs">
      <ContentPage.ToolbarItems>
        <ToolbarItem 
+            x:Name="btnAddJob"
+            AutomationId="btnAddJob"
             Icon="icon_add.png" 
             Command="{Binding AddJobClicked}"/>
     </ContentPage.ToolbarItems>
@@ -19,12 +21,17 @@
              </Grid.RowDefinitions>
             
             <StackLayout>
-                <SearchBar SearchCommand="{Binding Search}" 
-                           Text="{Binding SearchText}"
-                           Placeholder="Search"
-                           BackgroundColor="#222E38">
+                <SearchBar 
+                    x:Name="searchBar"
+                    AutomationId="searchBar"
+                    SearchCommand="{Binding Search}" 
+                    Text="{Binding SearchText}"
+                    Placeholder="Search"
+                    BackgroundColor="#222E38">
                 </SearchBar>
                     <ListView 
+                        x:Name="listView"
+                        AutomationId="listView"
                         BackgroundColor="Transparent" 
                         RowHeight="65" 
                         ItemsSource="{Binding Jobs}" 
@@ -43,9 +50,39 @@
                                             <ColumnDefinition Width="50"></ColumnDefinition>
                                             <ColumnDefinition Width="*"></ColumnDefinition>
                                         </Grid.ColumnDefinitions>
-                                        <controls:CircleImage Grid.Row="0" Grid.RowSpan="2" Grid.Column="0" Source="{Binding ThumbnailImageUrl}" Aspect="AspectFill"/>
-                                        <Label FontFamily="AvenirNext-Medium" Grid.Row="0" Grid.Column="1" Text="{Binding Name}" TextColor="#ffff" LineBreakMode="TailTruncation"></Label>
-                                        <Label FontFamily="AvenirNext-Regular" Grid.Row="1" Grid.Column="1" Text="{Binding Details}" Font="Small"  TextColor="#ffff" LineBreakMode="TailTruncation"></Label>
+                                    
+                                        <controls:CircleImage 
+                                            x:Name="profileImage"
+                                            AutomationId="profileImage"
+                                            Grid.Row="0" 
+                                            Grid.RowSpan="2" 
+                                            Grid.Column="0" 
+                                            Source="{Binding ThumbnailImageUrl}" 
+                                            Aspect="AspectFill">
+                                        </controls:CircleImage>
+                                    
+                                        <Label 
+                                            x:Name="lblName"
+                                            AutomationId="lblName"
+                                            FontFamily="AvenirNext-Medium" 
+                                            Grid.Row="0" 
+                                            Grid.Column="1" 
+                                            Text="{Binding Name}" 
+                                            TextColor="#ffff" 
+                                            LineBreakMode="TailTruncation">
+                                        </Label>
+                                    
+                                        <Label 
+                                            x:Name="lblDetils"
+                                            AutomationId="lblDetils"
+                                            FontFamily="AvenirNext-Regular" 
+                                            Grid.Row="1" 
+                                            Grid.Column="1" 
+                                            Text="{Binding Details}" 
+                                            Font="Small"  
+                                            TextColor="#ffff" 
+                                            LineBreakMode="TailTruncation">
+                                        </Label>
                                     </Grid>
                                 </ViewCell>
                             </DataTemplate>
@@ -54,6 +91,7 @@
             </StackLayout>
          <Grid
             x:Name="LoadingOverlay"
+            AutomationId="loadingOverlay"
             IsVisible="{Binding IsRefreshing}"
             Grid.RowSpan="2"
             BackgroundColor="#00BB84">

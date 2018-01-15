@@ -10,6 +10,8 @@
             <StackLayout Padding="0" Spacing="0">
                 <StackLayout VerticalOptions="Start" HeightRequest="250" BackgroundColor="#01D8CB">
                     <Label 
+                        x:Name="lblDuration"
+                        AutomationId="lblDuration"
                         Text="{Binding Duration}" 
                         TextColor="White"
                         FontSize="32" 
@@ -18,6 +20,8 @@
                     </Label>
                     
                     <Label 
+                        x:Name="lblBillable"
+                        AutomationId="lblBillable"
                         Text="{Binding Billable}" 
                         TextColor="#4A90E2" 
                         FontAttributes="Bold" 
@@ -27,6 +31,8 @@
 
                 <!-- Quick Break --> 
                 <Button 
+                    x:Name="btnQuickBreak"
+                    AutomationId="btnQuickBreak"
                     HeightRequest="50" 
                     BackgroundColor="#F5A623" 
                     BorderRadius="0" 
@@ -42,6 +48,8 @@
                     <!-- Job Name-->
                     <StackLayout Orientation="Horizontal">
                         <Label 
+                            x:Name="lblOVerviewTitle"
+                            AutomationId="lblOVerviewTitle"
                             Text="Overview" 
                             TextColor="#212121" 
                             FontFamily="AvenirNext-Medium" 
@@ -54,6 +62,8 @@
                         <StackLayout Orientation="Vertical">
                             <!-- Value -->
                             <Label 
+                                x:Name="lblReplaceOil"
+                                AutomationId="lblReplaceOil"
                                 Text="Replace Oil" 
                                 TextColor="#D83E01" 
                                 FontFamily="AvenirNext-Medium" 
@@ -62,6 +72,8 @@
 
                             <!-- Title -->
                             <Label 
+                                x:Name="lblJobName"
+                                AutomationId="lblJobName"
                                 Text="Job Name" 
                                 FontFamily="AvenirNext-Regular" 
                                 Margin="0,-5,0,0" 
@@ -77,6 +89,8 @@
                         <StackLayout Orientation="Vertical">
                             <!-- Value -->
                             <Label 
+                                x:Name="lblEstimatedDuration"
+                                AutomationId="lblEstimatedDuration"
                                 Text="2 hours" 
                                 TextColor="#D83E01" 
                                 FontFamily="AvenirNext-Medium" 
@@ -85,6 +99,8 @@
 
                             <!-- Title -->
                             <Label 
+                                x:Name="lblEstimatedDurationTitle"
+                                AutomationId="lblEstimatedDurationTitle"
                                 Text="Estimated Duration" 
                                 FontFamily="AvenirNext-Regular" 
                                 Margin="0,-5,0,0" 
@@ -105,6 +121,8 @@
                     <!-- Details Title-->
                     <StackLayout Orientation="Horizontal">
                         <Label 
+                            x:Name="lblDetailsTitle"
+                            AutomationId="lblDetailsTitle"
                             Text="Details" 
                             TextColor="#212121" 
                             FontFamily="AvenirNext-Medium" 
@@ -114,6 +132,8 @@
 
                     <!-- Details Text -->
                     <Editor
+                        x:Name="lblDetails"
+                        AutomationId="lblDetails"
                         Text="{Binding Details}"
                         TextColor="#838383" 
                         FontFamily="AvenirNext-Regular" 
