@@ -109,6 +109,8 @@
 
                 <!-- Stats Carousel -->
                 <controls:CarouselViewControl 
+                    x:Name="carouselViewControl"
+                    AutomationId="carouselViewControl"
                     HeightRequest="150" 
                     Orientation="Horizontal" 
                     InterPageSpacing="10" 
@@ -123,15 +125,26 @@
                     <controls:CarouselViewControl.ItemTemplate>
                         <DataTemplate>
                             <StackLayout Orientation="Vertical" Padding="15,10,5,5">
-                                <Label FontFamily="AvenirNext-Medium" Text="{Binding Title}" TextColor="#212121" FontSize="16" />
+                                <Label 
+                                    x:Name="lblTitle"
+                                    AutomationId="lblTitle"
+                                    FontFamily="AvenirNext-Medium" 
+                                    Text="{Binding Title}" 
+                                    TextColor="#212121" 
+                                    FontSize="16">
+                                </Label>
                                 <StackLayout Orientation="Horizontal" Margin="0,10,0,0">
                                     <StackLayout Orientation="Vertical" HorizontalOptions="CenterAndExpand">
                                         <Label 
+                                            x:Name="lblValueOne"
+                                            AutomationId="lblValueOne"
                                             Text="{Binding Value1}" 
                                             TextColor="#212121" 
                                             FontFamily="AvenirNext-Medium" 
                                             HorizontalTextAlignment="Center" FontSize="40" />
                                         <Label 
+                                            x:Name="lblLabelOne"
+                                            AutomationId="lblOneOne"
                                             Text="{Binding Label1}" 
                                             Margin="0,-5,0,0" 
                                             FontFamily="AvenirNext-Regular" 
@@ -143,11 +156,15 @@
 
                                     <StackLayout Orientation="Vertical" HorizontalOptions="CenterAndExpand">
                                         <Label 
+                                            x:Name="lblValueTwo"
+                                            AutomationId="lblValueTwo"
                                             Text="{Binding Value2}" 
                                             TextColor="#212121" 
                                             HorizontalTextAlignment="Center" 
                                             FontSize="40" />
                                         <Label 
+                                            x:Name="lblLabelTwo"
+                                            AutomationId="lblLabelTwo"
                                             Text="{Binding Label2}" 
                                             Margin="0,-5,0,0" 
                                             TextColor="#777777" 
@@ -169,12 +186,16 @@
                     <!-- Stats Title -->
                     <StackLayout Orientation="Horizontal">
                         <Label 
+                            x:Name="lblStats"
+                            AutomationId="lblStats"
                             Text="Stats" 
                             TextColor="#212121" 
                             FontFamily="AvenirNext-Medium" 
                             FontSize="16" 
                             HorizontalOptions="Start" />
                         <Label 
+                            x:Name="lblAllTimeTotals"
+                            AutomationId="lblAllTimeTotals"
                             Text="All time totals" 
                             TextColor="#777777" 
                             FontFamily="AvenirNext-Regular" 
@@ -188,12 +209,16 @@
                         <Image Source="icon_list.png" Margin="5,0,10,0" />
                         <StackLayout Orientation="Vertical">
                             <Label 
+                                x:Name="lblJobsCompletedTotal"
+                                AutomationId="lblJobsCompletedTotal"
                                 Text="4012" 
                                 TextColor="#212121" 
                                 FontSize="17" 
                                 FontFamily="AvenirNext-Medium">
                             </Label>
                             <Label 
+                                x:Name="lblJobsCompleted"
+                                AutomationId="lblJobsCompleted"
                                 Text="Jobs Completed" 
                                 FontFamily="AvenirNext-Regular" 
                                 Margin="0,-5,0,0" 
@@ -209,11 +234,15 @@
                         <Image Source="icon_list.png" Margin="5,0,10,0" />
                         <StackLayout Orientation="Vertical">
                             <Label 
+                                x:Name="lblEnginesServicedTotal"
+                                AutomationId="lblEnginesServicedTotal"
                                 Text="10" 
                                 TextColor="#212121" 
                                 FontFamily="AvenirNext-Medium" 
                                 FontSize="17" />
                             <Label 
+                                x:Name="lblEnginesServicedTitle"
+                                AutomationId="lblEnginesServicedTitle"
                                 Text="747 Engines Services" 
                                 FontFamily="AvenirNext-Regular" 
                                 Margin="0,-5,0,0" 
@@ -231,6 +260,8 @@
                 <StackLayout Orientation="Vertical" Padding="15,10,5,20" BackgroundColor="#ffffff">
                     <StackLayout Orientation="Horizontal">
                         <Label 
+                            x:Name="lblInsights"
+                            AutomationId="lblInsights"
                             Text="Insights" 
                             FontFamily="AvenirNext-Medium" 
                             TextColor="#212121" 
@@ -238,6 +269,8 @@
                             HorizontalOptions="Start">
                         </Label>
                         <Label 
+                            x:Name="lblTotalKilometers"
+                            AutomationId="lblTotalKilometers"
                             Text="4.850 total kilometers" 
                             FontFamily="AvenirNext-Regular" 
                             TextColor="#777777" 
@@ -253,12 +286,16 @@
                         <Image Source="icon_graph.png" Margin="5,0,10,0" />
                         <StackLayout Orientation="Vertical">
                             <Label 
+                                x:Name="lblAreYouProgressing"
+                                AutomationId="lblAreYouProgressing"
                                 Text="Are you progressing?" 
                                 FontFamily="AvenirNext-Light" 
                                 TextColor="#212121" 
                                 FontSize="17">
                             </Label>
                             <Label 
+                                x:Name="lblLearnMore"
+                                AutomationId="lblLearnMore"
                                 Text="Learn more about those 198 activities" 
                                 Margin="0,0,0,0" 
                                 TextColor="#777777" 
@@ -275,6 +312,8 @@
                 <StackLayout Orientation="Vertical" Padding="15,10,5,20" BackgroundColor="#ffffff">
                     <StackLayout Orientation="Horizontal">
                         <Label 
+                            x:Name="lblSync"
+                            AutomationId="lblSync"
                             Text="Sync" 
                             FontFamily="AvenirNext-Medium" 
                             TextColor="#212121" 
@@ -282,6 +321,8 @@
                             HorizontalOptions="Start">
                         </Label>
                         <Label 
+                            x:Name="lblSyncTime"
+                            AutomationId="lblSyncTime"
                             Text="10 minutes ago" 
                             FontFamily="AvenirNext-Regular" 
                             TextColor="#777777" 
@@ -290,16 +331,6 @@
                             VerticalTextAlignment="Center" 
                             HorizontalOptions="EndAndExpand">
                         </Label>
-                    </StackLayout>
-                    <StackLayout Orientation="Horizontal" Margin="0,0,0,0">
-                        <Image Source="graph.png" WidthRequest="320" HorizontalOptions="Fill">
-                            <Image.WidthRequest>
-                               <OnPlatform x:TypeArguments="x:Double">
-                                    <On Platform="iOS" Value="320" />
-                                    <On Platform="Android" Value="300" />
-                                </OnPlatform>
-                            </Image.WidthRequest>
-                        </Image>
                     </StackLayout>
                 </StackLayout>
             </StackLayout>
