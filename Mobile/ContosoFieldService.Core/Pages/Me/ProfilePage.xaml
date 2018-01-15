@@ -19,6 +19,8 @@
 
                     <!-- ChatBot Button --> 
                     <Button 
+                        x:Name="btnBot"
+                        AutomationId="btnBot"
                         Image="icon_bot.png" 
                         HeightRequest="50" 
                         Command="{Binding ChatToBot}" 
@@ -33,6 +35,8 @@
 
                     <!-- Settings Buttons -->
                     <Button 
+                        x:Name="btnSettings"
+                        AutomationId="btnSettings"
                         Image="icon_usersettings.png" 
                         HeightRequest="50" 
                         Command="{Binding ShowSettings}" 
@@ -49,10 +53,18 @@
                     <StackLayout Grid.Column="1">
 
                         <!-- Profile Image -->
-                        <ffimageloading:CachedImage VerticalOptions="Start" DownsampleToViewSize="true"
-                            Aspect="AspectFit" HeightRequest="110" WidthRequest="110" Source="{Binding GravatarSource}">
+                        <ffimageloading:CachedImage 
+                            x:Name="profileImage" 
+                            AutomationId="profileImage"
+                            VerticalOptions="Start" 
+                            DownsampleToViewSize="true"
+                            Aspect="AspectFit" 
+                            HeightRequest="110" 
+                            WidthRequest="110" 
+                            Source="{Binding GravatarSource}">
                             <ffimageloading:CachedImage.Transformations>
-                                <fftransformations:CircleTransformation BorderHexColor="#FFFFFF">
+                                <fftransformations:CircleTransformation 
+                                    BorderHexColor="#FFFFFF">
                                     <fftransformations:CircleTransformation.BorderSize>
                                         <OnPlatform x:TypeArguments="x:Double">
                                           <On Platform="iOS" Value="40" />
@@ -64,12 +76,29 @@
                         </ffimageloading:CachedImage>
 
                         <!-- Full Name -->
-                        <Label Text="{Binding Name}" FontFamily="AvenirNext-Regular" Margin="0,5,0,0" TextColor="White" FontSize="16" HorizontalTextAlignment="Center" />  
+                        <Label 
+                            x:Name="lblFullName"
+                            AutomationId="lblFullName"
+                            Text="{Binding Name}" 
+                            FontFamily="AvenirNext-Regular" 
+                            Margin="0,5,0,0" 
+                            TextColor="White" 
+                            FontSize="16" 
+                            HorizontalTextAlignment="Center" />  
                     </StackLayout>
                 </Grid>
 
                 <!-- Motivational Banner --> 
-                <Button HeightRequest="50" BackgroundColor="#00D8CB" BorderRadius="0" FontFamily="AvenirNext-Medium" TextColor="#ffffff" Text="You're crushing it!" Margin="0">
+                <Button 
+                    x:Name="btnMotivationalBanner"
+                    AutomationId="btnMotiviationalBanner"
+                    HeightRequest="50" 
+                    BackgroundColor="#00D8CB" 
+                    BorderRadius="0" 
+                    FontFamily="AvenirNext-Medium" 
+                    TextColor="#ffffff" 
+                    Text="You're crushing it!" 
+                    Margin="0">
                     <Button.FontSize>
                         <OnPlatform x:TypeArguments="x:Double">
                           <On Platform="iOS" Value="18" />
