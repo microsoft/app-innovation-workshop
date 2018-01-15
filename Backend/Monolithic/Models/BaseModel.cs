@@ -7,6 +7,7 @@ namespace ContosoMaintenance.WebAPI.Models
     [SerializePropertyNamesAsCamelCase]
     public class BaseModel
     {
+        [JsonProperty("id")]
         [System.ComponentModel.DataAnnotations.Key]
         public string Id { get; set; }    
 
