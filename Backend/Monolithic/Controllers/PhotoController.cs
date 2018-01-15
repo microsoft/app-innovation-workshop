@@ -19,12 +19,12 @@ namespace ContosoMaintenance.WebAPI.Controllers
             this.blobStorage = blobStorage;
         }
 
-        [HttpPost]
-        public async Task<IActionResult> UploadFile(IFormFile file)
+        [HttpPost]        
+        public async Task<IActionResult> UploadFile(List<IFormFile> files)
         {
-            if (file == null)
+            if (files == null)
                 return Content("Argument null");
-
+            /*
             if (file.Length == 0)
                 return Content("file not selected");
 
@@ -33,10 +33,11 @@ namespace ContosoMaintenance.WebAPI.Controllers
             blobName = string.Format(@"{0}\{1}", blobName, DateTime.Now);
 
             await blobStorage.UploadAsync(blobName, fileStream);
-
+*/
             return RedirectToAction("Index");
         }
 
+        [HttpGet]
         public async Task<IActionResult> Download(string blobName, string name)
         {
             if (string.IsNullOrEmpty(blobName))
@@ -46,6 +47,7 @@ namespace ContosoMaintenance.WebAPI.Controllers
             return File(stream.ToArray(), "application/octet-stream", name);
         }
 
+        [HttpDelete]
         public async Task<IActionResult> Delete(string blobName)
         {
             if (string.IsNullOrEmpty(blobName))

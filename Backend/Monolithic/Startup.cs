@@ -23,9 +23,9 @@ namespace ContosoMaintenance.WebAPI
             services.AddScoped<IAzureBlobStorage>(factory =>
             {
                 return new AzureBlobStorage(new AzureBlobSetings(
-                    storageAccount: Configuration["Blob_StorageAccount"],
-                    storageKey: Configuration["Blob_StorageKey"],
-                    containerName: Configuration["Blob_ContainerName"]));
+                    storageAccount: Configuration["AzureStorage:Blob_StorageAccount"],
+                    storageKey: Configuration["AzureStorage:Blob_StorageKey"],
+                    containerName: Configuration["AzureStorage:Blob_ContainerName"]));
             });
 
 
