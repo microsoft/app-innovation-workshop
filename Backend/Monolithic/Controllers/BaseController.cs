@@ -14,6 +14,11 @@ namespace ContosoMaintenance.WebAPI.Controllers
             DBRepository.Initialize();
         }
 
+        void CreateDummyDataIfNeeded()
+        {
+            
+        }
+
         [HttpGet]
         public virtual async Task<IActionResult> GetAll()
         {

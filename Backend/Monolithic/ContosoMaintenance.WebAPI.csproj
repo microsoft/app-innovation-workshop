@@ -10,6 +10,7 @@
     <Folder Include="Models\" />
     <Folder Include="Helpers\" />
     <Folder Include="Services\Blob Storage\" />
+    <Folder Include="DummyData\" />
   </ItemGroup>
 
   <ItemGroup>
