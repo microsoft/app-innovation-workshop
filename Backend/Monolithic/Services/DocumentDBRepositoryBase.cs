@@ -42,18 +42,18 @@ namespace ContosoMaintenance.WebAPI.Services
             }
         }
 
-        public T GetItemsCount()
+        public int GetItemsCount()
         {
             try
             {
                 var document = client.CreateDocumentCollectionQuery(UriFactory.CreateDocumentCollectionUri(DatabaseId, CollectionId),"SELECT c.id FROM c");
-                return (T)(dynamic)document.Count();
+                return (int)(dynamic)document.Count();
             }
             catch (DocumentClientException e)
             {
                 if (e.StatusCode == System.Net.HttpStatusCode.NotFound)
                 {
-                    return null;
+                    return 0;
                 }
                 throw;
             }
