@@ -1,0 +1,179 @@
+﻿/*
+ * Globals
+ */
+
+/* Links */
+a,
+a:focus,
+a:hover {
+	color: #fff
+}
+
+/* Custom default button */
+.btn-default,
+.btn-default:hover,
+.btn-default:focus {
+	color: #333;
+	text-shadow: none; /* Prevent inheritance from `body` */
+	background-color: #fff;
+	border: 1px solid #fff
+}
+
+
+/*
+ * Base structure
+ */
+
+html,
+body {
+	height: 100%;
+	background-color: #313C44
+}
+
+body {
+	color: #fff;
+	text-align: center;
+	text-shadow: 0 1px 3px rgba(0,0,0,.5)
+}
+
+/* Extra markup and styles for table-esque vertical and horizontal centering */
+.site-wrapper {
+	display: table;
+	width: 100%;
+	height: 100%; /* For at least Firefox */
+	min-height: 100%;
+	-webkit-box-shadow: inset 0 0 100px rgba(0,0,0,.5);
+	box-shadow: inset 0 0 100px rgba(0,0,0,.5)
+}
+
+.site-wrapper-inner {
+	display: table-cell;
+	vertical-align: top
+}
+
+.container {
+	margin-right: auto;
+	margin-left: auto;
+	min-height: 100vh;
+	position: relative;
+	min-height: 100vh;
+	padding-bottom: 60px  /* Should be equal to the height of your footer */
+}
+
+/* Padding for spacing */
+.inner {
+	padding: 40px 20px 20px 20px;
+}
+
+
+/*
+ * Header
+ */
+
+.masthead {
+	margin: 0 0 40px 0;
+	padding: 400px;
+	border-bottom: 1px solid #01D8CB
+}
+
+.masthead-brand {
+	padding: 0 0 0px 0;
+}
+.masthead-brand > h3 {
+	
+	float: left;
+	padding: 0;
+	margin: 0
+}
+.masthead-brand > img {
+	position: relative;
+	float: right;
+	height: 30px;
+	top: -10px;
+	left: -3px;
+}
+
+.masthead-nav {
+	position: relative;
+	top: 2px;
+	padding: 0;
+
+}
+.masthead-nav > ul {
+	padding: 0;
+}
+
+.masthead-nav > li {
+	display: inline-block;
+}
+
+.masthead-nav > li + li {
+	margin-left: 20px
+}
+
+.masthead-nav > li > a {
+	padding: 0 0 10px 0;
+	font-size: 16px;
+	font-weight: bold;
+	color: #fff; /* IE8 proofing */
+	color: rgba(255,255,255,.75);
+	border-bottom: 3px solid transparent
+}
+
+.masthead-nav > li > a:hover,
+.masthead-nav > li > a:focus {
+	background-color: transparent;
+	border-bottom-color: #01D8CB;
+}
+
+.masthead-nav > .active > a,
+.masthead-nav > .active > a:hover,
+.masthead-nav > .active > a:focus {
+	color: #fff;
+	border-bottom-color: #fff
+}
+
+@media (min-width: 768px) {
+	.masthead-brand {
+		float: left
+	}
+
+	.masthead-nav {
+		float: right
+	}
+}
+
+
+/*
+ * Footer
+ */
+
+.mastfoot {
+	color: #999; /* IE8 proofing */
+	color: rgba(255,255,255,.5);
+	position: absolute;
+	bottom: 0px
+}
+
+
+/*
+ * Affix and center
+ */
+
+@media (min-width: 768px) {
+	/* Handle the widths */
+	.masthead,
+	.mastfoot,
+	.container {
+		width: 100% /* Must be percentage or pixels for horizontal alignment */
+	}
+}
+
+@media (min-width: 992px) {
+	.masthead,
+	.mastfoot,
+	.container {
+		width: 900px;
+		padding:0;
+	}
+}
