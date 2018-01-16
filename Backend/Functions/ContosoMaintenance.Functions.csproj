@@ -3,6 +3,17 @@
     <PropertyGroup>
         <TargetFramework>net461</TargetFramework>
     </PropertyGroup>
+    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'DebugBackend|AnyCPU' ">
+      <IntermediateOutputPath>obj\Debug\net461</IntermediateOutputPath>
+      <DebugSymbols>true</DebugSymbols>
+      <Optimize>false</Optimize>
+      <DefineConstants>TRACE;DEBUG;NET461</DefineConstants>
+    </PropertyGroup>
+    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'ReleaseBackend|AnyCPU' ">
+      <IntermediateOutputPath>obj\Release\net461</IntermediateOutputPath>
+      <Optimize>true</Optimize>
+      <DefineConstants>TRACE;RELEASE;NET461</DefineConstants>
+    </PropertyGroup>
     <ItemGroup>
         <PackageReference Include="Microsoft.Azure.WebJobs.Extensions.DocumentDB" Version="1.1.0-beta4" />
         <PackageReference Include="Microsoft.NET.Sdk.Functions" Version="1.0.7" />
