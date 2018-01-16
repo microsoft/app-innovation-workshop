@@ -9,12 +9,15 @@
     <Folder Include="Services\" />
     <Folder Include="Models\" />
     <Folder Include="Helpers\" />
+    <Folder Include="Services\Blob Storage\" />
+    <Folder Include="DummyData\" />
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.0" />
     <PackageReference Include="Microsoft.Azure.DocumentDB.Core" Version="1.7.1" />
     <PackageReference Include="Microsoft.Azure.Search" Version="3.0.4" />
+    <PackageReference Include="WindowsAzure.Storage" Version="8.7.0" />
   </ItemGroup>
 
   <ItemGroup>

@@ -16,5 +16,12 @@ namespace ContosoMaintenance.WebAPI.Models
 
         [JsonProperty("contactName")]
         public string ContactName { get; set; }
+
+        [JsonProperty("email")]
+        public string Email { get; set; }
+
+        [JsonProperty("website")]
+        public string Website { get; set; }
+
     }
 }

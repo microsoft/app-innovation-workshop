@@ -6,6 +6,9 @@
     <ItemGroup>
         <PackageReference Include="Microsoft.Azure.WebJobs.Extensions.DocumentDB" Version="1.1.0-beta4" />
         <PackageReference Include="Microsoft.NET.Sdk.Functions" Version="1.0.7" />
+        <PackageReference Include="Microsoft.ProjectOxford.Vision" Version="1.0.393" />
+        <PackageReference Include="N2CMS.Library" Version="2.9.6.19" />
+        <PackageReference Include="WindowsAzure.Storage" Version="8.7.0" />
     </ItemGroup>
     <ItemGroup>
         <Reference Include="Microsoft.CSharp" />

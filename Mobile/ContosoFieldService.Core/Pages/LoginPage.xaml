@@ -10,14 +10,31 @@
 	<ContentPage.Content>
         <StackLayout>
             <StackLayout Orientation="Vertical" VerticalOptions="Start" Margin="0,80,0,0">
-                <Label Text="Welcome!" TextColor="White" FontSize="40" Margin="10,25,0,0" FontFamily="AvenirNext-Medium"></Label>
-                <Label Text="You'll need to login to get started." TextColor="White" Margin="15,0,0,0" FontSize="19" FontFamily="AvenirNext-Regular"></Label>
+                <Label 
+                    x:Name="lblWelcome"
+                    AutomationId="lblWelcome"
+                    Text="Welcome!" 
+                    TextColor="White" 
+                    FontSize="40" 
+                    Margin="10,25,0,0" 
+                    FontFamily="AvenirNext-Medium">
+                </Label>
+                <Label 
+                    x:Name="lblTagLine"
+                    AutomationId="lblTagLine"
+                    Text="You'll need to login to get started." 
+                    TextColor="White" 
+                    Margin="15,0,0,0" 
+                    FontSize="19" 
+                    FontFamily="AvenirNext-Regular"></Label>
             </StackLayout>
 
 
            <!-- Signup Stack -->
            <StackLayout Orientation="Vertical" Padding="15,5,15,15" VerticalOptions="FillAndExpand">
                 <Entry 
+                    x:Name="tbxFullname"
+                    AutomationId="tbxFullname"
                     Text="{Binding FullName}" 
                     Placeholder="Full Name" 
                     PlaceholderColor="#515151" 
@@ -28,6 +45,8 @@
                 </Entry>
                 
                 <Entry 
+                    x:Name="tbxEmail"
+                    AutomationId="tbxEmail"
                     Text="{Binding Email}" 
                     Placeholder="Email Address" 
                     PlaceholderColor="#515151" 
@@ -40,7 +59,18 @@
 
           </StackLayout>  
           <StackLayout VerticalOptions="End" Padding="15,0,15,50">
-                <Button Command="{Binding Login}" Text="Login" BackgroundColor="#00D8CB" TextColor="White" FontSize="22" BorderRadius="8" HeightRequest="55" FontFamily="AvenirNext-Medium"></Button>
+                <Button 
+                    x:Name="btnLogin"
+                    AutomationId="btnLogin"
+                    Command="{Binding Login}" 
+                    Text="Login" 
+                    BackgroundColor="#00D8CB" 
+                    TextColor="White" 
+                    FontSize="22" 
+                    BorderRadius="8" 
+                    HeightRequest="55" 
+                    FontFamily="AvenirNext-Medium">
+                </Button>
           </StackLayout>
             
         </StackLayout>

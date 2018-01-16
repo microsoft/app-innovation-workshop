@@ -1,13 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using ContosoMaintenance.WebAPI.Models;
+using ContosoMaintenance.WebAPI.Services;
+using ContosoMaintenance.WebAPI.Services.BlobStorage;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Logging;
-using Microsoft.Extensions.Options;
 
 namespace ContosoMaintenance.WebAPI
 {
@@ -23,6 +20,16 @@ namespace ContosoMaintenance.WebAPI
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            
+            services.AddScoped<IAzureBlobStorage>(factory =>
+            {
+                return new AzureBlobStorage(new AzureBlobSetings(
+                    storageAccount: Configuration["AzureStorage:Blob_StorageAccount"],
+                    storageKey: Configuration["AzureStorage:Blob_StorageKey"],
+                    containerName: Configuration["AzureStorage:Blob_ContainerName"]));
+            });
+
+
             services.AddMvc();
         }
 
@@ -35,6 +42,58 @@ namespace ContosoMaintenance.WebAPI
             }
 
             app.UseMvc();
+        }
+
+        async void CreateDummyData()
+        {
+            var jobsData = new DocumentDBRepositoryBase<Job>();
+            var jobCount = jobsData.GetItemsCount();
+            if(jobCount == 0)
+            {
+                var dummyData = new DummyData.DummyData();
+                var dummyJobs = dummyData.Jobs;
+                foreach(var job in dummyJobs)
+                {
+                    await jobsData.CreateItemAsync(job);
+                }
+            }
+
+            var customersData = new DocumentDBRepositoryBase<Customer>();
+            var customersCount = customersData.GetItemsCount();
+            if (customersCount == 0)
+            {
+                var dummyData = new DummyData.DummyData();
+                var dummyCustomers = dummyData.Customers;
+                foreach (var customer in dummyCustomers)
+                {
+                    await customersData.CreateItemAsync(customer);
+                }
+            }
+
+            var employeesData = new DocumentDBRepositoryBase<Employee>();
+            var employeesCount = employeesData.GetItemsCount();
+            if (employeesCount == 0)
+            {
+                var dummyData = new DummyData.DummyData();
+                var dummyEmployees = dummyData.Employees;
+                foreach (var employee in dummyEmployees)
+                {
+                    await employeesData.CreateItemAsync(employee);
+                }
+            }
+
+            var addressData = new DocumentDBRepositoryBase<Location>();
+            var addressCount = addressData.GetItemsCount();
+            if (addressCount == 0)
+            {
+                var dummyData = new DummyData.DummyData();
+                var dummyAddress = dummyData.Addresses;
+                foreach (var address in dummyAddress)
+                {
+                    await addressData.CreateItemAsync(address);
+                }
+            }
+
         }
     }
 }

@@ -110,11 +110,16 @@ namespace ContosoFieldService.PageModels
         async Task ReloadData()
         {
             IsRefreshing = true;
-
-            var jobs = await jobsApiService.GetJobsAsync();
-            Jobs.Clear();
-            Jobs.AddRange(jobs);
-
+            try
+            {
+                var jobs = await jobsApiService.GetJobsAsync();
+                Jobs.Clear();
+                Jobs.AddRange(jobs);
+            }
+            catch(Exception)
+            {
+                await CoreMethods.DisplayAlert("Network Error", "No internet connectivity found", "OK");
+            }
             IsRefreshing = false;
         }
         #endregion
