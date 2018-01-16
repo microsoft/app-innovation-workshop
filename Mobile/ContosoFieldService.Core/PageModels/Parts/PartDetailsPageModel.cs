@@ -37,13 +37,14 @@ namespace ContosoFieldService.PageModels
             }
         }
 
-        public Command StartJobClicked
+        public Command OrderPart
         {
             get
             {
                 return new Command(async () =>
                 {
-                    //await CoreMethods.PushPageModel<WorkingJobPageModel>(null, true, true);
+                    //TODO: Needs to be implemented
+                    await CoreMethods.DisplayAlert("Not implemented yet.", ":(", "OK");
                 });
             }
         }

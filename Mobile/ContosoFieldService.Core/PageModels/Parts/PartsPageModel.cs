@@ -11,7 +11,12 @@ namespace ContosoFieldService.PageModels
     public class PartsPageModel : FreshBasePageModel
     {
         public ObservableRangeCollection<Part> Parts { get; set; }
-        public bool IsRefreshing { get; set; }
+        private bool isRefreshing;
+        public bool IsRefreshing
+        {
+            get { return isRefreshing; }
+            set { isRefreshing = value; RaisePropertyChanged(); }
+        }
         public string SearchText { get; set; }
 
         Part selectedPart;

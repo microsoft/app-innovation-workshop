@@ -8,15 +8,26 @@
     BackgroundColor="#222E38"
     Title="Parts">
 
-    <Grid>
-        
-    
+    <Grid>            
         <ListView 
             BackgroundColor="Transparent" 
             RowHeight="65" 
             ItemsSource="{Binding Parts}" 
-            SelectedItem="{Binding SelectedJob, Mode=TwoWay}"
-            IsPullToRefreshEnabled="True">
+            SelectedItem="{Binding SelectedPart, Mode=TwoWay}"
+            ItemSelected="Handle_ItemSelected"
+            IsPullToRefreshEnabled="True"
+            IsRefreshing="{Binding IsRefreshing, Mode=OneWay}"
+            RefreshCommand="{Binding Refresh}">
+            
+            <ListView.Header>
+                <SearchBar 
+                    AutomationId="searchBar"
+                    SearchCommand="{Binding Search}" 
+                    Text="{Binding SearchText}"
+                    Placeholder="Search"
+                    BackgroundColor="#222E38" />
+            </ListView.Header>
+            
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
@@ -29,16 +40,16 @@
                                 <ColumnDefinition Width="50"></ColumnDefinition>
                                 <ColumnDefinition Width="*"></ColumnDefinition>
                             </Grid.ColumnDefinitions>
-                            <controls:CircleImage Grid.Row="0" Grid.RowSpan="2" Grid.Column="0" Source="{Binding ThumbnailImageUrl}" Aspect="AspectFill"/>
+                            <controls:CircleImage Grid.Row="0" Grid.RowSpan="2" Grid.Column="0" Source="{Binding ImageSource}" Aspect="AspectFill"/>
                             <Label FontFamily="AvenirNext-Medium" Grid.Row="0" Grid.Column="1" Text="{Binding Name}" TextColor="#ffff" LineBreakMode="TailTruncation"></Label>
-                            <Label FontFamily="AvenirNext-Regular" Grid.Row="1" Grid.Column="1" Text="{Binding Details}" Font="Small"  TextColor="#ffff" LineBreakMode="TailTruncation"></Label>
+                            <Label FontFamily="AvenirNext-Regular" Grid.Row="1" Grid.Column="1" Text="{Binding Manufacturer}" FontSize="Small"  TextColor="#ffff" LineBreakMode="TailTruncation"></Label>
                         </Grid>
                     </ViewCell>
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
 
-        <Grid
+        <!--<Grid
             x:Name="LoadingOverlay"
             IsVisible="{Binding IsRefreshing}"
             Grid.RowSpan="2"
@@ -55,7 +66,7 @@
                 
                 <Label Text="Syncing..." TextColor="White" Margin="0,20,0,0" HorizontalTextAlignment="Center" FontAttributes="Bold"/>
             </StackLayout>
-        </Grid>
+        </Grid>-->
     </Grid>
 
 </ContentPage>
