@@ -8,6 +8,18 @@
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <NoWarn>1701;1702;1705;1998;NU1701;</NoWarn>
   </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'DebugBackend|AnyCPU' ">
+    <NoWarn>1701;1702;1705;1998;NU1701;</NoWarn>
+    <IntermediateOutputPath>obj\Debug\netstandard2.0</IntermediateOutputPath>
+    <DebugSymbols>true</DebugSymbols>
+    <Optimize>false</Optimize>
+    <DefineConstants>TRACE;DEBUG;NETSTANDARD2_0</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'ReleaseBackend|AnyCPU' ">
+    <IntermediateOutputPath>obj\Release\netstandard2.0</IntermediateOutputPath>
+    <Optimize>true</Optimize>
+    <DefineConstants>TRACE;RELEASE;NETSTANDARD2_0</DefineConstants>
+  </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="Xam.Plugins.Settings" Version="3.1.1" />
     <PackageReference Include="FreshMvvm" Version="2.2.3" />
