@@ -8,9 +8,11 @@
         <ScrollView>
             <StackLayout>
 
-                 <!-- Signup Stack -->
+                 <!-- Form Stack -->
                <StackLayout Orientation="Vertical" Padding="15,5,15,15" VerticalOptions="FillAndExpand">
                     <Entry 
+                        x:Name="tbxJobName"
+                        AutomationId="tbxJobName"
                         Text="{Binding Name}" 
                         Placeholder="Full Name" 
                         PlaceholderColor="#515151" 
@@ -21,6 +23,8 @@
                     </Entry>
                     
                     <Entry 
+                        x:Name="tbxDetails"
+                        AutomationId="tbxDetails"
                         Text="{Binding Details}" 
                         Placeholder="Details" 
                         PlaceholderColor="#515151" 
@@ -33,7 +37,11 @@
               </StackLayout>  
                 
                 <StackLayout VerticalOptions="End">
-                    <Button Command="{Binding CancelClicked}" Text="Cancel"></Button>
+                    <Button 
+                        x:Name="btnCancel"
+                        AutomationId="btnCancel"
+                        Command="{Binding CancelClicked}" 
+                        Text="Cancel"></Button>
                 </StackLayout>
             </StackLayout>
         </ScrollView>

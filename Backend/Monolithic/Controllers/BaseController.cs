@@ -14,6 +14,11 @@ namespace ContosoMaintenance.WebAPI.Controllers
             DBRepository.Initialize();
         }
 
+        void CreateDummyDataIfNeeded()
+        {
+            
+        }
+
         [HttpGet]
         public virtual async Task<IActionResult> GetAll()
         {
@@ -39,7 +44,7 @@ namespace ContosoMaintenance.WebAPI.Controllers
 
             if (string.IsNullOrEmpty(item.Id))
                 item.Id = Guid.NewGuid().ToString();
-
+            
             await DBRepository.CreateItemAsync(item);
             return new ObjectResult(item);
         }

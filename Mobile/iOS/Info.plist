@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>CFBundleDisplayName</key>
-	<string>ContosoFieldService</string>
+	<string>Field Service</string>
 	<key>CFBundleName</key>
 	<string>Field Service</string>
 	<key>CFBundleIdentifier</key>
@@ -40,8 +40,6 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
-	<key>XSAppIconAssets</key>
-	<string>Assets.xcassets/AppIcon.appiconset</string>
 	<key>UIBackgroundModes</key>
 	<array>
 		<string>remote-notification</string>
@@ -52,5 +50,7 @@
 	<string>Your location is used to route you to jobs</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>We access your media to allow you to upload existing photos</string>
+	<key>XSAppIconAssets</key>
+	<string>Assets.xcassets/AppIcon.appiconset</string>
 </dict>
 </plist>

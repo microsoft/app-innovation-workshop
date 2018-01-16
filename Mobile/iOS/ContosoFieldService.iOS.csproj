@@ -279,6 +279,27 @@
   <ItemGroup>
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Contents.json" />
     <ImageAsset Include="Assets.xcassets\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-60.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-60%402x.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-Small.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-Small%402x.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-iPadPro%402x.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-60%403x.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-Spotlight-40%402x.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-Spotlight-40.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-Small%403x.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Group.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon%40156x.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon1024.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon87.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon58.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon55.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon48.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon80.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon88.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon196.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon172.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\" />
@@ -333,14 +354,8 @@
     <BundleResource Include="Resources\icon_dashboard%402x.png" />
     <BundleResource Include="Resources\icon_dashboard%403x.png" />
 
-  </ItemGroup>
-  <ItemGroup>
-    <ITunesArtwork Include="iTunesArtwork" />
-    <ITunesArtwork Include="iTunesArtwork%402x" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\icon_bot.png" />
-    <AndroidResource Include="Resources\icon_usersettings%402x.png" />
+    <BundleResource Include="Resources\icon_bot.png" />
+    <BundleResource Include="Resources\icon_usersettings%402x.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <Import Project="..\..\packages\Refit.4.0.1\build\netstandard1.4\refit.targets" Condition="Exists('..\..\packages\Refit.4.0.1\build\netstandard1.4\refit.targets')" />
