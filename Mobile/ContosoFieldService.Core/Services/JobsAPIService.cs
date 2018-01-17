@@ -22,6 +22,9 @@ namespace ContosoFieldService.Services
 
         [Post("/job/{id}/")]
         Task<Job> DeleteJob(string id);
+
+        [Post("/job/{id, job}/")]
+        Task<Job> UpdateJob(string id, Job job);
     }
 
     public class JobsAPIService
