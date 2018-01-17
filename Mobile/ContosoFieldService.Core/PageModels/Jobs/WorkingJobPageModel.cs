@@ -56,8 +56,11 @@ namespace ContosoFieldService.PageModels
             {
                 return new Command(async () =>
                 {
-                    Helpers.Settings.UserIsLoggedIn = true;
                     Analytics.TrackEvent("Job Compeleted");
+                    var jobService = new Services.JobsAPIService();
+
+
+
                     await CoreMethods.PopPageModel(true, true);
                 });
             }
