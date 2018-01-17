@@ -43,6 +43,7 @@
     <PackageReference Include="Xamarin.Forms" Version="2.5.0.122203" />
     <PackageReference Include="Xamarin.Forms.Maps" Version="2.5.0.122203" />
     <PackageReference Include="WindowsAzure.Storage" Version="8.7.0" />
+    <PackageReference Include="Xam.Plugin.Connectivity" Version="3.0.3" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Pages\" />

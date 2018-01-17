@@ -15,27 +15,27 @@ namespace ContosoFieldService.PageModels
         public string ContactName { get; set; }
         public string CompanyName { get; set; }
 
-        Job Job;
+        Job CurrentJob;
         public override void Init(object initData)
         {
             if (initData != null)
             {
 
-                Job = (Job)initData;
-                Name = Job.Name;
-                Details = Job.Details;
+                CurrentJob = (Job)initData;
+                Name = CurrentJob.Name;
+                Details = CurrentJob.Details;
                 DueDate = DateTime.Now.Humanize();
 
-                Age = Job.CreatedAt.Humanize();
-                Details = string.IsNullOrEmpty(Job.Details) ? "Not Supplied" : Job.Details;
-                ContactName = string.IsNullOrEmpty(Job?.Customer?.CompanyName) ? "Not Supplied" : Job.Customer.ContactName;
-                CompanyName = string.IsNullOrEmpty(Job?.Customer?.ContactName) ? "Not Supplied" : Job.Customer.CompanyName;
+                Age = CurrentJob.CreatedAt.Humanize();
+                Details = string.IsNullOrEmpty(CurrentJob.Details) ? "Not Supplied" : CurrentJob.Details;
+                ContactName = string.IsNullOrEmpty(CurrentJob?.Customer?.CompanyName) ? "Not Supplied" : CurrentJob.Customer.ContactName;
+                CompanyName = string.IsNullOrEmpty(CurrentJob?.Customer?.ContactName) ? "Not Supplied" : CurrentJob.Customer.CompanyName;
 
                
             }
             else
             {
-                Job = new Job();
+                CurrentJob = new Job();
             }
         }
 
@@ -45,7 +45,7 @@ namespace ContosoFieldService.PageModels
             {
                 return new Command(async () =>
                 {
-                    await CoreMethods.PushPageModel<WorkingJobPageModel>(null, true, true);
+                    await CoreMethods.PushPageModel<WorkingJobPageModel>(CurrentJob, true, true);
                 });
             }
         }
