@@ -16,7 +16,7 @@
                         <Image Source="icon_graph.png" Margin="5,0,10,0" />
                         <StackLayout Orientation="Vertical">
                             <Label Text="Notify on new jobs" FontFamily="AvenirNext-Regular" TextColor="White" FontSize="17" />
-                            <Switch></Switch>
+                            <Switch IsToggled="{Binding NotificationsEnabled}"></Switch>
                         </StackLayout>
                     </StackLayout>
                 </StackLayout>

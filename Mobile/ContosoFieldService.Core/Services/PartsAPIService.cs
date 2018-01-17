@@ -8,19 +8,19 @@ namespace ContosoFieldService.Services
     [Headers(Helpers.Constants.ApiManagementKey)]
     public interface IPartsServiceAPI
     {
-        [Get("/api/part/")]
+        [Get("/part/")]
         Task<List<Part>> GetParts();
 
-        [Get("/api/part/{id}/")]
+        [Get("/part/{id}/")]
         Task<Part> GetPartById(string id);
 
-        [Get("/api/search/parts/?keyword={keyword}")]
+        [Get("/search/parts/?keyword={keyword}")]
         Task<List<Part>> SearchParts(string keyword);
 
-        [Post("/api/part/")]
+        [Post("/part/")]
         Task<Part> CreatePart([Body] Part job);
 
-        [Post("/api/part/{id}/")]
+        [Post("/part/{id}/")]
         Task<Part> DeletePart(string id);
     }
 
