@@ -29,65 +29,59 @@
                     Placeholder="Search"
                     BackgroundColor="#222E38">
                 </SearchBar>
-                    <ListView 
-                        x:Name="listView"
-                        AutomationId="listView"
-                        BackgroundColor="Transparent" 
-                        RowHeight="65" 
-                        ItemsSource="{Binding Jobs}" 
-                        SelectedItem="{Binding SelectedJob, Mode=TwoWay}"
-                        ItemSelected="Handle_ItemSelected"
-                        IsPullToRefreshEnabled="True">
-                        <ListView.ItemTemplate>
-                            <DataTemplate>
-                                <ViewCell>
-                                    <Grid Padding="10">
-                                        <Grid.RowDefinitions>
-                                            <RowDefinition Height="20"></RowDefinition>
-                                            <RowDefinition Height="20"></RowDefinition>
-                                        </Grid.RowDefinitions>
-                                        <Grid.ColumnDefinitions>
-                                            <ColumnDefinition Width="50"></ColumnDefinition>
-                                            <ColumnDefinition Width="*"></ColumnDefinition>
-                                        </Grid.ColumnDefinitions>
-                                    
-                                        <controls:CircleImage 
-                                            x:Name="profileImage"
-                                            AutomationId="profileImage"
-                                            Grid.Row="0" 
-                                            Grid.RowSpan="2" 
-                                            Grid.Column="0" 
-                                            Source="{Binding ThumbnailImageUrl}" 
-                                            Aspect="AspectFill">
-                                        </controls:CircleImage>
-                                    
-                                        <Label 
-                                            x:Name="lblName"
-                                            AutomationId="lblName"
-                                            FontFamily="AvenirNext-Medium" 
-                                            Grid.Row="0" 
-                                            Grid.Column="1" 
-                                            Text="{Binding Name}" 
-                                            TextColor="#ffff" 
-                                            LineBreakMode="TailTruncation">
-                                        </Label>
-                                    
-                                        <Label 
-                                            x:Name="lblDetils"
-                                            AutomationId="lblDetils"
-                                            FontFamily="AvenirNext-Regular" 
-                                            Grid.Row="1" 
-                                            Grid.Column="1" 
-                                            Text="{Binding Details}" 
-                                            Font="Small"  
-                                            TextColor="#ffff" 
-                                            LineBreakMode="TailTruncation">
-                                        </Label>
-                                    </Grid>
-                                </ViewCell>
-                            </DataTemplate>
-                        </ListView.ItemTemplate>
-                    </ListView>
+                <ListView 
+                    x:Name="listView"
+                    AutomationId="listView"
+                    BackgroundColor="Transparent" 
+                    RowHeight="65" 
+                    ItemsSource="{Binding Jobs}" 
+                    SelectedItem="{Binding SelectedJob, Mode=TwoWay}"
+                    ItemSelected="Handle_ItemSelected"
+                    IsPullToRefreshEnabled="True">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <Grid Padding="10">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="20"></RowDefinition>
+                                        <RowDefinition Height="20"></RowDefinition>
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="2"></ColumnDefinition>
+                                        <ColumnDefinition Width="*"></ColumnDefinition>
+                                    </Grid.ColumnDefinitions>
+                                
+                                   <BoxView 
+                                        Color="#01D8CB">
+                                    </BoxView>
+                                
+                                    <Label 
+                                        x:Name="lblName"
+                                        AutomationId="lblName"
+                                        FontFamily="AvenirNext-Medium" 
+                                        Grid.Row="0" 
+                                        Grid.Column="1" 
+                                        Text="{Binding Name}" 
+                                        TextColor="#ffff" 
+                                        LineBreakMode="TailTruncation">
+                                    </Label>
+                                
+                                    <Label 
+                                        x:Name="lblDetils"
+                                        AutomationId="lblDetils"
+                                        FontFamily="AvenirNext-Regular" 
+                                        Grid.Row="1" 
+                                        Grid.Column="1" 
+                                        Text="{Binding Details}" 
+                                        Font="Small"  
+                                        TextColor="#ffff" 
+                                        LineBreakMode="TailTruncation">
+                                    </Label>
+                                </Grid>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
             </StackLayout>
          <Grid
             x:Name="LoadingOverlay"

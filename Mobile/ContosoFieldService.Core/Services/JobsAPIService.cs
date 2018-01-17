@@ -8,19 +8,19 @@ namespace ContosoFieldService.Services
     [Headers(Helpers.Constants.ApiManagementKey)]
     public interface IJobServiceAPI
     {
-        [Get("/api/job/")]
+        [Get("/job/")]
         Task<List<Job>> GetJobs();
 
-        [Get("/api/job/{id}/")]
+        [Get("/job/{id}/")]
         Task<Job> GetJobById(string id);
 
-        [Get("/api/search/jobs/?keyword={keyword}")]
+        [Get("/search/jobs/?keyword={keyword}")]
         Task<List<Job>> SearchJobs(string keyword);
 
-        [Post("/api/job/")]
+        [Post("/job/")]
         Task<Job> CreateJob([Body] Job job);
 
-        [Post("/api/job/{id}/")]
+        [Post("/job/{id}/")]
         Task<Job> DeleteJob(string id);
     }
 

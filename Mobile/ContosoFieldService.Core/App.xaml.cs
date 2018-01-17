@@ -25,7 +25,7 @@ namespace ContosoFieldService
             if (Xamarin.Forms.Device.RuntimePlatform == Xamarin.Forms.Device.iOS)
             {
                 var tabbedNavigation = new FreshTabbedNavigationContainer("authed");
-                tabbedNavigation.AddTab<DashboardPageModel>("Dashboard", "icon_dashboard.png");
+                //tabbedNavigation.AddTab<DashboardPageModel>("Dashboard", "icon_dashboard.png");
                 tabbedNavigation.AddTab<JobsPageModel>("Jobs", "icon_jobs.png");
 
                 tabbedNavigation.AddTab<PartsPageModel>("Parts", "icon_parts.png");

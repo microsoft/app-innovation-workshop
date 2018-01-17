@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage 
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="ContosoFieldService.Pages.PartDetailsPage"
+    BackgroundColor="#ffffff"
+    Title="Part Details">
+
+    <ScrollView>
+        <StackLayout>
+
+            <!-- Job Name Banner --> 
+            <Button 
+                Text="{Binding Name}" 
+                TextColor="#ffffff" 
+                HeightRequest="50"
+                BackgroundColor="#D83E01" 
+                BorderRadius="0" 
+                FontFamily="AvenirNext-Medium">
+                <Button.FontSize>
+                    <OnPlatform x:TypeArguments="x:Double">
+                      <On Platform="iOS" Value="18" />
+                      <On Platform="Android" Value="16" />
+                    </OnPlatform>
+                </Button.FontSize>
+            </Button>
+
+            <!-- Image -->
+            <Image HeightRequest="200" Source="{Binding ImageSource}" />
+
+            <!-- Overview Stack -->
+            <StackLayout Orientation="Vertical" Padding="15,5,5,15" BackgroundColor="#ffffff">
+
+                <!-- Overview Title -->
+                <StackLayout Orientation="Horizontal">
+                    <Label 
+                        Text="Overview" 
+                        TextColor="#212121" 
+                        FontFamily="AvenirNext-Medium" 
+                        FontSize="16" 
+                        HorizontalOptions="Start" />
+                </StackLayout>
+
+                <!-- Job Age -->
+                <StackLayout Orientation="Vertical">
+                    <!-- Value -->
+                    <Label 
+                        Text="{Binding Name}" 
+                        TextColor="#D83E01" 
+                        FontSize="17" 
+                        FontFamily="AvenirNext-Medium"
+                        HorizontalTextAlignment="Start">
+                    </Label>
+                    
+                    <!-- Title -->
+                    <Label 
+                        Text="Name" 
+                        FontFamily="AvenirNext-Regular" 
+                        Margin="0,-5,0,0" TextColor="#777777" 
+                        HorizontalTextAlignment="Start" 
+                        FontSize="12">
+                    </Label>
+                </StackLayout>
+
+                <!-- Due Date -->
+                <StackLayout Orientation="Vertical">
+                    <!-- Value -->
+                    <Label 
+                        Text="{Binding Manufacturer}" 
+                        TextColor="#D83E01" 
+                        FontFamily="AvenirNext-Medium" 
+                        FontSize="17"
+                        HorizontalTextAlignment="Start">
+                    </Label>
+
+                    <!-- Title -->
+                    <Label 
+                        Text="Manufacturer" 
+                        FontFamily="AvenirNext-Regular" 
+                        Margin="0,-5,0,0" 
+                        TextColor="#777777" 
+                        HorizontalTextAlignment="Start" 
+                        FontSize="12">
+                    </Label>
+                </StackLayout>
+            </StackLayout>
+
+            <!-- Divier -->
+            <BoxView HeightRequest="1" BackgroundColor="#777777" Opacity="0.2"  ></BoxView>
+
+
+
+            <!-- Customer Info Stack -->
+           <StackLayout Orientation="Vertical" Padding="15,5,5,15" BackgroundColor="#ffffff">
+
+                <!-- Customer Info Title -->
+                <StackLayout Orientation="Horizontal">
+                    <Label 
+                        Text="Details" 
+                        TextColor="#212121" 
+                        FontFamily="AvenirNext-Medium" 
+                        FontSize="16" 
+                        HorizontalOptions="Start" />
+                </StackLayout>
+
+                <!-- Contact Name -->
+                 <StackLayout Orientation="Horizontal" Margin="0,5,0,0">
+                    <StackLayout Orientation="Vertical">
+                        <!-- Value -->
+                        <Label 
+                            Text="{Binding SerialNumber}" 
+                            TextColor="#D83E01" 
+                            FontFamily="AvenirNext-Medium" 
+                            FontSize="17">
+                        </Label>
+
+                        <!-- Title -->
+                        <Label 
+                            Text="Serial Number" 
+                            FontFamily="AvenirNext-Regular" 
+                            Margin="0,-5,0,0" 
+                            TextColor="#777777" 
+                            HorizontalTextAlignment="Start" 
+                            FontSize="12">
+                        </Label>
+                    </StackLayout>
+                </StackLayout>
+
+                <!-- Company Name -->
+                <StackLayout Orientation="Horizontal" Margin="0,5,0,0">
+                    <StackLayout Orientation="Vertical">
+                        <!-- Value -->
+                        <Label 
+                            Text="{Binding ModelNumber}" 
+                            TextColor="#D83E01" 
+                            FontFamily="AvenirNext-Medium" 
+                            FontSize="17">
+                        </Label>
+
+                        <!-- Title -->
+                        <Label 
+                            Text="Model Number" 
+                            FontFamily="AvenirNext-Regular" 
+                            Margin="0,-5,0,0" 
+                            TextColor="#777777" 
+                            HorizontalTextAlignment="Start" 
+                            FontSize="12">
+                        </Label>
+                    </StackLayout>
+                </StackLayout>
+
+                <!-- Price -->
+                <StackLayout Orientation="Horizontal" Margin="0,5,0,0">
+                    <StackLayout Orientation="Vertical">
+                        <!-- Value -->
+                        <Label 
+                            Text="{Binding PriceInUSD}" 
+                            TextColor="#D83E01" 
+                            FontFamily="AvenirNext-Medium" 
+                            FontSize="17">
+                        </Label>
+
+                        <!-- Title -->
+                        <Label 
+                            Text="Price" 
+                            FontFamily="AvenirNext-Regular" 
+                            Margin="0,-5,0,0" 
+                            TextColor="#777777" 
+                            HorizontalTextAlignment="Start" 
+                            FontSize="12">
+                        </Label>
+                    </StackLayout>
+                </StackLayout>
+            </StackLayout>
+
+            <Button 
+                Text="Place Order" 
+                TextColor="#ffffff" 
+                HeightRequest="50"
+                BackgroundColor="#01D8CB" 
+                BorderRadius="0" 
+                FontFamily="AvenirNext-Medium"
+                Command="{Binding OrderPart}">>
+                <Button.FontSize>
+                    <OnPlatform x:TypeArguments="x:Double">
+                      <On Platform="iOS" Value="18" />
+                      <On Platform="Android" Value="16" />
+                    </OnPlatform>
+                </Button.FontSize>
+            </Button>
+        </StackLayout>
+    </ScrollView>
+</ContentPage>
