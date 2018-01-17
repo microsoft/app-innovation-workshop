@@ -84,5 +84,8 @@
     <Compile Condition=" '$(EnableDefaultCompileItems)' == 'true' " Update="Pages\Me\SettingsPage.xaml.cs">
       <DependentUpon>..\Pages\SettingsPage.xaml</DependentUpon>
     </Compile>
+    <Compile Condition=" '$(EnableDefaultCompileItems)' == 'true' " Update="Pages\Parts\PartDetailPage.xaml.cs">
+      <DependentUpon>PartDetailsPage.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
 </Project>
