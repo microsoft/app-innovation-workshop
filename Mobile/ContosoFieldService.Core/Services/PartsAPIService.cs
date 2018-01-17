@@ -6,54 +6,54 @@ using Refit;
 namespace ContosoFieldService.Services
 {
     [Headers(Helpers.Constants.ApiManagementKey)]
-    public interface IPartsService
+    public interface IPartsServiceAPI
     {
-        [Get("/api/part/")]
-        Task<List<Job>> GetParts();
+        [Get("/part/")]
+        Task<List<Part>> GetParts();
 
-        [Get("/api/part/{id}/")]
-        Task<Job> GetPartById(string id);
+        [Get("/part/{id}/")]
+        Task<Part> GetPartById(string id);
 
-        [Get("/api/search/parts/?keyword={keyword}")]
-        Task<List<Job>> SearchParts(string keyword);
+        [Get("/search/parts/?keyword={keyword}")]
+        Task<List<Part>> SearchParts(string keyword);
 
-        [Post("/api/part/")]
-        Task<Job> CreatePart([Body] Job job);
+        [Post("/part/")]
+        Task<Part> CreatePart([Body] Part job);
 
-        [Post("/api/part/{id}/")]
-        Task<Job> DeletePart(string id);
+        [Post("/part/{id}/")]
+        Task<Part> DeletePart(string id);
     }
 
     public class PartsAPIService
     {
-        public async Task<Job> CreatePartAsync(Job job)
+        public async Task<Part> CreatePartAsync(Part part)
         {
-            var contosoMaintenanceApi = RestService.For<IJobServiceAPI>(Helpers.Constants.BaseUrl);
-            return await contosoMaintenanceApi.CreateJob(job);
+            var contosoMaintenanceApi = RestService.For<IPartsServiceAPI>(Helpers.Constants.BaseUrl);
+            return await contosoMaintenanceApi.CreatePart(part);
         }
 
-        public async Task<List<Job>> GetPartsAsync()
+        public async Task<List<Part>> GetPartsAsync()
         {
-            var contosoMaintenanceApi = RestService.For<IJobServiceAPI>(Helpers.Constants.BaseUrl);
-            return await contosoMaintenanceApi.GetJobs();
+            var contosoMaintenanceApi = RestService.For<IPartsServiceAPI>(Helpers.Constants.BaseUrl);
+            return await contosoMaintenanceApi.GetParts();
         }
 
-        public async Task<Job> GetPartByIdAsync(string id)
+        public async Task<Part> GetPartByIdAsync(string id)
         {
-            var contosoMaintenanceApi = RestService.For<IJobServiceAPI>(Helpers.Constants.BaseUrl);
-            return await contosoMaintenanceApi.GetJobById(id);
+            var contosoMaintenanceApi = RestService.For<IPartsServiceAPI>(Helpers.Constants.BaseUrl);
+            return await contosoMaintenanceApi.GetPartById(id);
         }
 
-        public async Task<Job> DeletePartByIdAsync(string id)
+        public async Task<Part> DeletePartByIdAsync(string id)
         {
-            var contosoMaintenanceApi = RestService.For<IJobServiceAPI>(Helpers.Constants.BaseUrl);
-            return await contosoMaintenanceApi.DeleteJob(id);
+            var contosoMaintenanceApi = RestService.For<IPartsServiceAPI>(Helpers.Constants.BaseUrl);
+            return await contosoMaintenanceApi.DeletePart(id);
         }
 
-        public async Task<List<Job>> SearchPartsAsync(string keyword)
+        public async Task<List<Part>> SearchPartsAsync(string keyword)
         {
-            var contosoMaintenanceApi = RestService.For<IJobServiceAPI>(Helpers.Constants.BaseUrl);
-            return await contosoMaintenanceApi.SearchJobs(keyword);
+            var contosoMaintenanceApi = RestService.For<IPartsServiceAPI>(Helpers.Constants.BaseUrl);
+            return await contosoMaintenanceApi.SearchParts(keyword);
         }
     }
 }
