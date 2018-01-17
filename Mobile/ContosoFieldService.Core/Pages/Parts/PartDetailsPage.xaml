@@ -173,35 +173,21 @@
                 </StackLayout>
             </StackLayout>
 
-
-           <!-- Job Options -->
-           <StackLayout Orientation="Vertical" Padding="15,5,5,15" BackgroundColor="#ffffff">
-
-                <!-- Customer Info Title -->
-                <StackLayout Orientation="Horizontal">
-                    <Label 
-                        Text="Options" 
-                        TextColor="#212121" 
-                        FontFamily="AvenirNext-Medium" 
-                        FontSize="16" 
-                        HorizontalOptions="Start" />
-                </StackLayout>
-
-
-                <!-- Order Part -->
-                <Button 
-                    Grid.Row="0" 
-                    Grid.Column="0" 
-                    HeightRequest="55" 
-                    BackgroundColor="White" 
-                    TextColor="#01D8CB" 
-                    FontSize="18" 
-                    BorderRadius="0"  
-                    Text="Order" 
-                    FontFamily="AvenirNext-Medium"
-                    Command="{Binding OrderPart}">
-                </Button>
-            </StackLayout>
+            <Button 
+                Text="Place Order" 
+                TextColor="#ffffff" 
+                HeightRequest="50"
+                BackgroundColor="#01D8CB" 
+                BorderRadius="0" 
+                FontFamily="AvenirNext-Medium"
+                Command="{Binding OrderPart}">>
+                <Button.FontSize>
+                    <OnPlatform x:TypeArguments="x:Double">
+                      <On Platform="iOS" Value="18" />
+                      <On Platform="Android" Value="16" />
+                    </OnPlatform>
+                </Button.FontSize>
+            </Button>
         </StackLayout>
     </ScrollView>
 </ContentPage>
