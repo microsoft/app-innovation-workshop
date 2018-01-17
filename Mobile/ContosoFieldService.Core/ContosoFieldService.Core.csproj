@@ -55,7 +55,7 @@
     <Folder Include="PageModels\Jobs\" />
     <Folder Include="PageModels\Android\" />
     <Folder Include="Pages\Android\" />
-    <Folder Include="Pages\Me\" />
+    <Folder Include="Pages\Profile\" />
     <Folder Include="Abstractions\" />
     <Folder Include="Pages\Parts\" />
   </ItemGroup>
@@ -86,6 +86,15 @@
     </Compile>
     <Compile Condition=" '$(EnableDefaultCompileItems)' == 'true' " Update="Pages\Parts\PartDetailPage.xaml.cs">
       <DependentUpon>PartDetailsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Condition=" '$(EnableDefaultCompileItems)' == 'true' " Update="Pages\Profile\BotPage.xaml.cs">
+      <DependentUpon>BotPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Condition=" '$(EnableDefaultCompileItems)' == 'true' " Update="Pages\Profile\ProfilePage.xaml.cs">
+      <DependentUpon>ProfilePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Condition=" '$(EnableDefaultCompileItems)' == 'true' " Update="Pages\Profile\SettingsPage.xaml.cs">
+      <DependentUpon>SettingsPage.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
 </Project>
