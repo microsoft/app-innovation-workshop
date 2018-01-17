@@ -11,5 +11,11 @@ namespace ContosoFieldService.Pages
         {
             InitializeComponent();
         }
+
+        public void Handle_ItemSelected(object sender, SelectedItemChangedEventArgs e)
+        {
+            // Reset selection
+            (sender as ListView).SelectedItem = null;
+        }
     }
 }
