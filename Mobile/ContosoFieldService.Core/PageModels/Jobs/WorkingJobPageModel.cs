@@ -8,11 +8,14 @@ using System.Threading.Tasks;
 using Plugin.Media;
 using Plugin.Media.Abstractions;
 using ContosoFieldService.Models;
+using ContosoFieldService.Services;
 
 namespace ContosoFieldService.PageModels
 {
     public class WorkingJobPageModel : FreshBasePageModel
     {
+        JobsAPIService jobService = new Services.JobsAPIService();
+
         Job selectedJob;
         DateTime startedJobTime;
         Timer timer;
@@ -23,9 +26,20 @@ namespace ContosoFieldService.PageModels
         public string Billable { get; set; }
         public bool CameraSupported { get => CrossMedia.Current.IsCameraAvailable ? true : false; }
 
+        public override void Init(object initData)
+        {
+            base.Init(initData);
+            selectedJob = (Job)initData;
+
+
+        }
+
         protected override async void ViewIsAppearing(object sender, EventArgs e)
         {
             startedJobTime = DateTime.Now;
+
+            selectedJob.Status = JobStatus.InProgress;
+            await jobService.UpdateJob(selectedJob);
 
             Billable = "Billable";
             Duration = "0 seconds";
@@ -57,9 +71,9 @@ namespace ContosoFieldService.PageModels
                 return new Command(async () =>
                 {
                     Analytics.TrackEvent("Job Compeleted");
-                    var jobService = new Services.JobsAPIService();
-
-
+                 
+                    selectedJob.Status = JobStatus.Complete;
+                    await jobService.UpdateJob(selectedJob);
 
                     await CoreMethods.PopPageModel(true, true);
                 });
