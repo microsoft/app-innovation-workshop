@@ -50,7 +50,7 @@ namespace ContosoFieldService.PageModels
             {
                 return new Command<Job>(async (job) =>
                 {
-                    await CoreMethods.PushPageModel<JobDetailsPageModel>(job);
+                    await CoreMethods.PushPageModel<JobDetailsPageModel>(selectedJob);
                 });
             }
         }
@@ -82,7 +82,7 @@ namespace ContosoFieldService.PageModels
         #endregion
 
         #region Overrides
-        public override void Init(object initData)
+        public override async void Init(object initData)
         {
             base.Init(initData);
 
@@ -95,6 +95,9 @@ namespace ContosoFieldService.PageModels
 
             if(Jobs.Count == 0)
                 await ReloadData();
+
+            if (Helpers.Settings.UserIsLoggedIn == false)
+                await CoreMethods.PushPageModel<LoginPageModel>(null, true, true);
         }
 
         public override async void ReverseInit(object returndData)
@@ -110,13 +113,13 @@ namespace ContosoFieldService.PageModels
         async Task ReloadData()
         {
             IsRefreshing = true;
-            try
+            if(Plugin.Connectivity.CrossConnectivity.Current.IsConnected)
             {
                 var jobs = await jobsApiService.GetJobsAsync();
                 Jobs.Clear();
                 Jobs.AddRange(jobs);
             }
-            catch(Exception)
+            else
             {
                 await CoreMethods.DisplayAlert("Network Error", "No internet connectivity found", "OK");
             }
