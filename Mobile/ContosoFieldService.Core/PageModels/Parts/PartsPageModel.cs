@@ -11,7 +11,6 @@ namespace ContosoFieldService.PageModels
     public class PartsPageModel : FreshBasePageModel
     {
         public ObservableRangeCollection<Part> Parts { get; set; }
-        private bool isRefreshing;
         public bool IsRefreshing
         {
             get { return isRefreshing; }
@@ -123,6 +122,7 @@ namespace ContosoFieldService.PageModels
 
         #region Private Fields
         PartsAPIService partsApiService = new PartsAPIService();
+        bool isRefreshing;
         #endregion
 
 
