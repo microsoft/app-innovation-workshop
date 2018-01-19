@@ -152,6 +152,7 @@
                     TextColor="#ffffff" 
                     Text="Snap a Photo" 
                     Margin="0"
+                    Command="{Binding SnapPhotoClicked}"
                     IsVisible="{Binding CameraSupported}">
                 </Button>
 
