@@ -67,7 +67,7 @@ namespace ContosoFieldService.PageModels
             {
                 return new Command(async () =>
                 {
-                    //Todo
+                    
                 });
             }
         }
@@ -78,7 +78,7 @@ namespace ContosoFieldService.PageModels
             {
                 return new Command(async () =>
                 {
-                    await CoreMethods.PushPageModel<JobsPageModel>();
+                    await CoreMethods.PushPageModel<PartsPageModel>();
                 });
             }
         }

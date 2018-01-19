@@ -50,6 +50,10 @@
 	<string>Your location is used to route you to jobs</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>We access your media to allow you to upload existing photos</string>
+	<key>NSCameraUsageDescription</key>
+	<string>We use your camera to snap photos</string>
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string>Add part photos to your media library</string>
 	<key>XSAppIconAssets</key>
 	<string>Assets.xcassets/AppIcon.appiconset</string>
 </dict>

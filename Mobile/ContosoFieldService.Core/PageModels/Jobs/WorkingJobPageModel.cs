@@ -38,9 +38,6 @@ namespace ContosoFieldService.PageModels
         {
             startedJobTime = DateTime.Now;
 
-            selectedJob.Status = JobStatus.InProgress;
-            await jobService.UpdateJob(selectedJob);
-
             Billable = "Billable";
             Duration = "0 seconds";
             RaisePropertyChanged("Billable");
@@ -72,8 +69,10 @@ namespace ContosoFieldService.PageModels
                 {
                     Analytics.TrackEvent("Job Compeleted");
                  
+                    /*
                     selectedJob.Status = JobStatus.Complete;
                     await jobService.UpdateJob(selectedJob);
+                    */
 
                     await CoreMethods.PopPageModel(true, true);
                 });
@@ -102,7 +101,10 @@ namespace ContosoFieldService.PageModels
                     };
                
                     Analytics.TrackEvent("Taking a photo");
-                    await CrossMedia.Current.TakePhotoAsync(options);
+                    var file = await CrossMedia.Current.TakePhotoAsync(options);
+
+
+
                 });
             }
         }

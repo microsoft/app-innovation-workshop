@@ -93,11 +93,12 @@ namespace ContosoFieldService.PageModels
         {
             base.ViewIsAppearing(sender, e);
 
-            if(Jobs.Count == 0)
-                await ReloadData();
-
             if (Helpers.Settings.UserIsLoggedIn == false)
                 await CoreMethods.PushPageModel<LoginPageModel>(null, true, true);
+
+            if(Jobs.Count == 0)
+                await ReloadData();
+           
         }
 
         public override async void ReverseInit(object returndData)
