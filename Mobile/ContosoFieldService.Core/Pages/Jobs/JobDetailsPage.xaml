@@ -204,7 +204,7 @@
                     AutomationId="mapView"
                     HeightRequest="200" 
                     IsShowingUser="true" 
-                    MapType="Street" 
+                    MapType="Street"
                     IsEnabled="false">
                 </Maps:Map>
 
