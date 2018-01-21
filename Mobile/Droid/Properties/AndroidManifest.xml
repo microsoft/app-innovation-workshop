@@ -9,6 +9,6 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <application android:label="Field Service">
+        <meta-data android:name="com.google.android.maps.v2.API_KEY" android:value="AIzaSyD008rMjSZgPWApeFf-fu_Yvpaid0LkTQ4" />
     </application>
-    <meta-data android:name="com.google.android.maps.v2.API_KEY" android:value="AIzaSyD008rMjSZgPWApeFf-fu_Yvpaid0LkTQ4" />
 </manifest>
