@@ -2,7 +2,7 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
     x:Class="ContosoFieldService.Pages.JobDetailsPage"
-    xmlns:Maps="clr-namespace:Xamarin.Forms.Maps;assembly=Xamarin.Forms.Maps.dll"
+    xmlns:Maps="clr-namespace:Xamarin.Forms.Maps;assembly=Xamarin.Forms.Maps"
     xmlns:controls="clr-namespace:ContosoFieldService.Controls;assembly=ContosoFieldService.Core"
     BackgroundColor="#ffffff"
     Title="Job Details">
@@ -11,22 +11,26 @@
             <StackLayout>
 
                 <!-- Job Name Banner --> 
-                <Button 
+                <Frame
                     x:Name="JobName"
                     AutomationId="JobName"
-                    Text="{Binding Name}" 
-                    TextColor="#ffffff" 
-                    HeightRequest="50"
-                    BackgroundColor="#D83E01" 
-                    BorderRadius="0" 
-                    FontFamily="AvenirNext-Medium">
-                    <Button.FontSize>
-                        <OnPlatform x:TypeArguments="x:Double">
-                          <On Platform="iOS" Value="18" />
-                          <On Platform="Android" Value="16" />
-                        </OnPlatform>
-                    </Button.FontSize>
-                </Button>
+                    CornerRadius="0"
+                    Margin="0"
+                    HasShadow="false"
+                    BackgroundColor="#D83E01" >
+                    <Label 
+                        Text="{Binding Name}" 
+                        HorizontalTextAlignment="Center"
+                        FontFamily="AvenirNext-Medium" 
+                        TextColor="#ffffff">
+                        <Label.FontSize>
+                            <OnPlatform x:TypeArguments="x:Double">
+                              <On Platform="iOS" Value="18" />
+                              <On Platform="Android" Value="16" />
+                            </OnPlatform>
+                        </Label.FontSize>
+                    </Label>
+                </Frame>
 
                 <!-- Overview Stack -->
                 <StackLayout Orientation="Vertical" Padding="15,5,5,15" BackgroundColor="#ffffff">
