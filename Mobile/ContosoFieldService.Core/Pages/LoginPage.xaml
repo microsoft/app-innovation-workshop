@@ -38,10 +38,14 @@
                     Text="{Binding FullName}" 
                     Placeholder="Full Name" 
                     PlaceholderColor="#515151" 
-                    BackgroundColor="#1C262F" 
                     TextColor="White" 
                     FontFamily="AvenirNext-Regular" 
                     HeightRequest="40">
+                    <Entry.BackgroundColor>
+                        <OnPlatform x:TypeArguments="Color">
+                            <On Platform="iOS" Value="#1C262F" />
+                        </OnPlatform>
+                    </Entry.BackgroundColor>
                 </Entry>
                 
                 <Entry 
@@ -50,11 +54,15 @@
                     Text="{Binding Email}" 
                     Placeholder="Email Address" 
                     PlaceholderColor="#515151" 
-                    BackgroundColor="#1C262F" 
                     TextColor="White" 
                     Keyboard="Email" 
                     FontFamily="AvenirNext-Regular" 
                     HeightRequest="40">
+                    <Entry.BackgroundColor>
+                        <OnPlatform x:TypeArguments="Color">
+                            <On Platform="iOS" Value="#1C262F" />
+                        </OnPlatform>
+                    </Entry.BackgroundColor>
                 </Entry>
 
           </StackLayout>  
