@@ -193,6 +193,11 @@
                       <On Platform="Android" Value="16" />
                     </OnPlatform>
                 </Button.FontSize>
+                <Button.Margin>
+                    <OnPlatform x:TypeArguments="Thickness">
+                      <On Platform="Android" Value="15,0,15,15" />
+                    </OnPlatform>
+                </Button.Margin>
             </Button>
         </StackLayout>
     </ScrollView>
