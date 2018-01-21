@@ -12,10 +12,11 @@ using Lottie.Forms.Droid;
 using FFImageLoading.Forms.Droid;
 using CarouselView.FormsPlugin.Android;
 using FFImageLoading.Transformations;
+using Xamarin;
 
 namespace ContosoFieldService.Droid
 {
-    [Activity(Label = "ContosoFieldService.Droid", Icon = "@drawable/icon", Theme = "@style/MyTheme", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
+    [Activity(Label = "Field Service", Icon = "@drawable/icon", Theme = "@style/MyTheme", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
     public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity
     {
         protected override void OnCreate(Bundle bundle)
@@ -26,9 +27,10 @@ namespace ContosoFieldService.Droid
             base.OnCreate(bundle);
 
             global::Xamarin.Forms.Forms.Init(this, bundle);
-            global::Xamarin.FormsMaps.Init(this, bundle);
-
             ImageCircleRenderer.Init();
+            AnimationViewRenderer.Init();
+            FormsMaps.Init(this, bundle);
+            CarouselViewRenderer.Init();
 
             LoadApplication(new App());
         }

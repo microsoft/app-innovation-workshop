@@ -41,7 +41,7 @@ namespace ContosoFieldService
                 var navContainer = new CustomAndroidNavigation("AndroidNavigation");
 
                 navContainer.Init("Menu", "hamburger.png");
-                navContainer.AddPage<DashboardPageModel>("Start");
+                //navContainer.AddPage<DashboardPageModel>("Start");
                 navContainer.AddPage<JobsPageModel>("Jobs");
                 navContainer.AddPage<PartsPageModel>("Parts");
                 navContainer.AddPage<ProfilePageModel>("Me");
