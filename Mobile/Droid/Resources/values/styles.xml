@@ -3,7 +3,7 @@
     <style name="MyTheme" parent="MyTheme.Base">
     </style>
     <!-- Base theme applied no matter what API -->
-    <style name="MyTheme.Base" parent="Theme.AppCompat.Light.DarkActionBar">
+    <style name="MyTheme.Base" parent="Theme.AppCompat">
         <!--If you are using revision 22.1 please use just windowNoTitle. Without android:-->
         <item name="windowNoTitle">true</item>
         <!--We will be using the toolbar so no need to show ActionBar-->
