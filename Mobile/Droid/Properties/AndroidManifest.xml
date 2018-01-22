@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="1" android:versionName="1.0" package="com.microsoft.gbb.ContosoFieldService">
-	<uses-sdk android:minSdkVersion="16" />
-	<uses-permission android:name="android.permission.INTERNET" />
-	<application android:label="ContosoFieldService"></application>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="1" android:versionName="1.0" package="com.microsoft.gbb.contosomaintenance">
+    <uses-sdk android:minSdkVersion="16" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <application android:label="Field Service">
+    </application>
 </manifest>
