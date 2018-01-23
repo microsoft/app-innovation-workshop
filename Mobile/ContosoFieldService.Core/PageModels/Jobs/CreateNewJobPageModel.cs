@@ -4,6 +4,8 @@ using ContosoFieldService.Services;
 using FreshMvvm;
 using Microsoft.AppCenter.Analytics;
 using Xamarin.Forms;
+using Spatial = Microsoft.Azure.Documents.Spatial;
+
 
 namespace ContosoFieldService.PageModels
 {
@@ -24,7 +26,7 @@ namespace ContosoFieldService.PageModels
         }
 
 
-        public Command CreateJob
+        public Command CreateJobClicked
         {
             get
             {
@@ -38,6 +40,9 @@ namespace ContosoFieldService.PageModels
                     Analytics.TrackEvent("New Job Created");
                     try
                     {
+                        var location = await Plugin.Geolocator.CrossGeolocator.Current.GetPositionAsync();
+                        job.Address = new Location() { GeoPosition = new Spatial.Point(location.Longitude, location.Latitude) };
+                   
                         await jobApiService.CreateJobAsync(job);
                     }
                     catch(Exception)

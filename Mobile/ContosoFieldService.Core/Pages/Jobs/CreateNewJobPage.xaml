@@ -110,7 +110,7 @@
                         BackgroundColor="#01D8CB" 
                         BorderRadius="0" 
                         FontFamily="AvenirNext-Medium"
-                        Command="{Binding Create}">>
+                        Command="{Binding CreateJobClicked}">>
                         <Button.FontSize>
                             <OnPlatform x:TypeArguments="x:Double">
                               <On Platform="iOS" Value="18" />
