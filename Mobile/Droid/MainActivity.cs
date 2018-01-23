@@ -12,6 +12,7 @@ using Lottie.Forms.Droid;
 using FFImageLoading.Forms.Droid;
 using CarouselView.FormsPlugin.Android;
 using FFImageLoading.Transformations;
+using Xamarin;
 
 namespace ContosoFieldService.Droid
 {
@@ -26,9 +27,10 @@ namespace ContosoFieldService.Droid
             base.OnCreate(bundle);
 
             global::Xamarin.Forms.Forms.Init(this, bundle);
-            global::Xamarin.FormsMaps.Init(this, bundle);
-
             ImageCircleRenderer.Init();
+            AnimationViewRenderer.Init();
+            FormsMaps.Init(this, bundle);
+            CarouselViewRenderer.Init();
 
             LoadApplication(new App());
         }
