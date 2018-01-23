@@ -5,7 +5,7 @@ namespace ContosoFieldService.Models
 {
     public class Job
     {
-        [JsonProperty ("name")]
+        [JsonProperty("name")]
         public string Name { get; set; }
 
         [JsonProperty("details")]
@@ -26,8 +26,8 @@ namespace ContosoFieldService.Models
         [JsonProperty("customer")]
         public Customer Customer { get; set; }
 
-        [JsonProperty("location")]
-        public Location Location { get; set; }
+        [JsonProperty("Address")]
+        public Location Address { get; set; }
     }
 
     public enum JobType

@@ -1,16 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-
+using CarouselView.FormsPlugin.iOS;
+using FFImageLoading.Forms.Touch;
+using FFImageLoading.Transformations;
 using Foundation;
 using ImageCircle.Forms.Plugin.iOS;
 using Lottie.Forms.iOS.Renderers;
-using UIKit;
-
 using MikeCodesDotNET.iOS;
-using FFImageLoading.Forms.Touch;
-using CarouselView.FormsPlugin.iOS;
-using FFImageLoading.Transformations;
+using UIKit;
+using Xamarin;
 
 namespace ContosoFieldService.iOS
 {
@@ -22,7 +21,7 @@ namespace ContosoFieldService.iOS
             global::Xamarin.Forms.Forms.Init();
             ImageCircleRenderer.Init();
             AnimationViewRenderer.Init();
-
+            FormsMaps.Init();
             CachedImageRenderer.Init();
             CarouselViewRenderer.Init();
 
