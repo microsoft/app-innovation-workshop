@@ -118,15 +118,14 @@
                     </StackLayout>
 
                     <!-- Details Text -->
-                    <Editor
+                    <Label
                         x:Name="lblDetailsTitle"
                         AutomationId="lblDetailsTitle"
                         Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco"
                         TextColor="#838383" 
                         FontFamily="AvenirNext-Regular" 
-                        FontSize="17"
-                        IsEnabled="false">
-                    </Editor>
+                        FontSize="17">
+                    </Label>
                 </StackLayout>
                 
                 <!-- Map View -->

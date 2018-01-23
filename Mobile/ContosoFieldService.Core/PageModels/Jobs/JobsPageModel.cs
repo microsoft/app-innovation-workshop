@@ -12,8 +12,38 @@ namespace ContosoFieldService.PageModels
     {
         #region Bindable Properties 
         public ObservableRangeCollection<Job> Jobs { get; set; }
-        public bool IsRefreshing { get; set; }
-        public string SearchText { get; set; }
+ 
+        public bool IsRefreshing
+        {
+            get
+            {
+                return isRefreshing;
+            }
+            set
+            {
+                isRefreshing = value; 
+                RaisePropertyChanged(); 
+            }
+        }
+
+        string searchText;
+        public string SearchText
+        {
+            get 
+            { 
+                return searchText;
+            }
+            set 
+            { 
+                searchText = value;
+                if (string.IsNullOrWhiteSpace(value))
+                {
+                   ReloadData(true);
+                }
+                else
+                    Search.Execute(value);
+            }
+        }
 
         Job selectedJob;
         public Job SelectedJob
@@ -27,6 +57,8 @@ namespace ContosoFieldService.PageModels
                 selectedJob = value;
                 if (value != null)
                     JobSelected.Execute(value);
+                RaisePropertyChanged();      
+
             }
         }
 
@@ -85,7 +117,6 @@ namespace ContosoFieldService.PageModels
         public override async void Init(object initData)
         {
             base.Init(initData);
-
             Jobs = new ObservableRangeCollection<Job>();
         }
 
@@ -100,6 +131,12 @@ namespace ContosoFieldService.PageModels
                 await ReloadData();
            
         }
+ 
+        protected override async void ViewIsDisappearing(object sender, EventArgs e)
+        {
+            SelectedJob = null;
+        }
+
 
         public override async void ReverseInit(object returndData)
         {
@@ -111,17 +148,17 @@ namespace ContosoFieldService.PageModels
         #endregion
 
         #region Private Methods
-        async Task ReloadData()
+        async Task ReloadData(bool isSilent = false)
         {
-            IsRefreshing = true;
+            IsRefreshing = !isSilent;
             if(Plugin.Connectivity.CrossConnectivity.Current.IsConnected)
             {
                 var jobs = await jobsApiService.GetJobsAsync();
                 Jobs.Clear();
                 Jobs.AddRange(jobs);
+                IsRefreshing = false;
             }
-            else
-            {
+            else{
                 await CoreMethods.DisplayAlert("Network Error", "No internet connectivity found", "OK");
             }
             IsRefreshing = false;
@@ -130,6 +167,8 @@ namespace ContosoFieldService.PageModels
 
         #region Private Fields
         JobsAPIService jobsApiService = new JobsAPIService();
+
+        bool isRefreshing;
         #endregion
     }
 }
