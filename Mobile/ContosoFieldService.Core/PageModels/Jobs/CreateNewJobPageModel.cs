@@ -12,6 +12,17 @@ namespace ContosoFieldService.PageModels
         #region Bindable Properties 
         public string Name { get; set; }
         public string Details { get; set; }
+        public DateTime CurrentDate { get; set; }
+        public DateTime DueDate { get; set; }
+
+        public override void Init(object initData)
+        {
+            base.Init(initData);
+
+            DueDate = DateTime.Now;
+            CurrentDate = DateTime.Now;
+        }
+
 
         public Command CreateJob
         {
