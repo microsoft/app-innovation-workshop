@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using ContosoMaintenance.WebAPI.Models;
 using System.Spatial;
+using Microsoft.Azure.Documents.Spatial;
 
 namespace ContosoMaintenance.WebAPI.DummyData
 {
@@ -28,7 +29,7 @@ namespace ContosoMaintenance.WebAPI.DummyData
                 City = "Pensarn",
                 ZipCode = "SA31 5UQ"
             };
-            address1.Point = GeographyPoint.Create(51.786209, -4.383567);
+            address1.Point = new Point(51.786209, -4.383567);
             Addresses.Add(address1);
 
             var address2 = new Location
@@ -37,7 +38,7 @@ namespace ContosoMaintenance.WebAPI.DummyData
                 City = "Cadbury Heath",
                 ZipCode = "BS30 3SD"
             };
-            address2.Point = GeographyPoint.Create(51.374297, -2.525476);
+            address2.Point = new Point(51.374297, -2.525476);
             Addresses.Add(address2);
 
             var address3 = new Location
@@ -46,7 +47,7 @@ namespace ContosoMaintenance.WebAPI.DummyData
                 City = "Bindal",
                 ZipCode = "IV20 4AH"
             };
-            address3.Point = GeographyPoint.Create(57.722237, -3.900663);
+            address3.Point = new Point(57.722237, -3.900663);
             Addresses.Add(address3);
 
             var address4 = new Location
@@ -55,7 +56,7 @@ namespace ContosoMaintenance.WebAPI.DummyData
                 City = "West Hanningfield",
                 ZipCode = "CM2 0ER"
             };
-            address4.Point = GeographyPoint.Create(51.748377, 0.473482);
+            address4.Point = new Point(51.748377, 0.473482);
             Addresses.Add(address4);
 
             var address5 = new Location
@@ -64,7 +65,7 @@ namespace ContosoMaintenance.WebAPI.DummyData
                 City = "Bourne End",
                 ZipCode = "HP1 1NU"
             };
-            address5.Point = GeographyPoint.Create(51.722259, -0.610968);
+            address5.Point = new Point(51.722259, -0.610968);
             Addresses.Add(address5);
 
             var address6 = new Location
@@ -73,7 +74,7 @@ namespace ContosoMaintenance.WebAPI.DummyData
                 City = "Rodhuish",
                 ZipCode = "TA24 4PF"
             };
-            address6.Point = GeographyPoint.Create(51.076015, -3.501786);
+            address6.Point = new Point(51.076015, -3.501786);
             Addresses.Add(address6);
 
             var address7 = new Location
@@ -82,7 +83,7 @@ namespace ContosoMaintenance.WebAPI.DummyData
                 City = "Askham",
                 ZipCode = "CA10 5HN"
             };
-            address7.Point = GeographyPoint.Create(54.402629, -2.136548);
+            address7.Point = new Point(54.402629, -2.136548);
             Addresses.Add(address7);
 
             var address8 = new Location
@@ -91,7 +92,7 @@ namespace ContosoMaintenance.WebAPI.DummyData
                 City = "Southsea",
                 ZipCode = "LL11 7XE"
             };
-            address8.Point = GeographyPoint.Create(52.936876, -3.361345);
+            address8.Point = new Point(52.936876, -3.361345);
             Addresses.Add(address8);
 
             var address9 = new Location
@@ -100,7 +101,7 @@ namespace ContosoMaintenance.WebAPI.DummyData
                 City = "Plas Gogerddan",
                 ZipCode = "SY23 0RD"
             };
-            address9.Point = GeographyPoint.Create(51.762533, -4.308665);
+            address9.Point = new Point(51.762533, -4.308665);
             Addresses.Add(address9);
 
             var address10 = new Location
@@ -109,7 +110,7 @@ namespace ContosoMaintenance.WebAPI.DummyData
                 City = "Town Street",
                 ZipCode = "IP27 5JE"
             };
-            address10.Point = GeographyPoint.Create(52.332529, 0.490763);
+            address10.Point = new Point(52.332529, 0.490763);
             Addresses.Add(address10);
         }
 
@@ -676,11 +677,11 @@ namespace ContosoMaintenance.WebAPI.DummyData
             };
             Jobs.Add(job19);
 
-           
+
 
         }
 
-        Job GetRandomJob    ()
+        Job GetRandomJob()
         {
             Random rnd = new Random();
             int r = rnd.Next(Jobs.Count);

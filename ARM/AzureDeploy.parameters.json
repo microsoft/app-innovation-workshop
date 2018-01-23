@@ -1,0 +1,24 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "databaseAccountName": {
+            "value": "__AzureDBName__"
+        },
+        "webAppName": {
+            "value": "__AzureWebName__"
+        },
+        "azureSearchname": {
+            "value": "__AzureSearchName__"
+        },
+        "azureVisionname": {
+            "value": "__AzureVisionName__"
+        },
+        "storageAccountName": {
+            "value": "__AzureStorageName__"
+        },
+        "Location": {
+            "value": "__AzureLocation__"
+        }
+    }
+}
