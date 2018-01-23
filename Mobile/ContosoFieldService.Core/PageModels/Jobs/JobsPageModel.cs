@@ -12,7 +12,18 @@ namespace ContosoFieldService.PageModels
     {
         #region Bindable Properties 
         public ObservableRangeCollection<Job> Jobs { get; set; }
-        public bool IsRefreshing { get; set; }
+        public bool IsRefreshing
+        {
+            get
+            {
+                return isRefreshing;
+            }
+            set
+            {
+                isRefreshing = value; 
+                RaisePropertyChanged(); 
+            }
+        }
         public string SearchText { get; set; }
 
         Job selectedJob;
@@ -119,6 +130,7 @@ namespace ContosoFieldService.PageModels
                 var jobs = await jobsApiService.GetJobsAsync();
                 Jobs.Clear();
                 Jobs.AddRange(jobs);
+                IsRefreshing = false;
             }
             else
             {
@@ -130,6 +142,7 @@ namespace ContosoFieldService.PageModels
 
         #region Private Fields
         JobsAPIService jobsApiService = new JobsAPIService();
+        bool isRefreshing;
         #endregion
     }
 }

@@ -14,30 +14,28 @@
             Command="{Binding AddJobClicked}"/>
     </ContentPage.ToolbarItems>
 	<ContentPage.Content>
-        <Grid>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="*" />
-                <RowDefinition Height="Auto" />
-             </Grid.RowDefinitions>
-            
-            <StackLayout>
-                <SearchBar 
-                    x:Name="searchBar"
-                    AutomationId="searchBar"
-                    SearchCommand="{Binding Search}" 
-                    Text="{Binding SearchText}"
-                    Placeholder="Search"
-                    BackgroundColor="#222E38">
-                </SearchBar>
-                <ListView 
-                    x:Name="listView"
-                    AutomationId="listView"
-                    BackgroundColor="Transparent" 
-                    RowHeight="65" 
-                    ItemsSource="{Binding Jobs}" 
-                    SelectedItem="{Binding SelectedJob, Mode=TwoWay}"
-                    ItemSelected="Handle_ItemSelected"
-                    IsPullToRefreshEnabled="True">
+        <Grid>     
+            <ListView 
+                x:Name="listView"
+                AutomationId="listView"
+                BackgroundColor="Transparent" 
+                RowHeight="65" 
+                ItemsSource="{Binding Jobs}" 
+                SelectedItem="{Binding SelectedJob, Mode=TwoWay}"
+                ItemSelected="Handle_ItemSelected"
+                IsPullToRefreshEnabled="True"
+                IsRefreshing="{Binding IsRefreshing, Mode=OneWay}"
+                RefreshCommand="{Binding Refresh}">
+                <ListView.Header>
+                    <SearchBar 
+                        x:Name="searchBar"
+                        AutomationId="searchBar"
+                        SearchCommand="{Binding Search}" 
+                        Text="{Binding SearchText}"
+                        Placeholder="Search"
+                        BackgroundColor="#222E38">
+                    </SearchBar>
+                </ListView.Header>
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <ViewCell>
@@ -82,26 +80,6 @@
                         </DataTemplate>
                     </ListView.ItemTemplate>
                 </ListView>
-            </StackLayout>
-         <Grid
-            x:Name="LoadingOverlay"
-            AutomationId="loadingOverlay"
-            IsVisible="{Binding IsRefreshing}"
-            Grid.RowSpan="2"
-            BackgroundColor="#00BB84">
-
-            <StackLayout VerticalOptions="Center">
-                <lottie:AnimationView
-                    HeightRequest="60"
-                    WidthRequest="100"
-                    x:Name="LoadingAnimation"
-                    Animation="progress_balls.json"
-                    AutoPlay="true"
-                    Loop="true" />
-                
-                <Label Text="Syncing..." TextColor="White" Margin="0,20,0,0" HorizontalTextAlignment="Center" FontAttributes="Bold"/>
-            </StackLayout>
-        </Grid>
         </Grid>
 	</ContentPage.Content>
 </ContentPage>

@@ -15,13 +15,11 @@ namespace ContosoFieldService.Pages
         protected override void OnAppearing()
         {
             base.OnAppearing();
-            LoadingAnimation.Play();
         }
 
         protected override void OnDisappearing()
         {
             base.OnDisappearing();
-            LoadingAnimation.Pause();
         }
 
         void Handle_ItemSelected(object sender, Xamarin.Forms.SelectedItemChangedEventArgs e)
