@@ -121,7 +121,7 @@
                     <Editor
                         x:Name="lblDetailsTitle"
                         AutomationId="lblDetailsTitle"
-                        Text="{Binding Details}"
+                        Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco"
                         TextColor="#838383" 
                         FontFamily="AvenirNext-Regular" 
                         FontSize="17"
