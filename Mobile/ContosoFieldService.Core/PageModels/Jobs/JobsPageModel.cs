@@ -57,6 +57,8 @@ namespace ContosoFieldService.PageModels
                 selectedJob = value;
                 if (value != null)
                     JobSelected.Execute(value);
+                RaisePropertyChanged();      
+
             }
         }
 
@@ -129,6 +131,12 @@ namespace ContosoFieldService.PageModels
                 await ReloadData();
            
         }
+ 
+        protected override async void ViewIsDisappearing(object sender, EventArgs e)
+        {
+            SelectedJob = null;
+        }
+
 
         public override async void ReverseInit(object returndData)
         {
