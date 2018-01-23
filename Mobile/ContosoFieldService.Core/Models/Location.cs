@@ -19,6 +19,6 @@ namespace ContosoFieldService.Models
         public string ZipCode { get; set; }
 
         [JsonProperty("point")]
-        public Point Point { get; set; }
+        public Point GeoPosition { get; set; }
     }
 }

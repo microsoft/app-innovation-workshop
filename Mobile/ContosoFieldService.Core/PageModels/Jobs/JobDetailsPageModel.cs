@@ -30,7 +30,7 @@ namespace ContosoFieldService.PageModels
 
                 Age = CurrentJob.CreatedAt.Humanize();
                 Details = string.IsNullOrEmpty(CurrentJob.Details) ? "Not Supplied" : CurrentJob.Details;
-                Point = CurrentJob?.Address?.Point;
+                Point = CurrentJob?.Address?.GeoPosition;
             }
             else
             {
