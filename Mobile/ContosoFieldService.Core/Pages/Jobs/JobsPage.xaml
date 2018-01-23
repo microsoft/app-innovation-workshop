@@ -22,7 +22,6 @@
                 RowHeight="65" 
                 ItemsSource="{Binding Jobs}" 
                 SelectedItem="{Binding SelectedJob, Mode=TwoWay}"
-                ItemSelected="Handle_ItemSelected"
                 IsPullToRefreshEnabled="True"
                 IsRefreshing="{Binding IsRefreshing, Mode=OneWay}"
                 RefreshCommand="{Binding Refresh}">
