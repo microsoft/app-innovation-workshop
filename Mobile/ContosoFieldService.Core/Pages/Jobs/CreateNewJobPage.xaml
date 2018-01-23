@@ -9,12 +9,31 @@
             <StackLayout>
 
                  <!-- Form Stack -->
-               <StackLayout Orientation="Vertical" Padding="15,5,15,15" VerticalOptions="FillAndExpand">
+               <StackLayout Orientation="Vertical" Padding="15,5,15,0" VerticalOptions="FillAndExpand">
+
+                    <!-- Job Info -->
+                    <Label 
+                        Text="Info"
+                        FontSize="16"
+                        FontAttributes="Bold"
+                        FontFamily="AvenirNext-Medium" 
+                        TextColor="#DCDCDC">
+                    </Label>
+                    
+                    <!-- Due Date -->
+                    <Label 
+                        Text="Job Name"
+                        FontSize="12"
+                        FontAttributes="Bold"
+                        FontFamily="AvenirNext-Medium" 
+                        TextColor="#DCDCDC">
+                    </Label>
+                    
                     <Entry 
                         x:Name="tbxJobName"
                         AutomationId="tbxJobName"
                         Text="{Binding Name}" 
-                        Placeholder="Full Name" 
+                        Placeholder="Job Name" 
                         PlaceholderColor="#515151" 
                         TextColor="White" 
                         FontFamily="AvenirNext-Regular" 
@@ -25,6 +44,15 @@
                         </OnPlatform>
                     </Entry.BackgroundColor>
                     </Entry>
+
+                    <!-- Details-->
+                    <Label 
+                        Text="Details"
+                        FontSize="12"
+                        FontAttributes="Bold"
+                        FontFamily="AvenirNext-Medium" 
+                        TextColor="#DCDCDC">
+                    </Label>
                     
                     <Entry 
                         x:Name="tbxDetails"
@@ -42,14 +70,83 @@
                     </Entry.BackgroundColor>
                     </Entry>
 
+
+                    <!-- Due Date -->
+                    <Label 
+                        Text="Due Date"
+                        FontSize="12"
+                        FontAttributes="Bold"
+                        FontFamily="AvenirNext-Medium" 
+                        TextColor="#DCDCDC">
+                    </Label>
+                    
+                    <DatePicker
+                        Date="{Binding DueDate}"
+                        MinimumDate="{Binding CurrentDate}"
+                        TextColor="White"
+                        HeightRequest="40">
+                        <DatePicker.BackgroundColor>
+                            <OnPlatform x:TypeArguments="Color">
+                                <On Platform="iOS" Value="#1C262F" />
+                            </OnPlatform>
+                        </DatePicker.BackgroundColor>
+                    </DatePicker>
+
+                    <BoxView 
+                        Margin="0,15,0,5"
+                        BackgroundColor="White" 
+                        Opacity="0.2"
+                        HeightRequest="1">
+                    </BoxView>
+                   
               </StackLayout>  
                 
                 <StackLayout VerticalOptions="End">
+
                     <Button 
-                        x:Name="btnCancel"
-                        AutomationId="btnCancel"
-                        Command="{Binding CancelClicked}" 
-                        Text="Cancel"></Button>
+                        Text="Create" 
+                        TextColor="#ffffff" 
+                        HeightRequest="50"
+                        BackgroundColor="#01D8CB" 
+                        BorderRadius="0" 
+                        FontFamily="AvenirNext-Medium"
+                        Command="{Binding Create}">>
+                        <Button.FontSize>
+                            <OnPlatform x:TypeArguments="x:Double">
+                              <On Platform="iOS" Value="18" />
+                              <On Platform="Android" Value="16" />
+                            </OnPlatform>
+                        </Button.FontSize>
+                        <Button.Margin>
+                            <OnPlatform x:TypeArguments="Thickness">
+                              <On Platform="Android" Value="15,0,15,15" />
+                            </OnPlatform>
+                        </Button.Margin>
+                    </Button>
+
+
+                    <Button 
+                        Text="Cancel" 
+                        TextColor="#ffffff" 
+                        HeightRequest="50"
+                        BackgroundColor="#D83E01" 
+                        BorderRadius="0" 
+                        FontFamily="AvenirNext-Medium"
+                        Command="{Binding CancelClicked}">>
+                        <Button.FontSize>
+                            <OnPlatform x:TypeArguments="x:Double">
+                              <On Platform="iOS" Value="18" />
+                              <On Platform="Android" Value="16" />
+                            </OnPlatform>
+                        </Button.FontSize>
+                        <Button.Margin>
+                            <OnPlatform x:TypeArguments="Thickness">
+                              <On Platform="iOS" Value="0,0,0,20" />
+                              <On Platform="Android" Value="15,0,15,15" />
+                            </OnPlatform>
+                        </Button.Margin>
+                    </Button>
+                  
                 </StackLayout>
             </StackLayout>
         </ScrollView>

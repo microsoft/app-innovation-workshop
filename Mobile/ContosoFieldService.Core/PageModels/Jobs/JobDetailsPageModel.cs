@@ -30,9 +30,6 @@ namespace ContosoFieldService.PageModels
 
                 Age = CurrentJob.CreatedAt.Humanize();
                 Details = string.IsNullOrEmpty(CurrentJob.Details) ? "Not Supplied" : CurrentJob.Details;
-                ContactName = string.IsNullOrEmpty(CurrentJob?.Customer?.CompanyName) ? "Not Supplied" : CurrentJob.Customer.ContactName;
-                CompanyName = string.IsNullOrEmpty(CurrentJob?.Customer?.ContactName) ? "Not Supplied" : CurrentJob.Customer.CompanyName;
-
                 Point = CurrentJob?.Address?.Point;
             }
             else

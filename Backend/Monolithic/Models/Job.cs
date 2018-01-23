@@ -20,8 +20,6 @@ namespace ContosoMaintenance.WebAPI.Models
         [IsFilterable, IsSortable]
         public JobStatus Status { get; set; }
 
-        public Customer Customer { get; set; }
-
         public string[] Attachements { get; set; }
 
         public Location Address { get; set; }
