@@ -4,7 +4,7 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
     x:Class="ContosoFieldService.Pages.WorkingJobPage"
     Title="Working"
-    BackgroundColor="#222E38">
+    BackgroundColor="White">
 	<ContentPage.Content>
         <ScrollView>
             <StackLayout Padding="0" Spacing="0">
@@ -40,6 +40,11 @@
                     TextColor="#ffffff" 
                     Text="Quick Break"
                     Command="{Binding QuickBreakClicked}">
+                    <Button.Margin>
+                        <OnPlatform x:TypeArguments="Thickness">
+                            <On Platform="Android" Value="15" />
+                        </OnPlatform>
+                    </Button.Margin>
                 </Button>
 
                 <!-- Overview Stack -->
@@ -154,6 +159,11 @@
                     Margin="0"
                     Command="{Binding SnapPhotoClicked}"
                     IsVisible="{Binding CameraSupported}">
+                    <Button.Margin>
+                        <OnPlatform x:TypeArguments="Thickness">
+                            <On Platform="Android" Value="15,15,15,0" />
+                        </OnPlatform>
+                    </Button.Margin>
                 </Button>
 
 
@@ -167,7 +177,11 @@
                     Text="Complete" 
                     Margin="0" 
                     Command="{Binding CompleteClicked}">
-  
+                    <Button.Margin>
+                        <OnPlatform x:TypeArguments="Thickness">
+                            <On Platform="Android" Value="15" />
+                        </OnPlatform>
+                    </Button.Margin>
                 </Button>
 
                 

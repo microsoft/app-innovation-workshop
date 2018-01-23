@@ -89,23 +89,26 @@
                 </Grid>
 
                 <!-- Motivational Banner --> 
-                <Button 
+                <Frame
                     x:Name="btnMotivationalBanner"
                     AutomationId="btnMotiviationalBanner"
-                    HeightRequest="50" 
-                    BackgroundColor="#00D8CB" 
-                    BorderRadius="0" 
-                    FontFamily="AvenirNext-Medium" 
-                    TextColor="#ffffff" 
-                    Text="You're crushing it!" 
-                    Margin="0">
-                    <Button.FontSize>
-                        <OnPlatform x:TypeArguments="x:Double">
-                          <On Platform="iOS" Value="18" />
-                          <On Platform="Android" Value="16" />
-                        </OnPlatform>
-                    </Button.FontSize>
-                </Button>
+                    CornerRadius="0"
+                    Margin="0"
+                    HasShadow="false"
+                    BackgroundColor="#00D8CB">
+                    <Label 
+                        Text="You're crushing it!"
+                        HorizontalTextAlignment="Center"
+                        FontFamily="AvenirNext-Medium" 
+                        TextColor="#ffffff">
+                        <Label.FontSize>
+                            <OnPlatform x:TypeArguments="x:Double">
+                              <On Platform="iOS" Value="18" />
+                              <On Platform="Android" Value="16" />
+                            </OnPlatform>
+                        </Label.FontSize>
+                    </Label>
+                </Frame>
 
                 <!-- Stats Carousel -->
                 <controls:CarouselViewControl 
