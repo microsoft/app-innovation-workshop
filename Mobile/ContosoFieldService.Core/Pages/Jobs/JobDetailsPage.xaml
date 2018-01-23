@@ -2,7 +2,7 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
     x:Class="ContosoFieldService.Pages.JobDetailsPage"
-    xmlns:Maps="clr-namespace:Xamarin.Forms.Maps;assembly=Xamarin.Forms.Maps.dll"
+    xmlns:Maps="clr-namespace:Xamarin.Forms.Maps;assembly=Xamarin.Forms.Maps"
     xmlns:controls="clr-namespace:ContosoFieldService.Controls;assembly=ContosoFieldService.Core"
     BackgroundColor="#ffffff"
     Title="Job Details">
@@ -201,10 +201,11 @@
                 <!-- Map View -->
                 <Maps:Map 
                     x:Name="mapView" 
+                    IsVisible="false"
                     AutomationId="mapView"
                     HeightRequest="200" 
                     IsShowingUser="true" 
-                    MapType="Street" 
+                    MapType="Street"
                     IsEnabled="false">
                 </Maps:Map>
 

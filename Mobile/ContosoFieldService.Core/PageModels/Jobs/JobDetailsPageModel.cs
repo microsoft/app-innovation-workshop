@@ -2,6 +2,7 @@
 using ContosoFieldService.Models;
 using FreshMvvm;
 using Humanizer;
+using Microsoft.Azure.Documents.Spatial;
 using Xamarin.Forms;
 
 namespace ContosoFieldService.PageModels
@@ -14,6 +15,7 @@ namespace ContosoFieldService.PageModels
         public string DueDate { get; set; }
         public string ContactName { get; set; }
         public string CompanyName { get; set; }
+        public Microsoft.Azure.Documents.Spatial.Point Point { get; set; }
 
         Job CurrentJob;
         public override void Init(object initData)
@@ -31,7 +33,7 @@ namespace ContosoFieldService.PageModels
                 ContactName = string.IsNullOrEmpty(CurrentJob?.Customer?.CompanyName) ? "Not Supplied" : CurrentJob.Customer.ContactName;
                 CompanyName = string.IsNullOrEmpty(CurrentJob?.Customer?.ContactName) ? "Not Supplied" : CurrentJob.Customer.CompanyName;
 
-               
+                Point = CurrentJob?.Address?.Point;
             }
             else
             {
