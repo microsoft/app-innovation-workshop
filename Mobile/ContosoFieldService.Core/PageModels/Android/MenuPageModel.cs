@@ -19,7 +19,7 @@ namespace ContosoFieldService.PageModels.Android
 
             MenuItems = new List<MenuItem>();
 
-            MenuItems.Add(new MenuItem() { Value = "Dashboard", Label = "Dashboard", Image = "icon_dashboard.png" });
+            //MenuItems.Add(new MenuItem() { Value = "Dashboard", Label = "Dashboard", Image = "icon_dashboard.png" });
             MenuItems.Add(new MenuItem() { Value = "Jobs", Label = "Jobs", Image = "icon_jobs.png" });
             MenuItems.Add(new MenuItem() { Value = "Parts", Label = "Parts", Image = "icon_parts.png" });
             MenuItems.Add(new MenuItem() { Value = "Me", Label = "Me", Image = "icon_user.png" });

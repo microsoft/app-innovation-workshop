@@ -10,20 +10,26 @@
         <StackLayout>
 
             <!-- Job Name Banner --> 
-            <Button 
-                Text="{Binding Name}" 
-                TextColor="#ffffff" 
-                HeightRequest="50"
-                BackgroundColor="#D83E01" 
-                BorderRadius="0" 
-                FontFamily="AvenirNext-Medium">
-                <Button.FontSize>
-                    <OnPlatform x:TypeArguments="x:Double">
-                      <On Platform="iOS" Value="18" />
-                      <On Platform="Android" Value="16" />
-                    </OnPlatform>
-                </Button.FontSize>
-            </Button>
+            <Frame
+                x:Name="PartName"
+                AutomationId="PartName"
+                CornerRadius="0"
+                Margin="0"
+                HasShadow="false"
+                BackgroundColor="#D83E01" >
+                <Label 
+                    Text="{Binding Name}" 
+                    HorizontalTextAlignment="Center"
+                    FontFamily="AvenirNext-Medium" 
+                    TextColor="#ffffff">
+                    <Label.FontSize>
+                        <OnPlatform x:TypeArguments="x:Double">
+                          <On Platform="iOS" Value="18" />
+                          <On Platform="Android" Value="16" />
+                        </OnPlatform>
+                    </Label.FontSize>
+                </Label>
+            </Frame>
 
             <!-- Image -->
             <Image HeightRequest="200" Source="{Binding ImageSource}" />
@@ -187,6 +193,11 @@
                       <On Platform="Android" Value="16" />
                     </OnPlatform>
                 </Button.FontSize>
+                <Button.Margin>
+                    <OnPlatform x:TypeArguments="Thickness">
+                      <On Platform="Android" Value="15,0,15,15" />
+                    </OnPlatform>
+                </Button.Margin>
             </Button>
         </StackLayout>
     </ScrollView>

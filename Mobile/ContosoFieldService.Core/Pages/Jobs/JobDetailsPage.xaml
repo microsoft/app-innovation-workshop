@@ -11,22 +11,26 @@
             <StackLayout>
 
                 <!-- Job Name Banner --> 
-                <Button 
+                <Frame
                     x:Name="JobName"
                     AutomationId="JobName"
-                    Text="{Binding Name}" 
-                    TextColor="#ffffff" 
-                    HeightRequest="50"
-                    BackgroundColor="#D83E01" 
-                    BorderRadius="0" 
-                    FontFamily="AvenirNext-Medium">
-                    <Button.FontSize>
-                        <OnPlatform x:TypeArguments="x:Double">
-                          <On Platform="iOS" Value="18" />
-                          <On Platform="Android" Value="16" />
-                        </OnPlatform>
-                    </Button.FontSize>
-                </Button>
+                    CornerRadius="0"
+                    Margin="0"
+                    HasShadow="false"
+                    BackgroundColor="#D83E01" >
+                    <Label 
+                        Text="{Binding Name}" 
+                        HorizontalTextAlignment="Center"
+                        FontFamily="AvenirNext-Medium" 
+                        TextColor="#ffffff">
+                        <Label.FontSize>
+                            <OnPlatform x:TypeArguments="x:Double">
+                              <On Platform="iOS" Value="18" />
+                              <On Platform="Android" Value="16" />
+                            </OnPlatform>
+                        </Label.FontSize>
+                    </Label>
+                </Frame>
 
                 <!-- Overview Stack -->
                 <StackLayout Orientation="Vertical" Padding="15,5,5,15" BackgroundColor="#ffffff">
@@ -204,8 +208,9 @@
                     IsVisible="false"
                     AutomationId="mapView"
                     HeightRequest="200" 
-                    IsShowingUser="true" 
-                    MapType="Street"
+                    IsShowingUser="false" 
+                    HasZoomEnabled="false"
+                    MapType="Street" 
                     IsEnabled="false">
                 </Maps:Map>
 
@@ -225,13 +230,7 @@
                     </StackLayout>
 
                     <!-- The iOS version uses a custom button and renderer -->
-                    <Grid Grid.Row="1" ColumnSpacing="1" RowSpacing="1" BackgroundColor="#e0e0e0"> 
-                        <Grid.IsVisible>
-                            <OnPlatform x:TypeArguments="x:Boolean">
-                                <On Platform="iOS" Value="true" />
-                                <On Platform="Android" Value="false" />
-                            </OnPlatform>
-                        </Grid.IsVisible>
+                    <Grid Grid.Row="1" ColumnSpacing="1" RowSpacing="1" Margin="0,0,15,0"> 
                         <Grid.RowDefinitions>
                             <RowDefinition Height="Auto" />
                             <RowDefinition Height="Auto" />
@@ -240,6 +239,11 @@
                             <ColumnDefinition Width="*" />
                             <ColumnDefinition Width="*" />
                         </Grid.ColumnDefinitions>
+                        <Grid.BackgroundColor>
+                            <OnPlatform x:TypeArguments="Color">
+                                <On Platform="iOS" Value="#e0e0e0" />
+                            </OnPlatform>
+                        </Grid.BackgroundColor>
 
                         <!-- Start Job -->
                         <Button 
@@ -248,13 +252,23 @@
                             Grid.Row="0" 
                             Grid.Column="0" 
                             HeightRequest="55" 
-                            BackgroundColor="White" 
-                            TextColor="#01D8CB" 
                             FontSize="18" 
                             BorderRadius="0"  
                             Text="Start Job" 
                             FontFamily="AvenirNext-Medium"
                             Command="{Binding StartJobClicked}">
+                            <Button.BackgroundColor>
+                                <OnPlatform x:TypeArguments="Color">
+                                    <On Platform="iOS" Value="White" />
+                                    <On Platform="Android" Value="#01D8CB" />
+                                </OnPlatform>
+                            </Button.BackgroundColor>
+                            <Button.TextColor>
+                                <OnPlatform x:TypeArguments="Color">
+                                    <On Platform="iOS" Value="#01D8CB" />
+                                    <On Platform="Android" Value="White" />
+                                </OnPlatform>
+                            </Button.TextColor>
                         </Button>
 
                         <!-- Edit Button -->
@@ -264,13 +278,24 @@
                             Grid.Row="0" 
                             Grid.Column="1" 
                             HeightRequest="55" 
-                            BackgroundColor="White" 
                             TextColor="#F5A623" 
                             FontSize="18" 
                             BorderRadius="0" 
                             Text="Edit Job"
                             FontFamily="AvenirNext-Medium"
                             Command="{Binding EditJobClicked}">
+                            <Button.BackgroundColor>
+                                <OnPlatform x:TypeArguments="Color">
+                                    <On Platform="iOS" Value="White" />
+                                    <On Platform="Android" Value="#F5A623" />
+                                </OnPlatform>                                
+                            </Button.BackgroundColor>
+                            <Button.TextColor>
+                                <OnPlatform x:TypeArguments="Color">
+                                    <On Platform="iOS" Value="#F5A623" />
+                                    <On Platform="Android" Value="White" />
+                                </OnPlatform>
+                            </Button.TextColor>
                         </Button>
 
                         <!-- Delete Job -->
@@ -280,13 +305,23 @@
                             Grid.Row="1" 
                             Grid.Column="0" 
                             HeightRequest="55" 
-                            BackgroundColor="White" 
-                            TextColor="#D83E01" 
                             FontSize="18" 
                             BorderRadius="0" 
                             Text="Delete Job"
                             FontFamily="AvenirNext-Medium"
                             Command="{Binding DeleteJobClicked}">
+                            <Button.BackgroundColor>
+                                <OnPlatform x:TypeArguments="Color">
+                                    <On Platform="iOS" Value="White" />
+                                    <On Platform="Android" Value="#D83E01" />
+                                </OnPlatform>
+                            </Button.BackgroundColor>
+                            <Button.TextColor>
+                                <OnPlatform x:TypeArguments="Color">
+                                    <On Platform="iOS" Value="#D83E01" />
+                                    <On Platform="Android" Value="White" />
+                                </OnPlatform>
+                            </Button.TextColor>
                         </Button>
 
                         <!-- Order Parts -->
@@ -295,14 +330,24 @@
                             AutomationId="btnOrderParts"
                             Grid.Row="1" 
                             Grid.Column="1" 
-                            TextColor="#0193D8"
                             HeightRequest="55" 
-                            BackgroundColor="White" 
                             FontSize="18" 
                             BorderRadius="0" 
                             Text="Order Parts"
                             FontFamily="AvenirNext-Medium"
                             Command="{Binding OrderPartsClicked}">
+                            <Button.BackgroundColor>
+                                <OnPlatform x:TypeArguments="Color">
+                                    <On Platform="iOS" Value="White" />
+                                    <On Platform="Android" Value="#0193D8" />
+                                </OnPlatform>
+                            </Button.BackgroundColor>
+                            <Button.TextColor>
+                                <OnPlatform x:TypeArguments="Color">
+                                    <On Platform="iOS" Value="#0193D8" />
+                                    <On Platform="Android" Value="White" />
+                                </OnPlatform>
+                            </Button.TextColor>
                         </Button>
                    </Grid> 
                 </StackLayout>
