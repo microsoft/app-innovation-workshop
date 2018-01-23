@@ -8,7 +8,7 @@
         <ScrollView>
             <StackLayout>
 
-                 <!-- Form Stack -->
+               <!-- Form Stack -->
                <StackLayout Orientation="Vertical" Padding="15,5,15,0" VerticalOptions="FillAndExpand">
 
                     <!-- Job Info -->
@@ -39,10 +39,10 @@
                         FontFamily="AvenirNext-Regular" 
                         HeightRequest="40">
                         <Entry.BackgroundColor>
-                        <OnPlatform x:TypeArguments="Color">
-                            <On Platform="iOS" Value="#1C262F" />
-                        </OnPlatform>
-                    </Entry.BackgroundColor>
+                            <OnPlatform x:TypeArguments="Color">
+                                <On Platform="iOS" Value="#1C262F" />
+                            </OnPlatform>
+                        </Entry.BackgroundColor>
                     </Entry>
 
                     <!-- Details-->
@@ -69,7 +69,6 @@
                         </OnPlatform>
                     </Entry.BackgroundColor>
                     </Entry>
-
 
                     <!-- Due Date -->
                     <Label 
@@ -101,8 +100,7 @@
                    
               </StackLayout>  
                 
-                <StackLayout VerticalOptions="End">
-
+               <StackLayout VerticalOptions="End" Spacing="0">
                     <Button 
                         Text="Create" 
                         TextColor="#ffffff" 
@@ -124,7 +122,6 @@
                         </Button.Margin>
                     </Button>
 
-
                     <Button 
                         Text="Cancel" 
                         TextColor="#ffffff" 
@@ -142,11 +139,10 @@
                         <Button.Margin>
                             <OnPlatform x:TypeArguments="Thickness">
                               <On Platform="iOS" Value="0,0,0,20" />
-                              <On Platform="Android" Value="15,0,15,15" />
+                              <On Platform="Android" Value="15,0,15,5" />
                             </OnPlatform>
                         </Button.Margin>
                     </Button>
-                  
                 </StackLayout>
             </StackLayout>
         </ScrollView>

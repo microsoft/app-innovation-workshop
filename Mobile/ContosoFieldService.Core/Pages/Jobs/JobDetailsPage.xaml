@@ -118,15 +118,14 @@
                     </StackLayout>
 
                     <!-- Details Text -->
-                    <Editor
+                    <Label
                         x:Name="lblDetailsTitle"
                         AutomationId="lblDetailsTitle"
                         Text="{Binding Details}"
                         TextColor="#838383" 
                         FontFamily="AvenirNext-Regular" 
-                        FontSize="17"
-                        IsEnabled="false">
-                    </Editor>
+                        FontSize="17">
+                    </Label>
                 </StackLayout>
                 
                 <!-- Map View -->
