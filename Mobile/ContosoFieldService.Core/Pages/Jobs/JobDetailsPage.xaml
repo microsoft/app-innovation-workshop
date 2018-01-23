@@ -207,7 +207,8 @@
                     x:Name="mapView" 
                     AutomationId="mapView"
                     HeightRequest="200" 
-                    IsShowingUser="true" 
+                    IsShowingUser="false" 
+                    HasZoomEnabled="false"
                     MapType="Street" 
                     IsEnabled="false">
                 </Maps:Map>
