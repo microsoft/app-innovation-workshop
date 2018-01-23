@@ -21,9 +21,6 @@ namespace ContosoMaintenance.WebAPI.Controllers
 
             var response = await indexClient.Documents.SearchAsync<Job>(keyword, sp);
 
-            DocumentDBRepositoryBase<Job> DBRepository = new DocumentDBRepositoryBase<Job>();
-
-
             var jobList = new List<Job>();
             foreach (var document in response.Results)
             {
