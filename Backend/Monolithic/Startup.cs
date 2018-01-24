@@ -1,6 +1,7 @@
 ﻿using ContosoMaintenance.WebAPI.Models;
 using ContosoMaintenance.WebAPI.Services;
 using ContosoMaintenance.WebAPI.Services.BlobStorage;
+using ContosoMaintenance.WebAPI.Services.StorageQueue;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -23,11 +24,20 @@ namespace ContosoMaintenance.WebAPI
             
             services.AddScoped<IAzureBlobStorage>(factory =>
             {
-                return new AzureBlobStorage(new AzureBlobSetings(
+                return new AzureBlobStorage(new AzureBlobSettings(
                     storageAccount: Configuration["AzureStorage:Blob_StorageAccount"],
                     storageKey: Configuration["AzureStorage:Blob_StorageKey"],
                     containerName: Configuration["AzureStorage:Blob_ContainerName"]));
             });
+
+            services.AddScoped<IAzureStorageQueue>(factory =>
+            {
+                return new AzureStorageQueue(new AzureStorageQueueSetings(
+                    Configuration["AzureStorage:Blob_StorageAccount"],
+                    Configuration["AzureStorage:Blob_StorageKey"],
+                    Configuration["AzureStorage:Queue_Name"]));
+            });
+
 
 
             services.AddMvc();
