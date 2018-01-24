@@ -25,8 +25,7 @@
                 Text="You'll need to login to get started." />
         </StackLayout>
 
-        <StackLayout 
-            Padding="{StaticResource DefaultThickness}">
+        <StackLayout Padding="{StaticResource DefaultThickness}">
             <Entry 
                 x:Name="tbxFullname"
                 AutomationId="tbxFullname"
@@ -41,16 +40,15 @@
                 Text="{Binding Email}" 
                 Placeholder="Email Address" 
                 Keyboard="Email" />
-        </StackLayout>  
-                
-        <StackLayout 
-            Padding="{StaticResource DefaultThickness}">            
+
             <Button 
                 x:Name="btnLogin"
                 AutomationId="btnLogin"
                 Style="{StaticResource SubmitButtonStyle}"
                 Command="{Binding Login}" 
-                Text="Login" />
-        </StackLayout>            
+                Text="Login" /> 
+            
+        </StackLayout>  
+          
     </StackLayout>
 </ContentPage>
