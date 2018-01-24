@@ -38,7 +38,7 @@ namespace ContosoMaintenance.WebAPI.Controllers
             try
             {
                 //The FileName is actually going to be the JobID as we set this on the mobile device.
-                var jobID = file.FileName;
+                var jobID = file.FileName.Split(".")[0]; //Not going to lie. This whole queue code is horrible, but it works, so although I'm saying I'll fix it. I probably wont.
 
                 var blobName = Guid.NewGuid().ToString();
                 var fileStream = file.OpenReadStream();
