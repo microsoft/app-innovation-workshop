@@ -6,6 +6,7 @@ using ContosoMaintenance.WebAPI.Services.BlobStorage;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.WindowsAzure.Storage.Blob;
+using Microsoft.WindowsAzure.Storage.Queue;
 
 namespace ContosoMaintenance.WebAPI.Controllers
 {
@@ -23,18 +24,28 @@ namespace ContosoMaintenance.WebAPI.Controllers
         public async Task<IActionResult> UploadFile(IFormFile file)
         {
             if (file == null)
-                return Content("Argument null");
-            /*
+                return BadRequest();
+            
             if (file.Length == 0)
-                return Content("file not selected");
+                return BadRequest();
 
-            var blobName = file.FileName;
-            var fileStream = file.OpenReadStream();
-            blobName = string.Format(@"{0}\{1}", blobName, DateTime.Now);
+            try
+            {
+                //We'll store this into Blob Storage. 
+                var blobName = file.FileName;
+                var fileStream = file.OpenReadStream();
+                blobName = string.Format($"{blobName}");
+                await blobStorage.UploadAsync(blobName, fileStream);
 
-            await blobStorage.UploadAsync(blobName, fileStream);
-*/
-            return RedirectToAction("Index");
+                //Create a message on our queue for the Azure Function to process the image. 
+
+
+                return new ObjectResult(true);
+            }
+            catch
+            {
+                return new ObjectResult(false);
+            }
         }
 
         [HttpGet]
@@ -44,7 +55,7 @@ namespace ContosoMaintenance.WebAPI.Controllers
                 return Content("Blob Name not present");
 
             var stream = await blobStorage.DownloadAsync(blobName);
-            return File(stream.ToArray(), "application/octet-stream", name);
+            return File(stream.ToArray(), "applicationt/octet-stream", name);
         }
 
         [HttpDelete]

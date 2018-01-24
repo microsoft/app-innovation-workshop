@@ -13,8 +13,6 @@ namespace ContosoMaintenance.WebAPI.Services
 {
     public class AzureBlobStorage : IAzureBlobStorage
     {
-        #region " Public "
-
         public AzureBlobStorage(AzureBlobSetings settings)
         {
             this.settings = settings;
@@ -119,9 +117,7 @@ namespace ContosoMaintenance.WebAPI.Services
                        .ToList();
         }
 
-        #endregion
 
-        #region " Private "
 
         readonly AzureBlobSetings settings;
 
@@ -175,6 +171,5 @@ namespace ContosoMaintenance.WebAPI.Services
             return list.OrderBy(i => i.Folder).ThenBy(i => i.Name).ToList();
         }
 
-        #endregion
     }
 }
