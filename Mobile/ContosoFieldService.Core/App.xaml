@@ -7,16 +7,22 @@
             <Color x:Key="AccentColor">#00D8CB</Color>
             
             <Color x:Key="BackgroundColor">#222E38</Color>
-            <Color x:Key="BackgroundColorDark">#1A222A</Color>            
+            <Color x:Key="BackgroundColorDark">#1A222A</Color> 
+            <Color x:Key="BackgroundColorItem">#FFFFFF</Color> 
+            
+
+            
             <Color x:Key="TextColor">#FFFFFF</Color>
+            <Color x:Key="TextColorItem">#000000</Color>
+            <Color x:Key="TextColorItemSecondary">#555555</Color>
             <Color x:Key="TextColorPlaceholder">#515151</Color>
 
             <!-- Thickness -->
             <OnPlatform x:Key="DefaultThickness" x:TypeArguments="Thickness">
-                <On Platform="iOS">15</On>
+                <On Platform="iOS">10</On>
                 <On Platform="Android">10</On>
             </OnPlatform>
-
+            
             <!-- F O N T S -->
             <!-- Title -->
             <OnPlatform x:Key="FontFamilyTitle" x:TypeArguments="x:String">
@@ -33,9 +39,17 @@
                 <On Platform="iOS">AvenirNext-Regular</On>
                 <On Platform="Android">AvenirNext-Regular</On>
             </OnPlatform>
-            <OnPlatform x:Key="FontSizeRegular" x:TypeArguments="x:Double">
+            <OnPlatform x:Key="FontSizeLarge" x:TypeArguments="x:Double">
                 <On Platform="iOS">19</On>
                 <On Platform="Android">19</On>
+            </OnPlatform>  
+            <OnPlatform x:Key="FontSizeRegular" x:TypeArguments="x:Double">
+                <On Platform="iOS">16</On>
+                <On Platform="Android">16</On>
+            </OnPlatform>  
+            <OnPlatform x:Key="FontSizeSmall" x:TypeArguments="x:Double">
+                <On Platform="iOS">12</On>
+                <On Platform="Android">12</On>
             </OnPlatform>  
 
             <OnPlatform x:Key="FontFamilyMedium" x:TypeArguments="x:String">
@@ -62,6 +76,12 @@
                 <Setter Property="FontFamily" Value="{StaticResource FontFamilyTitle}" />                
             </Style>
 
+            <Style x:Key="LargeLabelStyle" TargetType="Label">
+                <Setter Property="TextColor" Value="{StaticResource TextColor}" />
+                <Setter Property="FontSize" Value="{StaticResource FontSizeLarge}" />
+                <Setter Property="FontFamily" Value="{StaticResource FontFamilyRegular}" />                
+            </Style>
+            
             <Style x:Key="RegularLabelStyle" TargetType="Label">
                 <Setter Property="TextColor" Value="{StaticResource TextColor}" />
                 <Setter Property="FontSize" Value="{StaticResource FontSizeRegular}" />
