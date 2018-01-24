@@ -18,7 +18,7 @@ namespace ContosoFieldService.iOS.Renderers
             if (selectedBackground == null)
             {
                 selectedBackground = new UIView(cell.SelectedBackgroundView.Bounds);
-                selectedBackground.Layer.BackgroundColor = Color.FromHex("#444444").ToCGColor();
+                selectedBackground.Layer.BackgroundColor = Color.FromHex("#171f26").ToCGColor();
             }
 
             cell.SelectedBackgroundView = selectedBackground;
