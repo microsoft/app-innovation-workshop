@@ -40,15 +40,14 @@
                 Text="{Binding Email}" 
                 Placeholder="Email Address" 
                 Keyboard="Email" />
+        </StackLayout>
 
-            <Button 
-                x:Name="btnLogin"
-                AutomationId="btnLogin"
-                Style="{StaticResource SubmitButtonStyle}"
-                Command="{Binding Login}" 
-                Text="Login" /> 
-            
-        </StackLayout>  
-          
+        <Button 
+            x:Name="btnLogin"
+            AutomationId="btnLogin"
+            Style="{StaticResource SubmitButtonStyle}"
+            Margin="{StaticResource DefaultThickness}"
+            Command="{Binding Login}" 
+            Text="Login" />          
     </StackLayout>
 </ContentPage>
