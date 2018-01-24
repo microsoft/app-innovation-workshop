@@ -13,7 +13,7 @@ namespace ContosoMaintenance.WebAPI.Services
 {
     public class AzureBlobStorage : IAzureBlobStorage
     {
-        public AzureBlobStorage(AzureBlobSetings settings)
+        public AzureBlobStorage(AzureBlobSettings settings)
         {
             this.settings = settings;
         }
@@ -119,7 +119,7 @@ namespace ContosoMaintenance.WebAPI.Services
 
 
 
-        readonly AzureBlobSetings settings;
+        readonly AzureBlobSettings settings;
 
         async Task<CloudBlobContainer> GetContainerAsync()
         {
