@@ -14,7 +14,8 @@ namespace ContosoFieldService.PageModels
 {
     public class WorkingJobPageModel : FreshBasePageModel
     {
-        JobsAPIService jobService = new Services.JobsAPIService();
+        JobsAPIService jobService = new JobsAPIService();
+        PhotoAPIService photoService = new PhotoAPIService();
 
         Job selectedJob;
         DateTime startedJobTime;
@@ -85,25 +86,33 @@ namespace ContosoFieldService.PageModels
             {
                 return new Command(async () =>
                 {
-                    if(CrossMedia.Current.IsCameraAvailable == false)
-                    {
-                        await CoreMethods.DisplayAlert("Camera Unavailable", "Unable to use your camera at this time", "OK");
-                        Analytics.TrackEvent("Camera Unavailable");
-                        return;
-                    }
+                if (CrossMedia.Current.IsCameraAvailable == false)
+                {
+                    await CoreMethods.DisplayAlert("Camera Unavailable", "Unable to use your camera at this time", "OK");
+                    Analytics.TrackEvent("Camera Unavailable");
+                    return;
+                }
 
-                    var options = new StoreCameraMediaOptions
-                    {
-                        DefaultCamera = CameraDevice.Rear,
-                        SaveMetaData = true,
-                        SaveToAlbum = true,
-                        Name = selectedJob.Name + DateTime.Now,
-                    };
-               
-                    Analytics.TrackEvent("Taking a photo");
-                    var file = await CrossMedia.Current.TakePhotoAsync(options);
+                var options = new StoreCameraMediaOptions
+                {
+                    DefaultCamera = CameraDevice.Rear,
+                    SaveMetaData = true,
+                    SaveToAlbum = false,
+                    Name = selectedJob.Name + DateTime.Now,
+                };
 
+                Analytics.TrackEvent("Taking a photo");
+                var file = await CrossMedia.Current.TakePhotoAsync(options);
 
+                try
+                {
+                    await photoService.CreatePhotoAsync(file);
+                    await CoreMethods.DisplayAlert("Saved", "Image Saved", "OK");
+                }
+                catch(Exception ex)
+                {
+                    await CoreMethods.DisplayAlert("Upload Failed", "Failed to upload photo. Snap again!", "OK");
+                }
 
                 });
             }

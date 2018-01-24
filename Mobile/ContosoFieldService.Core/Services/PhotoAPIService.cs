@@ -9,59 +9,21 @@ namespace ContosoFieldService.Services
     [Headers(Helpers.Constants.ApiManagementKey)]
     public interface IPhotoServiceAPI
     {
-        [Get("/photo/")]
-        Task<List<Job>> GetJobs();
-
-        [Get("/photo/{id}/")]
-        Task<Job> GetPhotoById(string id);
-
+        [Multipart]
         [Post("/photo/")]
-        Task<Job> CreatePhoto([Body] Job job);
-
-        [Post("/photo/{id}/")]
-        Task<Job> DeletePhoto(string id);
-
-        [Patch("/photo/")]
-        Task<Job> UpdatePhoto([Body] Job job);
+        Task UploadPhoto([AliasAs("file")] StreamPart stream);
     }
 
     public class PhotoAPIService
     {
-        public async Task<Job> CreatePhotoAsync(MediaFile file)
+        public async Task<MediaFile> CreatePhotoAsync(MediaFile file)
         {
-            //TODO COme back and continue coding 
-            var contosoMaintenanceApi = RestService.For<IPhotoServiceAPI>(Helpers.Constants.BaseUrl);
-            return null;
-        }
+            var restService = RestService.For<IPhotoServiceAPI>(Helpers.Constants.BaseUrl);
 
-        public async Task<List<Job>> GetJobsAsync()
-        {
-            var contosoMaintenanceApi = RestService.For<IJobServiceAPI>(Helpers.Constants.BaseUrl);
-            return await contosoMaintenanceApi.GetJobs();
-        }
+            var streamPart = new StreamPart(file.GetStream(), $"{System.Guid.NewGuid().ToString()}.jpg", "image/jpeg");
+            await restService.UploadPhoto(streamPart);
 
-        public async Task<Job> GetJobByIdAsync(string id)
-        {
-            var contosoMaintenanceApi = RestService.For<IJobServiceAPI>(Helpers.Constants.BaseUrl);
-            return await contosoMaintenanceApi.GetJobById(id);
-        }
-
-        public async Task<Job> DeleteJobByIdAsync(string id)
-        {
-            var contosoMaintenanceApi = RestService.For<IJobServiceAPI>(Helpers.Constants.BaseUrl);
-            return await contosoMaintenanceApi.DeleteJob(id);
-        }
-
-        public async Task<Job> UpdateJob(Job job)
-        {
-            var contosoMaintenanceApi = RestService.For<IJobServiceAPI>(Helpers.Constants.BaseUrl);
-            return await contosoMaintenanceApi.UpdateJob(job);
-        }
-
-        public async Task<List<Job>> SearchJobsAsync(string keyword)
-        {
-            var contosoMaintenanceApi = RestService.For<IJobServiceAPI>(Helpers.Constants.BaseUrl);
-            return await contosoMaintenanceApi.SearchJobs(keyword);
+            return file;
         }
     }
 }
