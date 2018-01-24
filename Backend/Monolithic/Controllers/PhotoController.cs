@@ -20,9 +20,9 @@ namespace ContosoMaintenance.WebAPI.Controllers
         }
 
         [HttpPost]        
-        public async Task<IActionResult> UploadFile(List<IFormFile> files)
+        public async Task<IActionResult> UploadFile(IFormFile file)
         {
-            if (files == null)
+            if (file == null)
                 return Content("Argument null");
             /*
             if (file.Length == 0)
