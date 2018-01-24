@@ -68,4 +68,36 @@
   <ItemGroup>
     <EmbeddedResource Include="App.xaml" />
   </ItemGroup>
+  <ItemGroup>
+    <Compile Condition=" '$(EnableDefaultCompileItems)' == 'true' " Update="Pages\Jobs\CreateNewJobPage.xaml.cs">
+      <DependentUpon>..\Pages\CreateNewJobPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Condition=" '$(EnableDefaultCompileItems)' == 'true' " Update="Pages\Jobs\JobsPage.xaml.cs">
+      <DependentUpon>..\Pages\JobsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Condition=" '$(EnableDefaultCompileItems)' == 'true' " Update="Pages\Jobs\JobDetailsPage.xaml.cs">
+      <DependentUpon>..\Pages\JobDetailsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Condition=" '$(EnableDefaultCompileItems)' == 'true' " Update="Pages\Me\BotPage.xaml.cs">
+      <DependentUpon>..\Pages\BotPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Condition=" '$(EnableDefaultCompileItems)' == 'true' " Update="Pages\Me\ProfilePage.xaml.cs">
+      <DependentUpon>..\Pages\ProfilePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Condition=" '$(EnableDefaultCompileItems)' == 'true' " Update="Pages\Me\SettingsPage.xaml.cs">
+      <DependentUpon>..\Pages\SettingsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Condition=" '$(EnableDefaultCompileItems)' == 'true' " Update="Pages\Parts\PartDetailPage.xaml.cs">
+      <DependentUpon>PartDetailsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Condition=" '$(EnableDefaultCompileItems)' == 'true' " Update="Pages\Profile\BotPage.xaml.cs">
+      <DependentUpon>BotPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Condition=" '$(EnableDefaultCompileItems)' == 'true' " Update="Pages\Profile\ProfilePage.xaml.cs">
+      <DependentUpon>ProfilePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Condition=" '$(EnableDefaultCompileItems)' == 'true' " Update="Pages\Profile\SettingsPage.xaml.cs">
+      <DependentUpon>SettingsPage.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
 </Project>
