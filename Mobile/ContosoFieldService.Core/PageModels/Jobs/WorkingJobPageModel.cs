@@ -98,7 +98,7 @@ namespace ContosoFieldService.PageModels
                     DefaultCamera = CameraDevice.Rear,
                     SaveMetaData = true,
                     SaveToAlbum = false,
-                    Name = selectedJob.Name + DateTime.Now,
+                    Name = selectedJob.Id
                 };
 
                 Analytics.TrackEvent("Taking a photo");

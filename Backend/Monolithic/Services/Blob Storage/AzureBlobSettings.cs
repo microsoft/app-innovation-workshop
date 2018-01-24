@@ -1,9 +1,9 @@
 ﻿using System;
 namespace ContosoMaintenance.WebAPI.Services.BlobStorage
 {
-    public class AzureBlobSetings
+    public class AzureBlobSettings
     {
-        public AzureBlobSetings(string storageAccount,
+        public AzureBlobSettings(string storageAccount,
                                        string storageKey,
                                        string containerName)
         {
