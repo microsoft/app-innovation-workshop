@@ -4,7 +4,7 @@ using Newtonsoft.Json;
 
 namespace ContosoFieldService.Models
 {
-    public class Location
+    public class Location : BaseModel
     {
         [JsonProperty("firstLineAddress")]
         public string FirstLineAddress { get; set; }
