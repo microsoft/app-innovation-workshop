@@ -3,10 +3,14 @@ using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
 using ContosoMaintenance.WebAPI.Services.BlobStorage;
+using ContosoMaintenance.WebAPI.Services.StorageQueue;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.WindowsAzure.Storage;
 using Microsoft.WindowsAzure.Storage.Blob;
 using Microsoft.WindowsAzure.Storage.Queue;
+using Microsoft.Azure;
+using Newtonsoft.Json;
 
 namespace ContosoMaintenance.WebAPI.Controllers
 {
@@ -14,10 +18,12 @@ namespace ContosoMaintenance.WebAPI.Controllers
     public class PhotoController : Controller
     {
         readonly IAzureBlobStorage blobStorage;
+        readonly IAzureStorageQueue queue;
 
-        public PhotoController(IAzureBlobStorage blobStorage)
+        public PhotoController(IAzureBlobStorage blobStorage, IAzureStorageQueue queue)
         {
             this.blobStorage = blobStorage;
+            this.queue = queue;
         }
 
         [HttpPost]        
@@ -31,14 +37,17 @@ namespace ContosoMaintenance.WebAPI.Controllers
 
             try
             {
-                //We'll store this into Blob Storage. 
-                var blobName = file.FileName;
+                //The FileName is actually going to be the JobID as we set this on the mobile device.
+                var jobID = file.FileName;
+
+                var blobName = Guid.NewGuid().ToString();
                 var fileStream = file.OpenReadStream();
                 blobName = string.Format($"{blobName}");
                 await blobStorage.UploadAsync(blobName, fileStream);
 
                 //Create a message on our queue for the Azure Function to process the image. 
-
+                string json = JsonConvert.SerializeObject(new Models.PhotoProcess(){PhotoId = blobName, JobId = jobID}, Formatting.Indented);
+                await queue.AddMessage(json);
 
                 return new ObjectResult(true);
             }

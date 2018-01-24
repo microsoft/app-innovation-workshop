@@ -5,6 +5,7 @@
 
             <!-- Colors -->
             <Color x:Key="AccentColor">#00D8CB</Color>
+            <Color x:Key="AccentColorRed">#FFAB89</Color>
             
             <Color x:Key="BackgroundColor">#222E38</Color>
             <Color x:Key="BackgroundColorDark">#1A222A</Color> 

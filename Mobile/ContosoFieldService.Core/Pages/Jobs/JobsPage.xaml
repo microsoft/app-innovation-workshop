@@ -109,7 +109,7 @@
                     <Grid
                         Padding="{StaticResource DefaultThickness}"
                         BackgroundColor="{StaticResource BackgroundColor}">
-                        
+
                         <Label 
                             VerticalOptions="Center"
                             Text="{Binding Heading}"
