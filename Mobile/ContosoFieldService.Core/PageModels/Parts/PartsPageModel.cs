@@ -28,6 +28,7 @@ namespace ContosoFieldService.PageModels
             set
             {
                 selectedPart = value;
+                RaisePropertyChanged();
                 if (value != null)
                     PartSelected.Execute(value);
             }
@@ -93,9 +94,14 @@ namespace ContosoFieldService.PageModels
         protected override async void ViewIsAppearing(object sender, EventArgs e)
         {
             base.ViewIsAppearing(sender, e);
-
             if (Parts.Count == 0)
                 await ReloadData();
+        }
+
+        protected override void ViewIsDisappearing(object sender, EventArgs e)
+        {
+            base.ViewIsDisappearing(sender, e);
+            SelectedPart = null;
         }
 
         public override async void ReverseInit(object returndData)

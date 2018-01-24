@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 
 using Xamarin.Forms;
+using ContosoFieldService.PageModels;
+using System.Linq;
 
 namespace ContosoFieldService.Pages
 {
@@ -10,12 +12,6 @@ namespace ContosoFieldService.Pages
         public PartsPage()
         {
             InitializeComponent();
-        }
-
-        public void Handle_ItemSelected(object sender, SelectedItemChangedEventArgs e)
-        {
-            // Reset selection
-            (sender as ListView).SelectedItem = null;
         }
     }
 }
