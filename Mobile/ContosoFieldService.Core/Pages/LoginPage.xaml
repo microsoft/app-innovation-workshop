@@ -5,82 +5,54 @@
     xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
     xmlns:fftransformations="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations"    
     x:Class="ContosoFieldService.Pages.LoginPage"
-    BackgroundColor = "#222E38"
+    BackgroundColor="{StaticResource BackgroundColor}"
     Title="Login">
-	<ContentPage.Content>
-        <StackLayout>
-            <StackLayout Orientation="Vertical" VerticalOptions="Start" Margin="0,80,0,0">
-                <Label 
-                    x:Name="lblWelcome"
-                    AutomationId="lblWelcome"
-                    Text="Welcome!" 
-                    TextColor="White" 
-                    FontSize="40" 
-                    Margin="10,25,0,0" 
-                    FontFamily="AvenirNext-Medium">
-                </Label>
-                <Label 
-                    x:Name="lblTagLine"
-                    AutomationId="lblTagLine"
-                    Text="You'll need to login to get started." 
-                    TextColor="White" 
-                    Margin="15,0,0,0" 
-                    FontSize="19" 
-                    FontFamily="AvenirNext-Regular"></Label>
-            </StackLayout>
 
+    <StackLayout Margin="0,80,0,0" Spacing="0">
+        <StackLayout 
+            Spacing="0"
+            Padding="{StaticResource DefaultThickness}">
+            <Label 
+                x:Name="lblWelcome"
+                AutomationId="lblWelcome"
+                Style="{StaticResource TitleLabelStyle}"
+                Text="Welcome!" />
 
-           <!-- Signup Stack -->
-           <StackLayout Orientation="Vertical" Padding="15,5,15,15" VerticalOptions="FillAndExpand">
-                <Entry 
-                    x:Name="tbxFullname"
-                    AutomationId="tbxFullname"
-                    Text="{Binding FullName}" 
-                    Placeholder="Full Name" 
-                    PlaceholderColor="#515151" 
-                    TextColor="White" 
-                    FontFamily="AvenirNext-Regular" 
-                    HeightRequest="40">
-                    <Entry.BackgroundColor>
-                        <OnPlatform x:TypeArguments="Color">
-                            <On Platform="iOS" Value="#1C262F" />
-                        </OnPlatform>
-                    </Entry.BackgroundColor>
-                </Entry>
-                
-                <Entry 
-                    x:Name="tbxEmail"
-                    AutomationId="tbxEmail"
-                    Text="{Binding Email}" 
-                    Placeholder="Email Address" 
-                    PlaceholderColor="#515151" 
-                    TextColor="White" 
-                    Keyboard="Email" 
-                    FontFamily="AvenirNext-Regular" 
-                    HeightRequest="40">
-                    <Entry.BackgroundColor>
-                        <OnPlatform x:TypeArguments="Color">
-                            <On Platform="iOS" Value="#1C262F" />
-                        </OnPlatform>
-                    </Entry.BackgroundColor>
-                </Entry>
-
-          </StackLayout>  
-          <StackLayout VerticalOptions="End" Padding="15,0,15,50">
-                <Button 
-                    x:Name="btnLogin"
-                    AutomationId="btnLogin"
-                    Command="{Binding Login}" 
-                    Text="Login" 
-                    BackgroundColor="#00D8CB" 
-                    TextColor="White" 
-                    FontSize="22" 
-                    BorderRadius="8" 
-                    HeightRequest="55" 
-                    FontFamily="AvenirNext-Medium">
-                </Button>
-          </StackLayout>
-            
+            <Label 
+                x:Name="lblTagLine"
+                AutomationId="lblTagLine"
+                Style="{StaticResource RegularLabelStyle}"
+                Text="You'll need to login to get started." />
         </StackLayout>
-	</ContentPage.Content>
+
+        <StackLayout 
+            Padding="{StaticResource DefaultThickness}"
+            VerticalOptions="FillAndExpand">
+            <Entry 
+                x:Name="tbxFullname"
+                AutomationId="tbxFullname"
+                Style="{StaticResource EntryStyle}"
+                Text="{Binding FullName}" 
+                Placeholder="Full Name" />
+                
+            <Entry 
+                x:Name="tbxEmail"
+                AutomationId="tbxEmail"
+                Style="{StaticResource EntryStyle}"
+                Text="{Binding Email}" 
+                Placeholder="Email Address" 
+                Keyboard="Email" />
+        </StackLayout>  
+                
+        <StackLayout 
+            VerticalOptions="End"
+            Padding="{StaticResource DefaultThickness}">            
+            <Button 
+                x:Name="btnLogin"
+                AutomationId="btnLogin"
+                Style="{StaticResource SubmitButtonStyle}"
+                Command="{Binding Login}" 
+                Text="Login" />
+        </StackLayout>            
+    </StackLayout>
 </ContentPage>

@@ -4,7 +4,7 @@ using Xamarin.Forms.Platform.iOS;
 using UIKit;
 using ContosoFieldService.iOS.Renderers;
 
-[assembly: ExportRenderer(typeof(ViewCell), typeof(SelectedViewCellRenderer))]
+//[assembly: ExportRenderer(typeof(ViewCell), typeof(SelectedViewCellRenderer))]
 namespace ContosoFieldService.iOS.Renderers
 {
     public class SelectedViewCellRenderer : ViewCellRenderer
@@ -18,7 +18,7 @@ namespace ContosoFieldService.iOS.Renderers
             if (selectedBackground == null)
             {
                 selectedBackground = new UIView(cell.SelectedBackgroundView.Bounds);
-                selectedBackground.Layer.BackgroundColor = Color.FromHex("#444444").ToCGColor();
+                selectedBackground.Layer.BackgroundColor = Color.FromHex("#171f26").ToCGColor();
             }
 
             cell.SelectedBackgroundView = selectedBackground;
