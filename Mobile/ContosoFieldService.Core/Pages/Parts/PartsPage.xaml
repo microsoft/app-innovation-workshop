@@ -16,7 +16,6 @@
         <ListView 
             x:Name="PartsListView"
             BackgroundColor="Transparent" 
-            RowHeight="65" 
             HasUnevenRows="true"
             ItemsSource="{Binding Parts}" 
             SelectedItem="{Binding SelectedPart, Mode=TwoWay}"
@@ -58,6 +57,7 @@
                         
                             <ffimageloading:CachedImage 
                                 Grid.RowSpan="2"
+                                Margin="{StaticResource DefaultThickness}"
                                 DownsampleToViewSize="true"
                                 Aspect="AspectFit" 
                                 HeightRequest="50" 
@@ -68,6 +68,7 @@
                             <StackLayout 
                                 Grid.Column="1"
                                 Spacing="0"
+                                VerticalOptions="Center"
                                 Padding="12,14">
                                 
                                 <Label 
@@ -85,7 +86,7 @@
                                     FontFamily="{StaticResource FontFamilyRegular}" 
                                     FontSize="{StaticResource FontSizeSmall}"  
                                     TextColor="{StaticResource TextColorItemSecondary}"
-                                    Text="{Binding Manufatcurer}" 
+                                    Text="{Binding Manufacturer}" 
                                     LineBreakMode="TailTruncation">
                                 </Label>
                             </StackLayout>

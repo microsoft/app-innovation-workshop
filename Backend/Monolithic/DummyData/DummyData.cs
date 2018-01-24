@@ -12,13 +12,38 @@ namespace ContosoMaintenance.WebAPI.DummyData
         public List<Customer> Customers = new List<Customer>();
         public List<Employee> Employees = new List<Employee>();
         public List<Location> Addresses = new List<Location>();
-
+        public List<Part> Parts = new List<Part>();
 
         public DummyData()
         {
             PopulateAddresses();
             PopulateCustomers();
             PopulateEmployees();
+            PopulateParts();
+        }
+
+        private void PopulateParts()
+        {
+            var part1 = new Part
+            {
+                Name = "Crankshaft F337",
+                Manufacturer = "Bonus Materials",
+                ModelNumber = "CE3874902726",
+                SerialNumber = "456732037463823902826",
+                PartNumber = "6262939036",
+                PriceInUSD = 599.12M,
+                ImageSource = "https://contosomaintenance.blob.core.windows.net/images-large/67a04a57-b51e-45d8-b75c-c343a273b6f7.png"
+            };
+            var part2 = new Part
+            {
+                Name = "Airplane Engine RFE-747",
+                Manufacturer = "Lolz Roice",
+                ModelNumber = "CE3874902728",
+                SerialNumber = "456732037463823902828",
+                PartNumber = "6262939038",
+                PriceInUSD = 35000000M,
+                ImageSource = "https://contosomaintenance.blob.core.windows.net/images-large/67a24a57-b51r-45d8-b75c-c343a273b6f8.jpg"
+            };
         }
 
         void PopulateAddresses()
