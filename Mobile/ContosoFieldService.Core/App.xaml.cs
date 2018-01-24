@@ -8,6 +8,7 @@ using Microsoft.AppCenter.Crashes;
 using Microsoft.AppCenter.Push;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using System.Linq;
 
 [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 namespace ContosoFieldService
@@ -71,6 +72,30 @@ namespace ContosoFieldService
         protected override void OnResume()
         {
             // Handle when your app resumes
+        }
+    }
+
+    public static class PageModelLocator
+    {
+        static JobsPageModel jobsPageModel;
+        static JobDetailsPageModel jobDetailsPageModel;
+
+        public static JobsPageModel JobsPageModel => jobsPageModel ?? (jobsPageModel = new JobsPageModel { Jobs = DummyData.GetDummyJobs() });
+
+
+        public static JobDetailsPageModel JobDetailsPageModel
+        {
+            get
+            {
+                if (jobDetailsPageModel == null)
+                {
+                    jobDetailsPageModel = new JobDetailsPageModel();
+                    jobDetailsPageModel.Init(DummyData.GetDummyJobs().First());
+                }
+
+                return jobDetailsPageModel;
+
+            }
         }
     }
 }
