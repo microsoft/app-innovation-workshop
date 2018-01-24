@@ -20,7 +20,7 @@ namespace ContosoFieldService.Services
         [Post("/job/")]
         Task<Job> CreateJob([Body] Job job);
 
-        [Post("/job/{id}/")]
+        [Delete("/job/{id}/")]
         Task<Job> DeleteJob(string id);
 
         [Patch("/job/")]

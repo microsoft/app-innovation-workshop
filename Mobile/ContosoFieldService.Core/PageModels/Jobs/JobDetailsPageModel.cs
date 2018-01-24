@@ -66,7 +66,10 @@ namespace ContosoFieldService.PageModels
             {
                 return new Command(async () =>
                 {
-                    
+                    var jobsService = new Services.JobsAPIService();
+                    await jobsService.DeleteJobByIdAsync(CurrentJob.Id);
+                    await CoreMethods.DisplayAlert("Deleted Job", "You've just deleted a job!", "OK");
+                    await CoreMethods.PopPageModel(false, true);
                 });
             }
         }
