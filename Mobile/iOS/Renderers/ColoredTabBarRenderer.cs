@@ -10,6 +10,8 @@ namespace ContosoFieldService.iOS.Renderers
     {
         public override void ViewWillAppear(bool animated)
         {
+            TabBar.TintColor = Color.FromHex("#2dc9d7").ToUIColor();
+
             if (TabBar?.Items == null)
                 return;
 
@@ -30,13 +32,13 @@ namespace ContosoFieldService.iOS.Renderers
                 return;
 
             // Set our different selected icons
-            icon = icon.Replace(".png", "_selected.png");
+            //icon = icon.Replace(".png", "_selected.png");
 
             if (item?.SelectedImage?.AccessibilityIdentifier == icon)
                 return;
 
-            item.SelectedImage = UIImage.FromBundle(icon);
-            item.SelectedImage.AccessibilityIdentifier = icon;
+            //item.SelectedImage = UIImage.FromBundle(icon);
+            //item.SelectedImage.AccessibilityIdentifier = icon;
 
             // Set the font for the title.
             item.SetTitleTextAttributes(new UITextAttributes() { Font = UIFont.FromName("MuseoSans-500", 10), TextColor = Color.FromHex("#757575").ToUIColor() }, UIControlState.Normal);
