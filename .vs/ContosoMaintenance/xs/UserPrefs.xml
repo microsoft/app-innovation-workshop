@@ -1,47 +1,25 @@
-﻿<Properties StartupConfiguration="{7ABD1905-E31B-4857-B4EA-B47ED1C55D0C}|Default">
+﻿<Properties StartupConfiguration="{E2745280-BDD1-4F5D-B976-199B9AA7602C}|Default">
   <MonoDevelop.Ide.ItemProperties.WebAPI.ContosoMaintenance.WebAPI PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Mobile/Droid/MainActivity.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Mobile/ContosoFieldService.Core/Pages/Jobs/JobsPage.xaml">
     <Files>
-      <File FileName="Mobile/ContosoFieldService.Core/PageModels/Parts/PartDetailsPageModel.cs" Line="53" Column="1" />
-      <File FileName="Mobile/ContosoFieldService.Core/PageModels/Parts/PartsPageModel.cs" Line="54" Column="9" />
-      <File FileName="Mobile/iOS/Main.cs" Line="17" Column="1" />
-      <File FileName="Backend/Monolithic/Controllers/PartController.cs" Line="1" Column="1" />
-      <File FileName="Backend/Monolithic/Controllers/JobController.cs" Line="1" Column="1" />
-      <File FileName="Backend/Monolithic/Controllers/BaseController.cs" Line="1" Column="1" />
-      <File FileName="Backend/Monolithic/Models/Part.cs" Line="1" Column="1" />
-      <File FileName="Backend/Monolithic/Models/Job.cs" Line="49" Column="1" />
-      <File FileName="Mobile/ContosoFieldService.Core/Models/Job.cs" Line="30" Column="20" />
-      <File FileName="Mobile/ContosoFieldService.Core/App.xaml.cs" Line="41" Column="1" />
-      <File FileName="Mobile/ContosoFieldService.Core/Pages/Parts/PartDetailPage.xaml.cs" Line="6" Column="36" />
-      <File FileName="Mobile/ContosoFieldService.Core/Pages/Jobs/JobsPage.xaml" Line="108" Column="1" />
-      <File FileName="Mobile/ContosoFieldService.Core/Pages/Jobs/JobDetailsPage.xaml" Line="312" Column="1" />
-      <File FileName="Mobile/ContosoFieldService.Core/Pages/Jobs/JobDetailsPage.xaml.cs" Line="44" Column="6" />
-      <File FileName="Mobile/ContosoFieldService.Core/Models/Location.cs" Line="7" Column="18" />
-      <File FileName="Mobile/ContosoFieldService.Core/PageModels/Jobs/JobDetailsPageModel.cs" Line="36" Column="1" />
+      <File FileName="Mobile/ContosoFieldService.Core/Pages/Jobs/JobsPage.xaml" Line="17" Column="7" />
+      <File FileName="Mobile/ContosoFieldService.Core/App.xaml" Line="21" Column="48" />
+      <File FileName="Mobile/ContosoFieldService.Core/Helpers/DummyData.cs" Line="8" Column="38" />
+      <File FileName="Backend/Monolithic/DummyData/DummyData.cs" Line="1" Column="1" />
+      <File FileName="Mobile/ContosoFieldService.Core/App.xaml.cs" Line="30" Column="1" />
+      <File FileName="Mobile/ContosoFieldService.Core/Pages/Jobs/JobDetailsPage.xaml" Line="12" Column="21" />
+      <File FileName="Mobile/ContosoFieldService.Core/Models/Job.cs" Line="1" Column="1" />
       <File FileName="Mobile/ContosoFieldService.Core/PageModels/Jobs/JobsPageModel.cs" Line="1" Column="1" />
-      <File FileName="Backend/Monolithic/Models/Location.cs" Line="4" Column="7" />
-      <File FileName="Backend/Monolithic/DummyData/DummyData.cs" Line="99" Column="14" />
-      <File FileName="Backend/Monolithic/appsettings.json" Line="1" Column="1" />
-      <File FileName="Backend/Monolithic/appsettings.Development.json" Line="1" Column="1" />
-      <File FileName="Backend/Monolithic/Startup.cs" Line="1" Column="1" />
-      <File FileName="Backend/Monolithic/Services/DocumentDBRepositoryBase.cs" Line="1" Column="1" />
-      <File FileName="Backend/Monolithic/Helpers/Keys.cs" Line="13" Column="131" />
-      <File FileName="Mobile/Droid/MainActivity.cs" Line="35" Column="1" />
-      <File FileName="Mobile/ContosoFieldService.Core/Pages/Android/MenuPage.xaml.cs" Line="12" Column="1" />
-      <File FileName="Mobile/ContosoFieldService.Core/Pages/Jobs/JobsPage.xaml.cs" Line="12" Column="1" />
-      <File FileName="Mobile/ContosoFieldService.Core/Helpers/CustomAndroidNavigation.cs" Line="57" Column="1" />
-      <File FileName="Mobile/Droid/Properties/AndroidManifest.xml" Line="14" Column="12" />
-      <File FileName="Mobile/iOS/AppDelegate.cs" Line="45" Column="6" NotebookId="1" />
+      <File FileName="Mobile/ContosoFieldService.Core/Models/Part.cs" Line="15" Column="34" />
+      <File FileName="Mobile/ContosoFieldService.Core/Pages/Parts/PartsPage.xaml" Line="18" Column="43" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore>
-      <Breakpoint file="/Users/robinmanuelthiel/Source/Microsoft/Mobile-Cloud-Workshop/Mobile/ContosoFieldService.Core/Pages/Jobs/JobsPage.xaml.cs" relfile="Mobile/ContosoFieldService.Core/Pages/Jobs/JobsPage.xaml.cs" line="17" column="1" />
-    </BreakpointStore>
+    <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.ItemProperties.Mobile.Forms.Platforms.ContosoFieldService.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.54D16906-207E-4CC2-B1A3-16473BC6BCC1" />
   <MultiItemStartupConfigurations />
-  <MonoDevelop.Ide.ItemProperties.Mobile.Forms.Platforms.ContosoFieldService.Droid PreferredExecutionTarget="Android.Android_8.0_x86" />
+  <MonoDevelop.Ide.ItemProperties.Mobile.Forms.Platforms.ContosoFieldService.Droid PreferredExecutionTarget="Android.Android_8.0_x86" AndroidDesignerPreferredTheme="Theme.DeviceDefault.NoActionBar.Fullscreen" />
 </Properties>

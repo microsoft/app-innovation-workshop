@@ -20,5 +20,23 @@ namespace ContosoFieldService.Helpers
 
             return jobs;
         }
+
+        public static ObservableRangeCollection<Part> GetDummyParts()
+        {
+            var parts = new ObservableRangeCollection<Part>
+            {
+                new Part
+                {
+                    Name = "Lorem Ipsum dolor 1",
+                    Manufacturer = "Minim veniam",
+                    ModelNumber = "123456789",
+                    SerialNumber = "ABC123456778",
+                    PriceInUSD = 150.99M,
+                    ImageSource = "https://contosomaintenance.blob.core.windows.net/images-large/67a04a57-b51e-45d8-b75c-c343a273b6f7.png"
+                }
+            };
+
+            return parts;
+        }
     }
 }

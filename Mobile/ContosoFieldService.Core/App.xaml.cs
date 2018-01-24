@@ -78,11 +78,9 @@ namespace ContosoFieldService
     public static class PageModelLocator
     {
         static JobsPageModel jobsPageModel;
-        static JobDetailsPageModel jobDetailsPageModel;
-
         public static JobsPageModel JobsPageModel => jobsPageModel ?? (jobsPageModel = new JobsPageModel { Jobs = DummyData.GetDummyJobs() });
 
-
+        static JobDetailsPageModel jobDetailsPageModel;
         public static JobDetailsPageModel JobDetailsPageModel
         {
             get
@@ -97,5 +95,9 @@ namespace ContosoFieldService
 
             }
         }
+
+        static PartsPageModel partsPageModel;
+        public static PartsPageModel PartsPageModel => partsPageModel ?? (partsPageModel = new PartsPageModel { Parts = DummyData.GetDummyParts() });
+
     }
 }

@@ -2,6 +2,8 @@
 <ContentPage
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:design="clr-namespace:ContosoFieldService;assembly=ContosoFieldService.Core"
+    BindingContext="{x:Static design:PageModelLocator.PartsPageModel}"    
     x:Class="ContosoFieldService.Pages.PartsPage"
     xmlns:controls="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin.Abstractions"
     xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
@@ -24,27 +26,36 @@
             
             <ListView.Header>                                 
                 <SearchBar 
+                    x:Name="searchBar"
                     AutomationId="searchBar"
                     SearchCommand="{Binding Search}" 
                     Text="{Binding SearchText}"
                     Placeholder="Search"
-                    BackgroundColor="#222E38">
+                    HeightRequest="70">
+                    <SearchBar.BackgroundColor>
+                        <OnPlatform x:TypeArguments="Color">
+                            <On Platform="iOS" Value="Transparent" />
+                            <On Platform="Android" Value="{StaticResource BackgroundColor}" />
+                        </OnPlatform>
+                    </SearchBar.BackgroundColor>
                 </SearchBar>
             </ListView.Header>
             
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
-                        <Grid Padding="10">
+                        <Grid 
+                            BackgroundColor="{StaticResource BackgroundColorItem}"
+                            ColumnSpacing="0">
                             <Grid.RowDefinitions>
-                                <RowDefinition Height="Auto" />
                                 <RowDefinition Height="*" />
+                                <RowDefinition Height="Auto" />
                             </Grid.RowDefinitions>
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="Auto"></ColumnDefinition>
                                 <ColumnDefinition Width="*"></ColumnDefinition>
                             </Grid.ColumnDefinitions>
-
+                        
                             <ffimageloading:CachedImage 
                                 Grid.RowSpan="2"
                                 DownsampleToViewSize="true"
@@ -54,32 +65,42 @@
                                 Source="{Binding ImageSource}">
                             </ffimageloading:CachedImage>
 
-                            <Label FontFamily="AvenirNext-Medium" Grid.Row="0" Grid.Column="1" Text="{Binding Name}" TextColor="#ffff" LineBreakMode="TailTruncation"></Label>
-                            <Label FontFamily="AvenirNext-Regular" Grid.Row="1" Grid.Column="1" Text="{Binding Manufacturer}" FontSize="Small"  TextColor="#ffff" LineBreakMode="TailTruncation"></Label>
+                            <StackLayout 
+                                Grid.Column="1"
+                                Spacing="0"
+                                Padding="12,14">
+                                
+                                <Label 
+                                    x:Name="lblName"
+                                    AutomationId="lblName"
+                                    FontFamily="{StaticResource FontFamilyRegular}" 
+                                    FontSize="{StaticResource FontSizeRegular}"
+                                    TextColor="{StaticResource TextColorItem}" 
+                                    Text="{Binding Name}" 
+                                    LineBreakMode="TailTruncation" />
+                            
+                                <Label 
+                                    x:Name="lblDetils"
+                                    AutomationId="lblDetils"
+                                    FontFamily="{StaticResource FontFamilyRegular}" 
+                                    FontSize="{StaticResource FontSizeSmall}"  
+                                    TextColor="{StaticResource TextColorItemSecondary}"
+                                    Text="{Binding Manufatcurer}" 
+                                    LineBreakMode="TailTruncation">
+                                </Label>
+                            </StackLayout>
+
+                            <!-- Separator -->
+                            <BoxView 
+                                Grid.Row="1"
+                                Grid.Column="1"
+                                HeightRequest="1"
+                                Margin="0"
+                                Color="{StaticResource SeparatorColor}" />
                         </Grid>
                     </ViewCell>
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
-
-        <!--<Grid
-            x:Name="LoadingOverlay"
-            IsVisible="{Binding IsRefreshing}"
-            Grid.RowSpan="2"
-            BackgroundColor="#00BB84">
-
-            <StackLayout VerticalOptions="Center">
-                <lottie:AnimationView
-                    HeightRequest="60"
-                    WidthRequest="100"
-                    x:Name="LoadingAnimation"
-                    Animation="progress_balls.json"
-                    AutoPlay="true"
-                    Loop="true" />
-                
-                <Label Text="Syncing..." TextColor="White" Margin="0,20,0,0" HorizontalTextAlignment="Center" FontAttributes="Bold"/>
-            </StackLayout>
-        </Grid>-->
     </Grid>
-
 </ContentPage>
