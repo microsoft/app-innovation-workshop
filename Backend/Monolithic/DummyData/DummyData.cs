@@ -466,7 +466,6 @@ namespace ContosoMaintenance.WebAPI.DummyData
                 Details = "Lorem ipsum dolor sit amet, has ei munere dolore, id mel doming assentior. Cu menandri consulatu vis, sea adhuc graece ea. Ius vocent disputando accommodare id. Ei sit porro scribentur, viderer volumus eos te, vocibus commune detraxit est ad. Ei veniam omnesque mediocritatem ius, vix no paulo neglegentur, ne nec civibus maluisset reformidans.",
                 Type = JobType.Repair,
                 Status = JobStatus.Waiting,
-                Customer = GetRandomCustomer(),
                 Address = GetRandomAddress(),
                 AssignedTo = GetRandomEmployee(),
             };
@@ -478,7 +477,6 @@ namespace ContosoMaintenance.WebAPI.DummyData
                 Details = "Lorem ipsum dolor sit amet, has ei munere dolore, id mel doming assentior. Cu menandri consulatu vis, sea adhuc graece ea. Ius vocent disputando accommodare id. Ei sit porro scribentur, viderer volumus eos te, vocibus commune detraxit est ad. Ei veniam omnesque mediocritatem ius, vix no paulo neglegentur, ne nec civibus maluisset reformidans.",
                 Type = JobType.Service,
                 Status = JobStatus.Waiting,
-                Customer = GetRandomCustomer(),
                 Address = GetRandomAddress(),
                 AssignedTo = GetRandomEmployee(),
             };
@@ -490,7 +488,6 @@ namespace ContosoMaintenance.WebAPI.DummyData
                 Details = "Lorem ipsum dolor sit amet, has ei munere dolore, id mel doming assentior. Cu menandri consulatu vis, sea adhuc graece ea. Ius vocent disputando accommodare id. Ei sit porro scribentur, viderer volumus eos te, vocibus commune detraxit est ad. Ei veniam omnesque mediocritatem ius, vix no paulo neglegentur, ne nec civibus maluisset reformidans.",
                 Type = JobType.Service,
                 Status = JobStatus.Waiting,
-                Customer = GetRandomCustomer(),
                 Address = GetRandomAddress(),
                 AssignedTo = GetRandomEmployee(),
             };
@@ -502,7 +499,6 @@ namespace ContosoMaintenance.WebAPI.DummyData
                 Details = "Lorem ipsum dolor sit amet, has ei munere dolore, id mel doming assentior. Cu menandri consulatu vis, sea adhuc graece ea. Ius vocent disputando accommodare id. Ei sit porro scribentur, viderer volumus eos te, vocibus commune detraxit est ad. Ei veniam omnesque mediocritatem ius, vix no paulo neglegentur, ne nec civibus maluisset reformidans.",
                 Type = JobType.Service,
                 Status = JobStatus.Waiting,
-                Customer = GetRandomCustomer(),
                 Address = GetRandomAddress(),
                 AssignedTo = GetRandomEmployee(),
             };
@@ -514,7 +510,6 @@ namespace ContosoMaintenance.WebAPI.DummyData
                 Details = "Lorem ipsum dolor sit amet, has ei munere dolore, id mel doming assentior. Cu menandri consulatu vis, sea adhuc graece ea. Ius vocent disputando accommodare id. Ei sit porro scribentur, viderer volumus eos te, vocibus commune detraxit est ad. Ei veniam omnesque mediocritatem ius, vix no paulo neglegentur, ne nec civibus maluisset reformidans.",
                 Type = JobType.Service,
                 Status = JobStatus.Waiting,
-                Customer = GetRandomCustomer(),
                 Address = GetRandomAddress(),
                 AssignedTo = GetRandomEmployee(),
             };
@@ -526,7 +521,6 @@ namespace ContosoMaintenance.WebAPI.DummyData
                 Details = "Lorem ipsum dolor sit amet, has ei munere dolore, id mel doming assentior. Cu menandri consulatu vis, sea adhuc graece ea. Ius vocent disputando accommodare id. Ei sit porro scribentur, viderer volumus eos te, vocibus commune detraxit est ad. Ei veniam omnesque mediocritatem ius, vix no paulo neglegentur, ne nec civibus maluisset reformidans.",
                 Type = JobType.Repair,
                 Status = JobStatus.Waiting,
-                Customer = GetRandomCustomer(),
                 Address = GetRandomAddress(),
                 AssignedTo = GetRandomEmployee(),
             };
@@ -538,7 +532,6 @@ namespace ContosoMaintenance.WebAPI.DummyData
                 Details = "Lorem ipsum dolor sit amet, has ei munere dolore, id mel doming assentior. Cu menandri consulatu vis, sea adhuc graece ea. Ius vocent disputando accommodare id. Ei sit porro scribentur, viderer volumus eos te, vocibus commune detraxit est ad. Ei veniam omnesque mediocritatem ius, vix no paulo neglegentur, ne nec civibus maluisset reformidans.",
                 Type = JobType.Service,
                 Status = JobStatus.Waiting,
-                Customer = GetRandomCustomer(),
                 Address = GetRandomAddress(),
                 AssignedTo = GetRandomEmployee(),
             };
@@ -550,7 +543,6 @@ namespace ContosoMaintenance.WebAPI.DummyData
                 Details = "Lorem ipsum dolor sit amet, has ei munere dolore, id mel doming assentior. Cu menandri consulatu vis, sea adhuc graece ea. Ius vocent disputando accommodare id. Ei sit porro scribentur, viderer volumus eos te, vocibus commune detraxit est ad. Ei veniam omnesque mediocritatem ius, vix no paulo neglegentur, ne nec civibus maluisset reformidans.",
                 Type = JobType.Repair,
                 Status = JobStatus.Waiting,
-                Customer = GetRandomCustomer(),
                 Address = GetRandomAddress(),
                 AssignedTo = GetRandomEmployee(),
             };
@@ -562,7 +554,6 @@ namespace ContosoMaintenance.WebAPI.DummyData
                 Details = "Lorem ipsum dolor sit amet, has ei munere dolore, id mel doming assentior. Cu menandri consulatu vis, sea adhuc graece ea. Ius vocent disputando accommodare id. Ei sit porro scribentur, viderer volumus eos te, vocibus commune detraxit est ad. Ei veniam omnesque mediocritatem ius, vix no paulo neglegentur, ne nec civibus maluisset reformidans.",
                 Type = JobType.Service,
                 Status = JobStatus.Waiting,
-                Customer = GetRandomCustomer(),
                 Address = GetRandomAddress(),
             };
             Jobs.Add(job9);
@@ -573,7 +564,6 @@ namespace ContosoMaintenance.WebAPI.DummyData
                 Details = "Lorem ipsum dolor sit amet, has ei munere dolore, id mel doming assentior. Cu menandri consulatu vis, sea adhuc graece ea. Ius vocent disputando accommodare id. Ei sit porro scribentur, viderer volumus eos te, vocibus commune detraxit est ad. Ei veniam omnesque mediocritatem ius, vix no paulo neglegentur, ne nec civibus maluisset reformidans.",
                 Type = JobType.Installation,
                 Status = JobStatus.Waiting,
-                Customer = GetRandomCustomer(),
                 Address = GetRandomAddress(),
             };
             Jobs.Add(job10);
@@ -584,7 +574,6 @@ namespace ContosoMaintenance.WebAPI.DummyData
                 Details = "Lorem ipsum dolor sit amet, has ei munere dolore, id mel doming assentior. Cu menandri consulatu vis, sea adhuc graece ea. Ius vocent disputando accommodare id. Ei sit porro scribentur, viderer volumus eos te, vocibus commune detraxit est ad. Ei veniam omnesque mediocritatem ius, vix no paulo neglegentur, ne nec civibus maluisset reformidans.",
                 Type = JobType.Service,
                 Status = JobStatus.Waiting,
-                Customer = GetRandomCustomer(),
                 Address = GetRandomAddress(),
             };
             Jobs.Add(job11);
@@ -595,7 +584,6 @@ namespace ContosoMaintenance.WebAPI.DummyData
                 Details = "Lorem ipsum dolor sit amet, has ei munere dolore, id mel doming assentior. Cu menandri consulatu vis, sea adhuc graece ea. Ius vocent disputando accommodare id. Ei sit porro scribentur, viderer volumus eos te, vocibus commune detraxit est ad. Ei veniam omnesque mediocritatem ius, vix no paulo neglegentur, ne nec civibus maluisset reformidans.",
                 Type = JobType.Service,
                 Status = JobStatus.Waiting,
-                Customer = GetRandomCustomer(),
                 Address = GetRandomAddress(),
             };
             Jobs.Add(job12);
@@ -606,7 +594,6 @@ namespace ContosoMaintenance.WebAPI.DummyData
                 Details = "Lorem ipsum dolor sit amet, has ei munere dolore, id mel doming assentior. Cu menandri consulatu vis, sea adhuc graece ea. Ius vocent disputando accommodare id. Ei sit porro scribentur, viderer volumus eos te, vocibus commune detraxit est ad. Ei veniam omnesque mediocritatem ius, vix no paulo neglegentur, ne nec civibus maluisset reformidans.",
                 Type = JobType.Service,
                 Status = JobStatus.Waiting,
-                Customer = GetRandomCustomer(),
                 Address = GetRandomAddress(),
             };
             Jobs.Add(job13);
@@ -617,7 +604,6 @@ namespace ContosoMaintenance.WebAPI.DummyData
                 Details = "Lorem ipsum dolor sit amet, has ei munere dolore, id mel doming assentior. Cu menandri consulatu vis, sea adhuc graece ea. Ius vocent disputando accommodare id. Ei sit porro scribentur, viderer volumus eos te, vocibus commune detraxit est ad. Ei veniam omnesque mediocritatem ius, vix no paulo neglegentur, ne nec civibus maluisset reformidans.",
                 Type = JobType.Service,
                 Status = JobStatus.Waiting,
-                Customer = GetRandomCustomer(),
                 Address = GetRandomAddress(),
             };
             Jobs.Add(job14);
@@ -628,7 +614,6 @@ namespace ContosoMaintenance.WebAPI.DummyData
                 Details = "Lorem ipsum dolor sit amet, has ei munere dolore, id mel doming assentior. Cu menandri consulatu vis, sea adhuc graece ea. Ius vocent disputando accommodare id. Ei sit porro scribentur, viderer volumus eos te, vocibus commune detraxit est ad. Ei veniam omnesque mediocritatem ius, vix no paulo neglegentur, ne nec civibus maluisset reformidans.",
                 Type = JobType.Service,
                 Status = JobStatus.Waiting,
-                Customer = GetRandomCustomer(),
                 Address = GetRandomAddress(),
             };
             Jobs.Add(job15);
@@ -639,7 +624,6 @@ namespace ContosoMaintenance.WebAPI.DummyData
                 Details = "Lorem ipsum dolor sit amet, has ei munere dolore, id mel doming assentior. Cu menandri consulatu vis, sea adhuc graece ea. Ius vocent disputando accommodare id. Ei sit porro scribentur, viderer volumus eos te, vocibus commune detraxit est ad. Ei veniam omnesque mediocritatem ius, vix no paulo neglegentur, ne nec civibus maluisset reformidans.",
                 Type = JobType.Service,
                 Status = JobStatus.Waiting,
-                Customer = GetRandomCustomer(),
                 Address = GetRandomAddress(),
             };
             Jobs.Add(job16);
@@ -650,7 +634,6 @@ namespace ContosoMaintenance.WebAPI.DummyData
                 Details = "Lorem ipsum dolor sit amet, has ei munere dolore, id mel doming assentior. Cu menandri consulatu vis, sea adhuc graece ea. Ius vocent disputando accommodare id. Ei sit porro scribentur, viderer volumus eos te, vocibus commune detraxit est ad. Ei veniam omnesque mediocritatem ius, vix no paulo neglegentur, ne nec civibus maluisset reformidans.",
                 Type = JobType.Service,
                 Status = JobStatus.Waiting,
-                Customer = GetRandomCustomer(),
                 Address = GetRandomAddress(),
             };
             Jobs.Add(job17);
@@ -661,7 +644,6 @@ namespace ContosoMaintenance.WebAPI.DummyData
                 Details = "Lorem ipsum dolor sit amet, has ei munere dolore, id mel doming assentior. Cu menandri consulatu vis, sea adhuc graece ea. Ius vocent disputando accommodare id. Ei sit porro scribentur, viderer volumus eos te, vocibus commune detraxit est ad. Ei veniam omnesque mediocritatem ius, vix no paulo neglegentur, ne nec civibus maluisset reformidans.",
                 Type = JobType.Service,
                 Status = JobStatus.Waiting,
-                Customer = GetRandomCustomer(),
                 Address = GetRandomAddress(),
             };
             Jobs.Add(job18);
@@ -672,7 +654,6 @@ namespace ContosoMaintenance.WebAPI.DummyData
                 Details = "Lorem ipsum dolor sit amet, has ei munere dolore, id mel doming assentior. Cu menandri consulatu vis, sea adhuc graece ea. Ius vocent disputando accommodare id. Ei sit porro scribentur, viderer volumus eos te, vocibus commune detraxit est ad. Ei veniam omnesque mediocritatem ius, vix no paulo neglegentur, ne nec civibus maluisset reformidans.",
                 Type = JobType.Service,
                 Status = JobStatus.Waiting,
-                Customer = GetRandomCustomer(),
                 Address = GetRandomAddress(),
             };
             Jobs.Add(job19);
