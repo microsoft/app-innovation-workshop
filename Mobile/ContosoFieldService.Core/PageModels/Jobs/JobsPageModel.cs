@@ -5,13 +5,16 @@ using ContosoFieldService.Services;
 using FreshMvvm;
 using MvvmHelpers;
 using Xamarin.Forms;
+using System.Linq;
+using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 
 namespace ContosoFieldService.PageModels
 {
     public class JobsPageModel : FreshBasePageModel
     {
         #region Bindable Properties 
-        public ObservableRangeCollection<Job> Jobs { get; set; }
+        public ObservableRangeCollection<GroupedJobs> Jobs { get; set; }
 
         public bool IsRefreshing
         {
@@ -94,8 +97,10 @@ namespace ContosoFieldService.PageModels
                 return new Command(async () =>
                 {
                     var searchResults = await jobsApiService.SearchJobsAsync(SearchText);
-                    Jobs.Clear();
-                    Jobs.AddRange(searchResults);
+                    Jobs.ReplaceRange(new List<GroupedJobs>
+                    {
+                        new GroupedJobs("Search Results", searchResults)
+                    });
                 });
             }
         }
@@ -117,7 +122,7 @@ namespace ContosoFieldService.PageModels
         public override async void Init(object initData)
         {
             base.Init(initData);
-            Jobs = new ObservableRangeCollection<Job>();
+            Jobs = new ObservableRangeCollection<GroupedJobs>();
         }
 
         protected override async void ViewIsAppearing(object sender, EventArgs e)
@@ -153,9 +158,20 @@ namespace ContosoFieldService.PageModels
             IsRefreshing = !isSilent;
             if (Plugin.Connectivity.CrossConnectivity.Current.IsConnected)
             {
+                // Download jobs from server
                 var jobs = await jobsApiService.GetJobsAsync();
-                Jobs.Clear();
-                Jobs.AddRange(jobs);
+
+                // Group jobs by JobStatus
+                var groupedJobs = new List<GroupedJobs>
+                {
+                    new GroupedJobs("Waiting", jobs.Where(x => x.Status == JobStatus.Waiting)),
+                    new GroupedJobs("In Progress", jobs.Where(x => x.Status == JobStatus.InProgress)),
+                    new GroupedJobs("Complete", jobs.Where(x => x.Status == JobStatus.Complete)),
+                };
+
+                // Add only groups that actually have items to the list
+                Jobs.ReplaceRange(groupedJobs.Where(x => x.Any()));
+
                 IsRefreshing = false;
             }
             else
