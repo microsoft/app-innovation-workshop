@@ -27,7 +27,6 @@ namespace ContosoFieldService
                 var tabbedNavigation = new FreshTabbedNavigationContainer("authed");
                 //tabbedNavigation.AddTab<DashboardPageModel>("Dashboard", "icon_dashboard.png");
                 tabbedNavigation.AddTab<JobsPageModel>("Jobs", "icon_jobs.png");
-
                 tabbedNavigation.AddTab<PartsPageModel>("Parts", "icon_parts.png");
                 tabbedNavigation.AddTab<ProfilePageModel>("Me", "icon_user.png");
 
@@ -39,13 +38,11 @@ namespace ContosoFieldService
             else
             {
                 var navContainer = new CustomAndroidNavigation("AndroidNavigation");
-
                 navContainer.Init("Menu", "hamburger.png");
                 //navContainer.AddPage<DashboardPageModel>("Start");
                 navContainer.AddPage<JobsPageModel>("Jobs");
                 navContainer.AddPage<PartsPageModel>("Parts");
                 navContainer.AddPage<ProfilePageModel>("Me");
-
                 MainPage = navContainer;
             }
         }
