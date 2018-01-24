@@ -19,61 +19,73 @@
                 x:Name="listView"
                 AutomationId="listView"
                 BackgroundColor="Transparent" 
-                RowHeight="65" 
+                HasUnevenRows="true"
                 ItemsSource="{Binding Jobs}" 
                 SelectedItem="{Binding SelectedJob, Mode=TwoWay}"
                 IsPullToRefreshEnabled="True"
                 IsRefreshing="{Binding IsRefreshing, Mode=OneWay}"
                 RefreshCommand="{Binding Refresh}">
                 <ListView.Header>
-                    <SearchBar 
-                        x:Name="searchBar"
-                        AutomationId="searchBar"
-                        SearchCommand="{Binding Search}" 
-                        Text="{Binding SearchText}"
-                        Placeholder="Search"
-                        BackgroundColor="#222E38">
-                    </SearchBar>
+                    <Grid>
+                        <Grid.Padding>
+                            <OnPlatform x:TypeArguments="Thickness">
+                                <On Platform="Android" Value="0,4" />
+                            </OnPlatform>
+                        </Grid.Padding>
+                        <Grid.BackgroundColor>
+                            <OnPlatform x:TypeArguments="Color">
+                                <On Platform="Android" Value="#1b242c" />
+                            </OnPlatform>
+                        </Grid.BackgroundColor>
+                        
+                        <SearchBar 
+                            x:Name="searchBar"
+                            AutomationId="searchBar"
+                            SearchCommand="{Binding Search}" 
+                            Text="{Binding SearchText}"
+                            Placeholder="Search"
+                            BackgroundColor="Transparent">
+                        </SearchBar>
+                    </Grid>
                 </ListView.Header>
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <ViewCell>
-                                <Grid Padding="10">
-                                    <Grid.RowDefinitions>
-                                        <RowDefinition Height="20"></RowDefinition>
-                                        <RowDefinition Height="20"></RowDefinition>
-                                    </Grid.RowDefinitions>
+                                <Grid>
                                     <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="2"></ColumnDefinition>
+                                        <ColumnDefinition Width="Auto"></ColumnDefinition>
                                         <ColumnDefinition Width="*"></ColumnDefinition>
                                     </Grid.ColumnDefinitions>
                                 
-                                   <BoxView 
+                                    <BoxView 
+                                        WidthRequest="6"
                                         Color="#01D8CB">
                                     </BoxView>
-                                
-                                    <Label 
-                                        x:Name="lblName"
-                                        AutomationId="lblName"
-                                        FontFamily="AvenirNext-Medium" 
-                                        Grid.Row="0" 
-                                        Grid.Column="1" 
-                                        Text="{Binding Name}" 
-                                        TextColor="#ffff" 
-                                        LineBreakMode="TailTruncation">
-                                    </Label>
-                                
-                                    <Label 
-                                        x:Name="lblDetils"
-                                        AutomationId="lblDetils"
-                                        FontFamily="AvenirNext-Regular" 
-                                        Grid.Row="1" 
-                                        Grid.Column="1" 
-                                        Text="{Binding Details}" 
-                                        Font="Small"  
-                                        TextColor="#ffff" 
-                                        LineBreakMode="TailTruncation">
-                                    </Label>
+
+                                    <StackLayout Padding="10,10,0,10" Grid.Column="1" Spacing="0">
+                                        <Label 
+                                            x:Name="lblName"
+                                            AutomationId="lblName"
+                                            FontFamily="AvenirNext-Medium" 
+                                            Grid.Row="0" 
+                                            Grid.Column="1" 
+                                            Text="{Binding Name}" 
+                                            TextColor="#ffff" 
+                                            LineBreakMode="TailTruncation">
+                                        </Label>
+                                    
+                                        <Label 
+                                            x:Name="lblDetils"
+                                            AutomationId="lblDetils"
+                                            FontFamily="AvenirNext-Regular" 
+                                            Grid.Row="1" 
+                                            Grid.Column="1" 
+                                            Text="{Binding Details}" 
+                                            FontSize="Small"  
+                                            TextColor="#ffff" 
+                                            LineBreakMode="TailTruncation">
+                                        </Label>
+                                    </StackLayout>
                                 </Grid>
                             </ViewCell>
                         </DataTemplate>
