@@ -405,6 +405,7 @@
     <AndroidAsset Include="Assets\progress_circle.json" />
     <AndroidAsset Include="Assets\icon_comments%402x.png" />
     <AndroidAsset Include="Assets\icon_usersettings%402x.png" />
+    <AndroidAsset Include="Assets\photoupload.json" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Renderers\" />

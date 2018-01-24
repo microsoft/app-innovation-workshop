@@ -389,6 +389,7 @@
 
     <BundleResource Include="Resources\icon_bot.png" />
     <BundleResource Include="Resources\icon_usersettings%402x.png" />
+    <BundleResource Include="Resources\photoupload.json" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <Import Project="..\..\packages\Refit.4.0.1\build\netstandard1.4\refit.targets" Condition="Exists('..\..\packages\Refit.4.0.1\build\netstandard1.4\refit.targets')" />
