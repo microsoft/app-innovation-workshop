@@ -80,7 +80,7 @@ namespace ContosoFieldService
         static JobsPageModel jobsPageModel;
         static JobDetailsPageModel jobDetailsPageModel;
 
-        public static JobsPageModel JobsPageModel => jobsPageModel ?? (jobsPageModel = new JobsPageModel { Jobs = DummyData.GetDummyJobs() });
+        public static JobsPageModel JobsPageModel => jobsPageModel ?? (jobsPageModel = new JobsPageModel { Jobs = DummyData.GetGroupedDummyJobs() });
 
 
         public static JobDetailsPageModel JobDetailsPageModel
