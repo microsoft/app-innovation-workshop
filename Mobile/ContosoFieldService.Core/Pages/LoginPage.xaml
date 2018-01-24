@@ -8,7 +8,7 @@
     BackgroundColor="{StaticResource BackgroundColor}"
     Title="Login">
 
-    <StackLayout Margin="0,80,0,0" Spacing="0">
+    <StackLayout Margin="0,80,0,10" Spacing="0">
         <StackLayout 
             Spacing="0"
             Padding="{StaticResource DefaultThickness}">
@@ -26,8 +26,7 @@
         </StackLayout>
 
         <StackLayout 
-            Padding="{StaticResource DefaultThickness}"
-            VerticalOptions="FillAndExpand">
+            Padding="{StaticResource DefaultThickness}">
             <Entry 
                 x:Name="tbxFullname"
                 AutomationId="tbxFullname"
@@ -45,7 +44,6 @@
         </StackLayout>  
                 
         <StackLayout 
-            VerticalOptions="End"
             Padding="{StaticResource DefaultThickness}">            
             <Button 
                 x:Name="btnLogin"

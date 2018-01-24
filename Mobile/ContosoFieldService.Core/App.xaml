@@ -10,7 +10,7 @@
             <Color x:Key="BackgroundColorDark">#1A222A</Color> 
             <Color x:Key="BackgroundColorItem">#FFFFFF</Color> 
             
-
+          
             
             <Color x:Key="TextColor">#FFFFFF</Color>
             <Color x:Key="TextColorItem">#000000</Color>
