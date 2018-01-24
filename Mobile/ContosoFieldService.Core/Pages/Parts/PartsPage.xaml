@@ -95,7 +95,7 @@
                             <!-- Separator -->
                             <BoxView 
                                 Grid.Row="1"
-                                Grid.Column="1"
+                                Grid.ColumnSpan="2"
                                 HeightRequest="1"
                                 Margin="0"
                                 Color="{StaticResource SeparatorColor}" />
