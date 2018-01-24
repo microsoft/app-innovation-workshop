@@ -17,6 +17,7 @@
             x:Name="PartsListView"
             BackgroundColor="Transparent" 
             HasUnevenRows="true"
+            SeparatorVisibility="None"
             ItemsSource="{Binding Parts}" 
             SelectedItem="{Binding SelectedPart, Mode=TwoWay}"
             IsPullToRefreshEnabled="True"
