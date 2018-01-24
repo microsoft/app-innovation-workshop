@@ -55,12 +55,23 @@ namespace ContosoFieldService.Helpers
             {
                 new Part
                 {
-                    Name = "Lorem Ipsum dolor 1",
-                    Manufacturer = "Minim veniam",
-                    ModelNumber = "123456789",
-                    SerialNumber = "ABC123456778",
-                    PriceInUSD = 150.99M,
+                    Name = "Crankshaft F337",
+                    Manufacturer = "Bonus Materials",
+                    ModelNumber = "CE3874902726",
+                    SerialNumber = "456732037463823902826",
+                    PartNumber = "6262939036",
+                    PriceInUSD = 599.12M,
                     ImageSource = "https://contosomaintenance.blob.core.windows.net/images-large/67a04a57-b51e-45d8-b75c-c343a273b6f7.png"
+                },
+                new Part
+                {
+                    Name = "Airplane Engine RFE-747",
+                    Manufacturer = "Lolz Roice",
+                    ModelNumber = "CE3874902728",
+                    SerialNumber = "456732037463823902828",
+                    PartNumber = "6262939038",
+                    PriceInUSD = 35000000M,
+                    ImageSource = "https://contosomaintenance.blob.core.windows.net/images-large/67a24a57-b51r-45d8-b75c-c343a273b6f8.jpg"
                 }
             };
 
