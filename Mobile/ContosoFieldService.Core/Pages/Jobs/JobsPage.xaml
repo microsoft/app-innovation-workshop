@@ -49,7 +49,7 @@
                 <ViewCell>
                     <Grid 
                         BackgroundColor="{StaticResource BackgroundColorItem}"
-                        Margin="0,0,0,1">
+                        Margin="0,0,0,0">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="Auto"></ColumnDefinition>
                             <ColumnDefinition Width="*"></ColumnDefinition>
@@ -68,7 +68,7 @@
                             <Label 
                                 x:Name="lblName"
                                 AutomationId="lblName"
-                                FontFamily="{StaticResource FontFamilyRegular}" 
+                                FontFamily="{StaticResource FontFamilyMedium}" 
                                 FontSize="{StaticResource FontSizeRegular}"
                                 TextColor="{StaticResource TextColorItem}" 
                                 Text="{Binding Name}" 
@@ -81,7 +81,8 @@
                                 FontSize="{StaticResource FontSizeSmall}"  
                                 TextColor="{StaticResource TextColorItemSecondary}"
                                 Text="{Binding Details}" 
-                                LineBreakMode="TailTruncation">
+                                LineBreakMode="TailTruncation"
+                                Margin="0,10,0,0">
                             </Label>
                         </StackLayout>
                     </Grid>
