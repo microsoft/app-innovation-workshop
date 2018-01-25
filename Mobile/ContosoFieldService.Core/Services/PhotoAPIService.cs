@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Threading.Tasks;
-using ContosoFieldService.Models;
+﻿using System.Threading.Tasks;
 using Plugin.Media.Abstractions;
 using Refit;
 
