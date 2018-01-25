@@ -133,7 +133,6 @@
                 <!-- Map View -->
                 <Maps:Map 
                     x:Name="mapView" 
-                    IsVisible="false"
                     AutomationId="mapView"
                     HeightRequest="200" 
                     IsShowingUser="false" 
