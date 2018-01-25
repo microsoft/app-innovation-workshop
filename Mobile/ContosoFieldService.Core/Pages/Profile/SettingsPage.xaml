@@ -3,28 +3,91 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
              x:Class="ContosoFieldService.Pages.SettingsPage"
              Title="Settings"
-             BackgroundColor = "#222E38">
+             BackgroundColor="#222E38">
 	<ContentPage.Content>
-        <StackLayout>
-            <StackLayout Orientation="Vertical" Padding="15,10,5,20">
-                    <StackLayout Orientation="Horizontal">
-                        <Label Text="Notifications" FontFamily="AvenirNext-Medium" TextColor="White" FontSize="16" HorizontalOptions="Start" />
-                    </StackLayout>
+         <ListView
+                ItemsSource="{Binding ThirdPartyLibraries}"
+                SeparatorVisibility="None"
+                HasUnevenRows="true"
+                BackgroundColor="#222E38">
+                
+                <ListView.Header>
+                    <StackLayout>
 
-                    <!-- Sub Line -->
-                    <StackLayout Orientation="Horizontal" Margin="0,5,0,0">
-                        <Image Source="icon_graph.png" Margin="5,0,10,0" />
-                        <StackLayout Orientation="Vertical">
-                            <Label Text="Notify on new jobs" FontFamily="AvenirNext-Regular" TextColor="White" FontSize="17" />
-                            <Switch IsToggled="{Binding NotificationsEnabled}"></Switch>
+                        <!-- Version -->
+                        <StackLayout>
+                            <Label Text="Version" />
+                            <Label  x:Name="VersionLabel" Text="1"/>
+                        </StackLayout>                
+
+                        <BoxView HeightRequest="1"/>
+
+                        <StackLayout>
+                            <Label Text="3rd Party Libraries" />  
+                            <Label Text="Credits to these incredible community projects that made my life easier!"/>
                         </StackLayout>
                     </StackLayout>
-                </StackLayout>
+                </ListView.Header>
 
-                <!-- Line -->
-                <BoxView HeightRequest="1" Margin="0,0,5,0" BackgroundColor="#2D3D4B" />
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="*" />
+                                </Grid.RowDefinitions>
 
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="Auto" />
+                                </Grid.ColumnDefinitions>
 
-        </StackLayout>
+                                <Label
+                                    Grid.Row="0"
+                                    Grid.ColumnSpan="2"
+                                    FontAttributes="Bold"
+                                    FontSize="{StaticResource FontSizeMedium}"
+                                    Text="{Binding Name}" />                           
+
+                                <Label
+                                    Grid.Row="1"
+                                    Margin="0,-4,0,0"
+                                    FontSize="{StaticResource FontSizeMedium}"
+                                    Text="{Binding Author}" />
+
+                                <Image
+                                    Grid.RowSpan="2"
+                                    Grid.Column="1"
+                                    Margin="10,0,0,0"
+                                    HeightRequest="15"
+                                    Source="Next"
+                                    VerticalOptions="Center">
+                                    <Image.IsVisible>
+                                        <OnPlatform
+                                            x:TypeArguments="x:Boolean"
+                                            Android="False"
+                                            WinPhone="False"
+                                            iOS="True" />
+                                    </Image.IsVisible>
+                                </Image>
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+
+                <ListView.Footer>
+                    <StackLayout>                
+                        <BoxView HeightRequest="1"/>
+
+                        <!-- Additional Information -->
+                        <StackLayout>
+                            <Label Text="Additional Information" />
+                            <Label Text="This application has been built using Visual Studio Tools for Xamarin and is using Xamarin.Forms as its UI Framework. The full Frontend- and Backend code is open source and can be used for demos or as reference project."/>
+                            <Button Text="Browse at GitHub" HorizontalOptions="Start" />
+                        </StackLayout> 
+                    </StackLayout>
+                </ListView.Footer>
+            </ListView>
 	</ContentPage.Content>
 </ContentPage>
