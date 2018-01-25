@@ -3,11 +3,12 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
+
+using ContosoMaintenance.WebAPI.Services.BlobStorage;
+
 using Microsoft.WindowsAzure.Storage;
 using Microsoft.WindowsAzure.Storage.Auth;
 using Microsoft.WindowsAzure.Storage.Blob;
-using ContosoMaintenance.WebAPI.Services.BlobStorage;
-
 
 namespace ContosoMaintenance.WebAPI.Services
 {
