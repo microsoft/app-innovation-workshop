@@ -56,26 +56,5 @@ namespace ContosoMaintenance.WebAPI.Controllers
                 return new ObjectResult(false);
             }
         }
-
-        [HttpGet]
-        public async Task<IActionResult> Download(string blobName, string name)
-        {
-            if (string.IsNullOrEmpty(blobName))
-                return Content("Blob Name not present");
-
-            var stream = await blobStorage.DownloadAsync(blobName);
-            return File(stream.ToArray(), "applicationt/octet-stream", name);
-        }
-
-        [HttpDelete]
-        public async Task<IActionResult> Delete(string blobName)
-        {
-            if (string.IsNullOrEmpty(blobName))
-                return Content("Blob Name not present");
-
-            await blobStorage.DeleteAsync(blobName);
-
-            return RedirectToAction("Index");
-        }
     }
 }
