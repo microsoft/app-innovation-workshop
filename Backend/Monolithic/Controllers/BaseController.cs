@@ -16,7 +16,7 @@ namespace ContosoMaintenance.WebAPI.Controllers
 
         void CreateDummyDataIfNeeded()
         {
-            
+
         }
 
         [HttpGet]
@@ -44,12 +44,12 @@ namespace ContosoMaintenance.WebAPI.Controllers
 
             if (string.IsNullOrEmpty(item.Id))
                 item.Id = Guid.NewGuid().ToString();
-            
+
             await DBRepository.CreateItemAsync(item);
             return new ObjectResult(item);
         }
 
-        [HttpPut]
+        [HttpPut("{id}")]
         public async Task<IActionResult> Update(string id, [FromBody] T item)
         {
             if (item == null || item.Id != id)
