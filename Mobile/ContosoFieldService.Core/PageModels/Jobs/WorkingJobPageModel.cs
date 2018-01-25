@@ -106,8 +106,6 @@ namespace ContosoFieldService.PageModels
 
                 try
                 {
-                    await CoreMethods.PushPageModel<UploadingPhotoLoadingPageModel>(null, true, true);
-
                     await photoService.CreatePhotoAsync(file);
                     await CoreMethods.DisplayAlert("Saved", "Image Saved", "OK");
                 }
