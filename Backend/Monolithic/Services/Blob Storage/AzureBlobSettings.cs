@@ -1,11 +1,14 @@
 ﻿using System;
+
 namespace ContosoMaintenance.WebAPI.Services.BlobStorage
 {
     public class AzureBlobSettings
     {
-        public AzureBlobSettings(string storageAccount,
-                                       string storageKey,
-                                       string containerName)
+        public string StorageAccount { get; }
+        public string StorageKey { get; }
+        public string ContainerName { get; }
+
+        public AzureBlobSettings(string storageAccount, string storageKey, string containerName)
         {
             if (string.IsNullOrEmpty(storageAccount))
                 throw new ArgumentNullException("StorageAccount");
@@ -16,13 +19,9 @@ namespace ContosoMaintenance.WebAPI.Services.BlobStorage
             if (string.IsNullOrEmpty(containerName))
                 throw new ArgumentNullException("ContainerName");
 
-            this.StorageAccount = storageAccount;
-            this.StorageKey = storageKey;
-            this.ContainerName = containerName;
+            StorageAccount = storageAccount;
+            StorageKey = storageKey;
+            ContainerName = containerName;
         }
-
-        public string StorageAccount { get; }
-        public string StorageKey { get; }
-        public string ContainerName { get; }
     }
 }
