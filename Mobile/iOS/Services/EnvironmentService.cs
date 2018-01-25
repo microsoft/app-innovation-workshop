@@ -11,7 +11,7 @@ namespace ContosoFieldService.iOS.Services
         public bool IsRunningInRealWorld()
         {
 #if DEBUG
-            return false;
+            //return false;
 #endif
 
             if (Runtime.Arch == Arch.SIMULATOR ||
