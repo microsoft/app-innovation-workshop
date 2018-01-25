@@ -70,12 +70,11 @@ namespace ContosoFieldService.PageModels
                 {
                     Analytics.TrackEvent("Job Compeleted");
 
-
+                    //TODO: Show Loading indicators
                     selectedJob.Status = JobStatus.Complete;
                     await jobService.UpdateJob(selectedJob);
 
-
-                    await CoreMethods.PopPageModel(true, true);
+                    await CoreMethods.PopPageModel(true);
                 });
             }
         }
