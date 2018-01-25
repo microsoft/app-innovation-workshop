@@ -1,4 +1,5 @@
-﻿using ContosoFieldService.Abstractions;
+﻿using System.Linq;
+using ContosoFieldService.Abstractions;
 using ContosoFieldService.Helpers;
 using ContosoFieldService.PageModels;
 using FreshMvvm;
@@ -8,7 +9,6 @@ using Microsoft.AppCenter.Crashes;
 using Microsoft.AppCenter.Push;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
-using System.Linq;
 
 [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 namespace ContosoFieldService
@@ -26,7 +26,6 @@ namespace ContosoFieldService
             if (Xamarin.Forms.Device.RuntimePlatform == Xamarin.Forms.Device.iOS)
             {
                 var tabbedNavigation = new FreshTabbedNavigationContainer("authed");
-                //tabbedNavigation.AddTab<DashboardPageModel>("Dashboard", "icon_dashboard.png");
                 tabbedNavigation.AddTab<JobsPageModel>("Jobs", "icon_jobs.png");
                 tabbedNavigation.AddTab<PartsPageModel>("Parts", "icon_parts.png");
                 tabbedNavigation.AddTab<ProfilePageModel>("Me", "icon_user.png");
