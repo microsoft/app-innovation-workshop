@@ -49,7 +49,7 @@ namespace ContosoMaintenance.WebAPI.Controllers
             return new ObjectResult(item);
         }
 
-        [HttpPatch]
+        [HttpPut]
         public async Task<IActionResult> Update(string id, [FromBody] T item)
         {
             if (item == null || item.Id != id)
