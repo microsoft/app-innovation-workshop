@@ -36,7 +36,8 @@ namespace ContosoFieldService.PageModels
                     {
                         Name = Name,
                         Details = Details,
-                        CreatedAt = DateTime.Now
+                        CreatedAt = DateTime.Now,
+                        DueDate = DueDate
                     };
                    
                     try
