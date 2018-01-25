@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using Microsoft.Azure.Search;
 using Microsoft.Azure.Search.Models;
 using Newtonsoft.Json;
@@ -25,6 +26,8 @@ namespace ContosoMaintenance.WebAPI.Models
         public Location Address { get; set; }
 
         public Employee AssignedTo { get; set; }
+
+        public DateTime DueDate { get; set; }
 
     }
 
