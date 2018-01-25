@@ -49,7 +49,7 @@ namespace ContosoFieldService.PageModels
             timer.Elapsed += Timer_Elapsed;
             timer.Start();
         }
- 
+
         void Timer_Elapsed(object sender, ElapsedEventArgs e)
         {
             DateTime now = DateTime.Now;
@@ -69,11 +69,11 @@ namespace ContosoFieldService.PageModels
                 return new Command(async () =>
                 {
                     Analytics.TrackEvent("Job Compeleted");
-                 
-                    /*
+
+
                     selectedJob.Status = JobStatus.Complete;
                     await jobService.UpdateJob(selectedJob);
-                    */
+
 
                     await CoreMethods.PopPageModel(true, true);
                 });
@@ -86,33 +86,33 @@ namespace ContosoFieldService.PageModels
             {
                 return new Command(async () =>
                 {
-                if (CrossMedia.Current.IsCameraAvailable == false)
-                {
-                    await CoreMethods.DisplayAlert("Camera Unavailable", "Unable to use your camera at this time", "OK");
-                    Analytics.TrackEvent("Camera Unavailable");
-                    return;
-                }
+                    if (CrossMedia.Current.IsCameraAvailable == false)
+                    {
+                        await CoreMethods.DisplayAlert("Camera Unavailable", "Unable to use your camera at this time", "OK");
+                        Analytics.TrackEvent("Camera Unavailable");
+                        return;
+                    }
 
-                var options = new StoreCameraMediaOptions
-                {
-                    DefaultCamera = CameraDevice.Rear,
-                    SaveMetaData = true,
-                    SaveToAlbum = false,
-                    Name = selectedJob.Id
-                };
+                    var options = new StoreCameraMediaOptions
+                    {
+                        DefaultCamera = CameraDevice.Rear,
+                        SaveMetaData = true,
+                        SaveToAlbum = false,
+                        Name = selectedJob.Id
+                    };
 
-                Analytics.TrackEvent("Taking a photo");
-                var file = await CrossMedia.Current.TakePhotoAsync(options);
+                    Analytics.TrackEvent("Taking a photo");
+                    var file = await CrossMedia.Current.TakePhotoAsync(options);
 
-                try
-                {
-                    await photoService.CreatePhotoAsync(file);
-                    await CoreMethods.DisplayAlert("Saved", "Image Saved", "OK");
-                }
-                catch(Exception ex)
-                {
-                    await CoreMethods.DisplayAlert("Upload Failed", "Failed to upload photo. Snap again!", "OK");
-                }
+                    try
+                    {
+                        await photoService.CreatePhotoAsync(file);
+                        await CoreMethods.DisplayAlert("Saved", "Image Saved", "OK");
+                    }
+                    catch (Exception ex)
+                    {
+                        await CoreMethods.DisplayAlert("Upload Failed", "Failed to upload photo. Snap again!", "OK");
+                    }
 
                 });
             }
@@ -125,7 +125,7 @@ namespace ContosoFieldService.PageModels
                 return new Command(async () =>
                 {
                     Analytics.TrackEvent("Quick Break");
-                    if(increment >= 10)
+                    if (increment >= 10)
                         increment = increment - 10;
                 });
             }
