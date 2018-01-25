@@ -54,56 +54,5 @@ namespace ContosoMaintenance.WebAPI
             app.UseMvc();
         }
 
-        async void CreateDummyData()
-        {
-            var jobsData = new DocumentDBRepositoryBase<Job>();
-            var jobCount = jobsData.GetItemsCount();
-            if(jobCount == 0)
-            {
-                var dummyData = new DummyData.DummyData();
-                var dummyJobs = dummyData.Jobs;
-                foreach(var job in dummyJobs)
-                {
-                    await jobsData.CreateItemAsync(job);
-                }
-            }
-
-            var customersData = new DocumentDBRepositoryBase<Customer>();
-            var customersCount = customersData.GetItemsCount();
-            if (customersCount == 0)
-            {
-                var dummyData = new DummyData.DummyData();
-                var dummyCustomers = dummyData.Customers;
-                foreach (var customer in dummyCustomers)
-                {
-                    await customersData.CreateItemAsync(customer);
-                }
-            }
-
-            var employeesData = new DocumentDBRepositoryBase<Employee>();
-            var employeesCount = employeesData.GetItemsCount();
-            if (employeesCount == 0)
-            {
-                var dummyData = new DummyData.DummyData();
-                var dummyEmployees = dummyData.Employees;
-                foreach (var employee in dummyEmployees)
-                {
-                    await employeesData.CreateItemAsync(employee);
-                }
-            }
-
-            var addressData = new DocumentDBRepositoryBase<Location>();
-            var addressCount = addressData.GetItemsCount();
-            if (addressCount == 0)
-            {
-                var dummyData = new DummyData.DummyData();
-                var dummyAddress = dummyData.Addresses;
-                foreach (var address in dummyAddress)
-                {
-                    await addressData.CreateItemAsync(address);
-                }
-            }
-
-        }
     }
 }
