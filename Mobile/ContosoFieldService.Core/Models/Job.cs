@@ -14,16 +14,13 @@ namespace ContosoFieldService.Models
         [JsonProperty("dueDate")]
         public DateTime DueDate { get; set; }
 
-        [JsonProperty("age")]
-        public DateTime CreatedAt { get; set; }
-
         [JsonProperty("type")]
         public JobType Type { get; set; }
 
         [JsonProperty("status")]
         public JobStatus Status { get; set; }
 
-        [JsonProperty("Address")]
+        [JsonProperty("address")]
         public Location Address { get; set; }
     }
 
