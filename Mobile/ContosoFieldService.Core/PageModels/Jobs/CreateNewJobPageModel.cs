@@ -35,9 +35,10 @@ namespace ContosoFieldService.PageModels
                     var job = new Job
                     {
                         Name = Name,
-                        Details = Details
+                        Details = Details,
+                        CreatedAt = DateTime.Now
                     };
-                    Analytics.TrackEvent("New Job Created");
+                   
                     try
                     {
                         var location = await Plugin.Geolocator.CrossGeolocator.Current.GetPositionAsync();
@@ -45,7 +46,7 @@ namespace ContosoFieldService.PageModels
 
                         //AWAIT ALL THE THINGS!
                         await jobApiService.CreateJobAsync(job);
-                        await CoreMethods.DisplayAlert("Saved new job", "Added a new job to the jobs list", "OK");
+                        Analytics.TrackEvent("New Job Created");
                         await CoreMethods.PopPageModel(true, true);
                     }
                     catch(Exception)
