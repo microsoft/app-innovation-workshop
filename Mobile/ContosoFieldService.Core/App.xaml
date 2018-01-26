@@ -1,12 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Application xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="ContosoFieldService.App">
+<Application 
+    xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    xmlns:converters="clr-namespace:ContosoFieldService.Converters;assembly=ContosoFieldService.Core"
+    x:Class="ContosoFieldService.App">
 	<Application.Resources>
 		<ResourceDictionary>
 
+            <!-- Converters -->
+            <converters:JobStatusToColorConverter x:Key="JobStatusToColorConverter" />
+
             <!-- Colors -->
             <Color x:Key="AccentColor">#00D8CB</Color>
-            <Color x:Key="AccentColorRed">#FFAB89</Color>
+            <Color x:Key="AccentColorRed">#D83E01</Color>
             <Color x:Key="AccentColorBlue">#0193D8</Color>
+            <Color x:Key="AccentColorOrage">#FFAB89</Color>
             
             <Color x:Key="BackgroundColor">#222E38</Color>
             <Color x:Key="BackgroundColorDark">#1A222A</Color> 
