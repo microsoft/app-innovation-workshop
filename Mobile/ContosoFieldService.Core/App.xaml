@@ -14,23 +14,44 @@
             <Color x:Key="AccentColor">#00D8CB</Color>
             <Color x:Key="AccentColorRed">#D83E01</Color>
             <Color x:Key="AccentColorBlue">#0193D8</Color>
-            <Color x:Key="AccentColorOrage">#FFAB89</Color>
+            <Color x:Key="AccentColorOrange">#FFAB89</Color>
+
+            <Color x:Key="SeparatorColor">#EEEEEE</Color> 
             
+            <!-- Dark Theme (default) -->            
             <Color x:Key="BackgroundColor">#222E38</Color>
             <Color x:Key="BackgroundColorDark">#1A222A</Color> 
-            <Color x:Key="BackgroundColorItem">#FFFFFF</Color> 
-            <Color x:Key="SeparatorColor">#EEEEEE</Color> 
-
             <Color x:Key="TextColor">#FFFFFF</Color>
-            <Color x:Key="TextColorItem">#000000</Color>
-            <Color x:Key="TextColorItemSecondary">#555555</Color>
             <Color x:Key="TextColorPlaceholder">#515151</Color>
 
+            <!-- Light Theme -->
+            <Color x:Key="TextColorLight">#212121</Color>
+            <Color x:Key="TextColorSubtleLight">#777777</Color>
+            
+            
+
+            <!-- Item Theme -->            
+            <Color x:Key="BackgroundColorItem">#FFFFFF</Color> 
+            <Color x:Key="TextColorItem">#000000</Color>
+            <Color x:Key="TextColorItemSecondary">#555555</Color>
+
+
             <!-- Thicknesses -->
-            <OnPlatform x:Key="DefaultThickness" x:TypeArguments="Thickness">
-                <On Platform="iOS">10</On>
-                <On Platform="Android">10</On>
-            </OnPlatform>
+            <OnPlatform
+                x:Key="DefaultMargin"
+                x:TypeArguments="x:Double"
+                Android="10"
+                WinPhone="10"
+                iOS="10" />
+
+            <Thickness
+                x:Key="DefaultThickness"
+                Bottom="{StaticResource DefaultMargin}"
+                Left="{StaticResource DefaultMargin}"
+                Right="{StaticResource DefaultMargin}"
+                Top="{StaticResource DefaultMargin}" />
+            
+
             
             <!-- Font Families -->
             <OnPlatform x:Key="FontFamilyRegular" x:TypeArguments="x:String">
@@ -103,6 +124,29 @@
                 <Setter Property="FontFamily" Value="{StaticResource FontFamilyMedium}" />                
                 <Setter Property="HeightRequest" Value="50" />                
             </Style>
+
+            <!-- Details -->
+            <Style x:Key="SectionHaderLabelStyle" TargetType="Label">
+                <Setter Property="TextColor" Value="{StaticResource TextColorLight}" />
+                <Setter Property="FontSize" Value="{StaticResource FontSizeRegular}" />
+                <Setter Property="FontFamily" Value="{StaticResource FontFamilyMedium}" />                
+            </Style>
+            
+            <Style x:Key="PropertyLabelStyle" TargetType="Label">
+                <Setter Property="TextColor" Value="{StaticResource AccentColorRed}" />
+                <Setter Property="FontSize" Value="{StaticResource FontSizeLarge}" />
+                <Setter Property="FontFamily" Value="{StaticResource FontFamilyMedium}" />                
+            </Style>
+            
+            <Style x:Key="PropertyFooterLabelStyle" TargetType="Label">
+                <Setter Property="TextColor" Value="{StaticResource TextColorSubtleLight}" />
+                <Setter Property="FontSize" Value="{StaticResource FontSizeSmall}" />
+                <Setter Property="FontFamily" Value="{StaticResource FontFamilyRegular}" />                
+            </Style>
+
+
+
+
 
 
 
