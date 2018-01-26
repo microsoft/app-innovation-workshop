@@ -72,9 +72,9 @@ namespace ContosoFieldService.PageModels
 
                     //TODO: Show Loading indicators
                     selectedJob.Status = JobStatus.Complete;
-                    await jobService.UpdateJob(selectedJob);
+                    var updatedJob = await jobService.UpdateJob(selectedJob);
 
-                    await CoreMethods.PopPageModel(true);
+                    await CoreMethods.PopPageModel(updatedJob, true, true);
                 });
             }
         }

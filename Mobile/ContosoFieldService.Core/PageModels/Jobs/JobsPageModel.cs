@@ -132,9 +132,8 @@ namespace ContosoFieldService.PageModels
             if (Helpers.Settings.UserIsLoggedIn == false)
                 await CoreMethods.PushPageModel<LoginPageModel>(null, true, true);
 
-            if (Jobs.Count == 0)
-                await ReloadData();
 
+            await ReloadData(Jobs.Count == 0, Jobs.Count != 0);
         }
 
         protected override async void ViewIsDisappearing(object sender, EventArgs e)
@@ -142,49 +141,88 @@ namespace ContosoFieldService.PageModels
             SelectedJob = null;
         }
 
-
-        public override async void ReverseInit(object returndData)
+        public override async void ReverseInit(object returnedData)
         {
-            base.ReverseInit(returndData);
+            base.ReverseInit(returnedData);
+
+            // Check if returnedData is set.
+            // That means a job got added, updated or deleted
+            if (returnedData is Job job)
+            {
+                var existingJob = localJobs.FirstOrDefault(x => x.Id == job.Id);
+                if (existingJob == null)
+                {
+                    // New Job added
+                    localJobs.Add(job);
+                }
+                else if (job.IsDeleted == true)
+                {
+                    // Job deleted
+                    localJobs.Remove(existingJob);
+                }
+                else
+                {
+                    // Job updated
+                    existingJob = job;
+                }
+            }
+
             SelectedJob = null;
-            await ReloadData();
         }
 
         #endregion
 
         #region Private Methods
-        async Task ReloadData(bool isSilent = false)
+
+        /// <summary>
+        /// Reloads the data.
+        /// </summary>
+        /// <returns>The data.</returns>
+        /// <param name="force">If set to <c>false</c> no new data from the server will be fetched and only local data will be regrouped.</param>
+        /// <param name="isSilent">If set to <c>true</c> is silent.</param>
+        async Task ReloadData(bool force = true, bool isSilent = false)
         {
             IsRefreshing = !isSilent;
-            if (Plugin.Connectivity.CrossConnectivity.Current.IsConnected)
-            {
-                // Download jobs from server
-                var jobs = await jobsApiService.GetJobsAsync();
 
-                // Group jobs by JobStatus
-                var groupedJobs = new List<GroupedJobs>
+            if (force)
+            {
+                if (Plugin.Connectivity.CrossConnectivity.Current.IsConnected)
                 {
-                    new GroupedJobs("Waiting", jobs.Where(x => x.Status == JobStatus.Waiting)),
-                    new GroupedJobs("In Progress", jobs.Where(x => x.Status == JobStatus.InProgress)),
-                    new GroupedJobs("Complete", jobs.Where(x => x.Status == JobStatus.Complete)),
-                };
-
-                // Add only groups that actually have items to the list
-                Jobs.ReplaceRange(groupedJobs.Where(x => x.Any()));
-
-                IsRefreshing = false;
+                    // Download jobs from server
+                    localJobs = await jobsApiService.GetJobsAsync();
+                }
+                else
+                {
+                    await CoreMethods.DisplayAlert("Network Error", "No internet connectivity found", "OK");
+                }
             }
-            else
-            {
-                await CoreMethods.DisplayAlert("Network Error", "No internet connectivity found", "OK");
-            }
+
+            // Group jobs by JobStatus
+            var groupedJobs = GroupJobs(localJobs);
+            Jobs.ReplaceRange(groupedJobs);
+
             IsRefreshing = false;
         }
+
+        IEnumerable<GroupedJobs> GroupJobs(List<Job> jobs)
+        {
+            // Group jobs by JobStatus
+            var groupedJobs = new List<GroupedJobs>
+            {
+                new GroupedJobs("Waiting", jobs.Where(x => x.Status == JobStatus.Waiting)),
+                new GroupedJobs("In Progress", jobs.Where(x => x.Status == JobStatus.InProgress)),
+                new GroupedJobs("Complete", jobs.Where(x => x.Status == JobStatus.Complete)),
+            };
+
+            // Rerturn groups that actually have items to the list
+            return groupedJobs.Where(x => x.Any());
+        }
+
         #endregion
 
         #region Private Fields
         JobsAPIService jobsApiService = new JobsAPIService();
-
+        List<Job> localJobs = new List<Job>();
         bool isRefreshing;
         #endregion
     }

@@ -6,9 +6,12 @@ namespace ContosoFieldService.Models
     public class BaseModel
     {
         [JsonProperty("id")]
-        public string Id { get; set; }   
+        public string Id { get; set; }
 
         [JsonProperty("createdAt")]
-        public DateTime CreatedAt { get; set; }   
+        public DateTime CreatedAt { get; set; }
+
+        [JsonProperty("isDeleted")]
+        public bool IsDeleted { get; set; }
     }
 }

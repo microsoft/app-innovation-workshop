@@ -25,7 +25,6 @@ namespace ContosoFieldService.PageModels
             CurrentDate = DateTime.Now;
         }
 
-
         public Command CreateJobClicked
         {
             get
@@ -39,18 +38,17 @@ namespace ContosoFieldService.PageModels
                         CreatedAt = DateTime.Now,
                         DueDate = DueDate
                     };
-                   
+
                     try
                     {
                         var location = await Plugin.Geolocator.CrossGeolocator.Current.GetPositionAsync();
                         job.Address = new Location() { GeoPosition = new Spatial.Point(location.Longitude, location.Latitude) };
 
-                        // AWAIT ALL THE THINGS!
-                        await jobApiService.CreateJobAsync(job);
+                        job = await jobApiService.CreateJobAsync(job);
                         Analytics.TrackEvent("New Job Created");
-                        await CoreMethods.PopPageModel(true, true);
+                        await CoreMethods.PopPageModel(job, true, true);
                     }
-                    catch(Exception)
+                    catch (Exception)
                     {
                         await CoreMethods.DisplayAlert("Network Error", "No connectivity", "OK");
                     }
