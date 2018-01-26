@@ -2,6 +2,7 @@
 using System.Threading.Tasks;
 using ContosoMaintenance.WebAPI.Services;
 using Microsoft.AspNetCore.Mvc;
+using System.Xml.Linq;
 
 namespace ContosoMaintenance.WebAPI.Controllers
 {
@@ -22,7 +23,7 @@ namespace ContosoMaintenance.WebAPI.Controllers
         [HttpGet]
         public virtual async Task<IActionResult> GetAll()
         {
-            var items = await DBRepository.GetItemsAsync(x => x.Id != null);
+            var items = await DBRepository.GetItemsAsync(x => x.Id != null && x.IsDeleted != true);
             return new ObjectResult(items);
         }
 
@@ -81,7 +82,11 @@ namespace ContosoMaintenance.WebAPI.Controllers
                 return NotFound();
             }
 
-            await DBRepository.DeleteItemAsync(id);
+            // Soft Delete
+            item.IsDeleted = true;
+            await DBRepository.UpdateItemAsync(item.Id, item);
+            //await DBRepository.DeleteItemAsync(id);
+
             return new ObjectResult(item);
         }
     }

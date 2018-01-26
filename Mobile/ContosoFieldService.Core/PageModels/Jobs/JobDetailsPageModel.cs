@@ -22,7 +22,6 @@ namespace ContosoFieldService.PageModels
         {
             if (initData != null)
             {
-
                 CurrentJob = (Job)initData;
                 Name = CurrentJob.Name;
                 Details = CurrentJob.Details;
@@ -71,8 +70,8 @@ namespace ContosoFieldService.PageModels
                     {
                         //TODO: Show Loading indicator
                         var jobsService = new Services.JobsAPIService();
-                        await jobsService.DeleteJobByIdAsync(CurrentJob.Id);
-                        await CoreMethods.PopPageModel();
+                        var updatedJob = await jobsService.DeleteJobByIdAsync(CurrentJob.Id);
+                        await CoreMethods.PopPageModel(updatedJob);
                     }
                 });
             }
@@ -88,6 +87,7 @@ namespace ContosoFieldService.PageModels
                 });
             }
         }
+
     }
 
 }
