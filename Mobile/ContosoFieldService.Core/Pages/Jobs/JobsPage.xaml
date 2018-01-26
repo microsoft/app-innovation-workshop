@@ -65,7 +65,7 @@
                         <BoxView 
                             Grid.RowSpan="2"
                             WidthRequest="6"
-                            Color="{StaticResource AccentColor}" />
+                            Color="{Binding Status, Converter={StaticResource JobStatusToColorConverter}}" />
 
                         <StackLayout 
                             Grid.Column="1"
@@ -116,7 +116,7 @@
                             Text="{Binding Heading}"
                             FontFamily="{StaticResource FontFamilyMedium}"
                             FontSize="{StaticResource FontSizeRegular}"
-                            TextColor="{StaticResource AccentColorRed}" />                        
+                            TextColor="{StaticResource AccentColorOrage}" />                        
                     </Grid>
                 </ViewCell>
             </DataTemplate>

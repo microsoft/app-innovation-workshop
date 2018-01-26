@@ -61,6 +61,7 @@
     <Folder Include="Pages\Profile\" />
     <Folder Include="Abstractions\" />
     <Folder Include="Pages\Parts\" />
+    <Folder Include="Converters\" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Remove="App.xaml" />
