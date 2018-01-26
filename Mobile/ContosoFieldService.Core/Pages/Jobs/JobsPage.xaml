@@ -5,6 +5,7 @@
     BindingContext="{x:Static design:PageModelLocator.JobsPageModel}"
     x:Class="ContosoFieldService.Pages.JobsPage"
     BackgroundColor="{StaticResource BackgroundColor}"
+    IsBusy="{Binding IsLoading, Mode=OneWay}"
     Title="Jobs">
     
     <ContentPage.ToolbarItems>
