@@ -78,7 +78,6 @@ namespace ContosoFieldService
 
         static JobsPageModel jobsPageModel;
         public static JobsPageModel JobsPageModel => jobsPageModel ?? (jobsPageModel = new JobsPageModel { Jobs = DummyData.GetGroupedDummyJobs() });
-
         static JobDetailsPageModel jobDetailsPageModel;
         public static JobDetailsPageModel JobDetailsPageModel
         {
@@ -91,12 +90,25 @@ namespace ContosoFieldService
                 }
 
                 return jobDetailsPageModel;
-
             }
         }
 
         static PartsPageModel partsPageModel;
         public static PartsPageModel PartsPageModel => partsPageModel ?? (partsPageModel = new PartsPageModel { Parts = DummyData.GetDummyParts() });
+        static PartDetailsPageModel partDetailsPageModel;
+        public static PartDetailsPageModel PartDetailsPageModel
+        {
+            get
+            {
+                if (partDetailsPageModel == null)
+                {
+                    partDetailsPageModel = new PartDetailsPageModel();
+                    partDetailsPageModel.Init(DummyData.GetDummyParts().First());
+                }
+
+                return partDetailsPageModel;
+            }
+        }
 
     }
 }
