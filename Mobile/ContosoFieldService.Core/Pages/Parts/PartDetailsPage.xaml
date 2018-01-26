@@ -2,7 +2,8 @@
 <ContentPage 
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    x:Class="ContosoFieldService.Pages.PartDetailsPage"
+    xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+    x:Class="ContosoFieldService.Pages.PartDetailsPage"    
     BackgroundColor="#ffffff"
     Title="Part Details">
 
@@ -32,7 +33,11 @@
             </Frame>
 
             <!-- Image -->
-            <Image HeightRequest="200" Source="{Binding ImageSource}" />
+            <ffimageloading:CachedImage 
+                CacheType="Memory"
+                Aspect="AspectFit" 
+                HeightRequest="200" 
+                Source="{Binding ImageSource}"/>
 
             <!-- Overview Stack -->
             <StackLayout Orientation="Vertical" Padding="15,5,5,15" BackgroundColor="#ffffff">
