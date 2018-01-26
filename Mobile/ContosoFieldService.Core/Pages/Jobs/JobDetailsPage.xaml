@@ -1,284 +1,229 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    xmlns:maps="clr-namespace:Xamarin.Forms.Maps;assembly=Xamarin.Forms.Maps"
     xmlns:design="clr-namespace:ContosoFieldService;assembly=ContosoFieldService.Core"
     BindingContext="{x:Static design:PageModelLocator.JobDetailsPageModel}"
     x:Class="ContosoFieldService.Pages.JobDetailsPage"
-    xmlns:Maps="clr-namespace:Xamarin.Forms.Maps;assembly=Xamarin.Forms.Maps"
-    xmlns:controls="clr-namespace:ContosoFieldService.Controls;assembly=ContosoFieldService.Core"
-    BackgroundColor="#ffffff"
+    BackgroundColor="{StaticResource BackgroundColorItem}"
     Title="Job Details">
-	<ContentPage.Content>
-        <ScrollView>
-            <StackLayout>
 
-                <!-- Job Name Banner --> 
-                <Frame
-                    x:Name="JobName"
-                    AutomationId="JobName"
-                    CornerRadius="0"
-                    Margin="0"
-                    HasShadow="false"
-                    BackgroundColor="#D83E01" >
+    <ScrollView>
+        <StackLayout>
+
+            <!-- Job Name Banner --> 
+            <Frame       
+                x:Name="JobName"
+                AutomationId="JobName"
+                CornerRadius="0"
+                HasShadow="false"
+                BackgroundColor="{StaticResource AccentColorRed}" >
+            
+                <Label                         
+                    Text="{Binding Name}" 
+                    HorizontalTextAlignment="Center"
+                    FontFamily="{StaticResource FontFamilyMedium}" 
+                    TextColor="#ffffff"
+                    FontSize="{StaticResource FontSizeLarge}" />
+            </Frame>
+
+            <!-- Overview Stack -->
+            <StackLayout
+                Padding="{StaticResource DefaultThickness}"
+                Spacing="{StaticResource DefaultMargin}">
+
+                <!-- Header -->
+                <Label
+                    Style="{StaticResource SectionHaderLabelStyle}" 
+                    Text="Overview" />
+
+                <!-- Job Age -->   
+                <StackLayout Spacing="0">
                     <Label 
-                        Text="{Binding Name}" 
-                        HorizontalTextAlignment="Center"
-                        FontFamily="AvenirNext-Medium" 
-                        TextColor="#ffffff">
-                        <Label.FontSize>
-                            <OnPlatform x:TypeArguments="x:Double">
-                              <On Platform="iOS" Value="18" />
-                              <On Platform="Android" Value="16" />
-                            </OnPlatform>
-                        </Label.FontSize>
-                    </Label>
-                </Frame>
+                        x:Name="lblAge"
+                        AutomationId="lblAge"
+                        Style="{StaticResource PropertyLabelStyle}"
+                        Text="{Binding Age}"  />
 
-                <!-- Overview Stack -->
-                <StackLayout Orientation="Vertical" Padding="15,5,5,15" BackgroundColor="#ffffff">
-
-                    <!-- Overview Title -->
-                    <StackLayout Orientation="Horizontal">
-                        <Label 
-                            x:Name="lblOverview"
-                            AutomationId="lblOverview"
-                            Text="Overview" 
-                            TextColor="#212121" 
-                            FontFamily="AvenirNext-Medium" 
-                            FontSize="16" 
-                            HorizontalOptions="Start" />
-                    </StackLayout>
-
-                    <!-- Job Age -->
-                    <StackLayout Orientation="Vertical">
-                        <!-- Value -->
-                        <Label 
-                            x:Name="lblAgeV"
-                            AutomationId="lblAge"
-                            Text="{Binding Age}" 
-                            TextColor="#D83E01" 
-                            FontSize="17" 
-                            FontFamily="AvenirNext-Medium"
-                            HorizontalTextAlignment="Start">
-                        </Label>
-                        
-                        <!-- Title -->
-                        <Label 
-                            x:Name="lblAgeTitle"
-                            AutomationId="lblAgeTitle"
-                            Text="Age" 
-                            FontFamily="AvenirNext-Regular" 
-                            Margin="0,-5,0,0" TextColor="#777777" 
-                            HorizontalTextAlignment="Start" 
-                            FontSize="12">
-                        </Label>
-                    </StackLayout>
-
-                    <!-- Due Date -->
-                    <StackLayout Orientation="Vertical">
-                        <!-- Value -->
-                        <Label 
-                            x:Name="lblDueDate"
-                            AutomationId="lblDueDate"
-                            Text="{Binding DueDate}" 
-                            TextColor="#D83E01" 
-                            FontFamily="AvenirNext-Medium" 
-                            FontSize="17"
-                            HorizontalTextAlignment="Start">
-                        </Label>
-
-                        <!-- Title -->
-                        <Label 
-                            x:Name="lblDueDateTitle"
-                            AutomationId="lblDueDateTite"
-                            Text="Due Date" 
-                            FontFamily="AvenirNext-Regular" 
-                            Margin="0,-5,0,0" 
-                            TextColor="#777777" 
-                            HorizontalTextAlignment="Start" 
-                            FontSize="12">
-                        </Label>
-                    </StackLayout>
-                </StackLayout>
-
-                <!-- Divier -->
-                <BoxView HeightRequest="1" BackgroundColor="#777777" Opacity="0.2"  ></BoxView>
-
-               <!-- Details Stack -->
-               <StackLayout Orientation="Vertical" Padding="15,5,5,15" BackgroundColor="#ffffff">
-
-                    <!-- Details Title-->
-                    <StackLayout Orientation="Horizontal">
-                        <Label 
-                            x:Name="lblDetails"
-                            AutomationId="lblDetails"
-                            Text="Details" 
-                            TextColor="#212121" 
-                            FontFamily="AvenirNext-Medium" 
-                            FontSize="16" 
-                            HorizontalOptions="Start" />
-                    </StackLayout>
-
-                    <!-- Details Text -->
-                    <Label
-                        x:Name="lblDetailsTitle"
-                        AutomationId="lblDetailsTitle"
-                        Text="{Binding Details}"
-                        TextColor="#838383" 
-                        FontFamily="AvenirNext-Regular" 
-                        FontSize="17">
+                    <Label 
+                        Style="{StaticResource PropertyFooterLabelStyle}"
+                        Text="Age" >
                     </Label>
                 </StackLayout>
-                
-                <!-- Map View -->
-                <Maps:Map 
-                    x:Name="mapView" 
-                    AutomationId="mapView"
-                    HeightRequest="200" 
-                    IsShowingUser="false" 
-                    HasZoomEnabled="false"
-                    MapType="Street" 
-                    IsEnabled="false">
-                </Maps:Map>
 
-               <!-- Job Options -->
-               <StackLayout Orientation="Vertical" Padding="15,5,5,15" BackgroundColor="#ffffff">
+                <!-- Due Date -->
+                <StackLayout Spacing="0">
+                    <Label 
+                        x:Name="lblDueDate"
+                        AutomationId="lblDueDate"
+                        Style="{StaticResource PropertyLabelStyle}"
+                        Text="{Binding DueDate}" />
 
-                    <!-- Customer Info Title -->
-                    <StackLayout Orientation="Horizontal">
-                        <Label 
-                            x:Name="lblOptionsTitle"
-                            AutomationId="lblOptionsTitle"
-                            Text="Options" 
-                            TextColor="#212121" 
-                            FontFamily="AvenirNext-Medium" 
-                            FontSize="16" 
-                            HorizontalOptions="Start" />
-                    </StackLayout>
-
-                    <!-- The iOS version uses a custom button and renderer -->
-                    <Grid Grid.Row="1" ColumnSpacing="1" RowSpacing="1" Margin="0,0,15,0"> 
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="Auto" />
-                            <RowDefinition Height="Auto" />
-                        </Grid.RowDefinitions>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="*" />
-                            <ColumnDefinition Width="*" />
-                        </Grid.ColumnDefinitions>
-                        <Grid.BackgroundColor>
-                            <OnPlatform x:TypeArguments="Color">
-                                <On Platform="iOS" Value="#e0e0e0" />
-                            </OnPlatform>
-                        </Grid.BackgroundColor>
-
-                        <!-- Start Job -->
-                        <Button 
-                            x:Name="btnStartJob"
-                            AutomationId="btnStartJob"
-                            Grid.Row="0" 
-                            Grid.Column="0" 
-                            HeightRequest="55" 
-                            FontSize="18" 
-                            BorderRadius="0"  
-                            Text="Start Job" 
-                            FontFamily="AvenirNext-Medium"
-                            Command="{Binding StartJobClicked}">
-                            <Button.BackgroundColor>
-                                <OnPlatform x:TypeArguments="Color">
-                                    <On Platform="iOS" Value="White" />
-                                    <On Platform="Android" Value="#01D8CB" />
-                                </OnPlatform>
-                            </Button.BackgroundColor>
-                            <Button.TextColor>
-                                <OnPlatform x:TypeArguments="Color">
-                                    <On Platform="iOS" Value="#01D8CB" />
-                                    <On Platform="Android" Value="White" />
-                                </OnPlatform>
-                            </Button.TextColor>
-                        </Button>
-
-                        <!-- Edit Button -->
-                        <Button 
-                            x:Name="btnEditJob"
-                            AutomationId="btnEditJob"
-                            Grid.Row="0" 
-                            Grid.Column="1" 
-                            HeightRequest="55" 
-                            TextColor="#F5A623" 
-                            FontSize="18" 
-                            BorderRadius="0" 
-                            Text="Edit Job"
-                            FontFamily="AvenirNext-Medium"
-                            Command="{Binding EditJobClicked}">
-                            <Button.BackgroundColor>
-                                <OnPlatform x:TypeArguments="Color">
-                                    <On Platform="iOS" Value="White" />
-                                    <On Platform="Android" Value="#F5A623" />
-                                </OnPlatform>                                
-                            </Button.BackgroundColor>
-                            <Button.TextColor>
-                                <OnPlatform x:TypeArguments="Color">
-                                    <On Platform="iOS" Value="#F5A623" />
-                                    <On Platform="Android" Value="White" />
-                                </OnPlatform>
-                            </Button.TextColor>
-                        </Button>
-
-                        <!-- Delete Job -->
-                        <Button
-                            x:Name="btnDeleteJob"
-                            AutomationId="btnDeleteJob"
-                            Grid.Row="1" 
-                            Grid.Column="0" 
-                            HeightRequest="55" 
-                            FontSize="18" 
-                            BorderRadius="0" 
-                            Text="Delete Job"
-                            FontFamily="AvenirNext-Medium"
-                            Command="{Binding DeleteJobClicked}">
-                            <Button.BackgroundColor>
-                                <OnPlatform x:TypeArguments="Color">
-                                    <On Platform="iOS" Value="White" />
-                                    <On Platform="Android" Value="#D83E01" />
-                                </OnPlatform>
-                            </Button.BackgroundColor>
-                            <Button.TextColor>
-                                <OnPlatform x:TypeArguments="Color">
-                                    <On Platform="iOS" Value="#D83E01" />
-                                    <On Platform="Android" Value="White" />
-                                </OnPlatform>
-                            </Button.TextColor>
-                        </Button>
-
-                        <!-- Order Parts -->
-                        <Button 
-                            x:Name="btnOrderParts"
-                            AutomationId="btnOrderParts"
-                            Grid.Row="1" 
-                            Grid.Column="1" 
-                            HeightRequest="55" 
-                            FontSize="18" 
-                            BorderRadius="0" 
-                            Text="Order Parts"
-                            FontFamily="AvenirNext-Medium"
-                            Command="{Binding OrderPartsClicked}">
-                            <Button.BackgroundColor>
-                                <OnPlatform x:TypeArguments="Color">
-                                    <On Platform="iOS" Value="White" />
-                                    <On Platform="Android" Value="#0193D8" />
-                                </OnPlatform>
-                            </Button.BackgroundColor>
-                            <Button.TextColor>
-                                <OnPlatform x:TypeArguments="Color">
-                                    <On Platform="iOS" Value="#0193D8" />
-                                    <On Platform="Android" Value="White" />
-                                </OnPlatform>
-                            </Button.TextColor>
-                        </Button>
-                   </Grid> 
+                    <Label 
+                        Style="{StaticResource PropertyFooterLabelStyle}"
+                        Text="Due Date" />
                 </StackLayout>
             </StackLayout>
-        </ScrollView>
-	</ContentPage.Content>
+
+            <!-- Divier -->
+            <BoxView HeightRequest="1" BackgroundColor="{StaticResource SeparatorColor}" />
+
+            <!-- Details Stack -->
+            <StackLayout
+                Padding="{StaticResource DefaultThickness}"
+                Spacing="{StaticResource DefaultMargin}">
+
+                <!-- Header -->
+                <Label 
+                    Style="{StaticResource SectionHaderLabelStyle}" 
+                    Text="Details" />
+
+                <!-- Job Details -->
+                <Label
+                    x:Name="lblDetailsTitle"
+                    AutomationId="lblDetailsTitle"
+                    Text="{Binding Details}"
+                    TextColor="{StaticResource TextColorSubtleLight}" 
+                    FontFamily="{StaticResource FontFamilyRegular}" 
+                    FontSize="{StaticResource FontSizeRegular}" />
+            </StackLayout>
+            
+            <!-- Job Location -->
+            <maps:Map 
+                x:Name="mapView" 
+                AutomationId="mapView"
+                HeightRequest="200" 
+                IsShowingUser="false" 
+                HasZoomEnabled="false"
+                MapType="Street" 
+                IsEnabled="false" />
+
+            <!-- Job Options -->
+            <StackLayout
+                Padding="{StaticResource DefaultThickness}"
+                Spacing="{StaticResource DefaultMargin}">
+
+                <Label 
+                    Style="{StaticResource SectionHaderLabelStyle}" 
+                    Text="Options" />
+
+                <!-- The iOS version uses a custom button and renderer -->
+                <Grid Grid.Row="1" ColumnSpacing="1" RowSpacing="1" Margin="0,0,15,0"> 
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Grid.BackgroundColor>
+                        <OnPlatform x:TypeArguments="Color">
+                            <On Platform="iOS" Value="{StaticResource SeparatorColor}" />
+                        </OnPlatform>
+                    </Grid.BackgroundColor>
+
+                    <!-- Start Job -->
+                    <Button 
+                        x:Name="btnStartJob"
+                        AutomationId="btnStartJob"
+                        Grid.Row="0" 
+                        Grid.Column="0" 
+                        FontSize="{StaticResource FontSizeLarge}" 
+                        FontFamily="{StaticResource FontFamilyMedium}"
+                        BorderRadius="0"  
+                        Text="Start Job" 
+                        Command="{Binding StartJobClicked}">
+                        <Button.BackgroundColor>
+                            <OnPlatform x:TypeArguments="Color">
+                                <On Platform="iOS" Value="White" />
+                                <On Platform="Android" Value="{StaticResource AccentColor}" />
+                            </OnPlatform>
+                        </Button.BackgroundColor>
+                        <Button.TextColor>
+                            <OnPlatform x:TypeArguments="Color">
+                                <On Platform="iOS" Value="{StaticResource AccentColor}" />
+                                <On Platform="Android" Value="White" />
+                            </OnPlatform>
+                        </Button.TextColor>
+                    </Button>
+
+                    <!-- Edit Button -->
+                    <Button 
+                        x:Name="btnEditJob"
+                        AutomationId="btnEditJob"
+                        Grid.Row="0" 
+                        Grid.Column="1" 
+                        FontSize="{StaticResource FontSizeLarge}" 
+                        FontFamily="{StaticResource FontFamilyMedium}"
+                        BorderRadius="0" 
+                        Text="Edit Job"
+                        Command="{Binding EditJobClicked}">
+                        <Button.BackgroundColor>
+                            <OnPlatform x:TypeArguments="Color">
+                                <On Platform="iOS" Value="White" />
+                                <On Platform="Android" Value="{StaticResource AccentColorOrange}" />
+                            </OnPlatform>                                
+                        </Button.BackgroundColor>
+                        <Button.TextColor>
+                            <OnPlatform x:TypeArguments="Color">
+                                <On Platform="iOS" Value="{StaticResource AccentColorOrange}" />
+                                <On Platform="Android" Value="White" />
+                            </OnPlatform>
+                        </Button.TextColor>
+                    </Button>
+
+                    <!-- Delete Job -->
+                    <Button
+                        x:Name="btnDeleteJob"
+                        AutomationId="btnDeleteJob"
+                        Grid.Row="1" 
+                        Grid.Column="0" 
+                        FontSize="{StaticResource FontSizeLarge}" 
+                        FontFamily="{StaticResource FontFamilyMedium}"
+                        BorderRadius="0" 
+                        Text="Delete Job"
+                        Command="{Binding DeleteJobClicked}">
+                        <Button.BackgroundColor>
+                            <OnPlatform x:TypeArguments="Color">
+                                <On Platform="iOS" Value="White" />
+                                <On Platform="Android" Value="{StaticResource AccentColorRed}" />
+                            </OnPlatform>
+                        </Button.BackgroundColor>
+                        <Button.TextColor>
+                            <OnPlatform x:TypeArguments="Color">
+                                <On Platform="iOS" Value="{StaticResource AccentColorRed}" />
+                                <On Platform="Android" Value="White" />
+                            </OnPlatform>
+                        </Button.TextColor>
+                    </Button>
+
+                    <!-- Order Parts -->
+                    <Button 
+                        x:Name="btnOrderParts"
+                        AutomationId="btnOrderParts"
+                        Grid.Row="1" 
+                        Grid.Column="1" 
+                        FontSize="{StaticResource FontSizeLarge}" 
+                        FontFamily="{StaticResource FontFamilyMedium}"
+                        BorderRadius="0" 
+                        Text="Order Parts"
+                        Command="{Binding OrderPartsClicked}">
+                        <Button.BackgroundColor>
+                            <OnPlatform x:TypeArguments="Color">
+                                <On Platform="iOS" Value="White" />
+                                <On Platform="Android" Value="{StaticResource AccentColorBlue}" />
+                            </OnPlatform>
+                        </Button.BackgroundColor>
+                        <Button.TextColor>
+                            <OnPlatform x:TypeArguments="Color">
+                                <On Platform="iOS" Value="{StaticResource AccentColorBlue}" />
+                                <On Platform="Android" Value="White" />
+                            </OnPlatform>
+                        </Button.TextColor>
+                    </Button>
+               </Grid> 
+            </StackLayout>
+        </StackLayout>
+    </ScrollView>
 </ContentPage>

@@ -19,12 +19,12 @@
     <ListView 
         x:Name="listView"
         AutomationId="listView"
+        ItemsSource="{Binding Jobs}" 
         BackgroundColor="{StaticResource BackgroundColor}" 
         HasUnevenRows="true"
         IsGroupingEnabled="true"
         GroupDisplayBinding="{Binding Heading}"
         SeparatorVisibility="None"
-        ItemsSource="{Binding Jobs}" 
         SelectedItem="{Binding SelectedJob, Mode=TwoWay}"
         IsPullToRefreshEnabled="True"
         IsRefreshing="{Binding IsRefreshing, Mode=OneWay}"
@@ -116,7 +116,7 @@
                             Text="{Binding Heading}"
                             FontFamily="{StaticResource FontFamilyMedium}"
                             FontSize="{StaticResource FontSizeRegular}"
-                            TextColor="{StaticResource AccentColorOrage}" />                        
+                            TextColor="{StaticResource AccentColorOrange}" />                        
                     </Grid>
                 </ViewCell>
             </DataTemplate>
