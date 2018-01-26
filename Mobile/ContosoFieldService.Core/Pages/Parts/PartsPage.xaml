@@ -47,19 +47,26 @@
                         <Grid 
                             BackgroundColor="{StaticResource BackgroundColorItem}"
                             ColumnSpacing="0">
-                            <Grid.RowDefinitions>
+                            <Grid.RowDefinitions>                                
                                 <RowDefinition Height="*" />
                                 <RowDefinition Height="Auto" />
                             </Grid.RowDefinitions>
                             <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="Auto"></ColumnDefinition>
-                                <ColumnDefinition Width="*"></ColumnDefinition>
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="*" />
                             </Grid.ColumnDefinitions>
-                        
+
+                            <BoxView 
+                                Grid.RowSpan="2"
+                                WidthRequest="6"
+                                Color="{StaticResource AccentColorBlue}" />
+                            
                             <ffimageloading:CachedImage 
+                                Grid.Column="1"
                                 Grid.RowSpan="2"
                                 Margin="{StaticResource DefaultThickness}"
-                                DownsampleToViewSize="true"
+                                CacheType="Memory"
                                 Aspect="AspectFit" 
                                 HeightRequest="50" 
                                 WidthRequest="50" 
@@ -67,7 +74,7 @@
                             </ffimageloading:CachedImage>
 
                             <StackLayout 
-                                Grid.Column="1"
+                                Grid.Column="2"
                                 Spacing="0"
                                 VerticalOptions="Center"
                                 Padding="12,14">
@@ -95,6 +102,7 @@
                             <!-- Separator -->
                             <BoxView 
                                 Grid.Row="1"
+                                Grid.Column="1"
                                 Grid.ColumnSpan="2"
                                 HeightRequest="1"
                                 Margin="0"
