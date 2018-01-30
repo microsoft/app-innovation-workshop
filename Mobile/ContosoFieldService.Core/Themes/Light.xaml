@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ResourceDictionary
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:themes="using:ContosoFieldService.Themes"
+    x:Class="ContosoFieldService.Themes.Light">  
+
+    <!-- Overrides Default Resources -->    
+    <Color x:Key="BackgroundColor">#f6f6f6</Color>
+    <Color x:Key="BackgroundColorDark">#DDDDDD</Color>
+    <Color x:Key="SeparatorColor">#EEEEEE</Color>
+
+    <Color x:Key="TextColor">#333333</Color>
+    <Color x:Key="TextColorSubtle">#777777</Color>
+    <Color x:Key="TextColorPlaceholder">#AAAAAA</Color>
+    <OnPlatform x:Key="EntryBackgroundColor" x:TypeArguments="Color">
+        <On Platform="iOS" Value="#F5F5F5" />
+        <On Platform="Android" Value="Transpartent" />
+    </OnPlatform>
+    <OnPlatform x:Key="SearchBarBackgroundColor" x:TypeArguments="Color">
+        <On Platform="iOS" Value="#f6f6f6" />
+        <On Platform="Android" Value="Transpartent" />
+    </OnPlatform>
+</ResourceDictionary>

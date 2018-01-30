@@ -2,233 +2,25 @@
 <Application 
     xmlns="http://xamarin.com/schemas/2014/forms" 
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    xmlns:themes="using:ContosoFieldService.Themes"
     xmlns:converters="clr-namespace:ContosoFieldService.Converters;assembly=ContosoFieldService.Core"
     x:Class="ContosoFieldService.App">
 	<Application.Resources>
+        
 		<ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                
+                <!-- Base Style every element inhertis from -->
+                <themes:Base />
 
+                <!-- Default Style -->
+                <themes:Dark />
+
+            </ResourceDictionary.MergedDictionaries>
+            
             <!-- Converters -->
             <converters:JobStatusToColorConverter x:Key="JobStatusToColorConverter" />
 
-            <!-- Colors -->
-            <Color x:Key="AccentColor">#00D8CB</Color>
-            <Color x:Key="AccentColorRed">#D83E01</Color>
-            <Color x:Key="AccentColorBlue">#0193D8</Color>
-            <Color x:Key="AccentColorOrange">#FFAB89</Color>
-
-            <Color x:Key="SeparatorColor">#EEEEEE</Color> 
-            
-            <!-- Dark Theme (default) -->            
-            <Color x:Key="BackgroundColor">#222E38</Color>
-            <Color x:Key="BackgroundColorDark">#1A222A</Color> 
-            <Color x:Key="TextColor">#FFFFFF</Color>
-            <Color x:Key="TextColorPlaceholder">#515151</Color>
-
-            <!-- Light Theme -->
-            <Color x:Key="TextColorLight">#212121</Color>
-            <Color x:Key="TextColorSubtleLight">#777777</Color>
-            
-            
-
-            <!-- Item Theme -->            
-            <Color x:Key="BackgroundColorItem">#FFFFFF</Color> 
-            <Color x:Key="TextColorItem">#000000</Color>
-            <Color x:Key="TextColorItemSecondary">#555555</Color>
-
-
-            <!-- Thicknesses -->
-            <OnPlatform
-                x:Key="DefaultMargin"
-                x:TypeArguments="x:Double"
-                Android="10"
-                WinPhone="10"
-                iOS="10" />
-
-            <Thickness
-                x:Key="DefaultThickness"
-                Bottom="{StaticResource DefaultMargin}"
-                Left="{StaticResource DefaultMargin}"
-                Right="{StaticResource DefaultMargin}"
-                Top="{StaticResource DefaultMargin}" />
-            
-
-            
-            <!-- Font Families -->
-            <OnPlatform x:Key="FontFamilyRegular" x:TypeArguments="x:String">
-                <On Platform="iOS">AvenirNext-Regular</On>
-                <On Platform="Android">AvenirNext-Regular</On>
-            </OnPlatform>
-            
-            <OnPlatform x:Key="FontFamilyMedium" x:TypeArguments="x:String">
-                <On Platform="iOS">AvenirNext-Medium</On>
-                <On Platform="Android">AvenirNext-Medium</On>
-            </OnPlatform>
-
-            <!-- Font Sizes -->
-            <OnPlatform x:Key="FontSizeTitle" x:TypeArguments="x:Double">
-                <On Platform="iOS">40</On>
-                <On Platform="Android">40</On>
-            </OnPlatform>                        
-
-            <OnPlatform x:Key="FontSizeLarge" x:TypeArguments="x:Double">
-                <On Platform="iOS">19</On>
-                <On Platform="Android">19</On>
-            </OnPlatform>  
-            
-            <OnPlatform x:Key="FontSizeRegular" x:TypeArguments="x:Double">
-                <On Platform="iOS">16</On>
-                <On Platform="Android">16</On>
-            </OnPlatform>  
-            
-            <OnPlatform x:Key="FontSizeSmall" x:TypeArguments="x:Double">
-                <On Platform="iOS">12</On>
-                <On Platform="Android">12</On>
-            </OnPlatform>  
-
-            
-            <!-- Styles -->
-            <Style x:Key="EntryStyle" TargetType="Entry">
-                <Setter Property="TextColor" Value="{StaticResource TextColor}" />
-                <Setter Property="PlaceholderColor" Value="{StaticResource TextColorPlaceholder}" />
-                <Setter Property="FontFamily" Value="{StaticResource FontFamilyRegular}" />
-                <Setter Property="HeightRequest" Value="40" />
-                <Setter Property="BackgroundColor">
-                    <OnPlatform x:TypeArguments="Color">
-                        <On Platform="iOS" Value="#1C262F" />
-                    </OnPlatform>
-                </Setter>
-            </Style>
-
-            <Style x:Key="TitleLabelStyle" TargetType="Label">
-                <Setter Property="TextColor" Value="{StaticResource TextColor}" />
-                <Setter Property="FontSize" Value="{StaticResource FontSizeTitle}" />
-                <Setter Property="FontFamily" Value="{StaticResource FontFamilyRegular}" />                
-            </Style>
-
-            <Style x:Key="LargeLabelStyle" TargetType="Label">
-                <Setter Property="TextColor" Value="{StaticResource TextColor}" />
-                <Setter Property="FontSize" Value="{StaticResource FontSizeLarge}" />
-                <Setter Property="FontFamily" Value="{StaticResource FontFamilyRegular}" />                
-            </Style>
-            
-            <Style x:Key="RegularLabelStyle" TargetType="Label">
-                <Setter Property="TextColor" Value="{StaticResource TextColor}" />
-                <Setter Property="FontSize" Value="{StaticResource FontSizeRegular}" />
-                <Setter Property="FontFamily" Value="{StaticResource FontFamilyRegular}" />                
-            </Style>
-        
-            <Style x:Key="SubmitButtonStyle" TargetType="Button">
-                <Setter Property="TextColor" Value="{StaticResource TextColor}" />
-                <Setter Property="BackgroundColor" Value="{StaticResource AccentColor}" />
-                <Setter Property="FontSize" Value="{StaticResource FontSizeRegular}" />
-                <Setter Property="FontFamily" Value="{StaticResource FontFamilyMedium}" />                
-                <Setter Property="HeightRequest" Value="50" />                
-            </Style>
-
-            <!-- Details -->
-            <Style x:Key="SectionHaderLabelStyle" TargetType="Label">
-                <Setter Property="TextColor" Value="{StaticResource TextColorLight}" />
-                <Setter Property="FontSize" Value="{StaticResource FontSizeRegular}" />
-                <Setter Property="FontFamily" Value="{StaticResource FontFamilyMedium}" />                
-            </Style>
-            
-            <Style x:Key="PropertyLabelStyle" TargetType="Label">
-                <Setter Property="TextColor" Value="{StaticResource AccentColorRed}" />
-                <Setter Property="FontSize" Value="{StaticResource FontSizeLarge}" />
-                <Setter Property="FontFamily" Value="{StaticResource FontFamilyMedium}" />                
-            </Style>
-            
-            <Style x:Key="PropertyFooterLabelStyle" TargetType="Label">
-                <Setter Property="TextColor" Value="{StaticResource TextColorSubtleLight}" />
-                <Setter Property="FontSize" Value="{StaticResource FontSizeSmall}" />
-                <Setter Property="FontFamily" Value="{StaticResource FontFamilyRegular}" />                
-            </Style>
-
-
-
-
-
-
-
-
-
-            
-            
-            <!--  colors  -->
-            <Color x:Key="HeaderTextColor">#585858</Color>
-            <Color x:Key="BodyTextColor">#C3C3C3</Color>
-            <Color x:Key="ButtonBackgroundColor">#5992FF</Color>
-            <!--<Color x:Key="BackgroundColor">White</Color>-->
-
-            <!--  font families  -->
-            <OnPlatform x:Key="RegularFontFamily" x:TypeArguments="x:String">
-                <On Platform="iOS">HelveticaNeue</On>
-                <On Platform="Android">sans-serif</On>
-            </OnPlatform>
-
-            <OnPlatform x:Key="LightFontFamily" x:TypeArguments="x:String">
-                <On Platform="iOS">HelveticaNeue-Light</On>
-                <On Platform="Android">sans-serif-light</On>
-            </OnPlatform>
-
-            <OnPlatform x:Key="MediumFontFamily" x:TypeArguments="x:String">
-                <On Platform="iOS">HelveticaNeue-Medium</On>
-                <On Platform="Android">sans-serif-medium</On>
-            </OnPlatform>
-
-            <!--  font sizes  -->
-            <x:Double x:Key="TitleFontSize">20</x:Double>
-            <x:Double x:Key="BodyFontSize">18</x:Double>
-            <x:Double x:Key="TagTextFontSize">18</x:Double>
-            <x:Double x:Key="StatsNumberFontSize">20</x:Double>
-            <x:Double x:Key="StatsCaptionFontSize">16</x:Double>
-            <x:Double x:Key="ButtonFontSize">14</x:Double>
-
-            <!--  styles  -->
-            <Style x:Key="ProfileNameLabel" TargetType="Label">
-                <Setter Property="TextColor" Value="{StaticResource HeaderTextColor}" />
-                <Setter Property="FontFamily" Value="{StaticResource MediumFontFamily}" />
-                <Setter Property="FontSize" Value="{StaticResource TitleFontSize}" />
-                <Setter Property="HorizontalTextAlignment" Value="Center" />
-            </Style>
-
-            <Style x:Key="ProfileTagLabel" TargetType="Label">
-                <Setter Property="TextColor" Value="{StaticResource BodyTextColor}" />
-                <Setter Property="FontFamily" Value="{StaticResource RegularFontFamily}" />
-                <Setter Property="FontSize" Value="{StaticResource TagTextFontSize}" />
-                <Setter Property="HorizontalTextAlignment" Value="Center" />
-            </Style>
-
-            <Style x:Key="StatsNumberLabel" TargetType="Label">
-                <Setter Property="TextColor" Value="{StaticResource HeaderTextColor}" />
-                <Setter Property="HorizontalTextAlignment" Value="Center" />
-                <Setter Property="FontFamily" Value="{StaticResource LightFontFamily}" />
-                <Setter Property="FontSize" Value="{StaticResource StatsNumberFontSize}" />
-            </Style>
-
-            <Style x:Key="StatsCaptionLabel" TargetType="Label">
-                <Setter Property="TextColor" Value="{StaticResource BodyTextColor}" />
-                <Setter Property="Margin" Value="0,-5,0,0" />
-                <Setter Property="HorizontalTextAlignment" Value="Center" />
-                <Setter Property="FontFamily" Value="{StaticResource LightFontFamily}" />
-                <Setter Property="FontSize" Value="{StaticResource StatsCaptionFontSize}" />
-            </Style>
-
-            <Style x:Key="MainBodyLabel" TargetType="Label">
-                <Setter Property="TextColor" Value="{StaticResource BodyTextColor}" />
-                <Setter Property="FontFamily" Value="{StaticResource RegularFontFamily}" />
-                <Setter Property="FontSize" Value="{StaticResource BodyFontSize}" />
-                <Setter Property="HorizontalTextAlignment" Value="Center" />
-            </Style>
-
-            <Style x:Key="FollowButton" TargetType="Button">
-                <Setter Property="BackgroundColor" Value="{StaticResource ButtonBackgroundColor}" />
-                <Setter Property="TextColor" Value="White" />
-                <Setter Property="HeightRequest" Value="40" />
-                <Setter Property="BorderRadius" Value="20" />
-                <Setter Property="FontFamily" Value="{StaticResource MediumFontFamily}" />
-                <Setter Property="FontSize" Value="{StaticResource ButtonFontSize}" />
-            </Style>
         </ResourceDictionary>
     </Application.Resources>
 </Application>

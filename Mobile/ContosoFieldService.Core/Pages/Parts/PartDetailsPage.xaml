@@ -6,8 +6,18 @@
     xmlns:design="clr-namespace:ContosoFieldService;assembly=ContosoFieldService.Core"
     BindingContext="{x:Static design:PageModelLocator.PartDetailsPageModel}"    
     x:Class="ContosoFieldService.Pages.PartDetailsPage"    
-    BackgroundColor="#ffffff"
+    BackgroundColor="{StaticResource BackgroundColor}"
     Title="Part Details">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries xmlns:themes="using:ContosoFieldService.Themes" >
+                <!-- Light theme for this page -->
+                <themes:Light />
+                <themes:Styles />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </ContentPage.Resources>
 
     <ScrollView>
         <StackLayout>
@@ -42,7 +52,7 @@
 
                 <!-- Header -->
                 <Label
-                    Style="{StaticResource SectionHaderLabelStyle}" 
+                    Style="{DynamicResource SectionHaderLabelStyle}" 
                     Text="Overview" />
 
                 <!-- Part Name -->
@@ -50,11 +60,11 @@
                     <Label 
                         x:Name="lblName"
                         AutomationId="lblName"
-                        Style="{StaticResource PropertyLabelStyle}"
+                        Style="{DynamicResource PropertyLabelStyle}"
                         Text="{Binding Name}"  />
 
                     <Label 
-                        Style="{StaticResource PropertyFooterLabelStyle}"
+                        Style="{DynamicResource PropertyFooterLabelStyle}"
                         Text="Name" >
                     </Label>
                 </StackLayout>
@@ -64,11 +74,11 @@
                     <Label 
                         x:Name="lblManufacturer"
                         AutomationId="lblManufacturer"
-                        Style="{StaticResource PropertyLabelStyle}"
+                        Style="{DynamicResource PropertyLabelStyle}"
                         Text="{Binding Manufacturer}"  />
 
                     <Label 
-                        Style="{StaticResource PropertyFooterLabelStyle}"
+                        Style="{DynamicResource PropertyFooterLabelStyle}"
                         Text="Manufacturer" >
                     </Label>
                 </StackLayout>
@@ -85,7 +95,7 @@
 
                 <!-- Header -->
                 <Label
-                    Style="{StaticResource SectionHaderLabelStyle}" 
+                    Style="{DynamicResource SectionHaderLabelStyle}" 
                     Text="Details" />
 
                 <!-- Part Serial Number -->
@@ -93,11 +103,11 @@
                     <Label 
                         x:Name="lblSerialNumber"
                         AutomationId="lblSerialNumber"
-                        Style="{StaticResource PropertyLabelStyle}"
+                        Style="{DynamicResource PropertyLabelStyle}"
                         Text="{Binding SerialNumber}"  />
 
                     <Label 
-                        Style="{StaticResource PropertyFooterLabelStyle}"
+                        Style="{DynamicResource PropertyFooterLabelStyle}"
                         Text="Serial Number" >
                     </Label>
                 </StackLayout>
@@ -107,7 +117,7 @@
                     <Label 
                         x:Name="lblModelNumber"
                         AutomationId="lblModelNumber"
-                        Style="{StaticResource PropertyLabelStyle}"
+                        Style="{DynamicResource PropertyLabelStyle}"
                         Text="{Binding ModelNumber}"  />
 
                     <Label 
@@ -121,11 +131,11 @@
                     <Label 
                         x:Name="lblPrice"
                         AutomationId="lblPrice"
-                        Style="{StaticResource PropertyLabelStyle}"
+                        Style="{DynamicResource PropertyLabelStyle}"
                         Text="{Binding PriceInUSD, StringFormat='{0} USD'}"  />
 
                     <Label 
-                        Style="{StaticResource PropertyFooterLabelStyle}"
+                        Style="{DynamicResource PropertyFooterLabelStyle}"
                         Text="Price" >
                     </Label>
                 </StackLayout>
