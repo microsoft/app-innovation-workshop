@@ -14,6 +14,8 @@ namespace ContosoMaintenance.Functions
 {
     public static class ResizeImage
     {
+        private static HttpClient httpClient = new HttpClient();
+
         [FunctionName("ProcessPhotosQueue")]
         public static async Task Run(
             // Trigger
@@ -26,13 +28,13 @@ namespace ContosoMaintenance.Functions
             // Outputs
             [Blob("images-medium/{photoId}.jpg", FileAccess.Write)] Stream imageMedium,
             [Blob("images-icon/{photoId}.jpg", FileAccess.Write)] Stream imageIcon,
-            
+
             // Logger
             TraceWriter log)
         {
             log.Info($"New photo upload detected for job {job.Id}");
 
-            // Crop photos smart using Microsoft Cognitive Services
+            // Crop photos to medium and icon sizes using Microsoft Cognitive Services
             await CropImageSmartAsync(imageLarge, imageMedium, 300, 300);
             await CropImageSmartAsync(imageLarge, imageIcon, 150, 150);
             log.Info("Images cropped");
@@ -44,18 +46,32 @@ namespace ContosoMaintenance.Functions
                 photo.MediumUrl = photo.LargeUrl?.Replace("large", "medium");
                 photo.IconUrl = photo.LargeUrl?.Replace("large", "icon");
                 log.Info("Cosmos DB entry updated");
-            }            
+            }
         }
 
+        /// <summary>
+        /// Crops an image to a specific size using Microsoft Cognitive Services
+        /// </summary>
+        /// <returns>The image smart async.</returns>
+        /// <param name="inputImage">Input image.</param>
+        /// <param name="outputImage">Output image stream.</param>
+        /// <param name="width">Targeted image width.</param>
+        /// <param name="height">Targeted image height.</param>
         private static async Task CropImageSmartAsync(byte[] inputImage, Stream outputImage, int width, int height)
         {
-            HttpClient client = new HttpClient();
-            client.DefaultRequestHeaders.Add("Ocp-Apim-Subscription-Key", Environment.GetEnvironmentVariable("Ocp-Apim-Subscription-Key"));
-            var url =$"https://northeurope.api.cognitive.microsoft.com/vision/v1.0/generateThumbnail?width={width}&height={height}&smartCropping=true";
+            // Add Microsoft Azure Cognitive Service Token to HttpClient header
+            httpClient.DefaultRequestHeaders.Add("Ocp-Apim-Subscription-Key", Environment.GetEnvironmentVariable("Ocp-Apim-Subscription-Key"));
+
+            // Create Cognitive Service request url with parameters
+            var url = $"https://northeurope.api.cognitive.microsoft.com/vision/v1.0/generateThumbnail?width={width}&height={height}&smartCropping=true";
+
             using (ByteArrayContent content = new ByteArrayContent(inputImage))
             {
+                // Send request
                 content.Headers.ContentType = new MediaTypeHeaderValue("application/octet-stream");
-                HttpResponseMessage response = await client.PostAsync(url, content);
+                var response = await httpClient.PostAsync(url, content);
+
+                // Write cropped image to output stream
                 var resizedImage = await response.Content.ReadAsStreamAsync();
                 resizedImage.CopyTo(outputImage);
             }
@@ -77,20 +93,14 @@ namespace ContosoMaintenance.Functions
         [JsonProperty("createdAt")]
         public DateTime CreatedAt { get; set; }
         public string Name { get; set; }
-
+        [JsonProperty("isDeleted")]
+        public bool IsDeleted { get; set; }
         public string Details { get; set; }
         public string Type { get; set; }
-
         public string Status { get; set; }
-
-        public dynamic Customer { get; set; }
-
         public string[] Attachements { get; set; }
-
         public dynamic Address { get; set; }
-
-        public dynamic AssignedTo { get; set; }    
-
+        public dynamic AssignedTo { get; set; }
         [JsonProperty("photos")]
         public List<Photo> Photos { get; set; }
     }
