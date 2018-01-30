@@ -3,24 +3,24 @@
     xmlns="http://xamarin.com/schemas/2014/forms" 
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
     xmlns:themes="using:ContosoFieldService.Themes"
-    xmlns:converters="clr-namespace:ContosoFieldService.Converters;assembly=ContosoFieldService.Core"
     x:Class="ContosoFieldService.App">
-	<Application.Resources>
-        
+	<Application.Resources>        
 		<ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
+                <!-- 
+                THEMES:
+                As some pages are styled with a light theme and others with a dark one,
+                we created themes than can be applied to pages and elements. These themes inherit
+                from a Base theme that has to be applied application wide.
+                Dark and Light themes can either be set application wide (as default) or per element. 
+                -->
                 
-                <!-- Base Style every element inhertis from -->
+                <!-- Base Theme -->
                 <themes:Base />
 
-                <!-- Default Style -->
+                <!-- Set Default Theme -->
                 <themes:Dark />
-
             </ResourceDictionary.MergedDictionaries>
-            
-            <!-- Converters -->
-            <converters:JobStatusToColorConverter x:Key="JobStatusToColorConverter" />
-
         </ResourceDictionary>
     </Application.Resources>
 </Application>
