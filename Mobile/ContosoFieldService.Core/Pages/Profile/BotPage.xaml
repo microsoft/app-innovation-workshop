@@ -4,7 +4,7 @@
              x:Class="ContosoFieldService.Pages.BotPage"
              Title="Chat with the Bot">
 	<ContentPage.Content>
-        <WebView Source="https://dev.botframework.com/">
+        <WebView Source="https://webchat.botframework.com/embed/contosomaintenance-bot?s=LYkrY0IK4Ts.cwA.0xg.wI5VIC1MLYkUNKJU1Bli233_sZUEdMB2DO9U1hUleno">
         </WebView>
 	</ContentPage.Content>
 </ContentPage>
