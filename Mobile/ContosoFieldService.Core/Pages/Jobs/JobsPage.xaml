@@ -34,17 +34,10 @@
             <SearchBar 
                 x:Name="searchBar"
                 AutomationId="searchBar"
+                Style="{StaticResource SearchBarStyle}"
                 SearchCommand="{Binding Search}" 
                 Text="{Binding SearchText}"
-                Placeholder="Search"
-                HeightRequest="70">
-                <SearchBar.BackgroundColor>
-                    <OnPlatform x:TypeArguments="Color">
-                        <On Platform="iOS" Value="Transparent" />
-                        <On Platform="Android" Value="{StaticResource BackgroundColor}" />
-                    </OnPlatform>
-                </SearchBar.BackgroundColor>
-            </SearchBar>
+                Placeholder="Search" />
         </ListView.Header>
         
         <ListView.ItemTemplate>
@@ -98,7 +91,7 @@
                             Grid.Column="1"
                             HeightRequest="1"
                             Margin="0"
-                            Color="{StaticResource SeparatorColor}" />
+                            Color="{StaticResource ItemSeparatorColor}" />
                     </Grid>
                 </ViewCell>
             </DataTemplate>

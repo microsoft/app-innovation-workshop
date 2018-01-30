@@ -5,8 +5,18 @@
     xmlns:design="clr-namespace:ContosoFieldService;assembly=ContosoFieldService.Core"
     BindingContext="{x:Static design:PageModelLocator.JobDetailsPageModel}"
     x:Class="ContosoFieldService.Pages.JobDetailsPage"
-    BackgroundColor="{StaticResource BackgroundColorItem}"
+    BackgroundColor="{StaticResource BackgroundColor}"
     Title="Job Details">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries xmlns:themes="using:ContosoFieldService.Themes" >
+                <!-- Light theme for this page -->
+                <themes:Light />
+                <themes:Styles />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </ContentPage.Resources>
 
     <ScrollView>
         <StackLayout>
@@ -34,7 +44,7 @@
 
                 <!-- Header -->
                 <Label
-                    Style="{StaticResource SectionHaderLabelStyle}" 
+                    Style="{DynamicResource SectionHaderLabelStyle}" 
                     Text="Overview" />
 
                 <!-- Job Age -->   
@@ -42,13 +52,12 @@
                     <Label 
                         x:Name="lblAge"
                         AutomationId="lblAge"
-                        Style="{StaticResource PropertyLabelStyle}"
+                        Style="{DynamicResource PropertyLabelStyle}"
                         Text="{Binding Age}"  />
 
                     <Label 
-                        Style="{StaticResource PropertyFooterLabelStyle}"
-                        Text="Age" >
-                    </Label>
+                        Style="{DynamicResource PropertyFooterLabelStyle}"
+                        Text="Age" />
                 </StackLayout>
 
                 <!-- Due Date -->
@@ -56,11 +65,11 @@
                     <Label 
                         x:Name="lblDueDate"
                         AutomationId="lblDueDate"
-                        Style="{StaticResource PropertyLabelStyle}"
+                        Style="{DynamicResource PropertyLabelStyle}"
                         Text="{Binding DueDate}" />
 
                     <Label 
-                        Style="{StaticResource PropertyFooterLabelStyle}"
+                        Style="{DynamicResource PropertyFooterLabelStyle}"
                         Text="Due Date" />
                 </StackLayout>
             </StackLayout>
@@ -75,17 +84,15 @@
 
                 <!-- Header -->
                 <Label 
-                    Style="{StaticResource SectionHaderLabelStyle}" 
+                    Style="{DynamicResource SectionHaderLabelStyle}" 
                     Text="Details" />
 
                 <!-- Job Details -->
                 <Label
                     x:Name="lblDetailsTitle"
                     AutomationId="lblDetailsTitle"
-                    Text="{Binding Details}"
-                    TextColor="{StaticResource TextColorSubtleLight}" 
-                    FontFamily="{StaticResource FontFamilyRegular}" 
-                    FontSize="{StaticResource FontSizeRegular}" />
+                    Style="{DynamicResource RegularLabelStyle}"
+                    Text="{Binding Details}" />
             </StackLayout>
             
             <!-- Job Location -->
@@ -104,7 +111,7 @@
                 Spacing="{StaticResource DefaultMargin}">
 
                 <Label 
-                    Style="{StaticResource SectionHaderLabelStyle}" 
+                    Style="{DynamicResource SectionHaderLabelStyle}" 
                     Text="Options" />
 
                 <!-- The iOS version uses a custom button and renderer -->
@@ -136,7 +143,7 @@
                         Command="{Binding StartJobClicked}">
                         <Button.BackgroundColor>
                             <OnPlatform x:TypeArguments="Color">
-                                <On Platform="iOS" Value="White" />
+                                <On Platform="iOS" Value="{StaticResource BackgroundColor}" />
                                 <On Platform="Android" Value="{StaticResource AccentColor}" />
                             </OnPlatform>
                         </Button.BackgroundColor>
@@ -161,7 +168,7 @@
                         Command="{Binding EditJobClicked}">
                         <Button.BackgroundColor>
                             <OnPlatform x:TypeArguments="Color">
-                                <On Platform="iOS" Value="White" />
+                                <On Platform="iOS" Value="{StaticResource BackgroundColor}" />
                                 <On Platform="Android" Value="{StaticResource AccentColorOrange}" />
                             </OnPlatform>                                
                         </Button.BackgroundColor>
@@ -186,7 +193,7 @@
                         Command="{Binding DeleteJobClicked}">
                         <Button.BackgroundColor>
                             <OnPlatform x:TypeArguments="Color">
-                                <On Platform="iOS" Value="White" />
+                                <On Platform="iOS" Value="{StaticResource BackgroundColor}" />
                                 <On Platform="Android" Value="{StaticResource AccentColorRed}" />
                             </OnPlatform>
                         </Button.BackgroundColor>
@@ -211,7 +218,7 @@
                         Command="{Binding OrderPartsClicked}">
                         <Button.BackgroundColor>
                             <OnPlatform x:TypeArguments="Color">
-                                <On Platform="iOS" Value="White" />
+                                <On Platform="iOS" Value="{StaticResource BackgroundColor}" />
                                 <On Platform="Android" Value="{StaticResource AccentColorBlue}" />
                             </OnPlatform>
                         </Button.BackgroundColor>

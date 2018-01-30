@@ -1,150 +1,85 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
-             x:Class="ContosoFieldService.Pages.CreateNewJobPage"
-             BackgroundColor="#222E38"
-             Title="Create New Job">
-	<ContentPage.Content>
-        <ScrollView>
-            <StackLayout>
+<ContentPage 
+    xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    x:Class="ContosoFieldService.Pages.CreateNewJobPage"
+    BackgroundColor="{StaticResource BackgroundColor}"
+    Title="Create New Job">
 
-               <!-- Form Stack -->
-               <StackLayout Orientation="Vertical" Padding="15,5,15,0" VerticalOptions="FillAndExpand">
+    <ScrollView>
+        <StackLayout>
 
-                    <!-- Job Info -->
-                    <Label 
-                        Text="Info"
-                        FontSize="16"
-                        FontAttributes="Bold"
-                        FontFamily="AvenirNext-Medium" 
-                        TextColor="#DCDCDC">
-                    </Label>
-                    
-                    <!-- Due Date -->
-                    <Label 
-                        Text="Job Name"
-                        FontSize="12"
-                        FontAttributes="Bold"
-                        FontFamily="AvenirNext-Medium" 
-                        TextColor="#DCDCDC">
-                    </Label>
-                    
-                    <Entry 
-                        x:Name="tbxJobName"
-                        AutomationId="tbxJobName"
-                        Text="{Binding Name}" 
-                        Placeholder="Job Name" 
-                        PlaceholderColor="#515151" 
-                        TextColor="White" 
-                        FontFamily="AvenirNext-Regular" 
-                        HeightRequest="40">
-                        <Entry.BackgroundColor>
-                            <OnPlatform x:TypeArguments="Color">
-                                <On Platform="iOS" Value="#1C262F" />
-                            </OnPlatform>
-                        </Entry.BackgroundColor>
-                    </Entry>
+           <!-- Form Stack -->
+            <StackLayout
+                Padding="{StaticResource DefaultThickness}"
+                Spacing="{StaticResource DefaultMargin}"
+                VerticalOptions="FillAndExpand">
 
-                    <!-- Details-->
-                    <Label 
-                        Text="Details"
-                        FontSize="12"
-                        FontAttributes="Bold"
-                        FontFamily="AvenirNext-Medium" 
-                        TextColor="#DCDCDC">
-                    </Label>
-                    
-                    <Entry 
-                        x:Name="tbxDetails"
-                        AutomationId="tbxDetails"
-                        Text="{Binding Details}" 
-                        Placeholder="Details" 
-                        PlaceholderColor="#515151" 
-                        TextColor="White" 
-                        FontFamily="AvenirNext-Regular" 
-                        HeightRequest="40">
-                        <Entry.BackgroundColor>
-                        <OnPlatform x:TypeArguments="Color">
-                            <On Platform="iOS" Value="#1C262F" />
-                        </OnPlatform>
-                    </Entry.BackgroundColor>
-                    </Entry>
-
-                    <!-- Due Date -->
-                    <Label 
-                        Text="Due Date"
-                        FontSize="12"
-                        FontAttributes="Bold"
-                        FontFamily="AvenirNext-Medium" 
-                        TextColor="#DCDCDC">
-                    </Label>
-                    
-                    <DatePicker
-                        Date="{Binding DueDate}"
-                        MinimumDate="{Binding CurrentDate}"
-                        TextColor="White"
-                        HeightRequest="40">
-                        <DatePicker.BackgroundColor>
-                            <OnPlatform x:TypeArguments="Color">
-                                <On Platform="iOS" Value="#1C262F" />
-                            </OnPlatform>
-                        </DatePicker.BackgroundColor>
-                    </DatePicker>
-
-                    <BoxView 
-                        Margin="0,15,0,5"
-                        BackgroundColor="White" 
-                        Opacity="0.2"
-                        HeightRequest="1">
-                    </BoxView>
-                   
-              </StackLayout>  
+                <!-- Job Info -->
+                <Label 
+                    Style="{StaticResource SectionHaderLabelStyle}"
+                    Text="General Information" />
                 
-               <StackLayout VerticalOptions="End" Spacing="0">
-                    <Button 
-                        Text="Create" 
-                        TextColor="#ffffff" 
-                        HeightRequest="50"
-                        BackgroundColor="#01D8CB" 
-                        BorderRadius="0" 
-                        FontFamily="AvenirNext-Medium"
-                        Command="{Binding CreateJobClicked}">>
-                        <Button.FontSize>
-                            <OnPlatform x:TypeArguments="x:Double">
-                              <On Platform="iOS" Value="18" />
-                              <On Platform="Android" Value="16" />
-                            </OnPlatform>
-                        </Button.FontSize>
-                        <Button.Margin>
-                            <OnPlatform x:TypeArguments="Thickness">
-                              <On Platform="Android" Value="15,0,15,15" />
-                            </OnPlatform>
-                        </Button.Margin>
-                    </Button>
+                <!-- Job Name -->
+                <Label 
+                    Style="{StaticResource PropertyFooterLabelStyle}"
+                    TextColor="{StaticResource TextColorSubtle}"
+                    Text="Name" />
+                
+                <Entry 
+                    x:Name="tbxJobName"
+                    AutomationId="tbxJobName"
+                    Style="{StaticResource EntryStyle}"
+                    Text="{Binding Name}" 
+                    Placeholder="Job Name" />
 
-                    <Button 
-                        Text="Cancel" 
-                        TextColor="#ffffff" 
-                        HeightRequest="50"
-                        BackgroundColor="#D83E01" 
-                        BorderRadius="0" 
-                        FontFamily="AvenirNext-Medium"
-                        Command="{Binding CancelClicked}">>
-                        <Button.FontSize>
-                            <OnPlatform x:TypeArguments="x:Double">
-                              <On Platform="iOS" Value="18" />
-                              <On Platform="Android" Value="16" />
-                            </OnPlatform>
-                        </Button.FontSize>
-                        <Button.Margin>
-                            <OnPlatform x:TypeArguments="Thickness">
-                              <On Platform="iOS" Value="0,0,0,20" />
-                              <On Platform="Android" Value="15,0,15,5" />
-                            </OnPlatform>
-                        </Button.Margin>
-                    </Button>
-                </StackLayout>
+                <!-- Details-->
+                <Label 
+                    Style="{StaticResource PropertyFooterLabelStyle}"
+                    TextColor="{StaticResource TextColorSubtle}"
+                    Text="Details" />
+                
+                <Entry 
+                    x:Name="tbxDetails"
+                    AutomationId="tbxDetails"
+                    Style="{StaticResource EntryStyle}"
+                    Text="{Binding Details}" 
+                    Placeholder="Details" />
+
+                <!-- Due Date -->
+                <Label 
+                    Style="{StaticResource PropertyFooterLabelStyle}"
+                    TextColor="{StaticResource TextColorSubtle}"
+                    Text="Due Date" />
+                
+                <DatePicker
+                    x:Name="dpDueDate"
+                    AutomationId="dpDueDate"
+                    Style="{StaticResource DatePickerStyle}"
+                    Date="{Binding DueDate}"
+                    MinimumDate="{Binding CurrentDate}" />
+          </StackLayout>  
+            
+           <StackLayout VerticalOptions="End" Spacing="0">
+                <StackLayout.Margin>
+                    <OnPlatform x:TypeArguments="Thickness">
+                        <!-- Extra Bottom-Margin for iPhone X -->
+                        <!-- TODO: Use Safe Areas -->
+                        <On Platform="iOS" Value="0,0,0,20" />
+                    </OnPlatform>
+                </StackLayout.Margin>
+                
+                <Button 
+                    Style="{StaticResource FullWidthButtonStyle}"                    
+                    Text="Create" 
+                    Command="{Binding CreateJobClicked}" />
+
+                <Button 
+                    Style="{StaticResource FullWidthButtonStyle}"
+                    Text="Cancel"                    
+                    BackgroundColor="{StaticResource AccentColorRed}" 
+                    Command="{Binding CancelClicked}" />
             </StackLayout>
-        </ScrollView>
-	</ContentPage.Content>
+        </StackLayout>
+    </ScrollView>
 </ContentPage>
