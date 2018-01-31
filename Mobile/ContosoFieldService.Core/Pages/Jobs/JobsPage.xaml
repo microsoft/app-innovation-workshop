@@ -1,12 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    xmlns:converters="clr-namespace:ContosoFieldService.Converters;assembly=ContosoFieldService.Core"
     xmlns:design="clr-namespace:ContosoFieldService;assembly=ContosoFieldService.Core"
     BindingContext="{x:Static design:PageModelLocator.JobsPageModel}"
     x:Class="ContosoFieldService.Pages.JobsPage"
     BackgroundColor="{StaticResource BackgroundColor}"
     IsBusy="{Binding IsLoading, Mode=OneWay}"
     Title="Jobs">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <!-- Converts a job status to an according color for the sidebar -->
+            <converters:JobStatusToColorConverter x:Key="JobStatusToColorConverter" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
     
     <ContentPage.ToolbarItems>
         <ToolbarItem 
@@ -19,12 +27,12 @@
     <ListView 
         x:Name="listView"
         AutomationId="listView"
+        ItemsSource="{Binding Jobs}" 
         BackgroundColor="{StaticResource BackgroundColor}" 
         HasUnevenRows="true"
         IsGroupingEnabled="true"
         GroupDisplayBinding="{Binding Heading}"
         SeparatorVisibility="None"
-        ItemsSource="{Binding Jobs}" 
         SelectedItem="{Binding SelectedJob, Mode=TwoWay}"
         IsPullToRefreshEnabled="True"
         IsRefreshing="{Binding IsRefreshing, Mode=OneWay}"
@@ -34,17 +42,10 @@
             <SearchBar 
                 x:Name="searchBar"
                 AutomationId="searchBar"
+                Style="{StaticResource SearchBarStyle}"
                 SearchCommand="{Binding Search}" 
                 Text="{Binding SearchText}"
-                Placeholder="Search"
-                HeightRequest="70">
-                <SearchBar.BackgroundColor>
-                    <OnPlatform x:TypeArguments="Color">
-                        <On Platform="iOS" Value="Transparent" />
-                        <On Platform="Android" Value="{StaticResource BackgroundColor}" />
-                    </OnPlatform>
-                </SearchBar.BackgroundColor>
-            </SearchBar>
+                Placeholder="Search" />
         </ListView.Header>
         
         <ListView.ItemTemplate>
@@ -98,7 +99,7 @@
                             Grid.Column="1"
                             HeightRequest="1"
                             Margin="0"
-                            Color="{StaticResource SeparatorColor}" />
+                            Color="{StaticResource ItemSeparatorColor}" />
                     </Grid>
                 </ViewCell>
             </DataTemplate>
@@ -116,7 +117,7 @@
                             Text="{Binding Heading}"
                             FontFamily="{StaticResource FontFamilyMedium}"
                             FontSize="{StaticResource FontSizeRegular}"
-                            TextColor="{StaticResource AccentColorOrage}" />                        
+                            TextColor="{StaticResource AccentColorOrange}" />                        
                     </Grid>
                 </ViewCell>
             </DataTemplate>

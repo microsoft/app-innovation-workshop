@@ -3,33 +3,39 @@
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+    xmlns:design="clr-namespace:ContosoFieldService;assembly=ContosoFieldService.Core"
+    BindingContext="{x:Static design:PageModelLocator.PartDetailsPageModel}"    
     x:Class="ContosoFieldService.Pages.PartDetailsPage"    
-    BackgroundColor="#ffffff"
+    BackgroundColor="{StaticResource BackgroundColor}"
     Title="Part Details">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries xmlns:themes="using:ContosoFieldService.Themes" >
+                <!-- Light theme for this page -->
+                <themes:Light />
+                <themes:Styles />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </ContentPage.Resources>
 
     <ScrollView>
         <StackLayout>
 
-            <!-- Job Name Banner --> 
-            <Frame
-                x:Name="PartName"
-                AutomationId="PartName"
+            <!-- Part Name Banner --> 
+            <Frame       
+                x:Name="JobName"
+                AutomationId="JobName"
                 CornerRadius="0"
-                Margin="0"
                 HasShadow="false"
-                BackgroundColor="#D83E01" >
-                <Label 
+                BackgroundColor="{StaticResource AccentColorRed}" >
+            
+                <Label                         
                     Text="{Binding Name}" 
                     HorizontalTextAlignment="Center"
-                    FontFamily="AvenirNext-Medium" 
-                    TextColor="#ffffff">
-                    <Label.FontSize>
-                        <OnPlatform x:TypeArguments="x:Double">
-                          <On Platform="iOS" Value="18" />
-                          <On Platform="Android" Value="16" />
-                        </OnPlatform>
-                    </Label.FontSize>
-                </Label>
+                    FontFamily="{StaticResource FontFamilyMedium}" 
+                    TextColor="#ffffff"
+                    FontSize="{StaticResource FontSizeLarge}" />
             </Frame>
 
             <!-- Image -->
@@ -40,167 +46,112 @@
                 Source="{Binding ImageSource}"/>
 
             <!-- Overview Stack -->
-            <StackLayout Orientation="Vertical" Padding="15,5,5,15" BackgroundColor="#ffffff">
+            <StackLayout
+                Padding="{StaticResource DefaultThickness}"
+                Spacing="{StaticResource DefaultMargin}">
 
-                <!-- Overview Title -->
-                <StackLayout Orientation="Horizontal">
-                    <Label 
-                        Text="Overview" 
-                        TextColor="#212121" 
-                        FontFamily="AvenirNext-Medium" 
-                        FontSize="16" 
-                        HorizontalOptions="Start" />
-                </StackLayout>
+                <!-- Header -->
+                <Label
+                    Style="{DynamicResource SectionHaderLabelStyle}" 
+                    Text="Overview" />
 
-                <!-- Job Age -->
-                <StackLayout Orientation="Vertical">
-                    <!-- Value -->
+                <!-- Part Name -->
+                <StackLayout Spacing="0">
                     <Label 
-                        Text="{Binding Name}" 
-                        TextColor="#D83E01" 
-                        FontSize="17" 
-                        FontFamily="AvenirNext-Medium"
-                        HorizontalTextAlignment="Start">
-                    </Label>
-                    
-                    <!-- Title -->
+                        x:Name="lblName"
+                        AutomationId="lblName"
+                        Style="{DynamicResource PropertyLabelStyle}"
+                        Text="{Binding Name}"  />
+
                     <Label 
-                        Text="Name" 
-                        FontFamily="AvenirNext-Regular" 
-                        Margin="0,-5,0,0" TextColor="#777777" 
-                        HorizontalTextAlignment="Start" 
-                        FontSize="12">
+                        Style="{DynamicResource PropertyFooterLabelStyle}"
+                        Text="Name" >
                     </Label>
                 </StackLayout>
 
-                <!-- Due Date -->
-                <StackLayout Orientation="Vertical">
-                    <!-- Value -->
+                <!-- Part Name -->
+                <StackLayout Spacing="0">
                     <Label 
-                        Text="{Binding Manufacturer}" 
-                        TextColor="#D83E01" 
-                        FontFamily="AvenirNext-Medium" 
-                        FontSize="17"
-                        HorizontalTextAlignment="Start">
-                    </Label>
+                        x:Name="lblManufacturer"
+                        AutomationId="lblManufacturer"
+                        Style="{DynamicResource PropertyLabelStyle}"
+                        Text="{Binding Manufacturer}"  />
 
-                    <!-- Title -->
                     <Label 
-                        Text="Manufacturer" 
-                        FontFamily="AvenirNext-Regular" 
-                        Margin="0,-5,0,0" 
-                        TextColor="#777777" 
-                        HorizontalTextAlignment="Start" 
-                        FontSize="12">
+                        Style="{DynamicResource PropertyFooterLabelStyle}"
+                        Text="Manufacturer" >
                     </Label>
                 </StackLayout>
             </StackLayout>
 
             <!-- Divier -->
-            <BoxView HeightRequest="1" BackgroundColor="#777777" Opacity="0.2"  ></BoxView>
-
-
+            <BoxView HeightRequest="1" BackgroundColor="{StaticResource SeparatorColor}" />
 
             <!-- Customer Info Stack -->
-           <StackLayout Orientation="Vertical" Padding="15,5,5,15" BackgroundColor="#ffffff">
+           <!-- Overview Stack -->
+            <StackLayout
+                Padding="{StaticResource DefaultThickness}"
+                Spacing="{StaticResource DefaultMargin}">
 
-                <!-- Customer Info Title -->
-                <StackLayout Orientation="Horizontal">
+                <!-- Header -->
+                <Label
+                    Style="{DynamicResource SectionHaderLabelStyle}" 
+                    Text="Details" />
+
+                <!-- Part Serial Number -->
+                <StackLayout Spacing="0">
                     <Label 
-                        Text="Details" 
-                        TextColor="#212121" 
-                        FontFamily="AvenirNext-Medium" 
-                        FontSize="16" 
-                        HorizontalOptions="Start" />
+                        x:Name="lblSerialNumber"
+                        AutomationId="lblSerialNumber"
+                        Style="{DynamicResource PropertyLabelStyle}"
+                        Text="{Binding SerialNumber}"  />
+
+                    <Label 
+                        Style="{DynamicResource PropertyFooterLabelStyle}"
+                        Text="Serial Number" >
+                    </Label>
                 </StackLayout>
 
-                <!-- Contact Name -->
-                 <StackLayout Orientation="Horizontal" Margin="0,5,0,0">
-                    <StackLayout Orientation="Vertical">
-                        <!-- Value -->
-                        <Label 
-                            Text="{Binding SerialNumber}" 
-                            TextColor="#D83E01" 
-                            FontFamily="AvenirNext-Medium" 
-                            FontSize="17">
-                        </Label>
+                <!-- Part Model Number -->
+                <StackLayout Spacing="0">
+                    <Label 
+                        x:Name="lblModelNumber"
+                        AutomationId="lblModelNumber"
+                        Style="{DynamicResource PropertyLabelStyle}"
+                        Text="{Binding ModelNumber}"  />
 
-                        <!-- Title -->
-                        <Label 
-                            Text="Serial Number" 
-                            FontFamily="AvenirNext-Regular" 
-                            Margin="0,-5,0,0" 
-                            TextColor="#777777" 
-                            HorizontalTextAlignment="Start" 
-                            FontSize="12">
-                        </Label>
-                    </StackLayout>
+                    <Label 
+                        Style="{StaticResource PropertyFooterLabelStyle}"
+                        Text="Model Number" >
+                    </Label>
                 </StackLayout>
 
-                <!-- Company Name -->
-                <StackLayout Orientation="Horizontal" Margin="0,5,0,0">
-                    <StackLayout Orientation="Vertical">
-                        <!-- Value -->
-                        <Label 
-                            Text="{Binding ModelNumber}" 
-                            TextColor="#D83E01" 
-                            FontFamily="AvenirNext-Medium" 
-                            FontSize="17">
-                        </Label>
+                <!-- Part Price -->
+                <StackLayout Spacing="0">
+                    <Label 
+                        x:Name="lblPrice"
+                        AutomationId="lblPrice"
+                        Style="{DynamicResource PropertyLabelStyle}"
+                        Text="{Binding PriceInUSD, StringFormat='{0} USD'}"  />
 
-                        <!-- Title -->
-                        <Label 
-                            Text="Model Number" 
-                            FontFamily="AvenirNext-Regular" 
-                            Margin="0,-5,0,0" 
-                            TextColor="#777777" 
-                            HorizontalTextAlignment="Start" 
-                            FontSize="12">
-                        </Label>
-                    </StackLayout>
-                </StackLayout>
-
-                <!-- Price -->
-                <StackLayout Orientation="Horizontal" Margin="0,5,0,0">
-                    <StackLayout Orientation="Vertical">
-                        <!-- Value -->
-                        <Label 
-                            Text="{Binding PriceInUSD}" 
-                            TextColor="#D83E01" 
-                            FontFamily="AvenirNext-Medium" 
-                            FontSize="17">
-                        </Label>
-
-                        <!-- Title -->
-                        <Label 
-                            Text="Price" 
-                            FontFamily="AvenirNext-Regular" 
-                            Margin="0,-5,0,0" 
-                            TextColor="#777777" 
-                            HorizontalTextAlignment="Start" 
-                            FontSize="12">
-                        </Label>
-                    </StackLayout>
+                    <Label 
+                        Style="{DynamicResource PropertyFooterLabelStyle}"
+                        Text="Price" >
+                    </Label>
                 </StackLayout>
             </StackLayout>
 
             <Button 
                 Text="Place Order" 
-                TextColor="#ffffff" 
-                HeightRequest="50"
-                BackgroundColor="#01D8CB" 
+                TextColor="#ffffff"               
                 BorderRadius="0" 
-                FontFamily="AvenirNext-Medium"
-                Command="{Binding OrderPart}">>
-                <Button.FontSize>
-                    <OnPlatform x:TypeArguments="x:Double">
-                      <On Platform="iOS" Value="18" />
-                      <On Platform="Android" Value="16" />
-                    </OnPlatform>
-                </Button.FontSize>
+                BackgroundColor="{StaticResource AccentColor}" 
+                FontFamily="{StaticResource FontFamilyMedium}"
+                FontSize="{StaticResource FontSizeLarge}" 
+                Command="{Binding OrderPart}">
                 <Button.Margin>
                     <OnPlatform x:TypeArguments="Thickness">
-                      <On Platform="Android" Value="15,0,15,15" />
+                      <On Platform="Android" Value="{StaticResource DefaultThickness}" />
                     </OnPlatform>
                 </Button.Margin>
             </Button>
