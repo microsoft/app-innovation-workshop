@@ -2,191 +2,127 @@
 <ContentPage 
     xmlns="http://xamarin.com/schemas/2014/forms" 
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    xmlns:design="clr-namespace:ContosoFieldService;assembly=ContosoFieldService.Core"
+    BindingContext="{x:Static design:PageModelLocator.JobDetailsPageModel}"
     x:Class="ContosoFieldService.Pages.WorkingJobPage"
-    Title="Working"
-    BackgroundColor="White">
-	<ContentPage.Content>
-        <ScrollView>
-            <StackLayout Padding="0" Spacing="0">
-                <StackLayout VerticalOptions="Start" HeightRequest="250" BackgroundColor="#01D8CB">
+    BackgroundColor="{StaticResource BackgroundColor}"
+    Title="Working">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries xmlns:themes="using:ContosoFieldService.Themes" >
+                <!-- Light theme for this page -->
+                <themes:Light />
+                <themes:Styles />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <ScrollView>
+        <StackLayout Spacing="0">
+            <StackLayout
+                HeightRequest="250" 
+                BackgroundColor="{StaticResource AccentColor}">
+                
+                <Label 
+                    x:Name="lblDuration"
+                    AutomationId="lblDuration"
+                    Text="{Binding Duration}" 
+                    TextColor="White"
+                    FontSize="32" 
+                    HorizontalTextAlignment="Center" 
+                    Margin="0,105,0,0">
+                </Label>
+                
+                <Label 
+                    x:Name="lblBillable"
+                    AutomationId="lblBillable"
+                    Text="{Binding Billable}" 
+                    TextColor="#4A90E2" 
+                    FontAttributes="Bold" 
+                    HorizontalTextAlignment="Center">
+                </Label>
+            </StackLayout>
+
+            <!-- Quick Break --> 
+            <Button 
+                x:Name="btnQuickBreak"
+                AutomationId="btnQuickBreak"
+                Style="{StaticResource FullWidthButtonStyle}"
+                BackgroundColor="{StaticResource AccentColorDarkOrange}" 
+                Text="Quick Break"
+                Command="{Binding QuickBreakClicked}" />
+
+            <StackLayout 
+                Padding="{StaticResource DefaultThickness}"
+                Spacing="{StaticResource DefaultMargin}">
+
+                <!-- Overview -->
+                <StackLayout  Spacing="{StaticResource DefaultMargin}">
                     <Label 
-                        x:Name="lblDuration"
-                        AutomationId="lblDuration"
-                        Text="{Binding Duration}" 
-                        TextColor="White"
-                        FontSize="32" 
-                        HorizontalTextAlignment="Center" 
-                        Margin="0,105,0,0">
-                    </Label>
-                    
-                    <Label 
-                        x:Name="lblBillable"
-                        AutomationId="lblBillable"
-                        Text="{Binding Billable}" 
-                        TextColor="#4A90E2" 
-                        FontAttributes="Bold" 
-                        HorizontalTextAlignment="Center">
-                    </Label>
-                </StackLayout>
-
-                <!-- Quick Break --> 
-                <Button 
-                    x:Name="btnQuickBreak"
-                    AutomationId="btnQuickBreak"
-                    HeightRequest="50" 
-                    BackgroundColor="#F5A623" 
-                    BorderRadius="0" 
-                    FontFamily="AvenirNext-Medium" 
-                    TextColor="#ffffff" 
-                    Text="Quick Break"
-                    Command="{Binding QuickBreakClicked}">
-                    <Button.Margin>
-                        <OnPlatform x:TypeArguments="Thickness">
-                            <On Platform="Android" Value="15" />
-                        </OnPlatform>
-                    </Button.Margin>
-                </Button>
-
-                <!-- Overview Stack -->
-               <StackLayout Orientation="Vertical" Padding="15,5,5,15" BackgroundColor="#ffffff">
-
-                    <!-- Job Name-->
-                    <StackLayout Orientation="Horizontal">
-                        <Label 
-                            x:Name="lblOVerviewTitle"
-                            AutomationId="lblOVerviewTitle"
-                            Text="Overview" 
-                            TextColor="#212121" 
-                            FontFamily="AvenirNext-Medium" 
-                            FontSize="16" 
-                            HorizontalOptions="Start" />
-                    </StackLayout>
+                        Style="{StaticResource SectionHaderLabelStyle}"
+                        Text="Overview" />
 
                     <!-- Job Name -->
-                     <StackLayout Orientation="Horizontal" Margin="0,5,0,0">
-                        <StackLayout Orientation="Vertical">
-                            <!-- Value -->
-                            <Label 
-                                x:Name="lblReplaceOil"
-                                AutomationId="lblReplaceOil"
-                                Text="Replace Oil" 
-                                TextColor="#D83E01" 
-                                FontFamily="AvenirNext-Medium" 
-                                FontSize="17">
-                            </Label>
+                    <StackLayout Spacing="0">  
+                        <Label 
+                            x:Name="lblJobName"
+                            AutomationId="lblJobName"
+                            Style="{StaticResource PropertyLabelStyle}"
+                            Text="{Binding Name}" />
 
-                            <!-- Title -->
-                            <Label 
-                                x:Name="lblJobName"
-                                AutomationId="lblJobName"
-                                Text="Job Name" 
-                                FontFamily="AvenirNext-Regular" 
-                                Margin="0,-5,0,0" 
-                                TextColor="#777777" 
-                                HorizontalTextAlignment="Start" 
-                                FontSize="12">
-                            </Label>
-                        </StackLayout>
+                        <Label 
+                            Style="{StaticResource PropertyFooterLabelStyle}"
+                            Text="Job Name" />
                     </StackLayout>
 
                     <!-- Estimated Duration -->
-                     <StackLayout Orientation="Horizontal" Margin="0,5,0,0">
-                        <StackLayout Orientation="Vertical">
-                            <!-- Value -->
-                            <Label 
-                                x:Name="lblEstimatedDuration"
-                                AutomationId="lblEstimatedDuration"
-                                Text="2 hours" 
-                                TextColor="#D83E01" 
-                                FontFamily="AvenirNext-Medium" 
-                                FontSize="17">
-                            </Label>
+                    <StackLayout Spacing="0">  
+                        <Label 
+                            x:Name="lblEstimatedDuration"
+                            AutomationId="lblEstimatedDuration"
+                            Style="{StaticResource PropertyLabelStyle}"
+                            Text="2 hours" />
 
-                            <!-- Title -->
-                            <Label 
-                                x:Name="lblEstimatedDurationTitle"
-                                AutomationId="lblEstimatedDurationTitle"
-                                Text="Estimated Duration" 
-                                FontFamily="AvenirNext-Regular" 
-                                Margin="0,-5,0,0" 
-                                TextColor="#777777" 
-                                HorizontalTextAlignment="Start" 
-                                FontSize="12">
-                            </Label>
-                        </StackLayout>
+                        <Label 
+                            Style="{StaticResource PropertyFooterLabelStyle}"
+                            Text="Estimated Duration" />
                     </StackLayout>
                 </StackLayout>
-
+                
                 <!-- Divider -->
-                <BoxView HeightRequest="1" BackgroundColor="#777777" Opacity="0.2"></BoxView>
+                <BoxView HeightRequest="1" BackgroundColor="{StaticResource SeparatorColor}" />
 
-                <!-- Details Stack -->
-               <StackLayout Orientation="Vertical" Padding="15,5,5,15" BackgroundColor="#ffffff">
-
-                    <!-- Details Title-->
-                    <StackLayout Orientation="Horizontal">
-                        <Label 
-                            x:Name="lblDetailsTitle"
-                            AutomationId="lblDetailsTitle"
-                            Text="Details" 
-                            TextColor="#212121" 
-                            FontFamily="AvenirNext-Medium" 
-                            FontSize="16" 
-                            HorizontalOptions="Start" />
-                    </StackLayout>
+                <!-- Details -->
+                <StackLayout  Spacing="{StaticResource DefaultMargin}">
+                    <Label 
+                        Style="{StaticResource SectionHaderLabelStyle}"
+                        Text="Details" />
 
                     <!-- Details Text -->
-                    <Editor
-                        x:Name="lblDetails"
-                        AutomationId="lblDetails"
-                        Text="{Binding Details}"
-                        TextColor="#838383" 
-                        FontFamily="AvenirNext-Regular" 
-                        FontSize="17"
-                        IsEnabled="false">
-                    </Editor>
+                    <Label
+                        x:Name="lblDetailsTitle"
+                        AutomationId="lblDetailsTitle"
+                        Style="{StaticResource RegularLabelStyle}"
+                        Text="{Binding Details}" />
                 </StackLayout>
-
-
-                <!-- Snap a Photo --> 
-                <Button 
-                    HeightRequest="50" 
-                    BackgroundColor="#4A90E2" 
-                    BorderRadius="0" 
-                    FontFamily="AvenirNext-Medium" 
-                    TextColor="#ffffff" 
-                    Text="Snap a Photo" 
-                    Margin="0"
-                    Command="{Binding SnapPhotoClicked}"
-                    IsVisible="{Binding CameraSupported}">
-                    <Button.Margin>
-                        <OnPlatform x:TypeArguments="Thickness">
-                            <On Platform="Android" Value="15,15,15,0" />
-                        </OnPlatform>
-                    </Button.Margin>
-                </Button>
-
-
-                <!-- Complete Job --> 
-                <Button 
-                    HeightRequest="50" 
-                    BackgroundColor="#DD444D" 
-                    BorderRadius="0" 
-                    FontFamily="AvenirNext-Medium" 
-                    TextColor="#ffffff" 
-                    Text="Complete" 
-                    Margin="0" 
-                    Command="{Binding CompleteClicked}">
-                    <Button.Margin>
-                        <OnPlatform x:TypeArguments="Thickness">
-                            <On Platform="Android" Value="15" />
-                        </OnPlatform>
-                    </Button.Margin>
-                </Button>
-
-                
-                
             </StackLayout>
-        </ScrollView>
-	</ContentPage.Content>
+
+            <!-- Snap a Photo --> 
+            <Button 
+                Style="{StaticResource FullWidthButtonStyle}"
+                BackgroundColor="{StaticResource AccentColorBlue}" 
+                Text="Snap a Photo" 
+                Command="{Binding SnapPhotoClicked}"
+                IsVisible="{Binding CameraSupported}" />
+
+            <!-- Complete Job --> 
+            <Button 
+                Style="{StaticResource FullWidthButtonStyle}"
+                BackgroundColor="{StaticResource AccentColorRed}" 
+                Text="Complete" 
+                Command="{Binding CompleteClicked}" />
+               
+        </StackLayout>
+    </ScrollView>
 </ContentPage>

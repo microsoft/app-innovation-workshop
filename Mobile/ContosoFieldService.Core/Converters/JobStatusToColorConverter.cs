@@ -5,6 +5,9 @@ using ContosoFieldService.Models;
 
 namespace ContosoFieldService.Converters
 {
+    /// <summary>
+    /// Converts a job status to an according color.
+    /// </summary>
     public class JobStatusToColorConverter : IValueConverter
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
@@ -27,7 +30,7 @@ namespace ContosoFieldService.Converters
 
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            throw new NotImplementedException();
+            return value;
         }
     }
 }
