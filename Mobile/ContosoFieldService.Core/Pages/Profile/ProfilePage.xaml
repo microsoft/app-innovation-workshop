@@ -6,7 +6,7 @@
     xmlns:fftransformations="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations"
     xmlns:controls="clr-namespace:CarouselView.FormsPlugin.Abstractions;assembly=CarouselView.FormsPlugin.Abstractions"
     x:Class="ContosoFieldService.Pages.ProfilePage"
-    BackgroundColor="{StaticResource BackgroundColor}"
+    BackgroundColor="{StaticResource BackgroundColorDark}"
     Title="Me">
 
     <ScrollView>
@@ -15,8 +15,7 @@
             <!-- Profile Header -->            
             <Grid 
                 Padding="{StaticResource DefaultThickness}"
-                HorizontalOptions="FillAndExpand" 
-                BackgroundColor="{StaticResource BackgroundColor}">
+                HorizontalOptions="FillAndExpand" >
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*" />
                     <ColumnDefinition Width="Auto" />
