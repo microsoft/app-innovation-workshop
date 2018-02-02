@@ -83,6 +83,9 @@ Hosting a .NET 2.0 Web API project, the App Service orchestrates the backend ser
 
 # Support
 ## Where to find help
+* Email us at cloudworkshop-support@microsoft.com
+* Create Github issues and we'll respond as quickly as possible 
+* Ping us on [Slack](https://mobilecloudworkshop.slack.com)
 
 # Authors
 <img src="https://github.com/MikeCodesDotNet/Mobile-Cloud-Workshop/blob/walkthrough/Resources/authors.png?raw=true" height="100">
