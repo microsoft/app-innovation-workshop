@@ -318,6 +318,19 @@
     <Reference Include="Plugin.Geolocator">
       <HintPath>..\..\packages\Xam.Plugin.Geolocator.4.2.0\lib\Xamarin.iOS10\Plugin.Geolocator.dll</HintPath>
     </Reference>
+    <Reference Include="MonkeyCache">
+      <HintPath>..\..\packages\MonkeyCache.0.0.1.59-beta\lib\xamarinios10\MonkeyCache.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="LiteDB">
+      <HintPath>..\..\packages\LiteDB.4.1.1\lib\netstandard2.0\LiteDB.dll</HintPath>
+    </Reference>
+    <Reference Include="MonkeyCache.LiteDB">
+      <HintPath>..\..\packages\MonkeyCache.LiteDB.0.0.1.59-beta\lib\xamarinios10\MonkeyCache.LiteDB.dll</HintPath>
+    </Reference>
+    <Reference Include="Polly">
+      <HintPath>..\..\packages\Polly.5.8.0\lib\netstandard1.1\Polly.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Contents.json">

@@ -46,6 +46,8 @@
     <PackageReference Include="Xam.Plugin.Connectivity" Version="3.0.3" />
     <PackageReference Include="Microsoft.Azure.DocumentDB.Core" Version="1.7.1" />
     <PackageReference Include="Xam.Plugin.Geolocator" Version="4.2.0" />
+    <PackageReference Include="MonkeyCache.LiteDB" Version="0.0.1.59-beta" />
+    <PackageReference Include="Polly" Version="5.8.0" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Pages\" />

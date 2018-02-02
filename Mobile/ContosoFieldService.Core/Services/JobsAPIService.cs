@@ -1,6 +1,13 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Net;
+using System.Net.Http;
 using System.Threading.Tasks;
 using ContosoFieldService.Models;
+using MonkeyCache.LiteDB;
+using Plugin.Connectivity;
+using Polly;
 using Refit;
 
 namespace ContosoFieldService.Services
@@ -37,8 +44,40 @@ namespace ContosoFieldService.Services
 
         public async Task<List<Job>> GetJobsAsync()
         {
+            var key = "Jobs";
+
+            //Handle online/offline scenario
+            if (!CrossConnectivity.Current.IsConnected && Barrel.Current.Exists(key))
+            {
+                //If no connectivity, we'll turned the cached list. We wrap it in a Try/Catch as the barrel may not exist.
+                return Barrel.Current.Get<List<Job>>(key);
+            }
+
+            //Is the data too old?
+            if (!Barrel.Current.IsExpired(key) && Barrel.Current.Exists(key))
+            {
+                return Barrel.Current.Get<List<Job>>(key);
+            }
+       
+      
+
+            //Create an instance of the Refit Reservice for the job interface.
             var contosoMaintenanceApi = RestService.For<IJobServiceAPI>(Helpers.Constants.BaseUrl);
-            return await contosoMaintenanceApi.GetJobs();
+
+            //Use Polly to handle retrying (helps with bad connectivity) 
+            var jobs = await Policy
+                .Handle<WebException>()
+                .Or<HttpRequestException>()
+                .Or<TimeoutException>()
+                .WaitAndRetryAsync
+                (
+                    retryCount: 5,
+                    sleepDurationProvider: retryAttempt => TimeSpan.FromSeconds(Math.Pow(2, retryAttempt))
+                ).ExecuteAsync(async () => await contosoMaintenanceApi.GetJobs());
+
+            //Save jobs into catch
+            Barrel.Current.Add(key: key, data: jobs, expireIn: TimeSpan.FromSeconds(5));
+            return jobs;
         }
 
         public async Task<Job> GetJobByIdAsync(string id)
