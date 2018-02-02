@@ -407,11 +407,11 @@
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />
     <Compile Include="Helpers\Settings.cs" />
-    <Compile Include="Renderers\ContentPageRenderer.cs" />
     <Compile Include="Helpers\Extensions.cs" />
-    <Compile Include="Renderers\ColoredTabBarRenderer.cs" />
     <Compile Include="Services\EnvironmentService.cs" />
-    <Compile Include="Renderers\SelectedViewCellRenderer.cs" />
+    <Compile Include="Renderers\CleanTabBarRenderer.cs" />
+    <Compile Include="Renderers\CleanNavigationBarRenderer.cs" />
+    <Compile Include="Renderers\CustomSearchBarRenderer.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ContosoFieldService.Core\ContosoFieldService.Core.csproj">

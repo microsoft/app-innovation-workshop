@@ -23,6 +23,8 @@ namespace ContosoFieldService.PageModels
         int increment;
 
 
+        public string Name { get; set; }
+        public string Details { get; set; }
         public string Duration { get; set; }
         public string Billable { get; set; }
         public bool CameraSupported { get => CrossMedia.Current.IsCameraAvailable ? true : false; }
@@ -31,6 +33,8 @@ namespace ContosoFieldService.PageModels
         {
             base.Init(initData);
             selectedJob = (Job)initData;
+            Name = selectedJob.Name;
+            Details = selectedJob.Details;
 
 
         }

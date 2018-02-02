@@ -24,15 +24,16 @@
             IsRefreshing="{Binding IsRefreshing, Mode=OneWay}"
             RefreshCommand="{Binding Refresh}">
             
-            <ListView.Header>                                 
-                <SearchBar 
-                    x:Name="searchBar"
-                    AutomationId="searchBar"
-                    Style="{StaticResource SearchBarStyle}"
-                    SearchCommand="{Binding Search}" 
-                    Text="{Binding SearchText}"
-                    Placeholder="Search"
-                    HeightRequest="70" />
+            <ListView.Header>
+                <Grid BackgroundColor="{DynamicResource BackgroundColorDark}">
+                    <SearchBar 
+                        x:Name="searchBar"
+                        AutomationId="searchBar"
+                        Style="{StaticResource SearchBarStyle}"
+                        SearchCommand="{Binding Search}"
+                        Text="{Binding SearchText}"
+                        Placeholder="Search" />
+                </Grid>
             </ListView.Header>
             
             <ListView.ItemTemplate>
