@@ -12,7 +12,7 @@ Before we can deploy an App Service instance, we need to create a resource
 
   
 
-## 1. Resource Groups
+## 1. Create a Resource Group
 
 Resource groups can be thought of as logical containers for your Azure Resources. You may wish to create separate resource groups per location, or alternatively, you may wish to have one resource group per project.
 
@@ -28,15 +28,16 @@ Navigate to the [portal.azure.com](portal.azure.com) and sign in with your MSDN 
  
 ![Azure Portal](https://github.com/MikeCodesDotNet/Mobile-Cloud-Workshop/blob/walkthrough/Walkthrough%20Guide/Misc/APS1.png?raw=true)
 
-Click on the <kbd>Create a Resource</kbd> button.
+
+### 1.2 Configure & Create Resource Group
 
 
-### 1.2 Search for resource templates
+![](https://github.com/MikeCodesDotNet/Mobile-Cloud-Workshop/blob/walkthrough/Walkthrough%20Guide/Misc/RSG1.png?raw=true)
 
-
-![](https://github.com/MikeCodesDotNet/Mobile-Cloud-Workshop/blob/walkthrough/Walkthrough%20Guide/Misc/APS2.png?raw=true)
-
-Search for ‘Web App’.
+1. Click 'Resource Groups'.
+2. Click 'Add' to bring up configuration pane. 
+3. Supply configuration data. Keep in mind its difficult to change resource group names later. 
+4. Click 'Create' and relax. 
 
 
 ![](https://github.com/MikeCodesDotNet/Mobile-Cloud-Workshop/blob/walkthrough/Walkthrough%20Guide/Misc/APS3.png?raw=true)
@@ -45,7 +46,7 @@ Select <kbd>Web App</kbd> from the list of results. You’ll want to ensure that
 
 
 
-![](https://github.com/MikeCodesDotNet/Mobile-Cloud-Workshop/blob/walkthrough/Walkthrough%20Guide/Misc/APS4.png?raw=true)
+![](https://github.com/MikeCodesDotNet/Mobile-Cloud-Workshop/blob/walkthrough/Walkthrough%20Guide/Misc/RSG1.png?raw=true)
 
 Click on the <kbd>Create</kbd> button.
 
