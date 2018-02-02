@@ -1,19 +1,18 @@
 # Setting Up	
-Actually, the setup of a working Xamarin environment can get a little bit tricky and time consuming as so many different SDKs and technologies from different companies have to intertwine.
+> Hint: We highly recommend you setup and configure your system before attending the mobile workshop. Although we’ve allowed an hour in the morning to assist in trouble shooting configurations, we won’t have time to do a fresh installation.   
+- - - -
 
-You can absolutely use both, Windows 10 or OSX/macOS to develop Xamarin applications. Both are fully supported and you can choose which fits your personal preferences most. As Visual Studio on Windows is the richest IDE, we will use it for this workshop, but you can do everything on Mac as well.
+The setup of a Xamarin development environment can get a little bit tricky and time consuming as it has dependancies on many SDKs and technologies from different companies. 
+
+For todays workshop, you can use both, Windows 10 or macOS to develop. You’ll find all the documentation demonstrations using macOS but keep in mind, everything you see in Visual Studio for Mac is possible in Visual Studio for PC. 
 
 ## Install Xamarin
-Installing Xamarin should be easy but the process varies on the different platforms. We will go through both processes together.
 
 ### On Windows
 When working on Windows, [Visual Studio](https://www.visualstudio.com/downloads/) will be the right IDE for you. You can check if you have a license for the paid versions or even go with the free Community Edition. Both will work for you.
 
 #### Visual Studio 2017
-Of course, you can use the brand new Visual Studio 2017 for Xamarin Development. For a quick guide on how to prepare it for Xamarin Development, please [follow this guide](http://motzcod.es/post/158155898027/setting-up-vs-2017-for-xamarin-dev)!
-
-#### Visual Studio 2015
-When still using Visual Studio 2015, you can select Xamarin from the **Features** list in the installer.
+For a quick guide on how to prepare it for Xamarin Development, please [follow this guide](http://motzcod.es/post/158155898027/setting-up-vs-2017-for-xamarin-dev)!
 
 ![Add Xamarin to Visual Studio installation Screenshot](../Misc/vsinstallxamarinfeatures.png)
 Make sure, that the following features get installed:
@@ -39,13 +38,13 @@ Make sure, that the following features get installed:
 > ![Modify Visual Studio features afterwards Screenshot](../Misc/winchangevsfeatures.png)  
 
 ### On Mac
-On a Mac, Xamarin needs to be installed differently. [Download the installer](https://www.xamarin.com/download) and run it. It should install all Xamarin components you need, including the Android SDK and Xamarin Studio, which will be your IDE on OSX/macOS.
+On a Mac, Xamarin needs to be installed differently. [Download the installer](https://www.xamarin.com/download) and run it. It should install all Xamarin components you need, including the Android SDK and Visual Studio for Mac, which will be your IDE on macOS.
 
 ## Prepare for Android development
 ### Android SDK
 Both ways of installing Xamarin for Mac or Windows should install the Android SDK automatically. If anything goes wrong, you can also [download it from the Google Developer portal](https://developer.android.com/studio/index.html).
 
-You should also check if all the necessary Android components are installed or if any updates are available. We can check this inside the **Android SDK Manager**. Open it in Visual Studio or Xamarin Studio at <kbd>Tools<_kbd> <kbd>Android<_kbd> <kbd>Android SDK Manager...</kbd>.
+You should also check if all the necessary Android components are installed or if any updates are available. We can check this inside the **Android SDK Manager**. Open it in Visual Studio or Visual Studio Studio for Mac at <kbd>Tools<_kbd> <kbd>Android<_kbd> <kbd>Android SDK Manager...</kbd>.
 
 ![Modify Visual Studio features afterwards Screenshot](../Misc/androidsdkmanager.png)
 
@@ -76,7 +75,7 @@ To test your Android apps, you might need an emulator. You can use any emulator 
 
 ## Prepare for iOS development
 ### iOS SDK and Simulator
-To work with iOS, you need a Mac (at least anywhere in your network) with [Xcode](https://itunes.apple.com/de/app/xcode/id497799835?mt=12) installed. By default, this will install the latest iOS SDK and several simulators. You have to start Xcode at least once shortly, to initialize everything.
+To work with iOS, you need a Mac with a copy of[Xcode](https://itunes.apple.com/de/app/xcode/id497799835?mt=12) installed. By default, this will install the latest iOS SDK and several simulators needed for iOS development. You will need to start Xcode at least once after the installation process in order to initialise everything.
 
 ### Mac Build Host for Windows
 In case you are working on a Windows machine and still want to develop iOS applications, you will need a Mac as Remote Building host anywhere in your local network and connect it to Visual Studio.
@@ -88,35 +87,23 @@ First, make sure, that the Mac has Xamarin (in the exact same version as on Wind
 ### Remote iOS Simulator for Windows
 Here you can also select the **Remote iOS Simulator** on Windows. If you check this, the iOS Simulator from the Mac will be streamed to your Windows machine and you can test your app there.
 
-## Prepare for Windows development
-### UWP SDK and Emulators
-The Windows 10 (UWP) SDK has also be installed with Visual Studio. If you have not selected it while installing Visual Studio, follow the same process as above. Open the **Programs and Features** window, select **Visual Studio** and click <kbd>Change</kbd> to add new features.
-
-Here you can select the **Universal Windows App Development Tools** you want to install as well as **Emulators for mobile**. Remember, that you don't mandatory need Windows 10 Mobile Emulators, as you can run the same app package also in Windows 10 itself.
-
 ## Test your configuration
 To test you development environment, you can download the simple blank test app that is [attached to this module](./Setup%20Test%20App) and try to run it on all platforms you want to target. If you run in any errors, head over to the [Troubleshooting](../Troubleshooting) section and check if your problem can be resolved easily.
 
 1. Open the Solution by double-clicking on the `XamarinSetupTest.sln` file and wait until your IDE spins up.
-1. Right-click on the Solution name at the top of the folder structure and select <kbd>Restore NuGet Packages</kbd> to download the packages
-1. Wait until all packages have been restored
-1. Android
+2. Right-click on the Solution name at the top of the folder structure and select <kbd>Restore NuGet Packages</kbd> to download the packages
+3. Wait until all packages have been restored
+4. Android
 		1. Right-click the **XamarinSetupTest.Droid** project, select <kbd>Set as StartUp Project</kbd>
-		1. Make sure the Run settings at the top bar are **Debug**, (**Any CPU**) and a Android Emulator is selected
-		1. Click the green **Run** button
-		1. An Android Emulator should spin up and launch the app
-1. iOS
+		2. Make sure the Run settings at the top bar are **Debug**, (**Any CPU**) and a Android Emulator is selected
+		3. Click the green **Run** button
+		4. An Android Emulator should spin up and launch the app
+5. iOS
 		1. Only on Windows: Make sure that the Remote Mac Build Host is connected as shown above
-		1. Right-click the **XamarinSetupTest.iOS** project, select <kbd>Set as StartUp Project</kbd>
-		1. Make sure the Run settings at the top bar are **Debug**, **iPhone Simulator** and a iOS Simulator is selected
-		1. Click the green **Run** button
-		1. An iOS Simulator should spin up and launch the app
-1. Windows
-		1. Make sure you opened the Solution on Windows as OSX/macOS can not build Windows apps
-		1. Right-click the **XamarinSetupTest.UWP** project, select <kbd>Set as StartUp Project</kbd>
-		1. Make sure the Run settings at the top bar are **Debug**, **Any CPU** and **Local Machine** is selected
-		1. Click the green **Run** button
-		1. The app should be launched
+		2. Right-click the **XamarinSetupTest.iOS** project, select <kbd>Set as StartUp Project</kbd>
+		3. Make sure the Run settings at the top bar are **Debug**, **iPhone Simulator** and a iOS Simulator is selected
+		4. Click the green **Run** button
+		5. An iOS Simulator should spin up and launch the app
 
 ## Move on
-If this works for the platforms you want to target, you are ready to move on. This was the hardest part. Now you can discover the beautiful world of Xamarin!
+If this works for the platforms you want to target, you are ready to move on. This was the hardest part. Now you can discover the beautiful world of Xamarin and Azure! 
