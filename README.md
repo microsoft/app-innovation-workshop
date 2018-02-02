@@ -9,6 +9,15 @@ Welcome to the code repository for the Microsoft Mobile Cloud Workshop, which ai
 The project has been created to showcase a variety of technologies, both front end and back end. Its modular by design, so pick your technology of choice from the available branches.  
 
 # Mobile Apps
+
+## Build Status
+| iOS  | Android |
+| ------------- | ------------- |
+| [![Build status](https://build.appcenter.ms/v0.1/apps/364adcc6-160d-42c9-8bd4-f3b926584c38/branches/master/badge)](https://appcenter.ms)  | [![Build status](https://build.appcenter.ms/v0.1/apps/5865dd4d-0971-48b4-8755-598455ab8677/branches/master/badge)](https://appcenter.ms)  |
+
+
+
+
 ## Design
 <img src="https://github.com/MikeCodesDotNet/Mobile-Cloud-Workshop/blob/master/Resources/Design/Design%20Board.png" height="350">
 
