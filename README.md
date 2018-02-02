@@ -1,3 +1,7 @@
+
+<img src="https://github.com/MikeCodesDotNet/Mobile-Cloud-Workshop/blob/walkthrough/Resources/WelcomeBanner.png?raw=true">
+
+
 # Mobile Cloud Workshop
 
 Welcome to the code repository for the Microsoft Mobile Cloud Workshop, which aims to demonstrate the power of Azure for mobile apps. 
