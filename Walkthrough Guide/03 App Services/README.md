@@ -13,24 +13,24 @@ In this workshop, we’ll be deploying just one resource group to manage all of 
 ### 1.1 Create a new resource group 
 Navigate to the [portal.azure.com](portal.azure.com)and sign in with your MSDN credentials. 
 
-![](README/4C5B3FE7-BF9F-41C7-82E8-520E4AA88A93.png)
+![Azure Portal](https://github.com/MikeCodesDotNet/Mobile-Cloud-Workshop/blob/walkthrough/Walkthrough%20Guide/Misc/APS1.png?raw=true)
 Click on the ‘Create a Resource’ button. 
 <kbd>Create a Resource</kbd>
 
-![](README/76F9B56A-D1D9-45F1-A9CE-83F517A4024D.png)
+![](https://github.com/MikeCodesDotNet/Mobile-Cloud-Workshop/blob/walkthrough/Walkthrough%20Guide/Misc/APS2.png?raw=true)
 Search for ‘Web App’. 
 
-![](README/BA11E150-8799-49D0-9283-0C9525FE4522.png)
+![](https://github.com/MikeCodesDotNet/Mobile-Cloud-Workshop/blob/walkthrough/Walkthrough%20Guide/Misc/APS3.png?raw=true)
 Select <kbd>Web App</kbd> from the list of results. You’ll want to ensure that the category is ‘Web + Mobile’. 
 
-![](README/0CD81D08-7634-468E-AE77-884A9C5BE762.png)
+![](https://github.com/MikeCodesDotNet/Mobile-Cloud-Workshop/blob/walkthrough/Walkthrough%20Guide/Misc/APS4.png?raw=true)
 Click on the <kbd>Create</kbd> button. 
 
-![](README/FD333D70-5F22-439B-A0F4-B5D86C5B5EDF.png)
+![](https://github.com/MikeCodesDotNet/Mobile-Cloud-Workshop/blob/walkthrough/Walkthrough%20Guide/Misc/APS5.png?raw=true)
 
 
-![](README/2982C364-693D-454C-8055-DD012DFFE078.png)
+![](https://github.com/MikeCodesDotNet/Mobile-Cloud-Workshop/blob/walkthrough/Walkthrough%20Guide/Misc/APS6.png?raw=true)
 
-![](README/F1B767C2-CE9B-467A-B87A-FD1F65AC78E0.png)
+![](https://github.com/MikeCodesDotNet/Mobile-Cloud-Workshop/blob/walkthrough/Walkthrough%20Guide/Misc/APS7.png?raw=true)
 
 
