@@ -49,19 +49,17 @@ namespace ContosoFieldService.Services
             //Handle online/offline scenario
             if (!CrossConnectivity.Current.IsConnected && Barrel.Current.Exists(key))
             {
-                //If no connectivity, we'll turned the cached list. We wrap it in a Try/Catch as the barrel may not exist.
+                //If no connectivity, we'll return the cached jobs list.
                 return Barrel.Current.Get<List<Job>>(key);
             }
 
-            //Is the data too old?
+            //If the data isn't too old, we'll go ahead and return it rather than call the backend again.
             if (!Barrel.Current.IsExpired(key) && Barrel.Current.Exists(key))
             {
                 return Barrel.Current.Get<List<Job>>(key);
-            }
-       
-      
+            }            
 
-            //Create an instance of the Refit Reservice for the job interface.
+            //Create an instance of the Refit RestService for the job interface.
             var contosoMaintenanceApi = RestService.For<IJobServiceAPI>(Helpers.Constants.BaseUrl);
 
             //Use Polly to handle retrying (helps with bad connectivity) 
@@ -75,7 +73,7 @@ namespace ContosoFieldService.Services
                     sleepDurationProvider: retryAttempt => TimeSpan.FromSeconds(Math.Pow(2, retryAttempt))
                 ).ExecuteAsync(async () => await contosoMaintenanceApi.GetJobs());
 
-            //Save jobs into catch
+            //Save jobs into the cache
             Barrel.Current.Add(key: key, data: jobs, expireIn: TimeSpan.FromSeconds(5));
             return jobs;
         }
