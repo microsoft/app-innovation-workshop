@@ -13,6 +13,7 @@ We separate out each API from the API management service that we’ll be interac
 * [PhotoAPIService.cs](https://github.com/MikeCodesDotNet/Mobile-Cloud-Workshop/blob/master/Mobile/ContosoFieldService.Core/Services/PhotoAPIService.cs)
 	* _IPhotoServiceAPI_
 	* _PhotoAPIService_
+
 Each file contains two classes (we know this is bad practice, but keep with us 😏), where you can easily see how we’ve abstracted away our REST calls using a 3rd party package. 
 
 ## Refit
