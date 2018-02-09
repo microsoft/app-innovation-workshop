@@ -51,7 +51,7 @@ Adding fields is easy
 [Get("/job/{id}/")]
 Task<Job> GetJobById(string id);
 
-And we can do lots more.
+//And we can do lots more.
 [Post("/job/")]
 Task<Job> CreateJob([Body] Job job);
 
@@ -103,7 +103,7 @@ public async Task<Job> CreateJobAsync(Job job)
     return await contosoMaintenanceApi.CreateJob(job);
 }
 
-Get by ID
+//Get by ID
 public async Task<Job> GetJobByIdAsync(string id)
 {
     var contosoMaintenanceApi = RestService.For<IJobServiceAPI>(Helpers.Constants.BaseUrl);
