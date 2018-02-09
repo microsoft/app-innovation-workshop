@@ -26,7 +26,7 @@ Because we’re using Azure API Management, we have the ability to restrict acce
 
 
  ```cs
-Headers(Helpers.Constants.ApiManagementKey)]`
+[Headers(Helpers.Constants.ApiManagementKey)]`
 public interface IJobServiceAPI`
 {
 
