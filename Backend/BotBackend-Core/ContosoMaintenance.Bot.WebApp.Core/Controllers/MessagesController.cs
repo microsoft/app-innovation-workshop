@@ -1,36 +1,45 @@
-using System;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
-using System.Web.Http;
-
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.Bot.Connector;
-using Microsoft.Bot.Builder.Dialogs;
-using System.Web.Http.Description;
-using System.Net.Http;
-using System.Diagnostics;
+using Microsoft.Extensions.Configuration;
 
-namespace Microsoft.Bot.Sample.LuisBot
+namespace ContosoMaintenance.Bot.WebApp.Core.Controllers
 {
-    [BotAuthentication]
-    public class MessagesController : ApiController
+    [Produces("application/json")]
+    [Route("api/Messages")]
+    public class MessagesController : Controller
     {
-        /// <summary>
-        /// POST: api/Messages
-        /// receive a message from a user and send replies
-        /// </summary>
-        /// <param name="activity"></param>
-        [ResponseType(typeof(void))]
-        public virtual async Task<HttpResponseMessage> Post([FromBody] Activity activity)
+        //private IConfiguration configuration;
+        private MicrosoftAppCredentials appCredentials;
+
+        public MessagesController(IConfiguration configuration)
         {
-            // check if activity is of type message
+            //this.configuration = configuration;
+            appCredentials = new MicrosoftAppCredentials(configuration);
+        }
+        [Authorize(Roles = "Bot")]
+        [HttpPost]
+        public async Task<OkResult> Post([FromBody] Activity activity)
+        {
             if (activity.GetActivityType() == ActivityTypes.Message)
             {
-                await Conversations.SendAsync(activity, () => new BasicLuisDialog());
+                var connector = new ConnectorClient(new Uri(activity.ServiceUrl), appCredentials);
+                //connector.Conversations.SendToConversationAsync(activity, () => new BasicLuisDialog());
+                //await Conversation.SendAsync(activity, () => new BasicLuisDialog());
+                // return our reply to the user
+                var reply = activity.CreateReply("HelloWorld");
+                await connector.Conversations.ReplyToActivityAsync(reply);
             }
             else
             {
                 HandleSystemMessage(activity);
             }
-            return new HttpResponseMessage(System.Net.HttpStatusCode.Accepted);
+            return Ok();
         }
 
         private Activity HandleSystemMessage(Activity message)
