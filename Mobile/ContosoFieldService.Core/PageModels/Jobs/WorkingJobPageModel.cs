@@ -23,6 +23,8 @@ namespace ContosoFieldService.PageModels
         int increment;
 
 
+        public string Name { get; set; }
+        public string Details { get; set; }
         public string Duration { get; set; }
         public string Billable { get; set; }
         public bool CameraSupported { get => CrossMedia.Current.IsCameraAvailable ? true : false; }
@@ -31,8 +33,8 @@ namespace ContosoFieldService.PageModels
         {
             base.Init(initData);
             selectedJob = (Job)initData;
-
-
+            Name = selectedJob.Name;
+            Details = selectedJob.Details;
         }
 
         protected override async void ViewIsAppearing(object sender, EventArgs e)
@@ -48,6 +50,9 @@ namespace ContosoFieldService.PageModels
             timer.Enabled = true;
             timer.Elapsed += Timer_Elapsed;
             timer.Start();
+
+            selectedJob.Status = JobStatus.InProgress;
+            var updatedJob = await jobService.UpdateJob(selectedJob);
         }
 
         void Timer_Elapsed(object sender, ElapsedEventArgs e)
@@ -73,6 +78,7 @@ namespace ContosoFieldService.PageModels
                     //TODO: Show Loading indicators
                     selectedJob.Status = JobStatus.Complete;
                     var updatedJob = await jobService.UpdateJob(selectedJob);
+
 
                     await CoreMethods.PopPageModel(updatedJob, true, true);
                 });

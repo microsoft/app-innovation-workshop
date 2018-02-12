@@ -28,7 +28,7 @@
         x:Name="listView"
         AutomationId="listView"
         ItemsSource="{Binding Jobs}" 
-        BackgroundColor="{StaticResource BackgroundColor}" 
+        BackgroundColor="Transparent" 
         HasUnevenRows="true"
         IsGroupingEnabled="true"
         GroupDisplayBinding="{Binding Heading}"
@@ -39,13 +39,15 @@
         RefreshCommand="{Binding Refresh}">
         
         <ListView.Header>
-            <SearchBar 
-                x:Name="searchBar"
-                AutomationId="searchBar"
-                Style="{StaticResource SearchBarStyle}"
-                SearchCommand="{Binding Search}" 
-                Text="{Binding SearchText}"
-                Placeholder="Search" />
+            <Grid BackgroundColor="{DynamicResource BackgroundColorDark}">
+                <SearchBar 
+                    x:Name="searchBar"
+                    AutomationId="searchBar"
+                    Style="{StaticResource SearchBarStyle}"
+                    SearchCommand="{Binding Search}"
+                    Text="{Binding SearchText}"
+                    Placeholder="Search" />
+            </Grid>
         </ListView.Header>
         
         <ListView.ItemTemplate>
