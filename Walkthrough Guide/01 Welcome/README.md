@@ -4,7 +4,7 @@ Welcome to the Azure Mobile Workshop. Today you’re going to learn how to lever
 We’ve tried to make this app as production ready as possible and provide a good foundation for if you wish to pursue development in the future. Think of this as your development starter kit. Where we think theres area for improvement within the code base,you’ll find explanations about how to improve them. We've tried to pick non oppinionated frameworks to give you the flexibility to extend this app to fit your requirements. 
 
 
-## 1. Clone the source
+## 1. Clone the project to your development machine
 The entire solution is available to download from Github and licensed under MIT for use in your own projects. To clone the repository, head over to the [project on Github](https://github.com/MikeCodesDotNet/Mobile-Cloud-Workshop) and select "Clone or download". We'll opt to clone to a local directory. Alternatively, if you're unfamilair with GIT version control systems then you may wish to download the solution as a ZIP file. 
 
 ![Cloning Solution from GitHub](Assets/CloneGITRepository.gif)
