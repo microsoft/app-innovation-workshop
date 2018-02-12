@@ -1,3 +1,5 @@
+![Banner](Assets/Banner.png)
+
 # 1. Alternaitve Architecture Options 
 There are lots of ways for us to design the Azure backend service but for this workshop, we approached this project as a "greenfield / Bluesky" development. 
 
