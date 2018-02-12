@@ -20,7 +20,7 @@ The entire solution is available to download from Github and licensed under MIT 
 
 ## 2. Walkthrough Guides
 
-1. [Setup]()    
+1. [Setup](00_Setup/README.md)    
 ### Azure 
 2. [Architecture Options](02_Architecture_Options/README.md)
 3. [Web API & App Services](03_Web_API/README.md)
