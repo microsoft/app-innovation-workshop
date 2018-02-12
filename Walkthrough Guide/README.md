@@ -18,8 +18,26 @@ The entire solution is available to download from Github and licensed under MIT 
 
 ![Cloning Solution from GitHub](Assets/CloneGITRepository.gif)
 
+## 2. Walkthrough Guides
 
-## 2. Mobile App
+1. [Setup]()    
+### Azure 
+2. [Architecture Options](02_Architecture_Options/README.md)
+3. [Web API & App Services](03_Web_API/README.md)
+4. [Data Storage & Search](04_Data_Storage/README.md)
+5. [API Management]()
+6. [Functions & Cognitive Services]()
+### Mobile App
+7. [Overview]()
+8. [Network Services]()
+9. [Anayltics & Push]()
+10. [Chatbot]()
+11. [Authentication]()
+
+
+
+
+## 3. Mobile App
 The mobile app currently run on both iOS and Android devices. UWP, macOS and Linux support should technically also work but they're outside the scope of todays learnings. 
 
 ![iPhone App Design](Assets/AppDesign.png)
