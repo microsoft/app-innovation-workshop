@@ -1,10 +1,10 @@
 # App Service
 
-Azure App Service is Microsoft’s fully managed, highly scalable platform for hosting web, mobile and API apps built using .NET, Java, Ruby, Node.js, PHP and Python.
+Azure App Service is Microsoft’s fully managed, highly scalable platform for hosting web, mobile and API apps built using .NET, Java, Ruby, Node.js, PHP, and Python.
 
-As App Service is fully managed, we only need to worry about setting the maximum number of instances on which we want to run our backend app on. Microsoft will then manage the scaling and load balancing accross multiple instances to ensure your app preform well under heavy load. Microsoft manages the underlying compute infrastructurer required to run our code, as well as patching and updating the OS and Frameworks when required. 
+As App Service is fully managed, we only need to worry about setting the maximum number of instances on which we want to run our backend app on. Microsoft will then manage the scaling and load balancing across multiple instances to ensure your app perform well under heavy load. Microsoft manages the underlying compute infrastructure required to run our code, as well as patching and updating the OS and Frameworks when required. 
 
-Before we can deploy an App Service instance, we need to create a resource group to hold todays services. 
+Before we can deploy an App Service instance, we need to create a resource group to hold today's services. 
 
 ### 1.1 Resource Group
 
@@ -44,19 +44,19 @@ When you create an App Service plan in a certain region (for example, West Europ
 
 From within your new Resource Group, do the following: 
 * Click "Add" in the top bar. 
-* Search for "App Sercvice Plan"
+* Search for "App Service Plan"
 
  ![Search for App Service Plan](Assets/AddNewAppServicePlan.png)
 
  ![Create new App Service Plan](Assets/CreateNewAppServicePlan.png)
 
- The process for creating an App Service Plan is straight forward but you have a couple of decisions to make. The first decision is where is the service going to run. In a production environment, the correct answer would be "near your end user". In development, we'd want our app running "Close to the developers". You'll have lots of options for where to deploy the plan, so give some thought about where most requests will be coming from and pick a location that's as close as possible. 
+ The process for creating an App Service Plan is straightforward but you have a couple of decisions to make. The first decision is where is the service going to run. In a production environment, the correct answer would be "near your end user". In development, we'd want our app running "Close to the developers". You'll have lots of options for where to deploy the plan, so give some thought about where most requests will be coming from and pick a location that's as close as possible. 
 
  ![Create new App Service Plan](Assets/ConfigureAppServicePlan.png)
 
- The second decision you'll have to make is what to run the service on; also known as the Pricing tier. If you Click View all, you will see you have lots of choices. F1 Free and D1 Shared, for example, run on shared resources and are CPU limited. You should avoid these as the service will stop responding when you are over the CPU quota. That leaves Basic, Standard and Premium. Basic has no automatic scaling and can run up to 3 instances - perfect for development tasks. Standard and Premium both have automatic scaling, automatic backups, and large amounts of storage; they differ in features: the number of sites or instances you can run on them, for example. Finally, there is a number after the plan. This tells you how big the virtual machine is that the plan is running on. The numbers differ by number of cores and memory.
+ The second decision you'll have to make is what to run the service on; also known as the Pricing tier. If you Click View all, you will see you have lots of choices. F1 Free and D1 Shared, for example, run on shared resources and are CPU limited. You should avoid these as the service will stop responding when you are over the CPU quota. That leaves Basic, Standard, and Premium. Basic has no automatic scaling and can run up to 3 instances - perfect for development tasks. Standard and Premium both have automatic scaling, automatic backups, and large amounts of storage; they differ in features: the number of sites or instances you can run on them, for example. Finally, there is a number after the plan. This tells you how big the virtual machine is that the plan is running on. The numbers differ by the number of cores and memory.
 
-For our purposes, an B1 Basic site is enough to run this  workshop project. More complex development projects should use something in the Standard range of pricing plans. Production apps should be set up in Standard or Premium pricing plans.
+For our purposes, a B1 Basic site is enough to run this workshop project. More complex development projects should use something in the Standard range of pricing plans. Production apps should be set up in Standard or Premium pricing plans.
 
 Once you have created your app service plan and saved it, Click "Create".
 
@@ -65,7 +65,7 @@ The creation of the service can take a couple of minutes. You can monitor the pr
  ![Create new App Service Plan](Assets/CreateNewAppServicePlan.png)
  
 ### 1.4 Adding an App to our App Service
-Right now the App Service Plan doesn't contain any Apps. We will want at least one app for our ASP.NET Core 2.0 Web API service. To create this, lets navigate back to the Resource Group and clic "Add" again. This time, we'll be searching for a "Web API". 
+Right now the App Service Plan doesn't contain any Apps. We will want at least one app for our ASP.NET Core 2.0 Web API service. To create this, let's navigate back to the Resource Group and click "Add" again. This time, we'll be searching for a "Web API". 
 
  ![Create new App Service Plan](Assets/WebAPISearchResults.png)
 
@@ -87,7 +87,7 @@ You should see something similar to the image below:
  ![Create new App Service Plan](Assets/AppServiceDeployed.png)
 
 ### 1.5 Deploy your own apps to App Service
- Azure App Service has many options for how to deploy our code. These include continuous integration, that link to Visual Studio Team Services or GitHub, integrations with cloud storage providers like OneDrive and the venerable but trusty ftp mechanisms. If none of those suit you, you can publish right from Visual Studio. Below you can see how I publish using the built in Azure integrations in Visual Studio for macOS. You'll find the same is possible in Windows but the UI might be slightly different. 
+ Azure App Service has many options for how to deploy our code. These include continuous integration, that link to Visual Studio Team Services or GitHub, integrations with cloud storage providers like OneDrive and the venerable but trusty FTP mechanisms. If none of those suit you, you can publish right from Visual Studio. Below you can see how I publish using the built-in Azure integrations in Visual Studio for macOS. You'll find the same is possible in Windows but the UI might be slightly different. 
 
  ![Open the Web API Project in Visual Studio](Assets/VisualStudioMacWebApiProject.png)
 Navigate to **Build** > **Publish** > **Publish to Azure**
@@ -96,7 +96,7 @@ Navigate to **Build** > **Publish** > **Publish to Azure**
 After the app has been successfully published, you should be taken to the app using your default browser.
 ![Deployed API with no UI](Assets/DeployedWebAPI.png)
 
-We havn't created a user interface so you can expect to see an empty page, not dissimilar to the above. To test if the deployment is work and the app is accepting HTTP requests correctly, lets go ahead and navigate to the **/api/ping** endpoint. In my case, I'll use the following URL: 
+We haven't created a user interface so you can expect to see an empty page, not dissimilar to the above. To test if the deployment is work and the app is accepting HTTP requests correctly, let's go ahead and navigate to the **/api/ping** endpoint. In my case, I'll use the following URL: 
 
 http://myawesomestartupapi.azurewebsites.net/api/ping
 
