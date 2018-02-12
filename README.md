@@ -1,3 +1,7 @@
+
+<img src="https://github.com/MikeCodesDotNet/Mobile-Cloud-Workshop/blob/walkthrough/Resources/WelcomeBanner.png?raw=true">
+
+
 # Mobile Cloud Workshop
 
 Welcome to the code repository for the Microsoft Mobile Cloud Workshop, which aims to demonstrate the power of Azure for mobile apps. 
@@ -5,6 +9,15 @@ Welcome to the code repository for the Microsoft Mobile Cloud Workshop, which ai
 The project has been created to showcase a variety of technologies, both front end and back end. Its modular by design, so pick your technology of choice from the available branches.  
 
 # Mobile Apps
+
+## Build Status
+| iOS  | Android |
+| ------------- | ------------- |
+| [![Build status](https://build.appcenter.ms/v0.1/apps/364adcc6-160d-42c9-8bd4-f3b926584c38/branches/master/badge)](https://appcenter.ms)  | [![Build status](https://build.appcenter.ms/v0.1/apps/5865dd4d-0971-48b4-8755-598455ab8677/branches/master/badge)](https://appcenter.ms)  |
+
+
+
+
 ## Design
 <img src="https://github.com/MikeCodesDotNet/Mobile-Cloud-Workshop/blob/master/Resources/Design/Design%20Board.png" height="350">
 
@@ -70,3 +83,16 @@ Hosting a .NET 2.0 Web API project, the App Service orchestrates the backend ser
 
 # Support
 ## Where to find help
+* Email us at cloudworkshop-support@microsoft.com
+* Create Github issues and we'll respond as quickly as possible 
+* Ping us on [Slack](https://mobilecloudworkshop.slack.com)
+
+# Authors
+<img src="https://github.com/MikeCodesDotNet/Mobile-Cloud-Workshop/blob/walkthrough/Resources/authors.png?raw=true" height="100">
+
+| Mike James  | Robin-Manuel Thiel |
+| ----------- | ------------------ |
+| [Github](https://github.com/MikeCodesDotNet) |   [Github](https://github.com/robinmanuelthiel)|
+| [Blog](https://mikecodes.net) |   [Blog](https://pumpingco.de/) |
+
+
