@@ -1,4 +1,7 @@
 ![Banner](Assets/Banner.png)
 
-# Data Storage
+# Azure Fuctions
+
+
+# Cognitive Services
 
