@@ -4,7 +4,7 @@ Azure App Service is Microsoft’s fully managed, highly scalable platform for h
 
 As App Service is fully managed, we only need to worry about setting the maximum number of instances on which we want to run our backend app on. Microsoft will then manage the scaling and load balancing accross multiple instances to ensure your app preform well under heavy load. Microsoft manages the underlying compute infrastructurer required to run our code, as well as patching and updating the OS and Frameworks when required. 
 
-Before we can deploy an App Service instance, we need to create a resource
+Before we can deploy an App Service instance, we need to create a resource group to hold todays services. 
 
 ## 1. Create a Resource Group
 
@@ -12,28 +12,21 @@ Resource groups can be thought of as logical containers for your Azure Resources
 
 [Create new Resource Group](/Assets/CreateResourceGroup.png)
 
-In this workshop, we’ll be deploying just one resource group to manage all of our required services. We can create a resource group at the same time we deploy our first Ap Service.
-
-  
-
-### 1.1 Navigate to the Azure Portal
-
-Navigate to the [portal.azure.com](portal.azure.com) and sign in with your MSDN credentials.
- 
-![Azure Portal](https://github.com/MikeCodesDotNet/Mobile-Cloud-Workshop/blob/walkthrough/Walkthrough%20Guide/Misc/APS1.png?raw=true)
-
-
-### 1.2 Configure & Create Resource Group
+In this workshop, we’ll be deploying just one resource group to manage all of our required services. 
 
 Resource groups are great for grouping all the resources associated with a mobile application together. During development, it means you can delete all the resources in one operation. For production, it means you can see how much the service is costing you and how the resources are being used.
+
+Navigate to the [portal.azure.com](portal.azure.com) and sign in with your MSDN credentials.
 
 1. Click 'Resource Groups' in the top-left corner.
 2. Click 'Add' to bring up configuration pane. 
 3. Supply configuration data. Keep in mind its difficult to change resource group names later. 
 4. Click 'Create' and relax. 
 
+[Create new Resource Group](/Assets/EmptyResourceGroup.png)
 
-![](https://github.com/MikeCodesDotNet/Mobile-Cloud-Workshop/blob/walkthrough/Walkthrough%20Guide/Misc/APS3.png?raw=true)
+### 1.1 Configure & Create new resources
+
 
 Select <kbd>Web App</kbd> from the list of results. You’ll want to ensure that the category is ‘Web + Mobile’.
 
