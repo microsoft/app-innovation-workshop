@@ -64,7 +64,7 @@ The creation of the service can take a couple of minutes. You can monitor the pr
 
  ![Create new App Service Plan](Assets/CreateNewAppServicePlan.png)
  
-### 1.4 Adding an App to our App Service
+### 1.4 Adding an App to our App Service Plan
 Right now the App Service Plan doesn't contain any Apps. We will want at least one app for our ASP.NET Core 2.0 Web API service. To create this, let's navigate back to the Resource Group and click "Add" again. This time, we'll be searching for a "Web API". 
 
  ![Create new App Service Plan](Assets/WebAPISearchResults.png)
