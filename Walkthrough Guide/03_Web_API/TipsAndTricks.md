@@ -1,3 +1,5 @@
+![Banner](Assets/TipsTricks.png)
+
 
 # Tips & Tricks
 You've now deployed your first App Service instance! We'll now review some 'Pro tips' to help you get the most out of your Azure service. 
