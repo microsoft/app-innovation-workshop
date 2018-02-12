@@ -102,10 +102,10 @@ http://myawesomestartupapi.azurewebsites.net/api/ping
 
 ![Deployed API with no UI](Assets/AppServiceDeploymentTest.png)
 
-
 ## Next Steps
 [Data Storage](../04_Data_Storage/README.md)
 
+---
 ### Further Reading
 * [Tips & Tricks](TipsAndTricks.md)
-* [Documentation](https://docs.microsoft.com/en-us/azure/app-service/)
+* [Offical Documentation](https://docs.microsoft.com/en-us/azure/app-service/)
