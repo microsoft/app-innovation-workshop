@@ -6,15 +6,15 @@ As App Service is fully managed, we only need to worry about setting the maximum
 
 Before we can deploy an App Service instance, we need to create a resource group to hold todays services. 
 
-## 1. Create a Resource Group
+### 1.1 Create a Resource Group
 
 Resource groups can be thought of as logical containers for your Azure Resources. You may wish to create separate resource groups per location, or alternatively, you may wish to have one resource group per project.
-
-![Create new Resource Group](Assets/CreateResourceGroup.png)
 
 In this workshop, we’ll be deploying just one resource group to manage all of our required services. 
 
 Resource groups are great for grouping all the resources associated with a mobile application together. During development, it means you can delete all the resources in one operation. For production, it means you can see how much the service is costing you and how the resources are being used.
+
+![Create new Resource Group](Assets/CreateResourceGroup.png)
 
 Navigate to the [portal.azure.com](portal.azure.com) and sign in with your MSDN credentials.
 
@@ -23,34 +23,33 @@ Navigate to the [portal.azure.com](portal.azure.com) and sign in with your MSDN 
 3. Supply configuration data. Keep in mind its difficult to change resource group names later. 
 4. Click 'Create' and relax. 
 
+Navigate to the newly created Resource Group.
+
 ![Create new Resource Group](Assets/EmptyResourceGroup.png)
 
-### 1.1 Configure & Create new resources
+### 1.2 Create a App Service Plan
 
+From within your new Resource Group, do the following: 
+* Click "Add" in the top bar. 
+* Search for "App Sercvice Plan"
 
-Select <kbd>Web App</kbd> from the list of results. You’ll want to ensure that the category is ‘Web + Mobile’.
+ ![Search for App Service Plan](Assets/AddNewAppServicePlan.png)
 
+ ![Create new App Service Plan](Assets/CreateNewAppServicePlan.png)
 
+ The process for creating an App Service Plan is straight forward but you have a couple of decisions to make. The first decision is where is the service going to run. In a production environment, the correct answer would be "near your end user". In development, we'd want our app running "Close to the developers". You'll have lots of options for where to deploy the plan, so give some thought about where most requests will be coming from and pick a location that's as close as possible. 
 
-![](https://github.com/MikeCodesDotNet/Mobile-Cloud-Workshop/blob/walkthrough/Walkthrough%20Guide/Misc/RSG1.png?raw=true)
+ ![Create new App Service Plan](Assets/ConfigureAppServicePlan.png)
 
-Click on the <kbd>Create</kbd> button.
+ The second decision you'll have to make is what to run the service on; also known as the Pricing tier. If you Click View all, you will see you have lots of choices. F1 Free and D1 Shared, for example, run on shared resources and are CPU limited. You should avoid these as the service will stop responding when you are over the CPU quota. That leaves Basic, Standard and Premium. Basic has no automatic scaling and can run up to 3 instances - perfect for development tasks. Standard and Premium both have automatic scaling, automatic backups, and large amounts of storage; they differ in features: the number of sites or instances you can run on them, for example. Finally, there is a number after the plan. This tells you how big the virtual machine is that the plan is running on. The numbers differ by number of cores and memory.
 
+For our purposes, an B1 Basic site is enough to run this  workshop project. More complex development projects should use something in the Standard range of pricing plans. Production apps should be set up in Standard or Premium pricing plans.
 
-### 1.3 Configure new App Service 
+Once you have created your app service plan and saved it, Click "Create".
 
-![](https://github.com/MikeCodesDotNet/Mobile-Cloud-Workshop/blob/walkthrough/Walkthrough%20Guide/Misc/APS5.png?raw=true)
+The creation of the service can take a couple of minutes. You can monitor the process of deployment by clicking on the Notifications icon. This is in the top bar on the right-hand side and looks like a Bell. Clicking on a specific notification will provide more information about the activity. 
 
-####   Basic configuration
-* **App Name** - This must be unique 
-* **Subscription** - Select your Azure subscription or 'Pay as you go'.
-* **Resource Group** - We'll want to create a new resource group. Its name isn't important. 
-* **OS** - Select Windows. 
-* **App Service Plan** - Create a new App Service Plan if non exist.  
-* **App Insights** - You should set this to 'No'. 
-
-Click <kbd>Create</kbd>
-
+ ![Create new App Service Plan](Assets/CreateNewAppServicePlan.png)
 
 ### 1.4 Validate Successful Deployment
 
