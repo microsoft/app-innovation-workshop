@@ -38,3 +38,25 @@ You have a successful application running on an App Service Plan and you have a 
 Some applications need to warm up before they can safely handle production load—for example, if your application needs to load data into cache, or for a .NET application to allow the .NET runtime to JIT your assemblies. In this case, you’ll also want to use application slots to warm up your application prior to swapping it into production.
 
 We often see customers having a pre-production slot that’s used to both test and warm up the application. You can use Continuous Deployment tools such as Visual Studio Release Manager to set up a pipeline for your code to get deployed into pre-production slots, run test for verification and warm all required paths in your app prior to swapping it into production.
+
+## Public Virtual IP Address
+By default, there’s a single public VIP for all inbound HTTP traffic. Any app is addressable to a single VIP. If you have an app on App Service, try running nslookup command and see the result. Here’s an example:
+
+```
+» nslookup myawesomestartupapi.azurewebsites.net 
+Server:		2001:4898::1050:1050
+Address:	2001:4898::1050:1050#53
+
+Non-authoritative answer:
+myawesomestartupapi.azurewebsites.net	canonical name = waws-prod-ln1-013.vip.azurewebsites.windows.net.
+waws-prod-ln1-013.vip.azurewebsites.windows.net	canonical name = waws-prod-ln1-013.cloudapp.net.
+Name:	waws-prod-ln1-013.cloudapp.net
+Address: 51.140.59.233
+```
+
+You’ll notice that an App Service scale unit is deployed on Azure Cloud Service (by the cloudapp.net suffix). WAWS stands for Windows Azure (when Azure was still called Windows) Web sites (the original name of App Service).
+
+## Output Virtual IPs
+Most likely your application is connected to other Azure and non-Azure services. As such, your application makes outbound network calls to endpoints not on the scale unit of your application. This includes calling out to Azure services such as SQL Database and Azure Storage. There are up to five VIPs (the one public VIP and four outbound dedicated VIPs) used for outbound communication. You can’t choose which VIP your app uses, and all outbound calls from all apps in scale unit are using the five allocated VIPs. If your application uses a service that requires you to whitelist IPs that are allowed to make API calls into such a service, you’ll need to register all five VIPs of the scale unit. To view which IPs are allocated to outbound VIPs for a given unit of scale (or for your app from your perspective) go to the Azure portal, as shown in the below image. 
+
+ ![Create new App Service Plan](Assets/OutputVIP.png)
