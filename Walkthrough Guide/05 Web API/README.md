@@ -2,15 +2,9 @@
 
 Azure App Service is Microsoft’s fully managed, highly scalable platform for hosting web, mobile and API apps built using .NET, Java, Ruby, Node.js, PHP and Python.
 
-  
-
-Using App Service, we have host our apps backend APIs in an environment which allows for easy configuration of load balancing, backups, SSO and more.
-
-  
+As App Service is fully managed, we only need to worry about setting the maximum number of instances on which we want to run our backend app on. Microsoft will then manage the scaling and load balancing accross multiple instances to ensure your app preform well under heavy load. Microsoft manages the underlying compute infrastructurer required to run our code, as well as patching and updating the OS and Frameworks when required. 
 
 Before we can deploy an App Service instance, we need to create a resource
-
-  
 
 ## 1. Create a Resource Group
 
@@ -78,4 +72,27 @@ Once the App Service has been deployed, you'll recieve a notification within the
 Navigate in your browser to the URL provided in the Overview panel above. If the deployment was successful, you should see something similair to the above screenshot.  
 
 ## 2. Configuring App Service
+
+
+
+
+
+
+# Less than obvious best pratices 
+You've now deployed your first App Service instance! We'll now review some 'Pro tips' to help you get the most out of your Azure service. 
+
+## Controlling Density 
+
+Most users will have a low number (usually less than 10) applications per App Service Plan. In scenarios where you expect you'll be running many more applications, its important to prevent over saturating the underlying compute capacity. 
+
+Lets imagine that we've deployed one instance of our admin web portal and two instances of our mobile web API to the same App Service Plan. By default, all apps contained in a given App Service Plan will run on all the available compute resources (servers) allocated. If we only havea single server in our App Service Plan, we'll find that this single server will run all our avaiaible applications. Alternatively, if we scale out the App Service Plan to run on two servers, we'll run all three applications on both servers. 
+
+This approach is absoutly fine if you find that your apps are using approximatly the same amount of compute resources. If this isn't the case then you may find that one app is consuming the lions share of compute resources, thus degrading the entire system performance. In our case, the mobile API will likely drive significant consumption of server resources, so we need to mitigates its effects on the performance of the admin portal. 
+
+To do this, what we can do is move lower-volume applications (such as the portal) into a single App Service Plan running on a single compute resource. 
+
+Place high demand apps into an App Service Plan which is configured to auto-scale based on CPU and memory utilization. 
+
+
+
 
