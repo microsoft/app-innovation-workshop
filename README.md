@@ -1,6 +1,5 @@
 
-<img src="https://github.com/MikeCodesDotNet/Mobile-Cloud-Workshop/blob/walkthrough/Resources/WelcomeBanner.png?raw=true">
-
+![Banner](Resources/WelcomeBanner.png)
 
 # Mobile Cloud Workshop
 
@@ -19,7 +18,7 @@ The project has been created to showcase a variety of technologies, both front e
 
 
 ## Design
-<img src="https://github.com/MikeCodesDotNet/Mobile-Cloud-Workshop/blob/master/Resources/Design/Design%20Board.png" height="350">
+<img src="Resources/Design/Design%20Board.png" height="350">
 
 
 
@@ -88,7 +87,7 @@ Hosting a .NET 2.0 Web API project, the App Service orchestrates the backend ser
 * Ping us on [Slack](https://mobilecloudworkshop.slack.com)
 
 # Authors
-<img src="https://github.com/MikeCodesDotNet/Mobile-Cloud-Workshop/blob/walkthrough/Resources/authors.png?raw=true" height="100">
+<img src="Resources/authors.png?raw=true" height="100">
 
 | Mike James  | Robin-Manuel Thiel |
 | ----------- | ------------------ |
