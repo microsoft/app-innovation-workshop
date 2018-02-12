@@ -112,6 +112,10 @@ http://myawesomestartupapi.azurewebsites.net/api/ping
 ![Deployed API with no UI](Assets/AppServiceDeploymentTest.png)
 This shows that the backend is responding as expected! Before we move onto deploying storage services, you might want to read some tips and tricks for running App Services like a pro. 
 
+## Next Steps
+[Data Storage](../04_Data_Storage/README.md)
+
+
 ---
 
 ![Banner](Assets/TipsTricks.png)
@@ -208,9 +212,6 @@ The likelihood of running into this problem can be substantially mitigated with 
 * For .NET applications making outbound HTTP/HTTPS calls, pool and reuse instances of System.Net.Http.HttpClient or use Keep-alive connections with System.Net.HttpWebRequest. 
 
 - Tips and Tricks Source: [MSDN](https://msdn.microsoft.com/en-us/magazine/mt793270.aspx)
-
-## Next Steps
-[Data Storage](../04_Data_Storage/README.md)
 
 ---
 ### Further Reading
