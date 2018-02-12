@@ -65,11 +65,12 @@ From within your new Resource Group, do the following:
 For this workshop, a B1 Basic site will be more than enough to run this  project. More complex development projects should use something in the Standard range of pricing plans. Production apps should be set up in Standard or Premium pricing plans. 
 
 Once you have created your app service plan and saved it, Click "Create".
+ 
+ ![Create new App Service Plan](Assets/CreateNewAppServicePlan.png)
+ 
 
 The deployment of the new service can take a few minutes but you can watch its progress in the "Bell" notification area in the toolbar. 
 
- ![Create new App Service Plan](Assets/CreateNewAppServicePlan.png)
- 
 ### 1.4 Adding an App to our App Service Plan
 Right now the App Service Plan doesn't contain any Apps. We will want at least one app for our ASP.NET Core 2.0 Web API service. To create this, let's navigate back to the Resource Group and click "Add" again. This time, we'll be searching for a "Web API". 
 
