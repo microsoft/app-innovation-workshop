@@ -87,9 +87,20 @@ You should see something similar to the image below:
  ![Create new App Service Plan](Assets/AppServiceDeployed.png)
 
 ### 1.5 Deploy your own apps to App Service
- Azure App Service has many options for how to deploy our code. These include continuous integration, that link to Visual Studio Team Services or GitHub, integrations with cloud storage providers like OneDrive and the venerable but trusty ftp mechanisms. If none of those suit you, you can publish right from Visual Studio. 
+ Azure App Service has many options for how to deploy our code. These include continuous integration, that link to Visual Studio Team Services or GitHub, integrations with cloud storage providers like OneDrive and the venerable but trusty ftp mechanisms. If none of those suit you, you can publish right from Visual Studio. Below you can see how I publish using the built in Azure integrations in Visual Studio for macOS. You'll find the same is possible in Windows but the UI might be slightly different. 
 
+ ![Open the Web API Project in Visual Studio](Assets/VisualStudioMacWebApiProject.png)
+Navigate to **Build** > **Publish** > **Publish to Azure**
+ ![Open the Web API Project in Visual Studio](Assets/VS4MacAppServicePublish.png)
 
+After the app has been successfully published, you should be taken to the app using your default browser.
+![Deployed API with no UI](Assets/DeployedWebAPI.png)
+
+We havn't created a user interface so you can expect to see an empty page, not dissimilar to the above. To test if the deployment is work and the app is accepting HTTP requests correctly, lets go ahead and navigate to the **/api/ping** endpoint. In my case, I'll use the following URL: 
+
+http://myawesomestartupapi.azurewebsites.net/api/ping
+
+![Deployed API with no UI](Assets/AppServiceDeploymentTest.png)
 
 
 ---
