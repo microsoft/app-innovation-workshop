@@ -29,10 +29,10 @@ The entire solution is available to download from Github and licensed under MIT 
 6. [Functions & Cognitive Services]()
 ### Mobile App
 7. [Overview](07_Mobile_Overview/README.md)
-8. [Network Services](08_Mobie_Netowkr_Services/README.md)
+8. [Network Services](08_Mobie_Network_Services/README.md)
 9. [Anayltics & Push]()
 10. [Chatbot]()
-11. [Authentication](11_Authenitication/README.md)
+11. [Authentication](11_Authentication/README.md)
 
 
 
