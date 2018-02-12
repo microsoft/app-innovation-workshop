@@ -31,7 +31,10 @@ The backend architecture uses many Azure Services to handle things like authoris
 
 ![Architecture Design](Assets/Architecture.png)
 
-# Start Building your own version
+## Next Steps
+[Architectures Overview](03WebAPI/README.md)
+
+##  Start Building your own version
 * [Project Spec](Project-Spec.md)
 * [Alternative Azure Architectures]()
 * [Deploy your first Azure Resource]()
