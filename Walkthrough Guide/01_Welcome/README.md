@@ -32,7 +32,7 @@ The backend architecture uses many Azure Services to handle things like authoris
 ![Architecture Design](Assets/Architecture.png)
 
 ## Next Steps
-[Architectures Overview](03WebAPI/README.md)
+[Architectures Overview](../03_Web_API/README.md)
 
 ##  Start Building your own version
 * [Project Spec](Project-Spec.md)
