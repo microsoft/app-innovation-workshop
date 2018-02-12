@@ -38,7 +38,7 @@
                     x:Name="lblBillable"
                     AutomationId="lblBillable"
                     Text="{Binding Billable}" 
-                    TextColor="#4A90E2" 
+                    TextColor="White" 
                     FontAttributes="Bold" 
                     HorizontalTextAlignment="Center">
                 </Label>
@@ -49,7 +49,7 @@
                 x:Name="btnQuickBreak"
                 AutomationId="btnQuickBreak"
                 Style="{StaticResource FullWidthButtonStyle}"
-                BackgroundColor="{StaticResource AccentColorDarkOrange}" 
+                BackgroundColor="{DynamicResource AccentColorDarkOrange}" 
                 Text="Quick Break"
                 Command="{Binding QuickBreakClicked}" />
 
@@ -60,7 +60,7 @@
                 <!-- Overview -->
                 <StackLayout  Spacing="{StaticResource DefaultMargin}">
                     <Label 
-                        Style="{StaticResource SectionHaderLabelStyle}"
+                        Style="{DynamicResource SectionHaderLabelStyle}"
                         Text="Overview" />
 
                     <!-- Job Name -->
@@ -68,11 +68,11 @@
                         <Label 
                             x:Name="lblJobName"
                             AutomationId="lblJobName"
-                            Style="{StaticResource PropertyLabelStyle}"
+                            Style="{DynamicResource PropertyLabelStyle}"
                             Text="{Binding Name}" />
 
                         <Label 
-                            Style="{StaticResource PropertyFooterLabelStyle}"
+                            Style="{DynamicResource PropertyFooterLabelStyle}"
                             Text="Job Name" />
                     </StackLayout>
 
@@ -81,11 +81,11 @@
                         <Label 
                             x:Name="lblEstimatedDuration"
                             AutomationId="lblEstimatedDuration"
-                            Style="{StaticResource PropertyLabelStyle}"
+                            Style="{DynamicResource PropertyLabelStyle}"
                             Text="2 hours" />
 
                         <Label 
-                            Style="{StaticResource PropertyFooterLabelStyle}"
+                            Style="{DynamicResource PropertyFooterLabelStyle}"
                             Text="Estimated Duration" />
                     </StackLayout>
                 </StackLayout>
@@ -96,14 +96,14 @@
                 <!-- Details -->
                 <StackLayout  Spacing="{StaticResource DefaultMargin}">
                     <Label 
-                        Style="{StaticResource SectionHaderLabelStyle}"
+                        Style="{DynamicResource SectionHaderLabelStyle}"
                         Text="Details" />
 
                     <!-- Details Text -->
                     <Label
                         x:Name="lblDetailsTitle"
                         AutomationId="lblDetailsTitle"
-                        Style="{StaticResource RegularLabelStyle}"
+                        Style="{DynamicResource RegularLabelStyle}"
                         Text="{Binding Details}" />
                 </StackLayout>
             </StackLayout>

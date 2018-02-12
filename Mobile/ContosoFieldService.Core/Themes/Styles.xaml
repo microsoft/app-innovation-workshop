@@ -55,7 +55,7 @@
         <Setter Property="FontFamily" Value="{DynamicResource FontFamilyRegular}" />
         <Setter Property="BackgroundColor" Value="{DynamicResource SearchBarBackgroundColor}" />
         <Setter Property="HeightRequest" Value="70" />
-    </Style>  
+    </Style>
 
     <Style x:Key="DatePickerStyle" TargetType="DatePicker">
         <Setter Property="TextColor" Value="{DynamicResource TextColor}" />

@@ -27,13 +27,16 @@ namespace ContosoFieldService
             // while Android uses a Navigation Drawer (Hamburger Menu)
             if (Xamarin.Forms.Device.RuntimePlatform == Xamarin.Forms.Device.iOS)
             {
-                var tabbedNavigation = new FreshTabbedNavigationContainer("authed");
+                // Create tabbed navigation for iOS
+                // Tab Bar Color is set in AppDelegate.cs within the iOS project
+                var tabbedNavigation = new FreshTabbedFONavigationContainer("Contoso");
+                tabbedNavigation.BarBackgroundColor = (Color)Current.Resources["BackgroundColorDark"];
+                tabbedNavigation.BarTextColor = (Color)Current.Resources["AccentColor"];
+
+                // Add first level navigationpages as tabs
                 tabbedNavigation.AddTab<JobsPageModel>("Jobs", "icon_jobs.png");
                 tabbedNavigation.AddTab<PartsPageModel>("Parts", "icon_parts.png");
                 tabbedNavigation.AddTab<ProfilePageModel>("Me", "icon_user.png");
-                tabbedNavigation.BarBackgroundColor = Color.FromHex("#222E38");
-                tabbedNavigation.BarTextColor = Color.White;
-                tabbedNavigation.BackgroundColor = Color.FromHex("#222E38");
                 MainPage = tabbedNavigation;
             }
             else
@@ -45,12 +48,12 @@ namespace ContosoFieldService
                 navContainer.AddPage<ProfilePageModel>("Me");
                 MainPage = navContainer;
             }
+
+
         }
 
         protected override void OnStart()
         {
-            // Handle when your app starts
-
             // Only start Visual Studio App Center when running in a real-world scenario
             // which means on a physical device in Release mode and not in a Test cloud
             // to make sure we have real insights in Visual Studio App Center
@@ -63,6 +66,8 @@ namespace ContosoFieldService
                     Helpers.Constants.AppCenterAndroidKey,
                     typeof(Analytics), typeof(Crashes), typeof(Push));
             }
+
+            // Handle when your app starts
         }
 
         protected override void OnSleep()

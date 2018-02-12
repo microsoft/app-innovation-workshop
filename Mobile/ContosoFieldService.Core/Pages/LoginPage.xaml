@@ -8,7 +8,7 @@
     BackgroundColor="{StaticResource BackgroundColor}"
     Title="Login">
 
-    <StackLayout Margin="0,80,0,10" Spacing="0">
+    <StackLayout VerticalOptions="Center" Margin="0,-200,0,0" Spacing="0">
         <StackLayout 
             Spacing="0"
             Padding="{StaticResource DefaultThickness}">

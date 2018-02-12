@@ -18,28 +18,14 @@ namespace ContosoFieldService.PageModels
 
         public bool IsRefreshing
         {
-            get
-            {
-                return isRefreshing;
-            }
-            set
-            {
-                isRefreshing = value;
-                RaisePropertyChanged();
-            }
+            get { return isRefreshing; }
+            set { isRefreshing = value; RaisePropertyChanged(); }
         }
 
         public bool IsLoading
         {
-            get
-            {
-                return isLoading;
-            }
-            set
-            {
-                isLoading = value;
-                RaisePropertyChanged();
-            }
+            get { return isLoading; }
+            set { isLoading = value; RaisePropertyChanged(); }
         }
 
         string searchText;
@@ -124,7 +110,7 @@ namespace ContosoFieldService.PageModels
             {
                 return new Command(async () =>
                 {
-                    await CoreMethods.PushPageModel<CreateNewJobPageModel>(null, true, true);
+                    await CoreMethods.PushPageModel<CreateNewJobPageModel>(null, false, true);
                 });
             }
         }
@@ -146,7 +132,7 @@ namespace ContosoFieldService.PageModels
                 await CoreMethods.PushPageModel<LoginPageModel>(null, true, true);
 
 
-            await ReloadData(Jobs.Any());
+            await ReloadData(true);
         }
 
         protected override async void ViewIsDisappearing(object sender, EventArgs e)
@@ -168,7 +154,6 @@ namespace ContosoFieldService.PageModels
         /// Reloads the data.
         /// </summary>
         /// <returns>The data.</returns>
-        /// <param name="force">If set to <c>false</c> no new data from the server will be fetched and only local data will be regrouped.</param>
         /// <param name="isSilent">If set to <c>true</c> is silent.</param>
         async Task ReloadData(bool isSilent = false)
         {
