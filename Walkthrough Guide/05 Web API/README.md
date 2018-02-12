@@ -14,7 +14,7 @@ In this workshop, we’ll be deploying just one resource group to manage all of 
 
 Resource groups are great for grouping all the resources associated with a mobile application together. During development, it means you can delete all the resources in one operation. For production, it means you can see how much the service is costing you and how the resources are being used.
 
-#### 1.1.1 Create Resource Group
+### 1.2 Create Resource Group
 ![Create new Resource Group](Assets/CreateResourceGroup.png)
 
 Navigate to the [portal.azure.com](portal.azure.com) and sign in with your MSDN credentials.
@@ -28,9 +28,9 @@ Navigate to the newly created Resource Group.
 
 ![Create new Resource Group](Assets/EmptyResourceGroup.png)
 
-### 1.2 App Service Plan
+### 1.3 App Service Plan
 
-#### 1.2.1 Overview 
+#### 1.3.1 Overview 
 In App Service, an app runs in an App Service plan. An App Service plan defines a set of compute resources for a web app to run. These compute resources are analogous to the server farm in conventional web hosting. One or more apps can be configured to run on the same computing resources (or in the same App Service plan).
 
 When you create an App Service plan in a certain region (for example, West Europe), a set of compute resources is created for that plan in that region. Whatever apps you put into this App Service plan run on these compute resources as defined by your App Service plan. Each App Service plan defines:
@@ -40,7 +40,7 @@ When you create an App Service plan in a certain region (for example, West Europ
 * **Size of VM instances** (Small, Medium, Large)
 * **Pricing tier** (Free, Shared, Basic, Standard, Premium, PremiumV2, Isolated, Consumption)
 
-#### 1.2.2 Create App Service Plan
+#### 1.3.2 Create App Service Plan
 
 From within your new Resource Group, do the following: 
 * Click "Add" in the top bar. 
@@ -64,7 +64,7 @@ The creation of the service can take a couple of minutes. You can monitor the pr
 
  ![Create new App Service Plan](Assets/CreateNewAppServicePlan.png)
  
-### 1.3 Adding an App to our App Service
+### 1.4 Adding an App to our App Service
 Right now the App Service Plan doesn't contain any Apps. We will want at least one app for our ASP.NET Core 2.0 Web API service. To create this, lets navigate back to the Resource Group and clic "Add" again. This time, we'll be searching for a "Web API". 
 
  ![Create new App Service Plan](Assets/WebAPISearchResults.png)
@@ -86,7 +86,13 @@ You should see something similar to the image below:
 
  ![Create new App Service Plan](Assets/AppServiceDeployed.png)
 
+### 1.5 Deploy your own apps to App Service
+ Azure App Service has many options for how to deploy our code. These include continuous integration, that link to Visual Studio Team Services or GitHub, integrations with cloud storage providers like OneDrive and the venerable but trusty ftp mechanisms. If none of those suit you, you can publish right from Visual Studio. 
 
+
+
+
+---
 # Less than obvious best pratices 
 You've now deployed your first App Service instance! We'll now review some 'Pro tips' to help you get the most out of your Azure service. 
 
