@@ -10,7 +10,7 @@ Before we can deploy an App Service instance, we need to create a resource
 
 Resource groups can be thought of as logical containers for your Azure Resources. You may wish to create separate resource groups per location, or alternatively, you may wish to have one resource group per project.
 
-  
+[Create new Resource Group](/Assets/CreateResourceGroup.png)
 
 In this workshop, we’ll be deploying just one resource group to manage all of our required services. We can create a resource group at the same time we deploy our first Ap Service.
 
