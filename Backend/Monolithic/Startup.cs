@@ -1,5 +1,4 @@
-﻿using ContosoMaintenance.WebAPI.Models;
-using ContosoMaintenance.WebAPI.Services;
+﻿using ContosoMaintenance.WebAPI.Services;
 using ContosoMaintenance.WebAPI.Services.BlobStorage;
 using ContosoMaintenance.WebAPI.Services.StorageQueue;
 
