@@ -1,4 +1,4 @@
-![Banner](Asssets/Banner.png)
+![Banner](Assets/Banner.png)
 
 # 1. Welcome  
 Welcome to the Azure Mobile Workshop. Today you’re going to learn how to leverage your existing skills to build highly reliable backend systems to power a modern cross platform mobile app built using Xamarin.Forms. 

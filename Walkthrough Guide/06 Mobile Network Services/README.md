@@ -1,3 +1,5 @@
+![Banner](Assets/Banner.png)
+
 # Mobile App Network Services 
 Our mobile app connects to our Azure API Management sending HTTP requests to remote services to request resources. The implementation within this demo is very lightweight and designed for use in a POC rather than a production app. If you’d like to see a more resilient approach to building networking services then check out the “resilient networking” branch. Here we’ve implemented a [data caching and a request retry policy](https://github.com/MikeCodesDotNet/Mobile-Cloud-Workshop/blob/b4833120d9ceb70abb8753581f133f3467665edd/Mobile/ContosoFieldService.Core/Services/JobsAPIService.cs#L45), which exponentially delays retry attempts.  We’ll cover this in more detail later, but for our standard app, we’re using an MVP approach. 
 

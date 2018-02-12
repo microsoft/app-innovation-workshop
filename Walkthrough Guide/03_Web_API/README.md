@@ -1,3 +1,5 @@
+![Banner](Assets/Banner.png)
+
 # App Service
 
 Azure App Service is Microsoft’s fully managed, highly scalable platform for hosting web, mobile and API apps built using .NET, Java, Ruby, Node.js, PHP, and Python.
