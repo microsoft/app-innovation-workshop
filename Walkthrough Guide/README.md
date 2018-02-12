@@ -25,13 +25,13 @@ The entire solution is available to download from Github and licensed under MIT 
 2. [Architecture Options](02_Architecture_Options/README.md)
 3. [Web API & App Services](03_Web_API/README.md)
 4. [Data Storage & Search](04_Data_Storage/README.md)
-5. [API Management]()
-6. [Functions & Cognitive Services]()
+5. [API Management](05_API_Management/README.md)
+6. [Functions & Cognitive Services](06_Functions_Cognitive_Services/README.md)
 ### Mobile App
 7. [Overview](07_Mobile_Overview/README.md)
 8. [Network Services](08_Mobile_Network_Services/README.md)
-9. [Anayltics & Push]()
-10. [Chatbot]()
+9. [Anayltics & Push](09_Anayltics_Push/README.md)
+10. [Chatbot](10_Chatbot/README.md)
 11. [Authentication](11_Authentication/README.md)
 
 
