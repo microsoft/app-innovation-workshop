@@ -19,5 +19,5 @@ At the end of the process, a cryptographically signed token is minted. This toke
 ### Server Side vs. Client Side
 There are two types of authentication flow: Server-flow and Client-flow. They are so named because of who controls the flow of the actual authentication.
 
-
+![AuthFlow](Assets/AuthFlow.png)
 
