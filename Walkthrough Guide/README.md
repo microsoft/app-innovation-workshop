@@ -28,25 +28,17 @@ The entire solution is available to download from Github and licensed under MIT 
 5. [API Management]()
 6. [Functions & Cognitive Services]()
 ### Mobile App
-7. [Overview]()
-8. [Network Services]()
+7. [Overview](07_Mobile_Overview/README.md)
+8. [Network Services](08_Mobie_Netowkr_Services/README.md)
 9. [Anayltics & Push]()
 10. [Chatbot]()
-11. [Authentication]()
+11. [Authentication](11_Authenitication/README.md)
 
 
 
 
 ## 3. Mobile App
-The mobile app currently run on both iOS and Android devices. UWP, macOS and Linux support should technically also work but they're outside the scope of todays learnings. 
 
-![iPhone App Design](Assets/AppDesign.png)
-
-### 2.1 Development SDK
-The apps have been built with Xamarin.Forms targetting .NET Standard 2.0. You should find all your favourite .NET libraries will work with the both the backend (also targeting .NET Standard 2.0) and the mobile apps.  
-
-### 2.2 Mvvm with FreshMvvm
-We opted to use [FreshMvvm](https://github.com/rid00z/FreshMvvm) as our Mvvm library due to its small size and flexibility. Its specifically designed for Xamarin.Forms and offers lots of helpful extensions around navigation which we make full use of. 
 
 ## 3. Azure Architecture 
 The backend architecture uses many Azure Services to handle things like authorisation, orchrestation, data storage, AI and anayltics. A high-level overview of the backend architecture cab be seen below. 
