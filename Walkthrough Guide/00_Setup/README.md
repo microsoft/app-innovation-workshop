@@ -1,3 +1,5 @@
+![Banner](Assets/Banner.png)
+
 # Setting Up	
 > Hint: We highly recommend you setup and configure your system before attending the mobile workshop. Although we’ve allowed an hour in the morning to assist in trouble shooting configurations, we won’t have time to do a fresh installation.   
 - - - -
