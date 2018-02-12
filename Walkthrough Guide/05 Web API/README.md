@@ -10,7 +10,7 @@ Before we can deploy an App Service instance, we need to create a resource group
 
 Resource groups can be thought of as logical containers for your Azure Resources. You may wish to create separate resource groups per location, or alternatively, you may wish to have one resource group per project.
 
-[Create new Resource Group](/Assets/CreateResourceGroup.png)
+![Create new Resource Group](Assets/CreateResourceGroup.png)
 
 In this workshop, we’ll be deploying just one resource group to manage all of our required services. 
 
@@ -23,7 +23,7 @@ Navigate to the [portal.azure.com](portal.azure.com) and sign in with your MSDN 
 3. Supply configuration data. Keep in mind its difficult to change resource group names later. 
 4. Click 'Create' and relax. 
 
-[Create new Resource Group](/Assets/EmptyResourceGroup.png)
+![Create new Resource Group](Assets/EmptyResourceGroup.png)
 
 ### 1.1 Configure & Create new resources
 
