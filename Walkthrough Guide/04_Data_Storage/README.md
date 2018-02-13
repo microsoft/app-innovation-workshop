@@ -82,17 +82,62 @@ The `DatabaseId` is the top-level domain of the collections that will be used (o
 
 ### 1.4 Generate data
 
+#### 1.4.1 Fetch from Cosmos DB for the first time
+
 Once we add the connection information to the App Service Settings, the Web API should be able to connect to the database. We can check that by calling the **Jobs API endpoint** at `/api/jobs` to fetch a list of all Jobs from the databse.
 
 ![Empty List Of Jobs](Assets/EmptyListOfJobs.png)
 
-As we can see, (of course) there are no jobs inside the database at the moment. But we don't get an error message but an empty list. That means, that there is at least "something" inside of our database now. The [`DocumentDBRepositoryBase.cs`](/Backend/Monolithic/Services/DocumentDBRepositoryBase.cs) class creates databases and collections that are not existant automatically when it gets asked for them.
+As we can see, (of course) there are no jobs inside the database at the moment. But we don't get an error message but an empty list. That means, that there is at least "something" inside of our database now. The [`DocumentDBRepositoryBase.cs`](/Backend/Monolithic/Services/DocumentDBRepositoryBase.cs#L97-L138) class creates databases and collections that are not existant automatically when it gets asked for them.
 
 Let's check the Cosmos DB's ***Data Explorer*** at the Azure Portal to see what happened!
 
+![Cosmos DB With Empty Collection](Assets/CosmosWithEmptyCollection.png)
 
+As we can see, a `contosomaintenance` database has been created with an empty `jobs` collection. If we click at the ***Scale & Settings*** tap, we can see that the collection has been created with 400 RUs reserverd, which is the minimum. Whenever we see more traction on this collection, we can scale up here.
 
+#### 1.4.2 Add a new document manually
+
+Time to add our first job manually! Let's click the ***New Document*** button in the `jobs` collection and add a JSON document like the following one in the editor to add a dummy job that points to the Microsoft headquarter in Redmond.
+
+```json
+{
+    "id": "3de8f6d0-e1b6-416a-914d-cd13554929a4",
+    "Name": "Service ATR 42 Engine",
+    "Details": "General Service",
+    "Type": "Service",
+    "Status": "Waiting",
+    "Attachements": null,
+    "Address": {
+        "point": {
+            "type": "Point",
+            "coordinates": [
+                -122.1517886,
+                47.6586067
+            ]
+        }
+    },
+    "AssignedTo": null,
+    "DueDate": "0001-01-01T00:00:00",
+    "createdAt": "2018-01-25T00:34:49.753398+00:00",
+    "isDeleted": false
+}
+```
+
+Once we hit ***Save***, we should be able to return to our API and fetch the list of jobs again. Now, the list should not be empty anymore but contain our new dummy job.
+
+![Fetch Dummy Job From Cosmos DB](Assets/FetchDummyJobFromCosmos.png)
+
+> **Tip:** To get well-formatted JSON in Google Chrome, you can use the [JSONView Plugin](https://chrome.google.com/webstore/detail/jsonview/chklaanhfefbnpoihckbnefhakgolnmc)
+
+#### 1.4.3 Generate Dummy Data
+
+To have actual data in the Cosmos DB instance to play around with and to avoid having you to write a bunch of dummy Jobs and Parts manually, we have prepared some dummy data for this workshop. Once the Cosmos DB connection is configured, you can call the `api/dummy` endpoint of your Web API to fill the database.
+
+## 2. Azure Blob Storage for photos
+
+Coming soon...
 
 ## Further Reading
-- Key Vault: https://docs.microsoft.com/en-us/aspnet/core/security/key-vault-configuration?tabs=aspnetcore2x
 
+- [Secure App Service Credentials with Key Vault](https://docs.microsoft.com/en-us/aspnet/core/security/key-vault-configuration?tabs=aspnetcore2x) 
