@@ -27,17 +27,17 @@ namespace ContosoMaintenance.WebAPI
             services.AddScoped<IAzureBlobStorage>(factory =>
             {
                 return new AzureBlobStorage(new AzureBlobSettings(
-                    storageAccount: Configuration["AzureStorage:Blob_StorageAccount"],
-                    storageKey: Configuration["AzureStorage:Blob_StorageKey"],
-                    containerName: Configuration["AzureStorage:Blob_ContainerName"]));
+                    storageAccount: Configuration["AzureStorage:StorageAccountName"],
+                    storageKey: Configuration["AzureStorage:Key"],
+                    containerName: Configuration["AzureStorage:BlobContainerName"]));
             });
 
             services.AddScoped<IAzureStorageQueue>(factory =>
             {
                 return new AzureStorageQueue(new AzureStorageQueueSetings(
-                    Configuration["AzureStorage:Blob_StorageAccount"],
-                    Configuration["AzureStorage:Blob_StorageKey"],
-                    Configuration["AzureStorage:Queue_Name"]));
+                    Configuration["AzureStorage:StorageAccountName"],
+                    Configuration["AzureStorage:Key"],
+                    Configuration["AzureStorage:QueueName"]));
             });
 
 
