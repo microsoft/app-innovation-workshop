@@ -64,6 +64,8 @@ As you might have seen, the connection details to the Cosmos DB are not hard-cod
 }
 ```
 
+[View in project](/Backend/Monolithic/appsettings.json#L21-L24)
+
 As these settings are empty, let's set them in the Web Api's environment variables!
 
 #### 1.3.2 Add Connection Information to Environment Variables
