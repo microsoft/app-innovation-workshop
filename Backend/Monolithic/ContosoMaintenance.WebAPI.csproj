@@ -19,7 +19,6 @@
     <Folder Include="wwwroot\" />
     <Folder Include="Services\" />
     <Folder Include="Models\" />
-    <Folder Include="Helpers\" />
     <Folder Include="Services\Blob Storage\" />
     <Folder Include="DummyData\" />
     <Folder Include="Services\Storage Queue\" />
