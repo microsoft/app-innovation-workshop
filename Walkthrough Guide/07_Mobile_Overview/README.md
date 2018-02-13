@@ -21,6 +21,21 @@ We opted to use [FreshMvvm](https://github.com/rid00z/FreshMvvm) as our Mvvm lib
 ### 2.3 Architecture 
 We've tried to keep platform specific code to a mininum with the development of this app. This is because we wanted you to see how its possible to create pleasent user experiances whilst maximising code reuse.
 
-
 #### Core Project
 The core project contains our app's Pages, ViewModels (we call them PageModels), Models and network services. 
+
+#### 3rd Party Packages*
+* CarouselView.FormsPlugin
+* Airbnb Lottie 
+* Corcav.Behaviors
+* FormsToolkit
+* FreshMvvm
+* Humnizer
+* Refit
+* MvvmHelpers
+* SkiaSharp.Svg
+* Plugin.Media
+* Plugin.ImageCircle
+* Plugin.Settings
+* FFImageLoading.Forms
+* FFImageLoad.Transformations
