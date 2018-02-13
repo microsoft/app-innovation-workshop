@@ -6,7 +6,6 @@
 
   <ItemGroup>
     <Folder Include="Dialogs\" />
-    <Folder Include="wwwroot\" />
   </ItemGroup>
 
   <ItemGroup>
