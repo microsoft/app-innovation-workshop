@@ -1,5 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;    
+using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Threading.Tasks;
@@ -8,28 +8,26 @@ using Microsoft.Azure.Documents.Client;
 using Microsoft.Azure.Documents.Linq;
 
 namespace ContosoMaintenance.WebAPI.Services
-{   
+{
     public class DocumentDBRepositoryBase<T> where T : class
     {
-        string Endpoint = Helpers.Keys.CosmosEndpoint;
-        string Key = Helpers.Keys.CosmosKey;
-        string DatabaseId = Helpers.Keys.CosmosDatabaseId;
-
         string CollectionId;
+        string databaseId;
         DocumentClient client;
 
-		public void Initialize()
-		{
-			client = new DocumentClient(new Uri(Endpoint), Key, new ConnectionPolicy { EnableEndpointDiscovery = false });
-			CreateDatabaseIfNotExistsAsync().Wait();
-			CreateCollectionIfNotExistsAsync().Wait();
-		}
+        public void Initialize(string endpoint, string key, string databaseId)
+        {
+            this.databaseId = databaseId;
+            client = new DocumentClient(new Uri(endpoint), key, new ConnectionPolicy { EnableEndpointDiscovery = false });
+            CreateDatabaseIfNotExistsAsync().Wait();
+            CreateCollectionIfNotExistsAsync().Wait();
+        }
 
-		public async Task<T> GetItemAsync(string id)
+        public async Task<T> GetItemAsync(string id)
         {
             try
             {
-                Document document = await client.ReadDocumentAsync(UriFactory.CreateDocumentUri(DatabaseId, CollectionId, id));
+                Document document = await client.ReadDocumentAsync(UriFactory.CreateDocumentUri(databaseId, CollectionId, id));
                 return (T)(dynamic)document;
             }
             catch (DocumentClientException e)
@@ -46,7 +44,7 @@ namespace ContosoMaintenance.WebAPI.Services
         {
             try
             {
-                var document = client.CreateDocumentCollectionQuery(UriFactory.CreateDocumentCollectionUri(DatabaseId, CollectionId),"SELECT c.id FROM c");
+                var document = client.CreateDocumentCollectionQuery(UriFactory.CreateDocumentCollectionUri(databaseId, CollectionId), "SELECT c.id FROM c");
                 return (int)(dynamic)document.Count();
             }
             catch (DocumentClientException e)
@@ -58,13 +56,13 @@ namespace ContosoMaintenance.WebAPI.Services
                 throw;
             }
         }
-     
+
         public async Task<IEnumerable<T>> GetItemsAsync(Expression<Func<T, bool>> predicate)
         {
             CollectionId = GetCollectionName();
 
-			IDocumentQuery<T> query = client.CreateDocumentQuery<T>(
-                UriFactory.CreateDocumentCollectionUri(DatabaseId, CollectionId),
+            IDocumentQuery<T> query = client.CreateDocumentQuery<T>(
+                UriFactory.CreateDocumentCollectionUri(databaseId, CollectionId),
                 new FeedOptions { MaxItemCount = -1 })
                 .Where(predicate)
                 .AsDocumentQuery();
@@ -80,33 +78,33 @@ namespace ContosoMaintenance.WebAPI.Services
 
         public async Task<Document> CreateItemAsync(T item)
         {
-			CollectionId = GetCollectionName();
-			return await client.CreateDocumentAsync(UriFactory.CreateDocumentCollectionUri(DatabaseId, CollectionId), item);
+            CollectionId = GetCollectionName();
+            return await client.CreateDocumentAsync(UriFactory.CreateDocumentCollectionUri(databaseId, CollectionId), item);
         }
 
         public async Task<Document> UpdateItemAsync(string id, T item)
         {
-			CollectionId = GetCollectionName();
-			return await client.ReplaceDocumentAsync(UriFactory.CreateDocumentUri(DatabaseId, CollectionId, id), item);
+            CollectionId = GetCollectionName();
+            return await client.ReplaceDocumentAsync(UriFactory.CreateDocumentUri(databaseId, CollectionId, id), item);
         }
 
         public async Task DeleteItemAsync(string id)
         {
-			CollectionId = GetCollectionName();
-			await client.DeleteDocumentAsync(UriFactory.CreateDocumentUri(DatabaseId, CollectionId, id));
+            CollectionId = GetCollectionName();
+            await client.DeleteDocumentAsync(UriFactory.CreateDocumentUri(databaseId, CollectionId, id));
         }
 
         async Task CreateDatabaseIfNotExistsAsync()
         {
             try
             {
-                await client.ReadDatabaseAsync(UriFactory.CreateDatabaseUri(DatabaseId));
+                await client.ReadDatabaseAsync(UriFactory.CreateDatabaseUri(databaseId));
             }
             catch (DocumentClientException e)
             {
                 if (e.StatusCode == System.Net.HttpStatusCode.NotFound)
                 {
-                    await client.CreateDatabaseAsync(new Database { Id = DatabaseId });
+                    await client.CreateDatabaseAsync(new Database { Id = databaseId });
                 }
                 else
                 {
@@ -117,18 +115,18 @@ namespace ContosoMaintenance.WebAPI.Services
 
         async Task CreateCollectionIfNotExistsAsync()
         {
-			CollectionId = GetCollectionName();
+            CollectionId = GetCollectionName();
 
-			try
+            try
             {
-                await client.ReadDocumentCollectionAsync(UriFactory.CreateDocumentCollectionUri(DatabaseId, CollectionId));
+                await client.ReadDocumentCollectionAsync(UriFactory.CreateDocumentCollectionUri(databaseId, CollectionId));
             }
             catch (DocumentClientException e)
             {
                 if (e.StatusCode == System.Net.HttpStatusCode.NotFound)
                 {
                     await client.CreateDocumentCollectionAsync(
-                        UriFactory.CreateDatabaseUri(DatabaseId),
+                        UriFactory.CreateDatabaseUri(databaseId),
                         new DocumentCollection { Id = CollectionId },
                         new RequestOptions { OfferThroughput = 400 });
                 }

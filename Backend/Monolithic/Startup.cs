@@ -21,7 +21,9 @@ namespace ContosoMaintenance.WebAPI
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            
+            // Inject Configuration
+            services.AddSingleton<IConfiguration>(Configuration);
+
             services.AddScoped<IAzureBlobStorage>(factory =>
             {
                 return new AzureBlobStorage(new AzureBlobSettings(
