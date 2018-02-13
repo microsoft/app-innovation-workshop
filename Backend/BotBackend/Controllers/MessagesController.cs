@@ -24,7 +24,7 @@ namespace Microsoft.Bot.Sample.LuisBot
             // check if activity is of type message
             if (activity.GetActivityType() == ActivityTypes.Message)
             {
-                await Conversations.SendAsync(activity, () => new BasicLuisDialog());
+                await Conversation.SendAsync(activity, () => new BasicLuisDialog());
             }
             else
             {
