@@ -13,7 +13,11 @@ namespace ContosoMaintenance.WebAPI.Controllers
 
         public BaseController(IConfiguration configuration)
         {
-            DBRepository.Initialize(configuration["AzureCosmosDb:CosmosEndpoint"], configuration["AzureCosmosDb:CosmosKey"], configuration["AzureCosmosDb:CosmosDatabaseId"]);
+            // Initialize Azure Cosmos DB instance for this controller
+            DBRepository.Initialize(
+                configuration["AzureCosmosDb:Endpoint"],
+                configuration["AzureCosmosDb:Key"],
+                configuration["AzureCosmosDb:DatabaseId"]);
         }
 
         void CreateDummyDataIfNeeded()
