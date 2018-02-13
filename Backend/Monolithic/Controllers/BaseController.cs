@@ -3,6 +3,7 @@ using System.Threading.Tasks;
 using ContosoMaintenance.WebAPI.Services;
 using Microsoft.AspNetCore.Mvc;
 using System.Xml.Linq;
+using Microsoft.Extensions.Configuration;
 
 namespace ContosoMaintenance.WebAPI.Controllers
 {
@@ -10,9 +11,9 @@ namespace ContosoMaintenance.WebAPI.Controllers
     {
         public DocumentDBRepositoryBase<T> DBRepository = new DocumentDBRepositoryBase<T>();
 
-        public BaseController()
+        public BaseController(IConfiguration configuration)
         {
-            DBRepository.Initialize();
+            DBRepository.Initialize(configuration["AzureCosmosDb:CosmosEndpoint"], configuration["AzureCosmosDb:CosmosKey"], configuration["AzureCosmosDb:CosmosDatabaseId"]);
         }
 
         void CreateDummyDataIfNeeded()
