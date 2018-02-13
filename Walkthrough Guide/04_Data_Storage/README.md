@@ -136,7 +136,7 @@ Once we hit ***Save***, we should be able to return to our API and fetch the lis
 
 To have actual data in the Cosmos DB instance to play around with and to avoid having you to write a bunch of dummy Jobs and Parts manually, we have prepared some dummy data for this workshop. Once the Cosmos DB connection is configured, you can call the `api/dummy` endpoint of your Web API to fill the database.
 
-## 2. Azure Blob Storage for photos
+## 2. Azure Blob Storage for raw files like Photos
 
 Coming soon...
 
