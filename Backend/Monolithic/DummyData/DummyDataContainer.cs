@@ -6,7 +6,7 @@ using Microsoft.Azure.Documents.Spatial;
 
 namespace ContosoMaintenance.WebAPI.DummyData
 {
-    public class DummyData
+    public class DummyDataContainer
     {
         public List<Job> Jobs = new List<Job>();
         public List<Customer> Customers = new List<Customer>();
@@ -14,12 +14,13 @@ namespace ContosoMaintenance.WebAPI.DummyData
         public List<Location> Addresses = new List<Location>();
         public List<Part> Parts = new List<Part>();
 
-        public DummyData()
+        public DummyDataContainer()
         {
             PopulateAddresses();
             PopulateCustomers();
             PopulateEmployees();
             PopulateParts();
+            PopulateJobs();
         }
 
         private void PopulateParts()
@@ -34,6 +35,7 @@ namespace ContosoMaintenance.WebAPI.DummyData
                 PriceInUSD = 599.12M,
                 ImageSource = "https://contosomaintenance.blob.core.windows.net/images-large/67a04a57-b51e-45d8-b75c-c343a273b6f7.png"
             };
+            Parts.Add(part1);
             var part2 = new Part
             {
                 Name = "Airplane Engine RFE-747",
@@ -44,6 +46,7 @@ namespace ContosoMaintenance.WebAPI.DummyData
                 PriceInUSD = 35000000M,
                 ImageSource = "https://contosomaintenance.blob.core.windows.net/images-large/67a24a57-b51r-45d8-b75c-c343a273b6f8.jpg"
             };
+            Parts.Add(part2);
         }
 
         void PopulateAddresses()

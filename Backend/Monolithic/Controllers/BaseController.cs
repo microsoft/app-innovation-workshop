@@ -20,11 +20,6 @@ namespace ContosoMaintenance.WebAPI.Controllers
                 configuration["AzureCosmosDb:DatabaseId"]);
         }
 
-        void CreateDummyDataIfNeeded()
-        {
-
-        }
-
         [HttpGet]
         public virtual async Task<IActionResult> GetAll()
         {

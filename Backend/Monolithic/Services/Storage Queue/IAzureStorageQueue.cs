@@ -8,7 +8,5 @@ namespace ContosoMaintenance.WebAPI.Services.StorageQueue
     public interface IAzureStorageQueue
     {
         Task AddMessage(string message);
-       
     }
-
 }

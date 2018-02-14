@@ -8,9 +8,9 @@ namespace ContosoMaintenance.WebAPI.Services.StorageQueue
 {
     public class AzureStorageQueue : IAzureStorageQueue
     {
-        AzureStorageQueueSetings settings;
+        AzureStorageQueueSettings settings;
 
-        public AzureStorageQueue(AzureStorageQueueSetings settings)
+        public AzureStorageQueue(AzureStorageQueueSettings settings)
         {
             this.settings = settings;
         }
