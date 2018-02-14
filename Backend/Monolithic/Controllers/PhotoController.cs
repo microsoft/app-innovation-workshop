@@ -26,13 +26,10 @@ namespace ContosoMaintenance.WebAPI.Controllers
             this.queue = queue;
         }
 
-        [HttpPost]        
+        [HttpPost]
         public async Task<IActionResult> UploadFile(IFormFile file)
         {
-            if (file == null)
-                return BadRequest();
-            
-            if (file.Length == 0)
+            if (file == null || file.Length == 0)
                 return BadRequest();
 
             try
@@ -45,9 +42,17 @@ namespace ContosoMaintenance.WebAPI.Controllers
                 blobName = string.Format($"{blobName}");
                 await blobStorage.UploadAsync(blobName, fileStream);
 
-                //Create a message on our queue for the Azure Function to process the image. 
-                string json = JsonConvert.SerializeObject(new Models.PhotoProcess(){PhotoId = blobName, JobId = jobID}, Formatting.Indented);
-                await queue.AddMessage(json);
+                //Create a message on our queue for the Azure Function to process the image.
+                try
+                {
+                    string json = JsonConvert.SerializeObject(new Models.PhotoProcess() { PhotoId = blobName, JobId = jobID }, Formatting.Indented);
+                    await queue.AddMessage(json);
+                }
+                catch (ArgumentException)
+                {
+                    // Appears if Azure Storage Queue is not configured correctly which happens during the workshop,
+                    // as Storage Queues appear at a later point.
+                }
 
                 return new ObjectResult(true);
             }

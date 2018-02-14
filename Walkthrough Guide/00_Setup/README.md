@@ -4,6 +4,14 @@
 > Hint: We highly recommend you setup and configure your system before attending the mobile workshop. Although we’ve allowed an hour in the morning to assist in trouble shooting configurations, we won’t have time to do a fresh installation.   
 - - - -
 
+## Prerequisites
+- Visual Studio (Windows or Mac)
+- Xamarin
+- Visual Studio Code (with Azure tooling)
+- Postman
+
+
+
 The setup of a Xamarin development environment can get a little bit tricky and time consuming as it has dependancies on many SDKs and technologies from different companies. 
 
 For todays workshop, you can use both, Windows 10 or macOS to develop. You’ll find all the documentation demonstrations using macOS but keep in mind, everything you see in Visual Studio for Mac is possible in Visual Studio for PC. 
