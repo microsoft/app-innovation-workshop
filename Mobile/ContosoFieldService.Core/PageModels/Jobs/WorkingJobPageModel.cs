@@ -135,6 +135,5 @@ namespace ContosoFieldService.PageModels
                 });
             }
         }
-
     }
 }

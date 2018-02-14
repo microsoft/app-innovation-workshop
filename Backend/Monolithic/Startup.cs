@@ -24,23 +24,23 @@ namespace ContosoMaintenance.WebAPI
             // Inject Configuration
             services.AddSingleton<IConfiguration>(Configuration);
 
+            // Inject Blob Storage
             services.AddScoped<IAzureBlobStorage>(factory =>
             {
                 return new AzureBlobStorage(new AzureBlobSettings(
                     storageAccount: Configuration["AzureStorage:StorageAccountName"],
                     storageKey: Configuration["AzureStorage:Key"],
-                    containerName: Configuration["AzureStorage:BlobContainerName"]));
+                    containerName: Configuration["AzureStorage:PhotosBlobContainerName"]));
             });
 
+            // Inject Storage Queue
             services.AddScoped<IAzureStorageQueue>(factory =>
             {
-                return new AzureStorageQueue(new AzureStorageQueueSetings(
+                return new AzureStorageQueue(new AzureStorageQueueSettings(
                     Configuration["AzureStorage:StorageAccountName"],
                     Configuration["AzureStorage:Key"],
                     Configuration["AzureStorage:QueueName"]));
             });
-
-
 
             services.AddMvc();
         }
@@ -55,6 +55,5 @@ namespace ContosoMaintenance.WebAPI
 
             app.UseMvc();
         }
-
     }
 }

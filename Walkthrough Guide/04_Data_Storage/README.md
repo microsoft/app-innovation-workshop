@@ -36,6 +36,8 @@ As we can see from the ***Overview*** section, Azure Cosmos DB is all about scal
 
 With scaling databases to multiple instances, *Consistency* immediately come to our minds. By default, Cosmos DB uses *Session consistency* but we can choose from five different [Consistency levels](https://docs.microsoft.com/en-us/azure/cosmos-db/consistency-levels) in the ***Default Consistency*** menu, if we feel the need to change that.
 
+> **Hint:** Even when selecting multiple regions for Azure Cosmos DB, the connection string will always stay the same. That's a very nice feature, which allows your backend to not care about the location of your database at all. Cosmos DB has its own traffic manager that will route your query to the fastest location autimatically.
+
 #### 1.2.2 Security Keys
 
 Like every other database, Azure Cosmos DB offers security through access control using Keys. Head over to the ***Keys*** section of the data base to check your keys for different access levels (read-write and read-only) and connection strings. We will need these information later, when we connect the Cosmos DB to the Web API.
@@ -136,10 +138,130 @@ Once we hit ***Save***, we should be able to return to our API and fetch the lis
 
 To have actual data in the Cosmos DB instance to play around with and to avoid having you to write a bunch of dummy Jobs and Parts manually, we have prepared some dummy data for this workshop. Once the Cosmos DB connection is configured, you can call the `api/dummy` endpoint of your Web API to fill the database.
 
-## 2. Azure Blob Storage for raw files like Photos
+[//]: # (Empty line for spacing)
+&nbsp;
 
-Coming soon...
+## 2. Azure Blob Storage for raw files like photos
 
+Now that we can store documents for *Jobs*, *Parts* and other unstructured data in the form of JSON documents, let's add a space to store raw files like pictures. In the **Contoso Maintenance App**, users can take photos and add them to *Jobs* to document damages or process. To store these pictures, we should add **Blob Storage** to our backend infrastructure. 
+
+### 2.1 Create a Storage Account
+
+For that, head over to the [Azure Portal](https://portal.azure.com), click the ***New*** button, open the ***Storage*** category and select ***Storage Account*** to add some cloud storage to store your files at.
+
+![Add a Storage Account in the Azure Portal](Assets/AddStorageAccount.png)
+
+Choose the following settings and hit the Create button to start provisioning the Storage Account.
+
+- **ID:** myawesomestartupstorage
+- **Deployment model:** Resource manager
+- **Account kind:** Storage (general purpose v1)
+- **Performance:** Standard
+- **Replication:** Locally-redundant storage (LRS)
+- **Secure transfer required:** Disabled
+- **Resouce Group:** Use existing
+- **Location:** Same as your Web App
+
+### 2.2 Explore Azure Blob Storage
+
+After a few seconds, Azure provisioned a Storage Account for us and we can navigate to it in the Azure Portal.
+
+![Add a Storage Account in the Azure Portal](Assets/StorageAccountOverview.png)
+
+#### 2.2.1 Storage Services
+
+Besides Blob Storage, an Azure Storage Account bundles all kinds of storages like Tables, Blobs, Files and Queues. Whenever we need to store data in one of these areas, we can use this Storage Account for that. For now, **Blobs** is the storage type that is most interesting for our image uploads but we will explore at least one more later at this workshop.
+
+#### 2.2.2 Security Keys
+
+Similar to what we saw with Cosmos DB, Azure Storage is also secured with Access Keys to manage control. We will need also these information later, when we connect the Storage Account to the Web API the same way we did with Cosmos DB before.
+
+#### 2.2.3 Configuration
+
+We can upgrade and configure our Storage Account to use Solid State Disks (Premium Storage), only allow encrypted file transfers and replicate it through multiple data centers or regions for additional availablility and performance.
+
+### 2.3 Connect Blob Storage with the Web API
+
+#### 2.3.1 Create Blob containers for photos
+
+Before we connect the dots between the Web API backend and the Storage Account, we should create **Containers** for storing the uploaded photos at. Navigate to the ***Browse blobs*** section in the menu on the left and create a new container using the ***Add Container*** button.
+
+![Add a Blob Storage Container](Assets/AddBlobContainer.png)
+
+Let's create a container for the uploaded images in their original size with anonymous read access from external.
+
+- **Name:** images-large
+- **Public access level:** Blob (anonymous read access for blobs only)
+
+The `images-large` containter will be used by the backend to upload all pictures that have been taken with the device camera to. Later in this workshop, we will down-scale these images automatically for performance enhancements at it is not a best practice to always download full-size images.
+
+So let's also create two more containers for scaled images with the same properties, so that we end up with three containers.
+
+- `images-large` (Blob)
+- `images-medium` (Blob)
+- `images-icon` (Blob)
+
+![Blob Container Overview](Assets/BlobContainerOverview.png)
+
+#### 2.3.2 Add Connection Information to Environment Variables
+
+Similar to the Cosmos DB configuration above, the Web API backend project also manages Azure Blob Storage Access through environment variables.
+
+```json
+"AzureStorage": {
+    "StorageAccountName": "",
+    "Key": "",
+    "PhotosBlobContainerName": "",
+    "QueueName": ""
+}
+```
+
+[View in project](/Backend/Monolithic/appsettings.json#L15-L20)
+
+These environment variables can also be set in the ***Application Settings*** section of the App Servive, so let's navigate to our Web API and extend its environment variables!
+
+![Add Azure Storage to Settings](Assets/AddStorageAppSettings.png)
+
+Add the settings in the format `Settings:Key` and take the values from your Storage Account's ***Access Keys*** section.
+
+- **`AzureStorage:StorageAccountName`:** Storage Account name (e.g. myawesomestartupstorage)
+- **`AzureStorage:Key`:** Key 1 key from the ***Access Keys*** section
+- **`AzureStorage:PhotosBlobContainerName`:** images-large
+
+Now the backend will choose this Storage Account and the  `images-large` blob container to upload photos.
+
+### 2.4 Test the photo upload
+
+Let's test if everything works as expected and send our first photo to the Web API. For this, API Development Tools like [Postman](https://www.getpostman.com/) helps us to send files against network endpoints.
+
+#### 2.4.1 Uploading a photo
+
+The API endpoint for the photo upload is  `/api/photo` and we can basically upload any file we want. You can choose a picture from the web or your computer or use the [Demo-AirplaneAssembly.jpg](Assets/Demo-AirplaneAssembly.jpg) ([Source](https://en.wikipedia.org/wiki/Airplane)) from this repository. Make sure to send the picture as **form-data** file to the API as it expects it in the [`PhotoController.cs`](/Backend/Monolithic/Controllers/PhotoController.cs#L30).
+
+![Postman Image Upload Test](Assets/PostmanImageUploadTest.png)
+
+You can send the photo via [Postman](https://www.getpostman.com/) with the following settings.
+
+- **Method:** POST
+- **Url:** `http://myawesomestartupapi.azurewebsites.net/api/photo` (or similar)
+- **Body:** form-data
+- **form-data:**
+  - **Key:** `file`
+  - **Value:** `Demo-AirplaneAssembly.jpg` (or similar)
+
+Hit ***Send*** and check for the response status **200 OK**.
+
+#### 2.4.2 Checking the result
+
+We should now see the uploaded photo in our Blob Storage container `images-large`. So let's navigate to the Storage Account in the Azure Portal and check if it's there by selecting ***Containers*** from the side menu and opening the `images-large` container.
+
+![Photo Upload Result](Assets/PhotoUploadResult.png)
+
+And voilà, here it is. The API replaces the original name by a GUID ([View in project](/Backend/Monolithic/Controllers/PhotoController.cs#L40)) but that's okay as we need to give uploaded photos a unique ID. Congratulations, you data storage works!
+
+<!--
 ## Further Reading
 
 - [Secure App Service Credentials with Key Vault](https://docs.microsoft.com/en-us/aspnet/core/security/key-vault-configuration?tabs=aspnetcore2x) 
+
+-->
