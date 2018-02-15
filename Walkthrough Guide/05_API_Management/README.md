@@ -15,8 +15,15 @@ Azure API Management has a number of security features for ensuring access to ba
 * **VPN’s and ExpressRoute:** with the Premium tier, virtual networks can be setup in Azure using a VPN (or ExpressRoute). This virtual network is used to bridge from  your internal network into Azure allowing API Management to invoke the back end API’s without their needing to be exposed publicly. 
 
 ### Authentication
-* **OAuth Configuration:** configuration of OAuth 2.0 Authorization servers in APIM by specifying supported flows and configuration of endpoints. These can be subsequently associated with configured APIs. APIM can also be configured to check that requests have a valid JWT to prevent unauthorized requests from even reaching the bank’s back-end APIs. This is configured through the use of policies
+* **OAuth Configuration:** configuration of OAuth 2.0 Authorization servers in APIM by specifying supported flows and configuration of endpoints. These can be subsequently associated with configured APIs. APIM can also be configured to check that requests have a valid JWT to prevent unauthorized requests from even reaching the your back-end APIs. This is configured through the use of policies
 
 * **Mutual certificate authentication:** Client certificates can be configured on the back end services and uploaded to APIM. All communication would require authentication via these certificates
 
-
+### Management
+* **Developer Portal:** A self-service developer portal offers access to:
+* **Subscription Portal:** this is an administrative interface where API programs are setup and are used to:
+* Define or import API schemas
+    * Package API’s into products
+    * Setup policies like quotas or transformations on APIs
+    * Get insight from Analytics
+    * Manage users
