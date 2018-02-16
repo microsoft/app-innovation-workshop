@@ -1,7 +1,16 @@
 
 ![Banner](Resources/WelcomeBanner.png)
 
+## Build Status
+| iOS  | Android |
+| ------------- | ------------- |
+| [![Build status](https://build.appcenter.ms/v0.1/apps/364adcc6-160d-42c9-8bd4-f3b926584c38/branches/master/badge)](https://appcenter.ms)  | [![Build status](https://build.appcenter.ms/v0.1/apps/5865dd4d-0971-48b4-8755-598455ab8677/branches/master/badge)](https://appcenter.ms)  |
+
+
 # Mobile Cloud Workshop
+
+## Design
+<img src="Resources/Design/Design%20Board.png" height="350">
 
 Welcome to the Microsoft Mobile Cloud Workshop. We've created this workshop to showcase the speed and ease at which you can leverage Microsoft cloud platform (Azure) to build mobile solutions. 
 
@@ -21,20 +30,6 @@ You can find a walkthrough guide for the project that outlines how you too can b
 9. [Anayltics & Push](09_Anayltics_Push/README.md)
 10. [Chatbot](10_Chatbot/README.md)
 11. [Authentication](11_Authentication/README.md)
-
-
-
-# Mobile Apps
-
-## Build Status
-| iOS  | Android |
-| ------------- | ------------- |
-| [![Build status](https://build.appcenter.ms/v0.1/apps/364adcc6-160d-42c9-8bd4-f3b926584c38/branches/master/badge)](https://appcenter.ms)  | [![Build status](https://build.appcenter.ms/v0.1/apps/5865dd4d-0971-48b4-8755-598455ab8677/branches/master/badge)](https://appcenter.ms)  |
-
-
-## Design
-<img src="Resources/Design/Design%20Board.png" height="350">
-
 
 # Support
 ## Where to find help
