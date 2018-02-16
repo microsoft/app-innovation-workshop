@@ -82,13 +82,19 @@ If we imagine the flow for searching jobs. Our request leaves the phone, hits ou
 API Management will need to be configured to route our requests to the correct place, so let's go ahead and start on that. 
 
 ## Configuring API Management
-
-### Adjusting our Products
-We're able to define access to particular APIs through the use of 'Products'. By defualt, API Management will create two products for you, Starter and Unlimited. We can adjust our products within the Publisher Portal and I always like to increase the Starter products rate limit to be a little more generous. 
-
 ![Search for API Management](Assets/Deployed.png)
 
-### Adding APIs 
+### Products
+Products are associations of one or more APIs. You can include a number of APIs and offer them to developers through the developer portal. Developers must first subscribe to a product to get access to the API. When they subscribe, they get a subscription key that is good for any API in that product. If you created the API Management instance, you are an administrator already, so you are subscribed to every product by default.
+By default, each API Management instance comes with two sample products: Starter and Unlimited.
+
+![Search for API Management](Assets/ProductsList.png)
+
+For this workshop, we wont need to add anymore products, but you can find a complete guide on the [Azure Documentation](https://docs.microsoft.com/en-us/azure/api-management/api-management-howto-add-products) site that covers this in depth. 
+
+---
+### Implementing Operations
+We need to define our operations for the API Management. We have already deployed our backend so we should be in a position to hook up to the App Service instance and consume real data. It's worth keeping in mind that its possible to send Mock responses back from API Management, which can help in the development of large solutions. 
 
 #### Jobs
 To kick off, we'll start by adding an endpoint to API Manangement for handling access to Jobs. To do this, click on "APIs" on the left hand menu. 
@@ -97,15 +103,31 @@ To kick off, we'll start by adding an endpoint to API Manangement for handling a
 
 Lets start by creating an API from scratch using the "Blank API" template. 
 
-![Search for API Management](Assets/ApiRequestOptions.png)
-We then have to pick what type of request we're looking to implement. We'll want to implement the following: 
-* GET
-* POST
-* PUT
-* DELETE 
-
-To begin with, lets start with the GET request. 
 ![Search for API Management](Assets/CreateJobsAPI.png)
+We can then provide a few details about our API. 
+
+* **Display Name:** This name is displayed in the Developer portal.
+* **Name:** Provides a unique name for the API. 
+* **Description:** Description of the API
+* **Web Service URL:** The URL where we'll be sending these requests. 
+* **URL Scheme** Determines which protocols can be used to access the API.
+* **API URL Suffix:** The suffix is appended to the base URL for the API management service. API Management distinguishes APIs by their suffix and therefore the suffix must be unique for every API for a given publisher.
+* **Tags:** Tags enable the organization of large lists – both in terms of management and presentation on the developer portal.
+* **Products:** Publish the API by associating the API with a product. To optionally add this new API to a product, type the product name. This step can be repeated multiple times to add the API to multiple products.
+* **Version This API:** Would you like to version the API? 
+
+#### Adding an operation
+
+![Search for API Management](Assets/ApiRequestOptions.png)
+
+* **HTTP Verb:** You can choose from one of the predefined HTTP verbs.
+* **URL:** A URL path for the API.
+* **Display Name:** 
+* **Description:** Provide a description of the operation that is used to provide documentation to the developers using this API in the Developer portal.
+* **Tags:** Tags enable the organization of large lists – both in terms of management and presentation on the developer portal.
+
+
+
 
 ##### Adding operations
 
