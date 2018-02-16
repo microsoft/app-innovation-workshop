@@ -11,7 +11,6 @@ It's for the reason that we'll opt to use Platform as a Service (PaaS) as much a
 
 ## The real architecture
 ![Azure Functions Architecture](Assets/WebAPI.png)
-
 Above you can see a high-level overview of our production architecture. Some key decisions: 
 
 ### Orchestration 
