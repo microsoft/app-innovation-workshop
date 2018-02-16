@@ -1,4 +1,5 @@
 ﻿using System.Threading.Tasks;
+using ContosoFieldService.Models;
 using Plugin.Media.Abstractions;
 using Refit;
 
@@ -9,19 +10,19 @@ namespace ContosoFieldService.Services
     {
         [Multipart]
         [Post("/photo/{jobId}/")]
-        Task UploadPhoto(string jobId, [AliasAs("file")] StreamPart stream);
+        Task<Photo> UploadPhoto(string jobId, [AliasAs("file")] StreamPart stream);
     }
 
     public class PhotoAPIService
     {
-        public async Task<MediaFile> UploadPhotoAsync(string jobId, MediaFile file)
+        public async Task<Photo> UploadPhotoAsync(string jobId, MediaFile file)
         {
             var restService = RestService.For<IPhotoServiceAPI>(Helpers.Constants.BaseUrl);
 
-            var streamPart = new StreamPart(file.GetStream(), $"{System.Guid.NewGuid().ToString()}.jpg", "image/jpeg");
-            await restService.UploadPhoto(jobId, streamPart);
+            var streamPart = new StreamPart(file.GetStream(), "photo.jpg", "image/jpeg");
+            var photo = await restService.UploadPhoto(jobId, streamPart);
 
-            return file;
+            return photo;
         }
     }
 }

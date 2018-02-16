@@ -114,7 +114,14 @@ namespace ContosoFieldService.PageModels
                     {
                         Analytics.TrackEvent("Taking a photo");
 
-                        await photoService.UploadPhotoAsync(selectedJob.Id, file);
+                        var photo = await photoService.UploadPhotoAsync(selectedJob.Id, file);
+
+                        // Add photo to job
+                        if (selectedJob.Photos == null)
+                            selectedJob.Photos = new System.Collections.Generic.List<Photo>();
+                        selectedJob.Photos.Add(photo);
+                        await jobService.UpdateJob(selectedJob);
+
                         await CoreMethods.DisplayAlert("Saved", "Image Saved", "OK");
                     }
                 });

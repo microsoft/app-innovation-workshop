@@ -19,7 +19,7 @@ namespace ContosoMaintenance.WebAPI.Services
             this.settings = settings;
         }
 
-        public async Task UploadAsync(string blobName, string filePath)
+        public async Task<Uri> UploadAsync(string blobName, string filePath)
         {
             //Blob
             CloudBlockBlob blockBlob = await GetBlockBlobAsync(blobName);
@@ -30,9 +30,11 @@ namespace ContosoMaintenance.WebAPI.Services
                 fileStream.Position = 0;
                 await blockBlob.UploadFromStreamAsync(fileStream);
             }
+
+            return blockBlob.Uri;
         }
 
-        public async Task UploadAsync(string blobName, Stream stream)
+        public async Task<Uri> UploadAsync(string blobName, Stream stream)
         {
             //Blob
             CloudBlockBlob blockBlob = await GetBlockBlobAsync(blobName);
@@ -40,6 +42,8 @@ namespace ContosoMaintenance.WebAPI.Services
             //Upload
             stream.Position = 0;
             await blockBlob.UploadFromStreamAsync(stream);
+
+            return blockBlob.Uri;
         }
 
         public async Task<MemoryStream> DownloadAsync(string blobName)

@@ -29,6 +29,8 @@ namespace ContosoMaintenance.WebAPI.Models
 
         public DateTime DueDate { get; set; }
 
+        [JsonProperty("photos")]
+        public List<Photo> Photos { get; set; }
     }
 
     [JsonConverter(typeof(StringEnumConverter))]
