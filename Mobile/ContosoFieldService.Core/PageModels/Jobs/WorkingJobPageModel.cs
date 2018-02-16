@@ -91,34 +91,32 @@ namespace ContosoFieldService.PageModels
             {
                 return new Command(async () =>
                 {
-                    if (CrossMedia.Current.IsCameraAvailable == false)
+                    MediaFile file = null;
+
+                    if (CrossMedia.Current.IsCameraAvailable)
                     {
-                        await CoreMethods.DisplayAlert("Camera Unavailable", "Unable to use your camera at this time", "OK");
-                        Analytics.TrackEvent("Camera Unavailable");
-                        return;
+                        file = await CrossMedia.Current.TakePhotoAsync(new StoreCameraMediaOptions
+                        {
+                            DefaultCamera = CameraDevice.Rear,
+                            SaveMetaData = true,
+                            SaveToAlbum = true
+                        });
+                    }
+                    else if (CrossMedia.Current.IsPickPhotoSupported)
+                    {
+                        file = await CrossMedia.Current.PickPhotoAsync(new PickMediaOptions
+                        {
+                            SaveMetaData = true
+                        });
                     }
 
-                    var options = new StoreCameraMediaOptions
+                    if (file != null)
                     {
-                        DefaultCamera = CameraDevice.Rear,
-                        SaveMetaData = true,
-                        SaveToAlbum = false,
-                        Name = selectedJob.Id
-                    };
+                        Analytics.TrackEvent("Taking a photo");
 
-                    Analytics.TrackEvent("Taking a photo");
-                    var file = await CrossMedia.Current.TakePhotoAsync(options);
-
-                    try
-                    {
-                        await photoService.CreatePhotoAsync(file);
+                        await photoService.UploadPhotoAsync(selectedJob.Id, file);
                         await CoreMethods.DisplayAlert("Saved", "Image Saved", "OK");
                     }
-                    catch (Exception ex)
-                    {
-                        await CoreMethods.DisplayAlert("Upload Failed", "Failed to upload photo. Snap again!", "OK");
-                    }
-
                 });
             }
         }
