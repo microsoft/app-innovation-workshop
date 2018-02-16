@@ -42,4 +42,4 @@ The core project contains our app's Pages, ViewModels (we call them PageModels),
 
 ---
 # Next Steps 
-[Mobile Network Services](../07_Mobile_Overview/README.md)
+[Mobile Network Services](../08_Mobile_Network_Services/README.md)
