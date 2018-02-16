@@ -46,3 +46,7 @@ Mr. Michael Sivers is currently investigating adding a Micro-Services architectu
 If you're interested in helping, then please reach out to us! 
 
 Learn more about [Service Fabric](https://azure.microsoft.com/en-us/services/service-fabric/)
+
+---
+# Next Steps 
+![Azure Functions Architecture](.../03_Web_API/README.md)
