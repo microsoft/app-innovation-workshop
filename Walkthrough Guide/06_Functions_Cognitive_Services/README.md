@@ -72,23 +72,90 @@ Once the Function App got created, we can navigate to it and start exploring the
 
 There are multiple ways to add Azure Functions. One is to click the small ***+*** button next to the ***Functions*** entry in the side menu and start from scratch. You can see, that Azure Functions are suitable for different scenarios like Webhooks, Timed executions or Data processing. This basically defines, when a Functions should be triggered. Azure also supports different programmiung languages.
 
-We have already prepared an Azure Function so we don't need to start from scratch! Let's take a look at the code and deploy it to our Function App from Visual Studio Code!
+> **Hint:** We have already prepared an Azure Function so we don't need to start from scratch! In the repository, there is an Azure Function called [`ResizeImage.cs`](/Backend/Functions/ResizeImage.cs) that contains the code for our szenario.
+>
+>1. Take an image from Azure Blob Storage
+>2. Upload it to the Cognitive Services Computer Vision API
+>3. Write the resized images back to Auire Blob Storage
+>4. Updates the Cosmos DB entry
 
 #### 2.1.2 Tooling
 
+Visual Studio for Windows and Mac both support a rudimentary Azure Functions tooling but the easiest and most convedient way to work with Functions is the [Azure Functions Extension for Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-azurefunctions). It enables us to test functions locally and deploy them to Azure.
 
+Once you installed the Extension, open the [`/Functions`](/Backend/Functions/) folder from the repository in Visual Studio Code and log into the ***Azure Functions*** window that appears in the bottom-left corner.
 
-https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-azurefunctions
+![VS Code Azure Function](Assets/VSCodeAzureFunction.png)
 
-#### 2.1.3 Inputs and Outputs
+#### 2.1.3 Triggers
 
-#### 2.1.4 Triggers
+Azure Functions are based on the concept of **Triggers**, which define when a Function should wake up and execute its code. There are several different [Trigger Bindings](https://docs.microsoft.com/en-us/azure/azure-functions/functions-triggers-bindings) that can be defined in the functions source code or configuration files. Our function uses the [Queue Storage Binding](https://docs.microsoft.com/en-us/azure/azure-functions/functions-bindings-storage-queue) as a Trigger so it wakes up whenever a new message appears in a Storage Queue.
 
-### 2.3 Integrate into Azure
+```csharp
+// Trigger
+[QueueTrigger("processphotos")] PhotoProcess queueItem,
+```
 
-### 2.4 Integtrate Cognitive Services
+[View in project](/Backend/Functions/ResizeImage.cs#L22)
 
-### 2.5 Test the Azure Function locally
+It listens on a Storage Queue called `processphotos` and wakes up once a new message arrives in there. Then it takes the message `PhotoProcess queueItem` and starts processing it.
+
+#### 2.1.4 Inputs and Outputs
+
+When an Azure Function awakes, it can fetch additional **Inputs** from multiple sources that are needed for the processing. Similar to the Triggers, these Inputs also use [Bindings](https://docs.microsoft.com/en-us/azure/azure-functions/functions-triggers-bindings). Beside the Queue message itself that wakes our Function up, it needs two additional inputs: The uploaded photo from the Blob Storage and the *Job* document from Cosmos DB. These are also defined in the function's code.
+
+```csharp
+// Inputs
+[DocumentDB("contosomaintenance", "jobs", Id = "{jobId}", ConnectionStringSetting = "CosmosDb")] Job job,
+[Blob("images-large/{photoId}.jpg", FileAccess.Read)] byte[] imageLarge,
+```
+
+[View in project](/Backend/Functions/ResizeImage.cs#L25-L26)
+
+This passes a `Job job` based with its `id == {jobId}` and a `byte[] imageLarge` from `/images-large/{photoId}.jpg` to the Function. The values `{jobId}` and `{photoId}` are from our Trigger the `PhotoProcess queueItem`.
+
+Azure Function Outputs follow the same process. As we want to write two images to our Blob Storage (a medium sized and icon sized one), we define two outputs of the same Binding type.
+
+```csharp
+// Outputs
+[Blob("images-medium/{photoId}.jpg", FileAccess.Write)] Stream imageMedium,
+[Blob("images-icon/{photoId}.jpg", FileAccess.Write)] Stream imageIcon,
+```
+
+[View in project](/Backend/Functions/ResizeImage.cs#L29-L30)
+
+Both `Stream` objects get passed to the Function. The rest of the code just connects the dots.
+
+### 2.3 Integrate with Storage, Cosmos DB and Cognitive Services
+
+Of course, all these Trigger, Input and Output [Bindings](https://docs.microsoft.com/en-us/azure/azure-functions/functions-triggers-bindings) have to be configured. As we might be already used to from the App Service, this configuration is done via Environment Variables. Each Azure Function has a `local.settings.json` file that sets Connection Strings to the used services.
+
+```json
+{
+    "IsEncrypted": false,
+    "Values": {
+        "AzureWebJobsStorage": "<Storage Connection String>",
+        "AzureWebJobsDashboard": "<Storage Connection String>",
+        "CosmosDb": "<CosmosDB Connection String>",
+        "Ocp-Apim-Subscription-Key": "<Cognitive Services Computer Vision API Key>"
+    }
+}
+```
+
+[View in project](/Backend/Functions/local.settings.json)
+
+For local tests, the Environment Variables can be set in this file, when uploading the Function to Azure, we should save them in the Function App's Application Settings. Navigate to the ***Function App*** in the [Azure Portal](https://portal.azure.com), open the ***Application Settings*** and add the Keyes.
+
+![Set Function Application Settings](Assets/SetFunctionApplicationSettings.png)
+
+Add the settings like the following and grab the values form the according sections of your previously created Azure resources.
+
+- **AzureWebJobsDashboard:** *Key 1 Connection String* from the Storage Account ***Access keys*** section (should be already set)
+- **AzureWebJobsStorage:** *Key 1 Connection String* from the Storage Account ***Access keys*** section (should be already set)
+- **CosmosDB:** *Primary Connection String* from the Cosmos DB ***Keys*** section
+- **Ocp-Apim-Subscription-Key:** *Key 1* from the Cognitive Service ***Keys*** section
+
+Scroll up and click ***Save*** to set the Environment Variables for the Function App.
 
 ### 2.6 Deploy to Azure
 
