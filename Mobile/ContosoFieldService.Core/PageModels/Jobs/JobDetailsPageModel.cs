@@ -71,6 +71,7 @@ namespace ContosoFieldService.PageModels
                         //TODO: Show Loading indicator
                         var jobsService = new Services.JobsAPIService();
                         var updatedJob = await jobsService.DeleteJobByIdAsync(CurrentJob.Id);
+                        await CoreMethods.DisplayActionSheet("Are you sure?", "Cancel", "You're going to delete this job and it'll be embrassing for all if we need to restore it...", "OK");
                         await CoreMethods.PopPageModel(updatedJob);
                     }
                 });

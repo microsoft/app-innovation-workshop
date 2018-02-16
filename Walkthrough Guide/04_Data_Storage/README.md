@@ -76,7 +76,7 @@ Navigate to the Web API App Service in the Azure Portal and open the ***Applicat
 
 ![Add App Service App Settings](Assets/AddAppServiceAppSettings.png)
 
-Add the settings in the format `Settings:Key` and take the values from the ***Keys*** section of your Cosmos DB instance.
+Add the settings in the format `Settings:Key` and take the values from the ***Keys*** section of your Cosmos DB instance. Hit ***Save*** at the top of the page once you are set.
 
 - **`AzureCosmosDb:Endpoint`:** Uri of the Cosmos DB instance
 - **`AzureCosmosDb:Key`:** Primary Key of the Cosmos DB instance
@@ -228,7 +228,7 @@ Add the settings in the format `Settings:Key` and take the values from your Stor
 - **`AzureStorage:Key`:** Key 1 key from the ***Access Keys*** section
 - **`AzureStorage:PhotosBlobContainerName`:** images-large
 
-Now the backend will choose this Storage Account and the  `images-large` blob container to upload photos.
+Once you click the ***Save*** button at the top of the page, the backend will choose this Storage Account and the  `images-large` blob container to upload photos.
 
 ### 2.4 Test the photo upload
 
