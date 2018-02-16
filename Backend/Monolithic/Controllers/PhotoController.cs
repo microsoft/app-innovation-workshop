@@ -11,6 +11,7 @@ using Microsoft.WindowsAzure.Storage.Blob;
 using Microsoft.WindowsAzure.Storage.Queue;
 using Microsoft.Azure;
 using Newtonsoft.Json;
+using ContosoMaintenance.WebAPI.Models;
 
 namespace ContosoMaintenance.WebAPI.Controllers
 {
@@ -26,17 +27,14 @@ namespace ContosoMaintenance.WebAPI.Controllers
             this.queue = queue;
         }
 
-        [HttpPost]
-        public async Task<IActionResult> UploadFile(IFormFile file)
+        [HttpPost("{jobId}")]
+        public async Task<IActionResult> UploadPhoto(string jobId, IFormFile file)
         {
             if (file == null || file.Length == 0)
-                return BadRequest();
+                return BadRequest("Invalid file");
 
             try
             {
-                //The FileName is actually going to be the JobID as we set this on the mobile device.
-                var jobID = file.FileName.Split(".")[0]; //Not going to lie. This whole queue code is horrible, but it works, so although I'm saying I'll fix it. I probably wont.
-
                 var blobName = Guid.NewGuid().ToString();
                 var fileStream = file.OpenReadStream();
                 blobName = string.Format($"{blobName}");
@@ -45,7 +43,7 @@ namespace ContosoMaintenance.WebAPI.Controllers
                 //Create a message on our queue for the Azure Function to process the image.
                 try
                 {
-                    string json = JsonConvert.SerializeObject(new Models.PhotoProcess() { PhotoId = blobName, JobId = jobID }, Formatting.Indented);
+                    string json = JsonConvert.SerializeObject(new Models.PhotoProcess() { PhotoId = blobName, JobId = jobId }, Formatting.Indented);
                     await queue.AddMessage(json);
                 }
                 catch (ArgumentException)
@@ -54,6 +52,13 @@ namespace ContosoMaintenance.WebAPI.Controllers
                     // as Storage Queues appear at a later point.
                 }
 
+                var photo = new Photo
+                {
+                    Id = blobName,
+                    LargeUrl = ""
+                };
+
+                // SHOULD RETURN PATH TO UPLOADED IMAGE
                 return new ObjectResult(true);
             }
             catch

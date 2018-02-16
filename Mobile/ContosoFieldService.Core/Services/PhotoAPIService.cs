@@ -8,18 +8,18 @@ namespace ContosoFieldService.Services
     public interface IPhotoServiceAPI
     {
         [Multipart]
-        [Post("/photo/")]
-        Task UploadPhoto([AliasAs("file")] StreamPart stream);
+        [Post("/photo/{jobId}/")]
+        Task UploadPhoto(string jobId, [AliasAs("file")] StreamPart stream);
     }
 
     public class PhotoAPIService
     {
-        public async Task<MediaFile> CreatePhotoAsync(MediaFile file)
+        public async Task<MediaFile> UploadPhotoAsync(string jobId, MediaFile file)
         {
             var restService = RestService.For<IPhotoServiceAPI>(Helpers.Constants.BaseUrl);
 
             var streamPart = new StreamPart(file.GetStream(), $"{System.Guid.NewGuid().ToString()}.jpg", "image/jpeg");
-            await restService.UploadPhoto(streamPart);
+            await restService.UploadPhoto(jobId, streamPart);
 
             return file;
         }
