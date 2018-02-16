@@ -9,11 +9,11 @@
 
 # Mobile Cloud Workshop
 
-## Design
-<img src="Resources/Design/Design%20Board.png" height="350">
+<img src="Resources/Design/Design%20Board%20Final.png" height="350">
 
 Welcome to the Microsoft Mobile Cloud Workshop. We've created this workshop to showcase the speed and ease at which you can leverage Microsoft cloud platform (Azure) to build mobile solutions. 
 
+---
 ## Guided Walkthrough
 You can find a walkthrough guide for the project that outlines how you too can build and deploy your own version of the app and backend services. 
 
@@ -31,12 +31,14 @@ You can find a walkthrough guide for the project that outlines how you too can b
 10. [Chatbot](10_Chatbot/README.md)
 11. [Authentication](11_Authentication/README.md)
 
+---
 # Support
 ## Where to find help
 * Email us at cloudworkshop-support@microsoft.com
 * Create Github issues and we'll respond as quickly as possible 
 * Ping us on [Slack](https://mobilecloudworkshop.slack.com)
 
+---
 # Authors
 <img src="Resources/authors.png?raw=true" height="100">
 
