@@ -162,9 +162,20 @@ Scroll up and click ***Save*** to set the Environment Variables for the Function
 
 ### 2.6 Deploy to Azure
 
-Coming soon...
+To deploy the Function to Azure, open it in **Visual Studio for Windows**, right-click the `ContosoMaintenence.Functions` project and select ***Publish...***. When the publish window appears, select ***Azure Function App*** and choose ***Select existing***.
+
+![Publish Azure Function From Windows](Assets/PublishAzureFunctionFromWindows.png)
+
+Select your Function App in the uppopping window and review the Publish Summary before hitting the ***Publish*** button.
+
+![Publish Azure Function From Windows](Assets/PublishAzureFunctionFromWindows2.png)
+
+
 
 ### 2.7 Test your Azure Function
+
+
+
 
 Coming soon...
 
