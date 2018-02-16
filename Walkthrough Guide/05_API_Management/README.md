@@ -95,8 +95,16 @@ To kick off, we'll start by adding an endpoint to API Manangement for handling a
 
 ![Search for API Management](Assets/ApiBlade.png)
 
-Select "Blank API"
- 
+Lets start by creating an API from scratch using the "Blank API" template. 
+
+![Search for API Management](Assets/ApiRequestOptions.png)
+We then have to pick what type of request we're looking to implement. We'll want to implement the following: 
+* GET
+* POST
+* PUT
+* DELETE 
+
+To begin with, lets start with the GET request. 
 ![Search for API Management](Assets/CreateJobsAPI.png)
 
 ##### Adding operations
