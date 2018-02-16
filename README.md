@@ -34,7 +34,6 @@ You can find a walkthrough guide for the project that outlines how you too can b
 ---
 # Support
 ## Where to find help
-* Email us at cloudworkshop-support@microsoft.com
 * Create Github issues and we'll respond as quickly as possible 
 * Ping us on [Slack](https://mobilecloudworkshop.slack.com)
 
