@@ -74,10 +74,11 @@ There are multiple ways to add Azure Functions. One is to click the small ***+**
 
 > **Hint:** We have already prepared an Azure Function so we don't need to start from scratch! In the repository, there is an Azure Function called [`ResizeImage.cs`](/Backend/Functions/ResizeImage.cs) that contains the code for our szenario.
 >
+>1. Get triggered by a Storage Queue message
 >1. Take an image from Azure Blob Storage
->2. Upload it to the Cognitive Services Computer Vision API
->3. Write the resized images back to Auire Blob Storage
->4. Updates the Cosmos DB entry
+>1. Upload it to the Cognitive Services Computer Vision API
+>1. Write the resized images back to Auire Blob Storage
+>1. Updates the Cosmos DB entry
 
 #### 2.1.2 Tooling
 
@@ -90,6 +91,8 @@ Once you installed the Extension, open the [`/Functions`](/Backend/Functions/) f
 #### 2.1.3 Triggers
 
 Azure Functions are based on the concept of **Triggers**, which define when a Function should wake up and execute its code. There are several different [Trigger Bindings](https://docs.microsoft.com/en-us/azure/azure-functions/functions-triggers-bindings) that can be defined in the functions source code or configuration files. Our function uses the [Queue Storage Binding](https://docs.microsoft.com/en-us/azure/azure-functions/functions-bindings-storage-queue) as a Trigger so it wakes up whenever a new message appears in a Storage Queue.
+
+> **Hint:** Do you remember the Storage Queue that we created earlier? Our Web API backend sends a small message with a `jobId` and `photoId` to the queue every time a new photo got uploaded.
 
 ```csharp
 // Trigger
@@ -159,4 +162,8 @@ Scroll up and click ***Save*** to set the Environment Variables for the Function
 
 ### 2.6 Deploy to Azure
 
-### 2.7 Test
+Coming soon...
+
+### 2.7 Test your Azure Function
+
+Coming soon...
