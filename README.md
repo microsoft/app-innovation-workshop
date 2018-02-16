@@ -48,6 +48,6 @@ You can find a walkthrough guide for the project that outlines how you too can b
 
 ---
 # Contributors
-Richard Erwin | [Github](https://github.com/rerwinx)
-Mohamed Saif | [Github](https://github.com/mohamedsaif)
-Michael Sivers | [Github](https://github.com/msivers)
+| Richard Erwin | [Github](https://github.com/rerwinx) |
+| Mohamed Saif | [Github](https://github.com/mohamedsaif) |
+| Michael Sivers | [Github](https://github.com/msivers) |
