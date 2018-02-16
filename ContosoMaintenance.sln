@@ -12,7 +12,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{F9802EBB-7
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Platforms", "Platforms", "{ED42B7AC-B4AD-4784-8FEF-2953A8A7CEDC}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ContosoFieldService.Core", "Mobile\ContosoFieldService.Core\ContosoFieldService.Core.csproj", "{8D50D622-6D39-4894-B679-BB60C5D60648}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContosoFieldService.Core", "Mobile\ContosoFieldService.Core\ContosoFieldService.Core.csproj", "{8D50D622-6D39-4894-B679-BB60C5D60648}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Functions", "Functions", "{A5E6EEE2-C985-4C48-A6FD-BD95BFAA25EA}"
 EndProject
@@ -20,9 +20,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContosoFieldService.Droid",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContosoFieldService.iOS", "Mobile\iOS\ContosoFieldService.iOS.csproj", "{E2745280-BDD1-4F5D-B976-199B9AA7602C}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ContosoMaintenance.WebAPI", "Backend\Monolithic\ContosoMaintenance.WebAPI.csproj", "{95E1F974-A0C1-4CC7-BF1A-D0FB6EF29151}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContosoMaintenance.WebAPI", "Backend\Monolithic\ContosoMaintenance.WebAPI.csproj", "{95E1F974-A0C1-4CC7-BF1A-D0FB6EF29151}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ContosoMaintenance.Functions", "Backend\Functions\ContosoMaintenance.Functions.csproj", "{903A6DB8-26AB-466D-8ACD-7A7A2DE9A67F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContosoMaintenance.Functions", "Backend\Functions\ContosoMaintenance.Functions.csproj", "{903A6DB8-26AB-466D-8ACD-7A7A2DE9A67F}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContosoFieldService.UITests", "Mobile\UITests\ContosoFieldService.UITests.csproj", "{B6E498F2-60A4-44BE-B4D9-D8D2F953066D}"
 EndProject
