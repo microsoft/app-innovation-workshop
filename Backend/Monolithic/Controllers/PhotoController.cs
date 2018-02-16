@@ -35,14 +35,26 @@ namespace ContosoMaintenance.WebAPI.Controllers
 
             try
             {
-                var blobName = Guid.NewGuid().ToString();
-                var fileStream = file.OpenReadStream();
-                blobName = string.Format($"{blobName}");
-                await blobStorage.UploadAsync(blobName, fileStream);
+                // Create Blob
+                var photoId = Guid.NewGuid().ToString();
+                var fileEnding = file.FileName.Substring(file.FileName.LastIndexOf('.'));
+                var blobName = photoId + fileEnding;
 
-                //Create a message on our queue for the Azure Function to process the image.
+                // Upload photo to blob
+                var uri = await blobStorage.UploadAsync(string.Format($"{blobName}"), file.OpenReadStream());
+
+                // Generate photo object
+                var photo = new Photo
+                {
+                    Id = photoId,
+                    LargeUrl = uri.ToString(),
+                    MediumUrl = uri.ToString(),
+                    IconUrl = uri.ToString(),
+                };
+
                 try
                 {
+                    // Create a message on our queue for the Azure Function to process the image.
                     string json = JsonConvert.SerializeObject(new Models.PhotoProcess() { PhotoId = blobName, JobId = jobId }, Formatting.Indented);
                     await queue.AddMessage(json);
                 }
@@ -52,14 +64,8 @@ namespace ContosoMaintenance.WebAPI.Controllers
                     // as Storage Queues appear at a later point.
                 }
 
-                var photo = new Photo
-                {
-                    Id = blobName,
-                    LargeUrl = ""
-                };
-
-                // SHOULD RETURN PATH TO UPLOADED IMAGE
-                return new ObjectResult(true);
+                // Return photo object
+                return new ObjectResult(photo);
             }
             catch
             {

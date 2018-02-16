@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using Newtonsoft.Json;
 
 namespace ContosoFieldService.Models
@@ -22,6 +23,9 @@ namespace ContosoFieldService.Models
 
         [JsonProperty("address")]
         public Location Address { get; set; }
+
+        [JsonProperty("photos")]
+        public List<Photo> Photos { get; set; }
     }
 
     public enum JobType
