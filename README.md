@@ -3,9 +3,26 @@
 
 # Mobile Cloud Workshop
 
-Welcome to the code repository for the Microsoft Mobile Cloud Workshop, which aims to demonstrate the power of Azure for mobile apps. 
+Welcome to the Microsoft Mobile Cloud Workshop. We've created this workshop to showcase the speed and ease at which you can leverage Microsoft cloud platform (Azure) to build mobile solutions. 
 
-The project has been created to showcase a variety of technologies, both front end and back end. Its modular by design, so pick your technology of choice from the available branches.  
+## Guided Walkthrough
+You can find a walkthrough guide for the project that outlines how you too can build and deploy your own version of the app and backend services. 
+
+1. [Setup](00_Setup/README.md)    
+### Azure 
+2. [Architecture Options](02_Architecture_Options/README.md)
+3. [Web API & App Services](03_Web_API/README.md)
+4. [Data Storage & Search](04_Data_Storage/README.md)
+5. [API Management](05_API_Management/README.md)
+6. [Functions & Cognitive Services](06_Functions_Cognitive_Services/README.md)
+### Mobile App
+7. [Overview](07_Mobile_Overview/README.md)
+8. [Network Services](08_Mobile_Network_Services/README.md)
+9. [Anayltics & Push](09_Anayltics_Push/README.md)
+10. [Chatbot](10_Chatbot/README.md)
+11. [Authentication](11_Authentication/README.md)
+
+
 
 # Mobile Apps
 
@@ -15,70 +32,9 @@ The project has been created to showcase a variety of technologies, both front e
 | [![Build status](https://build.appcenter.ms/v0.1/apps/364adcc6-160d-42c9-8bd4-f3b926584c38/branches/master/badge)](https://appcenter.ms)  | [![Build status](https://build.appcenter.ms/v0.1/apps/5865dd4d-0971-48b4-8755-598455ab8677/branches/master/badge)](https://appcenter.ms)  |
 
 
-
-
 ## Design
 <img src="Resources/Design/Design%20Board.png" height="350">
 
-
-
-## Xamarin.Forms
-### .NET 2.0 Standard Library
-The app lives within the .NET Standard library named *ContosoFieldService.Core*. This is a cross-platform library that it referenced by both the iOS and Android projects and is where we implement the bulk of the app. 
-
-*Packages*
-* CarouselView.FormsPlugin
-* Airbnb Lottie 
-* Corcav.Behaviors
-* FormsToolkit
-* FreshMvvm
-* Humnizer
-* AppCenter
-	* Analytics
-	* Crashes
-	* Distribute
-	* Push
-* Refit
-* MvvmHelpers
-* SkiaSharp.Svg
-* Plugin.Media
-* Plugin.ImageCircle
-* Plugin.Settings
-* FFImageLoading.Forms
-* FFImageLoad.Transformations
-* Xamrin.Forms
-* Xamarin.Forms.Maps
-
-### iOS
-
-
-### Android
-
-
-
----
-# Backend Services
-## APIs
-### API Management
-If you’re looking to just demo the mobile app, you can generate your own short-lived API key from our API portal found below. 
-[API Portal](https://contosomaintenance.portal.azure-api.net/)
-
-*Available Endpoints*
-* Jobs
-* Parts
-* Customers
-* Employees
-* Search
-
-### App Services
-Hosting a .NET 2.0 Web API project, the App Service orchestrates the backend services to supply a REST API for mobile consumption. 
-
-* App Services - .N
-## Data
-* Cosmos DB - SQL
-
-## AI & Other
-* Cognitive Services Vision API
 
 # Support
 ## Where to find help
