@@ -1,91 +1,44 @@
 
 ![Banner](Resources/WelcomeBanner.png)
 
-# Mobile Cloud Workshop
-
-Welcome to the code repository for the Microsoft Mobile Cloud Workshop, which aims to demonstrate the power of Azure for mobile apps. 
-
-The project has been created to showcase a variety of technologies, both front end and back end. Its modular by design, so pick your technology of choice from the available branches.  
-
-# Mobile Apps
-
 ## Build Status
 | iOS  | Android |
 | ------------- | ------------- |
 | [![Build status](https://build.appcenter.ms/v0.1/apps/364adcc6-160d-42c9-8bd4-f3b926584c38/branches/master/badge)](https://appcenter.ms)  | [![Build status](https://build.appcenter.ms/v0.1/apps/5865dd4d-0971-48b4-8755-598455ab8677/branches/master/badge)](https://appcenter.ms)  |
 
 
+# Mobile Cloud Workshop
 
+<img src="Resources/Design/Design%20Board%20Final.png">
 
-## Design
-<img src="Resources/Design/Design%20Board.png" height="350">
-
-
-
-## Xamarin.Forms
-### .NET 2.0 Standard Library
-The app lives within the .NET Standard library named *ContosoFieldService.Core*. This is a cross-platform library that it referenced by both the iOS and Android projects and is where we implement the bulk of the app. 
-
-*Packages*
-* CarouselView.FormsPlugin
-* Airbnb Lottie 
-* Corcav.Behaviors
-* FormsToolkit
-* FreshMvvm
-* Humnizer
-* AppCenter
-	* Analytics
-	* Crashes
-	* Distribute
-	* Push
-* Refit
-* MvvmHelpers
-* SkiaSharp.Svg
-* Plugin.Media
-* Plugin.ImageCircle
-* Plugin.Settings
-* FFImageLoading.Forms
-* FFImageLoad.Transformations
-* Xamrin.Forms
-* Xamarin.Forms.Maps
-
-### iOS
-
-
-### Android
-
-
+Welcome to the Microsoft Mobile Cloud Workshop. We've created this workshop to showcase the speed and ease at which you can leverage Microsoft cloud platform (Azure) to build mobile solutions. 
 
 ---
-# Backend Services
-## APIs
-### API Management
-If you’re looking to just demo the mobile app, you can generate your own short-lived API key from our API portal found below. 
-[API Portal](https://contosomaintenance.portal.azure-api.net/)
+## Guided Walkthrough
+You can find a walkthrough guide for the project that outlines how you too can build and deploy your own version of the app and backend services. 
 
-*Available Endpoints*
-* Jobs
-* Parts
-* Customers
-* Employees
-* Search
+1. [Setup](00_Setup/README.md)    
+### Azure 
+2. [Architecture Options](https://github.com/MikeCodesDotNet/Mobile-Cloud-Workshop/tree/master/Walkthrough%20Guide/02_Architecture_Options)
+3. [Web API & App Services](https://github.com/MikeCodesDotNet/Mobile-Cloud-Workshop/tree/master/Walkthrough%20Guide/03_Web_API)
+4. [Data Storage & Search](https://github.com/MikeCodesDotNet/Mobile-Cloud-Workshop/tree/master/Walkthrough%20Guide/04_Data_Storage)
+5. [API Management](https://github.com/MikeCodesDotNet/Mobile-Cloud-Workshop/tree/master/Walkthrough%20Guide/05_API_Management)
+6. [Functions & Cognitive Services](https://github.com/MikeCodesDotNet/Mobile-Cloud-Workshop/tree/master/Walkthrough%20Guide/06_Functions_Cognitive_Services)
+### Mobile App
+7. [Overview](https://github.com/MikeCodesDotNet/Mobile-Cloud-Workshop/tree/master/Walkthrough%20Guide/07_Mobile_Overview)
+8. [Network Services](https://github.com/MikeCodesDotNet/Mobile-Cloud-Workshop/tree/master/Walkthrough%20Guide/08_Mobile_Network_Services)
+9. [Anayltics & Push](09_Anayltics_Push/README.md)
+10. [Chatbot](https://github.com/MikeCodesDotNet/Mobile-Cloud-Workshop/tree/master/Walkthrough%20Guide/10_Chatbot)
+11. [Authentication](https://github.com/MikeCodesDotNet/Mobile-Cloud-Workshop/tree/master/Walkthrough%20Guide/11_Authentication)
 
-### App Services
-Hosting a .NET 2.0 Web API project, the App Service orchestrates the backend services to supply a REST API for mobile consumption. 
-
-* App Services - .N
-## Data
-* Cosmos DB - SQL
-
-## AI & Other
-* Cognitive Services Vision API
-
+---
 # Support
 ## Where to find help
 * Email us at cloudworkshop-support@microsoft.com
 * Create Github issues and we'll respond as quickly as possible 
 * Ping us on [Slack](https://mobilecloudworkshop.slack.com)
 
+---
 # Authors
 <img src="Resources/authors.png?raw=true" height="100">
 
