@@ -9,7 +9,7 @@
 
 # Mobile Cloud Workshop
 
-<img src="Resources/Design/Design%20Board%20Final.png" height="350">
+<img src="Resources/Design/Design%20Board%20Final.png">
 
 Welcome to the Microsoft Mobile Cloud Workshop. We've created this workshop to showcase the speed and ease at which you can leverage Microsoft cloud platform (Azure) to build mobile solutions. 
 
