@@ -203,7 +203,15 @@ So let's also create two more containers for scaled images with the same propert
 
 ![Blob Container Overview](Assets/BlobContainerOverview.png)
 
-#### 2.3.2 Add Connection Information to Environment Variables
+#### 2.3.2 Add Storage Queue
+
+Now that we have added Containers for uploaded photos, we use another Storage Type of Azure Storage Accounts: Storage Queues. Those are simple message queues that can handle any kind of information and saves them until they got processed. Although we do not need the Storage Queue for the image upload directly, it will become important later at this workshop and it is a good time to create it now.
+
+![Add Storage Queue](Assets/AddStorageQueue.png)
+
+Enter the ***Queues*** section of the Storage Account via the side menu and create a new Queue called `processphotos`.
+
+#### 2.3.3 Add Connection Information to Environment Variables
 
 Similar to the Cosmos DB configuration above, the Web API backend project also manages Azure Blob Storage Access through environment variables.
 
@@ -227,6 +235,7 @@ Add the settings in the format `Settings:Key` and take the values from your Stor
 - **`AzureStorage:StorageAccountName`:** Storage Account name (e.g. myawesomestartupstorage)
 - **`AzureStorage:Key`:** Key 1 key from the ***Access Keys*** section
 - **`AzureStorage:PhotosBlobContainerName`:** images-large
+- **`AzureStorage:QueueName`:** processphotos
 
 Once you click the ***Save*** button at the top of the page, the backend will choose this Storage Account and the  `images-large` blob container to upload photos.
 
