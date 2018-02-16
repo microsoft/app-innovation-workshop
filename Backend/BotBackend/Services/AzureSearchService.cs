@@ -23,19 +23,20 @@ namespace CognitiveServicesBot.Services
             }
         }
 
-        public async Task<SearchResult> Search(string value)
-        {
-            if (string.IsNullOrEmpty(value))
-                throw new ArgumentNullException("Cannot search with a null value");
+        //Although this method is not used, but it show a nice demo of wide search of the index
+        //public async Task<SearchResult> Search(string value)
+        //{
+        //    if (string.IsNullOrEmpty(value))
+        //        throw new ArgumentNullException("Cannot search with a null value");
 
-            using (var httpClient = new HttpClient())
-            {
-                string parsedSearch = WebUtility.UrlEncode(value);
-                string query = $"{QueryString}search='{parsedSearch}'";
-                string response = await httpClient.GetStringAsync(query);
-                return JsonConvert.DeserializeObject<SearchResult>(response);
-            }
-        }
+        //    using (var httpClient = new HttpClient())
+        //    {
+        //        string parsedSearch = WebUtility.UrlEncode(value);
+        //        string query = $"{QueryString}search='{parsedSearch}'";
+        //        string response = await httpClient.GetStringAsync(query);
+        //        return JsonConvert.DeserializeObject<SearchResult>(response);
+        //    }
+        //}
 
         public async Task<SearchResult> FilterByStatus(string value)
         {

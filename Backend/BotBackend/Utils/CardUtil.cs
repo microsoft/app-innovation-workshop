@@ -35,13 +35,13 @@ namespace LuisBot.Utils
         public static ThumbnailCard CreateThumbnailCard(Value value)
         {
             var card = new ThumbnailCard();
-            card.Title = value.name;
-            card.Subtitle = value.type + " / " + value.status;
+            card.Title = value.Name;
+            card.Subtitle = value.Type + " / " + value.Status;
             card.Images = new List<CardImage>()
             {
                 new CardImage(string.Format(WebConfigurationManager.AppSettings["BotCardsBlobStorageURL"], ContosoLogoUrl))
             };
-            card.Text = value.details;
+            card.Text = value.Details;
 
             //If an action to be introduced to every job result, here is where to put it
             //card.Buttons = new List<CardAction>()
@@ -60,7 +60,7 @@ namespace LuisBot.Utils
         public static AdaptiveCard CreateFeatureCard(Value value)
         {
             AdaptiveCard card = new AdaptiveCard();
-            card.Speak = value.name;
+            card.Speak = value.Name;
             card.Body = new List<CardElement> {
                     new ColumnSet
                     {
@@ -73,7 +73,6 @@ namespace LuisBot.Utils
                                 {
                                     new Image
                                     {
-                                        //Url = string.Format(ContosoImagesBlob, ContosoLogoUrl),
                                         Url = string.Format(WebConfigurationManager.AppSettings["BotCardsBlobStorageURL"], ContosoLogoUrl),
                                         Size = ImageSize.Small,
                                         Style = ImageStyle.Normal
@@ -87,7 +86,7 @@ namespace LuisBot.Utils
                                 {
                                     new TextBlock
                                     {
-                                        Text = value.name,
+                                        Text = value.Name,
                                         Weight = TextWeight.Bolder,
                                         Size = TextSize.Large
                                     }
@@ -101,25 +100,27 @@ namespace LuisBot.Utils
                         {
                             new TextBlock
                             {
-                                Text = value.details,
-                                Speak = value.details,
+                                Text = value.Details,
+                                Speak = value.Details,
                                 Wrap = true
                             },
                             new FactSet
                             {
                                 Facts =
                                 {
-                                    new AdaptiveCards.Fact{Title = "Type", Value = value.type},
-                                    new AdaptiveCards.Fact{Title = "Status", Value = value.status}
+                                    new AdaptiveCards.Fact{Title = "Type", Value = value.Type},
+                                    new AdaptiveCards.Fact{Title = "Status", Value = value.Status}
                                 }
                             }
                         }
                     }
                 };
+
+            //If an action to be introduced to every job result, here is where to put it
             //card.Actions = new List<ActionBase>
             //{
             //    new OpenUrlAction{Title = "View Job", Url=value.id}
-            //};
+            //}
 
             return card;
         }
