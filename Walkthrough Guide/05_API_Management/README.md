@@ -84,14 +84,28 @@ API Management will need to be configured to route our requests to the correct p
 ## Configuring API Management
 
 ### Adjusting our Products
-Just like with Azure, we can create tiers of services within API Management. We're going to modify our existing 'Products' to reflex more generous API usage. 
-
-#### Unlimited Tier
-We're going to keep our unlimited keys for just our closest of friends. 
-
-#### Starter Tier 
+We're able to define access to particular APIs through the use of 'Products'. By defualt, API Management will create two products for you, Starter and Unlimited. We can adjust our products within the Publisher Portal and I always like to increase the Starter products rate limit to be a little more generous. 
 
 ![Search for API Management](Assets/Deployed.png)
 
+### Adding APIs 
 
+#### Jobs
+To kick off, we'll start by adding an endpoint to API Manangement for handling access to Jobs. To do this, click on "APIs" on the left hand menu. 
+
+![Search for API Management](Assets/ApiBlade.png)
+
+Select "Blank API"
  
+![Search for API Management](Assets/CreateJobsAPI.png)
+
+##### Adding operations
+
+**Get**
+![Search for API Management](Assets/CreateJobsGetAPI.png)
+
+**Delete**
+![Search for API Management](Assets/CreateDeleteApi.png)
+
+**Put**
+
