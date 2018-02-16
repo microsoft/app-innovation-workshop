@@ -1,40 +1,49 @@
 ![Banner](Assets/Banner.png)
 
-# 1. Alternaitve Architecture Options 
-There are lots of ways for us to design the Azure backend service but for this workshop, we approached this project as a "greenfield / Bluesky" development. 
+# 1. Architecture Options 
+Deciding how to architect a solution isn't an easy task and depending on who you ask, you'll likely get very different answers. There are many different ways we could design such a system and we'll cover a few of them below. 
 
-You may not have that luxury in your projects so we've created a few alternative architecture diagrams that may be more suitable for you. 
+We're looking for a solution that allows us lots of flexibility with minimal maintenance.  We're interested in focusing on the business problem rather than deploying and maintaining a set of virtual machines. 
 
-## App Service Web API
+It's for the reason that we'll opt to use Platform as a Service (PaaS) as much as possible within our design. 
+ 
+
+
+## The real architecture
 ![Azure Functions Architecture](Assets/WebAPI.png)
 
+Above you can see a high-level overview of our production architecture. Some key decisions: 
+
+### Orchestration 
+We were going to leverage our .NET skills and build a ASP.NET Web API targetting .NET Core, we've lots of flexibility on where and how to host the code. 
+
+We picked Azure App Service as it supports great IDE integration for both Visual Studio PC and Visual Studio Mac, as well as offering all the PaaS goodness we need to focus on other parts of the solution.  
+
+### Security
+As we're not going to implement Authentication in today's workshop, we decided to add API Management to add an additional security layer through the use of API keys. 
+
+### Data Storage 
+We've opted for a NoSQL approach using CosmosDB. Our reasoning for this is based on a few reasons. An important part is the geo-replication features of CosmosDB make it a natural choice for new projects, but secondly, our deadline meant we didn't have time to spend migrating database for small model changes (something we did a lot in the beginning). 
+
 ---
+
 ## Azure Functions
 ![Azure Functions Architecture](Assets/Functions.png)
 
-Take advantage of serverless compute with Functions.
-Easily build the apps you need using simple, serverless functions that scale to meet demand. Use the programming language of your choice,and don’t worry about servers or infrastructure.
+We can swap out the orchestration service from App Service to Azure Functions if we're looking to cut costs and move to a 'serverless' architecture. 
 
-Focus on building great apps. Don’t worry about provisioning and maintaining servers, especially when your workload grows. Azure Functions provides a fully managed compute platform with high reliability and security. With scale on demand, you get the resources you need—when you need them.
+The truth is, there is a server. Azure Functions actually runs in the same environment as App Services, but the way we as developers interact with the service is a little different. 
 
+The biggest difference is how we scale. With Azure Functions, we do not ever have to worry about scaling our services to meet demand. Azure Functions runs on what we call "dynamic compute", in that Microsoft will scale up, down, out and in instances of your code to meet demand. 
+
+We will be developing a version of the backend that is entirely Azure Functions based on the future. 
 
 ---
 ## Micro-Services
 ![Azure Functions Architecture](Assets/MicroServices.png)
 
-Focus on building applications and business logic, and let Azure solve the hard distributed systems problems such as reliability, scalability, management, and latency. Service Fabric is the foundational technology powering core Azure infrastructure as well as other Microsoft services such as Skype for Business, Intune, Azure Event Hubs, Azure Data Factory, Azure Cosmos DB, Azure SQL Database, Dynamics 365, and Cortana. Designed to deliver highly available and durable services at cloud-scale, Azure Service Fabric intrinsically understands the available infrastructure and resource needs of applications, enabling automatic scale, rolling upgrades, and self-healing from faults when they occur.
+Mr. Michael Sivers is currently investigating adding a Micro-Services architecture as a branch. 
 
-Choose from a variety of productive programming models and languages including C# and Java to build your microservice and container-based applications.
+If you're interested in helping, then please reach out to us! 
 
 Learn more about [Service Fabric](https://azure.microsoft.com/en-us/services/service-fabric/)
-
----
-## Traffic Manager
-
-//TODO - Create Traffic Architecture Diagram which replaces API Management
-
-
-
-
-
-
