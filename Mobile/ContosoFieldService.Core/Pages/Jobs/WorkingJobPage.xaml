@@ -113,8 +113,7 @@
                 Style="{StaticResource FullWidthButtonStyle}"
                 BackgroundColor="{StaticResource AccentColorBlue}" 
                 Text="Snap a Photo" 
-                Command="{Binding SnapPhotoClicked}"
-                IsVisible="{Binding CameraSupported}" />
+                Command="{Binding SnapPhotoClicked}" />
 
             <!-- Complete Job --> 
             <Button 

@@ -236,14 +236,16 @@ Let's test if everything works as expected and send our first photo to the Web A
 
 #### 2.4.1 Uploading a photo
 
-The API endpoint for the photo upload is  `/api/photo` and we can basically upload any file we want. You can choose a picture from the web or your computer or use the [Demo-AirplaneAssembly.jpg](Assets/Demo-AirplaneAssembly.jpg) ([Source](https://en.wikipedia.org/wiki/Airplane)) from this repository. Make sure to send the picture as **form-data** file to the API as it expects it in the [`PhotoController.cs`](/Backend/Monolithic/Controllers/PhotoController.cs#L30).
+The API endpoint for the photo upload is  `/api/photo/{jobId}` and we can basically upload any file we want. You can choose a picture from the web or your computer or use the [Demo-AirplaneAssembly.jpg](Assets/Demo-AirplaneAssembly.jpg) ([Source](https://en.wikipedia.org/wiki/Airplane)) from this repository. Make sure to send the picture as **form-data** file to the API as it expects it in the [`PhotoController.cs`](/Backend/Monolithic/Controllers/PhotoController.cs#L30).
+
+Take the `id` from any job in your Cosmos DB to build the url and attach the photo to a specific *Job*.
 
 ![Postman Image Upload Test](Assets/PostmanImageUploadTest.png)
 
 You can send the photo via [Postman](https://www.getpostman.com/) with the following settings.
 
 - **Method:** POST
-- **Url:** `http://myawesomestartupapi.azurewebsites.net/api/photo` (or similar)
+- **Url:** `http://myawesomestartupapi.azurewebsites.net/api/photo/3de8f6d0-e1b6-416a-914d-cd13554929a4` (or similar)
 - **Body:** form-data
 - **form-data:**
   - **Key:** `file`
