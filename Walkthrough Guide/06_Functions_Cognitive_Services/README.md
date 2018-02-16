@@ -167,3 +167,6 @@ Coming soon...
 ### 2.7 Test your Azure Function
 
 Coming soon...
+
+# Next Steps 
+[Archicture Options](../07_Mobile_Overview/README.md)

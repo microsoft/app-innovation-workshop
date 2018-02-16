@@ -276,3 +276,6 @@ And voilà, here it is. The API replaces the original name by a GUID ([View in p
 - [Secure App Service Credentials with Key Vault](https://docs.microsoft.com/en-us/aspnet/core/security/key-vault-configuration?tabs=aspnetcore2x) 
 
 -->
+
+# Next Steps 
+[API Management](../05_API_Management/README.md)

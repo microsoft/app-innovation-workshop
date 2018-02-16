@@ -115,6 +115,7 @@ public async Task<Job> GetJobByIdAsync(string id)
 ```
 
 **Resilient**
+
 To build a service layer that is resilient to network outages or poor connectivity, we would want to grab a few extra packages. The first being the Xamarin Connectivity Plugin. This allows us to query what our network connectivity looks like before we decide how to process a request for data. We may want to return a cached copy if its still valid and we’ve poor connectivity. Alternatively we may want to do a remote fetch and save the response for next time.  To help combat against poor connectivity, we also use Polly to handle timeouts and retry logic. You can see in the example below, we will try 5 times before giving up. 
 
 ```cs
@@ -157,6 +158,10 @@ public async Task<List<Job>> GetJobsAsync()
     return jobs;
 }
 ```
+
+---
+# Next Steps 
+[App Center](../07_Mobile_Overview/README.md)
 
 
 

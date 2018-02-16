@@ -39,3 +39,7 @@ The core project contains our app's Pages, ViewModels (we call them PageModels),
 * Plugin.Settings
 * FFImageLoading.Forms
 * FFImageLoad.Transformations
+
+---
+# Next Steps 
+[Mobile Network Services](../07_Mobile_Overview/README.md)

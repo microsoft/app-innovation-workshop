@@ -139,3 +139,6 @@ We can then provide a few details about our API.
 
 **Put**
 
+---
+# Next Steps 
+[Functions & Cognitive Services](../06_Functions_Cognitive_Services/README.md)
