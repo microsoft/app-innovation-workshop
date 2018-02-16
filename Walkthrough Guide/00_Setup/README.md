@@ -117,3 +117,6 @@ To test you development environment, you can download the simple blank test app 
 
 ## Move on
 If this works for the platforms you want to target, you are ready to move on. This was the hardest part. Now you can discover the beautiful world of Xamarin and Azure! 
+
+# Next Steps 
+[Archicture Options](../02_Architecture_Options/README.md)
