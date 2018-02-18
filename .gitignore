@@ -323,3 +323,6 @@ Thumbs.db
 
 # dotCover
 *.dotCover
+/Mobile/Droid/app.config
+/Mobile/iOS/app.config
+/Mobile/UITests/app.config
