@@ -100,7 +100,72 @@ Once it is provisioned, you can find your keys by navigating to it:
 
 Copy your primary key and add it to your LUIS app on the builder website (https://www.luis.ai or https://eu.luis.ai).
 
-Pro-tip: It may take several mins for your new keys to be accessible. Please wait a bit before start using them.
+> **Hint:** It may take several mins for your new keys to be accessible. Please wait a bit before start using them.
+
+Although you are ready for prime time, you will probably go back to your model and introduce improvements and adjustments on a regular basis to make sure to continue to present the best value to your bot users.
+
+##  2. Chat Bot
+Now we have our brain behind our Bot good to go, it is time to think about the bot itself. So bots in a general terms are automation software. This means they are essentially stupid 😊. What makes a bot smart or not, are the actual services that it automates the communication to and from.
+ 
+What you need to have your bot up and running with very basic functionality is a bot app and a bot backend.
+
+### 2.1 Azure Bot Service
+Azure Bot Service allows you to build, connect, deploy, and manage intelligent bots to naturally interact with your users on a website, app, Cortana, Microsoft Teams, Skype, Slack, Facebook Messenger, and more. Get started quick with a complete bot building environment, all while only paying for what you use.
+
+It also speeds up development by providing an integrated environment that's purpose-built for bot development with the Microsoft Bot Framework connectors and BotBuilder SDKs. Developers can get started in seconds with out-of-the-box templates for scenarios including basic, form, language understanding, question and answer, and proactive bots.
+
+You can start by creating a bot service on Azure Portal by selecting New -> AI + Cognitive Services -> Web App Bot. This will create all the needed resources to run your bot as fast as possible.
+
+ss
+
+By selecting Language understanding as the startup code template, it will provision the service and deploy source code with bot framework integrated and starter LUIS integration. 
+
+> **Hint:** You can then download the source code of the provisioned bot through the FTP URL provided in the bot Web App service.
+
+Below is the architecture of the bot components.
+
+SS
+
+### 2.2 Bot Web App Backend
+Now you have a bot service that is ready for your development input. Bot backend is located here Mobile-Cloud-Workshop/Backend/BotBackend/ in the git repo. Open the solution in Visual Studio 2017 (Community edition will work as well).
+
+> **Hint:** As we develop this project, Bot framework didn’t fully support .NET Core. This meant that we can’t develop it on a Mac as we needed the full .NET Framework library to leverage all the features of the Bot Framework. Bot team is working on releasing a full .NET Core support soon.
+
+After starting working with the solution, first thing is to update the settings in the web.config section below with your keys:
+```xml
+<appSettings>
+    <!-- update these with your Microsoft App Id and your Microsoft App Password-->
+    <add key="MicrosoftAppId" value="YOURS" />
+    <add key="MicrosoftAppPassword" value="YOURS" />
+    <add key="SearchName" value="YOURS" />
+    <add key="IndexName" value="YOURS-index" />
+    <add key="SearchKey" value="YOURS" />
+    <add key="LuisAppId" value="YOURS" />
+    <add key="LuisAPIKey" value="YOURS" />
+    <add key="LuisAPIHostName" value="YOURS" />
+    <add key="AzureWebJobsStorage" value="YOURS" />
+    <add key="BotCardsBlobStorageURL"  value="YOURS" />
+</appSettings>
+```
+
+
+After updating the keys, you can publish the project to Azure directly from Visual Studio publish options (right click the project -> Publish). You can connect directly to Azure using your credentials or Import Profile (you can get the publishing provide from the bot web app overview window -> Get publish profile)
+
+You are done! Congratulations! 
+
+Now to test the actual bot implementation and code you can open your bot service from Azure and click on the blade says “Test in Web Chat”
+
+SS
+
+> **Hint:** As a recommended practice, you should remove all of your secrets from web.conig and put them inside the “App Settings” blade on Azure Web App service. This way you avoid checking in your secrets in source control.
+
+##  3. Integration with Mobile App
+So now after you have built, tested and deployed your bot you can easily integrate in a Mobile App through a simple WebView screen. Just find your Web channel bot URL and included in your app.
+
+SS
+
+> **Hint:** To have more control on the bot interactions and improve user experience, it is recommended to replace the WebView approach with a more solid native experience. This is done through using configuring and using “Direct Channel” on your bot. Direct channel is about using pure APIs to communicate with the bot. Refere back to Bot Framework documentation for more inforamtion
+
 
 ---
 # Next Steps 
