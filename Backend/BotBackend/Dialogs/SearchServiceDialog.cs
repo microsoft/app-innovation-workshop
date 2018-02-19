@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using LuisBot.Utils;
 
 namespace LuisBot.Dialogs
 {
@@ -28,8 +29,7 @@ namespace LuisBot.Dialogs
 
             //You can indicate to the user you are running the query :)
             //await context.PostAsync("Hold on one second!");
-
-            var model = JobModel.GetContextData(context);
+            var model = JobModelExtension.GetContextData(context);
 
             
             if(false)

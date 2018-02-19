@@ -195,6 +195,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\AzureSearchService.cs" />
     <Compile Include="Utils\CardUtil.cs" />
+    <Compile Include="Utils\JobModelExtension.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
