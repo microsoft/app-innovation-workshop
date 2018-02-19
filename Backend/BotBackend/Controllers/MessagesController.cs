@@ -33,7 +33,7 @@ namespace Microsoft.Bot.Sample.LuisBot
             return new HttpResponseMessage(System.Net.HttpStatusCode.Accepted);
         }
 
-        private Activity HandleSystemMessage(Activity message)
+        Activity HandleSystemMessage(Activity message)
         {
             //The Bot Framework support a lot of message types. Here is sample of potential message types that you may want to support.
             switch (message.Type)

@@ -20,7 +20,7 @@ namespace Microsoft.Bot.Sample.LuisBot
     [Serializable]
     public class BasicLuisDialog : LuisDialog<object>
     {
-        private readonly AzureSearchService searchService = new AzureSearchService();
+        readonly AzureSearchService searchService = new AzureSearchService();
         public BasicLuisDialog() : base(new LuisService(new LuisModelAttribute(
             ConfigurationManager.AppSettings["LuisAppId"], 
             ConfigurationManager.AppSettings["LuisAPIKey"], 
@@ -85,20 +85,20 @@ namespace Microsoft.Bot.Sample.LuisBot
             await this.ShowLuisResult(context, result);
         }
 
-        private async Task ShowLuisResult(IDialogContext context, LuisResult result) 
+        async Task ShowLuisResult(IDialogContext context, LuisResult result) 
         {
             //Sorry, what was that? I can only help w specific travels questions. Try asking me stuff like: ...
             await context.PostAsync($"I couldn't understand {result.Intents[0].Intent}. You said: {result.Query}. I can answer questions like (what are my jobs?).");
             context.Wait(MessageReceived);
         }
 
-        private async Task ShowLuisResult(IDialogContext context, LuisResult result, string customMessaage)
+        async Task ShowLuisResult(IDialogContext context, LuisResult result, string customMessaage)
         {
             await context.PostAsync($"{customMessaage}");
             context.Wait(MessageReceived);
         }
 
-        private async Task AfterDialog(IDialogContext context, IAwaitable<object> result)
+        async Task AfterDialog(IDialogContext context, IAwaitable<object> result)
         {
             var messageHandled = (string)await result;
 
