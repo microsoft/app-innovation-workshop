@@ -4,7 +4,7 @@
 
 # Mobile Cloud Workshop
 
-Welcome to the Microsoft Mobile Cloud Workshop. We've created this workshop to showcase the speed and ease at which you can leverage Microsoft cloud platform (Azure) to build mobile solutions.
+Welcome to the Microsoft Mobile Cloud Workshop. We've created this workshop to showcase the speed and ease at which you can leverage Microsoft' cloud platform Azure to build innovative mobile solutions.
 
 | Platform | Build Status | Latest Release |
 |---|:---:|:---:|
