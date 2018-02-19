@@ -31,8 +31,6 @@ What did we use to build this sample?
 
 * [Xamarin.Forms](https://www.xamarin.com/forms)
 
-&nbsp;
-
 ## Guided Walkthrough
 You can find a walkthrough guide for the project that outlines how you too can build and deploy your own version of the app and backend services. 
 
@@ -55,8 +53,6 @@ You can find a walkthrough guide for the project that outlines how you too can b
 9. [Anayltics & Push](09_Anayltics_Push/README.md)
 10. [Chatbot](Walkthrough%20Guide/10_Chatbot)
 11. [Authentication](Walkthrough%20Guide/11_Authentication)
-
-&nbsp;
 
 ## Support
 
