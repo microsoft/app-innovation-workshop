@@ -43,9 +43,17 @@ Functions are a **Serverless** component of Microsoft Azure and abstract even mo
 
 This behaviour allows Microsoft to offer a [**very attractive pricing model**](https://azure.microsoft.com/en-us/pricing/details/functions/) where you only pay for pure execution time of an Azure Function. That means you only pay and Azure Function when it is actually used. If you write code that never gets executed, it won't cost you anything! The ultimate idea of cloud computing! Event better, [the first 1 million executions or 400000 GB-s are free](https://azure.microsoft.com/en-us/pricing/details/functions/)!
 
-> **Hint:** Azure Functions are the ideal service to extend existing large backend architectures with additional functionality or to process data in the cloud. The ladder is exactly what we need to do when resizing images. 
+> **Hint:** Azure Functions are the ideal service to extend existing large backend architectures with additional functionality or to process data in the cloud. The ladder is exactly what we need to do when resizing images.
 
 Whenever a user uploads an image, he shall get an immediate feedback and should not have to wait for the Cognitive Services. Once the image got dropped to the Blob Storage, the Function awakes and calls the Cognitive Service API to resize it in a smart way in the background. Next time, a user fetches images, he will receive the reseized versions.
+
+We have already prepared an Azure Function so we don't need to start from scratch! In the repository, there is an Azure Function called [`ResizeImage.cs`](/Backend/Functions/ResizeImage.cs) that contains the code for our szenario.
+
+1. Get triggered by a Storage Queue message
+1. Take an image from Azure Blob Storage
+1. Upload it to the Cognitive Services Computer Vision API
+1. Write the resized images back to Auire Blob Storage
+1. Updates the Cosmos DB entry
 
 ### 2.1 Create an Azure Function
 
@@ -72,27 +80,23 @@ Once the Function App got created, we can navigate to it and start exploring the
 
 There are multiple ways to add Azure Functions. One is to click the small ***+*** button next to the ***Functions*** entry in the side menu and start from scratch. You can see, that Azure Functions are suitable for different scenarios like Webhooks, Timed executions or Data processing. This basically defines, when a Functions should be triggered. Azure also supports different programmiung languages.
 
-> **Hint:** We have already prepared an Azure Function so we don't need to start from scratch! In the repository, there is an Azure Function called [`ResizeImage.cs`](/Backend/Functions/ResizeImage.cs) that contains the code for our szenario.
->
->1. Get triggered by a Storage Queue message
->1. Take an image from Azure Blob Storage
->1. Upload it to the Cognitive Services Computer Vision API
->1. Write the resized images back to Auire Blob Storage
->1. Updates the Cosmos DB entry
-
 #### 2.1.2 Tooling
 
-Visual Studio for Windows and Mac both support a rudimentary Azure Functions tooling but the easiest and most convedient way to work with Functions is the [Azure Functions Extension for Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-azurefunctions). It enables us to test functions locally and deploy them to Azure.
+The best and most convenient tooling for Azure Functions still delivers Visual Studio for Windows. The cross-platform code editor Visual Studio Code supports Azure Functions tooling when the [Azure Functions Extension](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-azurefunctions) gets added. Unfortunately, the *stable* **Azure Functions Runtime is Windows only**. As the Azure Function in this workshop is using this runtime, Windows is needed for this step.
 
-Once you installed the Extension, open the [`/Functions`](/Backend/Functions/) folder from the repository in Visual Studio Code and log into the ***Azure Functions*** window that appears in the bottom-left corner.
+> **Hint:** Once the next Version of the Azure Functions runtime (which will be crossed-platform) reaches a stable state, this workshop will be updated to use Visual Studio Code and the new runtime.
 
-![VS Code Azure Function](Assets/VSCodeAzureFunction.png)
+for Windows and Mac both support a rudimentary Azure Functions tooling but the easiest and most convedient way to work with Functions is the . It enables us to test functions locally and deploy them to Azure.
+
+![Visual Studio Azure Functions](Assets/VSAzureFunctions.png)
+
+Open the [`/Functions`](/Backend/Functions/) folder from the repository in Visual Studio Code and explore the code.
 
 #### 2.1.3 Triggers
 
 Azure Functions are based on the concept of **Triggers**, which define when a Function should wake up and execute its code. There are several different [Trigger Bindings](https://docs.microsoft.com/en-us/azure/azure-functions/functions-triggers-bindings) that can be defined in the functions source code or configuration files. Our function uses the [Queue Storage Binding](https://docs.microsoft.com/en-us/azure/azure-functions/functions-bindings-storage-queue) as a Trigger so it wakes up whenever a new message appears in a Storage Queue.
 
-> **Hint:** Do you remember the Storage Queue that we created earlier? Our Web API backend sends a small message with a `jobId` and `photoId` to the queue every time a new photo got uploaded.
+> **Hint:** Do you remember the Storage Queue that we created earlier? Our Web API backend sends a small message with a `jobId` and `photoId` to the queue every time a new photo got uploaded. So the Function will fire up every time a photo gets uploaded.
 
 ```csharp
 // Trigger
@@ -115,7 +119,7 @@ When an Azure Function awakes, it can fetch additional **Inputs** from multiple 
 
 [View in project](/Backend/Functions/ResizeImage.cs#L25-L26)
 
-This passes a `Job job` based with its `id == {jobId}` and a `byte[] imageLarge` from `/images-large/{photoId}.jpg` to the Function. The values `{jobId}` and `{photoId}` are from our Trigger the `PhotoProcess queueItem`.
+This passes a `Job job` based with its `id` equals `{jobId}` and a `byte[] imageLarge` from `/images-large/{photoId}.jpg` to the Function. The values `{jobId}` and `{photoId}` are from our Trigger the `PhotoProcess queueItem`.
 
 Azure Function Outputs follow the same process. As we want to write two images to our Blob Storage (a medium sized and icon sized one), we define two outputs of the same Binding type.
 
@@ -162,17 +166,14 @@ Scroll up and click ***Save*** to set the Environment Variables for the Function
 
 ### 2.6 Deploy to Azure
 
-To deploy the Function to Azure, open it in **Visual Studio for Windows**, right-click the `ContosoMaintenence.Functions` project and select ***Publish...***. When the publish window appears, select ***Azure Function App*** and choose ***Select existing***.
+To deploy the Function to Azure, open it in **Visual Studio for Windows**, right-click the `ContosoMaintenence.Functions` project and select ***Publish***. When the publish window appears, select ***Azure Function App*** and choose ***Select existing***.
 
-![Publish Azure Function From Windows](Assets/PublishAzureFunctionFromWindows.png)
+![Publish Azure Function From Visual Studio Windows](Assets/PublisAzureFunctionsFromVS.png)
 
 Select your Function App in the uppopping window and review the Publish Summary before hitting the ***Publish*** button.
 
-![Publish Azure Function From Windows](Assets/PublishAzureFunctionFromWindows2.png)
-
-
-
 ### 2.7 Test your Azure Function
+
 
 
 
