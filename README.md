@@ -17,19 +17,19 @@ Welcome to the Microsoft Mobile Cloud Workshop. We've created this workshop to s
 ## Guided Walkthrough
 You can find a walkthrough guide for the project that outlines how you too can build and deploy your own version of the app and backend services. 
 
-1. [Setup](Walkthrough%20Guide/00_Setup/README.md)    
+1. [Setup](Walkthrough%20Guide/00_Setup/)    
 ### Azure 
-2. [Architecture Options](https://github.com/MikeCodesDotNet/Mobile-Cloud-Workshop/tree/master/Walkthrough%20Guide/02_Architecture_Options)
-3. [Web API & App Services](https://github.com/MikeCodesDotNet/Mobile-Cloud-Workshop/tree/master/Walkthrough%20Guide/03_Web_API)
-4. [Data Storage & Search](https://github.com/MikeCodesDotNet/Mobile-Cloud-Workshop/tree/master/Walkthrough%20Guide/04_Data_Storage)
-5. [API Management](https://github.com/MikeCodesDotNet/Mobile-Cloud-Workshop/tree/master/Walkthrough%20Guide/05_API_Management)
-6. [Functions & Cognitive Services](https://github.com/MikeCodesDotNet/Mobile-Cloud-Workshop/tree/master/Walkthrough%20Guide/06_Functions_Cognitive_Services)
+2. [Architecture Options](Walkthrough%20Guide/02_Architecture_Options)
+3. [Web API & App Services](Walkthrough%20Guide/03_Web_API)
+4. [Data Storage & Search](Walkthrough%20Guide/04_Data_Storage)
+5. [API Management](Walkthrough%20Guide/05_API_Management)
+6. [Functions & Cognitive Services](Walkthrough%20Guide/06_Functions_Cognitive_Services)
 ### Mobile App
-7. [Overview](https://github.com/MikeCodesDotNet/Mobile-Cloud-Workshop/tree/master/Walkthrough%20Guide/07_Mobile_Overview)
-8. [Network Services](https://github.com/MikeCodesDotNet/Mobile-Cloud-Workshop/tree/master/Walkthrough%20Guide/08_Mobile_Network_Services)
+7. [Overview](Walkthrough%20Guide/07_Mobile_Overview)
+8. [Network Services](Walkthrough%20Guide/08_Mobile_Network_Services)
 9. [Anayltics & Push](09_Anayltics_Push/README.md)
-10. [Chatbot](https://github.com/MikeCodesDotNet/Mobile-Cloud-Workshop/tree/master/Walkthrough%20Guide/10_Chatbot)
-11. [Authentication](https://github.com/MikeCodesDotNet/Mobile-Cloud-Workshop/tree/master/Walkthrough%20Guide/11_Authentication)
+10. [Chatbot](Walkthrough%20Guide/10_Chatbot)
+11. [Authentication](Walkthrough%20Guide/11_Authentication)
 
 ---
 # Support
