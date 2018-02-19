@@ -9,6 +9,7 @@ using CognitiveServicesBot.Services;
 using LuisBot.Definitions;
 using LuisBot.Dialogs;
 using LuisBot.Models;
+using LuisBot.Utils;
 using Microsoft.Bot.Builder.Dialogs;
 using Microsoft.Bot.Builder.Luis;
 using Microsoft.Bot.Builder.Luis.Models;
@@ -52,14 +53,14 @@ namespace Microsoft.Bot.Sample.LuisBot
                 EntityRecommendation jobSearch;
                 if (result.TryFindEntity(ServiceEntities.ServiceStatus, out jobSearch))
                 {
-                    var model = JobModel.GetContextData(context);
+                    var model = JobModelExtension.GetContextData(context);
                     // Title case the search entity for consistency
                     model.SearchTerm = new CultureInfo("en").TextInfo.ToTitleCase(jobSearch.Entity.ToLower());
                     var res = jobSearch.Resolution.Values;
                     var resV = res.ToList()[0] as List<object>;
                     model.ResolutionTerm = resV[0].ToString();
                     
-                    JobModel.SetContextData(context, model);
+                    JobModelExtension.SetContextData(context, model);
                     await context.PostAsync($"OK, let me look for information on ({model.SearchTerm}) jobs.");
                     await context.Forward(new SearchServiceDialog(), AfterDialog, messageToForward, CancellationToken.None);
                 }
