@@ -11,7 +11,7 @@ namespace CognitiveServicesBot.Services
     [Serializable]
     public class AzureSearchService
     {
-        private static readonly string QueryString = $"https://{WebConfigurationManager.AppSettings["SearchName"]}.search.windows.net/indexes/{WebConfigurationManager.AppSettings["IndexName"]}/docs?api-key={WebConfigurationManager.AppSettings["SearchKey"]}&api-version=2016-09-01&";
+        static readonly string QueryString = $"https://{WebConfigurationManager.AppSettings["SearchName"]}.search.windows.net/indexes/{WebConfigurationManager.AppSettings["IndexName"]}/docs?api-key={WebConfigurationManager.AppSettings["SearchKey"]}&api-version=2016-09-01&";
 
         public async Task<FacetResult> FetchFacets()
         {
@@ -23,19 +23,20 @@ namespace CognitiveServicesBot.Services
             }
         }
 
-        public async Task<SearchResult> Search(string value)
-        {
-            if (string.IsNullOrEmpty(value))
-                throw new ArgumentNullException("Cannot search with a null value");
+        //Although this method is not used, but it show a nice demo of wide search of the index
+        //public async Task<SearchResult> Search(string value)
+        //{
+        //    if (string.IsNullOrEmpty(value))
+        //        throw new ArgumentNullException("Cannot search with a null value");
 
-            using (var httpClient = new HttpClient())
-            {
-                string parsedSearch = WebUtility.UrlEncode(value);
-                string query = $"{QueryString}search='{parsedSearch}'";
-                string response = await httpClient.GetStringAsync(query);
-                return JsonConvert.DeserializeObject<SearchResult>(response);
-            }
-        }
+        //    using (var httpClient = new HttpClient())
+        //    {
+        //        string parsedSearch = WebUtility.UrlEncode(value);
+        //        string query = $"{QueryString}search='{parsedSearch}'";
+        //        string response = await httpClient.GetStringAsync(query);
+        //        return JsonConvert.DeserializeObject<SearchResult>(response);
+        //    }
+        //}
 
         public async Task<SearchResult> FilterByStatus(string value)
         {
@@ -46,7 +47,7 @@ namespace CognitiveServicesBot.Services
             {
                 string parsedStatus = WebUtility.UrlEncode(value.Replace(" ", "+"));
                 //$filter=status eq 'Waiting'
-                string query = $"{QueryString}$filter=status eq '{value}'";
+                string query = $"{QueryString}$filter=Status eq '{value}'";
                 string response = await httpClient.GetStringAsync(query);
                 return JsonConvert.DeserializeObject<SearchResult>(response);
             }
