@@ -13,9 +13,9 @@ using System.Threading.Tasks;
 namespace LuisBot.Dialogs
 {
     [Serializable]
-    public class ServiceSearchDialog : IDialog<object>
+    public class SearchServiceDialog : IDialog<object>
     {
-        private readonly AzureSearchService searchService = new AzureSearchService();
+        readonly AzureSearchService searchService = new AzureSearchService();
 
         public async Task StartAsync(IDialogContext context)
         {
@@ -26,6 +26,7 @@ namespace LuisBot.Dialogs
         {
             var message = await result;
 
+            //You can indicate to the user you are running the query :)
             //await context.PostAsync("Hold on one second!");
 
             var model = JobModel.GetContextData(context);
@@ -37,20 +38,24 @@ namespace LuisBot.Dialogs
             }
             else
             {
-                //var results = await searchService.Search(model.SearchTerm);
-                //var results = await searchService.FilterByStatus("Waiting");
                 var results = await searchService.FilterByStatus(model.ResolutionTerm);
                 var channelID = message.ChannelId;
 
-                if (results.value.Length > 0)
+                //Check weather we have values in the search result
+                if (results.Values.Length > 0)
                 {
                     List<Attachment> foundItems = new List<Attachment>();
-                    
-                    for (int i = 0; i < results.value.Length; i++)
+
+                    //To display the result in a nice card like boxes, we use custom CardUtil which provide a nice channel specific render of a card using Microsoft.Bot.Connector.Attachment
+                    for (int i = 0; i < results.Values.Length; i++)
                     {
-                        //var attachment = CardUtil.CreateCardAttachment(channelID, results.value[i]);
-                        //attachments.Add(attachment);
-                        var attachment = CardUtil.CreateCardAttachment(channelID, results.value[i]);
+                        var searchItem = results.Values[i];
+
+                        //We are not interested in deleted items
+                        if (searchItem.IsDeleted == true)
+                            continue;
+
+                        var attachment = CardUtil.CreateCardAttachment(channelID, results.Values[i]);
                         foundItems.Add(attachment);
                     }
 
@@ -64,13 +69,13 @@ namespace LuisBot.Dialogs
                 }
                 else
                 {
-                    await context.PostAsync($"Sorry! I couldnt find anything that matched the search '{model.SearchTerm}'");
+                    await context.PostAsync($"Sorry! I couldn't find anything that matched the search '{model.SearchTerm}'");
                     context.Done<object>(null);
                 }
             }
         }
 
-        private async Task AfterDialog(IDialogContext context, IAwaitable<object> result)
+        async Task AfterDialog(IDialogContext context, IAwaitable<object> result)
         {
             var messageHandled = (string)await result;
 
