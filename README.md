@@ -4,7 +4,7 @@
 
 # Mobile Cloud Workshop
 
-Welcome to the Microsoft Mobile Cloud Workshop. We've created this workshop to showcase the speed and ease at which you can leverage Microsoft cloud platform (Azure) to build mobile solutions.
+Welcome to the Microsoft Mobile Cloud Workshop. We've created this workshop to showcase the speed and ease at which you can leverage Microsoft' cloud platform Azure to build innovative mobile solutions.
 
 | Platform | Build Status | Latest Release |
 |---|:---:|:---:|
@@ -31,8 +31,6 @@ What did we use to build this sample?
 
 * [Xamarin.Forms](https://www.xamarin.com/forms)
 
-&nbsp;
-
 ## Guided Walkthrough
 You can find a walkthrough guide for the project that outlines how you too can build and deploy your own version of the app and backend services. 
 
@@ -56,13 +54,11 @@ You can find a walkthrough guide for the project that outlines how you too can b
 10. [Chatbot](Walkthrough%20Guide/10_Chatbot)
 11. [Authentication](Walkthrough%20Guide/11_Authentication)
 
-&nbsp;
-
 ## Support
 
 **Where to find help**
 
-* Create Github issues and we'll respond as quickly as possible 
+* Create GitHub issues and we'll respond as quickly as possible 
 * Ping us on [Slack](https://mobilecloudworkshop.slack.com)
 
 &nbsp;
