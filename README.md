@@ -38,7 +38,7 @@ You can find a walkthrough guide for the project that outlines how you too can b
 * Ping us on [Slack](https://mobilecloudworkshop.slack.com)
 
 ---
-# Authors
+# Primary Authors
 <img src="Resources/authors.png?raw=true" height="100">
 
 | Mike James  | Robin-Manuel Thiel |
@@ -46,4 +46,8 @@ You can find a walkthrough guide for the project that outlines how you too can b
 | [Github](https://github.com/MikeCodesDotNet) |   [Github](https://github.com/robinmanuelthiel)|
 | [Blog](https://mikecodes.net) |   [Blog](https://pumpingco.de/) |
 
-
+---
+# Contributors
+- **Richard Erwin** ([Github](https://github.com/rerwinx))
+- **Mohamed Saif** ([Github](https://github.com/mohamedsaif))
+- **Michael Sivers** ([Github](https://github.com/msivers))
