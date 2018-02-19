@@ -3,7 +3,7 @@
 ## Customer Overview
 Contoso Maintenance is an Airline maintenance business, specializing in servicing aircraft in Northern Europe. 
 
-It currently employes >250 engineers who are responsible for ensuring the air-worthiness of the aircraft they're repairing. 
+It currently employes >500 engineers who are responsible for ensuring the air-worthiness of the aircraft they're repairing. 
 
 The business has been slow to adapt to changes in their processes and have seen customers sign maintenance contracts with their main competitor who has completed a digital transformation process. 
 

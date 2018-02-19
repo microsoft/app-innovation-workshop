@@ -14,22 +14,40 @@
 Welcome to the Microsoft Mobile Cloud Workshop. We've created this workshop to showcase the speed and ease at which you can leverage Microsoft cloud platform (Azure) to build mobile solutions. 
 
 ---
+
+## Key Technologies 
+What did we use to build this sample?
+
+### Azure
+* [App Service](https://azure.microsoft.com/en-us/services/app-service/)
+* [Cosmos DB](https://azure.microsoft.com/en-us/services/cosmos-db/)
+* [API Management](https://azure.microsoft.com/en-us/services/api-management/)
+* [Azure Storage](https://azure.microsoft.com/en-us/services/storage/)
+* [Azure Functions](https://azure.microsoft.com/en-us/services/functions/)
+* [Azure Search](https://azure.microsoft.com/en-us/services/search/)
+* [Cognitive Services](https://azure.microsoft.com/en-us/services/cognitive-services/)
+* [App Center](https://appcenter.ms/)
+
+### Mobile
+* [Xamarin.Forms](https://www.xamarin.com/forms)
+
+---
 ## Guided Walkthrough
 You can find a walkthrough guide for the project that outlines how you too can build and deploy your own version of the app and backend services. 
 
-1. [Setup](00_Setup/README.md)    
+1. [Setup](Walkthrough%20Guide/00_Setup/)    
 ### Azure 
-2. [Architecture Options](https://github.com/MikeCodesDotNet/Mobile-Cloud-Workshop/tree/master/Walkthrough%20Guide/02_Architecture_Options)
-3. [Web API & App Services](https://github.com/MikeCodesDotNet/Mobile-Cloud-Workshop/tree/master/Walkthrough%20Guide/03_Web_API)
-4. [Data Storage & Search](https://github.com/MikeCodesDotNet/Mobile-Cloud-Workshop/tree/master/Walkthrough%20Guide/04_Data_Storage)
-5. [API Management](https://github.com/MikeCodesDotNet/Mobile-Cloud-Workshop/tree/master/Walkthrough%20Guide/05_API_Management)
-6. [Functions & Cognitive Services](https://github.com/MikeCodesDotNet/Mobile-Cloud-Workshop/tree/master/Walkthrough%20Guide/06_Functions_Cognitive_Services)
+2. [Architecture Options](Walkthrough%20Guide/02_Architecture_Options)
+3. [Web API & App Services](Walkthrough%20Guide/03_Web_API)
+4. [Data Storage & Search](Walkthrough%20Guide/04_Data_Storage)
+5. [API Management](Walkthrough%20Guide/05_API_Management)
+6. [Functions & Cognitive Services](Walkthrough%20Guide/06_Functions_Cognitive_Services)
 ### Mobile App
-7. [Overview](https://github.com/MikeCodesDotNet/Mobile-Cloud-Workshop/tree/master/Walkthrough%20Guide/07_Mobile_Overview)
-8. [Network Services](https://github.com/MikeCodesDotNet/Mobile-Cloud-Workshop/tree/master/Walkthrough%20Guide/08_Mobile_Network_Services)
+7. [Overview](Walkthrough%20Guide/07_Mobile_Overview)
+8. [Network Services](Walkthrough%20Guide/08_Mobile_Network_Services)
 9. [Anayltics & Push](09_Anayltics_Push/README.md)
-10. [Chatbot](https://github.com/MikeCodesDotNet/Mobile-Cloud-Workshop/tree/master/Walkthrough%20Guide/10_Chatbot)
-11. [Authentication](https://github.com/MikeCodesDotNet/Mobile-Cloud-Workshop/tree/master/Walkthrough%20Guide/11_Authentication)
+10. [Chatbot](Walkthrough%20Guide/10_Chatbot)
+11. [Authentication](Walkthrough%20Guide/11_Authentication)
 
 ---
 # Support
@@ -38,7 +56,7 @@ You can find a walkthrough guide for the project that outlines how you too can b
 * Ping us on [Slack](https://mobilecloudworkshop.slack.com)
 
 ---
-# Authors
+# Primary Authors
 <img src="Resources/authors.png?raw=true" height="100">
 
 | Mike James  | Robin-Manuel Thiel |
@@ -46,4 +64,8 @@ You can find a walkthrough guide for the project that outlines how you too can b
 | [Github](https://github.com/MikeCodesDotNet) |   [Github](https://github.com/robinmanuelthiel)|
 | [Blog](https://mikecodes.net) |   [Blog](https://pumpingco.de/) |
 
-
+---
+# Contributors
+- **Richard Erwin** ([Github](https://github.com/rerwinx))
+- **Mohamed Saif** ([Github](https://github.com/mohamedsaif))
+- **Michael Sivers** ([Github](https://github.com/msivers))
