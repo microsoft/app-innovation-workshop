@@ -68,12 +68,13 @@ You can find a walkthrough guide for the project that outlines how you too can b
 &nbsp;
 
 ## Authors
-<img src="Resources/authors.png?raw=true" height="100">
 
-| Mike James  | Robin-Manuel Thiel |
-| ----------- | ------------------ |
-| [GitHub](https://github.com/MikeCodesDotNet) |   [GitHub](https://github.com/robinmanuelthiel)|
-| [Blog](https://mikecodes.net) |   [Blog](https://pumpingco.de/) |
+|        ![Photo](Resources/mikejames.png)       |   ![Photo](Resources/robinmanuelthiel.png)   |
+|:----------------------------------------------:|:--------------------------------------------:|
+|                 **Mike James**                 |            **Robin-Manuel Thiel**            |
+|  [GitHub](https://github.com/MikeCodesDotNet)  | [GitHub](https://github.com/MikeCodesDotNet) |
+| [Twitter](https://twitter.com/MikeCodesDotNet) | [Twitter](https://twitter.com/robinmanuelt)  |
+|          [Blog](https://mikecodes.net)         |         [Blog](https://pumpingco.de/)        |
 
 ### Contributors
 - **Richard Erwin** ([GitHub](https://github.com/rerwinx))
