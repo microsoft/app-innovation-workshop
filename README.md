@@ -19,17 +19,17 @@ Welcome to the Microsoft Mobile Cloud Workshop. We've created this workshop to s
 What did we use to build this sample?
 
 ### Azure
-* App Service
-* Cosmos DB
-* API Management 
-* Azure Storage
-* Azure Functions
-* Cognitive Services 
-* App Center 
-* More
+* [App Service](https://azure.microsoft.com/en-us/services/app-service/)
+* [Cosmos DB](https://azure.microsoft.com/en-us/services/cosmos-db/)
+* [API Management](https://azure.microsoft.com/en-us/services/api-management/)
+* [Azure Storage](https://azure.microsoft.com/en-us/services/storage/)
+* [Azure Functions](https://azure.microsoft.com/en-us/services/functions/)
+* [Azure Search](https://azure.microsoft.com/en-us/services/search/)
+* [Cognitive Services](https://azure.microsoft.com/en-us/services/cognitive-services/)
+* [App Center](https://appcenter.ms/)
 
 ### Mobile
-* Xamarin.Forms
+* [Xamarin.Forms](https://www.xamarin.com/forms)
 
 ---
 ## Guided Walkthrough
