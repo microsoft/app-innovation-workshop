@@ -100,9 +100,9 @@ Do you remember the Storage Queue that we created earlier? Our Web API backend s
 
 ```json
 {
-    jobId = "",
-    photoId = "",
-    blobName = ""
+    "jobId": "<ANY-JOB-ID>",
+    "photoId": "<ANY-PHOTO-ID>",
+    "blobName": "<PHOTO-ID>.jpg"
 }
 ```
 
