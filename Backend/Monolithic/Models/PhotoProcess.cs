@@ -10,5 +10,8 @@ namespace ContosoMaintenance.WebAPI.Models
 
         [JsonProperty("photoId")]
         public string PhotoId { get; set; }
+
+        [JsonProperty("blobName")]
+        public string BlobName { get; set; }
     }
 }

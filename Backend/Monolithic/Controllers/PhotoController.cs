@@ -12,6 +12,9 @@ using Microsoft.WindowsAzure.Storage.Queue;
 using Microsoft.Azure;
 using Newtonsoft.Json;
 using ContosoMaintenance.WebAPI.Models;
+using ContosoMaintenance.WebAPI.Services;
+using Microsoft.Extensions.Configuration;
+using System.Linq;
 
 namespace ContosoMaintenance.WebAPI.Controllers
 {
@@ -20,11 +23,15 @@ namespace ContosoMaintenance.WebAPI.Controllers
     {
         readonly IAzureBlobStorage blobStorage;
         readonly IAzureStorageQueue queue;
+        readonly DocumentDBRepositoryBase<Job> jobRepository;
 
-        public PhotoController(IAzureBlobStorage blobStorage, IAzureStorageQueue queue)
+        public PhotoController(IConfiguration configuration, IAzureBlobStorage blobStorage, IAzureStorageQueue queue)
         {
             this.blobStorage = blobStorage;
             this.queue = queue;
+
+            jobRepository = new DocumentDBRepositoryBase<Job>();
+            jobRepository.Initialize(configuration["AzureCosmosDb:Endpoint"], configuration["AzureCosmosDb:Key"], configuration["AzureCosmosDb:DatabaseId"]);
         }
 
         [HttpPost("{jobId}")]
@@ -32,6 +39,10 @@ namespace ContosoMaintenance.WebAPI.Controllers
         {
             if (file == null || file.Length == 0)
                 return BadRequest("Invalid file");
+
+            var job = await jobRepository.GetItemAsync(jobId);
+            if (job == null)
+                return BadRequest("Can't find the job to attach the photo to");
 
             try
             {
@@ -52,10 +63,17 @@ namespace ContosoMaintenance.WebAPI.Controllers
                     IconUrl = uri.ToString(),
                 };
 
+                // Add the photo to Job
+                if (job.Photos == null)
+                    job.Photos = new List<Photo>();
+
+                job.Photos.Add(photo);
+                var updatedJob = await jobRepository.UpdateItemAsync(jobId, job);
+
                 try
                 {
                     // Create a message on our queue for the Azure Function to process the image.
-                    string json = JsonConvert.SerializeObject(new Models.PhotoProcess() { PhotoId = blobName, JobId = jobId }, Formatting.Indented);
+                    string json = JsonConvert.SerializeObject(new Models.PhotoProcess() { PhotoId = photoId, BlobName = blobName, JobId = jobId }, Formatting.Indented);
                     await queue.AddMessage(json);
                 }
                 catch (ArgumentException)
@@ -64,8 +82,8 @@ namespace ContosoMaintenance.WebAPI.Controllers
                     // as Storage Queues appear at a later point.
                 }
 
-                // Return photo object
-                return new ObjectResult(photo);
+                // Return job object
+                return new ObjectResult(job);
             }
             catch
             {
