@@ -75,7 +75,7 @@ You can find a walkthrough guide for the project that outlines how you too can b
 | [GitHub](https://github.com/MikeCodesDotNet) |   [GitHub](https://github.com/robinmanuelthiel)|
 | [Blog](https://mikecodes.net) |   [Blog](https://pumpingco.de/) |
 
-## Contributors
+### Contributors
 - **Richard Erwin** ([GitHub](https://github.com/rerwinx))
 - **Mohamed Saif** ([GitHub](https://github.com/mohamedsaif))
 - **Michael Sivers** ([GitHub](https://github.com/msivers))
