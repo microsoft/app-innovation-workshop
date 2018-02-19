@@ -116,7 +116,7 @@ It also speeds up development by providing an integrated environment that's purp
 
 You can start by creating a bot service on Azure Portal by selecting New -> AI + Cognitive Services -> Web App Bot. This will create all the needed resources to run your bot as fast as possible.
 
-ss
+![Bot Creation](Assets/BotCreation.png)
 
 By selecting Language understanding as the startup code template, it will provision the service and deploy source code with bot framework integrated and starter LUIS integration. 
 
@@ -124,7 +124,7 @@ By selecting Language understanding as the startup code template, it will provis
 
 Below is the architecture of the bot components.
 
-SS
+![Bot Architecture](Assets/BotArchitecture.png)
 
 ### 2.2 Bot Web App Backend
 Now you have a bot service that is ready for your development input. Bot backend is located here Mobile-Cloud-Workshop/Backend/BotBackend/ in the git repo. Open the solution in Visual Studio 2017 (Community edition will work as well).
