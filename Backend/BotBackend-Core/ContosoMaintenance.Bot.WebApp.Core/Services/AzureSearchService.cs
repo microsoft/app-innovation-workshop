@@ -1,12 +1,11 @@
-﻿using System.Net.Http;
-using System.Web.Configuration;
-using System.Threading.Tasks;
-using CognitiveServicesBot.Model;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 using System;
-using System.Net;
+using System.Collections.Generic;
+using System.Linq;
+using System.Net.Http;
+using System.Threading.Tasks;
 
-namespace CognitiveServicesBot.Services
+namespace ContosoMaintenance.Bot.WebApp.Core.Services
 {
     [Serializable]
     public class AzureSearchService
@@ -23,20 +22,19 @@ namespace CognitiveServicesBot.Services
             }
         }
 
-        //Although this method is not used, but it show a nice demo of wide search of the index
-        //public async Task<SearchResult> Search(string value)
-        //{
-        //    if (string.IsNullOrEmpty(value))
-        //        throw new ArgumentNullException("Cannot search with a null value");
+        public async Task<SearchResult> Search(string value)
+        {
+            if (string.IsNullOrEmpty(value))
+                throw new ArgumentNullException("Cannot search with a null value");
 
-        //    using (var httpClient = new HttpClient())
-        //    {
-        //        string parsedSearch = WebUtility.UrlEncode(value);
-        //        string query = $"{QueryString}search='{parsedSearch}'";
-        //        string response = await httpClient.GetStringAsync(query);
-        //        return JsonConvert.DeserializeObject<SearchResult>(response);
-        //    }
-        //}
+            using (var httpClient = new HttpClient())
+            {
+                string parsedSearch = WebUtility.UrlEncode(value);
+                string query = $"{QueryString}search='{parsedSearch}'";
+                string response = await httpClient.GetStringAsync(query);
+                return JsonConvert.DeserializeObject<SearchResult>(response);
+            }
+        }
 
         public async Task<SearchResult> FilterByStatus(string value)
         {
