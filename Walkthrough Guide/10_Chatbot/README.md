@@ -155,14 +155,17 @@ You are done! Congratulations!
 
 Now to test the actual bot implementation and code you can open your bot service from Azure and click on the blade says “Test in Web Chat”
 
-SS
+![Bot Testing](Assets/AzureBotTesting.png)
 
 > **Hint:** As a recommended practice, you should remove all of your secrets from web.conig and put them inside the “App Settings” blade on Azure Web App service. This way you avoid checking in your secrets in source control.
+
 
 ##  3. Integration with Mobile App
 So now after you have built, tested and deployed your bot you can easily integrate in a Mobile App through a simple WebView screen. Just find your Web channel bot URL and included in your app.
 
-SS
+![Bot URL](Assets/AzureBotWebUrl.png)
+
+You can reach the Web channel configuration page from the "Channels" blade in your Azure Bot Service instance.
 
 > **Hint:** To have more control on the bot interactions and improve user experience, it is recommended to replace the WebView approach with a more solid native experience. This is done through using configuring and using “Direct Channel” on your bot. Direct channel is about using pure APIs to communicate with the bot. Refere back to Bot Framework documentation for more inforamtion
 
