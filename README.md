@@ -62,7 +62,7 @@ You can find a walkthrough guide for the project that outlines how you too can b
 
 **Where to find help**
 
-* Create Github issues and we'll respond as quickly as possible 
+* Create GitHub issues and we'll respond as quickly as possible 
 * Ping us on [Slack](https://mobilecloudworkshop.slack.com)
 
 &nbsp;
