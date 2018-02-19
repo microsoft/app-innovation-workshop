@@ -2,6 +2,8 @@
 
 <img src="Resources/Design/Design%20Board%20Final.png">
 
+# Mobile Cloud Workshop
+
 Welcome to the Microsoft Mobile Cloud Workshop. We've created this workshop to showcase the speed and ease at which you can leverage Microsoft cloud platform (Azure) to build mobile solutions.
 
 **Build Status**
@@ -13,7 +15,7 @@ Welcome to the Microsoft Mobile Cloud Workshop. We've created this workshop to s
 
 &nbsp;
 
-# Key Technologies 
+## Key Technologies 
 What did we use to build this sample?
 
 **Azure**
@@ -33,7 +35,7 @@ What did we use to build this sample?
 
 &nbsp;
 
-# Guided Walkthrough
+## Guided Walkthrough
 You can find a walkthrough guide for the project that outlines how you too can build and deploy your own version of the app and backend services. 
 
 **General**
@@ -58,7 +60,7 @@ You can find a walkthrough guide for the project that outlines how you too can b
 
 &nbsp;
 
-# Support
+## Support
 
 **Where to find help**
 
@@ -67,7 +69,7 @@ You can find a walkthrough guide for the project that outlines how you too can b
 
 &nbsp;
 
-# Authors
+## Authors
 <img src="Resources/authors.png?raw=true" height="100">
 
 | Mike James  | Robin-Manuel Thiel |
