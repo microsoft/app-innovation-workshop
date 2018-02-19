@@ -96,7 +96,17 @@ Open the [`/Functions`](/Backend/Functions/) folder from the repository in Visua
 
 Azure Functions are based on the concept of **Triggers**, which define when a Function should wake up and execute its code. There are several different [Trigger Bindings](https://docs.microsoft.com/en-us/azure/azure-functions/functions-triggers-bindings) that can be defined in the functions source code or configuration files. Our function uses the [Queue Storage Binding](https://docs.microsoft.com/en-us/azure/azure-functions/functions-bindings-storage-queue) as a Trigger so it wakes up whenever a new message appears in a Storage Queue.
 
-> **Hint:** Do you remember the Storage Queue that we created earlier? Our Web API backend sends a small message with a `jobId` and `photoId` to the queue every time a new photo got uploaded. So the Function will fire up every time a photo gets uploaded.
+Do you remember the Storage Queue that we created earlier? Our Web API backend sends a small message with a `jobId` and `photoId` to the queue every time a new photo got uploaded.
+
+```json
+{
+    jobId = "",
+    photoId = "",
+    blobName = ""
+}
+```
+
+So the Azure Function will wake up every time a photo gets uploaded and will pass a `PhotoProcess` object the code.
 
 ```csharp
 // Trigger
@@ -174,11 +184,15 @@ Select your Function App in the uppopping window and review the Publish Summary 
 
 ### 2.7 Test your Azure Function
 
+Back in the [Azure Portal](https://portal.azure.com), we can monitor how our Azure Function behaves. For this, select the ***Monitor*** tab beneth your Function.
 
+For each execution, we can check *Status* and *Execution Time* as well as additional details like *Logs* and *Parameters* when clickinng on  a single execution.
 
+![Check Function Success in the Azure Portal](Assets/CheckFunctionSuccess.png)
 
+To check if the Function is runninng as expected, we can trigger it by uploading another image. So let's open [Postman](https://www.getpostman.com/) again and upload other image with using the API ([like we did before](../04_Data_Storage#24-test-the-photo-upload)).
 
-Coming soon...
+Once the photo got uploaded, we should see a successful execution of the Azure Function in the Portal and two new resized pictures in the Blob Storage.
 
 # Next Steps 
-[Archicture Options](../07_Mobile_Overview/README.md)
+[Mobile Overview](../07_Mobile_Overview/README.md)
