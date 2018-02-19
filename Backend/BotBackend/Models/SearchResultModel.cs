@@ -38,26 +38,38 @@ namespace CognitiveServicesBot.Model
         //     "status":"Waiting",
         //     "id":"c0f66ccd-f5c6-418b-87a7-8497cefbaa0d",
         //     "createdAt":"2018-01-25T00:34:49.753Z"
+        //"@search.score": 1,
+        //    "Name": "Service ATR 42 Engine",
+        //    "Details": "General Service",
+        //    "Type": "Service",
+        //    "Status": "Complete",
+        //    "DueDate": "0001-01-01T00:00:00Z",
+        //    "id": "3de8f6d0-e1b6-416a-914d-cd13554929a5",
+        //    "isDeleted": false
         [JsonProperty("@search.score")]
-        public float searchscore { get; set; }
+        public float SearchScore { get; set; }
 
-        [JsonProperty("details")]
+        [JsonProperty("Details")]
         public string Details { get; set; }
 
-        [JsonProperty("name")]
+        [JsonProperty("Name")]
         public string Name { get; set; }
 
-        [JsonProperty("type")]
+        [JsonProperty("Type")]
         public string Type { get; set; }
 
-        [JsonProperty("status")]
+        [JsonProperty("Status")]
         public string Status { get; set; }
 
         [JsonProperty("id")]
         public string Id { get; set; }
 
-        [JsonProperty("createdAt")]
-        public DateTime CreatedAt { get; set; }
+        [JsonProperty("DueDate")]
+        public DateTime DueDate { get; set; }
+
+        [JsonProperty("isDeleted")]
+        public bool IsDeleted { get; set; }
+
     }
 
     public class SearchFacets

@@ -15,7 +15,7 @@ namespace LuisBot.Dialogs
     [Serializable]
     public class SearchServiceDialog : IDialog<object>
     {
-        private readonly AzureSearchService searchService = new AzureSearchService();
+        readonly AzureSearchService searchService = new AzureSearchService();
 
         public async Task StartAsync(IDialogContext context)
         {
@@ -49,6 +49,12 @@ namespace LuisBot.Dialogs
                     //To display the result in a nice card like boxes, we use custom CardUtil which provide a nice channel specific render of a card using Microsoft.Bot.Connector.Attachment
                     for (int i = 0; i < results.Values.Length; i++)
                     {
+                        var searchItem = results.Values[i];
+
+                        //We are not interested in deleted items
+                        if (searchItem.IsDeleted == true)
+                            continue;
+
                         var attachment = CardUtil.CreateCardAttachment(channelID, results.Values[i]);
                         foundItems.Add(attachment);
                     }
@@ -69,7 +75,7 @@ namespace LuisBot.Dialogs
             }
         }
 
-        private async Task AfterDialog(IDialogContext context, IAwaitable<object> result)
+        async Task AfterDialog(IDialogContext context, IAwaitable<object> result)
         {
             var messageHandled = (string)await result;
 
