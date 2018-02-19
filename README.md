@@ -72,10 +72,10 @@ You can find a walkthrough guide for the project that outlines how you too can b
 
 | Mike James  | Robin-Manuel Thiel |
 | ----------- | ------------------ |
-| [Github](https://github.com/MikeCodesDotNet) |   [Github](https://github.com/robinmanuelthiel)|
+| [GitHub](https://github.com/MikeCodesDotNet) |   [GitHub](https://github.com/robinmanuelthiel)|
 | [Blog](https://mikecodes.net) |   [Blog](https://pumpingco.de/) |
 
 ## Contributors
-- **Richard Erwin** ([Github](https://github.com/rerwinx))
-- **Mohamed Saif** ([Github](https://github.com/mohamedsaif))
-- **Michael Sivers** ([Github](https://github.com/msivers))
+- **Richard Erwin** ([GitHub](https://github.com/rerwinx))
+- **Mohamed Saif** ([GitHub](https://github.com/mohamedsaif))
+- **Michael Sivers** ([GitHub](https://github.com/msivers))
