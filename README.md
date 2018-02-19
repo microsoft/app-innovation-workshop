@@ -17,7 +17,7 @@ Welcome to the Microsoft Mobile Cloud Workshop. We've created this workshop to s
 ## Guided Walkthrough
 You can find a walkthrough guide for the project that outlines how you too can build and deploy your own version of the app and backend services. 
 
-1. [Setup](00_Setup/README.md)    
+1. [Setup](Walkthrough%20Guide/00_Setup/README.md)    
 ### Azure 
 2. [Architecture Options](https://github.com/MikeCodesDotNet/Mobile-Cloud-Workshop/tree/master/Walkthrough%20Guide/02_Architecture_Options)
 3. [Web API & App Services](https://github.com/MikeCodesDotNet/Mobile-Cloud-Workshop/tree/master/Walkthrough%20Guide/03_Web_API)
