@@ -14,6 +14,24 @@
 Welcome to the Microsoft Mobile Cloud Workshop. We've created this workshop to showcase the speed and ease at which you can leverage Microsoft cloud platform (Azure) to build mobile solutions. 
 
 ---
+
+## Key Technologies 
+What did we use to build this sample?
+
+### Azure
+* App Service
+* Cosmos DB
+* API Management 
+* Azure Storage
+* Azure Functions
+* Cognitive Services 
+* App Center 
+* More
+
+### Mobile
+* Xamarin.Forms
+
+---
 ## Guided Walkthrough
 You can find a walkthrough guide for the project that outlines how you too can build and deploy your own version of the app and backend services. 
 
