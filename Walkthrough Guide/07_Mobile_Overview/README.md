@@ -11,7 +11,10 @@ The apps have been developed with [Xamarin.Forms](https://github.com/xamarin/Xam
 Using Xamarin.Forms makes it possible for us to write our app just once using C# and XAML and have it run natively on a variety of platforms. This is achieved as it's an abstraction API built on top of Xamarin's traditional mobile development SDKs. Looking at the architecture below, you can see that with traditional Xamarin we can achieve up to 75% code reuse through sharing the business logic of our app.
 
 Before we jump into Xamarin.Forms in any depth let take a moment to understand the underlying technology and how this works. 
+
+
 ![Xamarin Styles](Assets/XamarinArchitectures.png)
+
 #### Traditional Xamarin 
 Traditional Xamarin is a one-to-one mapping of every single API available to Objective-C and Java developers for C# developers to consume. If you're familiar with Platform Invokation, then you'll already be familiar with the core concepts of how Xamarin works. It's this one-to-one mapping that is the platform-specific element of a Xamarin app. It's not possible to share the UI layer from iOS to Android when developing with Traditional Xamarin as you won't find iOS APIs such as UIKit as part of the Android SDK. This means that our user interface is unique for the platform and we can create the amazing user experience our users expect from mobile apps. 
 
