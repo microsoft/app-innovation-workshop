@@ -26,6 +26,7 @@ What did we use to build this sample?
 * [Azure Functions](https://azure.microsoft.com/en-us/services/functions/)
 * [Azure Search](https://azure.microsoft.com/en-us/services/search/)
 * [Cognitive Services](https://azure.microsoft.com/en-us/services/cognitive-services/)
+* [Bot Service](https://azure.microsoft.com/en-us/services/bot-service/)
 * [App Center](https://appcenter.ms/)
 
 **Mobile**
