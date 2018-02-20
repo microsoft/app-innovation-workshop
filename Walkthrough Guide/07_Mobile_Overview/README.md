@@ -12,7 +12,6 @@ Using Xamarin.Forms makes it possible for us to write our app just once using C#
 
 Before we jump into Xamarin.Forms in any depth let take a moment to understand the underlying technology and how this works. 
 
-
 ![Xamarin Styles](Assets/XamarinArchitectures.png)
 
 #### Traditional Xamarin 
@@ -28,12 +27,9 @@ One concern we hear from potential users of Xamarin is taking on a large depende
 You should consider Traditional Xamarin when you care about code-reuse but not as much as customisation. It's also a great fit if you've experienced with Objective-C, Swift or Java in a mobile context but wish to leverage an existing .NET code base. 
 
 #### Xamarin.Forms
-Xamarin.Forms being an abstraction over Traditional Xamarin means that it still produces 100% native apps that using the same build process but we can write our code in a .NET Standard library to be shared across multiple platforms. 
+Xamarin.Forms is an open-source, cross-platform development library for building native apps for iOS, Android, Mac, Windows, Linux and more. By picking Xamarin.Forms, we're able to reuse our previous experience with Silverlight, WPF and UWP development to target a variety of new platforms. It being an abstraction over Traditional Xamarin means that it still produces 100% native apps that using the same build process but we can write our code in a .NET Standard library to be shared across multiple platforms. 
 
 Xamarin.Forms is a fantastic technology for building mobile apps if you've previous experience with MVVM, WPF or Silverlight. It focuses on code-reuse over customisation, but that doesn't limit us from dropping down into platform specific APIs when we want to add deeper integrations to the underlying platforms. 
-
-### Introduction to Xamarin.Forms 
-Xamarin.Forms is an open-source, cross-platform development library for building native apps for iOS, Android, Mac, Windows, Linux and more. By picking Xamarin.Forms, we're able to reuse our previous experience with Silverlight, WPF and UWP development to target a variety of new platforms. 
 
 Xamarin.Forms come with 24 controls out of the box, which map directly to their native type. For example, a Xamarin.Forms Button will create a Widget.Button on Android and UIKit.UIButton on iOS. Forms provide a consistent API across all the platforms it supports. This allows us to ensure that functionality we call on iOS will behave the same on Android.
 
