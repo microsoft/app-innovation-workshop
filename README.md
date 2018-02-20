@@ -14,6 +14,7 @@ Welcome to the Microsoft Mobile Cloud Workshop. We've created this workshop to s
 &nbsp;
 
 ## Key Technologies 
+
 What did we use to build this sample?
 
 **Azure**
@@ -31,7 +32,10 @@ What did we use to build this sample?
 
 * [Xamarin.Forms](https://www.xamarin.com/forms)
 
+&nbsp;
+
 ## Guided Walkthrough
+
 You can find a walkthrough guide for the project that outlines how you too can build and deploy your own version of the app and backend services. 
 
 **General**
@@ -54,6 +58,8 @@ You can find a walkthrough guide for the project that outlines how you too can b
 10. [Chatbot](Walkthrough%20Guide/10_Chatbot)
 11. [Authentication](Walkthrough%20Guide/11_Authentication)
 
+&nbsp;
+
 ## Support
 
 **Where to find help**
@@ -72,7 +78,8 @@ You can find a walkthrough guide for the project that outlines how you too can b
 | [Twitter](https://twitter.com/MikeCodesDotNet) | [Twitter](https://twitter.com/robinmanuelt)  |
 |          [Blog](https://mikecodes.net)         |         [Blog](https://pumpingco.de/)        |
 
-### Contributors
+#### Contributors
+
 - **Richard Erwin** ([GitHub](https://github.com/rerwinx))
 - **Mohamed Saif** ([GitHub](https://github.com/mohamedsaif))
 - **Michael Sivers** ([GitHub](https://github.com/msivers))
