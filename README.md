@@ -17,21 +17,39 @@ Welcome to the Microsoft Mobile Cloud Workshop. We've created this workshop to s
 
 What did we use to build this sample?
 
-**Azure**
-
-* [App Service](https://azure.microsoft.com/en-us/services/app-service/)
-* [Cosmos DB](https://azure.microsoft.com/en-us/services/cosmos-db/)
-* [API Management](https://azure.microsoft.com/en-us/services/api-management/)
-* [Azure Storage](https://azure.microsoft.com/en-us/services/storage/)
-* [Azure Functions](https://azure.microsoft.com/en-us/services/functions/)
-* [Azure Search](https://azure.microsoft.com/en-us/services/search/)
-* [Cognitive Services](https://azure.microsoft.com/en-us/services/cognitive-services/)
-* [Bot Service](https://azure.microsoft.com/en-us/services/bot-service/)
-* [App Center](https://appcenter.ms/)
-
-**Mobile**
-
-* [Xamarin.Forms](https://www.xamarin.com/forms)
+<table>
+  <tr>
+    <td nowrap><a href="https://azure.microsoft.com/en-us/services/app-service/">App Service</a></td>
+    <td rowspan="10"><img src="Resources/Architecture.png"></td>
+  </tr>
+  <tr>
+    <td nowrap><a href="https://azure.microsoft.com/en-us/services/cosmos-db/">Cosmos DB</a></td>
+  </tr>
+  <tr>
+    <td nowrap><a href="https://azure.microsoft.com/en-us/services/api-management/">API Management</a></td>
+  </tr>
+  <tr>
+    <td nowrap><a href="https://azure.microsoft.com/en-us/services/storage/">Azure Storage</a></td>
+  </tr>
+  <tr>
+    <td nowrap><a href="https://azure.microsoft.com/en-us/services/functions/">Azure Functions</a></td>
+  </tr>
+  <tr>
+    <td nowrap><a href="https://azure.microsoft.com/en-us/services/search/">Azure Search</a></td>
+  </tr>
+  <tr>
+    <td nowrap><a href="https://azure.microsoft.com/en-us/services/cognitive-services/">Cognitive Services</a></td>
+  </tr>
+  <tr>
+    <td nowrap><a href="https://azure.microsoft.com/en-us/services/bot-service/">Bot Service</a></td>
+  </tr>
+  <tr>
+    <td nowrap><a href="https://appcenter.ms/">App Center</a></td>
+  </tr>
+  <tr>
+    <td nowrap><a href="https://www.xamarin.com/forms/">Xamarin.Forms</a></td>
+  </tr>
+</table>
 
 &nbsp;
 
