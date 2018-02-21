@@ -5,7 +5,7 @@ We'll be using API Management in today's workshop to act as a gateway or barrier
 
 There are two parts of API Management which consist of the Admin portal and the developer portal. We can use the admin portal to create new APIs and manage access and provide our colleagues and consumers of the APIs access to the developer portal. 
 
-![Developer Portal](Assets/consumePortal.png)
+![Developer Portal](Assets/DeveloperPortal.png)
 
 ### Management
 * **Subscription Portal:** this is an administrative portal where API programs are configured. It's possible to:
