@@ -60,9 +60,34 @@ Once API has finished its deployment process, we can start to configure it for i
 ### Implementing Operations
 We need to define our operations for the API Management. We have already deployed our backend so we should be in a position to hook up to the App Service instance and consume real data. It's worth keeping in mind that its possible to send Mock responses back from API Management, which can help in the development of large solutions. 
 
-To kick off, we'll create the Parts API manually, and then for the rest of the APIs we'll use pre-built OpenAPI Specifications to automagically configure API Management. 
+To kick off, we'll create the Parts API manually, and then for the rest of the APIs we'll use pre-built OpenAPI Specifications to automagically configure API Management. I've deleted the default Echo API from the API list as we won't be needing this. It's entirely up to you if you want to do this as well (it wont effect your project). 
 
 #### Parts
+Parts is one of the easiest APIs to implement within the project as we'll only be requesting an array of parts from our backend. We don't have any variables within our queries or other elements that could complicate the request. 
+
+![Search for API Management](Assets/AddAPIPartsFirstStep.png)
+
+![Search for API Management](Assets/CreateBlankAPI.png)
+Click on the "Add API" Button and select "Blank API".
+
+![Search for API Management](Assets/AddingPartsAPI.png)
+We can then provide a few details about our API.
+
+Display Name: This name is displayed in the Developer portal.
+Name: Provides a unique name for the API.
+Description: Description of the API
+Web Service URL: The URL where we'll be sending these requests.
+URL Scheme Determines which protocols can be used to access the API.
+API URL Suffix: The suffix is appended to the base URL for the API management service. API Management distinguishes APIs by their suffix and therefore the suffix must be unique for every API for a given publisher.
+Tags: Tags enable the organization of large lists – both in terms of management and presentation on the developer portal.
+Products: Publish the API by associating the API with a product. To optionally add this new API to a product, type the product name. This step can be repeated multiple times to add the API to multiple products.
+Version This API: Would you like to version the API?
+
+![Search for API Management](Assets/NewAPIPartsComplete.png)
+Once we click "Create", we'll be able to add our single REST operation. 
+
+![Search for API Management](Assets/EmptyPartsAPI.png)
+
 
 
 #### Jobs
