@@ -139,4 +139,4 @@ We can now repeat the same process for Search, but this time we'll want to make 
 -We're currently experiencing an issue with our implementation of Photo upload. Please bear with us while we resolve this. 
 
 # Next Steps 
-[API Management](../07_Functions_Cognitive_Services)
+[Functions & Cognitive Services](../07_Functions_Cognitive_Services)
