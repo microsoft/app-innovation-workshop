@@ -102,10 +102,15 @@ By default operations will be set configured for GET Requests, but we can change
 You can see all the HTTP Verbs we have the ability to use within API Management Operations. 
 
 ![Search for API Management](Assets/PartsOperationFilledIn.png)
-Because we've already specified the endpoint of our App Service resource, we can get our URL to be "/". 
- 
+We can go ahead and click "Save" and API Management is ready for testing. 
+
+![Search for API Management](Assets/PartsTest.png)
 
 #### Jobs
+In order to save time, we've produce API specifications for you to use with this project which allow API Management to automically configure your APIs and operations. You can find these in the [Swagger](/Assets/Swagger/) folder in the Assets folder here. 
+
+You'll want to edit these on [Line 7](https://github.com/MikeCodesDotNet/Mobile-Cloud-Workshop/blob/cae3c1e5366a78170eb217f897b7d4398f7bfd32/Walkthrough%20Guide/05_API_Management/Assets/Swagger/Jobs.swagger.json#L7) to point to your App Service instance rather than ours.
+
 
 
 #### Search
