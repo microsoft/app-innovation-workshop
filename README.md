@@ -13,10 +13,9 @@ Although you can go and explore the content and walkthrough by yourself, the ric
 
 #### Status
 
-| Platform | Build Status | Latest Release |
-|---|:---:|:---:|
-| iOS | [![Build status](https://build.appcenter.ms/v0.1/apps/364adcc6-160d-42c9-8bd4-f3b926584c38/branches/master/badge)](https://appcenter.ms) | (coming soon) |
-| Android | [![Build status](https://build.appcenter.ms/v0.1/apps/5865dd4d-0971-48b4-8755-598455ab8677/branches/master/badge)](https://appcenter.ms) | (coming soon) |
+| iOS  | Android | 
+|:---:|:---:|
+| [![Build status](https://build.appcenter.ms/v0.1/apps/364adcc6-160d-42c9-8bd4-f3b926584c38/branches/master/badge)](https://appcenter.ms) | [![Build status](https://build.appcenter.ms/v0.1/apps/5865dd4d-0971-48b4-8755-598455ab8677/branches/master/badge)](https://appcenter.ms) |
 
 &nbsp;
 
