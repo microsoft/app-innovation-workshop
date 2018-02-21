@@ -61,8 +61,7 @@ We can now run the indexer for the first time. Once its completed, navigate back
 ![Azure Search Explorer](Assets/SearchExplorer.png)
 
 # Next Steps 
-[Web API](../06_Functions_Cognitive_Services)
-
+[API Management](../06_API_Management)
 
 
 
