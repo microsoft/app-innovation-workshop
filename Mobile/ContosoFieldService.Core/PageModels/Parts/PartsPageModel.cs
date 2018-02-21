@@ -126,9 +126,16 @@ namespace ContosoFieldService.PageModels
             IsRefreshing = !isSilent;
             IsLoading = true;
 
-            var parts = await partsApiService.GetPartsAsync();
-            Parts.Clear();
-            Parts.AddRange(parts);
+            try
+            {
+                var parts = await partsApiService.GetPartsAsync();
+                Parts.Clear();
+                Parts.AddRange(parts);
+            }
+            catch
+            {
+                await CoreMethods.DisplayAlert("Error", "An error occured while communicating with the backend. Please double-check your settings and try again.", "Ok");
+            }
 
             IsRefreshing = false;
             IsLoading = false;
