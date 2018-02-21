@@ -3,9 +3,9 @@ Azure API Management is a turnkey solution for publishing APIs for external and 
 
 We'll be using API Management in today's workshop to act as a gateway or barrier between our Azure Resources and our mobile app. 
 
-![Developer Portal](Assets/HighlightedArchitecture.png)
+![Highlighted Architecture Diagram](Assets/HighlightedArchitecture.png)
 
-There are two parts of API Management which consist of the Admin portal and the developer portal. We can use the admin portal to create new APIs and manage access and provide our colleagues and consumers of the APIs access to the developer portal. 
+There are two parts of API Management which consist of the Admin portal and the developer portal. We can use the admin portal to create new APIs and manage access and provide our colleagues and consumers of the APIs access to the developer portal. You can find a our API Management portal running [here](https://contosomaintenance.portal.azure-api.net/)
 
 ![Developer Portal](Assets/DeveloperPortal.png)
 
