@@ -111,6 +111,8 @@ In order to save time, we've produce API specifications for you to use with this
 
 You'll want to edit these on [Line 7](https://github.com/MikeCodesDotNet/Mobile-Cloud-Workshop/blob/cae3c1e5366a78170eb217f897b7d4398f7bfd32/Walkthrough%20Guide/05_API_Management/Assets/Swagger/Jobs.swagger.json#L7) to point to your App Service instance rather than ours.
 
+![Search for API Management](Assets/EditingSwaggerDef.png)
+
 
 
 #### Search
