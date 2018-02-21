@@ -4,7 +4,14 @@
 
 # Mobile Cloud Workshop
 
-Welcome to the Microsoft Mobile Cloud Workshop. We've created this workshop to showcase the speed and ease at which you can leverage Microsoft' cloud platform Azure to build innovative mobile solutions.
+Welcome to the Microsoft Mobile Cloud Workshop. We've created this workshop to showcase the speed and ease at which you can leverage Microsoft's cloud platform to build Data-Driven Intelligent Apps. The workshop will give you insights and hands-on sessions on how to leverage innovative scalable Cloud Backend Services for your applications.
+
+#### Who is it for?
+Although you can go and explore the content and walkthrough by yourself, the richer learning experience is attending a session led by us. So let's see, if we can schedule something!
+
+[Get in contact](https://mobilecloudworkshop.slack.com)
+
+#### Status
 
 | Platform | Build Status | Latest Release |
 |---|:---:|:---:|
