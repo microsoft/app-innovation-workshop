@@ -3,7 +3,7 @@
 # Azure Search
 Many applications use search as the primary interaction pattern for their customers who expect great relevance, suggestions, near-instantaneous responses, multiple languages, faceting and more. Azure Search makes it easy for you to add powerful and sophisticated search capabilities to your website or application. The integrated Microsoft natural language stack, also used in Bing and Office, has been improved over 16 years of development. Quickly tune search results and construct rich, fine-tuned ranking models to tie search results to business goals. Reliable throughput and storage give you fast search indexing and querying to support time-sensitive search scenarios.
 
-We're going to add Azure Search to our project for searching the jobs. Right now we're using it in the most basic possible way but we'll be expanding this later as the app grows in complexity. 
+We're going to add Azure Search to our project for searching the jobs. Right now we're using it in the most basic possible way, but we'll be expanding this later as the app grows in complexity. 
 
 ## Deploying Azure Search 
 
@@ -15,12 +15,12 @@ Select Azure Search and click 'Create'.
 
 
 ![Azure Search Configure](Assets/ConfigureSearchservice.png)
-You'll have a few options for pricing but for this demo we should have plently of capacity left over if we use the Free tier. Once you've deployed Azure Search, go to the resource 
+You'll have a few options for pricing, but for this demo, we should have plenty of capacity left over if we use the Free tier. Once you've deployed Azure Search, go to the resource 
 
 ![Azure Search Overview](Assets/SearchOverview.png)
 
 ### Indexing our data
-There are two ways to get data into Azure Search. The easiest is to make use of the automatic indexers. With the indexers, we're able to point Azure Search to our database and have it on a schedule look for new data. This can lead to situations where the database and search index are out-of-sync so be wary of using this approach in production. Instead you should mnanage the search index manually using the lovely SDKs provided. 
+There are two ways to get data into Azure Search. The easiest is to make use of the automatic indexers. With the indexers, we're able to point Azure Search to our database and have it on a schedule look for new data. This can lead to situations where the database and search index are out-of-sync so be wary of using this approach in production. Instead, you should manage the search index manually using the lovely SDKs provided. 
 
 For ease of use, we'll make use of the Indexers to get some data quickly into our index. 
 
