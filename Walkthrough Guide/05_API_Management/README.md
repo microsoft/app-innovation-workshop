@@ -87,17 +87,23 @@ Version This API: Would you like to version the API?
 Once we click "Create", we'll be able to add our single REST operation. 
 
 ![Search for API Management](Assets/EmptyPartsAPI.png)
+We can then click on "Add Operation"
 
 ![Search for API Management](Assets/CreatePartsGETOperation.png)
+By default operations will be set configured for GET Requests, but we can change this using the dropdown menu. 
 
+* **HTTP Verb:** You can choose from one of the predefined HTTP verbs.
+* **URL:** A URL path for the API.
+* **Display Name:**
+* **Description:** Provide a description of the operation that is used to provide documentation to the developers using this API in the Developer portal.
+* **Tags:** Tags enable the organization of large lists – both in terms of management and presentation on the developer portal.
 
+![Search for API Management](Assets/PartsOperatoinsTypeDropdown.png)
+You can see all the HTTP Verbs we have the ability to use within API Management Operations. 
 
-HTTP Verb: You can choose from one of the predefined HTTP verbs.
-URL: A URL path for the API.
-Display Name:
-Description: Provide a description of the operation that is used to provide documentation to the developers using this API in the Developer portal.
-Tags: Tags enable the organization of large lists – both in terms of management and presentation on the developer portal.
-
+![Search for API Management](Assets/PartsOperationFilledIn.png)
+Because we've already specified the endpoint of our App Service resource, we can get our URL to be "/". 
+ 
 
 #### Jobs
 
