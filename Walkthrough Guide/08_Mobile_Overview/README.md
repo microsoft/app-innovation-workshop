@@ -66,4 +66,4 @@ As we're using the MVVM architecture, we have a clear separation of concerns wit
 
 ---
 # Next Steps 
-[Mobile Network Services](../08_Mobile_Network_Services/README.md)
+[Mobile Network Services](../09_Mobile_Network_Services/README.md)
