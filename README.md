@@ -11,12 +11,6 @@ Although you can go and explore the content and walkthrough by yourself, the ric
 
 [Get in contact](https://mobilecloudworkshop.slack.com)
 
-#### Status
-
-| iOS  | Android | 
-|:---:|:---:|
-| [![Build status](https://build.appcenter.ms/v0.1/apps/364adcc6-160d-42c9-8bd4-f3b926584c38/branches/master/badge)](https://appcenter.ms) | [![Build status](https://build.appcenter.ms/v0.1/apps/5865dd4d-0971-48b4-8755-598455ab8677/branches/master/badge)](https://appcenter.ms) |
-
 &nbsp;
 
 ## Key Technologies 
@@ -56,6 +50,12 @@ What did we use to build this sample?
     <td nowrap><a href="https://www.xamarin.com/forms/">Xamarin.Forms</a></td>
   </tr>
 </table>
+
+##### Build Status
+
+| iOS  | Android | 
+|:---:|:---:|
+| [![Build status](https://build.appcenter.ms/v0.1/apps/364adcc6-160d-42c9-8bd4-f3b926584c38/branches/master/badge)](https://appcenter.ms) | [![Build status](https://build.appcenter.ms/v0.1/apps/5865dd4d-0971-48b4-8755-598455ab8677/branches/master/badge)](https://appcenter.ms) |
 
 &nbsp;
 
