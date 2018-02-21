@@ -112,10 +112,28 @@ In order to save time, we've produce API specifications for you to use with this
 You'll want to edit these on [Line 7](https://github.com/MikeCodesDotNet/Mobile-Cloud-Workshop/blob/cae3c1e5366a78170eb217f897b7d4398f7bfd32/Walkthrough%20Guide/05_API_Management/Assets/Swagger/Jobs.swagger.json#L7) to point to your App Service instance rather than ours.
 
 ![Search for API Management](Assets/EditingSwaggerDEf.png)
+Change Line 7 to your service and save. 
 
+![Search for API Management](Assets/CreateFromOpenAPISpec.png)
+We're now ready to create a new API from the Jobs spec found in the Swagger folder. To do this, click on the OpenAPI Specification Options. 
+
+![Search for API Management](Assets/CreateFromOpenAPISpecEmpty.png)
+We can click on "Select a File" and pick the Jobs Swagger file. 
+
+![Search for API Management](Assets/CreateAPIAutoFilled.png)
+This will fill in most of the information for you, but you should make sure to add the following: 
+
+* **API Url Suffix:** job (this must be lowercase and do not pluralise it) 
+* **Products:** Starter & Unlimited. 
+
+You're now ready to click "Create". The API Spec contains all the operations we'll need for interacting with the Jobs Controller in the ASP.NET Project. 
+
+![Search for API Management](Assets/pluralise.png)
 
 #### Search
+We can now repeat the same process for Search, but this time we'll want to make sure we set the **API Url Suffix:** to "search". 
 
+![Search for API Management](Assets/AddingSearch.png)
 
 #### Photos
 -We're currently experiancing an issue with our implementation of Photo upload. Please bare with us whilst we resolve this. 
