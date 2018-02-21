@@ -160,17 +160,24 @@ namespace ContosoFieldService.PageModels
             IsRefreshing = !isSilent;
             IsLoading = true;
 
-            if (Plugin.Connectivity.CrossConnectivity.Current.IsConnected)
+            try
             {
-                // Download jobs from server
-                var localJobs = await jobsApiService.GetJobsAsync();
-                // Group jobs by JobStatus
-                var groupedJobs = GroupJobs(localJobs);
-                Jobs.ReplaceRange(groupedJobs);
+                if (Plugin.Connectivity.CrossConnectivity.Current.IsConnected)
+                {
+                    // Download jobs from server
+                    var localJobs = await jobsApiService.GetJobsAsync();
+                    // Group jobs by JobStatus
+                    var groupedJobs = GroupJobs(localJobs);
+                    Jobs.ReplaceRange(groupedJobs);
+                }
+                else
+                {
+                    await CoreMethods.DisplayAlert("Network Error", "No internet connectivity found", "OK");
+                }
             }
-            else
+            catch
             {
-                await CoreMethods.DisplayAlert("Network Error", "No internet connectivity found", "OK");
+                await CoreMethods.DisplayAlert("Error", "An error occured while communicating with the backend. Please double-check your settings and try again.", "Ok");
             }
 
             IsRefreshing = false;

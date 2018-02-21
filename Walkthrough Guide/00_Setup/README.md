@@ -1,122 +1,61 @@
 ![Banner](Assets/Banner.png)
 
-# Setting Up	
-> Hint: We highly recommend you setup and configure your system before attending the mobile workshop. Although we’ve allowed an hour in the morning to assist in trouble shooting configurations, we won’t have time to do a fresh installation.   
-- - - -
+# Setting Up
+
+> **Hint:** We highly recommend you setup and configure your system *before* attending the mobile workshop. Although we’ve allowed an hour in the morning to assist in trouble shooting configurations, we won’t have time to do a fresh installation.
 
 ## Prerequisites
-- Visual Studio (Windows or Mac)
-- Xamarin
-- Visual Studio Code (with Azure tooling)
-- Postman
 
+Please bring your own **Windows or Mac** laptop. To participate in this workshop, some prework needs to be done. So please make sure you prepared your environment bringing the following prerequisites.
 
+- [Microsoft Azure Account](https://azure.microsoft.com/en-us/free/) (with a Subscription)
+- [Visual Studio for Windows or Mac](https://www.visualstudio.com/) (Community Version or higher)
+  - [Xamarin Tooling](https://developer.xamarin.com/guides/cross-platform/getting_started/installation/windows/)
+- [Visual Studio Code](https://code.visualstudio.com/)
+  - [Azure Functions Extension](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-azurefunctions)
+- [Postman](https://www.getpostman.com/)
 
-The setup of a Xamarin development environment can get a little bit tricky and time consuming as it has dependancies on many SDKs and technologies from different companies. 
+The setup of a Xamarin development environment can get a little bit tricky and time consuming as it has dependancies on many SDKs and technologies from different companies.
 
-For todays workshop, you can use both, Windows 10 or macOS to develop. You’ll find all the documentation demonstrations using macOS but keep in mind, everything you see in Visual Studio for Mac is possible in Visual Studio for PC. 
+## Prepare your environment
 
-## Install Xamarin
+### Microsoft Azure
 
-### On Windows
-When working on Windows, [Visual Studio](https://www.visualstudio.com/downloads/) will be the right IDE for you. You can check if you have a license for the paid versions or even go with the free Community Edition. Both will work for you.
+Creating a Microsoft Azure Account is easy! Just head over to the [Azure Website](https://azure.microsoft.com/en-us/free/) and create a free Account. If you already have a Microsoft, Outlook, Office 365 or Active Directory Account from you company, you can re-use it.
 
-#### Visual Studio 2017
-For a quick guide on how to prepare it for Xamarin Development, please [follow this guide](http://motzcod.es/post/158155898027/setting-up-vs-2017-for-xamarin-dev)!
+![Free Azure Account](Assets/FreeAzureAccount.png)
 
-![Add Xamarin to Visual Studio installation Screenshot](../Misc/vsinstallxamarinfeatures.png)
-Make sure, that the following features get installed:
-- [ ] Windows and Web Development
-	- [ ] Universal Windows App Development Tools
-		- [ ] Tools and Windows 10 SDK
-		- [ ] Windows 10 SDK (10.0.14393)
-		- [ ] Windows 10 SDK (10.0.10240)
-	- [ ] Windows 8.1 and Windows Phone 8.0/8.1 Tools
-		- [ ] Tools and SDKs
-- [ ] Cross Plaform Mobile Development
-	- [ ] C#/.NET (Xamarin)
-	- [ ] Microsoft Visual Studio Emulator for Android (optional)
-	- [ ] Common Tools and Software Development Kits
-		- [ ] Android Native Development Kit (T10E, 32 bits)
-		- [ ] Android SDK
-		- [ ] Android SDK Setup (API Level 19 and 21)
-		- [ ] Android SDK Setup (API Level 23)
-		- [ ] Java SE Development Kit
+Although the free Account includes a bunch of services that you can use, in this workshop we will work with advanced resources, which we need an Azure Subscription for.
 
-> Hint: If you already have Visual Studio installed, you can modify its features via the **Programs and Features** tool at the **Control Panel**. Locate **Microsoft Visual Studio** there and click the <kbd>Change</kbd> button to rerun the installer.  
->   
-> ![Modify Visual Studio features afterwards Screenshot](../Misc/winchangevsfeatures.png)  
+An Azure Subscriptuon is basically the way to pay for charged services and can be backed by a Credit Card or a company agreement.
 
-### On Mac
-On a Mac, Xamarin needs to be installed differently. [Download the installer](https://www.xamarin.com/download) and run it. It should install all Xamarin components you need, including the Android SDK and Visual Studio for Mac, which will be your IDE on macOS.
+You can check the Subscriptions for you account when visiting the [Azure Portal](https://portal.azure.com) and selecting ***Subscriptions*** from the side menu.
 
-## Prepare for Android development
-### Android SDK
-Both ways of installing Xamarin for Mac or Windows should install the Android SDK automatically. If anything goes wrong, you can also [download it from the Google Developer portal](https://developer.android.com/studio/index.html).
+![Azure Subscription Overview](Assets/AzureSubscriptionOverview.png)
 
-You should also check if all the necessary Android components are installed or if any updates are available. We can check this inside the **Android SDK Manager**. Open it in Visual Studio or Visual Studio Studio for Mac at <kbd>Tools<_kbd> <kbd>Android<_kbd> <kbd>Android SDK Manager...</kbd>.
+If no Subscriptions appear, visit the [Azure Subscription Portal](https://account.azure.com/Subscriptions) to add one.
 
-![Modify Visual Studio features afterwards Screenshot](../Misc/androidsdkmanager.png)
+### Mobile Development with Xamarin
 
-Make sure, the following components are installed and up to date:
+#### Windows
 
-- [ ] Tools
-	- [ ] Android SDK Tools
-	- [ ] Android SDK Platform-tools
-	- [ ] Android SDK Build-tools (23.0.1)
-	- [ ] Android SDK Build-tools (23.0.1)
-- [ ] Android 6.0 (API 23)
-	- [ ] SDK Platform (optional but recommended)
-- [ ] Android 5.0.1 (API 21)
-	- [ ] SDK Platform (optional but recommended)
-- [ ] Android 4.4.2 (API 19)
-	- [ ] SDK Platform (optional but recommended)
-- [ ] Android 4.0.3 (API 15)
-	- [ ] SDK Platform
-- [ ] Extras
-	- [ ] Android Support Repository
-	- [ ] Google Play Services (optional)
+When working in Windows, Visual Studio will be the best IDE for you! You can check internally if you have a license for the paid versions or even go with the free Community Edition. Both will work for you.
 
-### Android Emulator
-To test your Android apps, you might need an emulator. You can use any emulator you like, for example 
-	- [ ] [Android Emulator for Visual Studio](https://www.visualstudio.com/vs/msft-android-emulator/) on Windows
-	- [ ] Google Emulator that comes with [Android Studio](https://developer.android.com/studio/index.html)
-	- [ ] [Genymotion](https://www.genymotion.com/#!/)
+Please [follow this guide](https://developer.xamarin.com/guides/cross-platform/getting_started/installation/windows/) to install the Xamarin Tooling for Visual Studio on Windows and make sure, you have at least Android API Level 16 and an Android Emulator installed.
 
-## Prepare for iOS development
-### iOS SDK and Simulator
-To work with iOS, you need a Mac with a copy of[Xcode](https://itunes.apple.com/de/app/xcode/id497799835?mt=12) installed. By default, this will install the latest iOS SDK and several simulators needed for iOS development. You will need to start Xcode at least once after the installation process in order to initialise everything.
+When working on Windows, you won't be able to build iOS solutions unless you connect your machine with a Mac in your network. To follow this workshop, an iOS configuration is not mandatory! [Follow this guide](https://developer.xamarin.com/guides/ios/getting_started/installation/windows/) if you want to connect to a Mac Build Host anyway.
 
-### Mac Build Host for Windows
-In case you are working on a Windows machine and still want to develop iOS applications, you will need a Mac as Remote Building host anywhere in your local network and connect it to Visual Studio.
+#### Mac
 
-First, make sure, that the Mac has Xamarin (in the exact same version as on Windows) and Xcode installed. Then click on <kbd>Tools<_kbd> <kbd>Options...<_kbd>, scroll down to the **Xamarin** section and click on **iOS Settings** to navigate to the configuration window. Here you can click on <kbd>Find Xamarin Mac Agent</kbd> to conenct you Mac. Follow the steps from the wizard to establish the connection.
+When using a Mac, the best Xamarin Tooling provides Visual Studio for Mac. Xamarin should be installed during the installation of Visual Studio. Please [follow this guide](https://docs.microsoft.com/en-us/visualstudio/mac/installation) to make sure you don't miss anything.
 
-![Connect Visual Studio with Mac Build Host Screenshot](../Misc/vsxamariniossettings.png)
+If you want to build iOS solutions, make sure that XCode is also installed on the same device!
 
-### Remote iOS Simulator for Windows
-Here you can also select the **Remote iOS Simulator** on Windows. If you check this, the iOS Simulator from the Mac will be streamed to your Windows machine and you can test your app there.
+#### Test your configuration
 
-## Test your configuration
-To test you development environment, you can download the simple blank test app that is [attached to this module](./Setup%20Test%20App) and try to run it on all platforms you want to target. If you run in any errors, head over to the [Troubleshooting](../Troubleshooting) section and check if your problem can be resolved easily.
+To make sure your environment works as expected and is able to compile and execute Xamarin apps, your can simply open the [`ContosoMaintenance.sln`](/ContosoMaintenance.sln) solution with Visual Studio and select the `ContosoFieldService.iOS` or `ContosoFieldService.Droid` project as your Startup project. If the application gets compiled and the app can be started, you are good to go.
 
-1. Open the Solution by double-clicking on the `XamarinSetupTest.sln` file and wait until your IDE spins up.
-2. Right-click on the Solution name at the top of the folder structure and select <kbd>Restore NuGet Packages</kbd> to download the packages
-3. Wait until all packages have been restored
-4. Android
-		1. Right-click the **XamarinSetupTest.Droid** project, select <kbd>Set as StartUp Project</kbd>
-		2. Make sure the Run settings at the top bar are **Debug**, (**Any CPU**) and a Android Emulator is selected
-		3. Click the green **Run** button
-		4. An Android Emulator should spin up and launch the app
-5. iOS
-		1. Only on Windows: Make sure that the Remote Mac Build Host is connected as shown above
-		2. Right-click the **XamarinSetupTest.iOS** project, select <kbd>Set as StartUp Project</kbd>
-		3. Make sure the Run settings at the top bar are **Debug**, **iPhone Simulator** and a iOS Simulator is selected
-		4. Click the green **Run** button
-		5. An iOS Simulator should spin up and launch the app
-
-## Move on
-If this works for the platforms you want to target, you are ready to move on. This was the hardest part. Now you can discover the beautiful world of Xamarin and Azure! 
+![Visual Studio Running Xamarin iOS and Android App](Assets/VSMacRunningiOSandAndroid.png)
 
 # Next Steps 
 [Archicture Options](../02_Architecture_Options/README.md)
