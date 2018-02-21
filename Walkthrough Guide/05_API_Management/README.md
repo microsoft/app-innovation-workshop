@@ -73,13 +73,13 @@ Click on the "Add API" Button and select "Blank API".
 ![Search for API Management](Assets/AddingPartsAPI.png)
 We can then provide a few details about our API.
 
-Display Name: This name is displayed in the Developer portal.
-Name: Provides a unique name for the API.
-Description: Description of the API
-Web Service URL: The URL where we'll be sending these requests.
-URL Scheme Determines which protocols can be used to access the API.
-API URL Suffix: The suffix is appended to the base URL for the API management service. API Management distinguishes APIs by their suffix and therefore the suffix must be unique for every API for a given publisher.
-Tags: Tags enable the organization of large lists – both in terms of management and presentation on the developer portal.
+* **Display Name:** This name is displayed in the Developer portal.
+* **Name:** Provides a unique name for the API.
+* **Description:** Description of the API
+* **Web Service URL:** The URL where we'll be sending these requests.
+* **URL Scheme** Determines which protocols can be used to access the API.
+* **API URL Suffix:** The suffix is appended to the base URL for the API management service. API Management distinguishes APIs by their suffix and therefore the suffix must be unique for every API for a given publisher.
+* **Tags:** Tags enable the organization of large lists – both in terms of management and presentation on the developer portal.
 Products: Publish the API by associating the API with a product. To optionally add this new API to a product, type the product name. This step can be repeated multiple times to add the API to multiple products.
 Version This API: Would you like to version the API?
 
@@ -88,6 +88,16 @@ Once we click "Create", we'll be able to add our single REST operation.
 
 ![Search for API Management](Assets/EmptyPartsAPI.png)
 
+
+
+CreatePartsGETOperation
+
+
+HTTP Verb: You can choose from one of the predefined HTTP verbs.
+URL: A URL path for the API.
+Display Name:
+Description: Provide a description of the operation that is used to provide documentation to the developers using this API in the Developer portal.
+Tags: Tags enable the organization of large lists – both in terms of management and presentation on the developer portal.
 
 
 #### Jobs
