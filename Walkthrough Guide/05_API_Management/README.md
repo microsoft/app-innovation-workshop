@@ -128,9 +128,9 @@ This will fill in most of the information for you, but you should make sure to a
 
 You're now ready to click "Create". The API Spec contains all the operations we'll need for interacting with the Jobs Controller in the ASP.NET Project. 
 
-![Search for API Management](Assets/pluralise.png)
+![Search for API Management](Assets/JobsCreated.png)
 
-#### Search
+#### Search
 We can now repeat the same process for Search, but this time we'll want to make sure we set the **API Url Suffix:** to "search". 
 
 ![Search for API Management](Assets/AddingSearch.png)
