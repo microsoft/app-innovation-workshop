@@ -13,20 +13,7 @@ You can explore APIs with API Management and even get automatically generated sn
 
 ![Developer Portal showing the Get Job API](Assets/DeveloperPortalApiView.png)
 
-
-
-### Management
-* **Subscription Portal:** this is an administrative portal where API programs are configured. It's possible to:
-    * Define or import API schemas
-    * Package API’s into products
-    * Setup policies like quotas or transformations on APIs
-    * Get insight from Analytics
-    * Manage users
-
-### Traffic 
-Azure API Management is available worldwide and ready to scale up and down on demand and without service interruption, handling any traffic growth or spike. Traffic to APIs can also be controlled using with Azure Traffic Manager or Request Throttling. .
-
-## Deploy API Management 
+## Deploying API Management 
 Lets head over to our Resource Group again and hit the "Add" button again. 
 
 ![Search for API Management](Assets/SearchForApiManagement.png)
@@ -65,63 +52,24 @@ We're using API Management as our access layer, routing all HTTP requests to our
 
 If we imagine the flow for searching jobs. Our request leaves the phone, hits our API Manager, which will route it to the nearest instance of our backend. The backend that takes the request and routes it to the correct contrller, which has the implementation for interacting with Azure Search. 
 
-API Management will need to be configured to route our requests to the correct place, so let's go ahead and start on that. 
-
 ## Configuring API Management
+Once API has finished its deployment process, we can start to configure it for interacting with the App Service instance we deployed earlier. 
 ![Search for API Management](Assets/Deployed.png)
-
-
-![Search for API Management](Assets/ProductsList.png)
-
-For this workshop, we wont need to add anymore products, but you can find a complete guide on the [Azure Documentation](https://docs.microsoft.com/en-us/azure/api-management/api-management-howto-add-products) site that covers this in depth. 
 
 ---
 ### Implementing Operations
 We need to define our operations for the API Management. We have already deployed our backend so we should be in a position to hook up to the App Service instance and consume real data. It's worth keeping in mind that its possible to send Mock responses back from API Management, which can help in the development of large solutions. 
 
+To kick off, we'll create the Parts API manually, and then for the rest of the APIs we'll use pre-built OpenAPI Specifications to automagically configure API Management. 
+
+#### Parts
+
+
 #### Jobs
-To kick off, we'll start by adding an endpoint to API Manangement for handling access to Jobs. To do this, click on "APIs" on the left hand menu. 
-
-![Search for API Management](Assets/ApiBlade.png)
-
-Lets start by creating an API from scratch using the "Blank API" template. 
-
-![Search for API Management](Assets/CreateJobsAPI.png)
-We can then provide a few details about our API. 
-
-* **Display Name:** This name is displayed in the Developer portal.
-* **Name:** Provides a unique name for the API. 
-* **Description:** Description of the API
-* **Web Service URL:** The URL where we'll be sending these requests. 
-* **URL Scheme** Determines which protocols can be used to access the API.
-* **API URL Suffix:** The suffix is appended to the base URL for the API management service. API Management distinguishes APIs by their suffix and therefore the suffix must be unique for every API for a given publisher.
-* **Tags:** Tags enable the organization of large lists – both in terms of management and presentation on the developer portal.
-* **Products:** Publish the API by associating the API with a product. To optionally add this new API to a product, type the product name. This step can be repeated multiple times to add the API to multiple products.
-* **Version This API:** Would you like to version the API? 
-
-#### Adding an operation
-
-![Search for API Management](Assets/ApiRequestOptions.png)
-
-* **HTTP Verb:** You can choose from one of the predefined HTTP verbs.
-* **URL:** A URL path for the API.
-* **Display Name:** 
-* **Description:** Provide a description of the operation that is used to provide documentation to the developers using this API in the Developer portal.
-* **Tags:** Tags enable the organization of large lists – both in terms of management and presentation on the developer portal.
 
 
+#### Search
 
 
-##### Adding operations
-
-**Get**
-![Search for API Management](Assets/CreateJobsGetAPI.png)
-
-**Delete**
-![Search for API Management](Assets/CreateDeleteApi.png)
-
-**Put**
-
----
-# Next Steps 
-[Functions & Cognitive Services](../06_Functions_Cognitive_Services/README.md)
+#### Photos
+-We're currently experiancing an issue with our implementation of Photo upload. Please bare with us whilst we resolve this. 
