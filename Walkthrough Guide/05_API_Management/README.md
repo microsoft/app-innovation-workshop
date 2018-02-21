@@ -88,9 +88,8 @@ Once we click "Create", we'll be able to add our single REST operation.
 
 ![Search for API Management](Assets/EmptyPartsAPI.png)
 
+![Search for API Management](Assets/CreatePartsGETOperation.png)
 
-
-CreatePartsGETOperation
 
 
 HTTP Verb: You can choose from one of the predefined HTTP verbs.
