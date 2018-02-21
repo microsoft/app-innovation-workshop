@@ -1,46 +1,24 @@
-![Banner](Assets/Banner.png)
-
 # API Management
-Azure API Management is a turnkey solution for publishing APIs to external and internal consumers. It facilitates the quick creation of consistent and modern API gateways for existing backend services hosted anywhere, enabling security and protection of same APIs from abuse and overuse, and empowers organizations gain insights into API usage and health. Plus, automate and scale developer Onboarding to help get your API program up and running in no time.
+Azure API Management is a turnkey solution for publishing APIs for external and internal consumption. It allows for the quick creation of consistent and modern API gateways for existing or new backend services hosted anywhere, enabling security and protection of the APIs from abuse and overuse. We like to think of API Management as businesses digital transformation hub as it empowers organisations to scale developer onboarding as well as monitoring the health of services. 
 
-We're using API Management in todays workshop to act as a barrier between our Azure Resources and the mobile app. 
+We'll be using API Management in today's workshop to act as a gateway or barrier between our Azure Resources and our mobile app. 
 
-## Key Features
+There are two parts of API Management which consist of the Admin portal and the developer portal. We can use the admin portal to create new APIs and manage access and provide our colleagues and consumers of the APIs access to the developer portal. 
 
-### Security 
-Azure API Management has a number of security features for ensuring access to back end services happen in a secure manner. 
-
-* **Client profiling and Authorization:** consumers of backend API’s via API Management are created as users on the Developer portal and assigned to groups. These groups are granted access to Products accordingly. Products contain a set of 1 or more API definitions
-
-* **Subscription keys:** consumers of backend API’s are assigned primary and secondary subscription keys. This key must be included in all requests made to the API. If the request isn't provided, we will return a 401 Invalid Subscription response. 
-
-* **VPN’s and ExpressRoute:** with the Premium tier, virtual networks can be setup in Azure using a VPN (or ExpressRoute). This virtual network is used to bridge from  your internal network into Azure allowing API Management to invoke the back end API’s without their needing to be exposed publicly. 
-
-### Authentication
-* **OAuth Configuration:** configuration of OAuth 2.0 Authorization servers in APIM by specifying supported flows and configuration of endpoints. These can be subsequently associated with configured APIs. APIM can also be configured to check that requests have a valid JWT to prevent unauthorized requests from even reaching the your back-end APIs. This is configured through the use of policies
-
-* **Mutual certificate authentication:** Client certificates can be configured on the back end services and uploaded to APIM. All communication would require authentication via these certificates
+![Developer Portal](Assets/consumePortal.png)
 
 ### Management
-* **Developer Portal:** A self-service developer portal offers access to:
-* **Subscription Portal:** this is an administrative interface where API programs are setup and are used to:
-* Define or import API schemas
+* **Subscription Portal:** this is an administrative portal where API programs are configured. It's possible to:
+    * Define or import API schemas
     * Package API’s into products
     * Setup policies like quotas or transformations on APIs
     * Get insight from Analytics
     * Manage users
 
-   ### Traffic 
-   Azure API Management is available world-wide and ready to scale up and down on demand and without service interruption, handling any traffic growth or spike. Traffic to APIs can also be controlled using:
-
-   * **Azure Traffic Manager:** APIM supports multi-region deployment which enables API publishers to distribute a single API management service across any number of desired Azure regions. This helps reduce request latency perceived by geographically distributed API consumers and also improves service availability if one region goes offline.
-
-        Azure Traffic Manager manages all APIM gateway servers deployed to various regions and call traffic will be routed to the closest gateway. If a region goes offline, the traffic is automatically re-directed to the next closest gateway.
-
-    * **Request Throttling:** Being able to throttle incoming requests is a key role of Azure API Management. Either by controlling the rate of requests or the total requests/data transferred, API Management allows API providers to protect their APIs from abuse and create value for different API product tiers.
+### Traffic 
+Azure API Management is available worldwide and ready to scale up and down on demand and without service interruption, handling any traffic growth or spike. Traffic to APIs can also be controlled using with Azure Traffic Manager or Request Throttling. .
 
 ## Deploy API Management 
-
 Lets head over to our Resource Group again and hit the "Add" button again. 
 
 ![Search for API Management](Assets/SearchForApiManagement.png)
@@ -57,7 +35,7 @@ Choose the following settings and hit the Create button to start provisioning th
 * Location: Same as your Web App
 * Organization Name: The name of your business (it'll appear in the portals). 
 * Administrator Email: Set this to yourself
-* Pricing Tier: You can selet Developer for this workshop. 
+* Pricing Tier: You can select Developer for this workshop. 
 
 ![Search for API Management](Assets/DeploymentProgress.png)
 
@@ -84,9 +62,6 @@ API Management will need to be configured to route our requests to the correct p
 ## Configuring API Management
 ![Search for API Management](Assets/Deployed.png)
 
-### Products
-Products are associations of one or more APIs. You can include a number of APIs and offer them to developers through the developer portal. Developers must first subscribe to a product to get access to the API. When they subscribe, they get a subscription key that is good for any API in that product. If you created the API Management instance, you are an administrator already, so you are subscribed to every product by default.
-By default, each API Management instance comes with two sample products: Starter and Unlimited.
 
 ![Search for API Management](Assets/ProductsList.png)
 
