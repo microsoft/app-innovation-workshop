@@ -20,22 +20,26 @@ The entire solution is available to download from Github and licensed under MIT 
 
 ## 2. Walkthrough Guides
 
-1. [Setup](00_Setup)    
-### Azure 
-2. [Architecture Options](02_Architecture_Options)
-3. [Web API & App Services](03_Web_API)
-4. [Data Storage & Search](04_Data_Storage)
-5. [API Management](05_API_Management)
-6. [Functions & Cognitive Services](06_Functions_Cognitive_Services)
-### Mobile App
-7. [Overview](07_Mobile_Overview)
-8. [Network Services](08_Mobile_Network_Services)
-9. [Anayltics & Push](09_Anayltics_Push)
-10. [Chatbot](10_Chatbot)
-11. [Authentication](11_Authentication)
+**General**
 
+1. [Setup](Walkthrough%20Guide/00_Setup/)
 
+**Azure**
 
+2. [Architecture Options](Walkthrough%20Guide/02_Architecture_Options)
+3. [Web API & App Services](Walkthrough%20Guide/03_Web_API)
+4. [Data Storage](Walkthrough%20Guide/04_Data_Storage)
+4. [Search](Walkthrough%20Guide/05_Search)
+6. [API Management](Walkthrough%20Guide/06_API_Management)
+7. [Functions & Cognitive Services](Walkthrough%20Guide/07_Functions_Cognitive_Services)
+
+**Mobile App**
+
+8. [Overview](Walkthrough%20Guide/08_Mobile_Overview)
+9. [Network Services](Walkthrough%20Guide/09_Mobile_Network_Services)
+10. [Anayltics & Push](10_Anayltics_Push/README.md)
+11. [Chatbot](Walkthrough%20Guide/11_Chatbot)
+12. [Authentication](Walkthrough%20Guide/12_Authentication)
 
 ## 3. Mobile App
 

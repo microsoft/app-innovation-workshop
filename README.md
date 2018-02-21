@@ -65,17 +65,18 @@ You can find a walkthrough guide for the project that outlines how you too can b
 
 2. [Architecture Options](Walkthrough%20Guide/02_Architecture_Options)
 3. [Web API & App Services](Walkthrough%20Guide/03_Web_API)
-4. [Data Storage & Search](Walkthrough%20Guide/04_Data_Storage)
-5. [API Management](Walkthrough%20Guide/05_API_Management)
-6. [Functions & Cognitive Services](Walkthrough%20Guide/06_Functions_Cognitive_Services)
+4. [Data Storage](Walkthrough%20Guide/04_Data_Storage)
+4. [Search](Walkthrough%20Guide/05_Search)
+6. [API Management](Walkthrough%20Guide/06_API_Management)
+7. [Functions & Cognitive Services](Walkthrough%20Guide/07_Functions_Cognitive_Services)
 
 **Mobile App**
 
-7. [Overview](Walkthrough%20Guide/07_Mobile_Overview)
-8. [Network Services](Walkthrough%20Guide/08_Mobile_Network_Services)
-9. [Anayltics & Push](09_Anayltics_Push/README.md)
-10. [Chatbot](Walkthrough%20Guide/10_Chatbot)
-11. [Authentication](Walkthrough%20Guide/11_Authentication)
+8. [Overview](Walkthrough%20Guide/08_Mobile_Overview)
+9. [Network Services](Walkthrough%20Guide/09_Mobile_Network_Services)
+10. [Anayltics & Push](10_Anayltics_Push/README.md)
+11. [Chatbot](Walkthrough%20Guide/11_Chatbot)
+12. [Authentication](Walkthrough%20Guide/12_Authentication)
 
 &nbsp;
 
