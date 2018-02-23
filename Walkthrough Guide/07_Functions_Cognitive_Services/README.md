@@ -166,7 +166,15 @@ Coming soon...
 
 ### 2.7 Test your Azure Function
 
-Coming soon...
+Back in the [Azure Portal](https://portal.azure.com), we can monitor how our Azure Function behaves. For this, select the ***Monitor*** tab beneth your Function.
+
+For each execution, we can check *Status* and *Execution Time* as well as additional details like *Logs* and *Parameters* when clickinng on  a single execution.
+
+![Check Function Success in the Azure Portal](Assets/CheckFunctionSuccess.png)
+
+To check if the Function is runninng as expected, we can trigger it by uploading another image. So let's open [Postman](https://www.getpostman.com/) again and upload other image with using the API ([like we did before](../04_Data_Storage#24-test-the-photo-upload)).
+
+Once the photo got uploaded, we should see a successful execution of the Azure Function in the Portal and two new resized pictures in the Blob Storage.
 
 ---
 # Next Steps 
