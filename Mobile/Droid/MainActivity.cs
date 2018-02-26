@@ -13,6 +13,7 @@ using FFImageLoading.Forms.Droid;
 using CarouselView.FormsPlugin.Android;
 using FFImageLoading.Transformations;
 using Xamarin;
+using Microsoft.AppCenter.Push;
 
 namespace ContosoFieldService.Droid
 {
@@ -32,6 +33,9 @@ namespace ContosoFieldService.Droid
             AnimationViewRenderer.Init();
             FormsMaps.Init(this, bundle);
             CarouselViewRenderer.Init();
+
+            // Configure App Center Push
+            Push.SetSenderId("597659151602");
 
             LoadApplication(new App());
         }

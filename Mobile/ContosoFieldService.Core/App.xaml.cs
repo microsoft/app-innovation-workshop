@@ -1,4 +1,5 @@
-﻿using ContosoFieldService.Abstractions;
+﻿using System;
+using ContosoFieldService.Abstractions;
 using ContosoFieldService.Helpers;
 using ContosoFieldService.PageModels;
 using FreshMvvm;
@@ -52,6 +53,8 @@ namespace ContosoFieldService
 
         protected override void OnStart()
         {
+            // Handle when your app starts
+
             // Only start Visual Studio App Center when running in a real-world scenario
             // which means on a physical device in Release mode and not in a Test cloud
             // to make sure we have real insights in Visual Studio App Center
@@ -63,9 +66,19 @@ namespace ContosoFieldService
                     Helpers.Constants.AppCenterUWPKey +
                     Helpers.Constants.AppCenterAndroidKey,
                     typeof(Analytics), typeof(Crashes), typeof(Push));
-            }
 
-            // Handle when your app starts
+                // Subscribe to Push Notification Event
+                Push.PushNotificationReceived += PushNotificationReceived;
+            }
+        }
+
+        async void PushNotificationReceived(object sender, PushNotificationReceivedEventArgs e)
+        {
+            // Rudimentary handle push notifications
+            if (e.Title != null || e.Message != null)
+            {
+                await MainPage?.DisplayAlert(e.Title, e.Message, "Ok");
+            }
         }
 
         protected override void OnSleep()
