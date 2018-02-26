@@ -48,8 +48,6 @@ namespace ContosoFieldService
                 navContainer.AddPage<ProfilePageModel>("Me");
                 MainPage = navContainer;
             }
-
-
         }
 
         protected override void OnStart()
