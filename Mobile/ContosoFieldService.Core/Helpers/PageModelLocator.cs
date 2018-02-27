@@ -3,6 +3,7 @@ using System.Linq;
 using ContosoFieldService.Helpers;
 using ContosoFieldService.PageModels;
 using Xamarin.Forms;
+using ContosoFieldService.Pages;
 
 namespace ContosoFieldService
 {
@@ -45,6 +46,8 @@ namespace ContosoFieldService
             }
         }
 
+        static SettingsPageModel settingsPageModel;
+        public static SettingsPageModel SettingsPageModel = settingsPageModel ?? (settingsPageModel = new SettingsPageModel());
     }
 }
 
