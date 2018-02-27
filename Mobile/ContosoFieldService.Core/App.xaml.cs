@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using ContosoFieldService.Abstractions;
 using ContosoFieldService.Helpers;
 using ContosoFieldService.PageModels;
@@ -9,6 +10,8 @@ using Microsoft.AppCenter.Crashes;
 using Microsoft.AppCenter.Push;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using Plugin.VersionTracking;
+using Microsoft.AppCenter.Distribute;
 
 [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 namespace ContosoFieldService
@@ -51,9 +54,10 @@ namespace ContosoFieldService
             }
         }
 
-        protected override void OnStart()
+        protected override async void OnStart()
         {
             // Handle when your app starts
+            CrossVersionTracking.Current.Track();
 
             // Only start Visual Studio App Center when running in a real-world scenario
             // which means on a physical device in Release mode and not in a Test cloud
@@ -65,10 +69,16 @@ namespace ContosoFieldService
                     Helpers.Constants.AppCenterIOSKey +
                     Helpers.Constants.AppCenterUWPKey +
                     Helpers.Constants.AppCenterAndroidKey,
-                    typeof(Analytics), typeof(Crashes), typeof(Push));
+                    typeof(Analytics), typeof(Crashes), typeof(Push), typeof(Distribute));
 
                 // Subscribe to Push Notification Event
                 Push.PushNotificationReceived += PushNotificationReceived;
+
+                // Track application start
+                Analytics.TrackEvent("App Started", new Dictionary<string, string>
+                {
+                    { "Day of week", DateTime.Now.ToString("dddd") }
+                });
             }
         }
 

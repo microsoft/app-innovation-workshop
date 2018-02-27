@@ -46,6 +46,7 @@
     <PackageReference Include="Xam.Plugin.Connectivity" Version="3.0.3" />
     <PackageReference Include="Microsoft.Azure.DocumentDB.Core" Version="1.7.1" />
     <PackageReference Include="Xam.Plugin.Geolocator" Version="4.2.0" />
+    <PackageReference Include="Plugin.VersionTracking" Version="2.1.0" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Pages\" />

@@ -12,6 +12,8 @@ using UIKit;
 using Xamarin;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.iOS;
+using Plugin.VersionTracking;
+using Microsoft.AppCenter.Distribute;
 
 namespace ContosoFieldService.iOS
 {
@@ -26,6 +28,9 @@ namespace ContosoFieldService.iOS
             FormsMaps.Init();
             CachedImageRenderer.Init();
             CarouselViewRenderer.Init();
+
+            // Configure App Center
+            Distribute.DontCheckForUpdatesInDebug();
 
             //HACK to get the linker to behave
             var ignore = new CircleTransformation();

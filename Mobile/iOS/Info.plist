@@ -58,5 +58,14 @@
 	<string>Assets.xcassets/AppIcon.appiconset</string>
 	<key>UIStatusBarStyle</key>
 	<string>UIStatusBarStyleLightContent</string>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>appcenter-0f5e85f5-7774-4fbd-ab6c-f1f018845ce2</string>
+			</array>
+		</dict>
+	</array>
 </dict>
 </plist>
