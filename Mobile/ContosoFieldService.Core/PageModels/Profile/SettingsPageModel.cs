@@ -10,6 +10,30 @@ namespace ContosoFieldService.PageModels
 {
     public class SettingsPageModel : FreshBasePageModel
     {
+        string baseUrl;
+        public string BaseUrl
+        {
+            get { return baseUrl; }
+            set
+            {
+                baseUrl = value;
+                Helpers.Constants.BaseUrl = value;
+                RaisePropertyChanged();
+            }
+        }
+
+        string apiManagementKey;
+        public string ApiManagementKey
+        {
+            get { return apiManagementKey; }
+            set
+            {
+                apiManagementKey = value;
+                Helpers.Constants.ApiManagementKey = value;
+                RaisePropertyChanged();
+            }
+        }
+
         public ObservableCollection<ThirdPartyLibrary> ThirdPartyLibraries { get; set; }
         public string Version { get; set; }
 
@@ -87,6 +111,8 @@ namespace ContosoFieldService.PageModels
             Version = $"{CrossVersionTracking.Current.CurrentVersion} (Build {CrossVersionTracking.Current.CurrentBuild})";
             NotificationsEnabled = await Push.IsEnabledAsync();
 
+            BaseUrl = Helpers.Constants.BaseUrl;
+            ApiManagementKey = Helpers.Constants.ApiManagementKey;
         }
     }
 }

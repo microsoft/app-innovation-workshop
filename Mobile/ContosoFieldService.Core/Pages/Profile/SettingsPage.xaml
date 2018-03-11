@@ -26,6 +26,32 @@
 
                 <BoxView HeightRequest="1"/>
 
+                <!-- Configuration -->
+                <StackLayout>
+                    <Label Style="{DynamicResource SectionHaderLabelStyle}" Text="Configuration" />
+                    <Label Style="{DynamicResource PropertyFooterLabelStyle}" Text="Lorem ipsum dolor sit amet"/>
+
+                    <Label 
+                        Style="{StaticResource PropertyFooterLabelStyle}"
+                        TextColor="{StaticResource TextColorSubtle}"
+                        Text="Base URL" />
+                    <Entry 
+                        Style="{DynamicResource EntryStyle}"
+                        Placeholder="Base URL" 
+                        Text="{Binding BaseUrl}"/>
+
+                    <Label 
+                        Style="{StaticResource PropertyFooterLabelStyle}"
+                        TextColor="{StaticResource TextColorSubtle}"
+                        Text="API Management Key" />
+                    <Entry 
+                        Style="{DynamicResource EntryStyle}" 
+                        Placeholder="API Management Key"
+                        Text="{Binding ApiManagementKey}"/>
+                </StackLayout>
+
+                <BoxView HeightRequest="1"/>
+
                 <StackLayout>
                     <Label Style="{DynamicResource SectionHaderLabelStyle}" Text="3rd Party Libraries" />  
                     <Label Style="{DynamicResource PropertyFooterLabelStyle}" Text="Credits to these incredible community projects that made my life easier!"/>
@@ -36,32 +62,55 @@
         <ListView.ItemTemplate>
             <DataTemplate>
                 <ViewCell>
-                    <Grid>
-                        <Grid.Padding>
-                            <Thickness Left="{StaticResource DefaultMargin}" Right="0" Bottom="{StaticResource DefaultMargin}" Top="0" />
-                        </Grid.Padding>
+                    <Grid 
+                        BackgroundColor="{StaticResource BackgroundColorItem}"
+                        ColumnSpacing="0">
                         <Grid.RowDefinitions>
-                            <RowDefinition Height="Auto" />
                             <RowDefinition Height="*" />
+                            <RowDefinition Height="Auto" />
                         </Grid.RowDefinitions>
-
                         <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="*" />
-                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="Auto"></ColumnDefinition>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
                         </Grid.ColumnDefinitions>
+                    
+                        <BoxView 
+                            Grid.RowSpan="2"
+                            WidthRequest="6"
+                            Color="{StaticResource AccentColor}" />
 
-                        <Label
-                            Grid.Row="0"
-                            Grid.ColumnSpan="2"
-                            Style="{DynamicResource RegularLabelStyle}"
-                            Text="{Binding Name}" />                           
+                        <StackLayout 
+                            Grid.Column="1"
+                            Spacing="0"
+                            Padding="12,14">
+                            
+                            <Label 
+                                x:Name="lblName"
+                                AutomationId="lblName"
+                                FontFamily="{StaticResource FontFamilyRegular}" 
+                                FontSize="{StaticResource FontSizeRegular}"
+                                TextColor="{StaticResource TextColorItem}" 
+                                Text="{Binding Name}" 
+                                LineBreakMode="TailTruncation" />
+                        
+                            <Label 
+                                x:Name="lblDetils"
+                                AutomationId="lblDetils"
+                                FontFamily="{StaticResource FontFamilyRegular}" 
+                                FontSize="{StaticResource FontSizeSmall}"  
+                                TextColor="{StaticResource TextColorItemSecondary}"
+                                Text="{Binding Author}" 
+                                LineBreakMode="TailTruncation">
+                            </Label>
+                        </StackLayout>
 
-                        <Label
+                        <!-- Separator -->
+                        <BoxView 
                             Grid.Row="1"
-                            Margin="0,-4,0,0"
-                            Style="{DynamicResource PropertyFooterLabelStyle}"
-                            TextColor="{StaticResource AccentColor}"
-                            Text="{Binding Author}" />
+                            Grid.Column="1"
+                            HeightRequest="1"
+                            Margin="0"
+                            Color="{StaticResource ItemSeparatorColor}" />
                     </Grid>
                 </ViewCell>
             </DataTemplate>
