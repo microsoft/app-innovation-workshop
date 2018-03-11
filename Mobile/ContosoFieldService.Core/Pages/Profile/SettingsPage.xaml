@@ -21,7 +21,7 @@
                 <!-- Version -->
                 <StackLayout Padding="{StaticResource DefaultThickness}">
                     <Label Style="{DynamicResource SectionHaderLabelStyle}" Text="Version" />
-                    <Label Style="{DynamicResource RegularLabelStyle}" x:Name="VersionLabel" Text="{Binding Version}"/>
+                    <Label Style="{DynamicResource PropertyLabelStyle}" x:Name="VersionLabel" Text="{Binding Version}"/>
                 </StackLayout>                
 
                 <BoxView HeightRequest="1" BackgroundColor="{DynamicResource SeparatorColor}" />
