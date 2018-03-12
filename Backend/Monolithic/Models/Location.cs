@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Spatial;
 using Newtonsoft.Json;
 using Microsoft.Azure.Documents.Spatial;
 
