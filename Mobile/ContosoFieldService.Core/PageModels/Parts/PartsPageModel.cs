@@ -134,7 +134,7 @@ namespace ContosoFieldService.PageModels
             }
             catch
             {
-                await CoreMethods.DisplayAlert("Error", "An error occured while communicating with the backend. Please double-check your settings and try again.", "Ok");
+                await CoreMethods.DisplayAlert("Connection Error", "An error occured while communicating with the backend. Please check your settings and try again.", "Ok");
             }
 
             IsRefreshing = false;

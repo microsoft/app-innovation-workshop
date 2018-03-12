@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using ContosoMaintenance.WebAPI.Models;
-using System.Spatial;
 using Microsoft.Azure.Documents.Spatial;
 
 namespace ContosoMaintenance.WebAPI.DummyData
