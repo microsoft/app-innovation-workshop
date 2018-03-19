@@ -8,7 +8,7 @@
 
 Please bring your own **Windows or Mac** laptop. To participate in this workshop, some prework needs to be done. So please make sure you prepared your environment bringing the following prerequisites.
 
-- [Microsoft Azure Account](https://azure.microsoft.com/en-us/free/) (with a Subscription)
+- [Microsoft Azure Account](https://aka.ms/azft-mobile) (with a Subscription)
 - [Visual Studio for Windows or Mac](https://www.visualstudio.com/) (Community Version or higher)
   - [Xamarin Tooling](https://developer.xamarin.com/guides/cross-platform/getting_started/installation/windows/)
 - [Visual Studio Code](https://code.visualstudio.com/)
