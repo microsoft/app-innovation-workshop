@@ -1,7 +1,9 @@
-﻿using ContosoMaintenance.WebAPI.Services;
+﻿using System;
+using System.Threading.Tasks;
+using ContosoMaintenance.WebAPI.Services;
 using ContosoMaintenance.WebAPI.Services.BlobStorage;
 using ContosoMaintenance.WebAPI.Services.StorageQueue;
-
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -28,9 +30,9 @@ namespace ContosoMaintenance.WebAPI
             services.AddScoped<IAzureBlobStorage>(factory =>
             {
                 return new AzureBlobStorage(new AzureBlobSettings(
-                    storageAccount: Configuration["AzureStorage:StorageAccountName"],
-                    storageKey: Configuration["AzureStorage:Key"],
-                    containerName: Configuration["AzureStorage:PhotosBlobContainerName"]));
+                    Configuration["AzureStorage:StorageAccountName"],
+                    Configuration["AzureStorage:Key"],
+                    Configuration["AzureStorage:PhotosBlobContainerName"]));
             });
 
             // Inject Storage Queue
@@ -40,6 +42,24 @@ namespace ContosoMaintenance.WebAPI
                     Configuration["AzureStorage:StorageAccountName"],
                     Configuration["AzureStorage:Key"],
                     Configuration["AzureStorage:QueueName"]));
+            });
+
+            // Add Azure Active Directory B2C Authentication
+            services.AddAuthentication(options =>
+            {
+                options.DefaultScheme = JwtBearerDefaults.AuthenticationScheme;
+            })
+            .AddJwtBearer(options =>
+            {
+                options.RequireHttpsMetadata = false;
+                options.Audience = Configuration["ActiveDirectory:ClientId"];
+                options.Events = new JwtBearerEvents
+                {
+                    OnAuthenticationFailed = AuthenticationFailed
+                };
+
+                var authorityBase = $"https://login.microsoftonline.com/tfp/{Configuration["ActiveDirectory:Tenant"]}/";
+                options.Authority = $"{authorityBase}{Configuration["ActiveDirectory:Policy"]}/v2.0/";
             });
 
             services.AddMvc();
@@ -53,7 +73,14 @@ namespace ContosoMaintenance.WebAPI
                 app.UseDeveloperExceptionPage();
             }
 
+            app.UseAuthentication();
             app.UseMvc();
+        }
+
+        Task AuthenticationFailed(AuthenticationFailedContext arg)
+        {
+            Console.WriteLine(arg.Exception.Message);
+            return Task.FromResult(0);
         }
     }
 }
