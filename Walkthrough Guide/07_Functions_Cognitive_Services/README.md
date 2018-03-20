@@ -1,6 +1,6 @@
 ![Banner](Assets/Banner.png)
 
-# Smart Image Resizing with Azure Fuctions and Cognitive Services
+# Smart Image Resizing with Azure Functions and Cognitive Services
 
 We have come to a point where our backend grew to a pretty solid state so let's do some of the more advanced stuff and add some intelligence to it! Not every developer has a background in Machine Learning and Artificial Intelligence to we should start with something simple: **Resizing uploaded images in an intelligent way**.
 
