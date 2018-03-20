@@ -108,6 +108,7 @@ When configuring the native client, we should define a unique **Custom Redirect 
 
 Fill in all the values and register the application with the ***Create*** button.
 
+- **Name:** Contoso Maintenance
 - **Include Web App / Web API:** Yes
 - **Allow implicid flow:** Yes
 - **Reply URL:** `https://myawesomestartupapi.azurewebsites.net/api/login`
@@ -119,7 +120,9 @@ Fill in all the values and register the application with the ***Create*** button
 
 Not that the Active Directory is set up, we can connect it to the Backend and introduce it as the Identity Provider of choice. As ASP.Net Core has support for authentication built-in, not much code is needed, to add Active Directory Authentication application-wide.
 
-> **Hint:** Remember, although we use existing libraries in our Backend and Frontend projects, Azure Active Directory B2C is based on open standards such as OpenID Connect and OAuth 2.0 and can be integrated in any framework out there. 
+> **Hint:** Remember, although we use existing libraries in our Backend and Frontend projects, Azure Active Directory B2C is based on open standards such as OpenID Connect and OAuth 2.0 and can be integrated in any framework out there.
+
+In the Backend's [`Startup.cs`](/Backend/Monolithic/Startup.cs) class, the Active Directory connection is already provided as shown below.
 
 ```csharp
 public void ConfigureServices(IServiceCollection services)
@@ -147,6 +150,26 @@ public void ConfigureServices(IServiceCollection services)
     // ...
 }
 ```
+
+As you can see, we use `Configuration` variables one more time to not hard code the config properties. So it takes the Azure Active Directory config out of the Environment Variables as defined in [`appsettings.json`](/Backend/Monolithic/appsettings.json).
+
+```json
+"ActiveDirectory": {
+    "Tenant": "",
+    "ClientId": "",
+    "Policy": ""
+}
+```
+
+So let's set these variables to the correct values an head back to our App Service, open the ***Application Settings*** and add these variables here as we did before for CosmosDB and Storage.
+
+- **`ActiveDirectory:Tenant`:** "{OUR_AD}.onmicrosoft.com"
+- **`ActiveDirectory:ClientId`:** *{ID_OF_THE_REGISTERED_APPLICATION}*
+- **`ActiveDirectory:Policy`:** B2C_1_GenericSignUpSignIn
+
+![Add ADB2C Settings to Azure App Service Settings](Assets/AddADB2CSettings.png)
+
+Don't forget to hit ***Save*** after you have entered all the variables
 
 # Additional Resouces
 

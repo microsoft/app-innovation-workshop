@@ -4,6 +4,8 @@ using ContosoMaintenance.WebAPI.Services;
 using Microsoft.AspNetCore.Mvc;
 using System.Xml.Linq;
 using Microsoft.Extensions.Configuration;
+using Microsoft.AspNetCore.Authorization;
+using System.Security.Claims;
 
 namespace ContosoMaintenance.WebAPI.Controllers
 {
@@ -68,9 +70,16 @@ namespace ContosoMaintenance.WebAPI.Controllers
             return new ObjectResult(item);
         }
 
+        [Authorize]
         [HttpDelete("{id}")]
         public async Task<ActionResult> DeleteAsync(string id)
         {
+            // Get ID of user who sends the request
+            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+
+            // TODO: Check, if user is allowed to delete item
+            // Currently left out for demo reasons
+
             if (id == null)
             {
                 return BadRequest();
