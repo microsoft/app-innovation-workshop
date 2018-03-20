@@ -8,6 +8,7 @@ using Microsoft.AppCenter;
 using Microsoft.AppCenter.Analytics;
 using Microsoft.AppCenter.Crashes;
 using Microsoft.AppCenter.Push;
+using MonkeyCache.LiteDB;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using Plugin.VersionTracking;
@@ -21,6 +22,8 @@ namespace ContosoFieldService
         public App()
         {
             InitializeComponent();
+            Barrel.ApplicationId = "ContosoFieldService";
+
 
 #if DEBUG
             Settings.UserIsLoggedIn = false;
