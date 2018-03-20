@@ -19,7 +19,7 @@
 
     <Color x:Key="TextColorButton">#FFFFFF</Color>
 
-     <Color x:Key="BackgroundColorItem">#FFFFFF</Color> 
+    <Color x:Key="BackgroundColorItem">#FFFFFF</Color> 
     <Color x:Key="TextColorItem">#000000</Color>
     <Color x:Key="TextColorItemSecondary">#555555</Color>
     <Color x:Key="ItemSeparatorColor">#EEEEEE</Color>

@@ -1,8 +1,9 @@
-﻿using ContosoMaintenance.WebAPI.Models;
+﻿using System;
+using System.Threading.Tasks;
 using ContosoMaintenance.WebAPI.Services;
 using ContosoMaintenance.WebAPI.Services.BlobStorage;
 using ContosoMaintenance.WebAPI.Services.StorageQueue;
-
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -22,24 +23,44 @@ namespace ContosoMaintenance.WebAPI
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            
+            // Inject Configuration
+            services.AddSingleton<IConfiguration>(Configuration);
+
+            // Inject Blob Storage
             services.AddScoped<IAzureBlobStorage>(factory =>
             {
                 return new AzureBlobStorage(new AzureBlobSettings(
-                    storageAccount: Configuration["AzureStorage:Blob_StorageAccount"],
-                    storageKey: Configuration["AzureStorage:Blob_StorageKey"],
-                    containerName: Configuration["AzureStorage:Blob_ContainerName"]));
+                    Configuration["AzureStorage:StorageAccountName"],
+                    Configuration["AzureStorage:Key"],
+                    Configuration["AzureStorage:PhotosBlobContainerName"]));
             });
 
+            // Inject Storage Queue
             services.AddScoped<IAzureStorageQueue>(factory =>
             {
-                return new AzureStorageQueue(new AzureStorageQueueSetings(
-                    Configuration["AzureStorage:Blob_StorageAccount"],
-                    Configuration["AzureStorage:Blob_StorageKey"],
-                    Configuration["AzureStorage:Queue_Name"]));
+                return new AzureStorageQueue(new AzureStorageQueueSettings(
+                    Configuration["AzureStorage:StorageAccountName"],
+                    Configuration["AzureStorage:Key"],
+                    Configuration["AzureStorage:QueueName"]));
             });
 
+            // Add Azure Active Directory B2C Authentication
+            services.AddAuthentication(options =>
+            {
+                options.DefaultScheme = JwtBearerDefaults.AuthenticationScheme;
+            })
+            .AddJwtBearer(options =>
+            {
+                options.RequireHttpsMetadata = false;
+                options.Audience = Configuration["ActiveDirectory:ClientId"];
+                options.Events = new JwtBearerEvents
+                {
+                    OnAuthenticationFailed = AuthenticationFailed
+                };
 
+                var authorityBase = $"https://login.microsoftonline.com/tfp/{Configuration["ActiveDirectory:Tenant"]}/";
+                options.Authority = $"{authorityBase}{Configuration["ActiveDirectory:Policy"]}/v2.0/";
+            });
 
             services.AddMvc();
         }
@@ -52,8 +73,14 @@ namespace ContosoMaintenance.WebAPI
                 app.UseDeveloperExceptionPage();
             }
 
+            app.UseAuthentication();
             app.UseMvc();
         }
 
+        Task AuthenticationFailed(AuthenticationFailedContext arg)
+        {
+            Console.WriteLine(arg.Exception.Message);
+            return Task.FromResult(0);
+        }
     }
 }

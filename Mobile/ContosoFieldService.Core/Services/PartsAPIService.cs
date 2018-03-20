@@ -2,26 +2,26 @@
 using System.Threading.Tasks;
 using ContosoFieldService.Models;
 using Refit;
+using ContosoFieldService.Helpers;
 
 namespace ContosoFieldService.Services
 {
-    [Headers(Helpers.Constants.ApiManagementKey)]
     public interface IPartsServiceAPI
     {
         [Get("/part/")]
-        Task<List<Part>> GetParts();
+        Task<List<Part>> GetParts([Header("Ocp-Apim-Subscription-Key")] string apiManagementKey);
 
         [Get("/part/{id}/")]
-        Task<Part> GetPartById(string id);
+        Task<Part> GetPartById(string id, [Header("Ocp-Apim-Subscription-Key")] string apiManagementKey);
 
         [Get("/search/parts/?keyword={keyword}")]
-        Task<List<Part>> SearchParts(string keyword);
+        Task<List<Part>> SearchParts(string keyword, [Header("Ocp-Apim-Subscription-Key")] string apiManagementKey);
 
         [Post("/part/")]
-        Task<Part> CreatePart([Body] Part job);
+        Task<Part> CreatePart([Body] Part job, [Header("Ocp-Apim-Subscription-Key")] string apiManagementKey);
 
         [Post("/part/{id}/")]
-        Task<Part> DeletePart(string id);
+        Task<Part> DeletePart(string id, [Header("Ocp-Apim-Subscription-Key")] string apiManagementKey);
     }
 
     public class PartsAPIService
@@ -29,31 +29,31 @@ namespace ContosoFieldService.Services
         public async Task<Part> CreatePartAsync(Part part)
         {
             var contosoMaintenanceApi = RestService.For<IPartsServiceAPI>(Helpers.Constants.BaseUrl);
-            return await contosoMaintenanceApi.CreatePart(part);
+            return await contosoMaintenanceApi.CreatePart(part, Constants.ApiManagementKey);
         }
 
         public async Task<List<Part>> GetPartsAsync()
         {
             var contosoMaintenanceApi = RestService.For<IPartsServiceAPI>(Helpers.Constants.BaseUrl);
-            return await contosoMaintenanceApi.GetParts();
+            return await contosoMaintenanceApi.GetParts(Constants.ApiManagementKey);
         }
 
         public async Task<Part> GetPartByIdAsync(string id)
         {
             var contosoMaintenanceApi = RestService.For<IPartsServiceAPI>(Helpers.Constants.BaseUrl);
-            return await contosoMaintenanceApi.GetPartById(id);
+            return await contosoMaintenanceApi.GetPartById(id, Constants.ApiManagementKey);
         }
 
         public async Task<Part> DeletePartByIdAsync(string id)
         {
             var contosoMaintenanceApi = RestService.For<IPartsServiceAPI>(Helpers.Constants.BaseUrl);
-            return await contosoMaintenanceApi.DeletePart(id);
+            return await contosoMaintenanceApi.DeletePart(id, Constants.ApiManagementKey);
         }
 
         public async Task<List<Part>> SearchPartsAsync(string keyword)
         {
             var contosoMaintenanceApi = RestService.For<IPartsServiceAPI>(Helpers.Constants.BaseUrl);
-            return await contosoMaintenanceApi.SearchParts(keyword);
+            return await contosoMaintenanceApi.SearchParts(keyword, Constants.ApiManagementKey);
         }
     }
 }

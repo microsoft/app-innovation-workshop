@@ -7,8 +7,8 @@ namespace ContosoMaintenance.WebAPI.Services.BlobStorage
 {
     public interface IAzureBlobStorage
     {
-        Task UploadAsync(string blobName, string filePath);
-        Task UploadAsync(string blobName, Stream stream);
+        Task<Uri> UploadAsync(string blobName, string filePath);
+        Task<Uri> UploadAsync(string blobName, Stream stream);
         Task<MemoryStream> DownloadAsync(string blobName);
         Task DownloadAsync(string blobName, string path);
         Task DeleteAsync(string blobName);

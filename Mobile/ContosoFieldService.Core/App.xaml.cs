@@ -1,4 +1,6 @@
-﻿using ContosoFieldService.Abstractions;
+﻿using System;
+using System.Collections.Generic;
+using ContosoFieldService.Abstractions;
 using ContosoFieldService.Helpers;
 using ContosoFieldService.PageModels;
 using FreshMvvm;
@@ -9,6 +11,8 @@ using Microsoft.AppCenter.Push;
 using MonkeyCache.LiteDB;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using Plugin.VersionTracking;
+using Microsoft.AppCenter.Distribute;
 
 [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 namespace ContosoFieldService
@@ -30,13 +34,16 @@ namespace ContosoFieldService
             // while Android uses a Navigation Drawer (Hamburger Menu)
             if (Xamarin.Forms.Device.RuntimePlatform == Xamarin.Forms.Device.iOS)
             {
-                var tabbedNavigation = new FreshTabbedNavigationContainer("authed");
+                // Create tabbed navigation for iOS
+                // Tab Bar Color is set in AppDelegate.cs within the iOS project
+                var tabbedNavigation = new FreshTabbedFONavigationContainer("Contoso");
+                tabbedNavigation.BarBackgroundColor = (Color)Current.Resources["BackgroundColorDark"];
+                tabbedNavigation.BarTextColor = (Color)Current.Resources["AccentColor"];
+
+                // Add first level navigationpages as tabs
                 tabbedNavigation.AddTab<JobsPageModel>("Jobs", "icon_jobs.png");
                 tabbedNavigation.AddTab<PartsPageModel>("Parts", "icon_parts.png");
                 tabbedNavigation.AddTab<ProfilePageModel>("Me", "icon_user.png");
-                tabbedNavigation.BarBackgroundColor = Color.FromHex("#222E38");
-                tabbedNavigation.BarTextColor = Color.White;
-                tabbedNavigation.BackgroundColor = Color.FromHex("#222E38");
                 MainPage = tabbedNavigation;
             }
             else
@@ -50,9 +57,10 @@ namespace ContosoFieldService
             }
         }
 
-        protected override void OnStart()
+        protected override async void OnStart()
         {
             // Handle when your app starts
+            CrossVersionTracking.Current.Track();
 
             // Only start Visual Studio App Center when running in a real-world scenario
             // which means on a physical device in Release mode and not in a Test cloud
@@ -64,7 +72,25 @@ namespace ContosoFieldService
                     Helpers.Constants.AppCenterIOSKey +
                     Helpers.Constants.AppCenterUWPKey +
                     Helpers.Constants.AppCenterAndroidKey,
-                    typeof(Analytics), typeof(Crashes), typeof(Push));
+                    typeof(Analytics), typeof(Crashes), typeof(Push), typeof(Distribute));
+
+                // Subscribe to Push Notification Event
+                Push.PushNotificationReceived += PushNotificationReceived;
+
+                // Track application start
+                Analytics.TrackEvent("App Started", new Dictionary<string, string>
+                {
+                    { "Day of week", DateTime.Now.ToString("dddd") }
+                });
+            }
+        }
+
+        async void PushNotificationReceived(object sender, PushNotificationReceivedEventArgs e)
+        {
+            // Rudimentary handle push notifications
+            if (e.Title != null || e.Message != null)
+            {
+                await MainPage?.DisplayAlert(e.Title, e.Message, "Ok");
             }
         }
 

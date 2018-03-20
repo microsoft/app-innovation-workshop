@@ -2,7 +2,7 @@
 {
     public class ThirdPartyLibrary
     {
-        public ThirdPartyLibrary(string name, string url, string author)
+        public ThirdPartyLibrary(string name, string author, string url)
         {
             Name = name;
             Url = url;
