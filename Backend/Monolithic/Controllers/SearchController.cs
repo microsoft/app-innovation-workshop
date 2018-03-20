@@ -7,16 +7,23 @@ using ContosoMaintenance.WebAPI.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Azure.Search;
 using Microsoft.Azure.Search.Models;
+using Microsoft.Extensions.Configuration;
 
 namespace ContosoMaintenance.WebAPI.Controllers
 {
-    public class SearchController : Controller 
+    public class SearchController : Controller
     {
+        SearchServiceClient serviceClient;
+
+        public SearchController(IConfiguration configuration)
+        {
+            serviceClient = new SearchServiceClient(configuration["AzureSearch:AzureSearchServiceName"], new SearchCredentials(configuration["AzureSearch:AzureSearchApiKey"]));
+        }
+
         [Route("/api/search/jobs")]
         public async Task<List<Job>> Get(string keyword)
         {
             var sp = new SearchParameters();
-            var serviceClient = new SearchServiceClient(Helpers.Keys.AzureSearchServiceName, new SearchCredentials(Helpers.Keys.AzureSearchApiKey));
             var indexClient = serviceClient.Indexes.GetClient("job-index");
 
             var response = await indexClient.Documents.SearchAsync<Job>(keyword, sp);

@@ -63,7 +63,7 @@ namespace ContosoFieldService.PageModels
                 return new Command(async () =>
                 {
                     Analytics.TrackEvent("Cancel Job Creation");
-                    await CoreMethods.PopPageModel(true, true);
+                    await CoreMethods.PopPageModel(false, true);
                 });
             }
 

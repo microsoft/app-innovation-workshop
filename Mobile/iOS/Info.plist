@@ -7,7 +7,7 @@
 	<key>CFBundleName</key>
 	<string>Field Service</string>
 	<key>CFBundleIdentifier</key>
-	<string>com.microsoft.gbb.contosomaintenance</string>
+	<string>com.contoso.contosomaintenance</string>
 	<key>CFBundleShortVersionString</key>
 	<string>1.0</string>
 	<key>CFBundleVersion</key>
@@ -56,5 +56,16 @@
 	<string>Add part photos to your media library</string>
 	<key>XSAppIconAssets</key>
 	<string>Assets.xcassets/AppIcon.appiconset</string>
+	<key>UIStatusBarStyle</key>
+	<string>UIStatusBarStyleLightContent</string>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>appcenter-0f5e85f5-7774-4fbd-ab6c-f1f018845ce2</string>
+			</array>
+		</dict>
+	</array>
 </dict>
 </plist>

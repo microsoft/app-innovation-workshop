@@ -13,6 +13,8 @@ using FFImageLoading.Forms.Droid;
 using CarouselView.FormsPlugin.Android;
 using FFImageLoading.Transformations;
 using Xamarin;
+using Microsoft.AppCenter.Push;
+using Plugin.Permissions;
 
 namespace ContosoFieldService.Droid
 {
@@ -28,12 +30,20 @@ namespace ContosoFieldService.Droid
 
             global::Xamarin.Forms.Forms.Init(this, bundle);
             CachedImageRenderer.Init(false);
-            ImageCircleRenderer.Init();
+            //ImageCircleRenderer.Init();
             AnimationViewRenderer.Init();
             FormsMaps.Init(this, bundle);
             CarouselViewRenderer.Init();
 
+            // Configure App Center Push
+            Push.SetSenderId("597659151602");
+
             LoadApplication(new App());
+        }
+
+        public override void OnRequestPermissionsResult(int requestCode, string[] permissions, Permission[] grantResults)
+        {
+            PermissionsImplementation.Current.OnRequestPermissionsResult(requestCode, permissions, grantResults);
         }
     }
 }

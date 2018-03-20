@@ -3,6 +3,9 @@ using System.Threading.Tasks;
 using ContosoMaintenance.WebAPI.Services;
 using Microsoft.AspNetCore.Mvc;
 using System.Xml.Linq;
+using Microsoft.Extensions.Configuration;
+using Microsoft.AspNetCore.Authorization;
+using System.Security.Claims;
 
 namespace ContosoMaintenance.WebAPI.Controllers
 {
@@ -10,14 +13,13 @@ namespace ContosoMaintenance.WebAPI.Controllers
     {
         public DocumentDBRepositoryBase<T> DBRepository = new DocumentDBRepositoryBase<T>();
 
-        public BaseController()
+        public BaseController(IConfiguration configuration)
         {
-            DBRepository.Initialize();
-        }
-
-        void CreateDummyDataIfNeeded()
-        {
-
+            // Initialize Azure Cosmos DB instance for this controller
+            DBRepository.Initialize(
+                configuration["AzureCosmosDb:Endpoint"],
+                configuration["AzureCosmosDb:Key"],
+                configuration["AzureCosmosDb:DatabaseId"]);
         }
 
         [HttpGet]
@@ -68,9 +70,16 @@ namespace ContosoMaintenance.WebAPI.Controllers
             return new ObjectResult(item);
         }
 
+        [Authorize]
         [HttpDelete("{id}")]
         public async Task<ActionResult> DeleteAsync(string id)
         {
+            // Get ID of user who sends the request
+            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+
+            // TODO: Check, if user is allowed to delete item
+            // Currently left out for demo reasons
+
             if (id == null)
             {
                 return BadRequest();

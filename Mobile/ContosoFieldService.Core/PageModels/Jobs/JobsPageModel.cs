@@ -18,28 +18,14 @@ namespace ContosoFieldService.PageModels
 
         public bool IsRefreshing
         {
-            get
-            {
-                return isRefreshing;
-            }
-            set
-            {
-                isRefreshing = value;
-                RaisePropertyChanged();
-            }
+            get { return isRefreshing; }
+            set { isRefreshing = value; RaisePropertyChanged(); }
         }
 
         public bool IsLoading
         {
-            get
-            {
-                return isLoading;
-            }
-            set
-            {
-                isLoading = value;
-                RaisePropertyChanged();
-            }
+            get { return isLoading; }
+            set { isLoading = value; RaisePropertyChanged(); }
         }
 
         string searchText;
@@ -54,7 +40,8 @@ namespace ContosoFieldService.PageModels
                 searchText = value;
                 if (string.IsNullOrWhiteSpace(value))
                 {
-                    ReloadData(true);
+                    // Run ReloadData syncronously
+                    ReloadData(true).GetAwaiter().GetResult();
                 }
                 else
                     Search.Execute(value);
@@ -124,7 +111,7 @@ namespace ContosoFieldService.PageModels
             {
                 return new Command(async () =>
                 {
-                    await CoreMethods.PushPageModel<CreateNewJobPageModel>(null, true, true);
+                    await CoreMethods.PushPageModel<CreateNewJobPageModel>(null, false, true);
                 });
             }
         }
@@ -146,7 +133,7 @@ namespace ContosoFieldService.PageModels
                 await CoreMethods.PushPageModel<LoginPageModel>(null, true, true);
 
 
-            await ReloadData(Jobs.Any());
+            await ReloadData(true);
         }
 
         protected override async void ViewIsDisappearing(object sender, EventArgs e)
@@ -168,24 +155,30 @@ namespace ContosoFieldService.PageModels
         /// Reloads the data.
         /// </summary>
         /// <returns>The data.</returns>
-        /// <param name="force">If set to <c>false</c> no new data from the server will be fetched and only local data will be regrouped.</param>
         /// <param name="isSilent">If set to <c>true</c> is silent.</param>
         async Task ReloadData(bool isSilent = false)
         {
             IsRefreshing = !isSilent;
             IsLoading = true;
 
-            if (Plugin.Connectivity.CrossConnectivity.Current.IsConnected)
+            try
             {
-                // Download jobs from server
-                var localJobs = await jobsApiService.GetJobsAsync();
-                // Group jobs by JobStatus
-                var groupedJobs = GroupJobs(localJobs);
-                Jobs.ReplaceRange(groupedJobs);
+                if (Plugin.Connectivity.CrossConnectivity.Current.IsConnected)
+                {
+                    // Download jobs from server
+                    var localJobs = await jobsApiService.GetJobsAsync();
+                    // Group jobs by JobStatus
+                    var groupedJobs = GroupJobs(localJobs);
+                    Jobs.ReplaceRange(groupedJobs);
+                }
+                else
+                {
+                    await CoreMethods.DisplayAlert("Network Error", "No internet connectivity found", "OK");
+                }
             }
-            else
+            catch
             {
-                await CoreMethods.DisplayAlert("Network Error", "No internet connectivity found", "OK");
+                await CoreMethods.DisplayAlert("Connection Error", "An error occured while communicating with the backend. Please check your settings and try again.", "Ok");
             }
 
             IsRefreshing = false;

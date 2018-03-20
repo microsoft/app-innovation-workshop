@@ -16,6 +16,13 @@ namespace ContosoFieldService.PageModels
             get { return isRefreshing; }
             set { isRefreshing = value; RaisePropertyChanged(); }
         }
+
+        public bool IsLoading
+        {
+            get { return isLoading; }
+            set { isLoading = value; RaisePropertyChanged(); }
+        }
+
         public string SearchText { get; set; }
 
         Part selectedPart;
@@ -95,7 +102,7 @@ namespace ContosoFieldService.PageModels
         {
             base.ViewIsAppearing(sender, e);
             if (Parts.Count == 0)
-                await ReloadData();
+                await ReloadData(true);
         }
 
         protected override void ViewIsDisappearing(object sender, EventArgs e)
@@ -114,21 +121,31 @@ namespace ContosoFieldService.PageModels
         #endregion
 
         #region Private Methods
-        async Task ReloadData()
+        async Task ReloadData(bool isSilent = false)
         {
-            IsRefreshing = true;
+            IsRefreshing = !isSilent;
+            IsLoading = true;
 
-            var parts = await partsApiService.GetPartsAsync();
-            Parts.Clear();
-            Parts.AddRange(parts);
+            try
+            {
+                var parts = await partsApiService.GetPartsAsync();
+                Parts.Clear();
+                Parts.AddRange(parts);
+            }
+            catch
+            {
+                await CoreMethods.DisplayAlert("Connection Error", "An error occured while communicating with the backend. Please check your settings and try again.", "Ok");
+            }
 
             IsRefreshing = false;
+            IsLoading = false;
         }
         #endregion
 
         #region Private Fields
         PartsAPIService partsApiService = new PartsAPIService();
         bool isRefreshing;
+        bool isLoading;
         #endregion
 
 

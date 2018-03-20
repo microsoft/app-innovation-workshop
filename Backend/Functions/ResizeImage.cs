@@ -23,16 +23,16 @@ namespace ContosoMaintenance.Functions
 
             // Inputs
             [DocumentDB("contosomaintenance", "jobs", Id = "{jobId}", ConnectionStringSetting = "CosmosDb")] Job job,
-            [Blob("images-large/{photoId}.jpg", FileAccess.Read)] byte[] imageLarge,
+            [Blob("images-large/{blobName}", FileAccess.Read)] byte[] imageLarge,
 
             // Outputs
-            [Blob("images-medium/{photoId}.jpg", FileAccess.Write)] Stream imageMedium,
-            [Blob("images-icon/{photoId}.jpg", FileAccess.Write)] Stream imageIcon,
+            [Blob("images-medium/{blobName}", FileAccess.Write)] Stream imageMedium,
+            [Blob("images-icon/{blobName}", FileAccess.Write)] Stream imageIcon,
 
             // Logger
             TraceWriter log)
         {
-            log.Info($"New photo upload detected for job {job.Id}");
+            log.Info($"New photo upload '{queueItem.PhotoId}' detected for job '{job.Id}'");
 
             // Crop photos to medium and icon sizes using Microsoft Cognitive Services
             await CropImageSmartAsync(imageLarge, imageMedium, 300, 300);
@@ -40,7 +40,7 @@ namespace ContosoMaintenance.Functions
             log.Info("Images cropped");
 
             // Update Cosmos DB entry
-            var photo = (job.Photos).FirstOrDefault(p => p.Id.Equals(queueItem.PhotoId));
+            var photo = job.Photos.FirstOrDefault(p => p.Id.Equals(queueItem.PhotoId));
             if (photo != null)
             {
                 photo.MediumUrl = photo.LargeUrl?.Replace("large", "medium");
@@ -84,6 +84,8 @@ namespace ContosoMaintenance.Functions
         public string JobId { get; set; }
         [JsonProperty("photoId")]
         public string PhotoId { get; set; }
+        [JsonProperty("blobName")]
+        public string BlobName { get; set; }
     }
 
     public class Job

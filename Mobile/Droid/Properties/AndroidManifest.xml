@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="1" android:versionName="1.0" package="com.microsoft.gbb.contosomaintenance">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="1" android:versionName="1.0" package="com.contoso.contosomaintenance">
     <uses-sdk android:minSdkVersion="16" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
@@ -8,6 +8,8 @@
     <uses-permission android:name="android.permission.ACCESS_MOCK_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="${applicationId}.permission.C2D_MESSAGE" />
+    <permission android:name="${applicationId}.permission.C2D_MESSAGE" android:protectionLevel="signature" />
     <application android:label="Field Service">
         <meta-data android:name="com.google.android.maps.v2.API_KEY" android:value="AIzaSyD008rMjSZgPWApeFf-fu_Yvpaid0LkTQ4" />
     </application>

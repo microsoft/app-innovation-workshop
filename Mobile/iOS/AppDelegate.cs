@@ -10,6 +10,10 @@ using Lottie.Forms.iOS.Renderers;
 using MikeCodesDotNET.iOS;
 using UIKit;
 using Xamarin;
+using Xamarin.Forms;
+using Xamarin.Forms.Platform.iOS;
+using Plugin.VersionTracking;
+using Microsoft.AppCenter.Distribute;
 
 namespace ContosoFieldService.iOS
 {
@@ -25,6 +29,9 @@ namespace ContosoFieldService.iOS
             CachedImageRenderer.Init();
             CarouselViewRenderer.Init();
 
+            // Configure App Center
+            Distribute.DontCheckForUpdatesInDebug();
+
             //HACK to get the linker to behave
             var ignore = new CircleTransformation();
 
@@ -33,13 +40,15 @@ namespace ContosoFieldService.iOS
             Xamarin.Calabash.Start();
 #endif
 
-            LoadApplication(new App());
+            var formsApp = new App();
 
-            UITabBar.Appearance.BarTintColor = "#00D8CB".ToUIColor();
-            UITabBar.Appearance.TintColor = UIColor.White;
+            UIApplication.SharedApplication.SetStatusBarStyle(UIStatusBarStyle.LightContent, false);
 
-            UINavigationBar.Appearance.BackgroundColor = "#222E38".ToUIColor();
-            UINavigationBar.Appearance.TintColor = "#00D8CB".ToUIColor();
+            UITabBar.Appearance.BarTintColor = ((Color)formsApp.Resources["BackgroundColor"]).ToUIColor(); ;
+            UITabBar.Appearance.TintColor = ((Color)formsApp.Resources["AccentColor"]).ToUIColor();
+
+            LoadApplication(formsApp);
+
             return base.FinishedLaunching(app, options);
         }
     }

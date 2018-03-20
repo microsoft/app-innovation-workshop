@@ -1,93 +1,133 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
-             x:Class="ContosoFieldService.Pages.SettingsPage"
-             Title="Settings"
-             BackgroundColor="#222E38">
-	<ContentPage.Content>
-         <ListView
-                ItemsSource="{Binding ThirdPartyLibraries}"
-                SeparatorVisibility="None"
-                HasUnevenRows="true"
-                BackgroundColor="#222E38">
-                
-                <ListView.Header>
-                    <StackLayout>
+<ContentPage 
+    xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    x:Class="ContosoFieldService.Pages.SettingsPage"
+    xmlns:design="clr-namespace:ContosoFieldService;assembly=ContosoFieldService.Core"
+    BindingContext="{x:Static design:PageModelLocator.SettingsPageModel}"    
+    Title="Settings"
+    BackgroundColor="{StaticResource BackgroundColor}">
+    
+     <ListView
+        ItemsSource="{Binding ThirdPartyLibraries}"
+        SelectedItem="{Binding SelectedLibrary, Mode=TwoWay}"
+        SeparatorVisibility="None"
+        HasUnevenRows="true"
+        BackgroundColor="#222E38">
+            
+        <ListView.Header>
+            <StackLayout>
 
-                        <!-- Version -->
-                        <StackLayout>
-                            <Label Text="Version" />
-                            <Label  x:Name="VersionLabel" Text="1"/>
-                        </StackLayout>                
+                <!-- Version -->
+                <StackLayout Padding="{StaticResource DefaultThickness}">
+                    <Label Style="{DynamicResource SectionHaderLabelStyle}" Text="Version" />
+                    <Label Style="{DynamicResource PropertyLabelStyle}" x:Name="VersionLabel" Text="{Binding Version}"/>
+                </StackLayout>                
 
-                        <BoxView HeightRequest="1"/>
+                <BoxView HeightRequest="1" BackgroundColor="{DynamicResource SeparatorColor}" />
 
-                        <StackLayout>
-                            <Label Text="3rd Party Libraries" />  
-                            <Label Text="Credits to these incredible community projects that made my life easier!"/>
+                <!-- Configuration -->
+                <StackLayout Padding="{StaticResource DefaultThickness}">
+                    <Label Style="{DynamicResource SectionHaderLabelStyle}" Text="Configuration" />
+                    <Label Style="{DynamicResource PropertyFooterLabelStyle}" Margin="0,0,0,10" Text="For testing purposes, you can override the connection to the backend here. These settings will be reset next time you start the app."/>
+
+                    <Label 
+                        Style="{StaticResource PropertyFooterLabelStyle}"
+                        TextColor="{StaticResource TextColorSubtle}"
+                        Text="Base URL" />
+                    <Entry 
+                        Style="{DynamicResource EntryStyle}"
+                        Placeholder="Base URL" 
+                        Text="{Binding BaseUrl}"/>
+
+                    <Label 
+                        Style="{StaticResource PropertyFooterLabelStyle}"
+                        TextColor="{StaticResource TextColorSubtle}"
+                        Text="API Management Key" />
+                    <Entry 
+                        Style="{DynamicResource EntryStyle}" 
+                        Placeholder="API Management Key"
+                        Text="{Binding ApiManagementKey}"/>
+                </StackLayout>
+
+                <BoxView HeightRequest="1" BackgroundColor="{DynamicResource SeparatorColor}" />
+
+                <StackLayout Padding="{StaticResource DefaultThickness}">
+                    <Label Style="{DynamicResource SectionHaderLabelStyle}" Text="3rd Party Libraries" />  
+                    <Label Style="{DynamicResource PropertyFooterLabelStyle}" Text="Credits to these incredible community projects that made my life easier!"/>
+                </StackLayout>
+            </StackLayout>
+        </ListView.Header>
+
+        <ListView.ItemTemplate>
+            <DataTemplate>
+                <ViewCell>
+                    <Grid 
+                        BackgroundColor="{StaticResource BackgroundColorDark}"
+                        ColumnSpacing="0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"></ColumnDefinition>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                    
+                        <BoxView 
+                            Grid.RowSpan="2"
+                            WidthRequest="6"
+                            Color="{StaticResource AccentColorRed}" />
+
+                        <StackLayout 
+                            Grid.Column="1"
+                            Spacing="0"
+                            Padding="12,14">
+                            
+                            <Label 
+                                x:Name="lblName"
+                                AutomationId="lblName"
+                                FontFamily="{StaticResource FontFamilyRegular}" 
+                                FontSize="{StaticResource FontSizeRegular}"
+                                TextColor="{StaticResource TextColor}" 
+                                Text="{Binding Name}" 
+                                LineBreakMode="TailTruncation" />
+                        
+                            <Label 
+                                x:Name="lblDetils"
+                                AutomationId="lblDetils"
+                                FontFamily="{StaticResource FontFamilyRegular}" 
+                                FontSize="{StaticResource FontSizeSmall}"  
+                                TextColor="{StaticResource TextColorSubtle}"
+                                Text="{Binding Author}" 
+                                LineBreakMode="TailTruncation">
+                            </Label>
                         </StackLayout>
-                    </StackLayout>
-                </ListView.Header>
 
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <ViewCell>
-                            <Grid>
-                                <Grid.RowDefinitions>
-                                    <RowDefinition Height="Auto" />
-                                    <RowDefinition Height="*" />
-                                </Grid.RowDefinitions>
+                        <!-- Separator -->
+                        <BoxView 
+                            Grid.Row="1"
+                            Grid.Column="1"
+                            HeightRequest="1"
+                            Margin="0"
+                            Color="{StaticResource SeparatorColor}" />
+                    </Grid>
+                </ViewCell>
+            </DataTemplate>
+        </ListView.ItemTemplate>
 
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="*" />
-                                    <ColumnDefinition Width="Auto" />
-                                </Grid.ColumnDefinitions>
+        <ListView.Footer>
+            <StackLayout>
+                
+                <BoxView HeightRequest="1" BackgroundColor="{DynamicResource SeparatorColor}" />
 
-                                <Label
-                                    Grid.Row="0"
-                                    Grid.ColumnSpan="2"
-                                    FontAttributes="Bold"
-                                    FontSize="{StaticResource FontSizeMedium}"
-                                    Text="{Binding Name}" />                           
-
-                                <Label
-                                    Grid.Row="1"
-                                    Margin="0,-4,0,0"
-                                    FontSize="{StaticResource FontSizeMedium}"
-                                    Text="{Binding Author}" />
-
-                                <Image
-                                    Grid.RowSpan="2"
-                                    Grid.Column="1"
-                                    Margin="10,0,0,0"
-                                    HeightRequest="15"
-                                    Source="Next"
-                                    VerticalOptions="Center">
-                                    <Image.IsVisible>
-                                        <OnPlatform
-                                            x:TypeArguments="x:Boolean"
-                                            Android="False"
-                                            WinPhone="False"
-                                            iOS="True" />
-                                    </Image.IsVisible>
-                                </Image>
-                            </Grid>
-                        </ViewCell>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-
-                <ListView.Footer>
-                    <StackLayout>                
-                        <BoxView HeightRequest="1"/>
-
-                        <!-- Additional Information -->
-                        <StackLayout>
-                            <Label Text="Additional Information" />
-                            <Label Text="This application has been built using Visual Studio Tools for Xamarin and is using Xamarin.Forms as its UI Framework. The full Frontend- and Backend code is open source and can be used for demos or as reference project."/>
-                            <Button Text="Browse at GitHub" HorizontalOptions="Start" />
-                        </StackLayout> 
-                    </StackLayout>
-                </ListView.Footer>
-            </ListView>
-	</ContentPage.Content>
+                <!-- Additional Information -->
+                <StackLayout Padding="{StaticResource DefaultThickness}">
+                    <Label Style="{DynamicResource SectionHaderLabelStyle}" Text="Additional Information" />
+                    <Label Style="{DynamicResource PropertyFooterLabelStyle}" Text="This application has been built using Visual Studio Tools for Xamarin and is using Xamarin.Forms as its UI Framework. The full Frontend- and Backend code is open source and can be used for demos or as reference project."/>
+                </StackLayout> 
+                <Button Text="Browse at GitHub" Style="{DynamicResource FullWidthButtonStyle}" BackgroundColor="{StaticResource AccentColorRed}" Command="{Binding GitHubCommand}" Margin="0,10,0,0" />
+            </StackLayout>
+        </ListView.Footer>
+    </ListView>
 </ContentPage>

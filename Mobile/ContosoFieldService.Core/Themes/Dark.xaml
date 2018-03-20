@@ -13,12 +13,9 @@
     <Color x:Key="TextColor">#FFFFFF</Color>
     <Color x:Key="TextColorSubtle">#777777</Color>
     <Color x:Key="TextColorPlaceholder">#344657</Color>
+    <Color x:Key="SearchBarBackgroundColor">Transparent</Color>
     <OnPlatform x:Key="EntryBackgroundColor" x:TypeArguments="Color">
         <On Platform="iOS" Value="#1C262F" />
-        <On Platform="Android" Value="Transpartent" />
-    </OnPlatform>
-    <OnPlatform x:Key="SearchBarBackgroundColor" x:TypeArguments="Color">
-        <On Platform="iOS" Value="#222E38" />
-        <On Platform="Android" Value="Transpartent" />
+        <On Platform="Android" Value="Transparent" />
     </OnPlatform>
 </ResourceDictionary>
