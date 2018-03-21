@@ -5,11 +5,11 @@ using System.Net;
 using System.Net.Http;
 using System.Threading.Tasks;
 using ContosoFieldService.Models;
-using MonkeyCache.LiteDB;
 using Plugin.Connectivity;
 using Polly;
 using Refit;
 using ContosoFieldService.Helpers;
+using MonkeyCache.FileStore;
 
 namespace ContosoFieldService.Services
 {
@@ -28,7 +28,7 @@ namespace ContosoFieldService.Services
         Task<Job> CreateJob([Body] Job job, [Header("Ocp-Apim-Subscription-Key")] string apiManagementKey);
 
         [Delete("/job/{id}/")]
-        Task<Job> DeleteJob(string id, [Header("Ocp-Apim-Subscription-Key")] string apiManagementKey);
+        Task<Job> DeleteJob(string id, [Header("Authorization")] string authorization, [Header("Ocp-Apim-Subscription-Key")] string apiManagementKey);
 
         [Put("/job/{id}/")]
         Task<Job> UpdateJob(string id, [Body] Job job, [Header("Ocp-Apim-Subscription-Key")] string apiManagementKey);
@@ -47,11 +47,15 @@ namespace ContosoFieldService.Services
                 return Barrel.Current.Get<List<Job>>(key);
             }
 
+            // ----
+            // TODO: THERE IS A BUG WITH GEOSPARTIAL DATA AT THE MOMENT
+            // ----
             // If the data isn't too old, we'll go ahead and return it rather than call the backend again.
-            if (!Barrel.Current.IsExpired(key) && Barrel.Current.Exists(key))
-            {
-                return Barrel.Current.Get<List<Job>>(key);
-            }
+            //if (!Barrel.Current.IsExpired(key) && Barrel.Current.Exists(key))
+            //{
+            //    var jobs = Barrel.Current.Get<IEnumerable<Job>>(key);
+            //    return jobs.ToList();
+            //}
 
             // Create an instance of the Refit RestService for the job interface.
             var contosoMaintenanceApi = RestService.For<IJobServiceAPI>(Helpers.Constants.BaseUrl);
@@ -107,7 +111,7 @@ namespace ContosoFieldService.Services
         public async Task<Job> DeleteJobByIdAsync(string id)
         {
             var contosoMaintenanceApi = RestService.For<IJobServiceAPI>(Constants.BaseUrl);
-            var pollyResult = await Policy.ExecuteAndCaptureAsync(async () => await contosoMaintenanceApi.DeleteJob(id, Constants.ApiManagementKey));
+            var pollyResult = await Policy.ExecuteAndCaptureAsync(async () => await contosoMaintenanceApi.DeleteJob(id, "Bearer " + AuthenticationService.AccessToken, Constants.ApiManagementKey));
             if (pollyResult.Result != null)
             {
                 return pollyResult.Result;

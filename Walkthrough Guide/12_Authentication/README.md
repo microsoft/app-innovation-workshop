@@ -15,6 +15,12 @@ For our business driven application, Azure Active Directory B2C (short: Azure AD
 - Use a white label solution, promote your brand
 - Integrates with existing Active Directories or CRM and marketing databases
 
+#### What does it cost
+
+The [Azure Active Directory B2C pricing](https://azure.microsoft.com/en-us/pricing/details/active-directory-b2c/) is quite simple and straight forward. The **first 50.000 users and authenticartion per month are free** so we basically start without any upfront costs. Once we exceed this threshold, we will pay for additional users staggered.
+
+
+
 ## 1. Create a new Azure Active Directory B2C
 
 Creating a new Azure Active Directory Service is a bit tricky and requires some steps that can be a bit confusing so let us go through them together carefully.
@@ -92,7 +98,11 @@ Create your first policy with the inputs below and confirm your selections with 
 
 ## 3. Setup the Active Directory Application
 
-Now that users can sign-up and log into our Active Directory, we need to register the application itself. For this, select the ***Applications*** menu and click the ***Add*** button from the new blade that appears.
+Now that users can sign-up and log into our Active Directory, we need to register the application itself. 
+
+### 3.1 Create a new Application
+
+Select the ***Applications*** menu and click the ***Add*** button from the new blade that appears.
 
 Here you're going to give the Azure AD B2C application a name and specify whether it should contain a Web API and Native client. You want to do both, so we select ***Yes*** on both options which lets a bunch of options appear.
 
@@ -115,6 +125,26 @@ Fill in all the values and register the application with the ***Create*** button
 - **App ID URI:** `https://myawesomenewstartup.onmicrosoft.com/`**`backend`**
 - **Native client:** Yes
 - **Custom Redurect URI:** `msalcontosomaintenance://auth`
+
+Once the application is registered, we can get its unique id from the overview page of the portal. We will need this a couple of times, when configuring Frontend and Backend later.
+
+
+
+### 3.2 Define a new Scope
+
+The idea behind scopes is to give permission to the backend resource that's being protected, so we should define a new one for the Mobile App.
+
+![Add new new Scope](Assets/AddNewScope.png)
+
+Hit the ***Published scopes*** menu option and enter any name and description. We could call it "read_only" for example.
+
+### 3.3 Activate API Access
+
+Once we have a scope defined, we can enable API Access for it. Our Mobile App needs it to communicate with the Active Directory and gain Access Tokens for its users.
+
+![Add new new Scope](Assets/AddAPIAccess.png)
+
+Click the ***API Access*** menu item and add a new API for our application and select the "read_only" scope that we just created.
 
 ## 4. Connect the Web Api Backend with Azure Active Directory
 
@@ -200,7 +230,27 @@ This basically means that if we fire a Delete request to the backend, without an
 
 ## 5. Configure the Mobile App
 
-Most of the authentication code is already written in the App but let's go through the important parts quickly, to understand how everything is glued together. Mostly, the whole process of Logging in, Logging out, Refreshing the Access Token in the background, handling the current user and so on lives in the [`AuthenticationService.cs`](/Mobile/ContosoFieldService.Core/Services/AuthenticationService.cs). It uses the [Microsoft.Identity.Client](https://www.nuget.org/packages/Microsoft.Identity.Client/) NuGet package (or MSAL) to take care of communicating to Azure AD B2C (and caching the tokens in respsonse) for us. This removes a lot of work on our end.
+Most of the authentication code is already written in the App but let's go through the important parts quickly, to understand how everything is glued together.
+
+Mostly, the whole process of Logging in, Logging out, Refreshing the Access Token in the background, handling the current user and so on lives in the [`AuthenticationService.cs`](/Mobile/ContosoFieldService.Core/Services/AuthenticationService.cs). Check it out, if you need more details on how Authentication is implemented on the client. It uses the [Microsoft.Identity.Client](https://www.nuget.org/packages/Microsoft.Identity.Client/) NuGet package (or MSAL) to take care of communicating to Azure AD B2C (and caching the tokens in respsonse) for us. This removes a lot of work on our end.
+
+The `AuthenticationService` gets configured with a set of variables in the [`Constants.cs`](/Mobile/ContosoFieldService.Core/Helpers/Constants.cs) file. As you can see, we define the recently created Scope "read_only" here.
+
+```csharp
+public static class Constants
+{
+    // ...
+
+    // Azure Active Directory B2C
+    public static string Tenant = "myawesomenewstartup.onmicrosoft.com";
+    public static string ClientID = "{ID_OF_THE_REGISTERED_APPLICATION}";
+    public static string SignUpAndInPolicy = "B2C_1_GenericSignUpSignIn";
+    public static string[] Scopes = { "https://myawesomenewstartup.onmicrosoft.com/backend/read_only" };
+}
+```
+
+[View in project](/Mobile/ContosoFieldService.Core/Helpers/Constants.cs#L13-L16)
+
 
 ### 5.1 iOS specific steps
 
@@ -212,17 +262,95 @@ In the iOS project, we have to edit the [`Info.plist`](/Mobile/iOS/Info.plist) f
     <dict>
         <key>CFBundleTypeRole</key>
         <string>Editor</string>
-        <key>CFBundleURLName</key>        
-        <string>com.contoso.contosomaintenance</string> <!-- Use your Bundle identifier here -->
+        <key>CFBundleURLName</key>
+        <!-- Use your Bundle identifier here -->
+        <string>com.contoso.contosomaintenance</string> 
         <key>CFBundleURLSchemes</key>
-        <array>            
-            <string>msalmsalcontosomaintenance</string> <!-- Use your Custom Redurect URI -->
+        <array>
+            <!-- Use your Custom Redurect URI minus the ://auth -->
+            <string>msalcontosomaintenance</string>
         </array>
     </dict>
 </array>
 ```
 
-[View in project](/Backend/Monolithic/Controllers/BaseController.cs#L73-L100)
+[View in project](/Mobile/iOS/Info.plist#L62-L74)
+
+Then we need to override the `OpenUrl` function in the AppDelegate. It's pretty straight forward and will look like this:
+
+```csharp
+public override bool OpenUrl(UIApplication app, NSUrl url, NSDictionary options)
+{
+    AuthenticationContinuationHelper.SetAuthenticationContinuationEventArgs(url);
+    return true;
+}
+```
+
+[View in project](/Mobile/iOS/AppDelegate.cs#L56-L60)
+
+The `AuthenticationContinuationHelper` is from the MSAL library, and it's there to help us coordinate the authentication flow.
+
+### 5.2 Android specific steps
+
+In the Android app's `MainActivity`, we need to set that `UIParent` property. That's going to be done in the `OnCreate` function and will look like this:
+
+```csharp
+// Configure Authentication
+AuthenticationService.UIParent = new UIParent(Xamarin.Forms.Forms.Context as Activity);
+```
+
+[View in project](/Mobile/Droid/MainActivity.cs#L44)
+
+This `UIParent` allows the MSAL to show the web view using the current Android activity.
+
+Then we need to modify the `AndroidManifest.xml` file. Add this into the `<application>` element:
+
+```xml
+<activity android:name="microsoft.identity.client.BrowserTabActivity">
+    <intent-filter>
+        <action android:name="android.intent.action.VIEW" />
+        <category android:name="android.intent.category.DEFAULT" />
+        <category android:name="android.intent.category.BROWSABLE" />
+        <!-- Use your Custom Redurect URI minus the ://auth -->
+        <data android:scheme="msalmsalcontosomaintenance" android:host="auth" />
+    </intent-filter>
+</activity>
+```
+
+[View in project](/Mobile/Droid/Properties/AndroidManifest.xml#L15-L22)
+
+That new `<activity>` element is defining a browser window that can be opened and it's going to be used for the web view that lets users sign up or sign in to our app.
+
+## 6. Understanding Authentication Processes
+
+### 6.1 Login flow
+
+For security reasons, OAuth2 dictates that User Logins have to be done via Web Views. When a user press the Login button, the ([customizable](https://docs.microsoft.com/en-us/azure/active-directory-b2c/active-directory-b2c-reference-ui-customization)) Azure ADB2C Website pops-up and asks the user to create a new account or login with an exiting one. Once the process is finished, the Web View will redirect the results to the application.
+
+![Login Screens](Assets/LoginScreens.png)
+
+When a user logs in and tries to access a protected resource at the Backend that requires authentication, usually a pre-definded login flow will be executed.
+
+![Login Screens](Assets/AuthFlow.png)
+
+A successful login flow would look like this:
+
+1. User opens opens Login window in the App
+1. User logs in and gets an Access Token from the Authentication Provider
+1. User sends request to Backend with Access Token
+1. Backend contacts Authentication Provider to prove Token validity
+1. Authentication Provider approves Token and returns User Account Details
+1. Backend returns secure resources
+
+### 6.2 Refresh Access Tokens
+
+Access Tokens usually have a short time to live to provide additional security and let potential attackers that stole and Access Token only operate for a small time.
+
+To avoid that the user has to login and aquire a new token every 30 minutes, the Access Token can be refreshed silently in the background. Ususally, a Rrefresh Token is used for this. The Mobile App uses the ADAL library, which already provides a functionality to refresh the Access Token. Check out the [`AuthenticationService.cs`](/Mobile/ContosoFieldService.Core/Services/AuthenticationService.cs) for implementation details.
+
+The App tries to refresh the Access Token automatically when it receives a `401 Unauthorized` response and only shows the Login UI to the user if the background refresh failed.
+
+Check out the [Mobile Network Services](/Walkthrough%20Guide/09_Mobile_Network_Services/) guide for additional details about resilient networking.
 
 
 # Additional Resouces

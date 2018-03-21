@@ -8,12 +8,12 @@ using Microsoft.AppCenter;
 using Microsoft.AppCenter.Analytics;
 using Microsoft.AppCenter.Crashes;
 using Microsoft.AppCenter.Push;
-using MonkeyCache.LiteDB;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using Plugin.VersionTracking;
 using Microsoft.AppCenter.Distribute;
 using ContosoFieldService.Services;
+using MonkeyCache.FileStore;
 
 [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 namespace ContosoFieldService
@@ -25,9 +25,8 @@ namespace ContosoFieldService
             InitializeComponent();
             Barrel.ApplicationId = "ContosoFieldService";
 
-
 #if DEBUG
-            Settings.UserIsLoggedIn = false;
+            Settings.LoginViewShown = false;
 #endif
 
             // As iOS and Android follow fundamenntally different navigation patterns, we split up the 

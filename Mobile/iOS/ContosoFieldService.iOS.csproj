@@ -324,9 +324,6 @@
     <Reference Include="LiteDB">
       <HintPath>..\..\packages\LiteDB.4.1.2\lib\netstandard2.0\LiteDB.dll</HintPath>
     </Reference>
-    <Reference Include="MonkeyCache.LiteDB">
-      <HintPath>..\..\packages\MonkeyCache.LiteDB.0.1.0.1-beta\lib\xamarinios10\MonkeyCache.LiteDB.dll</HintPath>
-    </Reference>
     <Reference Include="Microsoft.Extensions.Primitives">
       <HintPath>..\..\packages\Microsoft.Extensions.Primitives.2.0.0\lib\netstandard2.0\Microsoft.Extensions.Primitives.dll</HintPath>
     </Reference>
@@ -341,6 +338,9 @@
     </Reference>
     <Reference Include="Refit">
       <HintPath>..\..\packages\Refit.4.3.0\lib\netstandard1.4\Refit.dll</HintPath>
+    </Reference>
+    <Reference Include="MonkeyCache.FileStore">
+      <HintPath>..\..\packages\MonkeyCache.FileStore.0.1.0.1-beta\lib\xamarinios10\MonkeyCache.FileStore.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -448,7 +448,7 @@
     <BundleResource Include="Resources\myface.jpg" />
     <BundleResource Include="Resources\progress_balls.json" />
     <BundleResource Include="Resources\progress_circle.json" />
-    <BundleResource Include="Resources\Icon-Green.png" />
+    <BundleResource Include="Resources\icon_greentool.png" />
     <BundleResource Include="Resources\ba747.jpeg" />
     <BundleResource Include="Resources\icon_comments%402x.png" />
     <BundleResource Include="Resources\icon_add%402x.png" />

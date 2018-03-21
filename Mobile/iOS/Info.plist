@@ -68,7 +68,7 @@
 			<key>CFBundleURLSchemes</key>
 			<array>
 				<string>appcenter-0f5e85f5-7774-4fbd-ab6c-f1f018845ce2</string>
-				<string>msalmsalcontosomaintenance</string>
+				<string>msalcontosomaintenance</string>
 			</array>
 		</dict>
 	</array>

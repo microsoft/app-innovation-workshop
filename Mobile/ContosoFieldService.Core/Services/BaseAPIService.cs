@@ -32,7 +32,7 @@ namespace ContosoFieldService.Services
                             // try to aquire an Access Token silently and try again
                             await authenticationService.LoginSilentAsync();
                         }
-                        else
+                        else if (retry == 2)
                         {
                             // If refreshing the access token silently failed, show the login UI 
                             // and let the user enter his credentials again
