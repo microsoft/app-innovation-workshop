@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IdentityModel.Tokens.Jwt;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using ContosoFieldService.Helpers;
 using Microsoft.Identity.Client;
+using Newtonsoft.Json.Linq;
 
 namespace ContosoFieldService.Services
 {
@@ -12,6 +14,7 @@ namespace ContosoFieldService.Services
     {
         public static UIParent UIParent;
         public static IUser CurrentUser { get; set; }
+        public static string CurrentUserEmail { get; set; }
         public static bool IsLoggedIn { get; set; }
         public static string AccessToken { get; set; }
 
@@ -48,10 +51,17 @@ namespace ContosoFieldService.Services
                 var result = await authClient.AcquireTokenAsync(scopes, user, UIParent);
                 if (result != null)
                 {
+
+
                     // Login successful, set properties
                     CurrentUser = result.User;
                     AccessToken = result.AccessToken;
                     IsLoggedIn = true;
+
+                    // Get claims
+                    var handler = new JwtSecurityTokenHandler();
+                    var token = handler.ReadJwtToken(result.AccessToken);
+                    CurrentUserEmail = token.Claims.FirstOrDefault(x => x.Type == "emails")?.Value;
                 }
 
                 return result;
