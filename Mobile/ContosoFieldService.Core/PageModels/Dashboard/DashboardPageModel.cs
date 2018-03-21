@@ -20,7 +20,7 @@ namespace ContosoFieldService.PageModels
         {
             base.Init(initData);
 
-            if (Helpers.Settings.UserIsLoggedIn == false)
+            if (Helpers.Settings.LoginViewShown == false)
                 showLogin = true;
         }
     }

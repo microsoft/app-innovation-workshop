@@ -8,46 +8,48 @@
     BackgroundColor="{StaticResource BackgroundColor}"
     Title="Login">
 
-    <StackLayout VerticalOptions="Center" Margin="0,-200,0,0" Spacing="0">
-        <StackLayout 
-            Spacing="0"
-            Padding="{StaticResource DefaultThickness}">
+    <Grid Margin="{StaticResource DefaultThickness}">
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <StackLayout Padding="{StaticResource DefaultThickness}" VerticalOptions="Center">
+            <Image 
+                Margin="0,00,0,20"
+                Source="icon_greentool.png"
+                HorizontalOptions="Center"
+                WidthRequest="60"/>
+            
             <Label 
                 x:Name="lblWelcome"
                 AutomationId="lblWelcome"
                 Style="{StaticResource TitleLabelStyle}"
-                Text="Welcome!" />
-
-            <Label 
-                x:Name="lblTagLine"
-                AutomationId="lblTagLine"
+                HorizontalTextAlignment="Center"
+                Text="Contoso Maintenance" />               
+            
+            <Label
                 Style="{StaticResource RegularLabelStyle}"
-                Text="You'll need to login to get started." />
+                HorizontalTextAlignment="Center"
+                Text="Login to get started." />
         </StackLayout>
 
-        <StackLayout Padding="{StaticResource DefaultThickness}">
-            <Entry 
-                x:Name="tbxFullname"
-                AutomationId="tbxFullname"
-                Style="{StaticResource EntryStyle}"
-                Text="{Binding FullName}" 
-                Placeholder="Full Name" />
-                
-            <Entry 
-                x:Name="tbxEmail"
-                AutomationId="tbxEmail"
-                Style="{StaticResource EntryStyle}"
-                Text="{Binding Email}" 
-                Placeholder="Email Address" 
-                Keyboard="Email" />
-        </StackLayout>
+        <StackLayout Padding="{StaticResource DefaultThickness}" Grid.Row="1" Margin="0,0,0,40" Spacing="10">
+            <Button 
+                x:Name="btnLogin"
+                AutomationId="btnLogin"
+                Style="{StaticResource SubmitButtonStyle}"
+                Command="{Binding Login}" 
+                Text="Login" />  
 
-        <Button 
-            x:Name="btnLogin"
-            AutomationId="btnLogin"
-            Style="{StaticResource SubmitButtonStyle}"
-            Margin="{StaticResource DefaultThickness}"
-            Command="{Binding Login}" 
-            Text="Login" />          
-    </StackLayout>
+            <Button 
+                AutomationId="btnProceed"
+                Command="{Binding ProceedWithoutLogin}"
+                BackgroundColor="Transparent"
+                BorderWidth="0"
+                TextColor="{StaticResource AccentColor}"
+                Text="Proceed without Login" />  
+        </StackLayout>
+    </Grid>
 </ContentPage>

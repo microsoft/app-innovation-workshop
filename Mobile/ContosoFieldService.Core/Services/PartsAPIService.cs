@@ -21,7 +21,7 @@ namespace ContosoFieldService.Services
         Task<Part> CreatePart([Body] Part job, [Header("Ocp-Apim-Subscription-Key")] string apiManagementKey);
 
         [Post("/part/{id}/")]
-        Task<Part> DeletePart(string id, [Header("Ocp-Apim-Subscription-Key")] string apiManagementKey);
+        Task<Part> DeletePart(string id, [Header("Authorization")] string authorization, [Header("Ocp-Apim-Subscription-Key")] string apiManagementKey);
     }
 
     public class PartsAPIService
@@ -47,7 +47,7 @@ namespace ContosoFieldService.Services
         public async Task<Part> DeletePartByIdAsync(string id)
         {
             var contosoMaintenanceApi = RestService.For<IPartsServiceAPI>(Helpers.Constants.BaseUrl);
-            return await contosoMaintenanceApi.DeletePart(id, Constants.ApiManagementKey);
+            return await contosoMaintenanceApi.DeletePart(id, "Bearer " + AuthenticationService.AccessToken, Constants.ApiManagementKey);
         }
 
         public async Task<List<Part>> SearchPartsAsync(string keyword)

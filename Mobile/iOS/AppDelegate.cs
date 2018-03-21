@@ -14,6 +14,7 @@ using Xamarin.Forms;
 using Xamarin.Forms.Platform.iOS;
 using Plugin.VersionTracking;
 using Microsoft.AppCenter.Distribute;
+using Microsoft.Identity.Client;
 
 namespace ContosoFieldService.iOS
 {
@@ -50,6 +51,12 @@ namespace ContosoFieldService.iOS
             LoadApplication(formsApp);
 
             return base.FinishedLaunching(app, options);
+        }
+
+        public override bool OpenUrl(UIApplication app, NSUrl url, NSDictionary options)
+        {
+            AuthenticationContinuationHelper.SetAuthenticationContinuationEventArgs(url);
+            return true;
         }
     }
 }

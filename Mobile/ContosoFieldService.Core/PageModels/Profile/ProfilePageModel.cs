@@ -21,7 +21,7 @@ namespace ContosoFieldService.PageModels
             {
                 return new Command(async () =>
                 {
-                    Helpers.Settings.UserIsLoggedIn = true;
+                    Helpers.Settings.LoginViewShown = true;
                     Analytics.TrackEvent("User chatted to bot");
                     await CoreMethods.PushPageModel<BotPageModel>(true);
                 });
@@ -34,7 +34,7 @@ namespace ContosoFieldService.PageModels
             {
                 return new Command(async () =>
                 {
-                    Helpers.Settings.UserIsLoggedIn = true;
+                    Helpers.Settings.LoginViewShown = true;
                     Analytics.TrackEvent("User chatted to bot");
                     await CoreMethods.PushPageModel<SettingsPageModel>(true);
                 });

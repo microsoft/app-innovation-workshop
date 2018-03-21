@@ -29,7 +29,6 @@
     <PackageReference Include="Xamarin.FFImageLoading.Forms" Version="2.3.4" />
     <PackageReference Include="Xamarin.FFImageLoading.Transformations" Version="2.3.4" />
     <PackageReference Include="Xam.Plugin.Geolocator" Version="4.2.0" />
-    <PackageReference Include="MonkeyCache.LiteDB" Version="0.0.1.59-beta" />
     <PackageReference Include="Polly" Version="5.8.0" />
     <PackageReference Include="Plugin.VersionTracking" Version="2.1.0" />
     <PackageReference Include="CarouselView.FormsPlugin" Version="5.2.0" />
@@ -50,6 +49,8 @@
     <PackageReference Include="Microsoft.Azure.DocumentDB.Core" Version="1.9.1" />
     <PackageReference Include="Microsoft.Identity.Client" Version="1.1.2-preview0008" />
     <PackageReference Include="Com.Airbnb.Xamarin.Forms.Lottie" Version="2.5.1" />
+    <PackageReference Include="MonkeyCache" Version="0.1.0.1-beta" />
+    <PackageReference Include="MonkeyCache.FileStore" Version="0.1.0.1-beta" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Pages\" />

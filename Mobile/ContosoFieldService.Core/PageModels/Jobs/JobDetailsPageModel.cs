@@ -66,13 +66,18 @@ namespace ContosoFieldService.PageModels
                 return new Command(async () =>
                 {
                     // Confirm deletion
-                    if (await CoreMethods.DisplayAlert("Delete", "Do you really want to permanently delete this job?", "Delete", "Cancel"))
+                    if ("Delete" == await CoreMethods.DisplayActionSheet("You're going to delete this job and it'll be embrassing for all if we need to restore it...", "Canel", "Delete"))
                     {
-                        //TODO: Show Loading indicator
                         var jobsService = new Services.JobsAPIService();
-                        var updatedJob = await jobsService.DeleteJobByIdAsync(CurrentJob.Id);
-                        await CoreMethods.DisplayActionSheet("Are you sure?", "Cancel", "You're going to delete this job and it'll be embrassing for all if we need to restore it...", "OK");
-                        await CoreMethods.PopPageModel(updatedJob);
+                        var deletedJob = await jobsService.DeleteJobByIdAsync(CurrentJob.Id);
+                        if (deletedJob != null)
+                        {
+                            await CoreMethods.PopPageModel(deletedJob);
+                        }
+                        else
+                        {
+                            await CoreMethods.DisplayAlert("Deletion failed", "The job could not be deleted. This most likely mean authentication issues.", "Ok");
+                        }
                     }
                 });
             }

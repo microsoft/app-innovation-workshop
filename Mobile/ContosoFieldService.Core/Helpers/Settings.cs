@@ -3,28 +3,28 @@ using Plugin.Settings.Abstractions;
 
 namespace ContosoFieldService.Helpers
 {
-	/// <summary>
-	/// This is the Settings static class that can be used in your Core solution or in any
-	/// of your client applications. All settings are laid out the same exact way with getters
-	/// and setters. 
-	/// </summary>
-	public static class Settings
-	{
-		private static ISettings AppSettings
-		{
-			get
-			{
-				return CrossSettings.Current;
-			}
-		}
+    /// <summary>
+    /// This is the Settings static class that can be used in your Core solution or in any
+    /// of your client applications. All settings are laid out the same exact way with getters
+    /// and setters. 
+    /// </summary>
+    public static class Settings
+    {
+        private static ISettings AppSettings
+        {
+            get
+            {
+                return CrossSettings.Current;
+            }
+        }
 
-		#region Setting Constants
+        #region Setting Constants
 
-		private const string SettingsKey = "settings_key";
-		private static readonly string SettingsDefault = string.Empty;
+        private const string SettingsKey = "settings_key";
+        private static readonly string SettingsDefault = string.Empty;
 
-        private const string UserIsLoggedInKey = "user_is_logged_in_key";
-        private static readonly bool UserIsLoggedInDefault = false;
+        private const string LoginViewShownKey = "login_view_shown";
+        private static readonly bool LoginViewShownDefault = false;
 
         private const string FullNameKey = "fullname_key";
         private static readonly string FullNameDefault = string.Empty;
@@ -32,20 +32,20 @@ namespace ContosoFieldService.Helpers
         private const string EmailKey = "email_key";
         private static readonly string EmailDefault = string.Empty;
 
-		#endregion
+        #endregion
 
 
-		public static bool UserIsLoggedIn
-		{
-			get
-			{
-                return AppSettings.GetValueOrDefault(UserIsLoggedInKey, UserIsLoggedInDefault);
-			}
-			set
-			{
-                AppSettings.AddOrUpdateValue(UserIsLoggedInKey, value);
-			}
-		}
+        public static bool LoginViewShown
+        {
+            get
+            {
+                return AppSettings.GetValueOrDefault(LoginViewShownKey, LoginViewShownDefault);
+            }
+            set
+            {
+                AppSettings.AddOrUpdateValue(LoginViewShownKey, value);
+            }
+        }
 
         public static string FullName
         {
@@ -70,5 +70,5 @@ namespace ContosoFieldService.Helpers
                 AppSettings.AddOrUpdateValue(EmailKey, value);
             }
         }
-	}
+    }
 }

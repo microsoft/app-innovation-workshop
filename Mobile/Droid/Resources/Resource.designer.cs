@@ -4404,6 +4404,1437 @@ namespace ContosoFieldService.Droid
 			global::Microsoft.AppCenter.Distribute.Resource.String.appcenter_distribute_update_failed_dialog_title = global::ContosoFieldService.Droid.Resource.String.appcenter_distribute_update_failed_dialog_title;
 			global::Microsoft.AppCenter.Push.Android.Resource.Drawable.ic_stat_notify_dot = global::ContosoFieldService.Droid.Resource.Drawable.ic_stat_notify_dot;
 			global::Microsoft.AppCenter.Push.Android.Resource.String.library_name = global::ContosoFieldService.Droid.Resource.String.library_name;
+			global::Microsoft.Identity.Client.Resource.Animation.abc_fade_in = global::ContosoFieldService.Droid.Resource.Animation.abc_fade_in;
+			global::Microsoft.Identity.Client.Resource.Animation.abc_fade_out = global::ContosoFieldService.Droid.Resource.Animation.abc_fade_out;
+			global::Microsoft.Identity.Client.Resource.Animation.abc_grow_fade_in_from_bottom = global::ContosoFieldService.Droid.Resource.Animation.abc_grow_fade_in_from_bottom;
+			global::Microsoft.Identity.Client.Resource.Animation.abc_popup_enter = global::ContosoFieldService.Droid.Resource.Animation.abc_popup_enter;
+			global::Microsoft.Identity.Client.Resource.Animation.abc_popup_exit = global::ContosoFieldService.Droid.Resource.Animation.abc_popup_exit;
+			global::Microsoft.Identity.Client.Resource.Animation.abc_shrink_fade_out_from_bottom = global::ContosoFieldService.Droid.Resource.Animation.abc_shrink_fade_out_from_bottom;
+			global::Microsoft.Identity.Client.Resource.Animation.abc_slide_in_bottom = global::ContosoFieldService.Droid.Resource.Animation.abc_slide_in_bottom;
+			global::Microsoft.Identity.Client.Resource.Animation.abc_slide_in_top = global::ContosoFieldService.Droid.Resource.Animation.abc_slide_in_top;
+			global::Microsoft.Identity.Client.Resource.Animation.abc_slide_out_bottom = global::ContosoFieldService.Droid.Resource.Animation.abc_slide_out_bottom;
+			global::Microsoft.Identity.Client.Resource.Animation.abc_slide_out_top = global::ContosoFieldService.Droid.Resource.Animation.abc_slide_out_top;
+			global::Microsoft.Identity.Client.Resource.Attribute.actionBarDivider = global::ContosoFieldService.Droid.Resource.Attribute.actionBarDivider;
+			global::Microsoft.Identity.Client.Resource.Attribute.actionBarItemBackground = global::ContosoFieldService.Droid.Resource.Attribute.actionBarItemBackground;
+			global::Microsoft.Identity.Client.Resource.Attribute.actionBarPopupTheme = global::ContosoFieldService.Droid.Resource.Attribute.actionBarPopupTheme;
+			global::Microsoft.Identity.Client.Resource.Attribute.actionBarSize = global::ContosoFieldService.Droid.Resource.Attribute.actionBarSize;
+			global::Microsoft.Identity.Client.Resource.Attribute.actionBarSplitStyle = global::ContosoFieldService.Droid.Resource.Attribute.actionBarSplitStyle;
+			global::Microsoft.Identity.Client.Resource.Attribute.actionBarStyle = global::ContosoFieldService.Droid.Resource.Attribute.actionBarStyle;
+			global::Microsoft.Identity.Client.Resource.Attribute.actionBarTabBarStyle = global::ContosoFieldService.Droid.Resource.Attribute.actionBarTabBarStyle;
+			global::Microsoft.Identity.Client.Resource.Attribute.actionBarTabStyle = global::ContosoFieldService.Droid.Resource.Attribute.actionBarTabStyle;
+			global::Microsoft.Identity.Client.Resource.Attribute.actionBarTabTextStyle = global::ContosoFieldService.Droid.Resource.Attribute.actionBarTabTextStyle;
+			global::Microsoft.Identity.Client.Resource.Attribute.actionBarTheme = global::ContosoFieldService.Droid.Resource.Attribute.actionBarTheme;
+			global::Microsoft.Identity.Client.Resource.Attribute.actionBarWidgetTheme = global::ContosoFieldService.Droid.Resource.Attribute.actionBarWidgetTheme;
+			global::Microsoft.Identity.Client.Resource.Attribute.actionButtonStyle = global::ContosoFieldService.Droid.Resource.Attribute.actionButtonStyle;
+			global::Microsoft.Identity.Client.Resource.Attribute.actionDropDownStyle = global::ContosoFieldService.Droid.Resource.Attribute.actionDropDownStyle;
+			global::Microsoft.Identity.Client.Resource.Attribute.actionLayout = global::ContosoFieldService.Droid.Resource.Attribute.actionLayout;
+			global::Microsoft.Identity.Client.Resource.Attribute.actionMenuTextAppearance = global::ContosoFieldService.Droid.Resource.Attribute.actionMenuTextAppearance;
+			global::Microsoft.Identity.Client.Resource.Attribute.actionMenuTextColor = global::ContosoFieldService.Droid.Resource.Attribute.actionMenuTextColor;
+			global::Microsoft.Identity.Client.Resource.Attribute.actionModeBackground = global::ContosoFieldService.Droid.Resource.Attribute.actionModeBackground;
+			global::Microsoft.Identity.Client.Resource.Attribute.actionModeCloseButtonStyle = global::ContosoFieldService.Droid.Resource.Attribute.actionModeCloseButtonStyle;
+			global::Microsoft.Identity.Client.Resource.Attribute.actionModeCloseDrawable = global::ContosoFieldService.Droid.Resource.Attribute.actionModeCloseDrawable;
+			global::Microsoft.Identity.Client.Resource.Attribute.actionModeCopyDrawable = global::ContosoFieldService.Droid.Resource.Attribute.actionModeCopyDrawable;
+			global::Microsoft.Identity.Client.Resource.Attribute.actionModeCutDrawable = global::ContosoFieldService.Droid.Resource.Attribute.actionModeCutDrawable;
+			global::Microsoft.Identity.Client.Resource.Attribute.actionModeFindDrawable = global::ContosoFieldService.Droid.Resource.Attribute.actionModeFindDrawable;
+			global::Microsoft.Identity.Client.Resource.Attribute.actionModePasteDrawable = global::ContosoFieldService.Droid.Resource.Attribute.actionModePasteDrawable;
+			global::Microsoft.Identity.Client.Resource.Attribute.actionModePopupWindowStyle = global::ContosoFieldService.Droid.Resource.Attribute.actionModePopupWindowStyle;
+			global::Microsoft.Identity.Client.Resource.Attribute.actionModeSelectAllDrawable = global::ContosoFieldService.Droid.Resource.Attribute.actionModeSelectAllDrawable;
+			global::Microsoft.Identity.Client.Resource.Attribute.actionModeShareDrawable = global::ContosoFieldService.Droid.Resource.Attribute.actionModeShareDrawable;
+			global::Microsoft.Identity.Client.Resource.Attribute.actionModeSplitBackground = global::ContosoFieldService.Droid.Resource.Attribute.actionModeSplitBackground;
+			global::Microsoft.Identity.Client.Resource.Attribute.actionModeStyle = global::ContosoFieldService.Droid.Resource.Attribute.actionModeStyle;
+			global::Microsoft.Identity.Client.Resource.Attribute.actionModeWebSearchDrawable = global::ContosoFieldService.Droid.Resource.Attribute.actionModeWebSearchDrawable;
+			global::Microsoft.Identity.Client.Resource.Attribute.actionOverflowButtonStyle = global::ContosoFieldService.Droid.Resource.Attribute.actionOverflowButtonStyle;
+			global::Microsoft.Identity.Client.Resource.Attribute.actionOverflowMenuStyle = global::ContosoFieldService.Droid.Resource.Attribute.actionOverflowMenuStyle;
+			global::Microsoft.Identity.Client.Resource.Attribute.actionProviderClass = global::ContosoFieldService.Droid.Resource.Attribute.actionProviderClass;
+			global::Microsoft.Identity.Client.Resource.Attribute.actionViewClass = global::ContosoFieldService.Droid.Resource.Attribute.actionViewClass;
+			global::Microsoft.Identity.Client.Resource.Attribute.activityChooserViewStyle = global::ContosoFieldService.Droid.Resource.Attribute.activityChooserViewStyle;
+			global::Microsoft.Identity.Client.Resource.Attribute.alertDialogButtonGroupStyle = global::ContosoFieldService.Droid.Resource.Attribute.alertDialogButtonGroupStyle;
+			global::Microsoft.Identity.Client.Resource.Attribute.alertDialogCenterButtons = global::ContosoFieldService.Droid.Resource.Attribute.alertDialogCenterButtons;
+			global::Microsoft.Identity.Client.Resource.Attribute.alertDialogStyle = global::ContosoFieldService.Droid.Resource.Attribute.alertDialogStyle;
+			global::Microsoft.Identity.Client.Resource.Attribute.alertDialogTheme = global::ContosoFieldService.Droid.Resource.Attribute.alertDialogTheme;
+			global::Microsoft.Identity.Client.Resource.Attribute.allowStacking = global::ContosoFieldService.Droid.Resource.Attribute.allowStacking;
+			global::Microsoft.Identity.Client.Resource.Attribute.alpha = global::ContosoFieldService.Droid.Resource.Attribute.alpha;
+			global::Microsoft.Identity.Client.Resource.Attribute.arrowHeadLength = global::ContosoFieldService.Droid.Resource.Attribute.arrowHeadLength;
+			global::Microsoft.Identity.Client.Resource.Attribute.arrowShaftLength = global::ContosoFieldService.Droid.Resource.Attribute.arrowShaftLength;
+			global::Microsoft.Identity.Client.Resource.Attribute.autoCompleteTextViewStyle = global::ContosoFieldService.Droid.Resource.Attribute.autoCompleteTextViewStyle;
+			global::Microsoft.Identity.Client.Resource.Attribute.background = global::ContosoFieldService.Droid.Resource.Attribute.background;
+			global::Microsoft.Identity.Client.Resource.Attribute.backgroundSplit = global::ContosoFieldService.Droid.Resource.Attribute.backgroundSplit;
+			global::Microsoft.Identity.Client.Resource.Attribute.backgroundStacked = global::ContosoFieldService.Droid.Resource.Attribute.backgroundStacked;
+			global::Microsoft.Identity.Client.Resource.Attribute.backgroundTint = global::ContosoFieldService.Droid.Resource.Attribute.backgroundTint;
+			global::Microsoft.Identity.Client.Resource.Attribute.backgroundTintMode = global::ContosoFieldService.Droid.Resource.Attribute.backgroundTintMode;
+			global::Microsoft.Identity.Client.Resource.Attribute.barLength = global::ContosoFieldService.Droid.Resource.Attribute.barLength;
+			global::Microsoft.Identity.Client.Resource.Attribute.borderlessButtonStyle = global::ContosoFieldService.Droid.Resource.Attribute.borderlessButtonStyle;
+			global::Microsoft.Identity.Client.Resource.Attribute.buttonBarButtonStyle = global::ContosoFieldService.Droid.Resource.Attribute.buttonBarButtonStyle;
+			global::Microsoft.Identity.Client.Resource.Attribute.buttonBarNegativeButtonStyle = global::ContosoFieldService.Droid.Resource.Attribute.buttonBarNegativeButtonStyle;
+			global::Microsoft.Identity.Client.Resource.Attribute.buttonBarNeutralButtonStyle = global::ContosoFieldService.Droid.Resource.Attribute.buttonBarNeutralButtonStyle;
+			global::Microsoft.Identity.Client.Resource.Attribute.buttonBarPositiveButtonStyle = global::ContosoFieldService.Droid.Resource.Attribute.buttonBarPositiveButtonStyle;
+			global::Microsoft.Identity.Client.Resource.Attribute.buttonBarStyle = global::ContosoFieldService.Droid.Resource.Attribute.buttonBarStyle;
+			global::Microsoft.Identity.Client.Resource.Attribute.buttonGravity = global::ContosoFieldService.Droid.Resource.Attribute.buttonGravity;
+			global::Microsoft.Identity.Client.Resource.Attribute.buttonPanelSideLayout = global::ContosoFieldService.Droid.Resource.Attribute.buttonPanelSideLayout;
+			global::Microsoft.Identity.Client.Resource.Attribute.buttonStyle = global::ContosoFieldService.Droid.Resource.Attribute.buttonStyle;
+			global::Microsoft.Identity.Client.Resource.Attribute.buttonStyleSmall = global::ContosoFieldService.Droid.Resource.Attribute.buttonStyleSmall;
+			global::Microsoft.Identity.Client.Resource.Attribute.buttonTint = global::ContosoFieldService.Droid.Resource.Attribute.buttonTint;
+			global::Microsoft.Identity.Client.Resource.Attribute.buttonTintMode = global::ContosoFieldService.Droid.Resource.Attribute.buttonTintMode;
+			global::Microsoft.Identity.Client.Resource.Attribute.checkboxStyle = global::ContosoFieldService.Droid.Resource.Attribute.checkboxStyle;
+			global::Microsoft.Identity.Client.Resource.Attribute.checkedTextViewStyle = global::ContosoFieldService.Droid.Resource.Attribute.checkedTextViewStyle;
+			global::Microsoft.Identity.Client.Resource.Attribute.closeIcon = global::ContosoFieldService.Droid.Resource.Attribute.closeIcon;
+			global::Microsoft.Identity.Client.Resource.Attribute.closeItemLayout = global::ContosoFieldService.Droid.Resource.Attribute.closeItemLayout;
+			global::Microsoft.Identity.Client.Resource.Attribute.collapseContentDescription = global::ContosoFieldService.Droid.Resource.Attribute.collapseContentDescription;
+			global::Microsoft.Identity.Client.Resource.Attribute.collapseIcon = global::ContosoFieldService.Droid.Resource.Attribute.collapseIcon;
+			global::Microsoft.Identity.Client.Resource.Attribute.color = global::ContosoFieldService.Droid.Resource.Attribute.color;
+			global::Microsoft.Identity.Client.Resource.Attribute.colorAccent = global::ContosoFieldService.Droid.Resource.Attribute.colorAccent;
+			global::Microsoft.Identity.Client.Resource.Attribute.colorBackgroundFloating = global::ContosoFieldService.Droid.Resource.Attribute.colorBackgroundFloating;
+			global::Microsoft.Identity.Client.Resource.Attribute.colorButtonNormal = global::ContosoFieldService.Droid.Resource.Attribute.colorButtonNormal;
+			global::Microsoft.Identity.Client.Resource.Attribute.colorControlActivated = global::ContosoFieldService.Droid.Resource.Attribute.colorControlActivated;
+			global::Microsoft.Identity.Client.Resource.Attribute.colorControlHighlight = global::ContosoFieldService.Droid.Resource.Attribute.colorControlHighlight;
+			global::Microsoft.Identity.Client.Resource.Attribute.colorControlNormal = global::ContosoFieldService.Droid.Resource.Attribute.colorControlNormal;
+			global::Microsoft.Identity.Client.Resource.Attribute.colorPrimary = global::ContosoFieldService.Droid.Resource.Attribute.colorPrimary;
+			global::Microsoft.Identity.Client.Resource.Attribute.colorPrimaryDark = global::ContosoFieldService.Droid.Resource.Attribute.colorPrimaryDark;
+			global::Microsoft.Identity.Client.Resource.Attribute.colorSwitchThumbNormal = global::ContosoFieldService.Droid.Resource.Attribute.colorSwitchThumbNormal;
+			global::Microsoft.Identity.Client.Resource.Attribute.commitIcon = global::ContosoFieldService.Droid.Resource.Attribute.commitIcon;
+			global::Microsoft.Identity.Client.Resource.Attribute.contentInsetEnd = global::ContosoFieldService.Droid.Resource.Attribute.contentInsetEnd;
+			global::Microsoft.Identity.Client.Resource.Attribute.contentInsetEndWithActions = global::ContosoFieldService.Droid.Resource.Attribute.contentInsetEndWithActions;
+			global::Microsoft.Identity.Client.Resource.Attribute.contentInsetLeft = global::ContosoFieldService.Droid.Resource.Attribute.contentInsetLeft;
+			global::Microsoft.Identity.Client.Resource.Attribute.contentInsetRight = global::ContosoFieldService.Droid.Resource.Attribute.contentInsetRight;
+			global::Microsoft.Identity.Client.Resource.Attribute.contentInsetStart = global::ContosoFieldService.Droid.Resource.Attribute.contentInsetStart;
+			global::Microsoft.Identity.Client.Resource.Attribute.contentInsetStartWithNavigation = global::ContosoFieldService.Droid.Resource.Attribute.contentInsetStartWithNavigation;
+			global::Microsoft.Identity.Client.Resource.Attribute.controlBackground = global::ContosoFieldService.Droid.Resource.Attribute.controlBackground;
+			global::Microsoft.Identity.Client.Resource.Attribute.customNavigationLayout = global::ContosoFieldService.Droid.Resource.Attribute.customNavigationLayout;
+			global::Microsoft.Identity.Client.Resource.Attribute.defaultQueryHint = global::ContosoFieldService.Droid.Resource.Attribute.defaultQueryHint;
+			global::Microsoft.Identity.Client.Resource.Attribute.dialogPreferredPadding = global::ContosoFieldService.Droid.Resource.Attribute.dialogPreferredPadding;
+			global::Microsoft.Identity.Client.Resource.Attribute.dialogTheme = global::ContosoFieldService.Droid.Resource.Attribute.dialogTheme;
+			global::Microsoft.Identity.Client.Resource.Attribute.displayOptions = global::ContosoFieldService.Droid.Resource.Attribute.displayOptions;
+			global::Microsoft.Identity.Client.Resource.Attribute.divider = global::ContosoFieldService.Droid.Resource.Attribute.divider;
+			global::Microsoft.Identity.Client.Resource.Attribute.dividerHorizontal = global::ContosoFieldService.Droid.Resource.Attribute.dividerHorizontal;
+			global::Microsoft.Identity.Client.Resource.Attribute.dividerPadding = global::ContosoFieldService.Droid.Resource.Attribute.dividerPadding;
+			global::Microsoft.Identity.Client.Resource.Attribute.dividerVertical = global::ContosoFieldService.Droid.Resource.Attribute.dividerVertical;
+			global::Microsoft.Identity.Client.Resource.Attribute.drawableSize = global::ContosoFieldService.Droid.Resource.Attribute.drawableSize;
+			global::Microsoft.Identity.Client.Resource.Attribute.drawerArrowStyle = global::ContosoFieldService.Droid.Resource.Attribute.drawerArrowStyle;
+			global::Microsoft.Identity.Client.Resource.Attribute.dropDownListViewStyle = global::ContosoFieldService.Droid.Resource.Attribute.dropDownListViewStyle;
+			global::Microsoft.Identity.Client.Resource.Attribute.dropdownListPreferredItemHeight = global::ContosoFieldService.Droid.Resource.Attribute.dropdownListPreferredItemHeight;
+			global::Microsoft.Identity.Client.Resource.Attribute.editTextBackground = global::ContosoFieldService.Droid.Resource.Attribute.editTextBackground;
+			global::Microsoft.Identity.Client.Resource.Attribute.editTextColor = global::ContosoFieldService.Droid.Resource.Attribute.editTextColor;
+			global::Microsoft.Identity.Client.Resource.Attribute.editTextStyle = global::ContosoFieldService.Droid.Resource.Attribute.editTextStyle;
+			global::Microsoft.Identity.Client.Resource.Attribute.elevation = global::ContosoFieldService.Droid.Resource.Attribute.elevation;
+			global::Microsoft.Identity.Client.Resource.Attribute.expandActivityOverflowButtonDrawable = global::ContosoFieldService.Droid.Resource.Attribute.expandActivityOverflowButtonDrawable;
+			global::Microsoft.Identity.Client.Resource.Attribute.gapBetweenBars = global::ContosoFieldService.Droid.Resource.Attribute.gapBetweenBars;
+			global::Microsoft.Identity.Client.Resource.Attribute.goIcon = global::ContosoFieldService.Droid.Resource.Attribute.goIcon;
+			global::Microsoft.Identity.Client.Resource.Attribute.height = global::ContosoFieldService.Droid.Resource.Attribute.height;
+			global::Microsoft.Identity.Client.Resource.Attribute.hideOnContentScroll = global::ContosoFieldService.Droid.Resource.Attribute.hideOnContentScroll;
+			global::Microsoft.Identity.Client.Resource.Attribute.homeAsUpIndicator = global::ContosoFieldService.Droid.Resource.Attribute.homeAsUpIndicator;
+			global::Microsoft.Identity.Client.Resource.Attribute.homeLayout = global::ContosoFieldService.Droid.Resource.Attribute.homeLayout;
+			global::Microsoft.Identity.Client.Resource.Attribute.icon = global::ContosoFieldService.Droid.Resource.Attribute.icon;
+			global::Microsoft.Identity.Client.Resource.Attribute.iconifiedByDefault = global::ContosoFieldService.Droid.Resource.Attribute.iconifiedByDefault;
+			global::Microsoft.Identity.Client.Resource.Attribute.imageButtonStyle = global::ContosoFieldService.Droid.Resource.Attribute.imageButtonStyle;
+			global::Microsoft.Identity.Client.Resource.Attribute.indeterminateProgressStyle = global::ContosoFieldService.Droid.Resource.Attribute.indeterminateProgressStyle;
+			global::Microsoft.Identity.Client.Resource.Attribute.initialActivityCount = global::ContosoFieldService.Droid.Resource.Attribute.initialActivityCount;
+			global::Microsoft.Identity.Client.Resource.Attribute.isLightTheme = global::ContosoFieldService.Droid.Resource.Attribute.isLightTheme;
+			global::Microsoft.Identity.Client.Resource.Attribute.itemPadding = global::ContosoFieldService.Droid.Resource.Attribute.itemPadding;
+			global::Microsoft.Identity.Client.Resource.Attribute.layout = global::ContosoFieldService.Droid.Resource.Attribute.layout;
+			global::Microsoft.Identity.Client.Resource.Attribute.listChoiceBackgroundIndicator = global::ContosoFieldService.Droid.Resource.Attribute.listChoiceBackgroundIndicator;
+			global::Microsoft.Identity.Client.Resource.Attribute.listDividerAlertDialog = global::ContosoFieldService.Droid.Resource.Attribute.listDividerAlertDialog;
+			global::Microsoft.Identity.Client.Resource.Attribute.listItemLayout = global::ContosoFieldService.Droid.Resource.Attribute.listItemLayout;
+			global::Microsoft.Identity.Client.Resource.Attribute.listLayout = global::ContosoFieldService.Droid.Resource.Attribute.listLayout;
+			global::Microsoft.Identity.Client.Resource.Attribute.listMenuViewStyle = global::ContosoFieldService.Droid.Resource.Attribute.listMenuViewStyle;
+			global::Microsoft.Identity.Client.Resource.Attribute.listPopupWindowStyle = global::ContosoFieldService.Droid.Resource.Attribute.listPopupWindowStyle;
+			global::Microsoft.Identity.Client.Resource.Attribute.listPreferredItemHeight = global::ContosoFieldService.Droid.Resource.Attribute.listPreferredItemHeight;
+			global::Microsoft.Identity.Client.Resource.Attribute.listPreferredItemHeightLarge = global::ContosoFieldService.Droid.Resource.Attribute.listPreferredItemHeightLarge;
+			global::Microsoft.Identity.Client.Resource.Attribute.listPreferredItemHeightSmall = global::ContosoFieldService.Droid.Resource.Attribute.listPreferredItemHeightSmall;
+			global::Microsoft.Identity.Client.Resource.Attribute.listPreferredItemPaddingLeft = global::ContosoFieldService.Droid.Resource.Attribute.listPreferredItemPaddingLeft;
+			global::Microsoft.Identity.Client.Resource.Attribute.listPreferredItemPaddingRight = global::ContosoFieldService.Droid.Resource.Attribute.listPreferredItemPaddingRight;
+			global::Microsoft.Identity.Client.Resource.Attribute.logo = global::ContosoFieldService.Droid.Resource.Attribute.logo;
+			global::Microsoft.Identity.Client.Resource.Attribute.logoDescription = global::ContosoFieldService.Droid.Resource.Attribute.logoDescription;
+			global::Microsoft.Identity.Client.Resource.Attribute.maxButtonHeight = global::ContosoFieldService.Droid.Resource.Attribute.maxButtonHeight;
+			global::Microsoft.Identity.Client.Resource.Attribute.measureWithLargestChild = global::ContosoFieldService.Droid.Resource.Attribute.measureWithLargestChild;
+			global::Microsoft.Identity.Client.Resource.Attribute.multiChoiceItemLayout = global::ContosoFieldService.Droid.Resource.Attribute.multiChoiceItemLayout;
+			global::Microsoft.Identity.Client.Resource.Attribute.navigationContentDescription = global::ContosoFieldService.Droid.Resource.Attribute.navigationContentDescription;
+			global::Microsoft.Identity.Client.Resource.Attribute.navigationIcon = global::ContosoFieldService.Droid.Resource.Attribute.navigationIcon;
+			global::Microsoft.Identity.Client.Resource.Attribute.navigationMode = global::ContosoFieldService.Droid.Resource.Attribute.navigationMode;
+			global::Microsoft.Identity.Client.Resource.Attribute.overlapAnchor = global::ContosoFieldService.Droid.Resource.Attribute.overlapAnchor;
+			global::Microsoft.Identity.Client.Resource.Attribute.paddingBottomNoButtons = global::ContosoFieldService.Droid.Resource.Attribute.paddingBottomNoButtons;
+			global::Microsoft.Identity.Client.Resource.Attribute.paddingEnd = global::ContosoFieldService.Droid.Resource.Attribute.paddingEnd;
+			global::Microsoft.Identity.Client.Resource.Attribute.paddingStart = global::ContosoFieldService.Droid.Resource.Attribute.paddingStart;
+			global::Microsoft.Identity.Client.Resource.Attribute.paddingTopNoTitle = global::ContosoFieldService.Droid.Resource.Attribute.paddingTopNoTitle;
+			global::Microsoft.Identity.Client.Resource.Attribute.panelBackground = global::ContosoFieldService.Droid.Resource.Attribute.panelBackground;
+			global::Microsoft.Identity.Client.Resource.Attribute.panelMenuListTheme = global::ContosoFieldService.Droid.Resource.Attribute.panelMenuListTheme;
+			global::Microsoft.Identity.Client.Resource.Attribute.panelMenuListWidth = global::ContosoFieldService.Droid.Resource.Attribute.panelMenuListWidth;
+			global::Microsoft.Identity.Client.Resource.Attribute.popupMenuStyle = global::ContosoFieldService.Droid.Resource.Attribute.popupMenuStyle;
+			global::Microsoft.Identity.Client.Resource.Attribute.popupTheme = global::ContosoFieldService.Droid.Resource.Attribute.popupTheme;
+			global::Microsoft.Identity.Client.Resource.Attribute.popupWindowStyle = global::ContosoFieldService.Droid.Resource.Attribute.popupWindowStyle;
+			global::Microsoft.Identity.Client.Resource.Attribute.preserveIconSpacing = global::ContosoFieldService.Droid.Resource.Attribute.preserveIconSpacing;
+			global::Microsoft.Identity.Client.Resource.Attribute.progressBarPadding = global::ContosoFieldService.Droid.Resource.Attribute.progressBarPadding;
+			global::Microsoft.Identity.Client.Resource.Attribute.progressBarStyle = global::ContosoFieldService.Droid.Resource.Attribute.progressBarStyle;
+			global::Microsoft.Identity.Client.Resource.Attribute.queryBackground = global::ContosoFieldService.Droid.Resource.Attribute.queryBackground;
+			global::Microsoft.Identity.Client.Resource.Attribute.queryHint = global::ContosoFieldService.Droid.Resource.Attribute.queryHint;
+			global::Microsoft.Identity.Client.Resource.Attribute.radioButtonStyle = global::ContosoFieldService.Droid.Resource.Attribute.radioButtonStyle;
+			global::Microsoft.Identity.Client.Resource.Attribute.ratingBarStyle = global::ContosoFieldService.Droid.Resource.Attribute.ratingBarStyle;
+			global::Microsoft.Identity.Client.Resource.Attribute.ratingBarStyleIndicator = global::ContosoFieldService.Droid.Resource.Attribute.ratingBarStyleIndicator;
+			global::Microsoft.Identity.Client.Resource.Attribute.ratingBarStyleSmall = global::ContosoFieldService.Droid.Resource.Attribute.ratingBarStyleSmall;
+			global::Microsoft.Identity.Client.Resource.Attribute.searchHintIcon = global::ContosoFieldService.Droid.Resource.Attribute.searchHintIcon;
+			global::Microsoft.Identity.Client.Resource.Attribute.searchIcon = global::ContosoFieldService.Droid.Resource.Attribute.searchIcon;
+			global::Microsoft.Identity.Client.Resource.Attribute.searchViewStyle = global::ContosoFieldService.Droid.Resource.Attribute.searchViewStyle;
+			global::Microsoft.Identity.Client.Resource.Attribute.seekBarStyle = global::ContosoFieldService.Droid.Resource.Attribute.seekBarStyle;
+			global::Microsoft.Identity.Client.Resource.Attribute.selectableItemBackground = global::ContosoFieldService.Droid.Resource.Attribute.selectableItemBackground;
+			global::Microsoft.Identity.Client.Resource.Attribute.selectableItemBackgroundBorderless = global::ContosoFieldService.Droid.Resource.Attribute.selectableItemBackgroundBorderless;
+			global::Microsoft.Identity.Client.Resource.Attribute.showAsAction = global::ContosoFieldService.Droid.Resource.Attribute.showAsAction;
+			global::Microsoft.Identity.Client.Resource.Attribute.showDividers = global::ContosoFieldService.Droid.Resource.Attribute.showDividers;
+			global::Microsoft.Identity.Client.Resource.Attribute.showText = global::ContosoFieldService.Droid.Resource.Attribute.showText;
+			global::Microsoft.Identity.Client.Resource.Attribute.showTitle = global::ContosoFieldService.Droid.Resource.Attribute.showTitle;
+			global::Microsoft.Identity.Client.Resource.Attribute.singleChoiceItemLayout = global::ContosoFieldService.Droid.Resource.Attribute.singleChoiceItemLayout;
+			global::Microsoft.Identity.Client.Resource.Attribute.spinBars = global::ContosoFieldService.Droid.Resource.Attribute.spinBars;
+			global::Microsoft.Identity.Client.Resource.Attribute.spinnerDropDownItemStyle = global::ContosoFieldService.Droid.Resource.Attribute.spinnerDropDownItemStyle;
+			global::Microsoft.Identity.Client.Resource.Attribute.spinnerStyle = global::ContosoFieldService.Droid.Resource.Attribute.spinnerStyle;
+			global::Microsoft.Identity.Client.Resource.Attribute.splitTrack = global::ContosoFieldService.Droid.Resource.Attribute.splitTrack;
+			global::Microsoft.Identity.Client.Resource.Attribute.srcCompat = global::ContosoFieldService.Droid.Resource.Attribute.srcCompat;
+			global::Microsoft.Identity.Client.Resource.Attribute.state_above_anchor = global::ContosoFieldService.Droid.Resource.Attribute.state_above_anchor;
+			global::Microsoft.Identity.Client.Resource.Attribute.subMenuArrow = global::ContosoFieldService.Droid.Resource.Attribute.subMenuArrow;
+			global::Microsoft.Identity.Client.Resource.Attribute.submitBackground = global::ContosoFieldService.Droid.Resource.Attribute.submitBackground;
+			global::Microsoft.Identity.Client.Resource.Attribute.subtitle = global::ContosoFieldService.Droid.Resource.Attribute.subtitle;
+			global::Microsoft.Identity.Client.Resource.Attribute.subtitleTextAppearance = global::ContosoFieldService.Droid.Resource.Attribute.subtitleTextAppearance;
+			global::Microsoft.Identity.Client.Resource.Attribute.subtitleTextColor = global::ContosoFieldService.Droid.Resource.Attribute.subtitleTextColor;
+			global::Microsoft.Identity.Client.Resource.Attribute.subtitleTextStyle = global::ContosoFieldService.Droid.Resource.Attribute.subtitleTextStyle;
+			global::Microsoft.Identity.Client.Resource.Attribute.suggestionRowLayout = global::ContosoFieldService.Droid.Resource.Attribute.suggestionRowLayout;
+			global::Microsoft.Identity.Client.Resource.Attribute.switchMinWidth = global::ContosoFieldService.Droid.Resource.Attribute.switchMinWidth;
+			global::Microsoft.Identity.Client.Resource.Attribute.switchPadding = global::ContosoFieldService.Droid.Resource.Attribute.switchPadding;
+			global::Microsoft.Identity.Client.Resource.Attribute.switchStyle = global::ContosoFieldService.Droid.Resource.Attribute.switchStyle;
+			global::Microsoft.Identity.Client.Resource.Attribute.switchTextAppearance = global::ContosoFieldService.Droid.Resource.Attribute.switchTextAppearance;
+			global::Microsoft.Identity.Client.Resource.Attribute.textAllCaps = global::ContosoFieldService.Droid.Resource.Attribute.textAllCaps;
+			global::Microsoft.Identity.Client.Resource.Attribute.textAppearanceLargePopupMenu = global::ContosoFieldService.Droid.Resource.Attribute.textAppearanceLargePopupMenu;
+			global::Microsoft.Identity.Client.Resource.Attribute.textAppearanceListItem = global::ContosoFieldService.Droid.Resource.Attribute.textAppearanceListItem;
+			global::Microsoft.Identity.Client.Resource.Attribute.textAppearanceListItemSecondary = global::ContosoFieldService.Droid.Resource.Attribute.textAppearanceListItemSecondary;
+			global::Microsoft.Identity.Client.Resource.Attribute.textAppearanceListItemSmall = global::ContosoFieldService.Droid.Resource.Attribute.textAppearanceListItemSmall;
+			global::Microsoft.Identity.Client.Resource.Attribute.textAppearancePopupMenuHeader = global::ContosoFieldService.Droid.Resource.Attribute.textAppearancePopupMenuHeader;
+			global::Microsoft.Identity.Client.Resource.Attribute.textAppearanceSearchResultSubtitle = global::ContosoFieldService.Droid.Resource.Attribute.textAppearanceSearchResultSubtitle;
+			global::Microsoft.Identity.Client.Resource.Attribute.textAppearanceSearchResultTitle = global::ContosoFieldService.Droid.Resource.Attribute.textAppearanceSearchResultTitle;
+			global::Microsoft.Identity.Client.Resource.Attribute.textAppearanceSmallPopupMenu = global::ContosoFieldService.Droid.Resource.Attribute.textAppearanceSmallPopupMenu;
+			global::Microsoft.Identity.Client.Resource.Attribute.textColorAlertDialogListItem = global::ContosoFieldService.Droid.Resource.Attribute.textColorAlertDialogListItem;
+			global::Microsoft.Identity.Client.Resource.Attribute.textColorSearchUrl = global::ContosoFieldService.Droid.Resource.Attribute.textColorSearchUrl;
+			global::Microsoft.Identity.Client.Resource.Attribute.theme = global::ContosoFieldService.Droid.Resource.Attribute.theme;
+			global::Microsoft.Identity.Client.Resource.Attribute.thickness = global::ContosoFieldService.Droid.Resource.Attribute.thickness;
+			global::Microsoft.Identity.Client.Resource.Attribute.thumbTextPadding = global::ContosoFieldService.Droid.Resource.Attribute.thumbTextPadding;
+			global::Microsoft.Identity.Client.Resource.Attribute.thumbTint = global::ContosoFieldService.Droid.Resource.Attribute.thumbTint;
+			global::Microsoft.Identity.Client.Resource.Attribute.thumbTintMode = global::ContosoFieldService.Droid.Resource.Attribute.thumbTintMode;
+			global::Microsoft.Identity.Client.Resource.Attribute.tickMark = global::ContosoFieldService.Droid.Resource.Attribute.tickMark;
+			global::Microsoft.Identity.Client.Resource.Attribute.tickMarkTint = global::ContosoFieldService.Droid.Resource.Attribute.tickMarkTint;
+			global::Microsoft.Identity.Client.Resource.Attribute.tickMarkTintMode = global::ContosoFieldService.Droid.Resource.Attribute.tickMarkTintMode;
+			global::Microsoft.Identity.Client.Resource.Attribute.tint = global::ContosoFieldService.Droid.Resource.Attribute.tint;
+			global::Microsoft.Identity.Client.Resource.Attribute.tintMode = global::ContosoFieldService.Droid.Resource.Attribute.tintMode;
+			global::Microsoft.Identity.Client.Resource.Attribute.title = global::ContosoFieldService.Droid.Resource.Attribute.title;
+			global::Microsoft.Identity.Client.Resource.Attribute.titleMargin = global::ContosoFieldService.Droid.Resource.Attribute.titleMargin;
+			global::Microsoft.Identity.Client.Resource.Attribute.titleMarginBottom = global::ContosoFieldService.Droid.Resource.Attribute.titleMarginBottom;
+			global::Microsoft.Identity.Client.Resource.Attribute.titleMarginEnd = global::ContosoFieldService.Droid.Resource.Attribute.titleMarginEnd;
+			global::Microsoft.Identity.Client.Resource.Attribute.titleMarginStart = global::ContosoFieldService.Droid.Resource.Attribute.titleMarginStart;
+			global::Microsoft.Identity.Client.Resource.Attribute.titleMarginTop = global::ContosoFieldService.Droid.Resource.Attribute.titleMarginTop;
+			global::Microsoft.Identity.Client.Resource.Attribute.titleMargins = global::ContosoFieldService.Droid.Resource.Attribute.titleMargins;
+			global::Microsoft.Identity.Client.Resource.Attribute.titleTextAppearance = global::ContosoFieldService.Droid.Resource.Attribute.titleTextAppearance;
+			global::Microsoft.Identity.Client.Resource.Attribute.titleTextColor = global::ContosoFieldService.Droid.Resource.Attribute.titleTextColor;
+			global::Microsoft.Identity.Client.Resource.Attribute.titleTextStyle = global::ContosoFieldService.Droid.Resource.Attribute.titleTextStyle;
+			global::Microsoft.Identity.Client.Resource.Attribute.toolbarNavigationButtonStyle = global::ContosoFieldService.Droid.Resource.Attribute.toolbarNavigationButtonStyle;
+			global::Microsoft.Identity.Client.Resource.Attribute.toolbarStyle = global::ContosoFieldService.Droid.Resource.Attribute.toolbarStyle;
+			global::Microsoft.Identity.Client.Resource.Attribute.track = global::ContosoFieldService.Droid.Resource.Attribute.track;
+			global::Microsoft.Identity.Client.Resource.Attribute.trackTint = global::ContosoFieldService.Droid.Resource.Attribute.trackTint;
+			global::Microsoft.Identity.Client.Resource.Attribute.trackTintMode = global::ContosoFieldService.Droid.Resource.Attribute.trackTintMode;
+			global::Microsoft.Identity.Client.Resource.Attribute.voiceIcon = global::ContosoFieldService.Droid.Resource.Attribute.voiceIcon;
+			global::Microsoft.Identity.Client.Resource.Attribute.windowActionBar = global::ContosoFieldService.Droid.Resource.Attribute.windowActionBar;
+			global::Microsoft.Identity.Client.Resource.Attribute.windowActionBarOverlay = global::ContosoFieldService.Droid.Resource.Attribute.windowActionBarOverlay;
+			global::Microsoft.Identity.Client.Resource.Attribute.windowActionModeOverlay = global::ContosoFieldService.Droid.Resource.Attribute.windowActionModeOverlay;
+			global::Microsoft.Identity.Client.Resource.Attribute.windowFixedHeightMajor = global::ContosoFieldService.Droid.Resource.Attribute.windowFixedHeightMajor;
+			global::Microsoft.Identity.Client.Resource.Attribute.windowFixedHeightMinor = global::ContosoFieldService.Droid.Resource.Attribute.windowFixedHeightMinor;
+			global::Microsoft.Identity.Client.Resource.Attribute.windowFixedWidthMajor = global::ContosoFieldService.Droid.Resource.Attribute.windowFixedWidthMajor;
+			global::Microsoft.Identity.Client.Resource.Attribute.windowFixedWidthMinor = global::ContosoFieldService.Droid.Resource.Attribute.windowFixedWidthMinor;
+			global::Microsoft.Identity.Client.Resource.Attribute.windowMinWidthMajor = global::ContosoFieldService.Droid.Resource.Attribute.windowMinWidthMajor;
+			global::Microsoft.Identity.Client.Resource.Attribute.windowMinWidthMinor = global::ContosoFieldService.Droid.Resource.Attribute.windowMinWidthMinor;
+			global::Microsoft.Identity.Client.Resource.Attribute.windowNoTitle = global::ContosoFieldService.Droid.Resource.Attribute.windowNoTitle;
+			global::Microsoft.Identity.Client.Resource.Boolean.abc_action_bar_embed_tabs = global::ContosoFieldService.Droid.Resource.Boolean.abc_action_bar_embed_tabs;
+			global::Microsoft.Identity.Client.Resource.Boolean.abc_allow_stacked_button_bar = global::ContosoFieldService.Droid.Resource.Boolean.abc_allow_stacked_button_bar;
+			global::Microsoft.Identity.Client.Resource.Boolean.abc_config_actionMenuItemAllCaps = global::ContosoFieldService.Droid.Resource.Boolean.abc_config_actionMenuItemAllCaps;
+			global::Microsoft.Identity.Client.Resource.Boolean.abc_config_closeDialogWhenTouchOutside = global::ContosoFieldService.Droid.Resource.Boolean.abc_config_closeDialogWhenTouchOutside;
+			global::Microsoft.Identity.Client.Resource.Boolean.abc_config_showMenuShortcutsWhenKeyboardPresent = global::ContosoFieldService.Droid.Resource.Boolean.abc_config_showMenuShortcutsWhenKeyboardPresent;
+			global::Microsoft.Identity.Client.Resource.Color.abc_background_cache_hint_selector_material_dark = global::ContosoFieldService.Droid.Resource.Color.abc_background_cache_hint_selector_material_dark;
+			global::Microsoft.Identity.Client.Resource.Color.abc_background_cache_hint_selector_material_light = global::ContosoFieldService.Droid.Resource.Color.abc_background_cache_hint_selector_material_light;
+			global::Microsoft.Identity.Client.Resource.Color.abc_btn_colored_borderless_text_material = global::ContosoFieldService.Droid.Resource.Color.abc_btn_colored_borderless_text_material;
+			global::Microsoft.Identity.Client.Resource.Color.abc_btn_colored_text_material = global::ContosoFieldService.Droid.Resource.Color.abc_btn_colored_text_material;
+			global::Microsoft.Identity.Client.Resource.Color.abc_color_highlight_material = global::ContosoFieldService.Droid.Resource.Color.abc_color_highlight_material;
+			global::Microsoft.Identity.Client.Resource.Color.abc_hint_foreground_material_dark = global::ContosoFieldService.Droid.Resource.Color.abc_hint_foreground_material_dark;
+			global::Microsoft.Identity.Client.Resource.Color.abc_hint_foreground_material_light = global::ContosoFieldService.Droid.Resource.Color.abc_hint_foreground_material_light;
+			global::Microsoft.Identity.Client.Resource.Color.abc_input_method_navigation_guard = global::ContosoFieldService.Droid.Resource.Color.abc_input_method_navigation_guard;
+			global::Microsoft.Identity.Client.Resource.Color.abc_primary_text_disable_only_material_dark = global::ContosoFieldService.Droid.Resource.Color.abc_primary_text_disable_only_material_dark;
+			global::Microsoft.Identity.Client.Resource.Color.abc_primary_text_disable_only_material_light = global::ContosoFieldService.Droid.Resource.Color.abc_primary_text_disable_only_material_light;
+			global::Microsoft.Identity.Client.Resource.Color.abc_primary_text_material_dark = global::ContosoFieldService.Droid.Resource.Color.abc_primary_text_material_dark;
+			global::Microsoft.Identity.Client.Resource.Color.abc_primary_text_material_light = global::ContosoFieldService.Droid.Resource.Color.abc_primary_text_material_light;
+			global::Microsoft.Identity.Client.Resource.Color.abc_search_url_text = global::ContosoFieldService.Droid.Resource.Color.abc_search_url_text;
+			global::Microsoft.Identity.Client.Resource.Color.abc_search_url_text_normal = global::ContosoFieldService.Droid.Resource.Color.abc_search_url_text_normal;
+			global::Microsoft.Identity.Client.Resource.Color.abc_search_url_text_pressed = global::ContosoFieldService.Droid.Resource.Color.abc_search_url_text_pressed;
+			global::Microsoft.Identity.Client.Resource.Color.abc_search_url_text_selected = global::ContosoFieldService.Droid.Resource.Color.abc_search_url_text_selected;
+			global::Microsoft.Identity.Client.Resource.Color.abc_secondary_text_material_dark = global::ContosoFieldService.Droid.Resource.Color.abc_secondary_text_material_dark;
+			global::Microsoft.Identity.Client.Resource.Color.abc_secondary_text_material_light = global::ContosoFieldService.Droid.Resource.Color.abc_secondary_text_material_light;
+			global::Microsoft.Identity.Client.Resource.Color.abc_tint_btn_checkable = global::ContosoFieldService.Droid.Resource.Color.abc_tint_btn_checkable;
+			global::Microsoft.Identity.Client.Resource.Color.abc_tint_default = global::ContosoFieldService.Droid.Resource.Color.abc_tint_default;
+			global::Microsoft.Identity.Client.Resource.Color.abc_tint_edittext = global::ContosoFieldService.Droid.Resource.Color.abc_tint_edittext;
+			global::Microsoft.Identity.Client.Resource.Color.abc_tint_seek_thumb = global::ContosoFieldService.Droid.Resource.Color.abc_tint_seek_thumb;
+			global::Microsoft.Identity.Client.Resource.Color.abc_tint_spinner = global::ContosoFieldService.Droid.Resource.Color.abc_tint_spinner;
+			global::Microsoft.Identity.Client.Resource.Color.abc_tint_switch_thumb = global::ContosoFieldService.Droid.Resource.Color.abc_tint_switch_thumb;
+			global::Microsoft.Identity.Client.Resource.Color.abc_tint_switch_track = global::ContosoFieldService.Droid.Resource.Color.abc_tint_switch_track;
+			global::Microsoft.Identity.Client.Resource.Color.accent_material_dark = global::ContosoFieldService.Droid.Resource.Color.accent_material_dark;
+			global::Microsoft.Identity.Client.Resource.Color.accent_material_light = global::ContosoFieldService.Droid.Resource.Color.accent_material_light;
+			global::Microsoft.Identity.Client.Resource.Color.background_floating_material_dark = global::ContosoFieldService.Droid.Resource.Color.background_floating_material_dark;
+			global::Microsoft.Identity.Client.Resource.Color.background_floating_material_light = global::ContosoFieldService.Droid.Resource.Color.background_floating_material_light;
+			global::Microsoft.Identity.Client.Resource.Color.background_material_dark = global::ContosoFieldService.Droid.Resource.Color.background_material_dark;
+			global::Microsoft.Identity.Client.Resource.Color.background_material_light = global::ContosoFieldService.Droid.Resource.Color.background_material_light;
+			global::Microsoft.Identity.Client.Resource.Color.bright_foreground_disabled_material_dark = global::ContosoFieldService.Droid.Resource.Color.bright_foreground_disabled_material_dark;
+			global::Microsoft.Identity.Client.Resource.Color.bright_foreground_disabled_material_light = global::ContosoFieldService.Droid.Resource.Color.bright_foreground_disabled_material_light;
+			global::Microsoft.Identity.Client.Resource.Color.bright_foreground_inverse_material_dark = global::ContosoFieldService.Droid.Resource.Color.bright_foreground_inverse_material_dark;
+			global::Microsoft.Identity.Client.Resource.Color.bright_foreground_inverse_material_light = global::ContosoFieldService.Droid.Resource.Color.bright_foreground_inverse_material_light;
+			global::Microsoft.Identity.Client.Resource.Color.bright_foreground_material_dark = global::ContosoFieldService.Droid.Resource.Color.bright_foreground_material_dark;
+			global::Microsoft.Identity.Client.Resource.Color.bright_foreground_material_light = global::ContosoFieldService.Droid.Resource.Color.bright_foreground_material_light;
+			global::Microsoft.Identity.Client.Resource.Color.button_material_dark = global::ContosoFieldService.Droid.Resource.Color.button_material_dark;
+			global::Microsoft.Identity.Client.Resource.Color.button_material_light = global::ContosoFieldService.Droid.Resource.Color.button_material_light;
+			global::Microsoft.Identity.Client.Resource.Color.dim_foreground_disabled_material_dark = global::ContosoFieldService.Droid.Resource.Color.dim_foreground_disabled_material_dark;
+			global::Microsoft.Identity.Client.Resource.Color.dim_foreground_disabled_material_light = global::ContosoFieldService.Droid.Resource.Color.dim_foreground_disabled_material_light;
+			global::Microsoft.Identity.Client.Resource.Color.dim_foreground_material_dark = global::ContosoFieldService.Droid.Resource.Color.dim_foreground_material_dark;
+			global::Microsoft.Identity.Client.Resource.Color.dim_foreground_material_light = global::ContosoFieldService.Droid.Resource.Color.dim_foreground_material_light;
+			global::Microsoft.Identity.Client.Resource.Color.foreground_material_dark = global::ContosoFieldService.Droid.Resource.Color.foreground_material_dark;
+			global::Microsoft.Identity.Client.Resource.Color.foreground_material_light = global::ContosoFieldService.Droid.Resource.Color.foreground_material_light;
+			global::Microsoft.Identity.Client.Resource.Color.highlighted_text_material_dark = global::ContosoFieldService.Droid.Resource.Color.highlighted_text_material_dark;
+			global::Microsoft.Identity.Client.Resource.Color.highlighted_text_material_light = global::ContosoFieldService.Droid.Resource.Color.highlighted_text_material_light;
+			global::Microsoft.Identity.Client.Resource.Color.material_blue_grey_800 = global::ContosoFieldService.Droid.Resource.Color.material_blue_grey_800;
+			global::Microsoft.Identity.Client.Resource.Color.material_blue_grey_900 = global::ContosoFieldService.Droid.Resource.Color.material_blue_grey_900;
+			global::Microsoft.Identity.Client.Resource.Color.material_blue_grey_950 = global::ContosoFieldService.Droid.Resource.Color.material_blue_grey_950;
+			global::Microsoft.Identity.Client.Resource.Color.material_deep_teal_200 = global::ContosoFieldService.Droid.Resource.Color.material_deep_teal_200;
+			global::Microsoft.Identity.Client.Resource.Color.material_deep_teal_500 = global::ContosoFieldService.Droid.Resource.Color.material_deep_teal_500;
+			global::Microsoft.Identity.Client.Resource.Color.material_grey_100 = global::ContosoFieldService.Droid.Resource.Color.material_grey_100;
+			global::Microsoft.Identity.Client.Resource.Color.material_grey_300 = global::ContosoFieldService.Droid.Resource.Color.material_grey_300;
+			global::Microsoft.Identity.Client.Resource.Color.material_grey_50 = global::ContosoFieldService.Droid.Resource.Color.material_grey_50;
+			global::Microsoft.Identity.Client.Resource.Color.material_grey_600 = global::ContosoFieldService.Droid.Resource.Color.material_grey_600;
+			global::Microsoft.Identity.Client.Resource.Color.material_grey_800 = global::ContosoFieldService.Droid.Resource.Color.material_grey_800;
+			global::Microsoft.Identity.Client.Resource.Color.material_grey_850 = global::ContosoFieldService.Droid.Resource.Color.material_grey_850;
+			global::Microsoft.Identity.Client.Resource.Color.material_grey_900 = global::ContosoFieldService.Droid.Resource.Color.material_grey_900;
+			global::Microsoft.Identity.Client.Resource.Color.notification_action_color_filter = global::ContosoFieldService.Droid.Resource.Color.notification_action_color_filter;
+			global::Microsoft.Identity.Client.Resource.Color.notification_icon_bg_color = global::ContosoFieldService.Droid.Resource.Color.notification_icon_bg_color;
+			global::Microsoft.Identity.Client.Resource.Color.notification_material_background_media_default_color = global::ContosoFieldService.Droid.Resource.Color.notification_material_background_media_default_color;
+			global::Microsoft.Identity.Client.Resource.Color.primary_dark_material_dark = global::ContosoFieldService.Droid.Resource.Color.primary_dark_material_dark;
+			global::Microsoft.Identity.Client.Resource.Color.primary_dark_material_light = global::ContosoFieldService.Droid.Resource.Color.primary_dark_material_light;
+			global::Microsoft.Identity.Client.Resource.Color.primary_material_dark = global::ContosoFieldService.Droid.Resource.Color.primary_material_dark;
+			global::Microsoft.Identity.Client.Resource.Color.primary_material_light = global::ContosoFieldService.Droid.Resource.Color.primary_material_light;
+			global::Microsoft.Identity.Client.Resource.Color.primary_text_default_material_dark = global::ContosoFieldService.Droid.Resource.Color.primary_text_default_material_dark;
+			global::Microsoft.Identity.Client.Resource.Color.primary_text_default_material_light = global::ContosoFieldService.Droid.Resource.Color.primary_text_default_material_light;
+			global::Microsoft.Identity.Client.Resource.Color.primary_text_disabled_material_dark = global::ContosoFieldService.Droid.Resource.Color.primary_text_disabled_material_dark;
+			global::Microsoft.Identity.Client.Resource.Color.primary_text_disabled_material_light = global::ContosoFieldService.Droid.Resource.Color.primary_text_disabled_material_light;
+			global::Microsoft.Identity.Client.Resource.Color.ripple_material_dark = global::ContosoFieldService.Droid.Resource.Color.ripple_material_dark;
+			global::Microsoft.Identity.Client.Resource.Color.ripple_material_light = global::ContosoFieldService.Droid.Resource.Color.ripple_material_light;
+			global::Microsoft.Identity.Client.Resource.Color.secondary_text_default_material_dark = global::ContosoFieldService.Droid.Resource.Color.secondary_text_default_material_dark;
+			global::Microsoft.Identity.Client.Resource.Color.secondary_text_default_material_light = global::ContosoFieldService.Droid.Resource.Color.secondary_text_default_material_light;
+			global::Microsoft.Identity.Client.Resource.Color.secondary_text_disabled_material_dark = global::ContosoFieldService.Droid.Resource.Color.secondary_text_disabled_material_dark;
+			global::Microsoft.Identity.Client.Resource.Color.secondary_text_disabled_material_light = global::ContosoFieldService.Droid.Resource.Color.secondary_text_disabled_material_light;
+			global::Microsoft.Identity.Client.Resource.Color.switch_thumb_disabled_material_dark = global::ContosoFieldService.Droid.Resource.Color.switch_thumb_disabled_material_dark;
+			global::Microsoft.Identity.Client.Resource.Color.switch_thumb_disabled_material_light = global::ContosoFieldService.Droid.Resource.Color.switch_thumb_disabled_material_light;
+			global::Microsoft.Identity.Client.Resource.Color.switch_thumb_material_dark = global::ContosoFieldService.Droid.Resource.Color.switch_thumb_material_dark;
+			global::Microsoft.Identity.Client.Resource.Color.switch_thumb_material_light = global::ContosoFieldService.Droid.Resource.Color.switch_thumb_material_light;
+			global::Microsoft.Identity.Client.Resource.Color.switch_thumb_normal_material_dark = global::ContosoFieldService.Droid.Resource.Color.switch_thumb_normal_material_dark;
+			global::Microsoft.Identity.Client.Resource.Color.switch_thumb_normal_material_light = global::ContosoFieldService.Droid.Resource.Color.switch_thumb_normal_material_light;
+			global::Microsoft.Identity.Client.Resource.Dimension.abc_action_bar_content_inset_material = global::ContosoFieldService.Droid.Resource.Dimension.abc_action_bar_content_inset_material;
+			global::Microsoft.Identity.Client.Resource.Dimension.abc_action_bar_content_inset_with_nav = global::ContosoFieldService.Droid.Resource.Dimension.abc_action_bar_content_inset_with_nav;
+			global::Microsoft.Identity.Client.Resource.Dimension.abc_action_bar_default_height_material = global::ContosoFieldService.Droid.Resource.Dimension.abc_action_bar_default_height_material;
+			global::Microsoft.Identity.Client.Resource.Dimension.abc_action_bar_default_padding_end_material = global::ContosoFieldService.Droid.Resource.Dimension.abc_action_bar_default_padding_end_material;
+			global::Microsoft.Identity.Client.Resource.Dimension.abc_action_bar_default_padding_start_material = global::ContosoFieldService.Droid.Resource.Dimension.abc_action_bar_default_padding_start_material;
+			global::Microsoft.Identity.Client.Resource.Dimension.abc_action_bar_elevation_material = global::ContosoFieldService.Droid.Resource.Dimension.abc_action_bar_elevation_material;
+			global::Microsoft.Identity.Client.Resource.Dimension.abc_action_bar_icon_vertical_padding_material = global::ContosoFieldService.Droid.Resource.Dimension.abc_action_bar_icon_vertical_padding_material;
+			global::Microsoft.Identity.Client.Resource.Dimension.abc_action_bar_overflow_padding_end_material = global::ContosoFieldService.Droid.Resource.Dimension.abc_action_bar_overflow_padding_end_material;
+			global::Microsoft.Identity.Client.Resource.Dimension.abc_action_bar_overflow_padding_start_material = global::ContosoFieldService.Droid.Resource.Dimension.abc_action_bar_overflow_padding_start_material;
+			global::Microsoft.Identity.Client.Resource.Dimension.abc_action_bar_progress_bar_size = global::ContosoFieldService.Droid.Resource.Dimension.abc_action_bar_progress_bar_size;
+			global::Microsoft.Identity.Client.Resource.Dimension.abc_action_bar_stacked_max_height = global::ContosoFieldService.Droid.Resource.Dimension.abc_action_bar_stacked_max_height;
+			global::Microsoft.Identity.Client.Resource.Dimension.abc_action_bar_stacked_tab_max_width = global::ContosoFieldService.Droid.Resource.Dimension.abc_action_bar_stacked_tab_max_width;
+			global::Microsoft.Identity.Client.Resource.Dimension.abc_action_bar_subtitle_bottom_margin_material = global::ContosoFieldService.Droid.Resource.Dimension.abc_action_bar_subtitle_bottom_margin_material;
+			global::Microsoft.Identity.Client.Resource.Dimension.abc_action_bar_subtitle_top_margin_material = global::ContosoFieldService.Droid.Resource.Dimension.abc_action_bar_subtitle_top_margin_material;
+			global::Microsoft.Identity.Client.Resource.Dimension.abc_action_button_min_height_material = global::ContosoFieldService.Droid.Resource.Dimension.abc_action_button_min_height_material;
+			global::Microsoft.Identity.Client.Resource.Dimension.abc_action_button_min_width_material = global::ContosoFieldService.Droid.Resource.Dimension.abc_action_button_min_width_material;
+			global::Microsoft.Identity.Client.Resource.Dimension.abc_action_button_min_width_overflow_material = global::ContosoFieldService.Droid.Resource.Dimension.abc_action_button_min_width_overflow_material;
+			global::Microsoft.Identity.Client.Resource.Dimension.abc_alert_dialog_button_bar_height = global::ContosoFieldService.Droid.Resource.Dimension.abc_alert_dialog_button_bar_height;
+			global::Microsoft.Identity.Client.Resource.Dimension.abc_button_inset_horizontal_material = global::ContosoFieldService.Droid.Resource.Dimension.abc_button_inset_horizontal_material;
+			global::Microsoft.Identity.Client.Resource.Dimension.abc_button_inset_vertical_material = global::ContosoFieldService.Droid.Resource.Dimension.abc_button_inset_vertical_material;
+			global::Microsoft.Identity.Client.Resource.Dimension.abc_button_padding_horizontal_material = global::ContosoFieldService.Droid.Resource.Dimension.abc_button_padding_horizontal_material;
+			global::Microsoft.Identity.Client.Resource.Dimension.abc_button_padding_vertical_material = global::ContosoFieldService.Droid.Resource.Dimension.abc_button_padding_vertical_material;
+			global::Microsoft.Identity.Client.Resource.Dimension.abc_cascading_menus_min_smallest_width = global::ContosoFieldService.Droid.Resource.Dimension.abc_cascading_menus_min_smallest_width;
+			global::Microsoft.Identity.Client.Resource.Dimension.abc_config_prefDialogWidth = global::ContosoFieldService.Droid.Resource.Dimension.abc_config_prefDialogWidth;
+			global::Microsoft.Identity.Client.Resource.Dimension.abc_control_corner_material = global::ContosoFieldService.Droid.Resource.Dimension.abc_control_corner_material;
+			global::Microsoft.Identity.Client.Resource.Dimension.abc_control_inset_material = global::ContosoFieldService.Droid.Resource.Dimension.abc_control_inset_material;
+			global::Microsoft.Identity.Client.Resource.Dimension.abc_control_padding_material = global::ContosoFieldService.Droid.Resource.Dimension.abc_control_padding_material;
+			global::Microsoft.Identity.Client.Resource.Dimension.abc_dialog_fixed_height_major = global::ContosoFieldService.Droid.Resource.Dimension.abc_dialog_fixed_height_major;
+			global::Microsoft.Identity.Client.Resource.Dimension.abc_dialog_fixed_height_minor = global::ContosoFieldService.Droid.Resource.Dimension.abc_dialog_fixed_height_minor;
+			global::Microsoft.Identity.Client.Resource.Dimension.abc_dialog_fixed_width_major = global::ContosoFieldService.Droid.Resource.Dimension.abc_dialog_fixed_width_major;
+			global::Microsoft.Identity.Client.Resource.Dimension.abc_dialog_fixed_width_minor = global::ContosoFieldService.Droid.Resource.Dimension.abc_dialog_fixed_width_minor;
+			global::Microsoft.Identity.Client.Resource.Dimension.abc_dialog_list_padding_bottom_no_buttons = global::ContosoFieldService.Droid.Resource.Dimension.abc_dialog_list_padding_bottom_no_buttons;
+			global::Microsoft.Identity.Client.Resource.Dimension.abc_dialog_list_padding_top_no_title = global::ContosoFieldService.Droid.Resource.Dimension.abc_dialog_list_padding_top_no_title;
+			global::Microsoft.Identity.Client.Resource.Dimension.abc_dialog_min_width_major = global::ContosoFieldService.Droid.Resource.Dimension.abc_dialog_min_width_major;
+			global::Microsoft.Identity.Client.Resource.Dimension.abc_dialog_min_width_minor = global::ContosoFieldService.Droid.Resource.Dimension.abc_dialog_min_width_minor;
+			global::Microsoft.Identity.Client.Resource.Dimension.abc_dialog_padding_material = global::ContosoFieldService.Droid.Resource.Dimension.abc_dialog_padding_material;
+			global::Microsoft.Identity.Client.Resource.Dimension.abc_dialog_padding_top_material = global::ContosoFieldService.Droid.Resource.Dimension.abc_dialog_padding_top_material;
+			global::Microsoft.Identity.Client.Resource.Dimension.abc_dialog_title_divider_material = global::ContosoFieldService.Droid.Resource.Dimension.abc_dialog_title_divider_material;
+			global::Microsoft.Identity.Client.Resource.Dimension.abc_disabled_alpha_material_dark = global::ContosoFieldService.Droid.Resource.Dimension.abc_disabled_alpha_material_dark;
+			global::Microsoft.Identity.Client.Resource.Dimension.abc_disabled_alpha_material_light = global::ContosoFieldService.Droid.Resource.Dimension.abc_disabled_alpha_material_light;
+			global::Microsoft.Identity.Client.Resource.Dimension.abc_dropdownitem_icon_width = global::ContosoFieldService.Droid.Resource.Dimension.abc_dropdownitem_icon_width;
+			global::Microsoft.Identity.Client.Resource.Dimension.abc_dropdownitem_text_padding_left = global::ContosoFieldService.Droid.Resource.Dimension.abc_dropdownitem_text_padding_left;
+			global::Microsoft.Identity.Client.Resource.Dimension.abc_dropdownitem_text_padding_right = global::ContosoFieldService.Droid.Resource.Dimension.abc_dropdownitem_text_padding_right;
+			global::Microsoft.Identity.Client.Resource.Dimension.abc_edit_text_inset_bottom_material = global::ContosoFieldService.Droid.Resource.Dimension.abc_edit_text_inset_bottom_material;
+			global::Microsoft.Identity.Client.Resource.Dimension.abc_edit_text_inset_horizontal_material = global::ContosoFieldService.Droid.Resource.Dimension.abc_edit_text_inset_horizontal_material;
+			global::Microsoft.Identity.Client.Resource.Dimension.abc_edit_text_inset_top_material = global::ContosoFieldService.Droid.Resource.Dimension.abc_edit_text_inset_top_material;
+			global::Microsoft.Identity.Client.Resource.Dimension.abc_floating_window_z = global::ContosoFieldService.Droid.Resource.Dimension.abc_floating_window_z;
+			global::Microsoft.Identity.Client.Resource.Dimension.abc_list_item_padding_horizontal_material = global::ContosoFieldService.Droid.Resource.Dimension.abc_list_item_padding_horizontal_material;
+			global::Microsoft.Identity.Client.Resource.Dimension.abc_panel_menu_list_width = global::ContosoFieldService.Droid.Resource.Dimension.abc_panel_menu_list_width;
+			global::Microsoft.Identity.Client.Resource.Dimension.abc_progress_bar_height_material = global::ContosoFieldService.Droid.Resource.Dimension.abc_progress_bar_height_material;
+			global::Microsoft.Identity.Client.Resource.Dimension.abc_search_view_preferred_height = global::ContosoFieldService.Droid.Resource.Dimension.abc_search_view_preferred_height;
+			global::Microsoft.Identity.Client.Resource.Dimension.abc_search_view_preferred_width = global::ContosoFieldService.Droid.Resource.Dimension.abc_search_view_preferred_width;
+			global::Microsoft.Identity.Client.Resource.Dimension.abc_seekbar_track_background_height_material = global::ContosoFieldService.Droid.Resource.Dimension.abc_seekbar_track_background_height_material;
+			global::Microsoft.Identity.Client.Resource.Dimension.abc_seekbar_track_progress_height_material = global::ContosoFieldService.Droid.Resource.Dimension.abc_seekbar_track_progress_height_material;
+			global::Microsoft.Identity.Client.Resource.Dimension.abc_select_dialog_padding_start_material = global::ContosoFieldService.Droid.Resource.Dimension.abc_select_dialog_padding_start_material;
+			global::Microsoft.Identity.Client.Resource.Dimension.abc_switch_padding = global::ContosoFieldService.Droid.Resource.Dimension.abc_switch_padding;
+			global::Microsoft.Identity.Client.Resource.Dimension.abc_text_size_body_1_material = global::ContosoFieldService.Droid.Resource.Dimension.abc_text_size_body_1_material;
+			global::Microsoft.Identity.Client.Resource.Dimension.abc_text_size_body_2_material = global::ContosoFieldService.Droid.Resource.Dimension.abc_text_size_body_2_material;
+			global::Microsoft.Identity.Client.Resource.Dimension.abc_text_size_button_material = global::ContosoFieldService.Droid.Resource.Dimension.abc_text_size_button_material;
+			global::Microsoft.Identity.Client.Resource.Dimension.abc_text_size_caption_material = global::ContosoFieldService.Droid.Resource.Dimension.abc_text_size_caption_material;
+			global::Microsoft.Identity.Client.Resource.Dimension.abc_text_size_display_1_material = global::ContosoFieldService.Droid.Resource.Dimension.abc_text_size_display_1_material;
+			global::Microsoft.Identity.Client.Resource.Dimension.abc_text_size_display_2_material = global::ContosoFieldService.Droid.Resource.Dimension.abc_text_size_display_2_material;
+			global::Microsoft.Identity.Client.Resource.Dimension.abc_text_size_display_3_material = global::ContosoFieldService.Droid.Resource.Dimension.abc_text_size_display_3_material;
+			global::Microsoft.Identity.Client.Resource.Dimension.abc_text_size_display_4_material = global::ContosoFieldService.Droid.Resource.Dimension.abc_text_size_display_4_material;
+			global::Microsoft.Identity.Client.Resource.Dimension.abc_text_size_headline_material = global::ContosoFieldService.Droid.Resource.Dimension.abc_text_size_headline_material;
+			global::Microsoft.Identity.Client.Resource.Dimension.abc_text_size_large_material = global::ContosoFieldService.Droid.Resource.Dimension.abc_text_size_large_material;
+			global::Microsoft.Identity.Client.Resource.Dimension.abc_text_size_medium_material = global::ContosoFieldService.Droid.Resource.Dimension.abc_text_size_medium_material;
+			global::Microsoft.Identity.Client.Resource.Dimension.abc_text_size_menu_header_material = global::ContosoFieldService.Droid.Resource.Dimension.abc_text_size_menu_header_material;
+			global::Microsoft.Identity.Client.Resource.Dimension.abc_text_size_menu_material = global::ContosoFieldService.Droid.Resource.Dimension.abc_text_size_menu_material;
+			global::Microsoft.Identity.Client.Resource.Dimension.abc_text_size_small_material = global::ContosoFieldService.Droid.Resource.Dimension.abc_text_size_small_material;
+			global::Microsoft.Identity.Client.Resource.Dimension.abc_text_size_subhead_material = global::ContosoFieldService.Droid.Resource.Dimension.abc_text_size_subhead_material;
+			global::Microsoft.Identity.Client.Resource.Dimension.abc_text_size_subtitle_material_toolbar = global::ContosoFieldService.Droid.Resource.Dimension.abc_text_size_subtitle_material_toolbar;
+			global::Microsoft.Identity.Client.Resource.Dimension.abc_text_size_title_material = global::ContosoFieldService.Droid.Resource.Dimension.abc_text_size_title_material;
+			global::Microsoft.Identity.Client.Resource.Dimension.abc_text_size_title_material_toolbar = global::ContosoFieldService.Droid.Resource.Dimension.abc_text_size_title_material_toolbar;
+			global::Microsoft.Identity.Client.Resource.Dimension.disabled_alpha_material_dark = global::ContosoFieldService.Droid.Resource.Dimension.disabled_alpha_material_dark;
+			global::Microsoft.Identity.Client.Resource.Dimension.disabled_alpha_material_light = global::ContosoFieldService.Droid.Resource.Dimension.disabled_alpha_material_light;
+			global::Microsoft.Identity.Client.Resource.Dimension.highlight_alpha_material_colored = global::ContosoFieldService.Droid.Resource.Dimension.highlight_alpha_material_colored;
+			global::Microsoft.Identity.Client.Resource.Dimension.highlight_alpha_material_dark = global::ContosoFieldService.Droid.Resource.Dimension.highlight_alpha_material_dark;
+			global::Microsoft.Identity.Client.Resource.Dimension.highlight_alpha_material_light = global::ContosoFieldService.Droid.Resource.Dimension.highlight_alpha_material_light;
+			global::Microsoft.Identity.Client.Resource.Dimension.hint_alpha_material_dark = global::ContosoFieldService.Droid.Resource.Dimension.hint_alpha_material_dark;
+			global::Microsoft.Identity.Client.Resource.Dimension.hint_alpha_material_light = global::ContosoFieldService.Droid.Resource.Dimension.hint_alpha_material_light;
+			global::Microsoft.Identity.Client.Resource.Dimension.hint_pressed_alpha_material_dark = global::ContosoFieldService.Droid.Resource.Dimension.hint_pressed_alpha_material_dark;
+			global::Microsoft.Identity.Client.Resource.Dimension.hint_pressed_alpha_material_light = global::ContosoFieldService.Droid.Resource.Dimension.hint_pressed_alpha_material_light;
+			global::Microsoft.Identity.Client.Resource.Dimension.notification_action_icon_size = global::ContosoFieldService.Droid.Resource.Dimension.notification_action_icon_size;
+			global::Microsoft.Identity.Client.Resource.Dimension.notification_action_text_size = global::ContosoFieldService.Droid.Resource.Dimension.notification_action_text_size;
+			global::Microsoft.Identity.Client.Resource.Dimension.notification_big_circle_margin = global::ContosoFieldService.Droid.Resource.Dimension.notification_big_circle_margin;
+			global::Microsoft.Identity.Client.Resource.Dimension.notification_content_margin_start = global::ContosoFieldService.Droid.Resource.Dimension.notification_content_margin_start;
+			global::Microsoft.Identity.Client.Resource.Dimension.notification_large_icon_height = global::ContosoFieldService.Droid.Resource.Dimension.notification_large_icon_height;
+			global::Microsoft.Identity.Client.Resource.Dimension.notification_large_icon_width = global::ContosoFieldService.Droid.Resource.Dimension.notification_large_icon_width;
+			global::Microsoft.Identity.Client.Resource.Dimension.notification_main_column_padding_top = global::ContosoFieldService.Droid.Resource.Dimension.notification_main_column_padding_top;
+			global::Microsoft.Identity.Client.Resource.Dimension.notification_media_narrow_margin = global::ContosoFieldService.Droid.Resource.Dimension.notification_media_narrow_margin;
+			global::Microsoft.Identity.Client.Resource.Dimension.notification_right_icon_size = global::ContosoFieldService.Droid.Resource.Dimension.notification_right_icon_size;
+			global::Microsoft.Identity.Client.Resource.Dimension.notification_right_side_padding_top = global::ContosoFieldService.Droid.Resource.Dimension.notification_right_side_padding_top;
+			global::Microsoft.Identity.Client.Resource.Dimension.notification_small_icon_background_padding = global::ContosoFieldService.Droid.Resource.Dimension.notification_small_icon_background_padding;
+			global::Microsoft.Identity.Client.Resource.Dimension.notification_small_icon_size_as_large = global::ContosoFieldService.Droid.Resource.Dimension.notification_small_icon_size_as_large;
+			global::Microsoft.Identity.Client.Resource.Dimension.notification_subtext_size = global::ContosoFieldService.Droid.Resource.Dimension.notification_subtext_size;
+			global::Microsoft.Identity.Client.Resource.Dimension.notification_top_pad = global::ContosoFieldService.Droid.Resource.Dimension.notification_top_pad;
+			global::Microsoft.Identity.Client.Resource.Dimension.notification_top_pad_large_text = global::ContosoFieldService.Droid.Resource.Dimension.notification_top_pad_large_text;
+			global::Microsoft.Identity.Client.Resource.Drawable.abc_ab_share_pack_mtrl_alpha = global::ContosoFieldService.Droid.Resource.Drawable.abc_ab_share_pack_mtrl_alpha;
+			global::Microsoft.Identity.Client.Resource.Drawable.abc_action_bar_item_background_material = global::ContosoFieldService.Droid.Resource.Drawable.abc_action_bar_item_background_material;
+			global::Microsoft.Identity.Client.Resource.Drawable.abc_btn_borderless_material = global::ContosoFieldService.Droid.Resource.Drawable.abc_btn_borderless_material;
+			global::Microsoft.Identity.Client.Resource.Drawable.abc_btn_check_material = global::ContosoFieldService.Droid.Resource.Drawable.abc_btn_check_material;
+			global::Microsoft.Identity.Client.Resource.Drawable.abc_btn_check_to_on_mtrl_000 = global::ContosoFieldService.Droid.Resource.Drawable.abc_btn_check_to_on_mtrl_000;
+			global::Microsoft.Identity.Client.Resource.Drawable.abc_btn_check_to_on_mtrl_015 = global::ContosoFieldService.Droid.Resource.Drawable.abc_btn_check_to_on_mtrl_015;
+			global::Microsoft.Identity.Client.Resource.Drawable.abc_btn_colored_material = global::ContosoFieldService.Droid.Resource.Drawable.abc_btn_colored_material;
+			global::Microsoft.Identity.Client.Resource.Drawable.abc_btn_default_mtrl_shape = global::ContosoFieldService.Droid.Resource.Drawable.abc_btn_default_mtrl_shape;
+			global::Microsoft.Identity.Client.Resource.Drawable.abc_btn_radio_material = global::ContosoFieldService.Droid.Resource.Drawable.abc_btn_radio_material;
+			global::Microsoft.Identity.Client.Resource.Drawable.abc_btn_radio_to_on_mtrl_000 = global::ContosoFieldService.Droid.Resource.Drawable.abc_btn_radio_to_on_mtrl_000;
+			global::Microsoft.Identity.Client.Resource.Drawable.abc_btn_radio_to_on_mtrl_015 = global::ContosoFieldService.Droid.Resource.Drawable.abc_btn_radio_to_on_mtrl_015;
+			global::Microsoft.Identity.Client.Resource.Drawable.abc_btn_switch_to_on_mtrl_00001 = global::ContosoFieldService.Droid.Resource.Drawable.abc_btn_switch_to_on_mtrl_00001;
+			global::Microsoft.Identity.Client.Resource.Drawable.abc_btn_switch_to_on_mtrl_00012 = global::ContosoFieldService.Droid.Resource.Drawable.abc_btn_switch_to_on_mtrl_00012;
+			global::Microsoft.Identity.Client.Resource.Drawable.abc_cab_background_internal_bg = global::ContosoFieldService.Droid.Resource.Drawable.abc_cab_background_internal_bg;
+			global::Microsoft.Identity.Client.Resource.Drawable.abc_cab_background_top_material = global::ContosoFieldService.Droid.Resource.Drawable.abc_cab_background_top_material;
+			global::Microsoft.Identity.Client.Resource.Drawable.abc_cab_background_top_mtrl_alpha = global::ContosoFieldService.Droid.Resource.Drawable.abc_cab_background_top_mtrl_alpha;
+			global::Microsoft.Identity.Client.Resource.Drawable.abc_control_background_material = global::ContosoFieldService.Droid.Resource.Drawable.abc_control_background_material;
+			global::Microsoft.Identity.Client.Resource.Drawable.abc_dialog_material_background = global::ContosoFieldService.Droid.Resource.Drawable.abc_dialog_material_background;
+			global::Microsoft.Identity.Client.Resource.Drawable.abc_edit_text_material = global::ContosoFieldService.Droid.Resource.Drawable.abc_edit_text_material;
+			global::Microsoft.Identity.Client.Resource.Drawable.abc_ic_ab_back_material = global::ContosoFieldService.Droid.Resource.Drawable.abc_ic_ab_back_material;
+			global::Microsoft.Identity.Client.Resource.Drawable.abc_ic_arrow_drop_right_black_24dp = global::ContosoFieldService.Droid.Resource.Drawable.abc_ic_arrow_drop_right_black_24dp;
+			global::Microsoft.Identity.Client.Resource.Drawable.abc_ic_clear_material = global::ContosoFieldService.Droid.Resource.Drawable.abc_ic_clear_material;
+			global::Microsoft.Identity.Client.Resource.Drawable.abc_ic_commit_search_api_mtrl_alpha = global::ContosoFieldService.Droid.Resource.Drawable.abc_ic_commit_search_api_mtrl_alpha;
+			global::Microsoft.Identity.Client.Resource.Drawable.abc_ic_go_search_api_material = global::ContosoFieldService.Droid.Resource.Drawable.abc_ic_go_search_api_material;
+			global::Microsoft.Identity.Client.Resource.Drawable.abc_ic_menu_copy_mtrl_am_alpha = global::ContosoFieldService.Droid.Resource.Drawable.abc_ic_menu_copy_mtrl_am_alpha;
+			global::Microsoft.Identity.Client.Resource.Drawable.abc_ic_menu_cut_mtrl_alpha = global::ContosoFieldService.Droid.Resource.Drawable.abc_ic_menu_cut_mtrl_alpha;
+			global::Microsoft.Identity.Client.Resource.Drawable.abc_ic_menu_overflow_material = global::ContosoFieldService.Droid.Resource.Drawable.abc_ic_menu_overflow_material;
+			global::Microsoft.Identity.Client.Resource.Drawable.abc_ic_menu_paste_mtrl_am_alpha = global::ContosoFieldService.Droid.Resource.Drawable.abc_ic_menu_paste_mtrl_am_alpha;
+			global::Microsoft.Identity.Client.Resource.Drawable.abc_ic_menu_selectall_mtrl_alpha = global::ContosoFieldService.Droid.Resource.Drawable.abc_ic_menu_selectall_mtrl_alpha;
+			global::Microsoft.Identity.Client.Resource.Drawable.abc_ic_menu_share_mtrl_alpha = global::ContosoFieldService.Droid.Resource.Drawable.abc_ic_menu_share_mtrl_alpha;
+			global::Microsoft.Identity.Client.Resource.Drawable.abc_ic_search_api_material = global::ContosoFieldService.Droid.Resource.Drawable.abc_ic_search_api_material;
+			global::Microsoft.Identity.Client.Resource.Drawable.abc_ic_star_black_16dp = global::ContosoFieldService.Droid.Resource.Drawable.abc_ic_star_black_16dp;
+			global::Microsoft.Identity.Client.Resource.Drawable.abc_ic_star_black_36dp = global::ContosoFieldService.Droid.Resource.Drawable.abc_ic_star_black_36dp;
+			global::Microsoft.Identity.Client.Resource.Drawable.abc_ic_star_black_48dp = global::ContosoFieldService.Droid.Resource.Drawable.abc_ic_star_black_48dp;
+			global::Microsoft.Identity.Client.Resource.Drawable.abc_ic_star_half_black_16dp = global::ContosoFieldService.Droid.Resource.Drawable.abc_ic_star_half_black_16dp;
+			global::Microsoft.Identity.Client.Resource.Drawable.abc_ic_star_half_black_36dp = global::ContosoFieldService.Droid.Resource.Drawable.abc_ic_star_half_black_36dp;
+			global::Microsoft.Identity.Client.Resource.Drawable.abc_ic_star_half_black_48dp = global::ContosoFieldService.Droid.Resource.Drawable.abc_ic_star_half_black_48dp;
+			global::Microsoft.Identity.Client.Resource.Drawable.abc_ic_voice_search_api_material = global::ContosoFieldService.Droid.Resource.Drawable.abc_ic_voice_search_api_material;
+			global::Microsoft.Identity.Client.Resource.Drawable.abc_item_background_holo_dark = global::ContosoFieldService.Droid.Resource.Drawable.abc_item_background_holo_dark;
+			global::Microsoft.Identity.Client.Resource.Drawable.abc_item_background_holo_light = global::ContosoFieldService.Droid.Resource.Drawable.abc_item_background_holo_light;
+			global::Microsoft.Identity.Client.Resource.Drawable.abc_list_divider_mtrl_alpha = global::ContosoFieldService.Droid.Resource.Drawable.abc_list_divider_mtrl_alpha;
+			global::Microsoft.Identity.Client.Resource.Drawable.abc_list_focused_holo = global::ContosoFieldService.Droid.Resource.Drawable.abc_list_focused_holo;
+			global::Microsoft.Identity.Client.Resource.Drawable.abc_list_longpressed_holo = global::ContosoFieldService.Droid.Resource.Drawable.abc_list_longpressed_holo;
+			global::Microsoft.Identity.Client.Resource.Drawable.abc_list_pressed_holo_dark = global::ContosoFieldService.Droid.Resource.Drawable.abc_list_pressed_holo_dark;
+			global::Microsoft.Identity.Client.Resource.Drawable.abc_list_pressed_holo_light = global::ContosoFieldService.Droid.Resource.Drawable.abc_list_pressed_holo_light;
+			global::Microsoft.Identity.Client.Resource.Drawable.abc_list_selector_background_transition_holo_dark = global::ContosoFieldService.Droid.Resource.Drawable.abc_list_selector_background_transition_holo_dark;
+			global::Microsoft.Identity.Client.Resource.Drawable.abc_list_selector_background_transition_holo_light = global::ContosoFieldService.Droid.Resource.Drawable.abc_list_selector_background_transition_holo_light;
+			global::Microsoft.Identity.Client.Resource.Drawable.abc_list_selector_disabled_holo_dark = global::ContosoFieldService.Droid.Resource.Drawable.abc_list_selector_disabled_holo_dark;
+			global::Microsoft.Identity.Client.Resource.Drawable.abc_list_selector_disabled_holo_light = global::ContosoFieldService.Droid.Resource.Drawable.abc_list_selector_disabled_holo_light;
+			global::Microsoft.Identity.Client.Resource.Drawable.abc_list_selector_holo_dark = global::ContosoFieldService.Droid.Resource.Drawable.abc_list_selector_holo_dark;
+			global::Microsoft.Identity.Client.Resource.Drawable.abc_list_selector_holo_light = global::ContosoFieldService.Droid.Resource.Drawable.abc_list_selector_holo_light;
+			global::Microsoft.Identity.Client.Resource.Drawable.abc_menu_hardkey_panel_mtrl_mult = global::ContosoFieldService.Droid.Resource.Drawable.abc_menu_hardkey_panel_mtrl_mult;
+			global::Microsoft.Identity.Client.Resource.Drawable.abc_popup_background_mtrl_mult = global::ContosoFieldService.Droid.Resource.Drawable.abc_popup_background_mtrl_mult;
+			global::Microsoft.Identity.Client.Resource.Drawable.abc_ratingbar_indicator_material = global::ContosoFieldService.Droid.Resource.Drawable.abc_ratingbar_indicator_material;
+			global::Microsoft.Identity.Client.Resource.Drawable.abc_ratingbar_material = global::ContosoFieldService.Droid.Resource.Drawable.abc_ratingbar_material;
+			global::Microsoft.Identity.Client.Resource.Drawable.abc_ratingbar_small_material = global::ContosoFieldService.Droid.Resource.Drawable.abc_ratingbar_small_material;
+			global::Microsoft.Identity.Client.Resource.Drawable.abc_scrubber_control_off_mtrl_alpha = global::ContosoFieldService.Droid.Resource.Drawable.abc_scrubber_control_off_mtrl_alpha;
+			global::Microsoft.Identity.Client.Resource.Drawable.abc_scrubber_control_to_pressed_mtrl_000 = global::ContosoFieldService.Droid.Resource.Drawable.abc_scrubber_control_to_pressed_mtrl_000;
+			global::Microsoft.Identity.Client.Resource.Drawable.abc_scrubber_control_to_pressed_mtrl_005 = global::ContosoFieldService.Droid.Resource.Drawable.abc_scrubber_control_to_pressed_mtrl_005;
+			global::Microsoft.Identity.Client.Resource.Drawable.abc_scrubber_primary_mtrl_alpha = global::ContosoFieldService.Droid.Resource.Drawable.abc_scrubber_primary_mtrl_alpha;
+			global::Microsoft.Identity.Client.Resource.Drawable.abc_scrubber_track_mtrl_alpha = global::ContosoFieldService.Droid.Resource.Drawable.abc_scrubber_track_mtrl_alpha;
+			global::Microsoft.Identity.Client.Resource.Drawable.abc_seekbar_thumb_material = global::ContosoFieldService.Droid.Resource.Drawable.abc_seekbar_thumb_material;
+			global::Microsoft.Identity.Client.Resource.Drawable.abc_seekbar_tick_mark_material = global::ContosoFieldService.Droid.Resource.Drawable.abc_seekbar_tick_mark_material;
+			global::Microsoft.Identity.Client.Resource.Drawable.abc_seekbar_track_material = global::ContosoFieldService.Droid.Resource.Drawable.abc_seekbar_track_material;
+			global::Microsoft.Identity.Client.Resource.Drawable.abc_spinner_mtrl_am_alpha = global::ContosoFieldService.Droid.Resource.Drawable.abc_spinner_mtrl_am_alpha;
+			global::Microsoft.Identity.Client.Resource.Drawable.abc_spinner_textfield_background_material = global::ContosoFieldService.Droid.Resource.Drawable.abc_spinner_textfield_background_material;
+			global::Microsoft.Identity.Client.Resource.Drawable.abc_switch_thumb_material = global::ContosoFieldService.Droid.Resource.Drawable.abc_switch_thumb_material;
+			global::Microsoft.Identity.Client.Resource.Drawable.abc_switch_track_mtrl_alpha = global::ContosoFieldService.Droid.Resource.Drawable.abc_switch_track_mtrl_alpha;
+			global::Microsoft.Identity.Client.Resource.Drawable.abc_tab_indicator_material = global::ContosoFieldService.Droid.Resource.Drawable.abc_tab_indicator_material;
+			global::Microsoft.Identity.Client.Resource.Drawable.abc_tab_indicator_mtrl_alpha = global::ContosoFieldService.Droid.Resource.Drawable.abc_tab_indicator_mtrl_alpha;
+			global::Microsoft.Identity.Client.Resource.Drawable.abc_text_cursor_material = global::ContosoFieldService.Droid.Resource.Drawable.abc_text_cursor_material;
+			global::Microsoft.Identity.Client.Resource.Drawable.abc_text_select_handle_left_mtrl_dark = global::ContosoFieldService.Droid.Resource.Drawable.abc_text_select_handle_left_mtrl_dark;
+			global::Microsoft.Identity.Client.Resource.Drawable.abc_text_select_handle_left_mtrl_light = global::ContosoFieldService.Droid.Resource.Drawable.abc_text_select_handle_left_mtrl_light;
+			global::Microsoft.Identity.Client.Resource.Drawable.abc_text_select_handle_middle_mtrl_dark = global::ContosoFieldService.Droid.Resource.Drawable.abc_text_select_handle_middle_mtrl_dark;
+			global::Microsoft.Identity.Client.Resource.Drawable.abc_text_select_handle_middle_mtrl_light = global::ContosoFieldService.Droid.Resource.Drawable.abc_text_select_handle_middle_mtrl_light;
+			global::Microsoft.Identity.Client.Resource.Drawable.abc_text_select_handle_right_mtrl_dark = global::ContosoFieldService.Droid.Resource.Drawable.abc_text_select_handle_right_mtrl_dark;
+			global::Microsoft.Identity.Client.Resource.Drawable.abc_text_select_handle_right_mtrl_light = global::ContosoFieldService.Droid.Resource.Drawable.abc_text_select_handle_right_mtrl_light;
+			global::Microsoft.Identity.Client.Resource.Drawable.abc_textfield_activated_mtrl_alpha = global::ContosoFieldService.Droid.Resource.Drawable.abc_textfield_activated_mtrl_alpha;
+			global::Microsoft.Identity.Client.Resource.Drawable.abc_textfield_default_mtrl_alpha = global::ContosoFieldService.Droid.Resource.Drawable.abc_textfield_default_mtrl_alpha;
+			global::Microsoft.Identity.Client.Resource.Drawable.abc_textfield_search_activated_mtrl_alpha = global::ContosoFieldService.Droid.Resource.Drawable.abc_textfield_search_activated_mtrl_alpha;
+			global::Microsoft.Identity.Client.Resource.Drawable.abc_textfield_search_default_mtrl_alpha = global::ContosoFieldService.Droid.Resource.Drawable.abc_textfield_search_default_mtrl_alpha;
+			global::Microsoft.Identity.Client.Resource.Drawable.abc_textfield_search_material = global::ContosoFieldService.Droid.Resource.Drawable.abc_textfield_search_material;
+			global::Microsoft.Identity.Client.Resource.Drawable.abc_vector_test = global::ContosoFieldService.Droid.Resource.Drawable.abc_vector_test;
+			global::Microsoft.Identity.Client.Resource.Drawable.notification_action_background = global::ContosoFieldService.Droid.Resource.Drawable.notification_action_background;
+			global::Microsoft.Identity.Client.Resource.Drawable.notification_bg = global::ContosoFieldService.Droid.Resource.Drawable.notification_bg;
+			global::Microsoft.Identity.Client.Resource.Drawable.notification_bg_low = global::ContosoFieldService.Droid.Resource.Drawable.notification_bg_low;
+			global::Microsoft.Identity.Client.Resource.Drawable.notification_bg_low_normal = global::ContosoFieldService.Droid.Resource.Drawable.notification_bg_low_normal;
+			global::Microsoft.Identity.Client.Resource.Drawable.notification_bg_low_pressed = global::ContosoFieldService.Droid.Resource.Drawable.notification_bg_low_pressed;
+			global::Microsoft.Identity.Client.Resource.Drawable.notification_bg_normal = global::ContosoFieldService.Droid.Resource.Drawable.notification_bg_normal;
+			global::Microsoft.Identity.Client.Resource.Drawable.notification_bg_normal_pressed = global::ContosoFieldService.Droid.Resource.Drawable.notification_bg_normal_pressed;
+			global::Microsoft.Identity.Client.Resource.Drawable.notification_icon_background = global::ContosoFieldService.Droid.Resource.Drawable.notification_icon_background;
+			global::Microsoft.Identity.Client.Resource.Drawable.notification_template_icon_bg = global::ContosoFieldService.Droid.Resource.Drawable.notification_template_icon_bg;
+			global::Microsoft.Identity.Client.Resource.Drawable.notification_template_icon_low_bg = global::ContosoFieldService.Droid.Resource.Drawable.notification_template_icon_low_bg;
+			global::Microsoft.Identity.Client.Resource.Drawable.notification_tile_bg = global::ContosoFieldService.Droid.Resource.Drawable.notification_tile_bg;
+			global::Microsoft.Identity.Client.Resource.Drawable.notify_panel_notification_icon_bg = global::ContosoFieldService.Droid.Resource.Drawable.notify_panel_notification_icon_bg;
+			global::Microsoft.Identity.Client.Resource.Id.action0 = global::ContosoFieldService.Droid.Resource.Id.action0;
+			global::Microsoft.Identity.Client.Resource.Id.action_bar = global::ContosoFieldService.Droid.Resource.Id.action_bar;
+			global::Microsoft.Identity.Client.Resource.Id.action_bar_activity_content = global::ContosoFieldService.Droid.Resource.Id.action_bar_activity_content;
+			global::Microsoft.Identity.Client.Resource.Id.action_bar_container = global::ContosoFieldService.Droid.Resource.Id.action_bar_container;
+			global::Microsoft.Identity.Client.Resource.Id.action_bar_root = global::ContosoFieldService.Droid.Resource.Id.action_bar_root;
+			global::Microsoft.Identity.Client.Resource.Id.action_bar_spinner = global::ContosoFieldService.Droid.Resource.Id.action_bar_spinner;
+			global::Microsoft.Identity.Client.Resource.Id.action_bar_subtitle = global::ContosoFieldService.Droid.Resource.Id.action_bar_subtitle;
+			global::Microsoft.Identity.Client.Resource.Id.action_bar_title = global::ContosoFieldService.Droid.Resource.Id.action_bar_title;
+			global::Microsoft.Identity.Client.Resource.Id.action_container = global::ContosoFieldService.Droid.Resource.Id.action_container;
+			global::Microsoft.Identity.Client.Resource.Id.action_context_bar = global::ContosoFieldService.Droid.Resource.Id.action_context_bar;
+			global::Microsoft.Identity.Client.Resource.Id.action_divider = global::ContosoFieldService.Droid.Resource.Id.action_divider;
+			global::Microsoft.Identity.Client.Resource.Id.action_image = global::ContosoFieldService.Droid.Resource.Id.action_image;
+			global::Microsoft.Identity.Client.Resource.Id.action_menu_divider = global::ContosoFieldService.Droid.Resource.Id.action_menu_divider;
+			global::Microsoft.Identity.Client.Resource.Id.action_menu_presenter = global::ContosoFieldService.Droid.Resource.Id.action_menu_presenter;
+			global::Microsoft.Identity.Client.Resource.Id.action_mode_bar = global::ContosoFieldService.Droid.Resource.Id.action_mode_bar;
+			global::Microsoft.Identity.Client.Resource.Id.action_mode_bar_stub = global::ContosoFieldService.Droid.Resource.Id.action_mode_bar_stub;
+			global::Microsoft.Identity.Client.Resource.Id.action_mode_close_button = global::ContosoFieldService.Droid.Resource.Id.action_mode_close_button;
+			global::Microsoft.Identity.Client.Resource.Id.action_text = global::ContosoFieldService.Droid.Resource.Id.action_text;
+			global::Microsoft.Identity.Client.Resource.Id.actions = global::ContosoFieldService.Droid.Resource.Id.actions;
+			global::Microsoft.Identity.Client.Resource.Id.activity_chooser_view_content = global::ContosoFieldService.Droid.Resource.Id.activity_chooser_view_content;
+			global::Microsoft.Identity.Client.Resource.Id.add = global::ContosoFieldService.Droid.Resource.Id.add;
+			global::Microsoft.Identity.Client.Resource.Id.agentWebView = global::ContosoFieldService.Droid.Resource.Id.agentWebView;
+			global::Microsoft.Identity.Client.Resource.Id.alertTitle = global::ContosoFieldService.Droid.Resource.Id.alertTitle;
+			global::Microsoft.Identity.Client.Resource.Id.always = global::ContosoFieldService.Droid.Resource.Id.always;
+			global::Microsoft.Identity.Client.Resource.Id.beginning = global::ContosoFieldService.Droid.Resource.Id.beginning;
+			global::Microsoft.Identity.Client.Resource.Id.bottom = global::ContosoFieldService.Droid.Resource.Id.bottom;
+			global::Microsoft.Identity.Client.Resource.Id.buttonPanel = global::ContosoFieldService.Droid.Resource.Id.buttonPanel;
+			global::Microsoft.Identity.Client.Resource.Id.cancel_action = global::ContosoFieldService.Droid.Resource.Id.cancel_action;
+			global::Microsoft.Identity.Client.Resource.Id.checkbox = global::ContosoFieldService.Droid.Resource.Id.checkbox;
+			global::Microsoft.Identity.Client.Resource.Id.chronometer = global::ContosoFieldService.Droid.Resource.Id.chronometer;
+			global::Microsoft.Identity.Client.Resource.Id.collapseActionView = global::ContosoFieldService.Droid.Resource.Id.collapseActionView;
+			global::Microsoft.Identity.Client.Resource.Id.contentPanel = global::ContosoFieldService.Droid.Resource.Id.contentPanel;
+			global::Microsoft.Identity.Client.Resource.Id.custom = global::ContosoFieldService.Droid.Resource.Id.custom;
+			global::Microsoft.Identity.Client.Resource.Id.customPanel = global::ContosoFieldService.Droid.Resource.Id.customPanel;
+			global::Microsoft.Identity.Client.Resource.Id.decor_content_parent = global::ContosoFieldService.Droid.Resource.Id.decor_content_parent;
+			global::Microsoft.Identity.Client.Resource.Id.default_activity_button = global::ContosoFieldService.Droid.Resource.Id.default_activity_button;
+			global::Microsoft.Identity.Client.Resource.Id.disableHome = global::ContosoFieldService.Droid.Resource.Id.disableHome;
+			global::Microsoft.Identity.Client.Resource.Id.edit_query = global::ContosoFieldService.Droid.Resource.Id.edit_query;
+			global::Microsoft.Identity.Client.Resource.Id.end = global::ContosoFieldService.Droid.Resource.Id.end;
+			global::Microsoft.Identity.Client.Resource.Id.end_padder = global::ContosoFieldService.Droid.Resource.Id.end_padder;
+			global::Microsoft.Identity.Client.Resource.Id.expand_activities_button = global::ContosoFieldService.Droid.Resource.Id.expand_activities_button;
+			global::Microsoft.Identity.Client.Resource.Id.expanded_menu = global::ContosoFieldService.Droid.Resource.Id.expanded_menu;
+			global::Microsoft.Identity.Client.Resource.Id.home = global::ContosoFieldService.Droid.Resource.Id.home;
+			global::Microsoft.Identity.Client.Resource.Id.homeAsUp = global::ContosoFieldService.Droid.Resource.Id.homeAsUp;
+			global::Microsoft.Identity.Client.Resource.Id.icon = global::ContosoFieldService.Droid.Resource.Id.icon;
+			global::Microsoft.Identity.Client.Resource.Id.icon_group = global::ContosoFieldService.Droid.Resource.Id.icon_group;
+			global::Microsoft.Identity.Client.Resource.Id.ifRoom = global::ContosoFieldService.Droid.Resource.Id.ifRoom;
+			global::Microsoft.Identity.Client.Resource.Id.image = global::ContosoFieldService.Droid.Resource.Id.image;
+			global::Microsoft.Identity.Client.Resource.Id.info = global::ContosoFieldService.Droid.Resource.Id.info;
+			global::Microsoft.Identity.Client.Resource.Id.line1 = global::ContosoFieldService.Droid.Resource.Id.line1;
+			global::Microsoft.Identity.Client.Resource.Id.line3 = global::ContosoFieldService.Droid.Resource.Id.line3;
+			global::Microsoft.Identity.Client.Resource.Id.listMode = global::ContosoFieldService.Droid.Resource.Id.listMode;
+			global::Microsoft.Identity.Client.Resource.Id.list_item = global::ContosoFieldService.Droid.Resource.Id.list_item;
+			global::Microsoft.Identity.Client.Resource.Id.media_actions = global::ContosoFieldService.Droid.Resource.Id.media_actions;
+			global::Microsoft.Identity.Client.Resource.Id.middle = global::ContosoFieldService.Droid.Resource.Id.middle;
+			global::Microsoft.Identity.Client.Resource.Id.multiply = global::ContosoFieldService.Droid.Resource.Id.multiply;
+			global::Microsoft.Identity.Client.Resource.Id.never = global::ContosoFieldService.Droid.Resource.Id.never;
+			global::Microsoft.Identity.Client.Resource.Id.none = global::ContosoFieldService.Droid.Resource.Id.none;
+			global::Microsoft.Identity.Client.Resource.Id.normal = global::ContosoFieldService.Droid.Resource.Id.normal;
+			global::Microsoft.Identity.Client.Resource.Id.notification_background = global::ContosoFieldService.Droid.Resource.Id.notification_background;
+			global::Microsoft.Identity.Client.Resource.Id.notification_main_column = global::ContosoFieldService.Droid.Resource.Id.notification_main_column;
+			global::Microsoft.Identity.Client.Resource.Id.notification_main_column_container = global::ContosoFieldService.Droid.Resource.Id.notification_main_column_container;
+			global::Microsoft.Identity.Client.Resource.Id.parentPanel = global::ContosoFieldService.Droid.Resource.Id.parentPanel;
+			global::Microsoft.Identity.Client.Resource.Id.progress_circular = global::ContosoFieldService.Droid.Resource.Id.progress_circular;
+			global::Microsoft.Identity.Client.Resource.Id.progress_horizontal = global::ContosoFieldService.Droid.Resource.Id.progress_horizontal;
+			global::Microsoft.Identity.Client.Resource.Id.radio = global::ContosoFieldService.Droid.Resource.Id.radio;
+			global::Microsoft.Identity.Client.Resource.Id.right_icon = global::ContosoFieldService.Droid.Resource.Id.right_icon;
+			global::Microsoft.Identity.Client.Resource.Id.right_side = global::ContosoFieldService.Droid.Resource.Id.right_side;
+			global::Microsoft.Identity.Client.Resource.Id.screen = global::ContosoFieldService.Droid.Resource.Id.screen;
+			global::Microsoft.Identity.Client.Resource.Id.scrollIndicatorDown = global::ContosoFieldService.Droid.Resource.Id.scrollIndicatorDown;
+			global::Microsoft.Identity.Client.Resource.Id.scrollIndicatorUp = global::ContosoFieldService.Droid.Resource.Id.scrollIndicatorUp;
+			global::Microsoft.Identity.Client.Resource.Id.scrollView = global::ContosoFieldService.Droid.Resource.Id.scrollView;
+			global::Microsoft.Identity.Client.Resource.Id.search_badge = global::ContosoFieldService.Droid.Resource.Id.search_badge;
+			global::Microsoft.Identity.Client.Resource.Id.search_bar = global::ContosoFieldService.Droid.Resource.Id.search_bar;
+			global::Microsoft.Identity.Client.Resource.Id.search_button = global::ContosoFieldService.Droid.Resource.Id.search_button;
+			global::Microsoft.Identity.Client.Resource.Id.search_close_btn = global::ContosoFieldService.Droid.Resource.Id.search_close_btn;
+			global::Microsoft.Identity.Client.Resource.Id.search_edit_frame = global::ContosoFieldService.Droid.Resource.Id.search_edit_frame;
+			global::Microsoft.Identity.Client.Resource.Id.search_go_btn = global::ContosoFieldService.Droid.Resource.Id.search_go_btn;
+			global::Microsoft.Identity.Client.Resource.Id.search_mag_icon = global::ContosoFieldService.Droid.Resource.Id.search_mag_icon;
+			global::Microsoft.Identity.Client.Resource.Id.search_plate = global::ContosoFieldService.Droid.Resource.Id.search_plate;
+			global::Microsoft.Identity.Client.Resource.Id.search_src_text = global::ContosoFieldService.Droid.Resource.Id.search_src_text;
+			global::Microsoft.Identity.Client.Resource.Id.search_voice_btn = global::ContosoFieldService.Droid.Resource.Id.search_voice_btn;
+			global::Microsoft.Identity.Client.Resource.Id.select_dialog_listview = global::ContosoFieldService.Droid.Resource.Id.select_dialog_listview;
+			global::Microsoft.Identity.Client.Resource.Id.shortcut = global::ContosoFieldService.Droid.Resource.Id.shortcut;
+			global::Microsoft.Identity.Client.Resource.Id.showCustom = global::ContosoFieldService.Droid.Resource.Id.showCustom;
+			global::Microsoft.Identity.Client.Resource.Id.showHome = global::ContosoFieldService.Droid.Resource.Id.showHome;
+			global::Microsoft.Identity.Client.Resource.Id.showTitle = global::ContosoFieldService.Droid.Resource.Id.showTitle;
+			global::Microsoft.Identity.Client.Resource.Id.spacer = global::ContosoFieldService.Droid.Resource.Id.spacer;
+			global::Microsoft.Identity.Client.Resource.Id.split_action_bar = global::ContosoFieldService.Droid.Resource.Id.split_action_bar;
+			global::Microsoft.Identity.Client.Resource.Id.src_atop = global::ContosoFieldService.Droid.Resource.Id.src_atop;
+			global::Microsoft.Identity.Client.Resource.Id.src_in = global::ContosoFieldService.Droid.Resource.Id.src_in;
+			global::Microsoft.Identity.Client.Resource.Id.src_over = global::ContosoFieldService.Droid.Resource.Id.src_over;
+			global::Microsoft.Identity.Client.Resource.Id.status_bar_latest_event_content = global::ContosoFieldService.Droid.Resource.Id.status_bar_latest_event_content;
+			global::Microsoft.Identity.Client.Resource.Id.submenuarrow = global::ContosoFieldService.Droid.Resource.Id.submenuarrow;
+			global::Microsoft.Identity.Client.Resource.Id.submit_area = global::ContosoFieldService.Droid.Resource.Id.submit_area;
+			global::Microsoft.Identity.Client.Resource.Id.tabMode = global::ContosoFieldService.Droid.Resource.Id.tabMode;
+			global::Microsoft.Identity.Client.Resource.Id.text = global::ContosoFieldService.Droid.Resource.Id.text;
+			global::Microsoft.Identity.Client.Resource.Id.text2 = global::ContosoFieldService.Droid.Resource.Id.text2;
+			global::Microsoft.Identity.Client.Resource.Id.textSpacerNoButtons = global::ContosoFieldService.Droid.Resource.Id.textSpacerNoButtons;
+			global::Microsoft.Identity.Client.Resource.Id.textSpacerNoTitle = global::ContosoFieldService.Droid.Resource.Id.textSpacerNoTitle;
+			global::Microsoft.Identity.Client.Resource.Id.time = global::ContosoFieldService.Droid.Resource.Id.time;
+			global::Microsoft.Identity.Client.Resource.Id.title = global::ContosoFieldService.Droid.Resource.Id.title;
+			global::Microsoft.Identity.Client.Resource.Id.titleDividerNoCustom = global::ContosoFieldService.Droid.Resource.Id.titleDividerNoCustom;
+			global::Microsoft.Identity.Client.Resource.Id.title_template = global::ContosoFieldService.Droid.Resource.Id.title_template;
+			global::Microsoft.Identity.Client.Resource.Id.top = global::ContosoFieldService.Droid.Resource.Id.top;
+			global::Microsoft.Identity.Client.Resource.Id.topPanel = global::ContosoFieldService.Droid.Resource.Id.topPanel;
+			global::Microsoft.Identity.Client.Resource.Id.up = global::ContosoFieldService.Droid.Resource.Id.up;
+			global::Microsoft.Identity.Client.Resource.Id.useLogo = global::ContosoFieldService.Droid.Resource.Id.useLogo;
+			global::Microsoft.Identity.Client.Resource.Id.withText = global::ContosoFieldService.Droid.Resource.Id.withText;
+			global::Microsoft.Identity.Client.Resource.Id.wrap_content = global::ContosoFieldService.Droid.Resource.Id.wrap_content;
+			global::Microsoft.Identity.Client.Resource.Integer.abc_config_activityDefaultDur = global::ContosoFieldService.Droid.Resource.Integer.abc_config_activityDefaultDur;
+			global::Microsoft.Identity.Client.Resource.Integer.abc_config_activityShortDur = global::ContosoFieldService.Droid.Resource.Integer.abc_config_activityShortDur;
+			global::Microsoft.Identity.Client.Resource.Integer.cancel_button_image_alpha = global::ContosoFieldService.Droid.Resource.Integer.cancel_button_image_alpha;
+			global::Microsoft.Identity.Client.Resource.Integer.status_bar_notification_info_maxnum = global::ContosoFieldService.Droid.Resource.Integer.status_bar_notification_info_maxnum;
+			global::Microsoft.Identity.Client.Resource.Layout.abc_action_bar_title_item = global::ContosoFieldService.Droid.Resource.Layout.abc_action_bar_title_item;
+			global::Microsoft.Identity.Client.Resource.Layout.abc_action_bar_up_container = global::ContosoFieldService.Droid.Resource.Layout.abc_action_bar_up_container;
+			global::Microsoft.Identity.Client.Resource.Layout.abc_action_bar_view_list_nav_layout = global::ContosoFieldService.Droid.Resource.Layout.abc_action_bar_view_list_nav_layout;
+			global::Microsoft.Identity.Client.Resource.Layout.abc_action_menu_item_layout = global::ContosoFieldService.Droid.Resource.Layout.abc_action_menu_item_layout;
+			global::Microsoft.Identity.Client.Resource.Layout.abc_action_menu_layout = global::ContosoFieldService.Droid.Resource.Layout.abc_action_menu_layout;
+			global::Microsoft.Identity.Client.Resource.Layout.abc_action_mode_bar = global::ContosoFieldService.Droid.Resource.Layout.abc_action_mode_bar;
+			global::Microsoft.Identity.Client.Resource.Layout.abc_action_mode_close_item_material = global::ContosoFieldService.Droid.Resource.Layout.abc_action_mode_close_item_material;
+			global::Microsoft.Identity.Client.Resource.Layout.abc_activity_chooser_view = global::ContosoFieldService.Droid.Resource.Layout.abc_activity_chooser_view;
+			global::Microsoft.Identity.Client.Resource.Layout.abc_activity_chooser_view_list_item = global::ContosoFieldService.Droid.Resource.Layout.abc_activity_chooser_view_list_item;
+			global::Microsoft.Identity.Client.Resource.Layout.abc_alert_dialog_button_bar_material = global::ContosoFieldService.Droid.Resource.Layout.abc_alert_dialog_button_bar_material;
+			global::Microsoft.Identity.Client.Resource.Layout.abc_alert_dialog_material = global::ContosoFieldService.Droid.Resource.Layout.abc_alert_dialog_material;
+			global::Microsoft.Identity.Client.Resource.Layout.abc_alert_dialog_title_material = global::ContosoFieldService.Droid.Resource.Layout.abc_alert_dialog_title_material;
+			global::Microsoft.Identity.Client.Resource.Layout.abc_dialog_title_material = global::ContosoFieldService.Droid.Resource.Layout.abc_dialog_title_material;
+			global::Microsoft.Identity.Client.Resource.Layout.abc_expanded_menu_layout = global::ContosoFieldService.Droid.Resource.Layout.abc_expanded_menu_layout;
+			global::Microsoft.Identity.Client.Resource.Layout.abc_list_menu_item_checkbox = global::ContosoFieldService.Droid.Resource.Layout.abc_list_menu_item_checkbox;
+			global::Microsoft.Identity.Client.Resource.Layout.abc_list_menu_item_icon = global::ContosoFieldService.Droid.Resource.Layout.abc_list_menu_item_icon;
+			global::Microsoft.Identity.Client.Resource.Layout.abc_list_menu_item_layout = global::ContosoFieldService.Droid.Resource.Layout.abc_list_menu_item_layout;
+			global::Microsoft.Identity.Client.Resource.Layout.abc_list_menu_item_radio = global::ContosoFieldService.Droid.Resource.Layout.abc_list_menu_item_radio;
+			global::Microsoft.Identity.Client.Resource.Layout.abc_popup_menu_header_item_layout = global::ContosoFieldService.Droid.Resource.Layout.abc_popup_menu_header_item_layout;
+			global::Microsoft.Identity.Client.Resource.Layout.abc_popup_menu_item_layout = global::ContosoFieldService.Droid.Resource.Layout.abc_popup_menu_item_layout;
+			global::Microsoft.Identity.Client.Resource.Layout.abc_screen_content_include = global::ContosoFieldService.Droid.Resource.Layout.abc_screen_content_include;
+			global::Microsoft.Identity.Client.Resource.Layout.abc_screen_simple = global::ContosoFieldService.Droid.Resource.Layout.abc_screen_simple;
+			global::Microsoft.Identity.Client.Resource.Layout.abc_screen_simple_overlay_action_mode = global::ContosoFieldService.Droid.Resource.Layout.abc_screen_simple_overlay_action_mode;
+			global::Microsoft.Identity.Client.Resource.Layout.abc_screen_toolbar = global::ContosoFieldService.Droid.Resource.Layout.abc_screen_toolbar;
+			global::Microsoft.Identity.Client.Resource.Layout.abc_search_dropdown_item_icons_2line = global::ContosoFieldService.Droid.Resource.Layout.abc_search_dropdown_item_icons_2line;
+			global::Microsoft.Identity.Client.Resource.Layout.abc_search_view = global::ContosoFieldService.Droid.Resource.Layout.abc_search_view;
+			global::Microsoft.Identity.Client.Resource.Layout.abc_select_dialog_material = global::ContosoFieldService.Droid.Resource.Layout.abc_select_dialog_material;
+			global::Microsoft.Identity.Client.Resource.Layout.notification_action = global::ContosoFieldService.Droid.Resource.Layout.notification_action;
+			global::Microsoft.Identity.Client.Resource.Layout.notification_action_tombstone = global::ContosoFieldService.Droid.Resource.Layout.notification_action_tombstone;
+			global::Microsoft.Identity.Client.Resource.Layout.notification_media_action = global::ContosoFieldService.Droid.Resource.Layout.notification_media_action;
+			global::Microsoft.Identity.Client.Resource.Layout.notification_media_cancel_action = global::ContosoFieldService.Droid.Resource.Layout.notification_media_cancel_action;
+			global::Microsoft.Identity.Client.Resource.Layout.notification_template_big_media = global::ContosoFieldService.Droid.Resource.Layout.notification_template_big_media;
+			global::Microsoft.Identity.Client.Resource.Layout.notification_template_big_media_custom = global::ContosoFieldService.Droid.Resource.Layout.notification_template_big_media_custom;
+			global::Microsoft.Identity.Client.Resource.Layout.notification_template_big_media_narrow = global::ContosoFieldService.Droid.Resource.Layout.notification_template_big_media_narrow;
+			global::Microsoft.Identity.Client.Resource.Layout.notification_template_big_media_narrow_custom = global::ContosoFieldService.Droid.Resource.Layout.notification_template_big_media_narrow_custom;
+			global::Microsoft.Identity.Client.Resource.Layout.notification_template_custom_big = global::ContosoFieldService.Droid.Resource.Layout.notification_template_custom_big;
+			global::Microsoft.Identity.Client.Resource.Layout.notification_template_icon_group = global::ContosoFieldService.Droid.Resource.Layout.notification_template_icon_group;
+			global::Microsoft.Identity.Client.Resource.Layout.notification_template_lines_media = global::ContosoFieldService.Droid.Resource.Layout.notification_template_lines_media;
+			global::Microsoft.Identity.Client.Resource.Layout.notification_template_media = global::ContosoFieldService.Droid.Resource.Layout.notification_template_media;
+			global::Microsoft.Identity.Client.Resource.Layout.notification_template_media_custom = global::ContosoFieldService.Droid.Resource.Layout.notification_template_media_custom;
+			global::Microsoft.Identity.Client.Resource.Layout.notification_template_part_chronometer = global::ContosoFieldService.Droid.Resource.Layout.notification_template_part_chronometer;
+			global::Microsoft.Identity.Client.Resource.Layout.notification_template_part_time = global::ContosoFieldService.Droid.Resource.Layout.notification_template_part_time;
+			global::Microsoft.Identity.Client.Resource.Layout.select_dialog_item_material = global::ContosoFieldService.Droid.Resource.Layout.select_dialog_item_material;
+			global::Microsoft.Identity.Client.Resource.Layout.select_dialog_multichoice_material = global::ContosoFieldService.Droid.Resource.Layout.select_dialog_multichoice_material;
+			global::Microsoft.Identity.Client.Resource.Layout.select_dialog_singlechoice_material = global::ContosoFieldService.Droid.Resource.Layout.select_dialog_singlechoice_material;
+			global::Microsoft.Identity.Client.Resource.Layout.support_simple_spinner_dropdown_item = global::ContosoFieldService.Droid.Resource.Layout.support_simple_spinner_dropdown_item;
+			global::Microsoft.Identity.Client.Resource.Layout.WebAuthenticationBroker = global::ContosoFieldService.Droid.Resource.Layout.WebAuthenticationBroker;
+			global::Microsoft.Identity.Client.Resource.String.ApplicationName = global::ContosoFieldService.Droid.Resource.String.ApplicationName;
+			global::Microsoft.Identity.Client.Resource.String.abc_action_bar_home_description = global::ContosoFieldService.Droid.Resource.String.abc_action_bar_home_description;
+			global::Microsoft.Identity.Client.Resource.String.abc_action_bar_home_description_format = global::ContosoFieldService.Droid.Resource.String.abc_action_bar_home_description_format;
+			global::Microsoft.Identity.Client.Resource.String.abc_action_bar_home_subtitle_description_format = global::ContosoFieldService.Droid.Resource.String.abc_action_bar_home_subtitle_description_format;
+			global::Microsoft.Identity.Client.Resource.String.abc_action_bar_up_description = global::ContosoFieldService.Droid.Resource.String.abc_action_bar_up_description;
+			global::Microsoft.Identity.Client.Resource.String.abc_action_menu_overflow_description = global::ContosoFieldService.Droid.Resource.String.abc_action_menu_overflow_description;
+			global::Microsoft.Identity.Client.Resource.String.abc_action_mode_done = global::ContosoFieldService.Droid.Resource.String.abc_action_mode_done;
+			global::Microsoft.Identity.Client.Resource.String.abc_activity_chooser_view_see_all = global::ContosoFieldService.Droid.Resource.String.abc_activity_chooser_view_see_all;
+			global::Microsoft.Identity.Client.Resource.String.abc_activitychooserview_choose_application = global::ContosoFieldService.Droid.Resource.String.abc_activitychooserview_choose_application;
+			global::Microsoft.Identity.Client.Resource.String.abc_capital_off = global::ContosoFieldService.Droid.Resource.String.abc_capital_off;
+			global::Microsoft.Identity.Client.Resource.String.abc_capital_on = global::ContosoFieldService.Droid.Resource.String.abc_capital_on;
+			global::Microsoft.Identity.Client.Resource.String.abc_font_family_body_1_material = global::ContosoFieldService.Droid.Resource.String.abc_font_family_body_1_material;
+			global::Microsoft.Identity.Client.Resource.String.abc_font_family_body_2_material = global::ContosoFieldService.Droid.Resource.String.abc_font_family_body_2_material;
+			global::Microsoft.Identity.Client.Resource.String.abc_font_family_button_material = global::ContosoFieldService.Droid.Resource.String.abc_font_family_button_material;
+			global::Microsoft.Identity.Client.Resource.String.abc_font_family_caption_material = global::ContosoFieldService.Droid.Resource.String.abc_font_family_caption_material;
+			global::Microsoft.Identity.Client.Resource.String.abc_font_family_display_1_material = global::ContosoFieldService.Droid.Resource.String.abc_font_family_display_1_material;
+			global::Microsoft.Identity.Client.Resource.String.abc_font_family_display_2_material = global::ContosoFieldService.Droid.Resource.String.abc_font_family_display_2_material;
+			global::Microsoft.Identity.Client.Resource.String.abc_font_family_display_3_material = global::ContosoFieldService.Droid.Resource.String.abc_font_family_display_3_material;
+			global::Microsoft.Identity.Client.Resource.String.abc_font_family_display_4_material = global::ContosoFieldService.Droid.Resource.String.abc_font_family_display_4_material;
+			global::Microsoft.Identity.Client.Resource.String.abc_font_family_headline_material = global::ContosoFieldService.Droid.Resource.String.abc_font_family_headline_material;
+			global::Microsoft.Identity.Client.Resource.String.abc_font_family_menu_material = global::ContosoFieldService.Droid.Resource.String.abc_font_family_menu_material;
+			global::Microsoft.Identity.Client.Resource.String.abc_font_family_subhead_material = global::ContosoFieldService.Droid.Resource.String.abc_font_family_subhead_material;
+			global::Microsoft.Identity.Client.Resource.String.abc_font_family_title_material = global::ContosoFieldService.Droid.Resource.String.abc_font_family_title_material;
+			global::Microsoft.Identity.Client.Resource.String.abc_search_hint = global::ContosoFieldService.Droid.Resource.String.abc_search_hint;
+			global::Microsoft.Identity.Client.Resource.String.abc_searchview_description_clear = global::ContosoFieldService.Droid.Resource.String.abc_searchview_description_clear;
+			global::Microsoft.Identity.Client.Resource.String.abc_searchview_description_query = global::ContosoFieldService.Droid.Resource.String.abc_searchview_description_query;
+			global::Microsoft.Identity.Client.Resource.String.abc_searchview_description_search = global::ContosoFieldService.Droid.Resource.String.abc_searchview_description_search;
+			global::Microsoft.Identity.Client.Resource.String.abc_searchview_description_submit = global::ContosoFieldService.Droid.Resource.String.abc_searchview_description_submit;
+			global::Microsoft.Identity.Client.Resource.String.abc_searchview_description_voice = global::ContosoFieldService.Droid.Resource.String.abc_searchview_description_voice;
+			global::Microsoft.Identity.Client.Resource.String.abc_shareactionprovider_share_with = global::ContosoFieldService.Droid.Resource.String.abc_shareactionprovider_share_with;
+			global::Microsoft.Identity.Client.Resource.String.abc_shareactionprovider_share_with_application = global::ContosoFieldService.Droid.Resource.String.abc_shareactionprovider_share_with_application;
+			global::Microsoft.Identity.Client.Resource.String.abc_toolbar_collapse_description = global::ContosoFieldService.Droid.Resource.String.abc_toolbar_collapse_description;
+			global::Microsoft.Identity.Client.Resource.String.search_menu_title = global::ContosoFieldService.Droid.Resource.String.search_menu_title;
+			global::Microsoft.Identity.Client.Resource.String.status_bar_notification_info_overflow = global::ContosoFieldService.Droid.Resource.String.status_bar_notification_info_overflow;
+			global::Microsoft.Identity.Client.Resource.Style.AlertDialog_AppCompat = global::ContosoFieldService.Droid.Resource.Style.AlertDialog_AppCompat;
+			global::Microsoft.Identity.Client.Resource.Style.AlertDialog_AppCompat_Light = global::ContosoFieldService.Droid.Resource.Style.AlertDialog_AppCompat_Light;
+			global::Microsoft.Identity.Client.Resource.Style.Animation_AppCompat_Dialog = global::ContosoFieldService.Droid.Resource.Style.Animation_AppCompat_Dialog;
+			global::Microsoft.Identity.Client.Resource.Style.Animation_AppCompat_DropDownUp = global::ContosoFieldService.Droid.Resource.Style.Animation_AppCompat_DropDownUp;
+			global::Microsoft.Identity.Client.Resource.Style.Base_AlertDialog_AppCompat = global::ContosoFieldService.Droid.Resource.Style.Base_AlertDialog_AppCompat;
+			global::Microsoft.Identity.Client.Resource.Style.Base_AlertDialog_AppCompat_Light = global::ContosoFieldService.Droid.Resource.Style.Base_AlertDialog_AppCompat_Light;
+			global::Microsoft.Identity.Client.Resource.Style.Base_Animation_AppCompat_Dialog = global::ContosoFieldService.Droid.Resource.Style.Base_Animation_AppCompat_Dialog;
+			global::Microsoft.Identity.Client.Resource.Style.Base_Animation_AppCompat_DropDownUp = global::ContosoFieldService.Droid.Resource.Style.Base_Animation_AppCompat_DropDownUp;
+			global::Microsoft.Identity.Client.Resource.Style.Base_DialogWindowTitle_AppCompat = global::ContosoFieldService.Droid.Resource.Style.Base_DialogWindowTitle_AppCompat;
+			global::Microsoft.Identity.Client.Resource.Style.Base_DialogWindowTitleBackground_AppCompat = global::ContosoFieldService.Droid.Resource.Style.Base_DialogWindowTitleBackground_AppCompat;
+			global::Microsoft.Identity.Client.Resource.Style.Base_TextAppearance_AppCompat = global::ContosoFieldService.Droid.Resource.Style.Base_TextAppearance_AppCompat;
+			global::Microsoft.Identity.Client.Resource.Style.Base_TextAppearance_AppCompat_Body1 = global::ContosoFieldService.Droid.Resource.Style.Base_TextAppearance_AppCompat_Body1;
+			global::Microsoft.Identity.Client.Resource.Style.Base_TextAppearance_AppCompat_Body2 = global::ContosoFieldService.Droid.Resource.Style.Base_TextAppearance_AppCompat_Body2;
+			global::Microsoft.Identity.Client.Resource.Style.Base_TextAppearance_AppCompat_Button = global::ContosoFieldService.Droid.Resource.Style.Base_TextAppearance_AppCompat_Button;
+			global::Microsoft.Identity.Client.Resource.Style.Base_TextAppearance_AppCompat_Caption = global::ContosoFieldService.Droid.Resource.Style.Base_TextAppearance_AppCompat_Caption;
+			global::Microsoft.Identity.Client.Resource.Style.Base_TextAppearance_AppCompat_Display1 = global::ContosoFieldService.Droid.Resource.Style.Base_TextAppearance_AppCompat_Display1;
+			global::Microsoft.Identity.Client.Resource.Style.Base_TextAppearance_AppCompat_Display2 = global::ContosoFieldService.Droid.Resource.Style.Base_TextAppearance_AppCompat_Display2;
+			global::Microsoft.Identity.Client.Resource.Style.Base_TextAppearance_AppCompat_Display3 = global::ContosoFieldService.Droid.Resource.Style.Base_TextAppearance_AppCompat_Display3;
+			global::Microsoft.Identity.Client.Resource.Style.Base_TextAppearance_AppCompat_Display4 = global::ContosoFieldService.Droid.Resource.Style.Base_TextAppearance_AppCompat_Display4;
+			global::Microsoft.Identity.Client.Resource.Style.Base_TextAppearance_AppCompat_Headline = global::ContosoFieldService.Droid.Resource.Style.Base_TextAppearance_AppCompat_Headline;
+			global::Microsoft.Identity.Client.Resource.Style.Base_TextAppearance_AppCompat_Inverse = global::ContosoFieldService.Droid.Resource.Style.Base_TextAppearance_AppCompat_Inverse;
+			global::Microsoft.Identity.Client.Resource.Style.Base_TextAppearance_AppCompat_Large = global::ContosoFieldService.Droid.Resource.Style.Base_TextAppearance_AppCompat_Large;
+			global::Microsoft.Identity.Client.Resource.Style.Base_TextAppearance_AppCompat_Large_Inverse = global::ContosoFieldService.Droid.Resource.Style.Base_TextAppearance_AppCompat_Large_Inverse;
+			global::Microsoft.Identity.Client.Resource.Style.Base_TextAppearance_AppCompat_Light_Widget_PopupMenu_Large = global::ContosoFieldService.Droid.Resource.Style.Base_TextAppearance_AppCompat_Light_Widget_PopupMenu_Large;
+			global::Microsoft.Identity.Client.Resource.Style.Base_TextAppearance_AppCompat_Light_Widget_PopupMenu_Small = global::ContosoFieldService.Droid.Resource.Style.Base_TextAppearance_AppCompat_Light_Widget_PopupMenu_Small;
+			global::Microsoft.Identity.Client.Resource.Style.Base_TextAppearance_AppCompat_Medium = global::ContosoFieldService.Droid.Resource.Style.Base_TextAppearance_AppCompat_Medium;
+			global::Microsoft.Identity.Client.Resource.Style.Base_TextAppearance_AppCompat_Medium_Inverse = global::ContosoFieldService.Droid.Resource.Style.Base_TextAppearance_AppCompat_Medium_Inverse;
+			global::Microsoft.Identity.Client.Resource.Style.Base_TextAppearance_AppCompat_Menu = global::ContosoFieldService.Droid.Resource.Style.Base_TextAppearance_AppCompat_Menu;
+			global::Microsoft.Identity.Client.Resource.Style.Base_TextAppearance_AppCompat_SearchResult = global::ContosoFieldService.Droid.Resource.Style.Base_TextAppearance_AppCompat_SearchResult;
+			global::Microsoft.Identity.Client.Resource.Style.Base_TextAppearance_AppCompat_SearchResult_Subtitle = global::ContosoFieldService.Droid.Resource.Style.Base_TextAppearance_AppCompat_SearchResult_Subtitle;
+			global::Microsoft.Identity.Client.Resource.Style.Base_TextAppearance_AppCompat_SearchResult_Title = global::ContosoFieldService.Droid.Resource.Style.Base_TextAppearance_AppCompat_SearchResult_Title;
+			global::Microsoft.Identity.Client.Resource.Style.Base_TextAppearance_AppCompat_Small = global::ContosoFieldService.Droid.Resource.Style.Base_TextAppearance_AppCompat_Small;
+			global::Microsoft.Identity.Client.Resource.Style.Base_TextAppearance_AppCompat_Small_Inverse = global::ContosoFieldService.Droid.Resource.Style.Base_TextAppearance_AppCompat_Small_Inverse;
+			global::Microsoft.Identity.Client.Resource.Style.Base_TextAppearance_AppCompat_Subhead = global::ContosoFieldService.Droid.Resource.Style.Base_TextAppearance_AppCompat_Subhead;
+			global::Microsoft.Identity.Client.Resource.Style.Base_TextAppearance_AppCompat_Subhead_Inverse = global::ContosoFieldService.Droid.Resource.Style.Base_TextAppearance_AppCompat_Subhead_Inverse;
+			global::Microsoft.Identity.Client.Resource.Style.Base_TextAppearance_AppCompat_Title = global::ContosoFieldService.Droid.Resource.Style.Base_TextAppearance_AppCompat_Title;
+			global::Microsoft.Identity.Client.Resource.Style.Base_TextAppearance_AppCompat_Title_Inverse = global::ContosoFieldService.Droid.Resource.Style.Base_TextAppearance_AppCompat_Title_Inverse;
+			global::Microsoft.Identity.Client.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionBar_Menu = global::ContosoFieldService.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionBar_Menu;
+			global::Microsoft.Identity.Client.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionBar_Subtitle = global::ContosoFieldService.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionBar_Subtitle;
+			global::Microsoft.Identity.Client.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionBar_Subtitle_Inverse = global::ContosoFieldService.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionBar_Subtitle_Inverse;
+			global::Microsoft.Identity.Client.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionBar_Title = global::ContosoFieldService.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionBar_Title;
+			global::Microsoft.Identity.Client.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionBar_Title_Inverse = global::ContosoFieldService.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionBar_Title_Inverse;
+			global::Microsoft.Identity.Client.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionMode_Subtitle = global::ContosoFieldService.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionMode_Subtitle;
+			global::Microsoft.Identity.Client.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionMode_Title = global::ContosoFieldService.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionMode_Title;
+			global::Microsoft.Identity.Client.Resource.Style.Base_TextAppearance_AppCompat_Widget_Button = global::ContosoFieldService.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_Button;
+			global::Microsoft.Identity.Client.Resource.Style.Base_TextAppearance_AppCompat_Widget_Button_Borderless_Colored = global::ContosoFieldService.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_Button_Borderless_Colored;
+			global::Microsoft.Identity.Client.Resource.Style.Base_TextAppearance_AppCompat_Widget_Button_Colored = global::ContosoFieldService.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_Button_Colored;
+			global::Microsoft.Identity.Client.Resource.Style.Base_TextAppearance_AppCompat_Widget_Button_Inverse = global::ContosoFieldService.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_Button_Inverse;
+			global::Microsoft.Identity.Client.Resource.Style.Base_TextAppearance_AppCompat_Widget_DropDownItem = global::ContosoFieldService.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_DropDownItem;
+			global::Microsoft.Identity.Client.Resource.Style.Base_TextAppearance_AppCompat_Widget_PopupMenu_Header = global::ContosoFieldService.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_PopupMenu_Header;
+			global::Microsoft.Identity.Client.Resource.Style.Base_TextAppearance_AppCompat_Widget_PopupMenu_Large = global::ContosoFieldService.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_PopupMenu_Large;
+			global::Microsoft.Identity.Client.Resource.Style.Base_TextAppearance_AppCompat_Widget_PopupMenu_Small = global::ContosoFieldService.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_PopupMenu_Small;
+			global::Microsoft.Identity.Client.Resource.Style.Base_TextAppearance_AppCompat_Widget_Switch = global::ContosoFieldService.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_Switch;
+			global::Microsoft.Identity.Client.Resource.Style.Base_TextAppearance_AppCompat_Widget_TextView_SpinnerItem = global::ContosoFieldService.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_TextView_SpinnerItem;
+			global::Microsoft.Identity.Client.Resource.Style.Base_TextAppearance_Widget_AppCompat_ExpandedMenu_Item = global::ContosoFieldService.Droid.Resource.Style.Base_TextAppearance_Widget_AppCompat_ExpandedMenu_Item;
+			global::Microsoft.Identity.Client.Resource.Style.Base_TextAppearance_Widget_AppCompat_Toolbar_Subtitle = global::ContosoFieldService.Droid.Resource.Style.Base_TextAppearance_Widget_AppCompat_Toolbar_Subtitle;
+			global::Microsoft.Identity.Client.Resource.Style.Base_TextAppearance_Widget_AppCompat_Toolbar_Title = global::ContosoFieldService.Droid.Resource.Style.Base_TextAppearance_Widget_AppCompat_Toolbar_Title;
+			global::Microsoft.Identity.Client.Resource.Style.Base_Theme_AppCompat = global::ContosoFieldService.Droid.Resource.Style.Base_Theme_AppCompat;
+			global::Microsoft.Identity.Client.Resource.Style.Base_Theme_AppCompat_CompactMenu = global::ContosoFieldService.Droid.Resource.Style.Base_Theme_AppCompat_CompactMenu;
+			global::Microsoft.Identity.Client.Resource.Style.Base_Theme_AppCompat_Dialog = global::ContosoFieldService.Droid.Resource.Style.Base_Theme_AppCompat_Dialog;
+			global::Microsoft.Identity.Client.Resource.Style.Base_Theme_AppCompat_Dialog_Alert = global::ContosoFieldService.Droid.Resource.Style.Base_Theme_AppCompat_Dialog_Alert;
+			global::Microsoft.Identity.Client.Resource.Style.Base_Theme_AppCompat_Dialog_FixedSize = global::ContosoFieldService.Droid.Resource.Style.Base_Theme_AppCompat_Dialog_FixedSize;
+			global::Microsoft.Identity.Client.Resource.Style.Base_Theme_AppCompat_Dialog_MinWidth = global::ContosoFieldService.Droid.Resource.Style.Base_Theme_AppCompat_Dialog_MinWidth;
+			global::Microsoft.Identity.Client.Resource.Style.Base_Theme_AppCompat_DialogWhenLarge = global::ContosoFieldService.Droid.Resource.Style.Base_Theme_AppCompat_DialogWhenLarge;
+			global::Microsoft.Identity.Client.Resource.Style.Base_Theme_AppCompat_Light = global::ContosoFieldService.Droid.Resource.Style.Base_Theme_AppCompat_Light;
+			global::Microsoft.Identity.Client.Resource.Style.Base_Theme_AppCompat_Light_DarkActionBar = global::ContosoFieldService.Droid.Resource.Style.Base_Theme_AppCompat_Light_DarkActionBar;
+			global::Microsoft.Identity.Client.Resource.Style.Base_Theme_AppCompat_Light_Dialog = global::ContosoFieldService.Droid.Resource.Style.Base_Theme_AppCompat_Light_Dialog;
+			global::Microsoft.Identity.Client.Resource.Style.Base_Theme_AppCompat_Light_Dialog_Alert = global::ContosoFieldService.Droid.Resource.Style.Base_Theme_AppCompat_Light_Dialog_Alert;
+			global::Microsoft.Identity.Client.Resource.Style.Base_Theme_AppCompat_Light_Dialog_FixedSize = global::ContosoFieldService.Droid.Resource.Style.Base_Theme_AppCompat_Light_Dialog_FixedSize;
+			global::Microsoft.Identity.Client.Resource.Style.Base_Theme_AppCompat_Light_Dialog_MinWidth = global::ContosoFieldService.Droid.Resource.Style.Base_Theme_AppCompat_Light_Dialog_MinWidth;
+			global::Microsoft.Identity.Client.Resource.Style.Base_Theme_AppCompat_Light_DialogWhenLarge = global::ContosoFieldService.Droid.Resource.Style.Base_Theme_AppCompat_Light_DialogWhenLarge;
+			global::Microsoft.Identity.Client.Resource.Style.Base_ThemeOverlay_AppCompat = global::ContosoFieldService.Droid.Resource.Style.Base_ThemeOverlay_AppCompat;
+			global::Microsoft.Identity.Client.Resource.Style.Base_ThemeOverlay_AppCompat_ActionBar = global::ContosoFieldService.Droid.Resource.Style.Base_ThemeOverlay_AppCompat_ActionBar;
+			global::Microsoft.Identity.Client.Resource.Style.Base_ThemeOverlay_AppCompat_Dark = global::ContosoFieldService.Droid.Resource.Style.Base_ThemeOverlay_AppCompat_Dark;
+			global::Microsoft.Identity.Client.Resource.Style.Base_ThemeOverlay_AppCompat_Dark_ActionBar = global::ContosoFieldService.Droid.Resource.Style.Base_ThemeOverlay_AppCompat_Dark_ActionBar;
+			global::Microsoft.Identity.Client.Resource.Style.Base_ThemeOverlay_AppCompat_Dialog = global::ContosoFieldService.Droid.Resource.Style.Base_ThemeOverlay_AppCompat_Dialog;
+			global::Microsoft.Identity.Client.Resource.Style.Base_ThemeOverlay_AppCompat_Dialog_Alert = global::ContosoFieldService.Droid.Resource.Style.Base_ThemeOverlay_AppCompat_Dialog_Alert;
+			global::Microsoft.Identity.Client.Resource.Style.Base_ThemeOverlay_AppCompat_Light = global::ContosoFieldService.Droid.Resource.Style.Base_ThemeOverlay_AppCompat_Light;
+			global::Microsoft.Identity.Client.Resource.Style.Base_V11_Theme_AppCompat_Dialog = global::ContosoFieldService.Droid.Resource.Style.Base_V11_Theme_AppCompat_Dialog;
+			global::Microsoft.Identity.Client.Resource.Style.Base_V11_Theme_AppCompat_Light_Dialog = global::ContosoFieldService.Droid.Resource.Style.Base_V11_Theme_AppCompat_Light_Dialog;
+			global::Microsoft.Identity.Client.Resource.Style.Base_V11_ThemeOverlay_AppCompat_Dialog = global::ContosoFieldService.Droid.Resource.Style.Base_V11_ThemeOverlay_AppCompat_Dialog;
+			global::Microsoft.Identity.Client.Resource.Style.Base_V12_Widget_AppCompat_AutoCompleteTextView = global::ContosoFieldService.Droid.Resource.Style.Base_V12_Widget_AppCompat_AutoCompleteTextView;
+			global::Microsoft.Identity.Client.Resource.Style.Base_V12_Widget_AppCompat_EditText = global::ContosoFieldService.Droid.Resource.Style.Base_V12_Widget_AppCompat_EditText;
+			global::Microsoft.Identity.Client.Resource.Style.Base_V21_Theme_AppCompat = global::ContosoFieldService.Droid.Resource.Style.Base_V21_Theme_AppCompat;
+			global::Microsoft.Identity.Client.Resource.Style.Base_V21_Theme_AppCompat_Dialog = global::ContosoFieldService.Droid.Resource.Style.Base_V21_Theme_AppCompat_Dialog;
+			global::Microsoft.Identity.Client.Resource.Style.Base_V21_Theme_AppCompat_Light = global::ContosoFieldService.Droid.Resource.Style.Base_V21_Theme_AppCompat_Light;
+			global::Microsoft.Identity.Client.Resource.Style.Base_V21_Theme_AppCompat_Light_Dialog = global::ContosoFieldService.Droid.Resource.Style.Base_V21_Theme_AppCompat_Light_Dialog;
+			global::Microsoft.Identity.Client.Resource.Style.Base_V21_ThemeOverlay_AppCompat_Dialog = global::ContosoFieldService.Droid.Resource.Style.Base_V21_ThemeOverlay_AppCompat_Dialog;
+			global::Microsoft.Identity.Client.Resource.Style.Base_V22_Theme_AppCompat = global::ContosoFieldService.Droid.Resource.Style.Base_V22_Theme_AppCompat;
+			global::Microsoft.Identity.Client.Resource.Style.Base_V22_Theme_AppCompat_Light = global::ContosoFieldService.Droid.Resource.Style.Base_V22_Theme_AppCompat_Light;
+			global::Microsoft.Identity.Client.Resource.Style.Base_V23_Theme_AppCompat = global::ContosoFieldService.Droid.Resource.Style.Base_V23_Theme_AppCompat;
+			global::Microsoft.Identity.Client.Resource.Style.Base_V23_Theme_AppCompat_Light = global::ContosoFieldService.Droid.Resource.Style.Base_V23_Theme_AppCompat_Light;
+			global::Microsoft.Identity.Client.Resource.Style.Base_V7_Theme_AppCompat = global::ContosoFieldService.Droid.Resource.Style.Base_V7_Theme_AppCompat;
+			global::Microsoft.Identity.Client.Resource.Style.Base_V7_Theme_AppCompat_Dialog = global::ContosoFieldService.Droid.Resource.Style.Base_V7_Theme_AppCompat_Dialog;
+			global::Microsoft.Identity.Client.Resource.Style.Base_V7_Theme_AppCompat_Light = global::ContosoFieldService.Droid.Resource.Style.Base_V7_Theme_AppCompat_Light;
+			global::Microsoft.Identity.Client.Resource.Style.Base_V7_Theme_AppCompat_Light_Dialog = global::ContosoFieldService.Droid.Resource.Style.Base_V7_Theme_AppCompat_Light_Dialog;
+			global::Microsoft.Identity.Client.Resource.Style.Base_V7_ThemeOverlay_AppCompat_Dialog = global::ContosoFieldService.Droid.Resource.Style.Base_V7_ThemeOverlay_AppCompat_Dialog;
+			global::Microsoft.Identity.Client.Resource.Style.Base_V7_Widget_AppCompat_AutoCompleteTextView = global::ContosoFieldService.Droid.Resource.Style.Base_V7_Widget_AppCompat_AutoCompleteTextView;
+			global::Microsoft.Identity.Client.Resource.Style.Base_V7_Widget_AppCompat_EditText = global::ContosoFieldService.Droid.Resource.Style.Base_V7_Widget_AppCompat_EditText;
+			global::Microsoft.Identity.Client.Resource.Style.Base_Widget_AppCompat_ActionBar = global::ContosoFieldService.Droid.Resource.Style.Base_Widget_AppCompat_ActionBar;
+			global::Microsoft.Identity.Client.Resource.Style.Base_Widget_AppCompat_ActionBar_Solid = global::ContosoFieldService.Droid.Resource.Style.Base_Widget_AppCompat_ActionBar_Solid;
+			global::Microsoft.Identity.Client.Resource.Style.Base_Widget_AppCompat_ActionBar_TabBar = global::ContosoFieldService.Droid.Resource.Style.Base_Widget_AppCompat_ActionBar_TabBar;
+			global::Microsoft.Identity.Client.Resource.Style.Base_Widget_AppCompat_ActionBar_TabText = global::ContosoFieldService.Droid.Resource.Style.Base_Widget_AppCompat_ActionBar_TabText;
+			global::Microsoft.Identity.Client.Resource.Style.Base_Widget_AppCompat_ActionBar_TabView = global::ContosoFieldService.Droid.Resource.Style.Base_Widget_AppCompat_ActionBar_TabView;
+			global::Microsoft.Identity.Client.Resource.Style.Base_Widget_AppCompat_ActionButton = global::ContosoFieldService.Droid.Resource.Style.Base_Widget_AppCompat_ActionButton;
+			global::Microsoft.Identity.Client.Resource.Style.Base_Widget_AppCompat_ActionButton_CloseMode = global::ContosoFieldService.Droid.Resource.Style.Base_Widget_AppCompat_ActionButton_CloseMode;
+			global::Microsoft.Identity.Client.Resource.Style.Base_Widget_AppCompat_ActionButton_Overflow = global::ContosoFieldService.Droid.Resource.Style.Base_Widget_AppCompat_ActionButton_Overflow;
+			global::Microsoft.Identity.Client.Resource.Style.Base_Widget_AppCompat_ActionMode = global::ContosoFieldService.Droid.Resource.Style.Base_Widget_AppCompat_ActionMode;
+			global::Microsoft.Identity.Client.Resource.Style.Base_Widget_AppCompat_ActivityChooserView = global::ContosoFieldService.Droid.Resource.Style.Base_Widget_AppCompat_ActivityChooserView;
+			global::Microsoft.Identity.Client.Resource.Style.Base_Widget_AppCompat_AutoCompleteTextView = global::ContosoFieldService.Droid.Resource.Style.Base_Widget_AppCompat_AutoCompleteTextView;
+			global::Microsoft.Identity.Client.Resource.Style.Base_Widget_AppCompat_Button = global::ContosoFieldService.Droid.Resource.Style.Base_Widget_AppCompat_Button;
+			global::Microsoft.Identity.Client.Resource.Style.Base_Widget_AppCompat_Button_Borderless = global::ContosoFieldService.Droid.Resource.Style.Base_Widget_AppCompat_Button_Borderless;
+			global::Microsoft.Identity.Client.Resource.Style.Base_Widget_AppCompat_Button_Borderless_Colored = global::ContosoFieldService.Droid.Resource.Style.Base_Widget_AppCompat_Button_Borderless_Colored;
+			global::Microsoft.Identity.Client.Resource.Style.Base_Widget_AppCompat_Button_ButtonBar_AlertDialog = global::ContosoFieldService.Droid.Resource.Style.Base_Widget_AppCompat_Button_ButtonBar_AlertDialog;
+			global::Microsoft.Identity.Client.Resource.Style.Base_Widget_AppCompat_Button_Colored = global::ContosoFieldService.Droid.Resource.Style.Base_Widget_AppCompat_Button_Colored;
+			global::Microsoft.Identity.Client.Resource.Style.Base_Widget_AppCompat_Button_Small = global::ContosoFieldService.Droid.Resource.Style.Base_Widget_AppCompat_Button_Small;
+			global::Microsoft.Identity.Client.Resource.Style.Base_Widget_AppCompat_ButtonBar = global::ContosoFieldService.Droid.Resource.Style.Base_Widget_AppCompat_ButtonBar;
+			global::Microsoft.Identity.Client.Resource.Style.Base_Widget_AppCompat_ButtonBar_AlertDialog = global::ContosoFieldService.Droid.Resource.Style.Base_Widget_AppCompat_ButtonBar_AlertDialog;
+			global::Microsoft.Identity.Client.Resource.Style.Base_Widget_AppCompat_CompoundButton_CheckBox = global::ContosoFieldService.Droid.Resource.Style.Base_Widget_AppCompat_CompoundButton_CheckBox;
+			global::Microsoft.Identity.Client.Resource.Style.Base_Widget_AppCompat_CompoundButton_RadioButton = global::ContosoFieldService.Droid.Resource.Style.Base_Widget_AppCompat_CompoundButton_RadioButton;
+			global::Microsoft.Identity.Client.Resource.Style.Base_Widget_AppCompat_CompoundButton_Switch = global::ContosoFieldService.Droid.Resource.Style.Base_Widget_AppCompat_CompoundButton_Switch;
+			global::Microsoft.Identity.Client.Resource.Style.Base_Widget_AppCompat_DrawerArrowToggle = global::ContosoFieldService.Droid.Resource.Style.Base_Widget_AppCompat_DrawerArrowToggle;
+			global::Microsoft.Identity.Client.Resource.Style.Base_Widget_AppCompat_DrawerArrowToggle_Common = global::ContosoFieldService.Droid.Resource.Style.Base_Widget_AppCompat_DrawerArrowToggle_Common;
+			global::Microsoft.Identity.Client.Resource.Style.Base_Widget_AppCompat_DropDownItem_Spinner = global::ContosoFieldService.Droid.Resource.Style.Base_Widget_AppCompat_DropDownItem_Spinner;
+			global::Microsoft.Identity.Client.Resource.Style.Base_Widget_AppCompat_EditText = global::ContosoFieldService.Droid.Resource.Style.Base_Widget_AppCompat_EditText;
+			global::Microsoft.Identity.Client.Resource.Style.Base_Widget_AppCompat_ImageButton = global::ContosoFieldService.Droid.Resource.Style.Base_Widget_AppCompat_ImageButton;
+			global::Microsoft.Identity.Client.Resource.Style.Base_Widget_AppCompat_Light_ActionBar = global::ContosoFieldService.Droid.Resource.Style.Base_Widget_AppCompat_Light_ActionBar;
+			global::Microsoft.Identity.Client.Resource.Style.Base_Widget_AppCompat_Light_ActionBar_Solid = global::ContosoFieldService.Droid.Resource.Style.Base_Widget_AppCompat_Light_ActionBar_Solid;
+			global::Microsoft.Identity.Client.Resource.Style.Base_Widget_AppCompat_Light_ActionBar_TabBar = global::ContosoFieldService.Droid.Resource.Style.Base_Widget_AppCompat_Light_ActionBar_TabBar;
+			global::Microsoft.Identity.Client.Resource.Style.Base_Widget_AppCompat_Light_ActionBar_TabText = global::ContosoFieldService.Droid.Resource.Style.Base_Widget_AppCompat_Light_ActionBar_TabText;
+			global::Microsoft.Identity.Client.Resource.Style.Base_Widget_AppCompat_Light_ActionBar_TabText_Inverse = global::ContosoFieldService.Droid.Resource.Style.Base_Widget_AppCompat_Light_ActionBar_TabText_Inverse;
+			global::Microsoft.Identity.Client.Resource.Style.Base_Widget_AppCompat_Light_ActionBar_TabView = global::ContosoFieldService.Droid.Resource.Style.Base_Widget_AppCompat_Light_ActionBar_TabView;
+			global::Microsoft.Identity.Client.Resource.Style.Base_Widget_AppCompat_Light_PopupMenu = global::ContosoFieldService.Droid.Resource.Style.Base_Widget_AppCompat_Light_PopupMenu;
+			global::Microsoft.Identity.Client.Resource.Style.Base_Widget_AppCompat_Light_PopupMenu_Overflow = global::ContosoFieldService.Droid.Resource.Style.Base_Widget_AppCompat_Light_PopupMenu_Overflow;
+			global::Microsoft.Identity.Client.Resource.Style.Base_Widget_AppCompat_ListMenuView = global::ContosoFieldService.Droid.Resource.Style.Base_Widget_AppCompat_ListMenuView;
+			global::Microsoft.Identity.Client.Resource.Style.Base_Widget_AppCompat_ListPopupWindow = global::ContosoFieldService.Droid.Resource.Style.Base_Widget_AppCompat_ListPopupWindow;
+			global::Microsoft.Identity.Client.Resource.Style.Base_Widget_AppCompat_ListView = global::ContosoFieldService.Droid.Resource.Style.Base_Widget_AppCompat_ListView;
+			global::Microsoft.Identity.Client.Resource.Style.Base_Widget_AppCompat_ListView_DropDown = global::ContosoFieldService.Droid.Resource.Style.Base_Widget_AppCompat_ListView_DropDown;
+			global::Microsoft.Identity.Client.Resource.Style.Base_Widget_AppCompat_ListView_Menu = global::ContosoFieldService.Droid.Resource.Style.Base_Widget_AppCompat_ListView_Menu;
+			global::Microsoft.Identity.Client.Resource.Style.Base_Widget_AppCompat_PopupMenu = global::ContosoFieldService.Droid.Resource.Style.Base_Widget_AppCompat_PopupMenu;
+			global::Microsoft.Identity.Client.Resource.Style.Base_Widget_AppCompat_PopupMenu_Overflow = global::ContosoFieldService.Droid.Resource.Style.Base_Widget_AppCompat_PopupMenu_Overflow;
+			global::Microsoft.Identity.Client.Resource.Style.Base_Widget_AppCompat_PopupWindow = global::ContosoFieldService.Droid.Resource.Style.Base_Widget_AppCompat_PopupWindow;
+			global::Microsoft.Identity.Client.Resource.Style.Base_Widget_AppCompat_ProgressBar = global::ContosoFieldService.Droid.Resource.Style.Base_Widget_AppCompat_ProgressBar;
+			global::Microsoft.Identity.Client.Resource.Style.Base_Widget_AppCompat_ProgressBar_Horizontal = global::ContosoFieldService.Droid.Resource.Style.Base_Widget_AppCompat_ProgressBar_Horizontal;
+			global::Microsoft.Identity.Client.Resource.Style.Base_Widget_AppCompat_RatingBar = global::ContosoFieldService.Droid.Resource.Style.Base_Widget_AppCompat_RatingBar;
+			global::Microsoft.Identity.Client.Resource.Style.Base_Widget_AppCompat_RatingBar_Indicator = global::ContosoFieldService.Droid.Resource.Style.Base_Widget_AppCompat_RatingBar_Indicator;
+			global::Microsoft.Identity.Client.Resource.Style.Base_Widget_AppCompat_RatingBar_Small = global::ContosoFieldService.Droid.Resource.Style.Base_Widget_AppCompat_RatingBar_Small;
+			global::Microsoft.Identity.Client.Resource.Style.Base_Widget_AppCompat_SearchView = global::ContosoFieldService.Droid.Resource.Style.Base_Widget_AppCompat_SearchView;
+			global::Microsoft.Identity.Client.Resource.Style.Base_Widget_AppCompat_SearchView_ActionBar = global::ContosoFieldService.Droid.Resource.Style.Base_Widget_AppCompat_SearchView_ActionBar;
+			global::Microsoft.Identity.Client.Resource.Style.Base_Widget_AppCompat_SeekBar = global::ContosoFieldService.Droid.Resource.Style.Base_Widget_AppCompat_SeekBar;
+			global::Microsoft.Identity.Client.Resource.Style.Base_Widget_AppCompat_SeekBar_Discrete = global::ContosoFieldService.Droid.Resource.Style.Base_Widget_AppCompat_SeekBar_Discrete;
+			global::Microsoft.Identity.Client.Resource.Style.Base_Widget_AppCompat_Spinner = global::ContosoFieldService.Droid.Resource.Style.Base_Widget_AppCompat_Spinner;
+			global::Microsoft.Identity.Client.Resource.Style.Base_Widget_AppCompat_Spinner_Underlined = global::ContosoFieldService.Droid.Resource.Style.Base_Widget_AppCompat_Spinner_Underlined;
+			global::Microsoft.Identity.Client.Resource.Style.Base_Widget_AppCompat_TextView_SpinnerItem = global::ContosoFieldService.Droid.Resource.Style.Base_Widget_AppCompat_TextView_SpinnerItem;
+			global::Microsoft.Identity.Client.Resource.Style.Base_Widget_AppCompat_Toolbar = global::ContosoFieldService.Droid.Resource.Style.Base_Widget_AppCompat_Toolbar;
+			global::Microsoft.Identity.Client.Resource.Style.Base_Widget_AppCompat_Toolbar_Button_Navigation = global::ContosoFieldService.Droid.Resource.Style.Base_Widget_AppCompat_Toolbar_Button_Navigation;
+			global::Microsoft.Identity.Client.Resource.Style.Platform_AppCompat = global::ContosoFieldService.Droid.Resource.Style.Platform_AppCompat;
+			global::Microsoft.Identity.Client.Resource.Style.Platform_AppCompat_Light = global::ContosoFieldService.Droid.Resource.Style.Platform_AppCompat_Light;
+			global::Microsoft.Identity.Client.Resource.Style.Platform_ThemeOverlay_AppCompat = global::ContosoFieldService.Droid.Resource.Style.Platform_ThemeOverlay_AppCompat;
+			global::Microsoft.Identity.Client.Resource.Style.Platform_ThemeOverlay_AppCompat_Dark = global::ContosoFieldService.Droid.Resource.Style.Platform_ThemeOverlay_AppCompat_Dark;
+			global::Microsoft.Identity.Client.Resource.Style.Platform_ThemeOverlay_AppCompat_Light = global::ContosoFieldService.Droid.Resource.Style.Platform_ThemeOverlay_AppCompat_Light;
+			global::Microsoft.Identity.Client.Resource.Style.Platform_V11_AppCompat = global::ContosoFieldService.Droid.Resource.Style.Platform_V11_AppCompat;
+			global::Microsoft.Identity.Client.Resource.Style.Platform_V11_AppCompat_Light = global::ContosoFieldService.Droid.Resource.Style.Platform_V11_AppCompat_Light;
+			global::Microsoft.Identity.Client.Resource.Style.Platform_V14_AppCompat = global::ContosoFieldService.Droid.Resource.Style.Platform_V14_AppCompat;
+			global::Microsoft.Identity.Client.Resource.Style.Platform_V14_AppCompat_Light = global::ContosoFieldService.Droid.Resource.Style.Platform_V14_AppCompat_Light;
+			global::Microsoft.Identity.Client.Resource.Style.Platform_V21_AppCompat = global::ContosoFieldService.Droid.Resource.Style.Platform_V21_AppCompat;
+			global::Microsoft.Identity.Client.Resource.Style.Platform_V21_AppCompat_Light = global::ContosoFieldService.Droid.Resource.Style.Platform_V21_AppCompat_Light;
+			global::Microsoft.Identity.Client.Resource.Style.Platform_Widget_AppCompat_Spinner = global::ContosoFieldService.Droid.Resource.Style.Platform_Widget_AppCompat_Spinner;
+			global::Microsoft.Identity.Client.Resource.Style.RtlOverlay_DialogWindowTitle_AppCompat = global::ContosoFieldService.Droid.Resource.Style.RtlOverlay_DialogWindowTitle_AppCompat;
+			global::Microsoft.Identity.Client.Resource.Style.RtlOverlay_Widget_AppCompat_ActionBar_TitleItem = global::ContosoFieldService.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_ActionBar_TitleItem;
+			global::Microsoft.Identity.Client.Resource.Style.RtlOverlay_Widget_AppCompat_DialogTitle_Icon = global::ContosoFieldService.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_DialogTitle_Icon;
+			global::Microsoft.Identity.Client.Resource.Style.RtlOverlay_Widget_AppCompat_PopupMenuItem = global::ContosoFieldService.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_PopupMenuItem;
+			global::Microsoft.Identity.Client.Resource.Style.RtlOverlay_Widget_AppCompat_PopupMenuItem_InternalGroup = global::ContosoFieldService.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_PopupMenuItem_InternalGroup;
+			global::Microsoft.Identity.Client.Resource.Style.RtlOverlay_Widget_AppCompat_PopupMenuItem_Text = global::ContosoFieldService.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_PopupMenuItem_Text;
+			global::Microsoft.Identity.Client.Resource.Style.RtlOverlay_Widget_AppCompat_Search_DropDown = global::ContosoFieldService.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_Search_DropDown;
+			global::Microsoft.Identity.Client.Resource.Style.RtlOverlay_Widget_AppCompat_Search_DropDown_Icon1 = global::ContosoFieldService.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_Search_DropDown_Icon1;
+			global::Microsoft.Identity.Client.Resource.Style.RtlOverlay_Widget_AppCompat_Search_DropDown_Icon2 = global::ContosoFieldService.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_Search_DropDown_Icon2;
+			global::Microsoft.Identity.Client.Resource.Style.RtlOverlay_Widget_AppCompat_Search_DropDown_Query = global::ContosoFieldService.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_Search_DropDown_Query;
+			global::Microsoft.Identity.Client.Resource.Style.RtlOverlay_Widget_AppCompat_Search_DropDown_Text = global::ContosoFieldService.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_Search_DropDown_Text;
+			global::Microsoft.Identity.Client.Resource.Style.RtlOverlay_Widget_AppCompat_SearchView_MagIcon = global::ContosoFieldService.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_SearchView_MagIcon;
+			global::Microsoft.Identity.Client.Resource.Style.RtlUnderlay_Widget_AppCompat_ActionButton = global::ContosoFieldService.Droid.Resource.Style.RtlUnderlay_Widget_AppCompat_ActionButton;
+			global::Microsoft.Identity.Client.Resource.Style.RtlUnderlay_Widget_AppCompat_ActionButton_Overflow = global::ContosoFieldService.Droid.Resource.Style.RtlUnderlay_Widget_AppCompat_ActionButton_Overflow;
+			global::Microsoft.Identity.Client.Resource.Style.TextAppearance_AppCompat = global::ContosoFieldService.Droid.Resource.Style.TextAppearance_AppCompat;
+			global::Microsoft.Identity.Client.Resource.Style.TextAppearance_AppCompat_Body1 = global::ContosoFieldService.Droid.Resource.Style.TextAppearance_AppCompat_Body1;
+			global::Microsoft.Identity.Client.Resource.Style.TextAppearance_AppCompat_Body2 = global::ContosoFieldService.Droid.Resource.Style.TextAppearance_AppCompat_Body2;
+			global::Microsoft.Identity.Client.Resource.Style.TextAppearance_AppCompat_Button = global::ContosoFieldService.Droid.Resource.Style.TextAppearance_AppCompat_Button;
+			global::Microsoft.Identity.Client.Resource.Style.TextAppearance_AppCompat_Caption = global::ContosoFieldService.Droid.Resource.Style.TextAppearance_AppCompat_Caption;
+			global::Microsoft.Identity.Client.Resource.Style.TextAppearance_AppCompat_Display1 = global::ContosoFieldService.Droid.Resource.Style.TextAppearance_AppCompat_Display1;
+			global::Microsoft.Identity.Client.Resource.Style.TextAppearance_AppCompat_Display2 = global::ContosoFieldService.Droid.Resource.Style.TextAppearance_AppCompat_Display2;
+			global::Microsoft.Identity.Client.Resource.Style.TextAppearance_AppCompat_Display3 = global::ContosoFieldService.Droid.Resource.Style.TextAppearance_AppCompat_Display3;
+			global::Microsoft.Identity.Client.Resource.Style.TextAppearance_AppCompat_Display4 = global::ContosoFieldService.Droid.Resource.Style.TextAppearance_AppCompat_Display4;
+			global::Microsoft.Identity.Client.Resource.Style.TextAppearance_AppCompat_Headline = global::ContosoFieldService.Droid.Resource.Style.TextAppearance_AppCompat_Headline;
+			global::Microsoft.Identity.Client.Resource.Style.TextAppearance_AppCompat_Inverse = global::ContosoFieldService.Droid.Resource.Style.TextAppearance_AppCompat_Inverse;
+			global::Microsoft.Identity.Client.Resource.Style.TextAppearance_AppCompat_Large = global::ContosoFieldService.Droid.Resource.Style.TextAppearance_AppCompat_Large;
+			global::Microsoft.Identity.Client.Resource.Style.TextAppearance_AppCompat_Large_Inverse = global::ContosoFieldService.Droid.Resource.Style.TextAppearance_AppCompat_Large_Inverse;
+			global::Microsoft.Identity.Client.Resource.Style.TextAppearance_AppCompat_Light_SearchResult_Subtitle = global::ContosoFieldService.Droid.Resource.Style.TextAppearance_AppCompat_Light_SearchResult_Subtitle;
+			global::Microsoft.Identity.Client.Resource.Style.TextAppearance_AppCompat_Light_SearchResult_Title = global::ContosoFieldService.Droid.Resource.Style.TextAppearance_AppCompat_Light_SearchResult_Title;
+			global::Microsoft.Identity.Client.Resource.Style.TextAppearance_AppCompat_Light_Widget_PopupMenu_Large = global::ContosoFieldService.Droid.Resource.Style.TextAppearance_AppCompat_Light_Widget_PopupMenu_Large;
+			global::Microsoft.Identity.Client.Resource.Style.TextAppearance_AppCompat_Light_Widget_PopupMenu_Small = global::ContosoFieldService.Droid.Resource.Style.TextAppearance_AppCompat_Light_Widget_PopupMenu_Small;
+			global::Microsoft.Identity.Client.Resource.Style.TextAppearance_AppCompat_Medium = global::ContosoFieldService.Droid.Resource.Style.TextAppearance_AppCompat_Medium;
+			global::Microsoft.Identity.Client.Resource.Style.TextAppearance_AppCompat_Medium_Inverse = global::ContosoFieldService.Droid.Resource.Style.TextAppearance_AppCompat_Medium_Inverse;
+			global::Microsoft.Identity.Client.Resource.Style.TextAppearance_AppCompat_Menu = global::ContosoFieldService.Droid.Resource.Style.TextAppearance_AppCompat_Menu;
+			global::Microsoft.Identity.Client.Resource.Style.TextAppearance_AppCompat_Notification = global::ContosoFieldService.Droid.Resource.Style.TextAppearance_AppCompat_Notification;
+			global::Microsoft.Identity.Client.Resource.Style.TextAppearance_AppCompat_Notification_Info = global::ContosoFieldService.Droid.Resource.Style.TextAppearance_AppCompat_Notification_Info;
+			global::Microsoft.Identity.Client.Resource.Style.TextAppearance_AppCompat_Notification_Info_Media = global::ContosoFieldService.Droid.Resource.Style.TextAppearance_AppCompat_Notification_Info_Media;
+			global::Microsoft.Identity.Client.Resource.Style.TextAppearance_AppCompat_Notification_Line2 = global::ContosoFieldService.Droid.Resource.Style.TextAppearance_AppCompat_Notification_Line2;
+			global::Microsoft.Identity.Client.Resource.Style.TextAppearance_AppCompat_Notification_Line2_Media = global::ContosoFieldService.Droid.Resource.Style.TextAppearance_AppCompat_Notification_Line2_Media;
+			global::Microsoft.Identity.Client.Resource.Style.TextAppearance_AppCompat_Notification_Media = global::ContosoFieldService.Droid.Resource.Style.TextAppearance_AppCompat_Notification_Media;
+			global::Microsoft.Identity.Client.Resource.Style.TextAppearance_AppCompat_Notification_Time = global::ContosoFieldService.Droid.Resource.Style.TextAppearance_AppCompat_Notification_Time;
+			global::Microsoft.Identity.Client.Resource.Style.TextAppearance_AppCompat_Notification_Time_Media = global::ContosoFieldService.Droid.Resource.Style.TextAppearance_AppCompat_Notification_Time_Media;
+			global::Microsoft.Identity.Client.Resource.Style.TextAppearance_AppCompat_Notification_Title = global::ContosoFieldService.Droid.Resource.Style.TextAppearance_AppCompat_Notification_Title;
+			global::Microsoft.Identity.Client.Resource.Style.TextAppearance_AppCompat_Notification_Title_Media = global::ContosoFieldService.Droid.Resource.Style.TextAppearance_AppCompat_Notification_Title_Media;
+			global::Microsoft.Identity.Client.Resource.Style.TextAppearance_AppCompat_SearchResult_Subtitle = global::ContosoFieldService.Droid.Resource.Style.TextAppearance_AppCompat_SearchResult_Subtitle;
+			global::Microsoft.Identity.Client.Resource.Style.TextAppearance_AppCompat_SearchResult_Title = global::ContosoFieldService.Droid.Resource.Style.TextAppearance_AppCompat_SearchResult_Title;
+			global::Microsoft.Identity.Client.Resource.Style.TextAppearance_AppCompat_Small = global::ContosoFieldService.Droid.Resource.Style.TextAppearance_AppCompat_Small;
+			global::Microsoft.Identity.Client.Resource.Style.TextAppearance_AppCompat_Small_Inverse = global::ContosoFieldService.Droid.Resource.Style.TextAppearance_AppCompat_Small_Inverse;
+			global::Microsoft.Identity.Client.Resource.Style.TextAppearance_AppCompat_Subhead = global::ContosoFieldService.Droid.Resource.Style.TextAppearance_AppCompat_Subhead;
+			global::Microsoft.Identity.Client.Resource.Style.TextAppearance_AppCompat_Subhead_Inverse = global::ContosoFieldService.Droid.Resource.Style.TextAppearance_AppCompat_Subhead_Inverse;
+			global::Microsoft.Identity.Client.Resource.Style.TextAppearance_AppCompat_Title = global::ContosoFieldService.Droid.Resource.Style.TextAppearance_AppCompat_Title;
+			global::Microsoft.Identity.Client.Resource.Style.TextAppearance_AppCompat_Title_Inverse = global::ContosoFieldService.Droid.Resource.Style.TextAppearance_AppCompat_Title_Inverse;
+			global::Microsoft.Identity.Client.Resource.Style.TextAppearance_AppCompat_Widget_ActionBar_Menu = global::ContosoFieldService.Droid.Resource.Style.TextAppearance_AppCompat_Widget_ActionBar_Menu;
+			global::Microsoft.Identity.Client.Resource.Style.TextAppearance_AppCompat_Widget_ActionBar_Subtitle = global::ContosoFieldService.Droid.Resource.Style.TextAppearance_AppCompat_Widget_ActionBar_Subtitle;
+			global::Microsoft.Identity.Client.Resource.Style.TextAppearance_AppCompat_Widget_ActionBar_Subtitle_Inverse = global::ContosoFieldService.Droid.Resource.Style.TextAppearance_AppCompat_Widget_ActionBar_Subtitle_Inverse;
+			global::Microsoft.Identity.Client.Resource.Style.TextAppearance_AppCompat_Widget_ActionBar_Title = global::ContosoFieldService.Droid.Resource.Style.TextAppearance_AppCompat_Widget_ActionBar_Title;
+			global::Microsoft.Identity.Client.Resource.Style.TextAppearance_AppCompat_Widget_ActionBar_Title_Inverse = global::ContosoFieldService.Droid.Resource.Style.TextAppearance_AppCompat_Widget_ActionBar_Title_Inverse;
+			global::Microsoft.Identity.Client.Resource.Style.TextAppearance_AppCompat_Widget_ActionMode_Subtitle = global::ContosoFieldService.Droid.Resource.Style.TextAppearance_AppCompat_Widget_ActionMode_Subtitle;
+			global::Microsoft.Identity.Client.Resource.Style.TextAppearance_AppCompat_Widget_ActionMode_Subtitle_Inverse = global::ContosoFieldService.Droid.Resource.Style.TextAppearance_AppCompat_Widget_ActionMode_Subtitle_Inverse;
+			global::Microsoft.Identity.Client.Resource.Style.TextAppearance_AppCompat_Widget_ActionMode_Title = global::ContosoFieldService.Droid.Resource.Style.TextAppearance_AppCompat_Widget_ActionMode_Title;
+			global::Microsoft.Identity.Client.Resource.Style.TextAppearance_AppCompat_Widget_ActionMode_Title_Inverse = global::ContosoFieldService.Droid.Resource.Style.TextAppearance_AppCompat_Widget_ActionMode_Title_Inverse;
+			global::Microsoft.Identity.Client.Resource.Style.TextAppearance_AppCompat_Widget_Button = global::ContosoFieldService.Droid.Resource.Style.TextAppearance_AppCompat_Widget_Button;
+			global::Microsoft.Identity.Client.Resource.Style.TextAppearance_AppCompat_Widget_Button_Borderless_Colored = global::ContosoFieldService.Droid.Resource.Style.TextAppearance_AppCompat_Widget_Button_Borderless_Colored;
+			global::Microsoft.Identity.Client.Resource.Style.TextAppearance_AppCompat_Widget_Button_Colored = global::ContosoFieldService.Droid.Resource.Style.TextAppearance_AppCompat_Widget_Button_Colored;
+			global::Microsoft.Identity.Client.Resource.Style.TextAppearance_AppCompat_Widget_Button_Inverse = global::ContosoFieldService.Droid.Resource.Style.TextAppearance_AppCompat_Widget_Button_Inverse;
+			global::Microsoft.Identity.Client.Resource.Style.TextAppearance_AppCompat_Widget_DropDownItem = global::ContosoFieldService.Droid.Resource.Style.TextAppearance_AppCompat_Widget_DropDownItem;
+			global::Microsoft.Identity.Client.Resource.Style.TextAppearance_AppCompat_Widget_PopupMenu_Header = global::ContosoFieldService.Droid.Resource.Style.TextAppearance_AppCompat_Widget_PopupMenu_Header;
+			global::Microsoft.Identity.Client.Resource.Style.TextAppearance_AppCompat_Widget_PopupMenu_Large = global::ContosoFieldService.Droid.Resource.Style.TextAppearance_AppCompat_Widget_PopupMenu_Large;
+			global::Microsoft.Identity.Client.Resource.Style.TextAppearance_AppCompat_Widget_PopupMenu_Small = global::ContosoFieldService.Droid.Resource.Style.TextAppearance_AppCompat_Widget_PopupMenu_Small;
+			global::Microsoft.Identity.Client.Resource.Style.TextAppearance_AppCompat_Widget_Switch = global::ContosoFieldService.Droid.Resource.Style.TextAppearance_AppCompat_Widget_Switch;
+			global::Microsoft.Identity.Client.Resource.Style.TextAppearance_AppCompat_Widget_TextView_SpinnerItem = global::ContosoFieldService.Droid.Resource.Style.TextAppearance_AppCompat_Widget_TextView_SpinnerItem;
+			global::Microsoft.Identity.Client.Resource.Style.TextAppearance_StatusBar_EventContent = global::ContosoFieldService.Droid.Resource.Style.TextAppearance_StatusBar_EventContent;
+			global::Microsoft.Identity.Client.Resource.Style.TextAppearance_StatusBar_EventContent_Info = global::ContosoFieldService.Droid.Resource.Style.TextAppearance_StatusBar_EventContent_Info;
+			global::Microsoft.Identity.Client.Resource.Style.TextAppearance_StatusBar_EventContent_Line2 = global::ContosoFieldService.Droid.Resource.Style.TextAppearance_StatusBar_EventContent_Line2;
+			global::Microsoft.Identity.Client.Resource.Style.TextAppearance_StatusBar_EventContent_Time = global::ContosoFieldService.Droid.Resource.Style.TextAppearance_StatusBar_EventContent_Time;
+			global::Microsoft.Identity.Client.Resource.Style.TextAppearance_StatusBar_EventContent_Title = global::ContosoFieldService.Droid.Resource.Style.TextAppearance_StatusBar_EventContent_Title;
+			global::Microsoft.Identity.Client.Resource.Style.TextAppearance_Widget_AppCompat_ExpandedMenu_Item = global::ContosoFieldService.Droid.Resource.Style.TextAppearance_Widget_AppCompat_ExpandedMenu_Item;
+			global::Microsoft.Identity.Client.Resource.Style.TextAppearance_Widget_AppCompat_Toolbar_Subtitle = global::ContosoFieldService.Droid.Resource.Style.TextAppearance_Widget_AppCompat_Toolbar_Subtitle;
+			global::Microsoft.Identity.Client.Resource.Style.TextAppearance_Widget_AppCompat_Toolbar_Title = global::ContosoFieldService.Droid.Resource.Style.TextAppearance_Widget_AppCompat_Toolbar_Title;
+			global::Microsoft.Identity.Client.Resource.Style.Theme_AppCompat = global::ContosoFieldService.Droid.Resource.Style.Theme_AppCompat;
+			global::Microsoft.Identity.Client.Resource.Style.Theme_AppCompat_CompactMenu = global::ContosoFieldService.Droid.Resource.Style.Theme_AppCompat_CompactMenu;
+			global::Microsoft.Identity.Client.Resource.Style.Theme_AppCompat_DayNight = global::ContosoFieldService.Droid.Resource.Style.Theme_AppCompat_DayNight;
+			global::Microsoft.Identity.Client.Resource.Style.Theme_AppCompat_DayNight_DarkActionBar = global::ContosoFieldService.Droid.Resource.Style.Theme_AppCompat_DayNight_DarkActionBar;
+			global::Microsoft.Identity.Client.Resource.Style.Theme_AppCompat_DayNight_Dialog = global::ContosoFieldService.Droid.Resource.Style.Theme_AppCompat_DayNight_Dialog;
+			global::Microsoft.Identity.Client.Resource.Style.Theme_AppCompat_DayNight_Dialog_Alert = global::ContosoFieldService.Droid.Resource.Style.Theme_AppCompat_DayNight_Dialog_Alert;
+			global::Microsoft.Identity.Client.Resource.Style.Theme_AppCompat_DayNight_Dialog_MinWidth = global::ContosoFieldService.Droid.Resource.Style.Theme_AppCompat_DayNight_Dialog_MinWidth;
+			global::Microsoft.Identity.Client.Resource.Style.Theme_AppCompat_DayNight_DialogWhenLarge = global::ContosoFieldService.Droid.Resource.Style.Theme_AppCompat_DayNight_DialogWhenLarge;
+			global::Microsoft.Identity.Client.Resource.Style.Theme_AppCompat_DayNight_NoActionBar = global::ContosoFieldService.Droid.Resource.Style.Theme_AppCompat_DayNight_NoActionBar;
+			global::Microsoft.Identity.Client.Resource.Style.Theme_AppCompat_Dialog = global::ContosoFieldService.Droid.Resource.Style.Theme_AppCompat_Dialog;
+			global::Microsoft.Identity.Client.Resource.Style.Theme_AppCompat_Dialog_Alert = global::ContosoFieldService.Droid.Resource.Style.Theme_AppCompat_Dialog_Alert;
+			global::Microsoft.Identity.Client.Resource.Style.Theme_AppCompat_Dialog_MinWidth = global::ContosoFieldService.Droid.Resource.Style.Theme_AppCompat_Dialog_MinWidth;
+			global::Microsoft.Identity.Client.Resource.Style.Theme_AppCompat_DialogWhenLarge = global::ContosoFieldService.Droid.Resource.Style.Theme_AppCompat_DialogWhenLarge;
+			global::Microsoft.Identity.Client.Resource.Style.Theme_AppCompat_Light = global::ContosoFieldService.Droid.Resource.Style.Theme_AppCompat_Light;
+			global::Microsoft.Identity.Client.Resource.Style.Theme_AppCompat_Light_DarkActionBar = global::ContosoFieldService.Droid.Resource.Style.Theme_AppCompat_Light_DarkActionBar;
+			global::Microsoft.Identity.Client.Resource.Style.Theme_AppCompat_Light_Dialog = global::ContosoFieldService.Droid.Resource.Style.Theme_AppCompat_Light_Dialog;
+			global::Microsoft.Identity.Client.Resource.Style.Theme_AppCompat_Light_Dialog_Alert = global::ContosoFieldService.Droid.Resource.Style.Theme_AppCompat_Light_Dialog_Alert;
+			global::Microsoft.Identity.Client.Resource.Style.Theme_AppCompat_Light_Dialog_MinWidth = global::ContosoFieldService.Droid.Resource.Style.Theme_AppCompat_Light_Dialog_MinWidth;
+			global::Microsoft.Identity.Client.Resource.Style.Theme_AppCompat_Light_DialogWhenLarge = global::ContosoFieldService.Droid.Resource.Style.Theme_AppCompat_Light_DialogWhenLarge;
+			global::Microsoft.Identity.Client.Resource.Style.Theme_AppCompat_Light_NoActionBar = global::ContosoFieldService.Droid.Resource.Style.Theme_AppCompat_Light_NoActionBar;
+			global::Microsoft.Identity.Client.Resource.Style.Theme_AppCompat_NoActionBar = global::ContosoFieldService.Droid.Resource.Style.Theme_AppCompat_NoActionBar;
+			global::Microsoft.Identity.Client.Resource.Style.ThemeOverlay_AppCompat = global::ContosoFieldService.Droid.Resource.Style.ThemeOverlay_AppCompat;
+			global::Microsoft.Identity.Client.Resource.Style.ThemeOverlay_AppCompat_ActionBar = global::ContosoFieldService.Droid.Resource.Style.ThemeOverlay_AppCompat_ActionBar;
+			global::Microsoft.Identity.Client.Resource.Style.ThemeOverlay_AppCompat_Dark = global::ContosoFieldService.Droid.Resource.Style.ThemeOverlay_AppCompat_Dark;
+			global::Microsoft.Identity.Client.Resource.Style.ThemeOverlay_AppCompat_Dark_ActionBar = global::ContosoFieldService.Droid.Resource.Style.ThemeOverlay_AppCompat_Dark_ActionBar;
+			global::Microsoft.Identity.Client.Resource.Style.ThemeOverlay_AppCompat_Dialog = global::ContosoFieldService.Droid.Resource.Style.ThemeOverlay_AppCompat_Dialog;
+			global::Microsoft.Identity.Client.Resource.Style.ThemeOverlay_AppCompat_Dialog_Alert = global::ContosoFieldService.Droid.Resource.Style.ThemeOverlay_AppCompat_Dialog_Alert;
+			global::Microsoft.Identity.Client.Resource.Style.ThemeOverlay_AppCompat_Light = global::ContosoFieldService.Droid.Resource.Style.ThemeOverlay_AppCompat_Light;
+			global::Microsoft.Identity.Client.Resource.Style.Widget_AppCompat_ActionBar = global::ContosoFieldService.Droid.Resource.Style.Widget_AppCompat_ActionBar;
+			global::Microsoft.Identity.Client.Resource.Style.Widget_AppCompat_ActionBar_Solid = global::ContosoFieldService.Droid.Resource.Style.Widget_AppCompat_ActionBar_Solid;
+			global::Microsoft.Identity.Client.Resource.Style.Widget_AppCompat_ActionBar_TabBar = global::ContosoFieldService.Droid.Resource.Style.Widget_AppCompat_ActionBar_TabBar;
+			global::Microsoft.Identity.Client.Resource.Style.Widget_AppCompat_ActionBar_TabText = global::ContosoFieldService.Droid.Resource.Style.Widget_AppCompat_ActionBar_TabText;
+			global::Microsoft.Identity.Client.Resource.Style.Widget_AppCompat_ActionBar_TabView = global::ContosoFieldService.Droid.Resource.Style.Widget_AppCompat_ActionBar_TabView;
+			global::Microsoft.Identity.Client.Resource.Style.Widget_AppCompat_ActionButton = global::ContosoFieldService.Droid.Resource.Style.Widget_AppCompat_ActionButton;
+			global::Microsoft.Identity.Client.Resource.Style.Widget_AppCompat_ActionButton_CloseMode = global::ContosoFieldService.Droid.Resource.Style.Widget_AppCompat_ActionButton_CloseMode;
+			global::Microsoft.Identity.Client.Resource.Style.Widget_AppCompat_ActionButton_Overflow = global::ContosoFieldService.Droid.Resource.Style.Widget_AppCompat_ActionButton_Overflow;
+			global::Microsoft.Identity.Client.Resource.Style.Widget_AppCompat_ActionMode = global::ContosoFieldService.Droid.Resource.Style.Widget_AppCompat_ActionMode;
+			global::Microsoft.Identity.Client.Resource.Style.Widget_AppCompat_ActivityChooserView = global::ContosoFieldService.Droid.Resource.Style.Widget_AppCompat_ActivityChooserView;
+			global::Microsoft.Identity.Client.Resource.Style.Widget_AppCompat_AutoCompleteTextView = global::ContosoFieldService.Droid.Resource.Style.Widget_AppCompat_AutoCompleteTextView;
+			global::Microsoft.Identity.Client.Resource.Style.Widget_AppCompat_Button = global::ContosoFieldService.Droid.Resource.Style.Widget_AppCompat_Button;
+			global::Microsoft.Identity.Client.Resource.Style.Widget_AppCompat_Button_Borderless = global::ContosoFieldService.Droid.Resource.Style.Widget_AppCompat_Button_Borderless;
+			global::Microsoft.Identity.Client.Resource.Style.Widget_AppCompat_Button_Borderless_Colored = global::ContosoFieldService.Droid.Resource.Style.Widget_AppCompat_Button_Borderless_Colored;
+			global::Microsoft.Identity.Client.Resource.Style.Widget_AppCompat_Button_ButtonBar_AlertDialog = global::ContosoFieldService.Droid.Resource.Style.Widget_AppCompat_Button_ButtonBar_AlertDialog;
+			global::Microsoft.Identity.Client.Resource.Style.Widget_AppCompat_Button_Colored = global::ContosoFieldService.Droid.Resource.Style.Widget_AppCompat_Button_Colored;
+			global::Microsoft.Identity.Client.Resource.Style.Widget_AppCompat_Button_Small = global::ContosoFieldService.Droid.Resource.Style.Widget_AppCompat_Button_Small;
+			global::Microsoft.Identity.Client.Resource.Style.Widget_AppCompat_ButtonBar = global::ContosoFieldService.Droid.Resource.Style.Widget_AppCompat_ButtonBar;
+			global::Microsoft.Identity.Client.Resource.Style.Widget_AppCompat_ButtonBar_AlertDialog = global::ContosoFieldService.Droid.Resource.Style.Widget_AppCompat_ButtonBar_AlertDialog;
+			global::Microsoft.Identity.Client.Resource.Style.Widget_AppCompat_CompoundButton_CheckBox = global::ContosoFieldService.Droid.Resource.Style.Widget_AppCompat_CompoundButton_CheckBox;
+			global::Microsoft.Identity.Client.Resource.Style.Widget_AppCompat_CompoundButton_RadioButton = global::ContosoFieldService.Droid.Resource.Style.Widget_AppCompat_CompoundButton_RadioButton;
+			global::Microsoft.Identity.Client.Resource.Style.Widget_AppCompat_CompoundButton_Switch = global::ContosoFieldService.Droid.Resource.Style.Widget_AppCompat_CompoundButton_Switch;
+			global::Microsoft.Identity.Client.Resource.Style.Widget_AppCompat_DrawerArrowToggle = global::ContosoFieldService.Droid.Resource.Style.Widget_AppCompat_DrawerArrowToggle;
+			global::Microsoft.Identity.Client.Resource.Style.Widget_AppCompat_DropDownItem_Spinner = global::ContosoFieldService.Droid.Resource.Style.Widget_AppCompat_DropDownItem_Spinner;
+			global::Microsoft.Identity.Client.Resource.Style.Widget_AppCompat_EditText = global::ContosoFieldService.Droid.Resource.Style.Widget_AppCompat_EditText;
+			global::Microsoft.Identity.Client.Resource.Style.Widget_AppCompat_ImageButton = global::ContosoFieldService.Droid.Resource.Style.Widget_AppCompat_ImageButton;
+			global::Microsoft.Identity.Client.Resource.Style.Widget_AppCompat_Light_ActionBar = global::ContosoFieldService.Droid.Resource.Style.Widget_AppCompat_Light_ActionBar;
+			global::Microsoft.Identity.Client.Resource.Style.Widget_AppCompat_Light_ActionBar_Solid = global::ContosoFieldService.Droid.Resource.Style.Widget_AppCompat_Light_ActionBar_Solid;
+			global::Microsoft.Identity.Client.Resource.Style.Widget_AppCompat_Light_ActionBar_Solid_Inverse = global::ContosoFieldService.Droid.Resource.Style.Widget_AppCompat_Light_ActionBar_Solid_Inverse;
+			global::Microsoft.Identity.Client.Resource.Style.Widget_AppCompat_Light_ActionBar_TabBar = global::ContosoFieldService.Droid.Resource.Style.Widget_AppCompat_Light_ActionBar_TabBar;
+			global::Microsoft.Identity.Client.Resource.Style.Widget_AppCompat_Light_ActionBar_TabBar_Inverse = global::ContosoFieldService.Droid.Resource.Style.Widget_AppCompat_Light_ActionBar_TabBar_Inverse;
+			global::Microsoft.Identity.Client.Resource.Style.Widget_AppCompat_Light_ActionBar_TabText = global::ContosoFieldService.Droid.Resource.Style.Widget_AppCompat_Light_ActionBar_TabText;
+			global::Microsoft.Identity.Client.Resource.Style.Widget_AppCompat_Light_ActionBar_TabText_Inverse = global::ContosoFieldService.Droid.Resource.Style.Widget_AppCompat_Light_ActionBar_TabText_Inverse;
+			global::Microsoft.Identity.Client.Resource.Style.Widget_AppCompat_Light_ActionBar_TabView = global::ContosoFieldService.Droid.Resource.Style.Widget_AppCompat_Light_ActionBar_TabView;
+			global::Microsoft.Identity.Client.Resource.Style.Widget_AppCompat_Light_ActionBar_TabView_Inverse = global::ContosoFieldService.Droid.Resource.Style.Widget_AppCompat_Light_ActionBar_TabView_Inverse;
+			global::Microsoft.Identity.Client.Resource.Style.Widget_AppCompat_Light_ActionButton = global::ContosoFieldService.Droid.Resource.Style.Widget_AppCompat_Light_ActionButton;
+			global::Microsoft.Identity.Client.Resource.Style.Widget_AppCompat_Light_ActionButton_CloseMode = global::ContosoFieldService.Droid.Resource.Style.Widget_AppCompat_Light_ActionButton_CloseMode;
+			global::Microsoft.Identity.Client.Resource.Style.Widget_AppCompat_Light_ActionButton_Overflow = global::ContosoFieldService.Droid.Resource.Style.Widget_AppCompat_Light_ActionButton_Overflow;
+			global::Microsoft.Identity.Client.Resource.Style.Widget_AppCompat_Light_ActionMode_Inverse = global::ContosoFieldService.Droid.Resource.Style.Widget_AppCompat_Light_ActionMode_Inverse;
+			global::Microsoft.Identity.Client.Resource.Style.Widget_AppCompat_Light_ActivityChooserView = global::ContosoFieldService.Droid.Resource.Style.Widget_AppCompat_Light_ActivityChooserView;
+			global::Microsoft.Identity.Client.Resource.Style.Widget_AppCompat_Light_AutoCompleteTextView = global::ContosoFieldService.Droid.Resource.Style.Widget_AppCompat_Light_AutoCompleteTextView;
+			global::Microsoft.Identity.Client.Resource.Style.Widget_AppCompat_Light_DropDownItem_Spinner = global::ContosoFieldService.Droid.Resource.Style.Widget_AppCompat_Light_DropDownItem_Spinner;
+			global::Microsoft.Identity.Client.Resource.Style.Widget_AppCompat_Light_ListPopupWindow = global::ContosoFieldService.Droid.Resource.Style.Widget_AppCompat_Light_ListPopupWindow;
+			global::Microsoft.Identity.Client.Resource.Style.Widget_AppCompat_Light_ListView_DropDown = global::ContosoFieldService.Droid.Resource.Style.Widget_AppCompat_Light_ListView_DropDown;
+			global::Microsoft.Identity.Client.Resource.Style.Widget_AppCompat_Light_PopupMenu = global::ContosoFieldService.Droid.Resource.Style.Widget_AppCompat_Light_PopupMenu;
+			global::Microsoft.Identity.Client.Resource.Style.Widget_AppCompat_Light_PopupMenu_Overflow = global::ContosoFieldService.Droid.Resource.Style.Widget_AppCompat_Light_PopupMenu_Overflow;
+			global::Microsoft.Identity.Client.Resource.Style.Widget_AppCompat_Light_SearchView = global::ContosoFieldService.Droid.Resource.Style.Widget_AppCompat_Light_SearchView;
+			global::Microsoft.Identity.Client.Resource.Style.Widget_AppCompat_Light_Spinner_DropDown_ActionBar = global::ContosoFieldService.Droid.Resource.Style.Widget_AppCompat_Light_Spinner_DropDown_ActionBar;
+			global::Microsoft.Identity.Client.Resource.Style.Widget_AppCompat_ListMenuView = global::ContosoFieldService.Droid.Resource.Style.Widget_AppCompat_ListMenuView;
+			global::Microsoft.Identity.Client.Resource.Style.Widget_AppCompat_ListPopupWindow = global::ContosoFieldService.Droid.Resource.Style.Widget_AppCompat_ListPopupWindow;
+			global::Microsoft.Identity.Client.Resource.Style.Widget_AppCompat_ListView = global::ContosoFieldService.Droid.Resource.Style.Widget_AppCompat_ListView;
+			global::Microsoft.Identity.Client.Resource.Style.Widget_AppCompat_ListView_DropDown = global::ContosoFieldService.Droid.Resource.Style.Widget_AppCompat_ListView_DropDown;
+			global::Microsoft.Identity.Client.Resource.Style.Widget_AppCompat_ListView_Menu = global::ContosoFieldService.Droid.Resource.Style.Widget_AppCompat_ListView_Menu;
+			global::Microsoft.Identity.Client.Resource.Style.Widget_AppCompat_NotificationActionContainer = global::ContosoFieldService.Droid.Resource.Style.Widget_AppCompat_NotificationActionContainer;
+			global::Microsoft.Identity.Client.Resource.Style.Widget_AppCompat_NotificationActionText = global::ContosoFieldService.Droid.Resource.Style.Widget_AppCompat_NotificationActionText;
+			global::Microsoft.Identity.Client.Resource.Style.Widget_AppCompat_PopupMenu = global::ContosoFieldService.Droid.Resource.Style.Widget_AppCompat_PopupMenu;
+			global::Microsoft.Identity.Client.Resource.Style.Widget_AppCompat_PopupMenu_Overflow = global::ContosoFieldService.Droid.Resource.Style.Widget_AppCompat_PopupMenu_Overflow;
+			global::Microsoft.Identity.Client.Resource.Style.Widget_AppCompat_PopupWindow = global::ContosoFieldService.Droid.Resource.Style.Widget_AppCompat_PopupWindow;
+			global::Microsoft.Identity.Client.Resource.Style.Widget_AppCompat_ProgressBar = global::ContosoFieldService.Droid.Resource.Style.Widget_AppCompat_ProgressBar;
+			global::Microsoft.Identity.Client.Resource.Style.Widget_AppCompat_ProgressBar_Horizontal = global::ContosoFieldService.Droid.Resource.Style.Widget_AppCompat_ProgressBar_Horizontal;
+			global::Microsoft.Identity.Client.Resource.Style.Widget_AppCompat_RatingBar = global::ContosoFieldService.Droid.Resource.Style.Widget_AppCompat_RatingBar;
+			global::Microsoft.Identity.Client.Resource.Style.Widget_AppCompat_RatingBar_Indicator = global::ContosoFieldService.Droid.Resource.Style.Widget_AppCompat_RatingBar_Indicator;
+			global::Microsoft.Identity.Client.Resource.Style.Widget_AppCompat_RatingBar_Small = global::ContosoFieldService.Droid.Resource.Style.Widget_AppCompat_RatingBar_Small;
+			global::Microsoft.Identity.Client.Resource.Style.Widget_AppCompat_SearchView = global::ContosoFieldService.Droid.Resource.Style.Widget_AppCompat_SearchView;
+			global::Microsoft.Identity.Client.Resource.Style.Widget_AppCompat_SearchView_ActionBar = global::ContosoFieldService.Droid.Resource.Style.Widget_AppCompat_SearchView_ActionBar;
+			global::Microsoft.Identity.Client.Resource.Style.Widget_AppCompat_SeekBar = global::ContosoFieldService.Droid.Resource.Style.Widget_AppCompat_SeekBar;
+			global::Microsoft.Identity.Client.Resource.Style.Widget_AppCompat_SeekBar_Discrete = global::ContosoFieldService.Droid.Resource.Style.Widget_AppCompat_SeekBar_Discrete;
+			global::Microsoft.Identity.Client.Resource.Style.Widget_AppCompat_Spinner = global::ContosoFieldService.Droid.Resource.Style.Widget_AppCompat_Spinner;
+			global::Microsoft.Identity.Client.Resource.Style.Widget_AppCompat_Spinner_DropDown = global::ContosoFieldService.Droid.Resource.Style.Widget_AppCompat_Spinner_DropDown;
+			global::Microsoft.Identity.Client.Resource.Style.Widget_AppCompat_Spinner_DropDown_ActionBar = global::ContosoFieldService.Droid.Resource.Style.Widget_AppCompat_Spinner_DropDown_ActionBar;
+			global::Microsoft.Identity.Client.Resource.Style.Widget_AppCompat_Spinner_Underlined = global::ContosoFieldService.Droid.Resource.Style.Widget_AppCompat_Spinner_Underlined;
+			global::Microsoft.Identity.Client.Resource.Style.Widget_AppCompat_TextView_SpinnerItem = global::ContosoFieldService.Droid.Resource.Style.Widget_AppCompat_TextView_SpinnerItem;
+			global::Microsoft.Identity.Client.Resource.Style.Widget_AppCompat_Toolbar = global::ContosoFieldService.Droid.Resource.Style.Widget_AppCompat_Toolbar;
+			global::Microsoft.Identity.Client.Resource.Style.Widget_AppCompat_Toolbar_Button_Navigation = global::ContosoFieldService.Droid.Resource.Style.Widget_AppCompat_Toolbar_Button_Navigation;
+			global::Microsoft.Identity.Client.Resource.Styleable.ActionBar = global::ContosoFieldService.Droid.Resource.Styleable.ActionBar;
+			global::Microsoft.Identity.Client.Resource.Styleable.ActionBar_background = global::ContosoFieldService.Droid.Resource.Styleable.ActionBar_background;
+			global::Microsoft.Identity.Client.Resource.Styleable.ActionBar_backgroundSplit = global::ContosoFieldService.Droid.Resource.Styleable.ActionBar_backgroundSplit;
+			global::Microsoft.Identity.Client.Resource.Styleable.ActionBar_backgroundStacked = global::ContosoFieldService.Droid.Resource.Styleable.ActionBar_backgroundStacked;
+			global::Microsoft.Identity.Client.Resource.Styleable.ActionBar_contentInsetEnd = global::ContosoFieldService.Droid.Resource.Styleable.ActionBar_contentInsetEnd;
+			global::Microsoft.Identity.Client.Resource.Styleable.ActionBar_contentInsetEndWithActions = global::ContosoFieldService.Droid.Resource.Styleable.ActionBar_contentInsetEndWithActions;
+			global::Microsoft.Identity.Client.Resource.Styleable.ActionBar_contentInsetLeft = global::ContosoFieldService.Droid.Resource.Styleable.ActionBar_contentInsetLeft;
+			global::Microsoft.Identity.Client.Resource.Styleable.ActionBar_contentInsetRight = global::ContosoFieldService.Droid.Resource.Styleable.ActionBar_contentInsetRight;
+			global::Microsoft.Identity.Client.Resource.Styleable.ActionBar_contentInsetStart = global::ContosoFieldService.Droid.Resource.Styleable.ActionBar_contentInsetStart;
+			global::Microsoft.Identity.Client.Resource.Styleable.ActionBar_contentInsetStartWithNavigation = global::ContosoFieldService.Droid.Resource.Styleable.ActionBar_contentInsetStartWithNavigation;
+			global::Microsoft.Identity.Client.Resource.Styleable.ActionBar_customNavigationLayout = global::ContosoFieldService.Droid.Resource.Styleable.ActionBar_customNavigationLayout;
+			global::Microsoft.Identity.Client.Resource.Styleable.ActionBar_displayOptions = global::ContosoFieldService.Droid.Resource.Styleable.ActionBar_displayOptions;
+			global::Microsoft.Identity.Client.Resource.Styleable.ActionBar_divider = global::ContosoFieldService.Droid.Resource.Styleable.ActionBar_divider;
+			global::Microsoft.Identity.Client.Resource.Styleable.ActionBar_elevation = global::ContosoFieldService.Droid.Resource.Styleable.ActionBar_elevation;
+			global::Microsoft.Identity.Client.Resource.Styleable.ActionBar_height = global::ContosoFieldService.Droid.Resource.Styleable.ActionBar_height;
+			global::Microsoft.Identity.Client.Resource.Styleable.ActionBar_hideOnContentScroll = global::ContosoFieldService.Droid.Resource.Styleable.ActionBar_hideOnContentScroll;
+			global::Microsoft.Identity.Client.Resource.Styleable.ActionBar_homeAsUpIndicator = global::ContosoFieldService.Droid.Resource.Styleable.ActionBar_homeAsUpIndicator;
+			global::Microsoft.Identity.Client.Resource.Styleable.ActionBar_homeLayout = global::ContosoFieldService.Droid.Resource.Styleable.ActionBar_homeLayout;
+			global::Microsoft.Identity.Client.Resource.Styleable.ActionBar_icon = global::ContosoFieldService.Droid.Resource.Styleable.ActionBar_icon;
+			global::Microsoft.Identity.Client.Resource.Styleable.ActionBar_indeterminateProgressStyle = global::ContosoFieldService.Droid.Resource.Styleable.ActionBar_indeterminateProgressStyle;
+			global::Microsoft.Identity.Client.Resource.Styleable.ActionBar_itemPadding = global::ContosoFieldService.Droid.Resource.Styleable.ActionBar_itemPadding;
+			global::Microsoft.Identity.Client.Resource.Styleable.ActionBar_logo = global::ContosoFieldService.Droid.Resource.Styleable.ActionBar_logo;
+			global::Microsoft.Identity.Client.Resource.Styleable.ActionBar_navigationMode = global::ContosoFieldService.Droid.Resource.Styleable.ActionBar_navigationMode;
+			global::Microsoft.Identity.Client.Resource.Styleable.ActionBar_popupTheme = global::ContosoFieldService.Droid.Resource.Styleable.ActionBar_popupTheme;
+			global::Microsoft.Identity.Client.Resource.Styleable.ActionBar_progressBarPadding = global::ContosoFieldService.Droid.Resource.Styleable.ActionBar_progressBarPadding;
+			global::Microsoft.Identity.Client.Resource.Styleable.ActionBar_progressBarStyle = global::ContosoFieldService.Droid.Resource.Styleable.ActionBar_progressBarStyle;
+			global::Microsoft.Identity.Client.Resource.Styleable.ActionBar_subtitle = global::ContosoFieldService.Droid.Resource.Styleable.ActionBar_subtitle;
+			global::Microsoft.Identity.Client.Resource.Styleable.ActionBar_subtitleTextStyle = global::ContosoFieldService.Droid.Resource.Styleable.ActionBar_subtitleTextStyle;
+			global::Microsoft.Identity.Client.Resource.Styleable.ActionBar_title = global::ContosoFieldService.Droid.Resource.Styleable.ActionBar_title;
+			global::Microsoft.Identity.Client.Resource.Styleable.ActionBar_titleTextStyle = global::ContosoFieldService.Droid.Resource.Styleable.ActionBar_titleTextStyle;
+			global::Microsoft.Identity.Client.Resource.Styleable.ActionBarLayout = global::ContosoFieldService.Droid.Resource.Styleable.ActionBarLayout;
+			global::Microsoft.Identity.Client.Resource.Styleable.ActionBarLayout_android_layout_gravity = global::ContosoFieldService.Droid.Resource.Styleable.ActionBarLayout_android_layout_gravity;
+			global::Microsoft.Identity.Client.Resource.Styleable.ActionMenuItemView = global::ContosoFieldService.Droid.Resource.Styleable.ActionMenuItemView;
+			global::Microsoft.Identity.Client.Resource.Styleable.ActionMenuItemView_android_minWidth = global::ContosoFieldService.Droid.Resource.Styleable.ActionMenuItemView_android_minWidth;
+			global::Microsoft.Identity.Client.Resource.Styleable.ActionMenuView = global::ContosoFieldService.Droid.Resource.Styleable.ActionMenuView;
+			global::Microsoft.Identity.Client.Resource.Styleable.ActionMode = global::ContosoFieldService.Droid.Resource.Styleable.ActionMode;
+			global::Microsoft.Identity.Client.Resource.Styleable.ActionMode_background = global::ContosoFieldService.Droid.Resource.Styleable.ActionMode_background;
+			global::Microsoft.Identity.Client.Resource.Styleable.ActionMode_backgroundSplit = global::ContosoFieldService.Droid.Resource.Styleable.ActionMode_backgroundSplit;
+			global::Microsoft.Identity.Client.Resource.Styleable.ActionMode_closeItemLayout = global::ContosoFieldService.Droid.Resource.Styleable.ActionMode_closeItemLayout;
+			global::Microsoft.Identity.Client.Resource.Styleable.ActionMode_height = global::ContosoFieldService.Droid.Resource.Styleable.ActionMode_height;
+			global::Microsoft.Identity.Client.Resource.Styleable.ActionMode_subtitleTextStyle = global::ContosoFieldService.Droid.Resource.Styleable.ActionMode_subtitleTextStyle;
+			global::Microsoft.Identity.Client.Resource.Styleable.ActionMode_titleTextStyle = global::ContosoFieldService.Droid.Resource.Styleable.ActionMode_titleTextStyle;
+			global::Microsoft.Identity.Client.Resource.Styleable.ActivityChooserView = global::ContosoFieldService.Droid.Resource.Styleable.ActivityChooserView;
+			global::Microsoft.Identity.Client.Resource.Styleable.ActivityChooserView_expandActivityOverflowButtonDrawable = global::ContosoFieldService.Droid.Resource.Styleable.ActivityChooserView_expandActivityOverflowButtonDrawable;
+			global::Microsoft.Identity.Client.Resource.Styleable.ActivityChooserView_initialActivityCount = global::ContosoFieldService.Droid.Resource.Styleable.ActivityChooserView_initialActivityCount;
+			global::Microsoft.Identity.Client.Resource.Styleable.AlertDialog = global::ContosoFieldService.Droid.Resource.Styleable.AlertDialog;
+			global::Microsoft.Identity.Client.Resource.Styleable.AlertDialog_android_layout = global::ContosoFieldService.Droid.Resource.Styleable.AlertDialog_android_layout;
+			global::Microsoft.Identity.Client.Resource.Styleable.AlertDialog_buttonPanelSideLayout = global::ContosoFieldService.Droid.Resource.Styleable.AlertDialog_buttonPanelSideLayout;
+			global::Microsoft.Identity.Client.Resource.Styleable.AlertDialog_listItemLayout = global::ContosoFieldService.Droid.Resource.Styleable.AlertDialog_listItemLayout;
+			global::Microsoft.Identity.Client.Resource.Styleable.AlertDialog_listLayout = global::ContosoFieldService.Droid.Resource.Styleable.AlertDialog_listLayout;
+			global::Microsoft.Identity.Client.Resource.Styleable.AlertDialog_multiChoiceItemLayout = global::ContosoFieldService.Droid.Resource.Styleable.AlertDialog_multiChoiceItemLayout;
+			global::Microsoft.Identity.Client.Resource.Styleable.AlertDialog_showTitle = global::ContosoFieldService.Droid.Resource.Styleable.AlertDialog_showTitle;
+			global::Microsoft.Identity.Client.Resource.Styleable.AlertDialog_singleChoiceItemLayout = global::ContosoFieldService.Droid.Resource.Styleable.AlertDialog_singleChoiceItemLayout;
+			global::Microsoft.Identity.Client.Resource.Styleable.AppCompatImageView = global::ContosoFieldService.Droid.Resource.Styleable.AppCompatImageView;
+			global::Microsoft.Identity.Client.Resource.Styleable.AppCompatImageView_android_src = global::ContosoFieldService.Droid.Resource.Styleable.AppCompatImageView_android_src;
+			global::Microsoft.Identity.Client.Resource.Styleable.AppCompatImageView_srcCompat = global::ContosoFieldService.Droid.Resource.Styleable.AppCompatImageView_srcCompat;
+			global::Microsoft.Identity.Client.Resource.Styleable.AppCompatImageView_tint = global::ContosoFieldService.Droid.Resource.Styleable.AppCompatImageView_tint;
+			global::Microsoft.Identity.Client.Resource.Styleable.AppCompatImageView_tintMode = global::ContosoFieldService.Droid.Resource.Styleable.AppCompatImageView_tintMode;
+			global::Microsoft.Identity.Client.Resource.Styleable.AppCompatSeekBar = global::ContosoFieldService.Droid.Resource.Styleable.AppCompatSeekBar;
+			global::Microsoft.Identity.Client.Resource.Styleable.AppCompatSeekBar_android_thumb = global::ContosoFieldService.Droid.Resource.Styleable.AppCompatSeekBar_android_thumb;
+			global::Microsoft.Identity.Client.Resource.Styleable.AppCompatSeekBar_tickMark = global::ContosoFieldService.Droid.Resource.Styleable.AppCompatSeekBar_tickMark;
+			global::Microsoft.Identity.Client.Resource.Styleable.AppCompatSeekBar_tickMarkTint = global::ContosoFieldService.Droid.Resource.Styleable.AppCompatSeekBar_tickMarkTint;
+			global::Microsoft.Identity.Client.Resource.Styleable.AppCompatSeekBar_tickMarkTintMode = global::ContosoFieldService.Droid.Resource.Styleable.AppCompatSeekBar_tickMarkTintMode;
+			global::Microsoft.Identity.Client.Resource.Styleable.AppCompatTextHelper = global::ContosoFieldService.Droid.Resource.Styleable.AppCompatTextHelper;
+			global::Microsoft.Identity.Client.Resource.Styleable.AppCompatTextHelper_android_drawableBottom = global::ContosoFieldService.Droid.Resource.Styleable.AppCompatTextHelper_android_drawableBottom;
+			global::Microsoft.Identity.Client.Resource.Styleable.AppCompatTextHelper_android_drawableEnd = global::ContosoFieldService.Droid.Resource.Styleable.AppCompatTextHelper_android_drawableEnd;
+			global::Microsoft.Identity.Client.Resource.Styleable.AppCompatTextHelper_android_drawableLeft = global::ContosoFieldService.Droid.Resource.Styleable.AppCompatTextHelper_android_drawableLeft;
+			global::Microsoft.Identity.Client.Resource.Styleable.AppCompatTextHelper_android_drawableRight = global::ContosoFieldService.Droid.Resource.Styleable.AppCompatTextHelper_android_drawableRight;
+			global::Microsoft.Identity.Client.Resource.Styleable.AppCompatTextHelper_android_drawableStart = global::ContosoFieldService.Droid.Resource.Styleable.AppCompatTextHelper_android_drawableStart;
+			global::Microsoft.Identity.Client.Resource.Styleable.AppCompatTextHelper_android_drawableTop = global::ContosoFieldService.Droid.Resource.Styleable.AppCompatTextHelper_android_drawableTop;
+			global::Microsoft.Identity.Client.Resource.Styleable.AppCompatTextHelper_android_textAppearance = global::ContosoFieldService.Droid.Resource.Styleable.AppCompatTextHelper_android_textAppearance;
+			global::Microsoft.Identity.Client.Resource.Styleable.AppCompatTextView = global::ContosoFieldService.Droid.Resource.Styleable.AppCompatTextView;
+			global::Microsoft.Identity.Client.Resource.Styleable.AppCompatTextView_android_textAppearance = global::ContosoFieldService.Droid.Resource.Styleable.AppCompatTextView_android_textAppearance;
+			global::Microsoft.Identity.Client.Resource.Styleable.AppCompatTextView_textAllCaps = global::ContosoFieldService.Droid.Resource.Styleable.AppCompatTextView_textAllCaps;
+			global::Microsoft.Identity.Client.Resource.Styleable.AppCompatTheme = global::ContosoFieldService.Droid.Resource.Styleable.AppCompatTheme;
+			global::Microsoft.Identity.Client.Resource.Styleable.AppCompatTheme_actionBarDivider = global::ContosoFieldService.Droid.Resource.Styleable.AppCompatTheme_actionBarDivider;
+			global::Microsoft.Identity.Client.Resource.Styleable.AppCompatTheme_actionBarItemBackground = global::ContosoFieldService.Droid.Resource.Styleable.AppCompatTheme_actionBarItemBackground;
+			global::Microsoft.Identity.Client.Resource.Styleable.AppCompatTheme_actionBarPopupTheme = global::ContosoFieldService.Droid.Resource.Styleable.AppCompatTheme_actionBarPopupTheme;
+			global::Microsoft.Identity.Client.Resource.Styleable.AppCompatTheme_actionBarSize = global::ContosoFieldService.Droid.Resource.Styleable.AppCompatTheme_actionBarSize;
+			global::Microsoft.Identity.Client.Resource.Styleable.AppCompatTheme_actionBarSplitStyle = global::ContosoFieldService.Droid.Resource.Styleable.AppCompatTheme_actionBarSplitStyle;
+			global::Microsoft.Identity.Client.Resource.Styleable.AppCompatTheme_actionBarStyle = global::ContosoFieldService.Droid.Resource.Styleable.AppCompatTheme_actionBarStyle;
+			global::Microsoft.Identity.Client.Resource.Styleable.AppCompatTheme_actionBarTabBarStyle = global::ContosoFieldService.Droid.Resource.Styleable.AppCompatTheme_actionBarTabBarStyle;
+			global::Microsoft.Identity.Client.Resource.Styleable.AppCompatTheme_actionBarTabStyle = global::ContosoFieldService.Droid.Resource.Styleable.AppCompatTheme_actionBarTabStyle;
+			global::Microsoft.Identity.Client.Resource.Styleable.AppCompatTheme_actionBarTabTextStyle = global::ContosoFieldService.Droid.Resource.Styleable.AppCompatTheme_actionBarTabTextStyle;
+			global::Microsoft.Identity.Client.Resource.Styleable.AppCompatTheme_actionBarTheme = global::ContosoFieldService.Droid.Resource.Styleable.AppCompatTheme_actionBarTheme;
+			global::Microsoft.Identity.Client.Resource.Styleable.AppCompatTheme_actionBarWidgetTheme = global::ContosoFieldService.Droid.Resource.Styleable.AppCompatTheme_actionBarWidgetTheme;
+			global::Microsoft.Identity.Client.Resource.Styleable.AppCompatTheme_actionButtonStyle = global::ContosoFieldService.Droid.Resource.Styleable.AppCompatTheme_actionButtonStyle;
+			global::Microsoft.Identity.Client.Resource.Styleable.AppCompatTheme_actionDropDownStyle = global::ContosoFieldService.Droid.Resource.Styleable.AppCompatTheme_actionDropDownStyle;
+			global::Microsoft.Identity.Client.Resource.Styleable.AppCompatTheme_actionMenuTextAppearance = global::ContosoFieldService.Droid.Resource.Styleable.AppCompatTheme_actionMenuTextAppearance;
+			global::Microsoft.Identity.Client.Resource.Styleable.AppCompatTheme_actionMenuTextColor = global::ContosoFieldService.Droid.Resource.Styleable.AppCompatTheme_actionMenuTextColor;
+			global::Microsoft.Identity.Client.Resource.Styleable.AppCompatTheme_actionModeBackground = global::ContosoFieldService.Droid.Resource.Styleable.AppCompatTheme_actionModeBackground;
+			global::Microsoft.Identity.Client.Resource.Styleable.AppCompatTheme_actionModeCloseButtonStyle = global::ContosoFieldService.Droid.Resource.Styleable.AppCompatTheme_actionModeCloseButtonStyle;
+			global::Microsoft.Identity.Client.Resource.Styleable.AppCompatTheme_actionModeCloseDrawable = global::ContosoFieldService.Droid.Resource.Styleable.AppCompatTheme_actionModeCloseDrawable;
+			global::Microsoft.Identity.Client.Resource.Styleable.AppCompatTheme_actionModeCopyDrawable = global::ContosoFieldService.Droid.Resource.Styleable.AppCompatTheme_actionModeCopyDrawable;
+			global::Microsoft.Identity.Client.Resource.Styleable.AppCompatTheme_actionModeCutDrawable = global::ContosoFieldService.Droid.Resource.Styleable.AppCompatTheme_actionModeCutDrawable;
+			global::Microsoft.Identity.Client.Resource.Styleable.AppCompatTheme_actionModeFindDrawable = global::ContosoFieldService.Droid.Resource.Styleable.AppCompatTheme_actionModeFindDrawable;
+			global::Microsoft.Identity.Client.Resource.Styleable.AppCompatTheme_actionModePasteDrawable = global::ContosoFieldService.Droid.Resource.Styleable.AppCompatTheme_actionModePasteDrawable;
+			global::Microsoft.Identity.Client.Resource.Styleable.AppCompatTheme_actionModePopupWindowStyle = global::ContosoFieldService.Droid.Resource.Styleable.AppCompatTheme_actionModePopupWindowStyle;
+			global::Microsoft.Identity.Client.Resource.Styleable.AppCompatTheme_actionModeSelectAllDrawable = global::ContosoFieldService.Droid.Resource.Styleable.AppCompatTheme_actionModeSelectAllDrawable;
+			global::Microsoft.Identity.Client.Resource.Styleable.AppCompatTheme_actionModeShareDrawable = global::ContosoFieldService.Droid.Resource.Styleable.AppCompatTheme_actionModeShareDrawable;
+			global::Microsoft.Identity.Client.Resource.Styleable.AppCompatTheme_actionModeSplitBackground = global::ContosoFieldService.Droid.Resource.Styleable.AppCompatTheme_actionModeSplitBackground;
+			global::Microsoft.Identity.Client.Resource.Styleable.AppCompatTheme_actionModeStyle = global::ContosoFieldService.Droid.Resource.Styleable.AppCompatTheme_actionModeStyle;
+			global::Microsoft.Identity.Client.Resource.Styleable.AppCompatTheme_actionModeWebSearchDrawable = global::ContosoFieldService.Droid.Resource.Styleable.AppCompatTheme_actionModeWebSearchDrawable;
+			global::Microsoft.Identity.Client.Resource.Styleable.AppCompatTheme_actionOverflowButtonStyle = global::ContosoFieldService.Droid.Resource.Styleable.AppCompatTheme_actionOverflowButtonStyle;
+			global::Microsoft.Identity.Client.Resource.Styleable.AppCompatTheme_actionOverflowMenuStyle = global::ContosoFieldService.Droid.Resource.Styleable.AppCompatTheme_actionOverflowMenuStyle;
+			global::Microsoft.Identity.Client.Resource.Styleable.AppCompatTheme_activityChooserViewStyle = global::ContosoFieldService.Droid.Resource.Styleable.AppCompatTheme_activityChooserViewStyle;
+			global::Microsoft.Identity.Client.Resource.Styleable.AppCompatTheme_alertDialogButtonGroupStyle = global::ContosoFieldService.Droid.Resource.Styleable.AppCompatTheme_alertDialogButtonGroupStyle;
+			global::Microsoft.Identity.Client.Resource.Styleable.AppCompatTheme_alertDialogCenterButtons = global::ContosoFieldService.Droid.Resource.Styleable.AppCompatTheme_alertDialogCenterButtons;
+			global::Microsoft.Identity.Client.Resource.Styleable.AppCompatTheme_alertDialogStyle = global::ContosoFieldService.Droid.Resource.Styleable.AppCompatTheme_alertDialogStyle;
+			global::Microsoft.Identity.Client.Resource.Styleable.AppCompatTheme_alertDialogTheme = global::ContosoFieldService.Droid.Resource.Styleable.AppCompatTheme_alertDialogTheme;
+			global::Microsoft.Identity.Client.Resource.Styleable.AppCompatTheme_android_windowAnimationStyle = global::ContosoFieldService.Droid.Resource.Styleable.AppCompatTheme_android_windowAnimationStyle;
+			global::Microsoft.Identity.Client.Resource.Styleable.AppCompatTheme_android_windowIsFloating = global::ContosoFieldService.Droid.Resource.Styleable.AppCompatTheme_android_windowIsFloating;
+			global::Microsoft.Identity.Client.Resource.Styleable.AppCompatTheme_autoCompleteTextViewStyle = global::ContosoFieldService.Droid.Resource.Styleable.AppCompatTheme_autoCompleteTextViewStyle;
+			global::Microsoft.Identity.Client.Resource.Styleable.AppCompatTheme_borderlessButtonStyle = global::ContosoFieldService.Droid.Resource.Styleable.AppCompatTheme_borderlessButtonStyle;
+			global::Microsoft.Identity.Client.Resource.Styleable.AppCompatTheme_buttonBarButtonStyle = global::ContosoFieldService.Droid.Resource.Styleable.AppCompatTheme_buttonBarButtonStyle;
+			global::Microsoft.Identity.Client.Resource.Styleable.AppCompatTheme_buttonBarNegativeButtonStyle = global::ContosoFieldService.Droid.Resource.Styleable.AppCompatTheme_buttonBarNegativeButtonStyle;
+			global::Microsoft.Identity.Client.Resource.Styleable.AppCompatTheme_buttonBarNeutralButtonStyle = global::ContosoFieldService.Droid.Resource.Styleable.AppCompatTheme_buttonBarNeutralButtonStyle;
+			global::Microsoft.Identity.Client.Resource.Styleable.AppCompatTheme_buttonBarPositiveButtonStyle = global::ContosoFieldService.Droid.Resource.Styleable.AppCompatTheme_buttonBarPositiveButtonStyle;
+			global::Microsoft.Identity.Client.Resource.Styleable.AppCompatTheme_buttonBarStyle = global::ContosoFieldService.Droid.Resource.Styleable.AppCompatTheme_buttonBarStyle;
+			global::Microsoft.Identity.Client.Resource.Styleable.AppCompatTheme_buttonStyle = global::ContosoFieldService.Droid.Resource.Styleable.AppCompatTheme_buttonStyle;
+			global::Microsoft.Identity.Client.Resource.Styleable.AppCompatTheme_buttonStyleSmall = global::ContosoFieldService.Droid.Resource.Styleable.AppCompatTheme_buttonStyleSmall;
+			global::Microsoft.Identity.Client.Resource.Styleable.AppCompatTheme_checkboxStyle = global::ContosoFieldService.Droid.Resource.Styleable.AppCompatTheme_checkboxStyle;
+			global::Microsoft.Identity.Client.Resource.Styleable.AppCompatTheme_checkedTextViewStyle = global::ContosoFieldService.Droid.Resource.Styleable.AppCompatTheme_checkedTextViewStyle;
+			global::Microsoft.Identity.Client.Resource.Styleable.AppCompatTheme_colorAccent = global::ContosoFieldService.Droid.Resource.Styleable.AppCompatTheme_colorAccent;
+			global::Microsoft.Identity.Client.Resource.Styleable.AppCompatTheme_colorBackgroundFloating = global::ContosoFieldService.Droid.Resource.Styleable.AppCompatTheme_colorBackgroundFloating;
+			global::Microsoft.Identity.Client.Resource.Styleable.AppCompatTheme_colorButtonNormal = global::ContosoFieldService.Droid.Resource.Styleable.AppCompatTheme_colorButtonNormal;
+			global::Microsoft.Identity.Client.Resource.Styleable.AppCompatTheme_colorControlActivated = global::ContosoFieldService.Droid.Resource.Styleable.AppCompatTheme_colorControlActivated;
+			global::Microsoft.Identity.Client.Resource.Styleable.AppCompatTheme_colorControlHighlight = global::ContosoFieldService.Droid.Resource.Styleable.AppCompatTheme_colorControlHighlight;
+			global::Microsoft.Identity.Client.Resource.Styleable.AppCompatTheme_colorControlNormal = global::ContosoFieldService.Droid.Resource.Styleable.AppCompatTheme_colorControlNormal;
+			global::Microsoft.Identity.Client.Resource.Styleable.AppCompatTheme_colorPrimary = global::ContosoFieldService.Droid.Resource.Styleable.AppCompatTheme_colorPrimary;
+			global::Microsoft.Identity.Client.Resource.Styleable.AppCompatTheme_colorPrimaryDark = global::ContosoFieldService.Droid.Resource.Styleable.AppCompatTheme_colorPrimaryDark;
+			global::Microsoft.Identity.Client.Resource.Styleable.AppCompatTheme_colorSwitchThumbNormal = global::ContosoFieldService.Droid.Resource.Styleable.AppCompatTheme_colorSwitchThumbNormal;
+			global::Microsoft.Identity.Client.Resource.Styleable.AppCompatTheme_controlBackground = global::ContosoFieldService.Droid.Resource.Styleable.AppCompatTheme_controlBackground;
+			global::Microsoft.Identity.Client.Resource.Styleable.AppCompatTheme_dialogPreferredPadding = global::ContosoFieldService.Droid.Resource.Styleable.AppCompatTheme_dialogPreferredPadding;
+			global::Microsoft.Identity.Client.Resource.Styleable.AppCompatTheme_dialogTheme = global::ContosoFieldService.Droid.Resource.Styleable.AppCompatTheme_dialogTheme;
+			global::Microsoft.Identity.Client.Resource.Styleable.AppCompatTheme_dividerHorizontal = global::ContosoFieldService.Droid.Resource.Styleable.AppCompatTheme_dividerHorizontal;
+			global::Microsoft.Identity.Client.Resource.Styleable.AppCompatTheme_dividerVertical = global::ContosoFieldService.Droid.Resource.Styleable.AppCompatTheme_dividerVertical;
+			global::Microsoft.Identity.Client.Resource.Styleable.AppCompatTheme_dropDownListViewStyle = global::ContosoFieldService.Droid.Resource.Styleable.AppCompatTheme_dropDownListViewStyle;
+			global::Microsoft.Identity.Client.Resource.Styleable.AppCompatTheme_dropdownListPreferredItemHeight = global::ContosoFieldService.Droid.Resource.Styleable.AppCompatTheme_dropdownListPreferredItemHeight;
+			global::Microsoft.Identity.Client.Resource.Styleable.AppCompatTheme_editTextBackground = global::ContosoFieldService.Droid.Resource.Styleable.AppCompatTheme_editTextBackground;
+			global::Microsoft.Identity.Client.Resource.Styleable.AppCompatTheme_editTextColor = global::ContosoFieldService.Droid.Resource.Styleable.AppCompatTheme_editTextColor;
+			global::Microsoft.Identity.Client.Resource.Styleable.AppCompatTheme_editTextStyle = global::ContosoFieldService.Droid.Resource.Styleable.AppCompatTheme_editTextStyle;
+			global::Microsoft.Identity.Client.Resource.Styleable.AppCompatTheme_homeAsUpIndicator = global::ContosoFieldService.Droid.Resource.Styleable.AppCompatTheme_homeAsUpIndicator;
+			global::Microsoft.Identity.Client.Resource.Styleable.AppCompatTheme_imageButtonStyle = global::ContosoFieldService.Droid.Resource.Styleable.AppCompatTheme_imageButtonStyle;
+			global::Microsoft.Identity.Client.Resource.Styleable.AppCompatTheme_listChoiceBackgroundIndicator = global::ContosoFieldService.Droid.Resource.Styleable.AppCompatTheme_listChoiceBackgroundIndicator;
+			global::Microsoft.Identity.Client.Resource.Styleable.AppCompatTheme_listDividerAlertDialog = global::ContosoFieldService.Droid.Resource.Styleable.AppCompatTheme_listDividerAlertDialog;
+			global::Microsoft.Identity.Client.Resource.Styleable.AppCompatTheme_listMenuViewStyle = global::ContosoFieldService.Droid.Resource.Styleable.AppCompatTheme_listMenuViewStyle;
+			global::Microsoft.Identity.Client.Resource.Styleable.AppCompatTheme_listPopupWindowStyle = global::ContosoFieldService.Droid.Resource.Styleable.AppCompatTheme_listPopupWindowStyle;
+			global::Microsoft.Identity.Client.Resource.Styleable.AppCompatTheme_listPreferredItemHeight = global::ContosoFieldService.Droid.Resource.Styleable.AppCompatTheme_listPreferredItemHeight;
+			global::Microsoft.Identity.Client.Resource.Styleable.AppCompatTheme_listPreferredItemHeightLarge = global::ContosoFieldService.Droid.Resource.Styleable.AppCompatTheme_listPreferredItemHeightLarge;
+			global::Microsoft.Identity.Client.Resource.Styleable.AppCompatTheme_listPreferredItemHeightSmall = global::ContosoFieldService.Droid.Resource.Styleable.AppCompatTheme_listPreferredItemHeightSmall;
+			global::Microsoft.Identity.Client.Resource.Styleable.AppCompatTheme_listPreferredItemPaddingLeft = global::ContosoFieldService.Droid.Resource.Styleable.AppCompatTheme_listPreferredItemPaddingLeft;
+			global::Microsoft.Identity.Client.Resource.Styleable.AppCompatTheme_listPreferredItemPaddingRight = global::ContosoFieldService.Droid.Resource.Styleable.AppCompatTheme_listPreferredItemPaddingRight;
+			global::Microsoft.Identity.Client.Resource.Styleable.AppCompatTheme_panelBackground = global::ContosoFieldService.Droid.Resource.Styleable.AppCompatTheme_panelBackground;
+			global::Microsoft.Identity.Client.Resource.Styleable.AppCompatTheme_panelMenuListTheme = global::ContosoFieldService.Droid.Resource.Styleable.AppCompatTheme_panelMenuListTheme;
+			global::Microsoft.Identity.Client.Resource.Styleable.AppCompatTheme_panelMenuListWidth = global::ContosoFieldService.Droid.Resource.Styleable.AppCompatTheme_panelMenuListWidth;
+			global::Microsoft.Identity.Client.Resource.Styleable.AppCompatTheme_popupMenuStyle = global::ContosoFieldService.Droid.Resource.Styleable.AppCompatTheme_popupMenuStyle;
+			global::Microsoft.Identity.Client.Resource.Styleable.AppCompatTheme_popupWindowStyle = global::ContosoFieldService.Droid.Resource.Styleable.AppCompatTheme_popupWindowStyle;
+			global::Microsoft.Identity.Client.Resource.Styleable.AppCompatTheme_radioButtonStyle = global::ContosoFieldService.Droid.Resource.Styleable.AppCompatTheme_radioButtonStyle;
+			global::Microsoft.Identity.Client.Resource.Styleable.AppCompatTheme_ratingBarStyle = global::ContosoFieldService.Droid.Resource.Styleable.AppCompatTheme_ratingBarStyle;
+			global::Microsoft.Identity.Client.Resource.Styleable.AppCompatTheme_ratingBarStyleIndicator = global::ContosoFieldService.Droid.Resource.Styleable.AppCompatTheme_ratingBarStyleIndicator;
+			global::Microsoft.Identity.Client.Resource.Styleable.AppCompatTheme_ratingBarStyleSmall = global::ContosoFieldService.Droid.Resource.Styleable.AppCompatTheme_ratingBarStyleSmall;
+			global::Microsoft.Identity.Client.Resource.Styleable.AppCompatTheme_searchViewStyle = global::ContosoFieldService.Droid.Resource.Styleable.AppCompatTheme_searchViewStyle;
+			global::Microsoft.Identity.Client.Resource.Styleable.AppCompatTheme_seekBarStyle = global::ContosoFieldService.Droid.Resource.Styleable.AppCompatTheme_seekBarStyle;
+			global::Microsoft.Identity.Client.Resource.Styleable.AppCompatTheme_selectableItemBackground = global::ContosoFieldService.Droid.Resource.Styleable.AppCompatTheme_selectableItemBackground;
+			global::Microsoft.Identity.Client.Resource.Styleable.AppCompatTheme_selectableItemBackgroundBorderless = global::ContosoFieldService.Droid.Resource.Styleable.AppCompatTheme_selectableItemBackgroundBorderless;
+			global::Microsoft.Identity.Client.Resource.Styleable.AppCompatTheme_spinnerDropDownItemStyle = global::ContosoFieldService.Droid.Resource.Styleable.AppCompatTheme_spinnerDropDownItemStyle;
+			global::Microsoft.Identity.Client.Resource.Styleable.AppCompatTheme_spinnerStyle = global::ContosoFieldService.Droid.Resource.Styleable.AppCompatTheme_spinnerStyle;
+			global::Microsoft.Identity.Client.Resource.Styleable.AppCompatTheme_switchStyle = global::ContosoFieldService.Droid.Resource.Styleable.AppCompatTheme_switchStyle;
+			global::Microsoft.Identity.Client.Resource.Styleable.AppCompatTheme_textAppearanceLargePopupMenu = global::ContosoFieldService.Droid.Resource.Styleable.AppCompatTheme_textAppearanceLargePopupMenu;
+			global::Microsoft.Identity.Client.Resource.Styleable.AppCompatTheme_textAppearanceListItem = global::ContosoFieldService.Droid.Resource.Styleable.AppCompatTheme_textAppearanceListItem;
+			global::Microsoft.Identity.Client.Resource.Styleable.AppCompatTheme_textAppearanceListItemSecondary = global::ContosoFieldService.Droid.Resource.Styleable.AppCompatTheme_textAppearanceListItemSecondary;
+			global::Microsoft.Identity.Client.Resource.Styleable.AppCompatTheme_textAppearanceListItemSmall = global::ContosoFieldService.Droid.Resource.Styleable.AppCompatTheme_textAppearanceListItemSmall;
+			global::Microsoft.Identity.Client.Resource.Styleable.AppCompatTheme_textAppearancePopupMenuHeader = global::ContosoFieldService.Droid.Resource.Styleable.AppCompatTheme_textAppearancePopupMenuHeader;
+			global::Microsoft.Identity.Client.Resource.Styleable.AppCompatTheme_textAppearanceSearchResultSubtitle = global::ContosoFieldService.Droid.Resource.Styleable.AppCompatTheme_textAppearanceSearchResultSubtitle;
+			global::Microsoft.Identity.Client.Resource.Styleable.AppCompatTheme_textAppearanceSearchResultTitle = global::ContosoFieldService.Droid.Resource.Styleable.AppCompatTheme_textAppearanceSearchResultTitle;
+			global::Microsoft.Identity.Client.Resource.Styleable.AppCompatTheme_textAppearanceSmallPopupMenu = global::ContosoFieldService.Droid.Resource.Styleable.AppCompatTheme_textAppearanceSmallPopupMenu;
+			global::Microsoft.Identity.Client.Resource.Styleable.AppCompatTheme_textColorAlertDialogListItem = global::ContosoFieldService.Droid.Resource.Styleable.AppCompatTheme_textColorAlertDialogListItem;
+			global::Microsoft.Identity.Client.Resource.Styleable.AppCompatTheme_textColorSearchUrl = global::ContosoFieldService.Droid.Resource.Styleable.AppCompatTheme_textColorSearchUrl;
+			global::Microsoft.Identity.Client.Resource.Styleable.AppCompatTheme_toolbarNavigationButtonStyle = global::ContosoFieldService.Droid.Resource.Styleable.AppCompatTheme_toolbarNavigationButtonStyle;
+			global::Microsoft.Identity.Client.Resource.Styleable.AppCompatTheme_toolbarStyle = global::ContosoFieldService.Droid.Resource.Styleable.AppCompatTheme_toolbarStyle;
+			global::Microsoft.Identity.Client.Resource.Styleable.AppCompatTheme_windowActionBar = global::ContosoFieldService.Droid.Resource.Styleable.AppCompatTheme_windowActionBar;
+			global::Microsoft.Identity.Client.Resource.Styleable.AppCompatTheme_windowActionBarOverlay = global::ContosoFieldService.Droid.Resource.Styleable.AppCompatTheme_windowActionBarOverlay;
+			global::Microsoft.Identity.Client.Resource.Styleable.AppCompatTheme_windowActionModeOverlay = global::ContosoFieldService.Droid.Resource.Styleable.AppCompatTheme_windowActionModeOverlay;
+			global::Microsoft.Identity.Client.Resource.Styleable.AppCompatTheme_windowFixedHeightMajor = global::ContosoFieldService.Droid.Resource.Styleable.AppCompatTheme_windowFixedHeightMajor;
+			global::Microsoft.Identity.Client.Resource.Styleable.AppCompatTheme_windowFixedHeightMinor = global::ContosoFieldService.Droid.Resource.Styleable.AppCompatTheme_windowFixedHeightMinor;
+			global::Microsoft.Identity.Client.Resource.Styleable.AppCompatTheme_windowFixedWidthMajor = global::ContosoFieldService.Droid.Resource.Styleable.AppCompatTheme_windowFixedWidthMajor;
+			global::Microsoft.Identity.Client.Resource.Styleable.AppCompatTheme_windowFixedWidthMinor = global::ContosoFieldService.Droid.Resource.Styleable.AppCompatTheme_windowFixedWidthMinor;
+			global::Microsoft.Identity.Client.Resource.Styleable.AppCompatTheme_windowMinWidthMajor = global::ContosoFieldService.Droid.Resource.Styleable.AppCompatTheme_windowMinWidthMajor;
+			global::Microsoft.Identity.Client.Resource.Styleable.AppCompatTheme_windowMinWidthMinor = global::ContosoFieldService.Droid.Resource.Styleable.AppCompatTheme_windowMinWidthMinor;
+			global::Microsoft.Identity.Client.Resource.Styleable.AppCompatTheme_windowNoTitle = global::ContosoFieldService.Droid.Resource.Styleable.AppCompatTheme_windowNoTitle;
+			global::Microsoft.Identity.Client.Resource.Styleable.ButtonBarLayout = global::ContosoFieldService.Droid.Resource.Styleable.ButtonBarLayout;
+			global::Microsoft.Identity.Client.Resource.Styleable.ButtonBarLayout_allowStacking = global::ContosoFieldService.Droid.Resource.Styleable.ButtonBarLayout_allowStacking;
+			global::Microsoft.Identity.Client.Resource.Styleable.ColorStateListItem = global::ContosoFieldService.Droid.Resource.Styleable.ColorStateListItem;
+			global::Microsoft.Identity.Client.Resource.Styleable.ColorStateListItem_alpha = global::ContosoFieldService.Droid.Resource.Styleable.ColorStateListItem_alpha;
+			global::Microsoft.Identity.Client.Resource.Styleable.ColorStateListItem_android_alpha = global::ContosoFieldService.Droid.Resource.Styleable.ColorStateListItem_android_alpha;
+			global::Microsoft.Identity.Client.Resource.Styleable.ColorStateListItem_android_color = global::ContosoFieldService.Droid.Resource.Styleable.ColorStateListItem_android_color;
+			global::Microsoft.Identity.Client.Resource.Styleable.CompoundButton = global::ContosoFieldService.Droid.Resource.Styleable.CompoundButton;
+			global::Microsoft.Identity.Client.Resource.Styleable.CompoundButton_android_button = global::ContosoFieldService.Droid.Resource.Styleable.CompoundButton_android_button;
+			global::Microsoft.Identity.Client.Resource.Styleable.CompoundButton_buttonTint = global::ContosoFieldService.Droid.Resource.Styleable.CompoundButton_buttonTint;
+			global::Microsoft.Identity.Client.Resource.Styleable.CompoundButton_buttonTintMode = global::ContosoFieldService.Droid.Resource.Styleable.CompoundButton_buttonTintMode;
+			global::Microsoft.Identity.Client.Resource.Styleable.DrawerArrowToggle = global::ContosoFieldService.Droid.Resource.Styleable.DrawerArrowToggle;
+			global::Microsoft.Identity.Client.Resource.Styleable.DrawerArrowToggle_arrowHeadLength = global::ContosoFieldService.Droid.Resource.Styleable.DrawerArrowToggle_arrowHeadLength;
+			global::Microsoft.Identity.Client.Resource.Styleable.DrawerArrowToggle_arrowShaftLength = global::ContosoFieldService.Droid.Resource.Styleable.DrawerArrowToggle_arrowShaftLength;
+			global::Microsoft.Identity.Client.Resource.Styleable.DrawerArrowToggle_barLength = global::ContosoFieldService.Droid.Resource.Styleable.DrawerArrowToggle_barLength;
+			global::Microsoft.Identity.Client.Resource.Styleable.DrawerArrowToggle_color = global::ContosoFieldService.Droid.Resource.Styleable.DrawerArrowToggle_color;
+			global::Microsoft.Identity.Client.Resource.Styleable.DrawerArrowToggle_drawableSize = global::ContosoFieldService.Droid.Resource.Styleable.DrawerArrowToggle_drawableSize;
+			global::Microsoft.Identity.Client.Resource.Styleable.DrawerArrowToggle_gapBetweenBars = global::ContosoFieldService.Droid.Resource.Styleable.DrawerArrowToggle_gapBetweenBars;
+			global::Microsoft.Identity.Client.Resource.Styleable.DrawerArrowToggle_spinBars = global::ContosoFieldService.Droid.Resource.Styleable.DrawerArrowToggle_spinBars;
+			global::Microsoft.Identity.Client.Resource.Styleable.DrawerArrowToggle_thickness = global::ContosoFieldService.Droid.Resource.Styleable.DrawerArrowToggle_thickness;
+			global::Microsoft.Identity.Client.Resource.Styleable.LinearLayoutCompat = global::ContosoFieldService.Droid.Resource.Styleable.LinearLayoutCompat;
+			global::Microsoft.Identity.Client.Resource.Styleable.LinearLayoutCompat_android_baselineAligned = global::ContosoFieldService.Droid.Resource.Styleable.LinearLayoutCompat_android_baselineAligned;
+			global::Microsoft.Identity.Client.Resource.Styleable.LinearLayoutCompat_android_baselineAlignedChildIndex = global::ContosoFieldService.Droid.Resource.Styleable.LinearLayoutCompat_android_baselineAlignedChildIndex;
+			global::Microsoft.Identity.Client.Resource.Styleable.LinearLayoutCompat_android_gravity = global::ContosoFieldService.Droid.Resource.Styleable.LinearLayoutCompat_android_gravity;
+			global::Microsoft.Identity.Client.Resource.Styleable.LinearLayoutCompat_android_orientation = global::ContosoFieldService.Droid.Resource.Styleable.LinearLayoutCompat_android_orientation;
+			global::Microsoft.Identity.Client.Resource.Styleable.LinearLayoutCompat_android_weightSum = global::ContosoFieldService.Droid.Resource.Styleable.LinearLayoutCompat_android_weightSum;
+			global::Microsoft.Identity.Client.Resource.Styleable.LinearLayoutCompat_divider = global::ContosoFieldService.Droid.Resource.Styleable.LinearLayoutCompat_divider;
+			global::Microsoft.Identity.Client.Resource.Styleable.LinearLayoutCompat_dividerPadding = global::ContosoFieldService.Droid.Resource.Styleable.LinearLayoutCompat_dividerPadding;
+			global::Microsoft.Identity.Client.Resource.Styleable.LinearLayoutCompat_measureWithLargestChild = global::ContosoFieldService.Droid.Resource.Styleable.LinearLayoutCompat_measureWithLargestChild;
+			global::Microsoft.Identity.Client.Resource.Styleable.LinearLayoutCompat_showDividers = global::ContosoFieldService.Droid.Resource.Styleable.LinearLayoutCompat_showDividers;
+			global::Microsoft.Identity.Client.Resource.Styleable.LinearLayoutCompat_Layout = global::ContosoFieldService.Droid.Resource.Styleable.LinearLayoutCompat_Layout;
+			global::Microsoft.Identity.Client.Resource.Styleable.LinearLayoutCompat_Layout_android_layout_gravity = global::ContosoFieldService.Droid.Resource.Styleable.LinearLayoutCompat_Layout_android_layout_gravity;
+			global::Microsoft.Identity.Client.Resource.Styleable.LinearLayoutCompat_Layout_android_layout_height = global::ContosoFieldService.Droid.Resource.Styleable.LinearLayoutCompat_Layout_android_layout_height;
+			global::Microsoft.Identity.Client.Resource.Styleable.LinearLayoutCompat_Layout_android_layout_weight = global::ContosoFieldService.Droid.Resource.Styleable.LinearLayoutCompat_Layout_android_layout_weight;
+			global::Microsoft.Identity.Client.Resource.Styleable.LinearLayoutCompat_Layout_android_layout_width = global::ContosoFieldService.Droid.Resource.Styleable.LinearLayoutCompat_Layout_android_layout_width;
+			global::Microsoft.Identity.Client.Resource.Styleable.ListPopupWindow = global::ContosoFieldService.Droid.Resource.Styleable.ListPopupWindow;
+			global::Microsoft.Identity.Client.Resource.Styleable.ListPopupWindow_android_dropDownHorizontalOffset = global::ContosoFieldService.Droid.Resource.Styleable.ListPopupWindow_android_dropDownHorizontalOffset;
+			global::Microsoft.Identity.Client.Resource.Styleable.ListPopupWindow_android_dropDownVerticalOffset = global::ContosoFieldService.Droid.Resource.Styleable.ListPopupWindow_android_dropDownVerticalOffset;
+			global::Microsoft.Identity.Client.Resource.Styleable.MenuGroup = global::ContosoFieldService.Droid.Resource.Styleable.MenuGroup;
+			global::Microsoft.Identity.Client.Resource.Styleable.MenuGroup_android_checkableBehavior = global::ContosoFieldService.Droid.Resource.Styleable.MenuGroup_android_checkableBehavior;
+			global::Microsoft.Identity.Client.Resource.Styleable.MenuGroup_android_enabled = global::ContosoFieldService.Droid.Resource.Styleable.MenuGroup_android_enabled;
+			global::Microsoft.Identity.Client.Resource.Styleable.MenuGroup_android_id = global::ContosoFieldService.Droid.Resource.Styleable.MenuGroup_android_id;
+			global::Microsoft.Identity.Client.Resource.Styleable.MenuGroup_android_menuCategory = global::ContosoFieldService.Droid.Resource.Styleable.MenuGroup_android_menuCategory;
+			global::Microsoft.Identity.Client.Resource.Styleable.MenuGroup_android_orderInCategory = global::ContosoFieldService.Droid.Resource.Styleable.MenuGroup_android_orderInCategory;
+			global::Microsoft.Identity.Client.Resource.Styleable.MenuGroup_android_visible = global::ContosoFieldService.Droid.Resource.Styleable.MenuGroup_android_visible;
+			global::Microsoft.Identity.Client.Resource.Styleable.MenuItem = global::ContosoFieldService.Droid.Resource.Styleable.MenuItem;
+			global::Microsoft.Identity.Client.Resource.Styleable.MenuItem_actionLayout = global::ContosoFieldService.Droid.Resource.Styleable.MenuItem_actionLayout;
+			global::Microsoft.Identity.Client.Resource.Styleable.MenuItem_actionProviderClass = global::ContosoFieldService.Droid.Resource.Styleable.MenuItem_actionProviderClass;
+			global::Microsoft.Identity.Client.Resource.Styleable.MenuItem_actionViewClass = global::ContosoFieldService.Droid.Resource.Styleable.MenuItem_actionViewClass;
+			global::Microsoft.Identity.Client.Resource.Styleable.MenuItem_android_alphabeticShortcut = global::ContosoFieldService.Droid.Resource.Styleable.MenuItem_android_alphabeticShortcut;
+			global::Microsoft.Identity.Client.Resource.Styleable.MenuItem_android_checkable = global::ContosoFieldService.Droid.Resource.Styleable.MenuItem_android_checkable;
+			global::Microsoft.Identity.Client.Resource.Styleable.MenuItem_android_checked = global::ContosoFieldService.Droid.Resource.Styleable.MenuItem_android_checked;
+			global::Microsoft.Identity.Client.Resource.Styleable.MenuItem_android_enabled = global::ContosoFieldService.Droid.Resource.Styleable.MenuItem_android_enabled;
+			global::Microsoft.Identity.Client.Resource.Styleable.MenuItem_android_icon = global::ContosoFieldService.Droid.Resource.Styleable.MenuItem_android_icon;
+			global::Microsoft.Identity.Client.Resource.Styleable.MenuItem_android_id = global::ContosoFieldService.Droid.Resource.Styleable.MenuItem_android_id;
+			global::Microsoft.Identity.Client.Resource.Styleable.MenuItem_android_menuCategory = global::ContosoFieldService.Droid.Resource.Styleable.MenuItem_android_menuCategory;
+			global::Microsoft.Identity.Client.Resource.Styleable.MenuItem_android_numericShortcut = global::ContosoFieldService.Droid.Resource.Styleable.MenuItem_android_numericShortcut;
+			global::Microsoft.Identity.Client.Resource.Styleable.MenuItem_android_onClick = global::ContosoFieldService.Droid.Resource.Styleable.MenuItem_android_onClick;
+			global::Microsoft.Identity.Client.Resource.Styleable.MenuItem_android_orderInCategory = global::ContosoFieldService.Droid.Resource.Styleable.MenuItem_android_orderInCategory;
+			global::Microsoft.Identity.Client.Resource.Styleable.MenuItem_android_title = global::ContosoFieldService.Droid.Resource.Styleable.MenuItem_android_title;
+			global::Microsoft.Identity.Client.Resource.Styleable.MenuItem_android_titleCondensed = global::ContosoFieldService.Droid.Resource.Styleable.MenuItem_android_titleCondensed;
+			global::Microsoft.Identity.Client.Resource.Styleable.MenuItem_android_visible = global::ContosoFieldService.Droid.Resource.Styleable.MenuItem_android_visible;
+			global::Microsoft.Identity.Client.Resource.Styleable.MenuItem_showAsAction = global::ContosoFieldService.Droid.Resource.Styleable.MenuItem_showAsAction;
+			global::Microsoft.Identity.Client.Resource.Styleable.MenuView = global::ContosoFieldService.Droid.Resource.Styleable.MenuView;
+			global::Microsoft.Identity.Client.Resource.Styleable.MenuView_android_headerBackground = global::ContosoFieldService.Droid.Resource.Styleable.MenuView_android_headerBackground;
+			global::Microsoft.Identity.Client.Resource.Styleable.MenuView_android_horizontalDivider = global::ContosoFieldService.Droid.Resource.Styleable.MenuView_android_horizontalDivider;
+			global::Microsoft.Identity.Client.Resource.Styleable.MenuView_android_itemBackground = global::ContosoFieldService.Droid.Resource.Styleable.MenuView_android_itemBackground;
+			global::Microsoft.Identity.Client.Resource.Styleable.MenuView_android_itemIconDisabledAlpha = global::ContosoFieldService.Droid.Resource.Styleable.MenuView_android_itemIconDisabledAlpha;
+			global::Microsoft.Identity.Client.Resource.Styleable.MenuView_android_itemTextAppearance = global::ContosoFieldService.Droid.Resource.Styleable.MenuView_android_itemTextAppearance;
+			global::Microsoft.Identity.Client.Resource.Styleable.MenuView_android_verticalDivider = global::ContosoFieldService.Droid.Resource.Styleable.MenuView_android_verticalDivider;
+			global::Microsoft.Identity.Client.Resource.Styleable.MenuView_android_windowAnimationStyle = global::ContosoFieldService.Droid.Resource.Styleable.MenuView_android_windowAnimationStyle;
+			global::Microsoft.Identity.Client.Resource.Styleable.MenuView_preserveIconSpacing = global::ContosoFieldService.Droid.Resource.Styleable.MenuView_preserveIconSpacing;
+			global::Microsoft.Identity.Client.Resource.Styleable.MenuView_subMenuArrow = global::ContosoFieldService.Droid.Resource.Styleable.MenuView_subMenuArrow;
+			global::Microsoft.Identity.Client.Resource.Styleable.PopupWindow = global::ContosoFieldService.Droid.Resource.Styleable.PopupWindow;
+			global::Microsoft.Identity.Client.Resource.Styleable.PopupWindow_android_popupAnimationStyle = global::ContosoFieldService.Droid.Resource.Styleable.PopupWindow_android_popupAnimationStyle;
+			global::Microsoft.Identity.Client.Resource.Styleable.PopupWindow_android_popupBackground = global::ContosoFieldService.Droid.Resource.Styleable.PopupWindow_android_popupBackground;
+			global::Microsoft.Identity.Client.Resource.Styleable.PopupWindow_overlapAnchor = global::ContosoFieldService.Droid.Resource.Styleable.PopupWindow_overlapAnchor;
+			global::Microsoft.Identity.Client.Resource.Styleable.PopupWindowBackgroundState = global::ContosoFieldService.Droid.Resource.Styleable.PopupWindowBackgroundState;
+			global::Microsoft.Identity.Client.Resource.Styleable.PopupWindowBackgroundState_state_above_anchor = global::ContosoFieldService.Droid.Resource.Styleable.PopupWindowBackgroundState_state_above_anchor;
+			global::Microsoft.Identity.Client.Resource.Styleable.RecycleListView = global::ContosoFieldService.Droid.Resource.Styleable.RecycleListView;
+			global::Microsoft.Identity.Client.Resource.Styleable.RecycleListView_paddingBottomNoButtons = global::ContosoFieldService.Droid.Resource.Styleable.RecycleListView_paddingBottomNoButtons;
+			global::Microsoft.Identity.Client.Resource.Styleable.RecycleListView_paddingTopNoTitle = global::ContosoFieldService.Droid.Resource.Styleable.RecycleListView_paddingTopNoTitle;
+			global::Microsoft.Identity.Client.Resource.Styleable.SearchView = global::ContosoFieldService.Droid.Resource.Styleable.SearchView;
+			global::Microsoft.Identity.Client.Resource.Styleable.SearchView_android_focusable = global::ContosoFieldService.Droid.Resource.Styleable.SearchView_android_focusable;
+			global::Microsoft.Identity.Client.Resource.Styleable.SearchView_android_imeOptions = global::ContosoFieldService.Droid.Resource.Styleable.SearchView_android_imeOptions;
+			global::Microsoft.Identity.Client.Resource.Styleable.SearchView_android_inputType = global::ContosoFieldService.Droid.Resource.Styleable.SearchView_android_inputType;
+			global::Microsoft.Identity.Client.Resource.Styleable.SearchView_android_maxWidth = global::ContosoFieldService.Droid.Resource.Styleable.SearchView_android_maxWidth;
+			global::Microsoft.Identity.Client.Resource.Styleable.SearchView_closeIcon = global::ContosoFieldService.Droid.Resource.Styleable.SearchView_closeIcon;
+			global::Microsoft.Identity.Client.Resource.Styleable.SearchView_commitIcon = global::ContosoFieldService.Droid.Resource.Styleable.SearchView_commitIcon;
+			global::Microsoft.Identity.Client.Resource.Styleable.SearchView_defaultQueryHint = global::ContosoFieldService.Droid.Resource.Styleable.SearchView_defaultQueryHint;
+			global::Microsoft.Identity.Client.Resource.Styleable.SearchView_goIcon = global::ContosoFieldService.Droid.Resource.Styleable.SearchView_goIcon;
+			global::Microsoft.Identity.Client.Resource.Styleable.SearchView_iconifiedByDefault = global::ContosoFieldService.Droid.Resource.Styleable.SearchView_iconifiedByDefault;
+			global::Microsoft.Identity.Client.Resource.Styleable.SearchView_layout = global::ContosoFieldService.Droid.Resource.Styleable.SearchView_layout;
+			global::Microsoft.Identity.Client.Resource.Styleable.SearchView_queryBackground = global::ContosoFieldService.Droid.Resource.Styleable.SearchView_queryBackground;
+			global::Microsoft.Identity.Client.Resource.Styleable.SearchView_queryHint = global::ContosoFieldService.Droid.Resource.Styleable.SearchView_queryHint;
+			global::Microsoft.Identity.Client.Resource.Styleable.SearchView_searchHintIcon = global::ContosoFieldService.Droid.Resource.Styleable.SearchView_searchHintIcon;
+			global::Microsoft.Identity.Client.Resource.Styleable.SearchView_searchIcon = global::ContosoFieldService.Droid.Resource.Styleable.SearchView_searchIcon;
+			global::Microsoft.Identity.Client.Resource.Styleable.SearchView_submitBackground = global::ContosoFieldService.Droid.Resource.Styleable.SearchView_submitBackground;
+			global::Microsoft.Identity.Client.Resource.Styleable.SearchView_suggestionRowLayout = global::ContosoFieldService.Droid.Resource.Styleable.SearchView_suggestionRowLayout;
+			global::Microsoft.Identity.Client.Resource.Styleable.SearchView_voiceIcon = global::ContosoFieldService.Droid.Resource.Styleable.SearchView_voiceIcon;
+			global::Microsoft.Identity.Client.Resource.Styleable.Spinner = global::ContosoFieldService.Droid.Resource.Styleable.Spinner;
+			global::Microsoft.Identity.Client.Resource.Styleable.Spinner_android_dropDownWidth = global::ContosoFieldService.Droid.Resource.Styleable.Spinner_android_dropDownWidth;
+			global::Microsoft.Identity.Client.Resource.Styleable.Spinner_android_entries = global::ContosoFieldService.Droid.Resource.Styleable.Spinner_android_entries;
+			global::Microsoft.Identity.Client.Resource.Styleable.Spinner_android_popupBackground = global::ContosoFieldService.Droid.Resource.Styleable.Spinner_android_popupBackground;
+			global::Microsoft.Identity.Client.Resource.Styleable.Spinner_android_prompt = global::ContosoFieldService.Droid.Resource.Styleable.Spinner_android_prompt;
+			global::Microsoft.Identity.Client.Resource.Styleable.Spinner_popupTheme = global::ContosoFieldService.Droid.Resource.Styleable.Spinner_popupTheme;
+			global::Microsoft.Identity.Client.Resource.Styleable.SwitchCompat = global::ContosoFieldService.Droid.Resource.Styleable.SwitchCompat;
+			global::Microsoft.Identity.Client.Resource.Styleable.SwitchCompat_android_textOff = global::ContosoFieldService.Droid.Resource.Styleable.SwitchCompat_android_textOff;
+			global::Microsoft.Identity.Client.Resource.Styleable.SwitchCompat_android_textOn = global::ContosoFieldService.Droid.Resource.Styleable.SwitchCompat_android_textOn;
+			global::Microsoft.Identity.Client.Resource.Styleable.SwitchCompat_android_thumb = global::ContosoFieldService.Droid.Resource.Styleable.SwitchCompat_android_thumb;
+			global::Microsoft.Identity.Client.Resource.Styleable.SwitchCompat_showText = global::ContosoFieldService.Droid.Resource.Styleable.SwitchCompat_showText;
+			global::Microsoft.Identity.Client.Resource.Styleable.SwitchCompat_splitTrack = global::ContosoFieldService.Droid.Resource.Styleable.SwitchCompat_splitTrack;
+			global::Microsoft.Identity.Client.Resource.Styleable.SwitchCompat_switchMinWidth = global::ContosoFieldService.Droid.Resource.Styleable.SwitchCompat_switchMinWidth;
+			global::Microsoft.Identity.Client.Resource.Styleable.SwitchCompat_switchPadding = global::ContosoFieldService.Droid.Resource.Styleable.SwitchCompat_switchPadding;
+			global::Microsoft.Identity.Client.Resource.Styleable.SwitchCompat_switchTextAppearance = global::ContosoFieldService.Droid.Resource.Styleable.SwitchCompat_switchTextAppearance;
+			global::Microsoft.Identity.Client.Resource.Styleable.SwitchCompat_thumbTextPadding = global::ContosoFieldService.Droid.Resource.Styleable.SwitchCompat_thumbTextPadding;
+			global::Microsoft.Identity.Client.Resource.Styleable.SwitchCompat_thumbTint = global::ContosoFieldService.Droid.Resource.Styleable.SwitchCompat_thumbTint;
+			global::Microsoft.Identity.Client.Resource.Styleable.SwitchCompat_thumbTintMode = global::ContosoFieldService.Droid.Resource.Styleable.SwitchCompat_thumbTintMode;
+			global::Microsoft.Identity.Client.Resource.Styleable.SwitchCompat_track = global::ContosoFieldService.Droid.Resource.Styleable.SwitchCompat_track;
+			global::Microsoft.Identity.Client.Resource.Styleable.SwitchCompat_trackTint = global::ContosoFieldService.Droid.Resource.Styleable.SwitchCompat_trackTint;
+			global::Microsoft.Identity.Client.Resource.Styleable.SwitchCompat_trackTintMode = global::ContosoFieldService.Droid.Resource.Styleable.SwitchCompat_trackTintMode;
+			global::Microsoft.Identity.Client.Resource.Styleable.TextAppearance = global::ContosoFieldService.Droid.Resource.Styleable.TextAppearance;
+			global::Microsoft.Identity.Client.Resource.Styleable.TextAppearance_android_shadowColor = global::ContosoFieldService.Droid.Resource.Styleable.TextAppearance_android_shadowColor;
+			global::Microsoft.Identity.Client.Resource.Styleable.TextAppearance_android_shadowDx = global::ContosoFieldService.Droid.Resource.Styleable.TextAppearance_android_shadowDx;
+			global::Microsoft.Identity.Client.Resource.Styleable.TextAppearance_android_shadowDy = global::ContosoFieldService.Droid.Resource.Styleable.TextAppearance_android_shadowDy;
+			global::Microsoft.Identity.Client.Resource.Styleable.TextAppearance_android_shadowRadius = global::ContosoFieldService.Droid.Resource.Styleable.TextAppearance_android_shadowRadius;
+			global::Microsoft.Identity.Client.Resource.Styleable.TextAppearance_android_textColor = global::ContosoFieldService.Droid.Resource.Styleable.TextAppearance_android_textColor;
+			global::Microsoft.Identity.Client.Resource.Styleable.TextAppearance_android_textColorHint = global::ContosoFieldService.Droid.Resource.Styleable.TextAppearance_android_textColorHint;
+			global::Microsoft.Identity.Client.Resource.Styleable.TextAppearance_android_textSize = global::ContosoFieldService.Droid.Resource.Styleable.TextAppearance_android_textSize;
+			global::Microsoft.Identity.Client.Resource.Styleable.TextAppearance_android_textStyle = global::ContosoFieldService.Droid.Resource.Styleable.TextAppearance_android_textStyle;
+			global::Microsoft.Identity.Client.Resource.Styleable.TextAppearance_android_typeface = global::ContosoFieldService.Droid.Resource.Styleable.TextAppearance_android_typeface;
+			global::Microsoft.Identity.Client.Resource.Styleable.TextAppearance_textAllCaps = global::ContosoFieldService.Droid.Resource.Styleable.TextAppearance_textAllCaps;
+			global::Microsoft.Identity.Client.Resource.Styleable.Toolbar = global::ContosoFieldService.Droid.Resource.Styleable.Toolbar;
+			global::Microsoft.Identity.Client.Resource.Styleable.Toolbar_android_gravity = global::ContosoFieldService.Droid.Resource.Styleable.Toolbar_android_gravity;
+			global::Microsoft.Identity.Client.Resource.Styleable.Toolbar_android_minHeight = global::ContosoFieldService.Droid.Resource.Styleable.Toolbar_android_minHeight;
+			global::Microsoft.Identity.Client.Resource.Styleable.Toolbar_buttonGravity = global::ContosoFieldService.Droid.Resource.Styleable.Toolbar_buttonGravity;
+			global::Microsoft.Identity.Client.Resource.Styleable.Toolbar_collapseContentDescription = global::ContosoFieldService.Droid.Resource.Styleable.Toolbar_collapseContentDescription;
+			global::Microsoft.Identity.Client.Resource.Styleable.Toolbar_collapseIcon = global::ContosoFieldService.Droid.Resource.Styleable.Toolbar_collapseIcon;
+			global::Microsoft.Identity.Client.Resource.Styleable.Toolbar_contentInsetEnd = global::ContosoFieldService.Droid.Resource.Styleable.Toolbar_contentInsetEnd;
+			global::Microsoft.Identity.Client.Resource.Styleable.Toolbar_contentInsetEndWithActions = global::ContosoFieldService.Droid.Resource.Styleable.Toolbar_contentInsetEndWithActions;
+			global::Microsoft.Identity.Client.Resource.Styleable.Toolbar_contentInsetLeft = global::ContosoFieldService.Droid.Resource.Styleable.Toolbar_contentInsetLeft;
+			global::Microsoft.Identity.Client.Resource.Styleable.Toolbar_contentInsetRight = global::ContosoFieldService.Droid.Resource.Styleable.Toolbar_contentInsetRight;
+			global::Microsoft.Identity.Client.Resource.Styleable.Toolbar_contentInsetStart = global::ContosoFieldService.Droid.Resource.Styleable.Toolbar_contentInsetStart;
+			global::Microsoft.Identity.Client.Resource.Styleable.Toolbar_contentInsetStartWithNavigation = global::ContosoFieldService.Droid.Resource.Styleable.Toolbar_contentInsetStartWithNavigation;
+			global::Microsoft.Identity.Client.Resource.Styleable.Toolbar_logo = global::ContosoFieldService.Droid.Resource.Styleable.Toolbar_logo;
+			global::Microsoft.Identity.Client.Resource.Styleable.Toolbar_logoDescription = global::ContosoFieldService.Droid.Resource.Styleable.Toolbar_logoDescription;
+			global::Microsoft.Identity.Client.Resource.Styleable.Toolbar_maxButtonHeight = global::ContosoFieldService.Droid.Resource.Styleable.Toolbar_maxButtonHeight;
+			global::Microsoft.Identity.Client.Resource.Styleable.Toolbar_navigationContentDescription = global::ContosoFieldService.Droid.Resource.Styleable.Toolbar_navigationContentDescription;
+			global::Microsoft.Identity.Client.Resource.Styleable.Toolbar_navigationIcon = global::ContosoFieldService.Droid.Resource.Styleable.Toolbar_navigationIcon;
+			global::Microsoft.Identity.Client.Resource.Styleable.Toolbar_popupTheme = global::ContosoFieldService.Droid.Resource.Styleable.Toolbar_popupTheme;
+			global::Microsoft.Identity.Client.Resource.Styleable.Toolbar_subtitle = global::ContosoFieldService.Droid.Resource.Styleable.Toolbar_subtitle;
+			global::Microsoft.Identity.Client.Resource.Styleable.Toolbar_subtitleTextAppearance = global::ContosoFieldService.Droid.Resource.Styleable.Toolbar_subtitleTextAppearance;
+			global::Microsoft.Identity.Client.Resource.Styleable.Toolbar_subtitleTextColor = global::ContosoFieldService.Droid.Resource.Styleable.Toolbar_subtitleTextColor;
+			global::Microsoft.Identity.Client.Resource.Styleable.Toolbar_title = global::ContosoFieldService.Droid.Resource.Styleable.Toolbar_title;
+			global::Microsoft.Identity.Client.Resource.Styleable.Toolbar_titleMargin = global::ContosoFieldService.Droid.Resource.Styleable.Toolbar_titleMargin;
+			global::Microsoft.Identity.Client.Resource.Styleable.Toolbar_titleMarginBottom = global::ContosoFieldService.Droid.Resource.Styleable.Toolbar_titleMarginBottom;
+			global::Microsoft.Identity.Client.Resource.Styleable.Toolbar_titleMarginEnd = global::ContosoFieldService.Droid.Resource.Styleable.Toolbar_titleMarginEnd;
+			global::Microsoft.Identity.Client.Resource.Styleable.Toolbar_titleMarginStart = global::ContosoFieldService.Droid.Resource.Styleable.Toolbar_titleMarginStart;
+			global::Microsoft.Identity.Client.Resource.Styleable.Toolbar_titleMarginTop = global::ContosoFieldService.Droid.Resource.Styleable.Toolbar_titleMarginTop;
+			global::Microsoft.Identity.Client.Resource.Styleable.Toolbar_titleMargins = global::ContosoFieldService.Droid.Resource.Styleable.Toolbar_titleMargins;
+			global::Microsoft.Identity.Client.Resource.Styleable.Toolbar_titleTextAppearance = global::ContosoFieldService.Droid.Resource.Styleable.Toolbar_titleTextAppearance;
+			global::Microsoft.Identity.Client.Resource.Styleable.Toolbar_titleTextColor = global::ContosoFieldService.Droid.Resource.Styleable.Toolbar_titleTextColor;
+			global::Microsoft.Identity.Client.Resource.Styleable.View = global::ContosoFieldService.Droid.Resource.Styleable.View;
+			global::Microsoft.Identity.Client.Resource.Styleable.View_android_focusable = global::ContosoFieldService.Droid.Resource.Styleable.View_android_focusable;
+			global::Microsoft.Identity.Client.Resource.Styleable.View_android_theme = global::ContosoFieldService.Droid.Resource.Styleable.View_android_theme;
+			global::Microsoft.Identity.Client.Resource.Styleable.View_paddingEnd = global::ContosoFieldService.Droid.Resource.Styleable.View_paddingEnd;
+			global::Microsoft.Identity.Client.Resource.Styleable.View_paddingStart = global::ContosoFieldService.Droid.Resource.Styleable.View_paddingStart;
+			global::Microsoft.Identity.Client.Resource.Styleable.View_theme = global::ContosoFieldService.Droid.Resource.Styleable.View_theme;
+			global::Microsoft.Identity.Client.Resource.Styleable.ViewBackgroundHelper = global::ContosoFieldService.Droid.Resource.Styleable.ViewBackgroundHelper;
+			global::Microsoft.Identity.Client.Resource.Styleable.ViewBackgroundHelper_android_background = global::ContosoFieldService.Droid.Resource.Styleable.ViewBackgroundHelper_android_background;
+			global::Microsoft.Identity.Client.Resource.Styleable.ViewBackgroundHelper_backgroundTint = global::ContosoFieldService.Droid.Resource.Styleable.ViewBackgroundHelper_backgroundTint;
+			global::Microsoft.Identity.Client.Resource.Styleable.ViewBackgroundHelper_backgroundTintMode = global::ContosoFieldService.Droid.Resource.Styleable.ViewBackgroundHelper_backgroundTintMode;
+			global::Microsoft.Identity.Client.Resource.Styleable.ViewStubCompat = global::ContosoFieldService.Droid.Resource.Styleable.ViewStubCompat;
+			global::Microsoft.Identity.Client.Resource.Styleable.ViewStubCompat_android_id = global::ContosoFieldService.Droid.Resource.Styleable.ViewStubCompat_android_id;
+			global::Microsoft.Identity.Client.Resource.Styleable.ViewStubCompat_android_inflatedId = global::ContosoFieldService.Droid.Resource.Styleable.ViewStubCompat_android_inflatedId;
+			global::Microsoft.Identity.Client.Resource.Styleable.ViewStubCompat_android_layout = global::ContosoFieldService.Droid.Resource.Styleable.ViewStubCompat_android_layout;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.actionBarSize = global::ContosoFieldService.Droid.Resource.Attribute.actionBarSize;
 		}
 		
@@ -6804,26 +8235,26 @@ namespace ContosoFieldService.Droid
 			// aapt resource value: 0x7f020053
 			public const int avd_hide_password = 2130837587;
 			
-			// aapt resource value: 0x7f020133
-			public const int avd_hide_password_1 = 2130837811;
-			
 			// aapt resource value: 0x7f020134
-			public const int avd_hide_password_2 = 2130837812;
+			public const int avd_hide_password_1 = 2130837812;
 			
 			// aapt resource value: 0x7f020135
-			public const int avd_hide_password_3 = 2130837813;
+			public const int avd_hide_password_2 = 2130837813;
+			
+			// aapt resource value: 0x7f020136
+			public const int avd_hide_password_3 = 2130837814;
 			
 			// aapt resource value: 0x7f020054
 			public const int avd_show_password = 2130837588;
 			
-			// aapt resource value: 0x7f020136
-			public const int avd_show_password_1 = 2130837814;
-			
 			// aapt resource value: 0x7f020137
-			public const int avd_show_password_2 = 2130837815;
+			public const int avd_show_password_1 = 2130837815;
 			
 			// aapt resource value: 0x7f020138
-			public const int avd_show_password_3 = 2130837816;
+			public const int avd_show_password_2 = 2130837816;
+			
+			// aapt resource value: 0x7f020139
+			public const int avd_show_password_3 = 2130837817;
 			
 			// aapt resource value: 0x7f020055
 			public const int ba747 = 2130837589;
@@ -7366,130 +8797,133 @@ namespace ContosoFieldService.Droid
 			public const int icon_dashboard = 2130837768;
 			
 			// aapt resource value: 0x7f020109
-			public const int icon_jobs = 2130837769;
+			public const int icon_greentool = 2130837769;
 			
 			// aapt resource value: 0x7f02010a
-			public const int icon_parts = 2130837770;
+			public const int icon_jobs = 2130837770;
 			
 			// aapt resource value: 0x7f02010b
-			public const int icon_store = 2130837771;
+			public const int icon_parts = 2130837771;
 			
 			// aapt resource value: 0x7f02010c
-			public const int icon_user = 2130837772;
+			public const int icon_store = 2130837772;
 			
 			// aapt resource value: 0x7f02010d
-			public const int icon_usersettings = 2130837773;
+			public const int icon_user = 2130837773;
 			
 			// aapt resource value: 0x7f02010e
-			public const int mr_button_connected_dark = 2130837774;
+			public const int icon_usersettings = 2130837774;
 			
 			// aapt resource value: 0x7f02010f
-			public const int mr_button_connected_light = 2130837775;
+			public const int mr_button_connected_dark = 2130837775;
 			
 			// aapt resource value: 0x7f020110
-			public const int mr_button_connecting_dark = 2130837776;
+			public const int mr_button_connected_light = 2130837776;
 			
 			// aapt resource value: 0x7f020111
-			public const int mr_button_connecting_light = 2130837777;
+			public const int mr_button_connecting_dark = 2130837777;
 			
 			// aapt resource value: 0x7f020112
-			public const int mr_button_dark = 2130837778;
+			public const int mr_button_connecting_light = 2130837778;
 			
 			// aapt resource value: 0x7f020113
-			public const int mr_button_light = 2130837779;
+			public const int mr_button_dark = 2130837779;
 			
 			// aapt resource value: 0x7f020114
-			public const int mr_dialog_close_dark = 2130837780;
+			public const int mr_button_light = 2130837780;
 			
 			// aapt resource value: 0x7f020115
-			public const int mr_dialog_close_light = 2130837781;
+			public const int mr_dialog_close_dark = 2130837781;
 			
 			// aapt resource value: 0x7f020116
-			public const int mr_dialog_material_background_dark = 2130837782;
+			public const int mr_dialog_close_light = 2130837782;
 			
 			// aapt resource value: 0x7f020117
-			public const int mr_dialog_material_background_light = 2130837783;
+			public const int mr_dialog_material_background_dark = 2130837783;
 			
 			// aapt resource value: 0x7f020118
-			public const int mr_group_collapse = 2130837784;
+			public const int mr_dialog_material_background_light = 2130837784;
 			
 			// aapt resource value: 0x7f020119
-			public const int mr_group_expand = 2130837785;
+			public const int mr_group_collapse = 2130837785;
 			
 			// aapt resource value: 0x7f02011a
-			public const int mr_media_pause_dark = 2130837786;
+			public const int mr_group_expand = 2130837786;
 			
 			// aapt resource value: 0x7f02011b
-			public const int mr_media_pause_light = 2130837787;
+			public const int mr_media_pause_dark = 2130837787;
 			
 			// aapt resource value: 0x7f02011c
-			public const int mr_media_play_dark = 2130837788;
+			public const int mr_media_pause_light = 2130837788;
 			
 			// aapt resource value: 0x7f02011d
-			public const int mr_media_play_light = 2130837789;
+			public const int mr_media_play_dark = 2130837789;
 			
 			// aapt resource value: 0x7f02011e
-			public const int mr_media_stop_dark = 2130837790;
+			public const int mr_media_play_light = 2130837790;
 			
 			// aapt resource value: 0x7f02011f
-			public const int mr_media_stop_light = 2130837791;
+			public const int mr_media_stop_dark = 2130837791;
 			
 			// aapt resource value: 0x7f020120
-			public const int mr_vol_type_audiotrack_dark = 2130837792;
+			public const int mr_media_stop_light = 2130837792;
 			
 			// aapt resource value: 0x7f020121
-			public const int mr_vol_type_audiotrack_light = 2130837793;
+			public const int mr_vol_type_audiotrack_dark = 2130837793;
 			
 			// aapt resource value: 0x7f020122
-			public const int myface = 2130837794;
+			public const int mr_vol_type_audiotrack_light = 2130837794;
 			
 			// aapt resource value: 0x7f020123
-			public const int navigation_empty_icon = 2130837795;
+			public const int myface = 2130837795;
 			
 			// aapt resource value: 0x7f020124
-			public const int Next = 2130837796;
+			public const int navigation_empty_icon = 2130837796;
 			
 			// aapt resource value: 0x7f020125
-			public const int notification_action_background = 2130837797;
+			public const int Next = 2130837797;
 			
 			// aapt resource value: 0x7f020126
-			public const int notification_bg = 2130837798;
+			public const int notification_action_background = 2130837798;
 			
 			// aapt resource value: 0x7f020127
-			public const int notification_bg_low = 2130837799;
+			public const int notification_bg = 2130837799;
 			
 			// aapt resource value: 0x7f020128
-			public const int notification_bg_low_normal = 2130837800;
+			public const int notification_bg_low = 2130837800;
 			
 			// aapt resource value: 0x7f020129
-			public const int notification_bg_low_pressed = 2130837801;
+			public const int notification_bg_low_normal = 2130837801;
 			
 			// aapt resource value: 0x7f02012a
-			public const int notification_bg_normal = 2130837802;
+			public const int notification_bg_low_pressed = 2130837802;
 			
 			// aapt resource value: 0x7f02012b
-			public const int notification_bg_normal_pressed = 2130837803;
+			public const int notification_bg_normal = 2130837803;
 			
 			// aapt resource value: 0x7f02012c
-			public const int notification_icon_background = 2130837804;
-			
-			// aapt resource value: 0x7f020131
-			public const int notification_template_icon_bg = 2130837809;
-			
-			// aapt resource value: 0x7f020132
-			public const int notification_template_icon_low_bg = 2130837810;
+			public const int notification_bg_normal_pressed = 2130837804;
 			
 			// aapt resource value: 0x7f02012d
-			public const int notification_tile_bg = 2130837805;
+			public const int notification_icon_background = 2130837805;
+			
+			// aapt resource value: 0x7f020132
+			public const int notification_template_icon_bg = 2130837810;
+			
+			// aapt resource value: 0x7f020133
+			public const int notification_template_icon_low_bg = 2130837811;
 			
 			// aapt resource value: 0x7f02012e
-			public const int notify_panel_notification_icon_bg = 2130837806;
+			public const int notification_tile_bg = 2130837806;
 			
 			// aapt resource value: 0x7f02012f
-			public const int Prev = 2130837807;
+			public const int notify_panel_notification_icon_bg = 2130837807;
 			
 			// aapt resource value: 0x7f020130
-			public const int Up = 2130837808;
+			public const int Prev = 2130837808;
+			
+			// aapt resource value: 0x7f020131
+			public const int Up = 2130837809;
 			
 			static Drawable()
 			{
@@ -7572,6 +9006,9 @@ namespace ContosoFieldService.Droid
 			
 			// aapt resource value: 0x7f0b0016
 			public const int adjust_width = 2131427350;
+			
+			// aapt resource value: 0x7f0b00cb
+			public const int agentWebView = 2131427531;
 			
 			// aapt resource value: 0x7f0b0069
 			public const int alertTitle = 2131427433;
@@ -7759,8 +9196,8 @@ namespace ContosoFieldService.Droid
 			// aapt resource value: 0x7f0b000f
 			public const int lottie_layer_name = 2131427343;
 			
-			// aapt resource value: 0x7f0b00cc
-			public const int masked = 2131427532;
+			// aapt resource value: 0x7f0b00cd
+			public const int masked = 2131427533;
 			
 			// aapt resource value: 0x7f0b00b8
 			public const int media_actions = 2131427512;
@@ -8101,8 +9538,8 @@ namespace ContosoFieldService.Droid
 			// aapt resource value: 0x7f0b000e
 			public const int view_offset_helper = 2131427342;
 			
-			// aapt resource value: 0x7f0b00cb
-			public const int visible = 2131427531;
+			// aapt resource value: 0x7f0b00cc
+			public const int visible = 2131427532;
 			
 			// aapt resource value: 0x7f0b00aa
 			public const int volume_item_container = 2131427498;
@@ -8416,6 +9853,9 @@ namespace ContosoFieldService.Droid
 			// aapt resource value: 0x7f030045
 			public const int vertical_viewpager = 2130903109;
 			
+			// aapt resource value: 0x7f030046
+			public const int WebAuthenticationBroker = 2130903110;
+			
 			static Layout()
 			{
 				global::Android.Runtime.ResourceIdManager.UpdateIdValues();
@@ -8429,11 +9869,11 @@ namespace ContosoFieldService.Droid
 		public partial class String
 		{
 			
-			// aapt resource value: 0x7f080064
-			public const int ApplicationName = 2131230820;
+			// aapt resource value: 0x7f08004f
+			public const int ApplicationName = 2131230799;
 			
-			// aapt resource value: 0x7f080063
-			public const int Hello = 2131230819;
+			// aapt resource value: 0x7f080064
+			public const int Hello = 2131230820;
 			
 			// aapt resource value: 0x7f080026
 			public const int abc_action_bar_home_description = 2131230758;
@@ -8531,62 +9971,62 @@ namespace ContosoFieldService.Droid
 			// aapt resource value: 0x7f080047
 			public const int appbar_scrolling_view_behavior = 2131230791;
 			
-			// aapt resource value: 0x7f080050
-			public const int appcenter_distribute_dialog_actioned_on_disabled_toast = 2131230800;
-			
 			// aapt resource value: 0x7f080051
-			public const int appcenter_distribute_download_progress_number_format = 2131230801;
+			public const int appcenter_distribute_dialog_actioned_on_disabled_toast = 2131230801;
 			
 			// aapt resource value: 0x7f080052
-			public const int appcenter_distribute_downloading_mandatory_update = 2131230802;
+			public const int appcenter_distribute_download_progress_number_format = 2131230802;
 			
 			// aapt resource value: 0x7f080053
-			public const int appcenter_distribute_install = 2131230803;
+			public const int appcenter_distribute_downloading_mandatory_update = 2131230803;
 			
 			// aapt resource value: 0x7f080054
-			public const int appcenter_distribute_install_ready_message = 2131230804;
+			public const int appcenter_distribute_install = 2131230804;
 			
 			// aapt resource value: 0x7f080055
-			public const int appcenter_distribute_install_ready_title = 2131230805;
+			public const int appcenter_distribute_install_ready_message = 2131230805;
 			
 			// aapt resource value: 0x7f080056
-			public const int appcenter_distribute_notification_category = 2131230806;
+			public const int appcenter_distribute_install_ready_title = 2131230806;
 			
 			// aapt resource value: 0x7f080057
-			public const int appcenter_distribute_unknown_sources_dialog_message = 2131230807;
+			public const int appcenter_distribute_notification_category = 2131230807;
 			
 			// aapt resource value: 0x7f080058
-			public const int appcenter_distribute_unknown_sources_dialog_settings = 2131230808;
+			public const int appcenter_distribute_unknown_sources_dialog_message = 2131230808;
 			
 			// aapt resource value: 0x7f080059
-			public const int appcenter_distribute_update_dialog_download = 2131230809;
+			public const int appcenter_distribute_unknown_sources_dialog_settings = 2131230809;
 			
 			// aapt resource value: 0x7f08005a
-			public const int appcenter_distribute_update_dialog_message_mandatory = 2131230810;
+			public const int appcenter_distribute_update_dialog_download = 2131230810;
 			
 			// aapt resource value: 0x7f08005b
-			public const int appcenter_distribute_update_dialog_message_optional = 2131230811;
+			public const int appcenter_distribute_update_dialog_message_mandatory = 2131230811;
 			
 			// aapt resource value: 0x7f08005c
-			public const int appcenter_distribute_update_dialog_postpone = 2131230812;
+			public const int appcenter_distribute_update_dialog_message_optional = 2131230812;
 			
 			// aapt resource value: 0x7f08005d
-			public const int appcenter_distribute_update_dialog_title = 2131230813;
+			public const int appcenter_distribute_update_dialog_postpone = 2131230813;
 			
 			// aapt resource value: 0x7f08005e
-			public const int appcenter_distribute_update_dialog_view_release_notes = 2131230814;
+			public const int appcenter_distribute_update_dialog_title = 2131230814;
 			
 			// aapt resource value: 0x7f08005f
-			public const int appcenter_distribute_update_failed_dialog_ignore = 2131230815;
+			public const int appcenter_distribute_update_dialog_view_release_notes = 2131230815;
 			
 			// aapt resource value: 0x7f080060
-			public const int appcenter_distribute_update_failed_dialog_message = 2131230816;
+			public const int appcenter_distribute_update_failed_dialog_ignore = 2131230816;
 			
 			// aapt resource value: 0x7f080061
-			public const int appcenter_distribute_update_failed_dialog_reinstall = 2131230817;
+			public const int appcenter_distribute_update_failed_dialog_message = 2131230817;
 			
 			// aapt resource value: 0x7f080062
-			public const int appcenter_distribute_update_failed_dialog_title = 2131230818;
+			public const int appcenter_distribute_update_failed_dialog_reinstall = 2131230818;
+			
+			// aapt resource value: 0x7f080063
+			public const int appcenter_distribute_update_failed_dialog_title = 2131230819;
 			
 			// aapt resource value: 0x7f080048
 			public const int bottom_sheet_behavior = 2131230792;
@@ -8645,8 +10085,8 @@ namespace ContosoFieldService.Droid
 			// aapt resource value: 0x7f080010
 			public const int common_signin_button_text_long = 2131230736;
 			
-			// aapt resource value: 0x7f08004f
-			public const int library_name = 2131230799;
+			// aapt resource value: 0x7f080050
+			public const int library_name = 2131230800;
 			
 			// aapt resource value: 0x7f080011
 			public const int mr_button_content_description = 2131230737;

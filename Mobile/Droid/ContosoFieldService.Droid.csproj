@@ -342,6 +342,15 @@
     <Reference Include="System.Threading.Tasks" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Xml.Linq" />
+    <Reference Include="MonkeyCache">
+      <HintPath>..\..\packages\MonkeyCache.0.1.0.1-beta\lib\monoandroid50\MonkeyCache.dll</HintPath>
+    </Reference>
+    <Reference Include="MonkeyCache.FileStore">
+      <HintPath>..\..\packages\MonkeyCache.FileStore.0.1.0.1-beta\lib\monoandroid50\MonkeyCache.FileStore.dll</HintPath>
+    </Reference>
+    <Reference Include="Polly">
+      <HintPath>..\..\packages\Polly.5.8.0\lib\netstandard1.1\Polly.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="MainActivity.cs" />
@@ -407,6 +416,7 @@
     <AndroidResource Include="Resources\drawable-xhdpi\icon.png" />
     <AndroidResource Include="Resources\drawable-xxhdpi\icon.png" />
     <AndroidResource Include="Resources\drawable-xxxhdpi\icon.png" />
+    <AndroidResource Include="Resources\drawable\icon_greentool.png" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ContosoFieldService.Core\ContosoFieldService.Core.csproj">

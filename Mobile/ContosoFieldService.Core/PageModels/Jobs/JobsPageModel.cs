@@ -8,6 +8,7 @@ using Xamarin.Forms;
 using System.Linq;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
+using MonkeyCache.FileStore;
 
 namespace ContosoFieldService.PageModels
 {
@@ -119,6 +120,7 @@ namespace ContosoFieldService.PageModels
         #endregion
 
         #region Overrides
+
         public override async void Init(object initData)
         {
             base.Init(initData);
@@ -129,9 +131,8 @@ namespace ContosoFieldService.PageModels
         {
             base.ViewIsAppearing(sender, e);
 
-            if (Helpers.Settings.UserIsLoggedIn == false)
+            if (Helpers.Settings.LoginViewShown == false)
                 await CoreMethods.PushPageModel<LoginPageModel>(null, true, true);
-
 
             await ReloadData(true);
         }
@@ -145,6 +146,16 @@ namespace ContosoFieldService.PageModels
         {
             base.ReverseInit(returnedData);
             SelectedJob = null;
+
+            if (returnedData is Job job && job.IsDeleted)
+            {
+                // Job got deleted
+
+                // Invalidate chache
+                Barrel.Current.Empty("Jobs");
+                //  Reload data.
+                await ReloadData(false);
+            }
         }
 
         #endregion
@@ -178,7 +189,7 @@ namespace ContosoFieldService.PageModels
             }
             catch (Exception ex)
             {
-                await CoreMethods.DisplayAlert("Connection Error", "An error occured while communicating with the backend. Please check your settings and try again.", "Ok");
+                await CoreMethods.DisplayAlert("Error", "An error occured while communicating with the backend. Please check your settings and try again.", "Ok");
             }
 
             IsRefreshing = false;
@@ -195,7 +206,7 @@ namespace ContosoFieldService.PageModels
                 new GroupedJobs("Complete", jobs.Where(x => x.Status == JobStatus.Complete)),
             };
 
-            // Rerturn groups that actually have items to the list
+            // Return groups that actually have items to the list
             return groupedJobs.Where(x => x.Any());
         }
 

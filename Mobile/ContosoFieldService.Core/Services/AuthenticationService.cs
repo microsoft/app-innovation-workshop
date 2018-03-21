@@ -11,15 +11,14 @@ namespace ContosoFieldService.Services
     public class AuthenticationService
     {
         public static UIParent UIParent;
+        public static IUser CurrentUser { get; set; }
+        public static bool IsLoggedIn { get; set; }
+        public static string AccessToken { get; set; }
 
         PublicClientApplication authClient;
         string[] scopes;
         string signUpAndInPolicy;
         string authority;
-
-        public IUser CurrentUser { get; set; }
-        public bool IsLoggedIn { get; set; }
-        public string AccessToken { get; set; }
 
         public Action ShowLoginUi { get; set; }
 
@@ -29,7 +28,7 @@ namespace ContosoFieldService.Services
             authority = $"{authorityBase}{Constants.SignUpAndInPolicy}";
             authClient = new PublicClientApplication(Constants.ClientID, authority); ;
             authClient.ValidateAuthority = false;
-            authClient.RedirectUri = $"msal{Constants.ClientID}://auth";
+            authClient.RedirectUri = $"msalcontosomaintenance://auth";
             scopes = Constants.Scopes;
             signUpAndInPolicy = Constants.SignUpAndInPolicy;
         }

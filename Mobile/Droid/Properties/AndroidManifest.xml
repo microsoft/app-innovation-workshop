@@ -12,5 +12,13 @@
     <permission android:name="${applicationId}.permission.C2D_MESSAGE" android:protectionLevel="signature" />
     <application android:label="Field Service">
         <meta-data android:name="com.google.android.maps.v2.API_KEY" android:value="AIzaSyD008rMjSZgPWApeFf-fu_Yvpaid0LkTQ4" />
+        <activity android:name="microsoft.identity.client.BrowserTabActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data android:scheme="msalmsalcontosomaintenance" android:host="auth" />
+            </intent-filter>
+        </activity>
     </application>
 </manifest>
