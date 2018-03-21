@@ -4,7 +4,22 @@ Azure API Management is a turnkey solution for publishing APIs for external and 
 
 ![Highlighted Architecture Diagram](Assets/HighlightedArchitecture.png)
 
+#### Why API Management
+
 We'll be using API Management in today's workshop to act as both a gateway our Azure Resources and as a source of documentation about what features we've made available to consumers of our services. 
+
+- Package and publish APIs to developers and partners
+- Onboard developers via self-service portal
+- Ramp-up developers with documentation, samples and API console
+- Manage and control API access and protect them from abuse
+- Monetize APIs or parts of it
+- Bundle multiple APIs together
+- Add new capabilities to existing APIs, such as respone caching
+- Insights of usage and health from analytics reports
+
+#### What does it cost
+
+[Azure API Management Pricing](https://azure.microsoft.com/en-us/pricing/details/api-management/)
 
 ![Developer Portal](Assets/DeveloperPortal.png)
 You can find a our API Management portal running [here](https://contosomaintenance.portal.azure-api.net/)
@@ -16,7 +31,7 @@ You can explore APIs with API Management and even get automatically generated sn
 
 ## 1. Deploying API Management 
 
-Let's head over to our Resource Group again and hit the "Add" button again.
+Let's head over to our Resource Group again and hit the ***Add*** button again.
 
 ![Search for API Management](Assets/SearchForApiManagement.png)
 
