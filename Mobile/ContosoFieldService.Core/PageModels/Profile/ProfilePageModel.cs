@@ -3,11 +3,14 @@ using System.Collections.ObjectModel;
 using FreshMvvm;
 using Microsoft.AppCenter.Analytics;
 using Xamarin.Forms;
+using ContosoFieldService.Services;
 
 namespace ContosoFieldService.PageModels
 {
     public class ProfilePageModel : FreshBasePageModel
     {
+        readonly AuthenticationService authenticationService;
+
         public ObservableCollection<Stats> Statistics { get; set; }
 
         public int JobsCompleted = 0;
@@ -41,6 +44,11 @@ namespace ContosoFieldService.PageModels
             }
         }
 
+        public ProfilePageModel()
+        {
+            authenticationService = new AuthenticationService();
+        }
+
         public override void Init(object initData)
         {
             base.Init(initData);
@@ -57,11 +65,14 @@ namespace ContosoFieldService.PageModels
 
         protected override async void ViewIsAppearing(object sender, EventArgs e)
         {
-            GravatarSource = Helpers.Extensions.EmailToGravatarUrl(Helpers.Settings.Email);
-            Name = Helpers.Settings.FullName;
+            if (AuthenticationService.CurrentUser != null)
+                Name = AuthenticationService.CurrentUser.Name;
+
+            if (AuthenticationService.CurrentUserEmail != null)
+                GravatarSource = Helpers.Extensions.EmailToGravatarUrl(AuthenticationService.CurrentUserEmail);
+
             RaisePropertyChanged("Name");
             RaisePropertyChanged("GravatarSource");
-
         }
     }
 

@@ -51,6 +51,7 @@
     <PackageReference Include="Com.Airbnb.Xamarin.Forms.Lottie" Version="2.5.1" />
     <PackageReference Include="MonkeyCache" Version="0.1.0.1-beta" />
     <PackageReference Include="MonkeyCache.FileStore" Version="0.1.0.1-beta" />
+    <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="5.2.1" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Pages\" />
