@@ -116,7 +116,7 @@ Fill in all the values and register the application with the ***Create*** button
 - **Native client:** Yes
 - **Custom Redurect URI:** `msalcontosomaintenance://auth`
 
-## 4. Connect the Web Api Backend with Azure ADB2C
+## 4. Connect the Web Api Backend with Azure Active Directory
 
 Not that the Active Directory is set up, we can connect it to the Backend and introduce it as the Identity Provider of choice. As ASP.Net Core has support for authentication built-in, not much code is needed, to add Active Directory Authentication application-wide.
 
@@ -151,6 +151,8 @@ public void ConfigureServices(IServiceCollection services)
 }
 ```
 
+[View in project](/Backend/Monolithic/Startup.cs#L47-L65)
+
 As you can see, we use `Configuration` variables one more time to not hard code the config properties. So it takes the Azure Active Directory config out of the Environment Variables as defined in [`appsettings.json`](/Backend/Monolithic/appsettings.json).
 
 ```json
@@ -161,6 +163,8 @@ As you can see, we use `Configuration` variables one more time to not hard code 
 }
 ```
 
+[View in project](/Backend/Monolithic/appsettings.json#L30-L34)
+
 So let's set these variables to the correct values an head back to our App Service, open the ***Application Settings*** and add these variables here as we did before for CosmosDB and Storage.
 
 - **`ActiveDirectory:Tenant`:** "{OUR_AD}.onmicrosoft.com"
@@ -169,7 +173,57 @@ So let's set these variables to the correct values an head back to our App Servi
 
 ![Add ADB2C Settings to Azure App Service Settings](Assets/AddADB2CSettings.png)
 
-Don't forget to hit ***Save*** after you have entered all the variables
+Don't forget to hit ***Save*** after you have entered all the variables.
+
+Some of the API calls to our backend requires, that a user is authenticated to proceed. `DELETE` operations are a good example for that. The code in the [`BaseController.cs`](/Backend/Monolithic/Controllers/BaseController.cs) has an `[Authenticate]` attribure added to the Delete function. This will automatically refuse calls from unauthenticated clients. In a real-word scenario, you would also want to check if the User's ID matches the owner ID of the item that gets deleted to make sure the client has the right permissions.
+
+```csharp
+[Authorize]
+[HttpDelete("{id}")]
+public async Task<ActionResult> DeleteAsync(string id)
+{
+    // Get ID of user who sends the request
+    var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+
+    // TODO: Check, if user is allowed to delete item
+    // Currently left out for demo reasons
+
+    // ...
+}
+```
+
+[View in project](/Backend/Monolithic/Controllers/BaseController.cs#L73-L100)
+
+This basically means that if we fire a Delete request to the backend, without an Access Token in the Header, we will get back a **401 Unauthorized** response like shown in the Postman Screenshot below.
+
+![Delete Call with Postman is Unauthorized](Assets/PostmanUnauthorized.png)
+
+## 5. Configure the Mobile App
+
+Most of the authentication code is already written in the App but let's go through the important parts quickly, to understand how everything is glued together. Mostly, the whole process of Logging in, Logging out, Refreshing the Access Token in the background, handling the current user and so on lives in the [`AuthenticationService.cs`](/Mobile/ContosoFieldService.Core/Services/AuthenticationService.cs). It uses the [Microsoft.Identity.Client](https://www.nuget.org/packages/Microsoft.Identity.Client/) NuGet package (or MSAL) to take care of communicating to Azure AD B2C (and caching the tokens in respsonse) for us. This removes a lot of work on our end.
+
+### 5.1 iOS specific steps
+
+In the iOS project, we have to edit the [`Info.plist`](/Mobile/iOS/Info.plist) file and add a URL type to define a callback URL that gets invoked when the web view is dismissed. He have configured this Callback URL earlier, when adding the Application to Active Diorectory and added the Natvie Client.
+
+```xml
+<key>CFBundleURLTypes</key>
+<array>
+    <dict>
+        <key>CFBundleTypeRole</key>
+        <string>Editor</string>
+        <key>CFBundleURLName</key>        
+        <string>com.contoso.contosomaintenance</string> <!-- Use your Bundle identifier here -->
+        <key>CFBundleURLSchemes</key>
+        <array>            
+            <string>msalmsalcontosomaintenance</string> <!-- Use your Custom Redurect URI -->
+        </array>
+    </dict>
+</array>
+```
+
+[View in project](/Backend/Monolithic/Controllers/BaseController.cs#L73-L100)
+
 
 # Additional Resouces
 

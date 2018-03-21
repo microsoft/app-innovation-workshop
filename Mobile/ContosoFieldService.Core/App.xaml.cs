@@ -13,6 +13,7 @@ using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using Plugin.VersionTracking;
 using Microsoft.AppCenter.Distribute;
+using ContosoFieldService.Services;
 
 [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 namespace ContosoFieldService

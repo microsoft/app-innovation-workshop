@@ -15,6 +15,8 @@ using FFImageLoading.Transformations;
 using Xamarin;
 using Microsoft.AppCenter.Push;
 using Plugin.Permissions;
+using ContosoFieldService.Services;
+using Microsoft.Identity.Client;
 
 namespace ContosoFieldService.Droid
 {
@@ -37,6 +39,9 @@ namespace ContosoFieldService.Droid
 
             // Configure App Center Push
             Push.SetSenderId("597659151602");
+
+            // Configure Authentication
+            AuthenticationService.UIParent = new UIParent(Xamarin.Forms.Forms.Context as Activity);
 
             LoadApplication(new App());
         }
