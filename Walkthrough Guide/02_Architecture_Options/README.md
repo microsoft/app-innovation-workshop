@@ -47,6 +47,9 @@ If you're interested in helping, then please reach out to us!
 
 Learn more about [Service Fabric](https://azure.microsoft.com/en-us/services/service-fabric/)
 
+## Connecting to remote resources securely
+//This is where you write things my love. 
+
 ---
 # Next Steps 
 [Web API](../03_Web_API/README.md)
