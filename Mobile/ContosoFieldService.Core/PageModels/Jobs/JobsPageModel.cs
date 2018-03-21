@@ -176,7 +176,7 @@ namespace ContosoFieldService.PageModels
                     await CoreMethods.DisplayAlert("Network Error", "No internet connectivity found", "OK");
                 }
             }
-            catch
+            catch (Exception ex)
             {
                 await CoreMethods.DisplayAlert("Connection Error", "An error occured while communicating with the backend. Please check your settings and try again.", "Ok");
             }
