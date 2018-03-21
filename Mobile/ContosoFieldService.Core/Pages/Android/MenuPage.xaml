@@ -22,28 +22,16 @@
             Orientation="Horizontal" 
             BackgroundColor="{StaticResource AccentColorDark}"
             HeightRequest="160">   
-
-            <!-- Profile picture -->
-            <ffimageloading:CachedImage 
-                VerticalOptions="CenterAndExpand" 
-                Margin="20,0,0,0" 
-                DownsampleToViewSize="true"
-                Aspect="AspectFit" 
-                HeightRequest="60" 
-                WidthRequest="60" 
-                Source="myface.jpg">
-                <ffimageloading:CachedImage.Transformations>
-                    <fftransformations:CircleTransformation />
-                </ffimageloading:CachedImage.Transformations>
-            </ffimageloading:CachedImage>
             
             <Label 
                 Style="{StaticResource LargeLabelStyle}"
                 VerticalOptions="CenterAndExpand"
                 VerticalTextAlignment="Center"
+                HorizontalOptions="Center"
+                HorizontalTextAlignment="Center"
                 Margin="{StaticResource DefaultThickness}"
                 TextColor="White"
-                Text="Steven Thewissen"/>
+                Text="Contoso Maintenance"/>
         </StackLayout>
         
         <ListView 
