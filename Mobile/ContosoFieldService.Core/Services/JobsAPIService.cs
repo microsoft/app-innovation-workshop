@@ -51,11 +51,11 @@ namespace ContosoFieldService.Services
             // TODO: THERE IS A BUG WITH GEOSPARTIAL DATA AT THE MOMENT
             // ----
             // If the data isn't too old, we'll go ahead and return it rather than call the backend again.
-            //if (!Barrel.Current.IsExpired(key) && Barrel.Current.Exists(key))
-            //{
-            //    var jobs = Barrel.Current.Get<IEnumerable<Job>>(key);
-            //    return jobs.ToList();
-            //}
+            if (!Barrel.Current.IsExpired(key) && Barrel.Current.Exists(key))
+            {
+                var jobs = Barrel.Current.Get<IEnumerable<Job>>(key);
+                return jobs.ToList();
+            }
 
             // Create an instance of the Refit RestService for the job interface.
             var contosoMaintenanceApi = RestService.For<IJobServiceAPI>(Helpers.Constants.BaseUrl);
@@ -65,7 +65,7 @@ namespace ContosoFieldService.Services
             if (pollyResult.Result != null)
             {
                 // Save jobs into the cache
-                Barrel.Current.Add(key, pollyResult.Result, TimeSpan.FromSeconds(5));
+                Barrel.Current.Add(key, pollyResult.Result, TimeSpan.FromMinutes(5));
                 return pollyResult.Result;
             }
 
