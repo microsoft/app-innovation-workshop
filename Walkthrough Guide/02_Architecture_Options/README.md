@@ -67,6 +67,7 @@ There are three ways to connect customer’s on-premise infrastructure to Azure 
 
 A Site-to-Site VPN gateway connection is used to connect your on-premises network to an Azure virtual network over an IPsec/IKE (IKEv1 or IKEv2) VPN tunnel. This type of connection requires a VPN device located on-premises that has an externally facing public IP address assigned to it.
 (picure2)
+![Site to Site Connectivity Model](Assets/SiteToSiteConnectivityModel.png)
  
 # Next Steps 
 [Web API](../03_Web_API/README.md)
