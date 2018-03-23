@@ -17,7 +17,7 @@
                 <action android:name="android.intent.action.VIEW" />
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.BROWSABLE" />
-                <data android:scheme="msalmsalcontosomaintenance" android:host="auth" />
+                <data android:scheme="msalcontosomaintenance" android:host="auth" />
             </intent-filter>
         </activity>
     </application>
