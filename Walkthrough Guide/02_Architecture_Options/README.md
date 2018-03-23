@@ -47,6 +47,27 @@ If you're interested in helping, then please reach out to us!
 
 Learn more about [Service Fabric](https://azure.microsoft.com/en-us/services/service-fabric/)
 
----
+## Connecting to remote resources securely
+ExpressRoute is an Azure service that lets you create private connections between Microsoft datacenters and infrastructure that’s on your premises or in a colocation facility. ExpressRoute connections do not go over the public Internet, and offer reliability and speeds with lower latencies than typical connections over the Internet 
+Microsoft Azure ExpressRoute lets you extend your on-premises networks into the Microsoft cloud over a private connection facilitated by a connectivity provider. 
+Connectivity can be from an any-to-any (IP VPN) network, a point-to-point Ethernet network, or a virtual cross-connection through a connectivity provider at a co-location facility.
+
+Microsoft uses industry standard dynamic routing protocol (BGP) to exchange routes between your on-premises network, your instances in Azure, and Microsoft public addresses. We establish multiple BGP sessions with your network for different traffic profiles. 
+Advantage of ExpressRoute connections over S2S VPN or accessing microsoft cloud services over internet are as follows; 
+● more reliability ● faster speeds ● lower latencies ● higher security than typical connections over the Internet ● extend ExpressRoute connectivity across geopolitical boundaries (using premium add-on) 
+ 
+Bandwidth options available in ExpressRoute are 50 Mbps, 100 Mbps, 200 Mbps, 500 Mbps, 1 Gbps, 2 Gbps, 5 Gbps and 10 Gbps.
+![Express Route Connectivity Model](Assets/ERCOnnectivityModel.png)
+
+There are three ways to connect customer’s on-premise infrastructure to Azure (or microsoft cloud services) using ExpressRoute, they are as below; 
+ 
+1. WAN integration (or call IPVPN or MPLS or any-to-any connectivity) 
+2. Cloud Exchange through Co-Location Provider 
+3. Point-to-Point Ethernet Connection 
+
+A Site-to-Site VPN gateway connection is used to connect your on-premises network to an Azure virtual network over an IPsec/IKE (IKEv1 or IKEv2) VPN tunnel. This type of connection requires a VPN device located on-premises that has an externally facing public IP address assigned to it.
+(picure2)
+![Site to Site Connectivity Model](Assets/SiteToSiteConnectivityModel.png)
+ 
 # Next Steps 
 [Web API](../03_Web_API/README.md)
