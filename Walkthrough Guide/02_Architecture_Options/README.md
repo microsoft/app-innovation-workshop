@@ -54,9 +54,14 @@ Connectivity can be from an any-to-any (IP VPN) network, a point-to-point Ethern
 
 Microsoft uses industry standard dynamic routing protocol (BGP) to exchange routes between your on-premises network, your instances in Azure, and Microsoft public addresses. We establish multiple BGP sessions with your network for different traffic profiles. 
 Advantage of ExpressRoute connections over S2S VPN or accessing microsoft cloud services over internet are as follows; 
-● more reliability ● faster speeds ● lower latencies ● higher security than typical connections over the Internet ● extend ExpressRoute connectivity across geopolitical boundaries (using premium add-on) 
+* more reliability 
+* faster speeds 
+* lower latencies 
+* higher security than typical connections over the Internet 
+* extend ExpressRoute connectivity across geopolitical boundaries (using premium add-on) 
  
 Bandwidth options available in ExpressRoute are 50 Mbps, 100 Mbps, 200 Mbps, 500 Mbps, 1 Gbps, 2 Gbps, 5 Gbps and 10 Gbps.
+
 ![Express Route Connectivity Model](Assets/ERCOnnectivityModel.png)
 
 There are three ways to connect customer’s on-premise infrastructure to Azure (or microsoft cloud services) using ExpressRoute, they are as below; 
@@ -66,7 +71,6 @@ There are three ways to connect customer’s on-premise infrastructure to Azure 
 3. Point-to-Point Ethernet Connection 
 
 A Site-to-Site VPN gateway connection is used to connect your on-premises network to an Azure virtual network over an IPsec/IKE (IKEv1 or IKEv2) VPN tunnel. This type of connection requires a VPN device located on-premises that has an externally facing public IP address assigned to it.
-(picure2)
 ![Site to Site Connectivity Model](Assets/SiteToSiteConnectivityModel.png)
  
 # Next Steps 
