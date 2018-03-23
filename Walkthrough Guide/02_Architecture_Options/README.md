@@ -62,7 +62,7 @@ Advantage of ExpressRoute connections over S2S VPN or accessing microsoft cloud 
  
 Bandwidth options available in ExpressRoute are 50 Mbps, 100 Mbps, 200 Mbps, 500 Mbps, 1 Gbps, 2 Gbps, 5 Gbps and 10 Gbps.
 
-![Express Route Connectivity Model](Assets/ERCOnnectivityModel.png)
+![Express Route Connectivity Model](Assets/ERConnectivityModel.png)
 
 There are three ways to connect customer’s on-premise infrastructure to Azure (or microsoft cloud services) using ExpressRoute, they are as below; 
  
