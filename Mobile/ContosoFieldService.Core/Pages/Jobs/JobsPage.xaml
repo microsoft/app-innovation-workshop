@@ -81,7 +81,7 @@
                                 FontFamily="{StaticResource FontFamilyRegular}" 
                                 FontSize="{StaticResource FontSizeRegular}"
                                 TextColor="{StaticResource TextColorItem}" 
-                                FormattedText="{Binding FormattedString}"
+                                FormattedText="{Binding NameAsFormattedString}"
                                 LineBreakMode="TailTruncation" />
                         
                             <Label 

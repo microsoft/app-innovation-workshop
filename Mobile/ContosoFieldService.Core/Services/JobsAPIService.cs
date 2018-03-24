@@ -94,6 +94,7 @@ namespace ContosoFieldService.Services
             }
 
             return null;
+
         }
 
         public async Task<Job> CreateJobAsync(Job job)

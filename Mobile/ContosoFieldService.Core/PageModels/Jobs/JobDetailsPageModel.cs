@@ -2,6 +2,8 @@
 using ContosoFieldService.Models;
 using FreshMvvm;
 using Humanizer;
+using Plugin.Share;
+using Plugin.Share.Abstractions;
 using Xamarin.Forms;
 
 namespace ContosoFieldService.PageModels
@@ -43,6 +45,25 @@ namespace ContosoFieldService.PageModels
                 return new Command(async () =>
                 {
                     await CoreMethods.PushPageModel<WorkingJobPageModel>(CurrentJob, true, true);
+                });
+            }
+        }
+
+        public Command ShareJobClicked
+        {
+            get
+            {
+                return new Command(async () =>
+                {
+                    if (!CrossShare.IsSupported)
+                        return;
+
+                    await CrossShare.Current.Share(new ShareMessage
+                    {
+                        Title = CurrentJob.Name,
+                        Text = CurrentJob.Details,
+                        Url = $"{Helpers.Constants.BaseUrl}/jobs/{CurrentJob.Id}"
+                    });
                 });
             }
         }
