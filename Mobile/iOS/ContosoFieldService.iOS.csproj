@@ -19,7 +19,7 @@
     <DefineConstants>DEBUG;ENABLE_TEST_CLOUD;</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <CodesignKey>iPhone Developer</CodesignKey>
+    <CodesignKey>iPhone Developer: Michael James (354MN7UPEZ)</CodesignKey>
     <MtouchDebug>true</MtouchDebug>
     <MtouchNoSymbolStrip>true</MtouchNoSymbolStrip>
     <MtouchFastDev>true</MtouchFastDev>
@@ -30,8 +30,7 @@
     <DeviceSpecificBuild>false</DeviceSpecificBuild>
     <MtouchVerbosity>
     </MtouchVerbosity>
-    <CodesignProvision>
-    </CodesignProvision>
+    <CodesignProvision>VS: WildCard Development</CodesignProvision>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhone' ">
     <DebugType>pdbonly</DebugType>
@@ -41,14 +40,14 @@
     </DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <CodesignKey>iPhone Distribution: Xamarin Inc</CodesignKey>
+    <CodesignKey>iPhone Developer: Michael James (354MN7UPEZ)</CodesignKey>
     <MtouchFloat32>true</MtouchFloat32>
     <CodesignEntitlements>Entitlements.prod.plist</CodesignEntitlements>
     <MtouchLink>SdkOnly</MtouchLink>
     <MtouchArch>ARM64</MtouchArch>
     <MtouchHttpClientHandler>HttpClientHandler</MtouchHttpClientHandler>
     <MtouchVerbosity></MtouchVerbosity>
-    <CodesignProvision>Contoso Maintenance In-House</CodesignProvision>
+    <CodesignProvision>VS: WildCard Development</CodesignProvision>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhoneSimulator' ">
     <DebugType>pdbonly</DebugType>
@@ -65,7 +64,7 @@
     <MtouchHttpClientHandler>HttpClientHandler</MtouchHttpClientHandler>
     <MtouchVerbosity>
     </MtouchVerbosity>
-    <CodesignProvision>VS: com.microsoft.gbb.contosomaintenance Development</CodesignProvision>
+    <CodesignProvision>VS: WildCard Development</CodesignProvision>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhone' ">
     <DebugSymbols>true</DebugSymbols>
@@ -88,7 +87,6 @@
     <MtouchHttpClientHandler>HttpClientHandler</MtouchHttpClientHandler>
     <MtouchVerbosity>
     </MtouchVerbosity>
-    <CodesignProvision>Contoso Maintenance Development</CodesignProvision>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'DebugBackend|AnyCPU' ">
     <Optimize>false</Optimize>
@@ -96,10 +94,11 @@
     <DefineConstants>
     </DefineConstants>
     <WarningLevel>4</WarningLevel>
-    <CodesignKey>iPhone Developer</CodesignKey>
+    <CodesignKey>iPhone Developer: Michael James (354MN7UPEZ)</CodesignKey>
     <MtouchNoSymbolStrip>true</MtouchNoSymbolStrip>
     <MtouchVerbosity>
     </MtouchVerbosity>
+    <CodesignProvision>VS: WildCard Development</CodesignProvision>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'ReleaseBackend|AnyCPU' ">
     <Optimize>false</Optimize>
@@ -107,10 +106,11 @@
     <DefineConstants>
     </DefineConstants>
     <WarningLevel>4</WarningLevel>
-    <CodesignKey>iPhone Developer</CodesignKey>
+    <CodesignKey>iPhone Developer: Michael James (354MN7UPEZ)</CodesignKey>
     <MtouchNoSymbolStrip>true</MtouchNoSymbolStrip>
     <MtouchVerbosity>
     </MtouchVerbosity>
+    <CodesignProvision>VS: WildCard Development</CodesignProvision>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -351,6 +351,12 @@
     <Reference Include="System.IdentityModel.Tokens.Jwt">
       <HintPath>..\..\packages\System.IdentityModel.Tokens.Jwt.5.2.1\lib\netstandard1.4\System.IdentityModel.Tokens.Jwt.dll</HintPath>
     </Reference>
+    <Reference Include="Plugin.Share.Abstractions">
+      <HintPath>..\..\packages\Plugin.Share.7.1.1\lib\Xamarin.iOS10\Plugin.Share.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.Share">
+      <HintPath>..\..\packages\Plugin.Share.7.1.1\lib\Xamarin.iOS10\Plugin.Share.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Contents.json">
@@ -478,6 +484,9 @@
     <BundleResource Include="Resources\icon_bot.png" />
     <BundleResource Include="Resources\icon_usersettings%402x.png" />
     <BundleResource Include="Resources\photoupload.json" />
+    <BundleResource Include="Resources\icon_share.png" />
+    <BundleResource Include="Resources\icon_share%402x.png" />
+    <BundleResource Include="Resources\icon_share%403x.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <Import Project="..\..\packages\NETStandard.Library.2.0.1\build\netstandard2.0\NETStandard.Library.targets" Condition="Exists('..\..\packages\NETStandard.Library.2.0.1\build\netstandard2.0\NETStandard.Library.targets')" />

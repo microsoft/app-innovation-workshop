@@ -32,11 +32,11 @@ namespace ContosoFieldService.Models
         public List<Photo> Photos { get; set; }
 
         [JsonIgnore]
-        public FormattedString FormattedString
+        public FormattedString NameAsFormattedString
         {
             get
             {
-                return this.SearchResultFormattedString();
+                return this.ConvertNameToFormattedString();
             }
         }
 

@@ -25,36 +25,46 @@ namespace ContosoFieldService.Helpers
             return $"https://www.gravatar.com/avatar/{hash}?s=512";
         }
 
-        public static FormattedString SearchResultFormattedString(this Job job)
+        public static FormattedString ConvertNameToFormattedString(this Job job)
         {
-            var formattedString = new FormattedString();
-            //Lets check to see if the name contains any square brackets. 
-            var regexPattern = @"\[(\w*)\]";
-            var patternMatches = Regex.Matches(job.Name, regexPattern);
+            //We want to return a FormattedString which is a Xamarin.Forms Type that allows us to style text elements
+             var formattedString = new FormattedString(); 
 
-            //If the name doesn't contain a hit-highlights then we just return it without any extra styling. 
+            //We'll use regex to nd content between square brackets [contents]
+            var regexPattern = @"\[(\w*)\]";
+
+            //Lets create a MatchCollection which will contain any matches from our job.name. 
+            var patternMatches = Regex.Matches(job.Name, regexPattern);
+            System.Diagnostics.Debug.WriteLine($"Text: {job.Name}");
+
+
+            //If the name doesn't contain a matches then we just a default FormattedString with the name set. No extra work is required.  
             if (patternMatches.Count == 0)
             {
                 formattedString = new FormattedString { Spans = { new Span { Text = job.Name } } };
             }
             else
             {
-                //We split the name input parts based on our RegEx. 
-                var splitList = Regex.Split(job.Name, regexPattern);
-
-                //Build a list of hit-highlighted words without brackets.
+                //We create a list of matched wordsready for use in building the FormattedStrings property.
                 var highlightedWords = new List<string>();
+
+                //We loop through the matches and copy the values to a list of strings for easier use. 
                 foreach (Match match in patternMatches)
                 {
                     highlightedWords.Add(RemoveBrackets(match.Value));
                 }
 
-                //Loop through each subString and add a span, checking that the contents isn't a highlighted item. 
+                //We split the name input parts based on our RegEx. "Hello [World]" would become an array of string containing two items, "Hello" and "World";
+                var splitList = Regex.Split(job.Name, regexPattern);
+
+                //We then loop through each subString and add a span, checking that the contents isn't contained in the highlightedWords property. 
                 foreach (var subString in splitList)
                 {
                     if (highlightedWords.Contains(subString) == true)
+                        //We have found that the text is a highlighted word and thus needs to be bold. 
                         formattedString.Spans.Add(new Span { Text = subString, FontAttributes = FontAttributes.Bold });
                     else
+                        //The text isn't a highlighted item so we 
                         formattedString.Spans.Add(new Span { Text = subString });
                 }
             }

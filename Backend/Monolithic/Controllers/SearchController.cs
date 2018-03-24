@@ -23,40 +23,27 @@ namespace ContosoMaintenance.WebAPI.Controllers
         [Route("/api/search/jobs")]
         public async Task<List<Job>> Get(string keyword)
         {
-            var sp = new SearchParameters();
-            sp.IncludeTotalResultCount = true;
-            sp.HighlightFields = new[] { "Name" };
+            var sp = new SuggestParameters();
             sp.HighlightPreTag = "[";
             sp.HighlightPostTag = "]";
+            sp.UseFuzzyMatching = true;
             sp.MinimumCoverage = 50;
             sp.Top = 100;
 
             var indexClient = serviceClient.Indexes.GetClient("job-index");
 
-            var response = await indexClient.Documents.SearchAsync<Job>(keyword, sp);
+            var response = await indexClient.Documents.SuggestAsync<Job>(keyword, "suggestions", sp);
 
             var jobList = new List<Job>();
             foreach (var document in response.Results)
             {
-                Job job;
-                if (document.Highlights.Count > 0)
+                var job = new Job
                 {
-                    //We can hit-highlight this puppy! 
-                    job = new Job
-                    {
-                        Name = document.Highlights.FirstOrDefault().Value.FirstOrDefault().ToString(),
-                        Details = document.Document.Details
-                    };
-                }
-                else
-                {
-                    job = new Job
-                    {
-                        Name = document.Document.Name,
-                        Details = document.Document.Details
-                    };
-                }
-
+                    Name = document.Text,
+                    Details = document.Document.Details,
+                    Status = document.Document.Status,
+                };
+           
                 jobList.Add(job);
             }
             return jobList; 
