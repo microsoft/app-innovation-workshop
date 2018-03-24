@@ -1,6 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using Newtonsoft.Json;
+using Xamarin.Forms;
+using System.Text.RegularExpressions;
+using System.Linq;
+using ContosoFieldService.Helpers;
 
 namespace ContosoFieldService.Models
 {
@@ -26,6 +30,16 @@ namespace ContosoFieldService.Models
 
         [JsonProperty("photos")]
         public List<Photo> Photos { get; set; }
+
+        [JsonIgnore]
+        public FormattedString FormattedString
+        {
+            get
+            {
+                return this.SearchResultFormattedString();
+            }
+        }
+
     }
 
     public enum JobType
