@@ -17,13 +17,20 @@ namespace ContosoMaintenance.WebAPI.Controllers
 
         public SearchController(IConfiguration configuration)
         {
-            serviceClient = new SearchServiceClient(configuration["AzureSearch:AzureSearchServiceName"], new SearchCredentials(configuration["AzureSearch:AzureSearchApiKey"]));
+            serviceClient = new SearchServiceClient(configuration["AzureSearch:AzureSearchServiceName"], new SearchCredentials(configuration["AzureSearch:AzureSearchApiKey"]));                                          
         }
 
         [Route("/api/search/jobs")]
         public async Task<List<Job>> Get(string keyword)
         {
             var sp = new SearchParameters();
+            sp.IncludeTotalResultCount = true;
+            sp.HighlightFields = new[] { "Name" };
+            sp.HighlightPreTag = "[";
+            sp.HighlightPostTag = "]";
+            sp.MinimumCoverage = 50;
+            sp.Top = 100;
+
             var indexClient = serviceClient.Indexes.GetClient("job-index");
 
             var response = await indexClient.Documents.SearchAsync<Job>(keyword, sp);
@@ -31,15 +38,28 @@ namespace ContosoMaintenance.WebAPI.Controllers
             var jobList = new List<Job>();
             foreach (var document in response.Results)
             {
-                Job job = new Job
+                Job job;
+                if (document.Highlights.Count > 0)
                 {
-                    Name = document.Document.Name,
-                    Details = document.Document.Details
-                };
+                    //We can hit-highlight this puppy! 
+                    job = new Job
+                    {
+                        Name = document.Highlights.FirstOrDefault().Value.FirstOrDefault().ToString(),
+                        Details = document.Document.Details
+                    };
+                }
+                else
+                {
+                    job = new Job
+                    {
+                        Name = document.Document.Name,
+                        Details = document.Document.Details
+                    };
+                }
 
                 jobList.Add(job);
             }
-            return jobList;
+            return jobList; 
         }
 
 
