@@ -71,7 +71,7 @@ namespace ContosoFieldService.Helpers
 
         protected virtual void CreateMenuPage(string menuPageTitle, string menuIcon = null)
         {
-            var menuPage = FreshPageModelResolver.ResolvePageModel<MenuPageModel>();
+            var menuPage = FreshPageModelResolver.ResolvePageModel<MenuViewModel>();
             menuPage.Title = menuPageTitle;
 
             MessagingService.Current.Subscribe<string>("NavigationTriggered", (x, args) =>

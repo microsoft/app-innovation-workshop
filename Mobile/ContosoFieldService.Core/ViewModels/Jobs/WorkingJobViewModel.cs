@@ -12,7 +12,7 @@ using ContosoFieldService.Services;
 
 namespace ContosoFieldService.ViewModels
 {
-    public class WorkingJobPageModel : FreshBasePageModel
+    public class WorkingJobViewModel : FreshBasePageModel
     {
         JobsAPIService jobService = new JobsAPIService();
         PhotoAPIService photoService = new PhotoAPIService();

@@ -12,16 +12,16 @@ namespace ContosoFieldService
     /// </summary>
     public static class PageModelLocator
     {
-        static JobsPageModel jobsPageModel;
-        public static JobsPageModel JobsPageModel => jobsPageModel ?? (jobsPageModel = new JobsPageModel { Jobs = DummyData.GetGroupedDummyJobs() });
-        static JobDetailsPageModel jobDetailsPageModel;
-        public static JobDetailsPageModel JobDetailsPageModel
+        static JobsViewModel jobsPageModel;
+        public static JobsViewModel JobsPageModel => jobsPageModel ?? (jobsPageModel = new JobsViewModel { Jobs = DummyData.GetGroupedDummyJobs() });
+        static JobDetailsViewModel jobDetailsPageModel;
+        public static JobDetailsViewModel JobDetailsPageModel
         {
             get
             {
                 if (jobDetailsPageModel == null)
                 {
-                    jobDetailsPageModel = new JobDetailsPageModel();
+                    jobDetailsPageModel = new JobDetailsViewModel();
                     jobDetailsPageModel.Init(DummyData.GetDummyJobs().First());
                 }
 
@@ -29,16 +29,16 @@ namespace ContosoFieldService
             }
         }
 
-        static PartsPageModel partsPageModel;
-        public static PartsPageModel PartsPageModel => partsPageModel ?? (partsPageModel = new PartsPageModel { Parts = DummyData.GetDummyParts() });
-        static PartDetailsPageModel partDetailsPageModel;
-        public static PartDetailsPageModel PartDetailsPageModel
+        static PartsVIewModel partsPageModel;
+        public static PartsVIewModel PartsPageModel => partsPageModel ?? (partsPageModel = new PartsVIewModel { Parts = DummyData.GetDummyParts() });
+        static PartDetailsViewModel partDetailsPageModel;
+        public static PartDetailsViewModel PartDetailsPageModel
         {
             get
             {
                 if (partDetailsPageModel == null)
                 {
-                    partDetailsPageModel = new PartDetailsPageModel();
+                    partDetailsPageModel = new PartDetailsViewModel();
                     partDetailsPageModel.Init(DummyData.GetDummyParts().First());
                 }
 
@@ -46,8 +46,8 @@ namespace ContosoFieldService
             }
         }
 
-        static SettingsPageModel settingsPageModel;
-        public static SettingsPageModel SettingsPageModel = settingsPageModel ?? (settingsPageModel = new SettingsPageModel());
+        static SettingsViewModel settingsPageModel;
+        public static SettingsViewModel SettingsPageModel = settingsPageModel ?? (settingsPageModel = new SettingsViewModel());
     }
 }
 
