@@ -42,7 +42,7 @@ namespace ContosoFieldService.PageModels
                     try
                     {
                         var location = await Plugin.Geolocator.CrossGeolocator.Current.GetPositionAsync();
-                        job.Address = new Location() { GeoPosition = new Spatial.Point(location.Longitude, location.Latitude) };
+                        job.Address = new Location() { GeoPosition = new GeoPoint(){Longitude = location.Longitude, Latitude = location.Latitude} };
 
                         job = await jobApiService.CreateJobAsync(job);
                         Analytics.TrackEvent("New Job Created");

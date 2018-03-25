@@ -18,6 +18,15 @@
         </ResourceDictionary>
     </ContentPage.Resources>
 
+    <ContentPage.ToolbarItems>
+        <ToolbarItem 
+            x:Name="btnAddJob"
+            AutomationId="btnAddJob"
+            Icon="icon_share.png" 
+            Command="{Binding ShareJobClicked}"/>
+    </ContentPage.ToolbarItems>
+      
+
     <ScrollView>
         <StackLayout>
 
