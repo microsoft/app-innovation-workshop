@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using ContosoFieldService.Abstractions;
 using ContosoFieldService.Helpers;
-using ContosoFieldService.PageModels;
+using ContosoFieldService.ViewModels;
 using FreshMvvm;
 using Microsoft.AppCenter;
 using Microsoft.AppCenter.Analytics;

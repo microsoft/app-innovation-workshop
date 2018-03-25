@@ -2,7 +2,7 @@
 using System.Collections.ObjectModel;
 using ContosoFieldService.Models;
 using MvvmHelpers;
-using ContosoFieldService.PageModels;
+using ContosoFieldService.ViewModels;
 using System.Linq;
 
 namespace ContosoFieldService.Helpers

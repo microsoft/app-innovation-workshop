@@ -6,7 +6,7 @@ using Xamarin.Forms;
 using ContosoFieldService.Services;
 using System.Threading.Tasks;
 
-namespace ContosoFieldService.PageModels
+namespace ContosoFieldService.ViewModels
 {
     public class PartsPageModel : FreshBasePageModel
     {

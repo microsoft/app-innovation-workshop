@@ -3,7 +3,7 @@ using FreshMvvm;
 using ContosoFieldService.Models;
 using Xamarin.Forms;
 
-namespace ContosoFieldService.PageModels
+namespace ContosoFieldService.ViewModels
 {
     public class PartDetailsPageModel : FreshBasePageModel
     {

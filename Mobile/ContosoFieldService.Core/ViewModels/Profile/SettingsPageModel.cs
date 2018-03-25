@@ -6,7 +6,7 @@ using Microsoft.AppCenter.Push;
 using Plugin.VersionTracking;
 using Xamarin.Forms;
 
-namespace ContosoFieldService.PageModels
+namespace ContosoFieldService.ViewModels
 {
     public class SettingsPageModel : FreshBasePageModel
     {

@@ -7,7 +7,7 @@ using Xamarin.Forms;
 using Spatial = Microsoft.Azure.Documents.Spatial;
 
 
-namespace ContosoFieldService.PageModels
+namespace ContosoFieldService.ViewModels
 {
     public class CreateNewJobPageModel : FreshBasePageModel
     {

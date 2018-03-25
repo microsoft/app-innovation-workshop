@@ -10,7 +10,7 @@ using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using MonkeyCache.FileStore;
 
-namespace ContosoFieldService.PageModels
+namespace ContosoFieldService.ViewModels
 {
     public class JobsPageModel : FreshBasePageModel
     {

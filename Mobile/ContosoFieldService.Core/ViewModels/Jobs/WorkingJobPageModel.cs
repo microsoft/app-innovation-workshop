@@ -10,7 +10,7 @@ using Plugin.Media.Abstractions;
 using ContosoFieldService.Models;
 using ContosoFieldService.Services;
 
-namespace ContosoFieldService.PageModels
+namespace ContosoFieldService.ViewModels
 {
     public class WorkingJobPageModel : FreshBasePageModel
     {
