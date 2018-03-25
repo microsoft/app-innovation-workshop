@@ -1,7 +1,7 @@
 ﻿using System;
 using FreshMvvm;
 
-namespace ContosoFieldService.PageModels
+namespace ContosoFieldService.ViewModels
 {
     public class BotPageModel : FreshBasePageModel
     {

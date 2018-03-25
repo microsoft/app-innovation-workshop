@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 
 using Xamarin.Forms;
-using ContosoFieldService.PageModels;
+using ContosoFieldService.ViewModels;
 using System.Linq;
 
 namespace ContosoFieldService.Pages
