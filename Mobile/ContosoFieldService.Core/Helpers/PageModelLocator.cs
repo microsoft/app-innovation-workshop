@@ -29,8 +29,8 @@ namespace ContosoFieldService
             }
         }
 
-        static PartsVIewModel partsPageModel;
-        public static PartsVIewModel PartsPageModel => partsPageModel ?? (partsPageModel = new PartsVIewModel { Parts = DummyData.GetDummyParts() });
+        static PartsViewModel partsPageModel;
+        public static PartsViewModel PartsPageModel => partsPageModel ?? (partsPageModel = new PartsViewModel { Parts = DummyData.GetDummyParts() });
         static PartDetailsViewModel partDetailsPageModel;
         public static PartDetailsViewModel PartDetailsPageModel
         {
