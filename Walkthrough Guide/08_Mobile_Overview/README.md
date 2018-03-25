@@ -44,7 +44,7 @@ We opted to use [FreshMvvm](https://github.com/rid00z/FreshMvvm) as our MVVM lib
 We've tried to keep the platform-specific code to a minimum with the development of this app. This is because we wanted you to see how its possible to create pleasant user experiences while maximising code reuse.
 
 #### Core Project
-The core project contains our app's Pages, ViewModels (we call them PageModels), Models and network services. 
+The core project contains our app's Pages (Views), ViewModels, Models and network services. 
 
 As we're using the MVVM architecture, we have a clear separation of concerns within our app. 
 
