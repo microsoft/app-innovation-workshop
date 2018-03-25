@@ -1,7 +1,7 @@
 ﻿using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using Xamarin.Forms.Maps;
-using ContosoFieldService.PageModels;
+using ContosoFieldService.ViewModels;
 
 namespace ContosoFieldService.Pages
 {
@@ -18,10 +18,10 @@ namespace ContosoFieldService.Pages
             base.OnAppearing();
 
             // Setup map
-            var pageModel = BindingContext as JobDetailsPageModel;
-            if (pageModel?.Point?.Position?.Latitude != null && pageModel?.Point?.Position?.Longitude != null)
+            var pageModel = BindingContext as JobDetailsViewModel;
+            if (pageModel?.Point?.Latitude != null && pageModel?.Point?.Longitude != null)
             {
-                var pos = new Position(pageModel.Point.Position.Latitude, pageModel.Point.Position.Longitude);
+                var pos = new Position(pageModel.Point.Latitude, pageModel.Point.Longitude);
 
                 // Move map to point
                 mapView.IsVisible = true;

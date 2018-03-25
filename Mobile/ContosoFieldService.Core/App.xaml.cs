@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using ContosoFieldService.Abstractions;
 using ContosoFieldService.Helpers;
-using ContosoFieldService.PageModels;
+using ContosoFieldService.ViewModels;
 using FreshMvvm;
 using Microsoft.AppCenter;
 using Microsoft.AppCenter.Analytics;
@@ -41,18 +41,18 @@ namespace ContosoFieldService
                 tabbedNavigation.BarTextColor = (Color)Current.Resources["AccentColor"];
 
                 // Add first level navigationpages as tabs
-                tabbedNavigation.AddTab<JobsPageModel>("Jobs", "icon_jobs.png");
-                tabbedNavigation.AddTab<PartsPageModel>("Parts", "icon_parts.png");
-                tabbedNavigation.AddTab<ProfilePageModel>("Me", "icon_user.png");
+                tabbedNavigation.AddTab<JobsViewModel>("Jobs", "icon_jobs.png");
+                tabbedNavigation.AddTab<PartsViewModel>("Parts", "icon_parts.png");
+                tabbedNavigation.AddTab<ProfileViewModel>("Me", "icon_user.png");
                 MainPage = tabbedNavigation;
             }
             else
             {
                 var navContainer = new CustomAndroidNavigation("AndroidNavigation");
                 navContainer.Init("Menu", "hamburger.png");
-                navContainer.AddPage<JobsPageModel>("Jobs");
-                navContainer.AddPage<PartsPageModel>("Parts");
-                navContainer.AddPage<ProfilePageModel>("Me");
+                navContainer.AddPage<JobsViewModel>("Jobs");
+                navContainer.AddPage<PartsViewModel>("Parts");
+                navContainer.AddPage<ProfileViewModel>("Me");
                 MainPage = navContainer;
             }
         }
@@ -102,6 +102,20 @@ namespace ContosoFieldService
         protected override void OnResume()
         {
             // Handle when your app resumes
+        }
+
+        protected override void OnAppLinkRequestReceived(Uri uri)
+        {
+            var data = uri.ToString().ToLowerInvariant();
+            //only if deep linking
+            if (!data.Contains("/parts/"))
+                return;
+
+            var id = data.Substring(data.LastIndexOf("/", StringComparison.Ordinal) + 1);
+
+            //Navigate based on id here.
+
+            base.OnAppLinkRequestReceived(uri);
         }
     }
 }

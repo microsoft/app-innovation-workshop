@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Threading.Tasks;
-using ContosoFieldService.PageModels.Android;
+using ContosoFieldService.ViewModels.Android;
 using FormsToolkit;
 using FreshMvvm;
 using Xamarin.Forms;
@@ -71,7 +71,7 @@ namespace ContosoFieldService.Helpers
 
         protected virtual void CreateMenuPage(string menuPageTitle, string menuIcon = null)
         {
-            var menuPage = FreshPageModelResolver.ResolvePageModel<MenuPageModel>();
+            var menuPage = FreshPageModelResolver.ResolvePageModel<MenuViewModel>();
             menuPage.Title = menuPageTitle;
 
             MessagingService.Current.Subscribe<string>("NavigationTriggered", (x, args) =>
