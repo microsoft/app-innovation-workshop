@@ -103,5 +103,19 @@ namespace ContosoFieldService
         {
             // Handle when your app resumes
         }
+
+        protected override void OnAppLinkRequestReceived(Uri uri)
+        {
+            var data = uri.ToString().ToLowerInvariant();
+            //only if deep linking
+            if (!data.Contains("/parts/"))
+                return;
+
+            var id = data.Substring(data.LastIndexOf("/", StringComparison.Ordinal) + 1);
+
+            //Navigate based on id here.
+
+            base.OnAppLinkRequestReceived(uri);
+        }
     }
 }

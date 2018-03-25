@@ -7,8 +7,7 @@
 	<key>CFBundleName</key>
 	<string>Field Service</string>
 	<key>CFBundleIdentifier</key>
-	<string>
-com.microsoft.contosomaintenance</string>
+	<string>com.microsoft.contosomaintenance</string>
 	<key>CFBundleShortVersionString</key>
 	<string>1.1</string>
 	<key>CFBundleVersion</key>
