@@ -6,7 +6,6 @@ using FFImageLoading.Forms.Touch;
 using FFImageLoading.Transformations;
 using Foundation;
 using ImageCircle.Forms.Plugin.iOS;
-using Lottie.Forms.iOS.Renderers;
 using MikeCodesDotNET.iOS;
 using UIKit;
 using Xamarin;
@@ -25,7 +24,7 @@ namespace ContosoFieldService.iOS
         {
             global::Xamarin.Forms.Forms.Init();
             ImageCircleRenderer.Init();
-            AnimationViewRenderer.Init();
+            //AnimationViewRenderer.Init();
             FormsMaps.Init();
             CachedImageRenderer.Init();
             CarouselViewRenderer.Init();

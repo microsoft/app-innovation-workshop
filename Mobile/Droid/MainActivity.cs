@@ -8,7 +8,6 @@ using Android.Views;
 using Android.Widget;
 using Android.OS;
 using ImageCircle.Forms.Plugin.Droid;
-using Lottie.Forms.Droid;
 using FFImageLoading.Forms.Droid;
 using CarouselView.FormsPlugin.Android;
 using FFImageLoading.Transformations;
@@ -33,7 +32,7 @@ namespace ContosoFieldService.Droid
 			global::Xamarin.Forms.Forms.Init(this, bundle);
 			CachedImageRenderer.Init(false);
 			//ImageCircleRenderer.Init();
-			AnimationViewRenderer.Init();
+			//AnimationViewRenderer.Init();
 			FormsMaps.Init(this, bundle);
 			CarouselViewRenderer.Init();
 

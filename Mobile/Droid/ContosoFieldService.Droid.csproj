@@ -82,15 +82,6 @@
     <Reference Include="FFImageLoading.Transformations, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Xamarin.FFImageLoading.Transformations.2.3.5\lib\MonoAndroid10\FFImageLoading.Transformations.dll</HintPath>
     </Reference>
-    <Reference Include="Lottie, Version=1.5.1.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Com.Airbnb.Android.Lottie.2.5.1\lib\MonoAndroid41\Lottie.dll</HintPath>
-    </Reference>
-    <Reference Include="Lottie.Forms, Version=1.0.6647.21928, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Com.Airbnb.Xamarin.Forms.Lottie.2.5.1\lib\MonoAndroid70\Lottie.Forms.dll</HintPath>
-    </Reference>
-    <Reference Include="Lottie.Forms.Droid, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Com.Airbnb.Xamarin.Forms.Lottie.2.5.1\lib\MonoAndroid70\Lottie.Forms.Droid.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="Mono.Android" />
     <Reference Include="Microsoft.CSharp" />
@@ -234,9 +225,6 @@
     <Reference Include="Microsoft.Azure.DocumentDB.Core">
       <HintPath>..\..\packages\Microsoft.Azure.DocumentDB.Core.1.9.1\lib\netstandard1.6\Microsoft.Azure.DocumentDB.Core.dll</HintPath>
     </Reference>
-    <Reference Include="Newtonsoft.Json">
-      <HintPath>..\..\packages\Newtonsoft.Json.11.0.1\lib\netstandard2.0\Newtonsoft.Json.dll</HintPath>
-    </Reference>
     <Reference Include="Microsoft.Identity.Client">
       <HintPath>..\..\packages\Microsoft.Identity.Client.1.1.2-preview0008\lib\monoandroid7\Microsoft.Identity.Client.dll</HintPath>
     </Reference>
@@ -359,6 +347,15 @@
     </Reference>
     <Reference Include="Xamarin.GooglePlayServices.Maps">
       <HintPath>..\..\packages\Xamarin.GooglePlayServices.Maps.60.1142.1\lib\MonoAndroid80\Xamarin.GooglePlayServices.Maps.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.Share.Abstractions">
+      <HintPath>..\..\packages\Plugin.Share.7.1.1\lib\MonoAndroid10\Plugin.Share.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.Share">
+      <HintPath>..\..\packages\Plugin.Share.7.1.1\lib\MonoAndroid10\Plugin.Share.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\..\packages\Newtonsoft.Json.11.0.2\lib\netstandard2.0\Newtonsoft.Json.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
