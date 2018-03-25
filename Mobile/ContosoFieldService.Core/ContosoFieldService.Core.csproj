@@ -26,6 +26,8 @@
     <PackageReference Include="Refractored.MvvmHelpers" Version="1.3.0" />
     <PackageReference Include="Humanizer" Version="2.2.0" />
     <PackageReference Include="Corcav.Behaviors" Version="2.3.7" />
+    <PackageReference Include="Xamarin.FFImageLoading.Forms" Version="2.3.4" />
+    <PackageReference Include="Xamarin.FFImageLoading.Transformations" Version="2.3.4" />
     <PackageReference Include="Xam.Plugin.Geolocator" Version="4.2.0" />
     <PackageReference Include="Polly" Version="5.8.0" />
     <PackageReference Include="Plugin.VersionTracking" Version="2.1.0" />
@@ -50,19 +52,18 @@
     <PackageReference Include="MonkeyCache" Version="0.1.0.1-beta" />
     <PackageReference Include="MonkeyCache.FileStore" Version="0.1.0.1-beta" />
     <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="5.2.1" />
-    <PackageReference Include="Xamarin.FFImageLoading.Forms" Version="2.3.5" />
-    <PackageReference Include="Xamarin.FFImageLoading.Transformations" Version="2.3.5" />
+    <PackageReference Include="Plugin.Share" Version="7.1.1" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Pages\" />
-    <Folder Include="PageModels\" />
+    <Folder Include="ViewModels\" />
     <Folder Include="Helpers\" />
     <Folder Include="Resources\" />
     <Folder Include="Models\" />
     <Folder Include="Services\" />
     <Folder Include="Pages\Jobs\" />
-    <Folder Include="PageModels\Jobs\" />
-    <Folder Include="PageModels\Android\" />
+    <Folder Include="ViewModels\Jobs\" />
+    <Folder Include="ViewModels\Android\" />
     <Folder Include="Pages\Android\" />
     <Folder Include="Pages\Profile\" />
     <Folder Include="Abstractions\" />

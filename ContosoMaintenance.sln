@@ -28,7 +28,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContosoMaintenance.WebAPI",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContosoMaintenance.Functions", "Backend\Functions\ContosoMaintenance.Functions.csproj", "{0980AA2E-1C59-4AD4-A8B4-C38C8676F323}"
 EndProject
+
 Project("{9344BDBB-3E7F-41FC-A0DD-8665D75EE146}") = "ContosoMaintenance.Bot.WebApp", "Backend\BotBackend\ContosoMaintenance.Bot.WebApp.csproj", "{34B405E5-E0D0-47FE-B3E2-2C770E5983EF}"
+
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -180,6 +182,7 @@ Global
 		{0980AA2E-1C59-4AD4-A8B4-C38C8676F323}.ReleaseBackend|iPhone.Build.0 = Release|Any CPU
 		{0980AA2E-1C59-4AD4-A8B4-C38C8676F323}.ReleaseBackend|iPhoneSimulator.ActiveCfg = Release|Any CPU
 		{0980AA2E-1C59-4AD4-A8B4-C38C8676F323}.ReleaseBackend|iPhoneSimulator.Build.0 = Release|Any CPU
+
 		{34B405E5-E0D0-47FE-B3E2-2C770E5983EF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{34B405E5-E0D0-47FE-B3E2-2C770E5983EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{34B405E5-E0D0-47FE-B3E2-2C770E5983EF}.Debug|iPhone.ActiveCfg = Debug|Any CPU
@@ -219,6 +222,7 @@ Global
 		{61BFA852-2AAC-42BB-9073-B8857D45FE3A} = {9F0FD859-1134-4C77-99E5-83703A2DE5A2}
 		{0980AA2E-1C59-4AD4-A8B4-C38C8676F323} = {A5E6EEE2-C985-4C48-A6FD-BD95BFAA25EA}
 		{34B405E5-E0D0-47FE-B3E2-2C770E5983EF} = {140A5FB1-CD49-4998-8196-74EF067452B3}
+
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {60FF5FF1-44FA-4082-8169-95F16F23BE13}
