@@ -3,9 +3,9 @@ using FreshMvvm;
 
 namespace ContosoFieldService.ViewModels
 {
-    public class BotPageModel : FreshBasePageModel
+    public class BotViewModel : FreshBasePageModel
     {
-        public BotPageModel()
+        public BotViewModel()
         {
         }
     }

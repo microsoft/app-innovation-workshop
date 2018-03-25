@@ -3,7 +3,7 @@ using FreshMvvm;
 
 namespace ContosoFieldService.ViewModels
 {
-    public class DashboardPageModel : FreshBasePageModel
+    public class DashboardViewModel : FreshBasePageModel
     {
         bool showLogin;
         protected override void ViewIsAppearing(object sender, EventArgs e)
@@ -12,7 +12,7 @@ namespace ContosoFieldService.ViewModels
             if (showLogin)
             {
                 showLogin = false;
-                CoreMethods.PushPageModel<LoginPageModel>(null, true, false);
+                CoreMethods.PushPageModel<LoginViewModel>(null, true, false);
             }
         }
 
