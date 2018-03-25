@@ -12,5 +12,12 @@ namespace ContosoMaintenance.WebAPI.Controllers
         {
             return "pong";
         }
+
+        [HttpGet]
+        [Route("error")]
+        public string Error()
+        {
+            throw new NotImplementedException("This error is intended");
+        }
     }
 }
