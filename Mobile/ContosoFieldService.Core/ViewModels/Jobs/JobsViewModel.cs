@@ -102,7 +102,7 @@ namespace ContosoFieldService.ViewModels
                     {
                         new GroupedJobs("Search Results", searchResults)
                     });
-                 });
+                });
             }
         }
 
@@ -187,7 +187,7 @@ namespace ContosoFieldService.ViewModels
                     await CoreMethods.DisplayAlert("Network Error", "No internet connectivity found", "OK");
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 await CoreMethods.DisplayAlert("Error", "An error occured while communicating with the backend. Please check your settings and try again.", "Ok");
             }

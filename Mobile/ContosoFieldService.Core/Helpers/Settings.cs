@@ -10,65 +10,6 @@ namespace ContosoFieldService.Helpers
     /// </summary>
     public static class Settings
     {
-        private static ISettings AppSettings
-        {
-            get
-            {
-                return CrossSettings.Current;
-            }
-        }
-
-        #region Setting Constants
-
-        private const string SettingsKey = "settings_key";
-        private static readonly string SettingsDefault = string.Empty;
-
-        private const string LoginViewShownKey = "login_view_shown";
-        private static readonly bool LoginViewShownDefault = false;
-
-        private const string FullNameKey = "fullname_key";
-        private static readonly string FullNameDefault = string.Empty;
-
-        private const string EmailKey = "email_key";
-        private static readonly string EmailDefault = string.Empty;
-
-        #endregion
-
-
-        public static bool LoginViewShown
-        {
-            get
-            {
-                return AppSettings.GetValueOrDefault(LoginViewShownKey, LoginViewShownDefault);
-            }
-            set
-            {
-                AppSettings.AddOrUpdateValue(LoginViewShownKey, value);
-            }
-        }
-
-        public static string FullName
-        {
-            get
-            {
-                return AppSettings.GetValueOrDefault(FullNameKey, FullNameDefault);
-            }
-            set
-            {
-                AppSettings.AddOrUpdateValue(FullNameKey, value);
-            }
-        }
-
-        public static string Email
-        {
-            get
-            {
-                return AppSettings.GetValueOrDefault(EmailKey, EmailDefault);
-            }
-            set
-            {
-                AppSettings.AddOrUpdateValue(EmailKey, value);
-            }
-        }
+        public static bool LoginViewShown { get; set; }
     }
 }
