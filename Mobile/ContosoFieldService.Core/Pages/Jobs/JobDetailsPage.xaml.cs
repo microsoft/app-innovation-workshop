@@ -18,7 +18,7 @@ namespace ContosoFieldService.Pages
             base.OnAppearing();
 
             // Setup map
-            var pageModel = BindingContext as JobDetailsPageModel;
+            var pageModel = BindingContext as JobDetailsViewModel;
             if (pageModel?.Point?.Latitude != null && pageModel?.Point?.Longitude != null)
             {
                 var pos = new Position(pageModel.Point.Latitude, pageModel.Point.Longitude);

@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace ContosoFieldService.ViewModels
 {
-    public class PartsPageModel : FreshBasePageModel
+    public class PartsVIewModel : FreshBasePageModel
     {
         public ObservableRangeCollection<Part> Parts { get; set; }
         public bool IsRefreshing
@@ -59,7 +59,7 @@ namespace ContosoFieldService.ViewModels
             {
                 return new Command<Part>(async (part) =>
                 {
-                    await CoreMethods.PushPageModel<PartDetailsPageModel>(part);
+                    await CoreMethods.PushPageModel<PartDetailsViewModel>(part);
                 });
             }
         }
@@ -83,7 +83,7 @@ namespace ContosoFieldService.ViewModels
             {
                 return new Command(async () =>
                 {
-                    await CoreMethods.PushPageModel<CreateNewJobPageModel>(null, true, true);
+                    await CoreMethods.PushPageModel<CreateNewJobViewModel>(null, true, true);
                 });
             }
         }

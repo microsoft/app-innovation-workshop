@@ -9,7 +9,7 @@ using Spatial = Microsoft.Azure.Documents.Spatial;
 
 namespace ContosoFieldService.ViewModels
 {
-    public class CreateNewJobPageModel : FreshBasePageModel
+    public class CreateNewJobViewModel : FreshBasePageModel
     {
         #region Bindable Properties 
         public string Name { get; set; }

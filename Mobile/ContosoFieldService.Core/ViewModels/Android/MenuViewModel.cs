@@ -6,14 +6,14 @@ using Xamarin.Forms;
 
 namespace ContosoFieldService.ViewModels.Android
 {
-    public class MenuPageModel : FreshBasePageModel
+    public class MenuViewModel : FreshBasePageModel
     {
         public ICommand NavigateCommand { get; set; }
 
         public List<MenuItem> MenuItems { get; set; }
         public MenuItem SelectedItem { get; set; }
 
-        public MenuPageModel()
+        public MenuViewModel()
         {
             NavigateCommand = new Command(NavigateToPageModel);
 

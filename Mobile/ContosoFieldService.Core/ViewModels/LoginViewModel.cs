@@ -8,7 +8,7 @@ using ContosoFieldService.Helpers;
 
 namespace ContosoFieldService.ViewModels
 {
-    public class LoginPageModel : FreshBasePageModel
+    public class LoginViewModel : FreshBasePageModel
     {
         readonly AuthenticationService authenticationService;
 
@@ -45,7 +45,7 @@ namespace ContosoFieldService.ViewModels
             await CoreMethods.PopPageModel(true, true);
         }));
 
-        public LoginPageModel()
+        public LoginViewModel()
         {
             authenticationService = new AuthenticationService();
         }
