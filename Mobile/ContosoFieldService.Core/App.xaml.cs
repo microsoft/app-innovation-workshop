@@ -42,7 +42,7 @@ namespace ContosoFieldService
 
                 // Add first level navigationpages as tabs
                 tabbedNavigation.AddTab<JobsViewModel>("Jobs", "icon_jobs.png");
-                tabbedNavigation.AddTab<PartsVIewModel>("Parts", "icon_parts.png");
+                tabbedNavigation.AddTab<PartsViewModel>("Parts", "icon_parts.png");
                 tabbedNavigation.AddTab<ProfileViewModel>("Me", "icon_user.png");
                 MainPage = tabbedNavigation;
             }
@@ -51,7 +51,7 @@ namespace ContosoFieldService
                 var navContainer = new CustomAndroidNavigation("AndroidNavigation");
                 navContainer.Init("Menu", "hamburger.png");
                 navContainer.AddPage<JobsViewModel>("Jobs");
-                navContainer.AddPage<PartsVIewModel>("Parts");
+                navContainer.AddPage<PartsViewModel>("Parts");
                 navContainer.AddPage<ProfileViewModel>("Me");
                 MainPage = navContainer;
             }

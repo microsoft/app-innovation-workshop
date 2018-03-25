@@ -110,7 +110,7 @@ namespace ContosoFieldService.ViewModels
             {
                 return new Command(async () =>
                 {
-                    await CoreMethods.PushPageModel<PartsVIewModel>();
+                    await CoreMethods.PushPageModel<PartsViewModel>();
                 });
             }
         }

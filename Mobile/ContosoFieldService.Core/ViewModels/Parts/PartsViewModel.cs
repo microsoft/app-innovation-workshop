@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace ContosoFieldService.ViewModels
 {
-    public class PartsVIewModel : FreshBasePageModel
+    public class PartsViewModel : FreshBasePageModel
     {
         public ObservableRangeCollection<Part> Parts { get; set; }
         public bool IsRefreshing
