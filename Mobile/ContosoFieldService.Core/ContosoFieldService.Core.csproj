@@ -56,14 +56,14 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Pages\" />
-    <Folder Include="PageModels\" />
+    <Folder Include="ViewModels\" />
     <Folder Include="Helpers\" />
     <Folder Include="Resources\" />
     <Folder Include="Models\" />
     <Folder Include="Services\" />
     <Folder Include="Pages\Jobs\" />
-    <Folder Include="PageModels\Jobs\" />
-    <Folder Include="PageModels\Android\" />
+    <Folder Include="ViewModels\Jobs\" />
+    <Folder Include="ViewModels\Android\" />
     <Folder Include="Pages\Android\" />
     <Folder Include="Pages\Profile\" />
     <Folder Include="Abstractions\" />

@@ -6,7 +6,7 @@ using System;
 using ContosoFieldService.Services;
 using ContosoFieldService.Helpers;
 
-namespace ContosoFieldService.PageModels
+namespace ContosoFieldService.ViewModels
 {
     public class LoginPageModel : FreshBasePageModel
     {

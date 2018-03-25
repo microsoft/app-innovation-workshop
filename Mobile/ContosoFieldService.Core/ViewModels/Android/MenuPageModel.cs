@@ -4,7 +4,7 @@ using FormsToolkit;
 using FreshMvvm;
 using Xamarin.Forms;
 
-namespace ContosoFieldService.PageModels.Android
+namespace ContosoFieldService.ViewModels.Android
 {
     public class MenuPageModel : FreshBasePageModel
     {

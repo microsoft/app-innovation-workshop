@@ -6,7 +6,7 @@ using Plugin.Share;
 using Plugin.Share.Abstractions;
 using Xamarin.Forms;
 
-namespace ContosoFieldService.PageModels
+namespace ContosoFieldService.ViewModels
 {
     public class JobDetailsPageModel : FreshBasePageModel
     {
