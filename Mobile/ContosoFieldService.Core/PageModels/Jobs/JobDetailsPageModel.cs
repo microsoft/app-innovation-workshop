@@ -18,23 +18,24 @@ namespace ContosoFieldService.PageModels
         public string CompanyName { get; set; }
         public GeoPoint Point { get; set; }
 
-        Job CurrentJob;
+        Job selectedJob;
         public override void Init(object initData)
         {
             if (initData != null)
             {
-                CurrentJob = (Job)initData;
-                Name = CurrentJob.Name;
-                Details = CurrentJob.Details;
+                selectedJob = (Job)initData;
+                Name = selectedJob.Name;
+                Details = selectedJob.Details;
                 DueDate = DateTime.Now.Humanize();
 
-                Age = CurrentJob.CreatedAt.Humanize();
-                Details = string.IsNullOrEmpty(CurrentJob.Details) ? "Not Supplied" : CurrentJob.Details;
-                Point = CurrentJob?.Address?.GeoPosition;
+                Age = selectedJob.CreatedAt.Humanize();
+                Details = string.IsNullOrEmpty(selectedJob.Details) ? "Not Supplied" : selectedJob.Details;
+                Point = selectedJob?.Address?.GeoPosition;
+
             }
             else
             {
-                CurrentJob = new Job();
+                selectedJob = new Job();
             }
         }
 
@@ -44,7 +45,7 @@ namespace ContosoFieldService.PageModels
             {
                 return new Command(async () =>
                 {
-                    await CoreMethods.PushPageModel<WorkingJobPageModel>(CurrentJob, true, true);
+                    await CoreMethods.PushPageModel<WorkingJobPageModel>(selectedJob, true, true);
                 });
             }
         }
@@ -60,9 +61,9 @@ namespace ContosoFieldService.PageModels
 
                     await CrossShare.Current.Share(new ShareMessage
                     {
-                        Title = CurrentJob.Name,
-                        Text = CurrentJob.Details,
-                        Url = $"{Helpers.Constants.BaseUrl}/jobs/{CurrentJob.Id}"
+                        Title = selectedJob.Name,
+                        Text = selectedJob.Details,
+                        Url = $"{Helpers.Constants.BaseUrl}job/{selectedJob.Id}"
                     });
                 });
             }
@@ -89,7 +90,7 @@ namespace ContosoFieldService.PageModels
                     if ("Delete" == await CoreMethods.DisplayActionSheet("You're going to delete this job and it'll be embrassing for all if we need to restore it...", "Canel", "Delete"))
                     {
                         var jobsService = new Services.JobsAPIService();
-                        var deletedJob = await jobsService.DeleteJobByIdAsync(CurrentJob.Id);
+                        var deletedJob = await jobsService.DeleteJobByIdAsync(selectedJob.Id);
                         if (deletedJob != null)
                         {
                             await CoreMethods.PopPageModel(deletedJob);
@@ -113,6 +114,8 @@ namespace ContosoFieldService.PageModels
                 });
             }
         }
+
+
 
     }
 
