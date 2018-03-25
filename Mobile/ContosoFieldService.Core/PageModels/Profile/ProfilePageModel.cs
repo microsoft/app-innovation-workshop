@@ -63,13 +63,10 @@ namespace ContosoFieldService.PageModels
             Statistics.Add(new Stats { Title = "Holiday", Label1 = "Remaining", Label2 = "Used", Value1 = "20", Value2 = "4" });
         }
 
-        protected override async void ViewIsAppearing(object sender, EventArgs e)
+        protected override void ViewIsAppearing(object sender, EventArgs e)
         {
-            if (AuthenticationService.CurrentUser != null)
-                Name = AuthenticationService.CurrentUser.Name;
-
-            if (AuthenticationService.CurrentUserEmail != null)
-                GravatarSource = Helpers.Extensions.EmailToGravatarUrl(AuthenticationService.CurrentUserEmail);
+            Name = AuthenticationService.CurrentUser?.Name;
+            GravatarSource = Helpers.Extensions.EmailToGravatarUrl(AuthenticationService.CurrentUserEmail);
 
             RaisePropertyChanged("Name");
             RaisePropertyChanged("GravatarSource");
