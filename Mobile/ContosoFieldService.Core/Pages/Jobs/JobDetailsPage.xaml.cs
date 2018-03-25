@@ -19,9 +19,9 @@ namespace ContosoFieldService.Pages
 
             // Setup map
             var pageModel = BindingContext as JobDetailsPageModel;
-            if (pageModel?.Point?.Position?.Latitude != null && pageModel?.Point?.Position?.Longitude != null)
+            if (pageModel?.Point?.Latitude != null && pageModel?.Point?.Longitude != null)
             {
-                var pos = new Position(pageModel.Point.Position.Latitude, pageModel.Point.Position.Longitude);
+                var pos = new Position(pageModel.Point.Latitude, pageModel.Point.Longitude);
 
                 // Move map to point
                 mapView.IsVisible = true;

@@ -102,7 +102,7 @@ namespace ContosoFieldService.PageModels
                     {
                         new GroupedJobs("Search Results", searchResults)
                     });
-                });
+                 });
             }
         }
 

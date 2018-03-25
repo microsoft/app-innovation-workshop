@@ -1,5 +1,4 @@
 ﻿using System;
-using Microsoft.Azure.Documents.Spatial;
 using Newtonsoft.Json;
 
 namespace ContosoFieldService.Models
@@ -19,6 +18,6 @@ namespace ContosoFieldService.Models
         public string ZipCode { get; set; }
 
         [JsonProperty("point")]
-        public Point GeoPosition { get; set; }
+        public GeoPoint GeoPosition { get; set; }
     }
 }

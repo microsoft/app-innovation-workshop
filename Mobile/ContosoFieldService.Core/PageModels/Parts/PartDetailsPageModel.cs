@@ -30,6 +30,7 @@ namespace ContosoFieldService.PageModels
                 PartNumber = Part.PartNumber;
                 PriceInUSD = Part.PriceInUSD;
                 ImageSource = Part.ImageSource;
+                CreateDeepLinkEntry();
             }
             else
             {
@@ -48,5 +49,27 @@ namespace ContosoFieldService.PageModels
                 });
             }
         }
+
+        void CreateDeepLinkEntry()
+        {
+            var url = $"{Helpers.Constants.BaseUrl}/part/{Part.Id}";
+
+            var entry = new AppLinkEntry
+            {
+                Title = Part.Name,
+                Description = Part.Manufacturer,
+                AppLinkUri = new Uri(url, UriKind.RelativeOrAbsolute),
+                IsLinkActive = true,
+                Thumbnail = Xamarin.Forms.ImageSource.FromFile("icon_greentool.png")
+            };
+
+            entry.KeyValues.Add("contentType", "Parts");
+            entry.KeyValues.Add("appName", "Field Service");
+            entry.KeyValues.Add("companyName", "Contoso Maintenance");
+
+            Application.Current.AppLinks.RegisterLink(entry);
+
+        }
+
     }
 }
