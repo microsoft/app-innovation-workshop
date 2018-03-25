@@ -12,7 +12,7 @@ using MonkeyCache.FileStore;
 
 namespace ContosoFieldService.ViewModels
 {
-    public class JobsPageModel : FreshBasePageModel
+    public class JobsViewModel : FreshBasePageModel
     {
         #region Bindable Properties 
         public ObservableRangeCollection<GroupedJobs> Jobs { get; set; }
@@ -86,7 +86,7 @@ namespace ContosoFieldService.ViewModels
             {
                 return new Command<Job>(async (job) =>
                 {
-                    await CoreMethods.PushPageModel<JobDetailsPageModel>(selectedJob);
+                    await CoreMethods.PushPageModel<JobDetailsViewModel>(selectedJob);
                 });
             }
         }
@@ -112,7 +112,7 @@ namespace ContosoFieldService.ViewModels
             {
                 return new Command(async () =>
                 {
-                    await CoreMethods.PushPageModel<CreateNewJobPageModel>(null, false, true);
+                    await CoreMethods.PushPageModel<CreateNewJobViewModel>(null, false, true);
                 });
             }
         }
@@ -132,7 +132,7 @@ namespace ContosoFieldService.ViewModels
             base.ViewIsAppearing(sender, e);
 
             if (Helpers.Settings.LoginViewShown == false)
-                await CoreMethods.PushPageModel<LoginPageModel>(null, true, true);
+                await CoreMethods.PushPageModel<LoginViewModel>(null, true, true);
 
             await ReloadData(true);
         }

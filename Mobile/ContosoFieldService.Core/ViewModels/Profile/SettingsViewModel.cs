@@ -8,7 +8,7 @@ using Xamarin.Forms;
 
 namespace ContosoFieldService.ViewModels
 {
-    public class SettingsPageModel : FreshBasePageModel
+    public class SettingsViewModel : FreshBasePageModel
     {
         string baseUrl;
         public string BaseUrl
@@ -90,7 +90,7 @@ namespace ContosoFieldService.ViewModels
             }
         }
 
-        public SettingsPageModel()
+        public SettingsViewModel()
         {
             Version = $"{CrossVersionTracking.Current.CurrentVersion} (Build {CrossVersionTracking.Current.CurrentBuild})";
 

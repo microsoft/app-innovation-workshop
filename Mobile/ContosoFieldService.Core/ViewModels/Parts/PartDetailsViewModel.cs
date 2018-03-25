@@ -5,7 +5,7 @@ using Xamarin.Forms;
 
 namespace ContosoFieldService.ViewModels
 {
-    public class PartDetailsPageModel : FreshBasePageModel
+    public class PartDetailsViewModel : FreshBasePageModel
     {
         public string Name { get; set; }
         public string Manufacturer { get; set; }

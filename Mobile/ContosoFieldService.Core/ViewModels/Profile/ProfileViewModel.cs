@@ -7,7 +7,7 @@ using ContosoFieldService.Services;
 
 namespace ContosoFieldService.ViewModels
 {
-    public class ProfilePageModel : FreshBasePageModel
+    public class ProfileViewModel : FreshBasePageModel
     {
         readonly AuthenticationService authenticationService;
 
@@ -26,7 +26,7 @@ namespace ContosoFieldService.ViewModels
                 {
                     Helpers.Settings.LoginViewShown = true;
                     Analytics.TrackEvent("User chatted to bot");
-                    await CoreMethods.PushPageModel<BotPageModel>(true);
+                    await CoreMethods.PushPageModel<BotViewModel>(true);
                 });
             }
         }
@@ -39,12 +39,12 @@ namespace ContosoFieldService.ViewModels
                 {
                     Helpers.Settings.LoginViewShown = true;
                     Analytics.TrackEvent("User chatted to bot");
-                    await CoreMethods.PushPageModel<SettingsPageModel>(true);
+                    await CoreMethods.PushPageModel<SettingsViewModel>(true);
                 });
             }
         }
 
-        public ProfilePageModel()
+        public ProfileViewModel()
         {
             authenticationService = new AuthenticationService();
         }

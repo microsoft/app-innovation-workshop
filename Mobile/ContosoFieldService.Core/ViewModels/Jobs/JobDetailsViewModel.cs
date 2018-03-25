@@ -8,7 +8,7 @@ using Xamarin.Forms;
 
 namespace ContosoFieldService.ViewModels
 {
-    public class JobDetailsPageModel : FreshBasePageModel
+    public class JobDetailsViewModel : FreshBasePageModel
     {
         public string Name { get; set; }
         public string Details { get; set; }
@@ -45,7 +45,7 @@ namespace ContosoFieldService.ViewModels
             {
                 return new Command(async () =>
                 {
-                    await CoreMethods.PushPageModel<WorkingJobPageModel>(selectedJob, true, true);
+                    await CoreMethods.PushPageModel<WorkingJobViewModel>(selectedJob, true, true);
                 });
             }
         }
@@ -110,7 +110,7 @@ namespace ContosoFieldService.ViewModels
             {
                 return new Command(async () =>
                 {
-                    await CoreMethods.PushPageModel<PartsPageModel>();
+                    await CoreMethods.PushPageModel<PartsVIewModel>();
                 });
             }
         }
