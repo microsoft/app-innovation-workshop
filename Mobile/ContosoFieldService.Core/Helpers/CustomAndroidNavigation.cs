@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Threading.Tasks;
-using ContosoFieldService.PageModels.Android;
+using ContosoFieldService.ViewModels.Android;
 using FormsToolkit;
 using FreshMvvm;
 using Xamarin.Forms;

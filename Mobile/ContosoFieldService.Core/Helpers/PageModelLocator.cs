@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Linq;
 using ContosoFieldService.Helpers;
-using ContosoFieldService.PageModels;
+using ContosoFieldService.ViewModels;
 using Xamarin.Forms;
 using ContosoFieldService.Pages;
 

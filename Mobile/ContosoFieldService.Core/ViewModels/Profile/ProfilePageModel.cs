@@ -5,7 +5,7 @@ using Microsoft.AppCenter.Analytics;
 using Xamarin.Forms;
 using ContosoFieldService.Services;
 
-namespace ContosoFieldService.PageModels
+namespace ContosoFieldService.ViewModels
 {
     public class ProfilePageModel : FreshBasePageModel
     {
