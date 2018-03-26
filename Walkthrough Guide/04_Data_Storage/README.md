@@ -270,6 +270,10 @@ We should now see the uploaded photo in our Blob Storage container `images-large
 
 And voilà, here it is. The API replaces the original name by a GUID ([View in project](/Backend/Monolithic/Controllers/PhotoController.cs#L40)) but that's okay as we need to give uploaded photos a unique ID. Congratulations, you data storage works!
 
+# Additional Resouces
+
+- [Modeling Data in Cosmos DB vs. traditional SQL Databases](https://docs.microsoft.com/en-us/azure/cosmos-db/modeling-data)
+
 <!--
 ## Further Reading
 
