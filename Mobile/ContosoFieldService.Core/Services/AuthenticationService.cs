@@ -29,11 +29,22 @@ namespace ContosoFieldService.Services
         {
             var authorityBase = $"https://login.microsoftonline.com/tfp/{Constants.Tenant}/";
             authority = $"{authorityBase}{Constants.SignUpAndInPolicy}";
-            authClient = new PublicClientApplication(Constants.ClientID, authority); ;
-            authClient.ValidateAuthority = false;
-            authClient.RedirectUri = $"msalcontosomaintenance://auth";
             scopes = Constants.Scopes;
             signUpAndInPolicy = Constants.SignUpAndInPolicy;
+
+            try
+            {
+                authClient = new PublicClientApplication(Constants.ClientID, authority); ;
+                authClient.ValidateAuthority = false;
+                authClient.RedirectUri = $"msalcontosomaintenance://auth";
+            }
+            catch (ArgumentException)
+            {
+                // That usually only happens, when ADB2C is not configured correctly or is not
+                // configured at all. Should not happen in real-world scenarios but for the
+                // matter of this workshop we have to catch it
+                authClient = null;
+            }
         }
 
         /// <summary>
@@ -48,11 +59,9 @@ namespace ContosoFieldService.Services
                 var user = GetUserByPolicy(authClient.Users, signUpAndInPolicy);
 
                 // Open the login web form
-                var result = await authClient.AcquireTokenAsync(scopes, user, UIParent);
+                var result = await authClient?.AcquireTokenAsync(scopes, user, UIParent);
                 if (result != null)
                 {
-
-
                     // Login successful, set properties
                     CurrentUser = result.User;
                     AccessToken = result.AccessToken;
@@ -84,18 +93,23 @@ namespace ContosoFieldService.Services
         /// <returns>The Authentication Result.</returns>
         public async Task<AuthenticationResult> LoginSilentAsync()
         {
-            var user = GetUserByPolicy(authClient.Users, signUpAndInPolicy);
+            var user = GetUserByPolicy(authClient?.Users, signUpAndInPolicy);
             if (user == null)
                 return null;
 
             // Try to refresh the token in the background
-            var result = await authClient.AcquireTokenSilentAsync(scopes, user, authority, false);
+            var result = await authClient?.AcquireTokenSilentAsync(scopes, user, authority, false);
             if (result != null)
             {
                 // Restore successful, set properties
                 CurrentUser = result.User;
                 AccessToken = result.AccessToken;
                 IsLoggedIn = true;
+
+                // Get claims
+                var handler = new JwtSecurityTokenHandler();
+                var token = handler.ReadJwtToken(result.AccessToken);
+                CurrentUserEmail = token.Claims.FirstOrDefault(x => x.Type == "emails")?.Value;
             }
 
             return result;
@@ -103,9 +117,9 @@ namespace ContosoFieldService.Services
 
         public void Logout()
         {
-            foreach (var user in authClient.Users)
+            foreach (var user in authClient?.Users)
             {
-                authClient.Remove(user);
+                authClient?.Remove(user);
             }
 
             // Reset properties
