@@ -43,7 +43,7 @@ namespace ContosoMaintenance.WebAPI.DummyData
                 SerialNumber = "456732037463823902828",
                 PartNumber = "6262939038",
                 PriceInUSD = 35000000M,
-                ImageSource = "https://contosomaintenance.blob.core.windows.net/images-large/67a24a57-b51r-45d8-b75c-c343a273b6f8.jpg"
+                ImageSource = "https://contosomaintenance.blob.core.windows.net/images-large/67a24a57-b51r-45d8-b75c-c343a273b6f8.png"
             };
             Parts.Add(part2);
         }
