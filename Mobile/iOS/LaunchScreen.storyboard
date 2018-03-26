@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" customColorSpace="sRGB" colorSpace="calibratedRGB" red="0.098039215686274508" green="0.13333333333333333" blue="0.16470588235294117" alpha="1"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="197" translatesAutoresizingMaskIntoConstraints="NO" image="Icon-Green.png">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="197" translatesAutoresizingMaskIntoConstraints="NO" image="icon_greentool.png">
                                 <rect key="frame" x="104" y="262" width="206" height="213"/>
                                 <constraints>
                                     <constraint id="200" firstItem="197" firstAttribute="height" constant="213"/>
@@ -66,7 +66,6 @@
     </scenes>
     <resources>
         <image name="myface.jpg" width="2944" height="1965"/>
-        <image name="Icon-Green.png" width="348" height="345"/>
         <image name="ba747.jpeg" width="426" height="118"/>
         <image name="icon_comments.png" width="32.5" height="32.5"/>
         <image name="icon_add.png" width="25" height="25"/>
@@ -76,5 +75,9 @@
         <image name="icon_jobs.png" width="22" height="20"/>
         <image name="icon_parts.png" width="22" height="22"/>
         <image name="icon_user.png" width="22" height="22"/>
+        <image name="icon_greentool.png" width="348" height="345"/>
+        <image name="icon_bot.png" width="32" height="32"/>
+        <image name="icon_usersettings.png" width="32.5" height="32.5"/>
+        <image name="icon_share.png" width="20" height="20"/>
     </resources>
 </document>
