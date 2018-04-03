@@ -48,6 +48,41 @@
                         Style="{DynamicResource EntryStyle}" 
                         Placeholder="API Management Key"
                         Text="{Binding ApiManagementKey}"/>
+
+                    <Label 
+                        Style="{StaticResource PropertyFooterLabelStyle}"
+                        TextColor="{StaticResource TextColorSubtle}"
+                        Text="Azure ADB2C Tenant" />
+                    <Entry 
+                        Style="{DynamicResource EntryStyle}" 
+                        Placeholder="Azure ADB2C Tenant"
+                        Text="{Binding AzureADB2CTenant}"/>
+                    
+                    <Label 
+                        Style="{StaticResource PropertyFooterLabelStyle}"
+                        TextColor="{StaticResource TextColorSubtle}"
+                        Text="Azure ADB2C Application ID" />
+                    <Entry 
+                        Style="{DynamicResource EntryStyle}" 
+                        Placeholder="Azure ADB2C Application ID"
+                        Text="{Binding AzureADB2CApplicationId}"/>
+
+                    <Label 
+                        Style="{StaticResource PropertyFooterLabelStyle}"
+                        TextColor="{StaticResource TextColorSubtle}"
+                        Text="Azure ADB2C SignUpSignIn Policy" />
+                    <Entry 
+                        Style="{DynamicResource EntryStyle}" 
+                        Placeholder="Azure ADB2C SignUpSignIn Policy"
+                        Text="{Binding AzureADB2CSignUpSignInPolicy}"/>
+                    <Label 
+                        Style="{StaticResource PropertyFooterLabelStyle}"
+                        TextColor="{StaticResource TextColorSubtle}"
+                        Text="Azure ADB2C Scope" />
+                    <Entry 
+                        Style="{DynamicResource EntryStyle}" 
+                        Placeholder="Azure ADB2C Scope"
+                        Text="{Binding AzureADB2CScope}"/>
                 </StackLayout>
 
                 <BoxView HeightRequest="1" BackgroundColor="{DynamicResource SeparatorColor}" />

@@ -34,7 +34,7 @@ namespace ContosoFieldService.Services
 
             try
             {
-                authClient = new PublicClientApplication(Constants.ClientID, authority); ;
+                authClient = new PublicClientApplication(Constants.ApplicationId, authority); ;
                 authClient.ValidateAuthority = false;
                 authClient.RedirectUri = $"msalcontosomaintenance://auth";
             }
