@@ -52,14 +52,14 @@ namespace ContosoMaintenance.WebAPI
             .AddJwtBearer(options =>
             {
                 options.RequireHttpsMetadata = false;
-                options.Audience = Configuration["ActiveDirectory:ClientId"];
+                options.Audience = Configuration["ActiveDirectory:ApplicationId"];
                 options.Events = new JwtBearerEvents
                 {
                     OnAuthenticationFailed = AuthenticationFailed
                 };
 
                 var authorityBase = $"https://login.microsoftonline.com/tfp/{Configuration["ActiveDirectory:Tenant"]}/";
-                options.Authority = $"{authorityBase}{Configuration["ActiveDirectory:Policy"]}/v2.0/";
+                options.Authority = $"{authorityBase}{Configuration["ActiveDirectory:SignUpSignInPolicy"]}/v2.0/";
             });
 
             services.AddMvc();
