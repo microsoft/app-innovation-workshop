@@ -10,6 +10,8 @@ namespace ContosoFieldService.ViewModels
 {
     public class SettingsViewModel : FreshBasePageModel
     {
+        #region Configuration Settings
+
         string baseUrl;
         public string BaseUrl
         {
@@ -33,6 +35,56 @@ namespace ContosoFieldService.ViewModels
                 RaisePropertyChanged();
             }
         }
+
+        string azureADB2CTenant;
+        public string AzureADB2CTenant
+        {
+            get { return azureADB2CTenant; }
+            set
+            {
+                azureADB2CTenant = value;
+                Helpers.Constants.Tenant = value;
+                RaisePropertyChanged();
+            }
+        }
+
+        string azureADB2CApplicationId;
+        public string AzureADB2CApplicationId
+        {
+            get { return azureADB2CApplicationId; }
+            set
+            {
+                azureADB2CApplicationId = value;
+                Helpers.Constants.ApplicationId = value;
+                RaisePropertyChanged();
+            }
+        }
+
+        string azureADB2CSignUpSignInPolicy;
+        public string AzureADB2CSignUpSignInPolicy
+        {
+            get { return azureADB2CSignUpSignInPolicy; }
+            set
+            {
+                azureADB2CSignUpSignInPolicy = value;
+                Helpers.Constants.SignUpAndInPolicy = value;
+                RaisePropertyChanged();
+            }
+        }
+
+        string azureADB2CScope;
+        public string AzureADB2CScope
+        {
+            get { return azureADB2CScope; }
+            set
+            {
+                azureADB2CScope = value;
+                Helpers.Constants.Scopes[0] = value;
+                RaisePropertyChanged();
+            }
+        }
+
+        #endregion
 
         public ObservableCollection<ThirdPartyLibrary> ThirdPartyLibraries { get; set; }
         public string Version { get; set; }
@@ -122,6 +174,10 @@ namespace ContosoFieldService.ViewModels
             NotificationsEnabled = await Push.IsEnabledAsync();
             BaseUrl = Helpers.Constants.BaseUrl;
             ApiManagementKey = Helpers.Constants.ApiManagementKey;
+            AzureADB2CTenant = Helpers.Constants.Tenant;
+            AzureADB2CApplicationId = Helpers.Constants.ApplicationId;
+            AzureADB2CSignUpSignInPolicy = Helpers.Constants.SignUpAndInPolicy;
+            AzureADB2CScope = Helpers.Constants.Scopes[0];
         }
     }
 }
