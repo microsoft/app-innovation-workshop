@@ -90,7 +90,7 @@ Create your first policy with the inputs below and confirm your selections with 
 - **Name:** GenericSignUpSignIn
 - **Identity providers:** Email signup
 - **Sign-up attributes:** Display Name
-- **Application claims:** Display Name, Identity Provider, User's Object ID
+- **Application claims:** Display Name, Email Addresses, Identity Provider, User's Object ID
 - **Multifactor authentication:** Off
 - **Page UI customization:** Default
 
@@ -163,14 +163,14 @@ public void ConfigureServices(IServiceCollection services)
     .AddJwtBearer(options =>
     {
         options.RequireHttpsMetadata = false;
-        options.Audience = Configuration["ActiveDirectory:ClientId"];
+        options.Audience = Configuration["ActiveDirectory:ApplicationId"];
         options.Events = new JwtBearerEvents
         {
             OnAuthenticationFailed = AuthenticationFailed
         };
 
         var authorityBase = $"https://login.microsoftonline.com/tfp/{Configuration["ActiveDirectory:Tenant"]}/";
-        options.Authority = $"{authorityBase}{Configuration["ActiveDirectory:Policy"]}/v2.0/";
+        options.Authority = $"{authorityBase}{Configuration["ActiveDirectory:SignUpSignInPolicy"]}/v2.0/";
     });
 
     // ...
@@ -184,8 +184,8 @@ As you can see, we use `Configuration` variables one more time to not hard code 
 ```json
 "ActiveDirectory": {
     "Tenant": "",
-    "ClientId": "",
-    "Policy": ""
+    "ApplicationId": "",
+    "SignUpSignInPolicy": ""
 }
 ```
 
@@ -194,8 +194,8 @@ As you can see, we use `Configuration` variables one more time to not hard code 
 So let's set these variables to the correct values an head back to our App Service, open the ***Application Settings*** and add these variables here as we did before for CosmosDB and Storage.
 
 - **`ActiveDirectory:Tenant`:** "{OUR_AD}.onmicrosoft.com"
-- **`ActiveDirectory:ClientId`:** *{ID_OF_THE_REGISTERED_APPLICATION}*
-- **`ActiveDirectory:Policy`:** B2C_1_GenericSignUpSignIn
+- **`ActiveDirectory:ApplicationId`:** *{ID_OF_THE_REGISTERED_APPLICATION}*
+- **`ActiveDirectory:SignUpSignInPolicy`:** B2C_1_GenericSignUpSignIn
 
 ![Add ADB2C Settings to Azure App Service Settings](Assets/AddADB2CSettings.png)
 
@@ -239,13 +239,13 @@ public static class Constants
 
     // Azure Active Directory B2C
     public static string Tenant = "myawesomenewstartup.onmicrosoft.com";
-    public static string ClientID = "{ID_OF_THE_REGISTERED_APPLICATION}";
+    public static string ApplicationID = "{ID_OF_THE_REGISTERED_APPLICATION}";
     public static string SignUpAndInPolicy = "B2C_1_GenericSignUpSignIn";
     public static string[] Scopes = { "https://myawesomenewstartup.onmicrosoft.com/backend/read_only" };
 }
 ```
 
-[View in project](/Mobile/ContosoFieldService.Core/Helpers/Constants.cs#L13-L16)
+[View in project](/Mobile/ContosoFieldService.Core/Helpers/Constants.cs#L15-L18)
 
 
 ### 5.1 iOS specific steps
@@ -347,7 +347,6 @@ To avoid that the user has to login and acquire a new token every 30 minutes, th
 The App tries to refresh the Access Token automatically when it receives a `401 Unauthorized` response and only shows the Login UI to the user if the background refresh failed.
 
 Check out the [Mobile Network Services](/Walkthrough%20Guide/09_Mobile_Network_Services/) guide for additional details about resilient networking.
-
 
 # Additional Resouces
 
