@@ -14,6 +14,7 @@ using Plugin.VersionTracking;
 using Microsoft.AppCenter.Distribute;
 using ContosoFieldService.Services;
 using MonkeyCache.FileStore;
+using DLToolkit.Forms.Controls;
 
 [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 namespace ContosoFieldService
@@ -23,6 +24,10 @@ namespace ContosoFieldService
         public App()
         {
             InitializeComponent();
+            FlowListView.Init();
+
+
+            // Configure Monkey Cache
             Barrel.ApplicationId = "ContosoFieldService";
 
 #if DEBUG

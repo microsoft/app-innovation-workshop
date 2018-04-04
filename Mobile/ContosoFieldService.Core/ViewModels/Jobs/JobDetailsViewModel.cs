@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using ContosoFieldService.Models;
 using FreshMvvm;
 using Humanizer;
@@ -17,6 +18,7 @@ namespace ContosoFieldService.ViewModels
         public string ContactName { get; set; }
         public string CompanyName { get; set; }
         public GeoPoint Point { get; set; }
+        public List<Photo> Photos { get; set; }
 
         Job selectedJob;
         public override void Init(object initData)
@@ -31,7 +33,7 @@ namespace ContosoFieldService.ViewModels
                 Age = selectedJob.CreatedAt.Humanize();
                 Details = string.IsNullOrEmpty(selectedJob.Details) ? "Not Supplied" : selectedJob.Details;
                 Point = selectedJob?.Address?.GeoPosition;
-
+                Photos = selectedJob?.Photos;
             }
             else
             {
