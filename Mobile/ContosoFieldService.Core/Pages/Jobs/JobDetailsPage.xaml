@@ -35,6 +35,8 @@
         BackgroundColor="Transparent"
         SeparatorVisibility="None"
         HasUnevenRows="true"
+        SelectedItem="{Binding SelectedPhoto}"
+        FlowItemTappedCommand="{Binding PhotoSelected}"
         FlowItemsSource="{Binding Photos}">
 
         <flow:FlowListView.Header>
