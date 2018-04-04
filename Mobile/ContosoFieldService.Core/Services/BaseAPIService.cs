@@ -4,6 +4,7 @@ using System.Net.Http;
 using System.Threading;
 using Polly;
 using Refit;
+using MonkeyCache.FileStore;
 
 namespace ContosoFieldService.Services
 {
@@ -46,6 +47,11 @@ namespace ContosoFieldService.Services
                         Thread.Sleep(TimeSpan.FromSeconds(retry));
                     }
                 });
+        }
+
+        public void InvalidateCache(string key)
+        {
+            Barrel.Current.Empty(key);
         }
     }
 }

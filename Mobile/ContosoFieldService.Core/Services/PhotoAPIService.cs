@@ -10,19 +10,19 @@ namespace ContosoFieldService.Services
     {
         [Multipart]
         [Post("/photo/{jobId}/")]
-        Task<Photo> UploadPhoto(string jobId, [AliasAs("file")] StreamPart stream, [Header("Ocp-Apim-Subscription-Key")] string apiManagementKey);
+        Task<Job> UploadPhoto(string jobId, [AliasAs("file")] StreamPart stream, [Header("Ocp-Apim-Subscription-Key")] string apiManagementKey);
     }
 
     public class PhotoAPIService
     {
-        public async Task<Photo> UploadPhotoAsync(string jobId, MediaFile file)
+        public async Task<Job> UploadPhotoAsync(string jobId, MediaFile file)
         {
-            var restService = RestService.For<IPhotoServiceAPI>(Helpers.Constants.BaseUrl);
+            var restService = RestService.For<IPhotoServiceAPI>(Constants.BaseUrl);
 
             var streamPart = new StreamPart(file.GetStream(), "photo.jpg", "image/jpeg");
-            var photo = await restService.UploadPhoto(jobId, streamPart, Constants.ApiManagementKey);
+            var updatedJob = await restService.UploadPhoto(jobId, streamPart, Constants.ApiManagementKey);
 
-            return photo;
+            return updatedJob;
         }
     }
 }
