@@ -159,6 +159,7 @@ namespace ContosoFieldService.ViewModels
             ThirdPartyLibraries.Add(new ThirdPartyLibrary("Visual Studio App Center", "Microsoft", "http://appcenter.ms"));
             ThirdPartyLibraries.Add(new ThirdPartyLibrary("Version Tracking Plugin", "Colby Williams", "https://github.com/colbylwilliams/VersionTrackingPlugin"));
             ThirdPartyLibraries.Add(new ThirdPartyLibrary("Media Plugin for Xamarin and Windows", "James Montemagno", "https://github.com/jamesmontemagno/MediaPlugin"));
+            ThirdPartyLibraries.Add(new ThirdPartyLibrary("FlowListView for Xamarin.Forms", "Daniel Luberda", "https://github.com/daniel-luberda/DLToolkit.Forms.Controls/tree/master/FlowListView"));
         }
 
         public override void Init(object initData)
