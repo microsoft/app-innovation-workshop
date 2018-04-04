@@ -6,40 +6,46 @@ using Humanizer;
 using Plugin.Share;
 using Plugin.Share.Abstractions;
 using Xamarin.Forms;
+using System.Windows.Input;
+using ContosoFieldService.ViewModels.Jobs;
 
 namespace ContosoFieldService.ViewModels
 {
     public class JobDetailsViewModel : FreshBasePageModel
     {
+        Photo selectedPhoto;
+        public Photo SelectedPhoto
+        {
+            get { return selectedPhoto; }
+            set
+            {
+                selectedPhoto = value;
+                RaisePropertyChanged();
+            }
+        }
+
+        List<Photo> photos;
+        public List<Photo> Photos
+        {
+            get { return photos; }
+            set { photos = value; RaisePropertyChanged(); }
+        }
+
         public string Name { get; set; }
         public string Details { get; set; }
         public string Age { get; set; }
         public string DueDate { get; set; }
         public string ContactName { get; set; }
         public string CompanyName { get; set; }
-        public GeoPoint Point { get; set; }
-        public List<Photo> Photos { get; set; }
+        public Models.Point Point { get; set; }
+
 
         Job selectedJob;
-        public override void Init(object initData)
-        {
-            if (initData != null)
-            {
-                selectedJob = (Job)initData;
-                Name = selectedJob.Name;
-                Details = selectedJob.Details;
-                DueDate = DateTime.Now.Humanize();
 
-                Age = selectedJob.CreatedAt.Humanize();
-                Details = string.IsNullOrEmpty(selectedJob.Details) ? "Not Supplied" : selectedJob.Details;
-                Point = selectedJob?.Address?.GeoPosition;
-                Photos = selectedJob?.Photos;
-            }
-            else
-            {
-                selectedJob = new Job();
-            }
-        }
+        public Command PhotoSelected => new Command(async (object item) =>
+        {
+            await CoreMethods.PushPageModel<PhotoViewerViewModel>(item, false);
+        });
 
         public Command StartJobClicked
         {
@@ -95,11 +101,12 @@ namespace ContosoFieldService.ViewModels
                         var deletedJob = await jobsService.DeleteJobByIdAsync(selectedJob.Id);
                         if (deletedJob != null)
                         {
+                            jobsService.InvalidateCache("Jobs");
                             await CoreMethods.PopPageModel(deletedJob);
                         }
                         else
                         {
-                            await CoreMethods.DisplayAlert("Deletion failed", "The job could not be deleted. This most likely mean authentication issues.", "Ok");
+                            await CoreMethods.DisplayAlert("Deletion failed", "The job could not be deleted. This most likely means authentication issues.", "Ok");
                         }
                     }
                 });
@@ -118,7 +125,31 @@ namespace ContosoFieldService.ViewModels
         }
 
 
+        public override void Init(object initData)
+        {
+            if (initData != null)
+            {
+                selectedJob = (Job)initData;
+                Name = selectedJob.Name;
+                Details = selectedJob.Details;
+                DueDate = DateTime.Now.Humanize();
 
+                Age = selectedJob.CreatedAt.Humanize();
+                Details = string.IsNullOrEmpty(selectedJob.Details) ? "Not Supplied" : selectedJob.Details;
+                Point = selectedJob?.Address?.Point;
+                Photos = selectedJob?.Photos;
+            }
+            else
+            {
+                selectedJob = new Job();
+            }
+        }
+
+        public override void ReverseInit(object returnedData)
+        {
+            base.ReverseInit(returnedData);
+            Init(returnedData);
+        }
     }
 
 }
