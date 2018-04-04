@@ -33,12 +33,13 @@
 						</div>
 						<nav>
 							<ul class="nav masthead-nav">
-								<li class="active"><a href="#">Jobs</a></li>
-								<li><a href="z">Parts</a></li>
-								<li><a href="#">Customers</a></li>
-								<li>|</li>
-								<li><a href="#">Logout</a></li>
-							</ul>
+                                <li is-active-route asp-controller="Home" asp-action="Index"><a asp-controller="Home" asp-action="Index">Home</a></li>
+                                <li is-active-route asp-controller="Jobs"><a asp-controller="Jobs" asp-action="Index">Jobs</a></li>
+                                <li is-active-route asp-controller="Parts"><a asp-controller="Parts" asp-action="Index">Parts</a></li>
+                                <li is-active-route asp-controller="Customers"><a asp-controller="Customers" asp-action="Index">Customers</a></li>
+                                <li>|</li>
+                                <li is-active-route asp-controller="Home" asp-action="Logout"><a asp-controller="Home" asp-action="Logout">Logout</a></li>
+                            </ul>
 						</nav>
 					</div>
 				</div>

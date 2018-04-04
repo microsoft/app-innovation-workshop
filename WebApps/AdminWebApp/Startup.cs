@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace AdminWebApp
+namespace ContosoMaintenance.AdminWebApp
 {
 	public class Startup
 	{

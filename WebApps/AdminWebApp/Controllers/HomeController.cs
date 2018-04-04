@@ -4,9 +4,8 @@ using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using AdminWebApp.Models;
 
-namespace AdminWebApp.Controllers
+namespace ContosoMaintenance.AdminWebApp.Controllers
 {
 	public class HomeController : Controller
 	{

@@ -1,6 +1,6 @@
 using System;
 
-namespace AdminWebApp.Models
+namespace ContosoMaintenance.AdminWebApp.Models
 {
 	public class ErrorViewModel
 	{
