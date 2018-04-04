@@ -3,13 +3,17 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
     xmlns:maps="clr-namespace:Xamarin.Forms.Maps;assembly=Xamarin.Forms.Maps"
     xmlns:design="clr-namespace:ContosoFieldService;assembly=ContosoFieldService.Core"
+    xmlns:converters="clr-namespace:ContosoFieldService.Converters;assembly=ContosoFieldService.Core"
+    xmlns:flow="clr-namespace:DLToolkit.Forms.Controls;assembly=DLToolkit.Forms.Controls.FlowListView"    
     BindingContext="{x:Static design:PageModelLocator.JobDetailsPageModel}"
     x:Class="ContosoFieldService.Pages.JobDetailsPage"
     BackgroundColor="{StaticResource BackgroundColor}"
-    Title="Job Details">
+    Title="Job Details" xmlns:themes="clr-namespace:ContosoFieldService.Themes">
 
     <ContentPage.Resources>
         <ResourceDictionary>
+            <converters:CountToVisibilityConverter x:Key="CountToVisibilityConverter" />
+            
             <ResourceDictionary.MergedDictionaries xmlns:themes="using:ContosoFieldService.Themes" >
                 <!-- Light theme for this page -->
                 <themes:Light />
@@ -26,93 +30,133 @@
             Command="{Binding ShareJobClicked}"/>
     </ContentPage.ToolbarItems>
       
+    <flow:FlowListView
+        FlowColumnCount="3"
+        BackgroundColor="Transparent"
+        SeparatorVisibility="None"
+        HasUnevenRows="true"
+        SelectedItem="{Binding SelectedPhoto}"
+        FlowItemTappedCommand="{Binding PhotoSelected}"
+        FlowItemsSource="{Binding Photos}">
 
-    <ScrollView>
-        <StackLayout>
+        <flow:FlowListView.Header>
+            <StackLayout>
 
-            <!-- Job Name Banner --> 
-            <Frame       
-                x:Name="JobName"
-                AutomationId="JobName"
-                CornerRadius="0"
-                HasShadow="false"
-                BackgroundColor="{StaticResource AccentColorRed}" >
-            
-                <Label                         
-                    Text="{Binding Name}" 
-                    HorizontalTextAlignment="Center"
-                    FontFamily="{StaticResource FontFamilyMedium}" 
-                    TextColor="#ffffff"
-                    FontSize="{StaticResource FontSizeLarge}" />
-            </Frame>
+                <!-- Job Name Banner --> 
+                <Frame       
+                    x:Name="JobName"
+                    AutomationId="JobName"
+                    CornerRadius="0"
+                    HasShadow="false"
+                    BackgroundColor="{StaticResource AccentColorRed}" >
+                
+                    <Label                         
+                        Text="{Binding Name}" 
+                        HorizontalTextAlignment="Center"
+                        FontFamily="{StaticResource FontFamilyMedium}" 
+                        TextColor="#ffffff"
+                        FontSize="{StaticResource FontSizeLarge}" />
+                </Frame>
 
-            <!-- Overview Stack -->
-            <StackLayout
-                Padding="{StaticResource DefaultThickness}"
-                Spacing="{StaticResource DefaultMargin}">
+                <!-- Overview Stack -->
+                <StackLayout
+                    Padding="{StaticResource DefaultThickness}"
+                    Spacing="{StaticResource DefaultMargin}">
 
-                <!-- Header -->
-                <Label
-                    Style="{DynamicResource SectionHaderLabelStyle}" 
-                    Text="Overview" />
+                    <!-- Header -->
+                    <Label
+                        Style="{DynamicResource SectionHaderLabelStyle}" 
+                        Text="Overview" />
 
-                <!-- Job Age -->   
-                <StackLayout Spacing="0">
-                    <Label 
-                        x:Name="lblAge"
-                        AutomationId="lblAge"
-                        Style="{DynamicResource PropertyLabelStyle}"
-                        Text="{Binding Age}"  />
+                    <!-- Job Age -->   
+                    <StackLayout Spacing="0">
+                        <Label 
+                            x:Name="lblAge"
+                            AutomationId="lblAge"
+                            Style="{DynamicResource PropertyLabelStyle}"
+                            Text="{Binding Age}"  />
 
-                    <Label 
-                        Style="{DynamicResource PropertyFooterLabelStyle}"
-                        Text="Age" />
+                        <Label 
+                            Style="{DynamicResource PropertyFooterLabelStyle}"
+                            Text="Age" />
+                    </StackLayout>
+
+                    <!-- Due Date -->
+                    <StackLayout Spacing="0">
+                        <Label 
+                            x:Name="lblDueDate"
+                            AutomationId="lblDueDate"
+                            Style="{DynamicResource PropertyLabelStyle}"
+                            Text="{Binding DueDate}" />
+
+                        <Label 
+                            Style="{DynamicResource PropertyFooterLabelStyle}"
+                            Text="Due Date" />
+                    </StackLayout>
                 </StackLayout>
 
-                <!-- Due Date -->
-                <StackLayout Spacing="0">
-                    <Label 
-                        x:Name="lblDueDate"
-                        AutomationId="lblDueDate"
-                        Style="{DynamicResource PropertyLabelStyle}"
-                        Text="{Binding DueDate}" />
+                <!-- Divier -->
+                <BoxView HeightRequest="1" BackgroundColor="{StaticResource SeparatorColor}" />
 
+                <!-- Details Stack -->
+                <StackLayout
+                    Padding="{StaticResource DefaultThickness}"
+                    Spacing="{StaticResource DefaultMargin}">
+
+                    <!-- Header -->
                     <Label 
-                        Style="{DynamicResource PropertyFooterLabelStyle}"
-                        Text="Due Date" />
+                        Style="{DynamicResource SectionHaderLabelStyle}" 
+                        Text="Details" />
+
+                    <!-- Job Details -->
+                    <Label
+                        x:Name="lblDetailsTitle"
+                        AutomationId="lblDetailsTitle"
+                        Style="{DynamicResource RegularLabelStyle}"
+                        Text="{Binding Details}" />
+                </StackLayout>
+            
+                <!-- Job Location -->
+                <maps:Map 
+                    x:Name="mapView" 
+                    AutomationId="mapView"
+                    IsShowingUser="false" 
+                    HasZoomEnabled="false"
+                    MapType="Street" 
+                    HeightRequest="200"
+                    IsEnabled="false" />
+
+                <!-- Photos Stack -->
+                <StackLayout
+                    Padding="{StaticResource DefaultThickness}"
+                    Spacing="{StaticResource DefaultMargin}">
+
+                    <!-- Header -->
+                    <Label 
+                        Style="{DynamicResource SectionHaderLabelStyle}" 
+                        Text="Photos" />      
+
+                    <!-- No Photos Message -->
+                    <Label
+                        Style="{DynamicResource RegularLabelStyle}"
+                        IsVisible="{Binding Photos.Count, Converter={StaticResource CountToVisibilityConverter}}"
+                        Text="No Photos have been added yet." />
                 </StackLayout>
             </StackLayout>
+        </flow:FlowListView.Header>
+        
+        <flow:FlowListView.FlowColumnTemplate>
+            <DataTemplate>
+                <Grid HeightRequest="107">
+                    <Grid.Margin>
+                        <Thickness Left="{StaticResource DefaultMargin}" Top="0" Right="0" Bottom="{StaticResource DefaultMargin}" />
+                    </Grid.Margin>
+                    <Image Source="{Binding IconUrl}" Aspect="AspectFill" />
+                </Grid>
+            </DataTemplate>
+        </flow:FlowListView.FlowColumnTemplate>
 
-            <!-- Divier -->
-            <BoxView HeightRequest="1" BackgroundColor="{StaticResource SeparatorColor}" />
-
-            <!-- Details Stack -->
-            <StackLayout
-                Padding="{StaticResource DefaultThickness}"
-                Spacing="{StaticResource DefaultMargin}">
-
-                <!-- Header -->
-                <Label 
-                    Style="{DynamicResource SectionHaderLabelStyle}" 
-                    Text="Details" />
-
-                <!-- Job Details -->
-                <Label
-                    x:Name="lblDetailsTitle"
-                    AutomationId="lblDetailsTitle"
-                    Style="{DynamicResource RegularLabelStyle}"
-                    Text="{Binding Details}" />
-            </StackLayout>
-            
-            <!-- Job Location -->
-            <maps:Map 
-                x:Name="mapView" 
-                AutomationId="mapView"
-                HeightRequest="200" 
-                IsShowingUser="false" 
-                HasZoomEnabled="false"
-                MapType="Street" 
-                IsEnabled="false" />
+        <flow:FlowListView.Footer>
 
             <!-- Job Options -->
             <StackLayout
@@ -147,7 +191,7 @@
                         Grid.Column="0" 
                         FontSize="{StaticResource FontSizeLarge}" 
                         FontFamily="{StaticResource FontFamilyMedium}"
-                        BorderRadius="0"  
+                        CornerRadius="0"  
                         Text="Start Job" 
                         Command="{Binding StartJobClicked}">
                         <Button.BackgroundColor>
@@ -172,7 +216,7 @@
                         Grid.Column="1" 
                         FontSize="{StaticResource FontSizeLarge}" 
                         FontFamily="{StaticResource FontFamilyMedium}"
-                        BorderRadius="0" 
+                        CornerRadius="0" 
                         Text="Edit Job"
                         Command="{Binding EditJobClicked}">
                         <Button.BackgroundColor>
@@ -197,7 +241,7 @@
                         Grid.Column="0" 
                         FontSize="{StaticResource FontSizeLarge}" 
                         FontFamily="{StaticResource FontFamilyMedium}"
-                        BorderRadius="0" 
+                        CornerRadius="0" 
                         Text="Delete Job"
                         Command="{Binding DeleteJobClicked}">
                         <Button.BackgroundColor>
@@ -222,7 +266,7 @@
                         Grid.Column="1" 
                         FontSize="{StaticResource FontSizeLarge}" 
                         FontFamily="{StaticResource FontFamilyMedium}"
-                        BorderRadius="0" 
+                        CornerRadius="0" 
                         Text="Order Parts"
                         Command="{Binding OrderPartsClicked}">
                         <Button.BackgroundColor>
@@ -240,6 +284,6 @@
                     </Button>
                </Grid> 
             </StackLayout>
-        </StackLayout>
-    </ScrollView>
+        </flow:FlowListView.Footer>
+    </flow:FlowListView>
 </ContentPage>

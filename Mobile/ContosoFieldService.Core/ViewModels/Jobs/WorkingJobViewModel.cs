@@ -9,6 +9,7 @@ using Plugin.Media;
 using Plugin.Media.Abstractions;
 using ContosoFieldService.Models;
 using ContosoFieldService.Services;
+using MonkeyCache.FileStore;
 
 namespace ContosoFieldService.ViewModels
 {
@@ -21,7 +22,6 @@ namespace ContosoFieldService.ViewModels
         DateTime startedJobTime;
         Timer timer;
         int increment;
-
 
         public string Name { get; set; }
         public string Details { get; set; }
@@ -53,6 +53,7 @@ namespace ContosoFieldService.ViewModels
 
             selectedJob.Status = JobStatus.InProgress;
             var updatedJob = await jobService.UpdateJob(selectedJob);
+            jobService.InvalidateCache("Jobs");
         }
 
         void Timer_Elapsed(object sender, ElapsedEventArgs e)
@@ -78,7 +79,6 @@ namespace ContosoFieldService.ViewModels
                     //TODO: Show Loading indicators
                     selectedJob.Status = JobStatus.Complete;
                     var updatedJob = await jobService.UpdateJob(selectedJob);
-
 
                     await CoreMethods.PopPageModel(updatedJob, true, true);
                 });
@@ -115,8 +115,8 @@ namespace ContosoFieldService.ViewModels
                         Analytics.TrackEvent("Taking a photo");
 
                         var updatedJob = await photoService.UploadPhotoAsync(selectedJob.Id, file);
-
-                        // TODO: Update current job with updatedjob
+                        jobService.InvalidateCache("Jobs");
+                        Init(updatedJob);
 
                         await CoreMethods.DisplayAlert("Saved", "Image Saved", "OK");
                     }

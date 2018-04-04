@@ -75,7 +75,7 @@ namespace ContosoFieldService.ViewModels
             {
                 return new Command(async () =>
                 {
-                    await ReloadData();
+                    await ReloadData(false, true);
                 });
             }
         }
@@ -150,11 +150,8 @@ namespace ContosoFieldService.ViewModels
             if (returnedData is Job job && job.IsDeleted)
             {
                 // Job got deleted
-
-                // Invalidate chache
-                Barrel.Current.Empty("Jobs");
-                //  Reload data.
-                await ReloadData(false);
+                // Reload data
+                await ReloadData(false, true);
             }
         }
 
@@ -167,7 +164,7 @@ namespace ContosoFieldService.ViewModels
         /// </summary>
         /// <returns>The data.</returns>
         /// <param name="isSilent">If set to <c>true</c> is silent.</param>
-        async Task ReloadData(bool isSilent = false)
+        async Task ReloadData(bool isSilent = false, bool force = false)
         {
             IsRefreshing = !isSilent;
             IsLoading = true;
@@ -177,7 +174,8 @@ namespace ContosoFieldService.ViewModels
                 if (Plugin.Connectivity.CrossConnectivity.Current.IsConnected)
                 {
                     // Download jobs from server
-                    var localJobs = await jobsApiService.GetJobsAsync();
+                    var localJobs = await jobsApiService.GetJobsAsync(force);
+
                     // Group jobs by JobStatus
                     var groupedJobs = GroupJobs(localJobs);
                     Jobs.ReplaceRange(groupedJobs);

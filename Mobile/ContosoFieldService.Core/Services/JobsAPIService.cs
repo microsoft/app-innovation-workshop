@@ -36,7 +36,7 @@ namespace ContosoFieldService.Services
 
     public class JobsAPIService : BaseAPIService
     {
-        public async Task<List<Job>> GetJobsAsync()
+        public async Task<List<Job>> GetJobsAsync(bool force = false)
         {
             var key = "Jobs";
 
@@ -47,11 +47,8 @@ namespace ContosoFieldService.Services
                 return Barrel.Current.Get<List<Job>>(key);
             }
 
-            // ----
-            // TODO: THERE IS A BUG WITH GEOSPARTIAL DATA AT THE MOMENT
-            // ----
             // If the data isn't too old, we'll go ahead and return it rather than call the backend again.
-            if (!Barrel.Current.IsExpired(key) && Barrel.Current.Exists(key))
+            if (!force && !Barrel.Current.IsExpired(key) && Barrel.Current.Exists(key))
             {
                 var jobs = Barrel.Current.Get<IEnumerable<Job>>(key);
                 return jobs.ToList();
