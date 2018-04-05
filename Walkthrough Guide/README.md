@@ -6,7 +6,7 @@ Welcome to the Azure Mobile Workshop. Today you’re going to learn how to lever
 We’ve tried to make this app as production ready as possible and provide a good foundation for if you wish to pursue development in the future. Think of this as your development starter kit. Where we think theres area for improvement within the code base, we've added explanations about how to improve them to bring them up to production standards. We've tried to pick non oppinionated frameworks to give you the flexibility to extend this app to fit your requirements. 
 
 ## 1.1 Prerequisites
-You should have already followed the [setup guide](00_Setup/README.md) before attending the workshop. We've scheduled an hour before things start for you to get support with configuration, but please try your best to attend with a fully functioning development enviroment. 
+You should have already followed the [setup guide](01%20Setup/README.md) before attending the workshop. We've scheduled an hour before things start for you to get support with configuration, but please try your best to attend with a fully functioning development enviroment. 
 
 This workshop is for intermediate to experienced C# developers who may lack either Azure or Xamarin experiance. This workshop is not for C# beginners and we expect you to know how design patterns such as Mvvm and MVC as well as having a basic understanding of the differences between developing Web APIs vs Mobile front-ends. 
 
@@ -22,11 +22,11 @@ The entire solution is available to download from Github and licensed under MIT 
 
 **General**
 
-1. [Setup](Walkthrough%20Guide/00_Setup/)
+1. [Setup](Walkthrough%20Guide/01%20Setup/)
 
 **Azure**
 
-2. [Architecture Options](Walkthrough%20Guide/02_Architecture_Options)
+2. [Architecture Options](Walkthrough%20Guide/02%20Architecture&20Options)
 3. [Web API & App Services](Walkthrough%20Guide/03_Web_API)
 4. [Data Storage](Walkthrough%20Guide/04_Data_Storage)
 4. [Search](Walkthrough%20Guide/05_Search)

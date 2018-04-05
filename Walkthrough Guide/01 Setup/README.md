@@ -58,4 +58,4 @@ To make sure your environment works as expected and is able to compile and execu
 ![Visual Studio Running Xamarin iOS and Android App](Assets/VSMacRunningiOSandAndroid.png)
 
 # Next Steps 
-[Archicture Options](../02_Architecture_Options/README.md)
+[Archicture Options](../02%20Architecture&20Options/README.md)
