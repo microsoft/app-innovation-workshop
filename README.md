@@ -16,8 +16,6 @@ Although you can go and explore the content and walkthrough by yourself, the ric
 
 ## Key Technologies
 
-What did we use to build this sample?
-
 <table>
   <tr>
     <td nowrap><a href="https://azure.microsoft.com/en-us/services/app-service/">App Service</a></td>
@@ -74,19 +72,19 @@ You can find a walkthrough guide for the project that outlines how you too can b
 **Azure**
 
 2. [Architecture Options](Walkthrough%20Guide/02%20Architecture&20Options)
-3. [Web API & App Services](Walkthrough%20Guide/03_Web_API)
-4. [Data Storage](Walkthrough%20Guide/04_Data_Storage)
-4. [Search](Walkthrough%20Guide/05_Search)
-6. [API Management](Walkthrough%20Guide/06_API_Management)
-7. [Functions & Cognitive Services](Walkthrough%20Guide/07_Functions_Cognitive_Services)
+3. [Web API & App Services](Walkthrough%20Guide/03%20Web%20API)
+4. [Data Storage](Walkthrough%20Guide/04%20Data&20Storage)
+4. [Search](Walkthrough%20Guide/05%20Search)
+6. [API Management](Walkthrough%20Guide/06%20API%20Management)
+7. [Functions & Cognitive Services](Walkthrough%20Guide/07%20Functions%20and%20Cognitive%20Services)
 
 **Mobile App**
 
-8. [Overview](Walkthrough%20Guide/08_Mobile_Overview)
-9. [Network Services](Walkthrough%20Guide/09_Mobile_Network_Services)
-10. [Anayltics & Push](Walkthrough%20Guide/10_Anayltics_Push/README.md)
-11. [Chatbot](Walkthrough%20Guide/11_Chatbot)
-12. [Authentication](Walkthrough%20Guide/12_Authentication)
+8. [Overview](Walkthrough%20Guide/08%20Mobile%20Overview)
+9. [Network Services](Walkthrough%20Guide/09%20Mobile%20Network%20Services)
+10. [Anayltics & Push](Walkthrough%20Guide/12%20Anayltics/README.md)
+11. [Chatbot](Walkthrough%20Guide/10%20Chatbot)
+12. [Authentication](Walkthrough%20Guide/11%20Authentication)
 
 &nbsp;
 

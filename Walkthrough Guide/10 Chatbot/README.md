@@ -170,4 +170,4 @@ You can reach the Web channel configuration page from the "Channels" blade in yo
 
 ---
 # Next Steps 
-[Authentication](../12_Authentication/README.md)
+[Authentication](../11%20Authentication/README.md)
