@@ -4,23 +4,24 @@
 
 # Mobile Cloud Workshop
 
-Welcome to the Microsoft Mobile Cloud Workshop. We've created this workshop to showcase the speed and ease at which you can leverage Microsoft's cloud platform to build Data-Driven Intelligent Apps. The workshop will give you insights and hands-on sessions on how to leverage innovative scalable Cloud Backend Services for your applications.
+Welcome to the Microsoft Mobile Cloud Workshop. We've created this workshop to showcase the speed and ease at which you can leverage Microsoft's cloud platform to build Data-Driven Intelligent Apps. The workshop will give you insights and **hands-on labs** on how to leverage innovative scalable Cloud Backend Services for your applications.
 
 #### Who is it for?
+
 Although you can go and explore the content and walkthrough by yourself, the richer learning experience is attending a session led by us. So let's see, if we can schedule something!
 
 [Get in contact](https://mobilecloudworkshop.slack.com)
 
 &nbsp;
 
-## Key Technologies 
+## Key Technologies
 
 What did we use to build this sample?
 
 <table>
   <tr>
     <td nowrap><a href="https://azure.microsoft.com/en-us/services/app-service/">App Service</a></td>
-    <td rowspan="10"><img src="Resources/Architecture.png"></td>
+    <td rowspan="11"><img src="Resources/Architecture.png"></td>
   </tr>
   <tr>
     <td nowrap><a href="https://azure.microsoft.com/en-us/services/cosmos-db/">Cosmos DB</a></td>
@@ -47,10 +48,12 @@ What did we use to build this sample?
     <td nowrap><a href="https://appcenter.ms/">App Center</a></td>
   </tr>
   <tr>
+    <td nowrap><a href="https://azure.microsoft.com/en-us/services/active-directory-b2c/">Active Directory</a></td>
+  </tr>
+  <tr>
     <td nowrap><a href="https://www.xamarin.com/forms/">Xamarin.Forms</a></td>
   </tr>
 </table>
-
 
 ##### Build Status
 
@@ -111,5 +114,3 @@ You can find a walkthrough guide for the project that outlines how you too can b
 - **Mohamed Saif** ([GitHub](https://github.com/mohamedsaif))
 - **Michael Sivers** ([GitHub](https://github.com/msivers))
 - **Simona Tarantola** ([LinkedIn](https://www.linkedin.com/in/simona-tarantola-a654917/))
-
-
