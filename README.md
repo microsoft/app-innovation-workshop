@@ -66,9 +66,9 @@ Although you can go and explore the content and walkthrough by yourself, the ric
 You can find a walkthrough guide for the project that outlines how you too can build and deploy your own version of the app and backend services. 
 
 ### [1. Setup](Walkthrough%20Guide/01%20Setup/)
-### [2. Architecture Options](Walkthrough%20Guide/02%20Architecture&20Options)
+### [2. Architecture Options](Walkthrough%20Guide/02%20Architecture%20Options)
 ### [3. Web API & App Services](Walkthrough%20Guide/03%20Web%20API)
-### [4. Data Storage](Walkthrough%20Guide/04%20Data&20Storage)
+### [4. Data Storage](Walkthrough%20Guide/04%20Data%20Storage)
 ### [5. Search](Walkthrough%20Guide/05%20Search)
 ### [6. Functions & Cognitive Services](Walkthrough%20Guide/06%20Functions%20and%20Cognitive%20Services)
 ### [7. API Management](Walkthrough%20Guide/07%20API%20Management)
