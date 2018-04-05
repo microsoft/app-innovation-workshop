@@ -346,7 +346,7 @@ To avoid that the user has to login and acquire a new token every 30 minutes, th
 
 The App tries to refresh the Access Token automatically when it receives a `401 Unauthorized` response and only shows the Login UI to the user if the background refresh failed.
 
-Check out the [Mobile Network Services](/Walkthrough%20Guide/09_Mobile_Network_Services/) guide for additional details about resilient networking.
+Check out the [Mobile Network Services](/Walkthrough%20Guide/09%20Mobile%20Network%20Services/) guide for additional details about resilient networking.
 
 # Additional Resouces
 

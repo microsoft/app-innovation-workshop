@@ -27,19 +27,19 @@ The entire solution is available to download from Github and licensed under MIT 
 **Azure**
 
 2. [Architecture Options](Walkthrough%20Guide/02%20Architecture&20Options)
-3. [Web API & App Services](Walkthrough%20Guide/03_Web_API)
-4. [Data Storage](Walkthrough%20Guide/04_Data_Storage)
-4. [Search](Walkthrough%20Guide/05_Search)
-6. [API Management](Walkthrough%20Guide/06_API_Management)
-7. [Functions & Cognitive Services](Walkthrough%20Guide/07_Functions_Cognitive_Services)
+3. [Web API & App Services](Walkthrough%20Guide/03%20Web%20API)
+4. [Data Storage](Walkthrough%20Guide/04%20Data&20Storage)
+4. [Search](Walkthrough%20Guide/05%20Search)
+6. [API Management](Walkthrough%20Guide/06%20API%20Management)
+7. [Functions & Cognitive Services](Walkthrough%20Guide/07%20Functions%20and%20Cognitive%20Services)
 
 **Mobile App**
 
-8. [Overview](Walkthrough%20Guide/08_Mobile_Overview)
-9. [Network Services](Walkthrough%20Guide/09_Mobile_Network_Services)
-10. [Anayltics & Push](10_Anayltics_Push/README.md)
-11. [Chatbot](Walkthrough%20Guide/11_Chatbot)
-12. [Authentication](Walkthrough%20Guide/12_Authentication)
+8. [Overview](Walkthrough%20Guide/08%20Mobile%20Overview)
+9. [Network Services](Walkthrough%20Guide/09%20Mobile%20Network%20Services)
+10. [Anayltics & Push](12%20Anayltics/README.md)
+11. [Chatbot](Walkthrough%20Guide/10%20Chatbot)
+12. [Authentication](Walkthrough%20Guide/11%20Authentication)
 
 ## 3. Mobile App
 
@@ -50,7 +50,7 @@ The backend architecture uses many Azure Services to handle things like authoris
 ![Architecture Design](Assets/Architecture.png)
 
 ## Next Steps
-[Architectures Overview](03_Web_API/README.md)
+[Architectures Overview](03%20Web%20API/README.md)
 
 ##  Start Building your own version
 * [Project Spec](Project-Spec.md)
