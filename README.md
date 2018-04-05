@@ -57,7 +57,7 @@ What did we use to build this sample?
 
 ##### Build Status
 
-| iOS  | Android | 
+| iOS  | Android |
 |:---:|:---:|
 | [![Build status](https://build.appcenter.ms/v0.1/apps/b9f623cd-4f7d-46cb-9402-c53eeda66986/branches/master/badge)](https://appcenter.ms) | [![Build status](https://build.appcenter.ms/v0.1/apps/038d4f0c-37fc-4aa3-88c1-14ffc3d8d92a/branches/master/badge)](https://appcenter.ms) |
 
@@ -69,11 +69,11 @@ You can find a walkthrough guide for the project that outlines how you too can b
 
 **General**
 
-1. [Setup](Walkthrough%20Guide/00_Setup/)
+1. [Setup](Walkthrough%20Guide/01%20Setup/)
 
 **Azure**
 
-2. [Architecture Options](Walkthrough%20Guide/02_Architecture_Options)
+2. [Architecture Options](Walkthrough%20Guide/02%20Architecture&20Options)
 3. [Web API & App Services](Walkthrough%20Guide/03_Web_API)
 4. [Data Storage](Walkthrough%20Guide/04_Data_Storage)
 4. [Search](Walkthrough%20Guide/05_Search)
@@ -84,7 +84,7 @@ You can find a walkthrough guide for the project that outlines how you too can b
 
 8. [Overview](Walkthrough%20Guide/08_Mobile_Overview)
 9. [Network Services](Walkthrough%20Guide/09_Mobile_Network_Services)
-10. [Anayltics & Push](10_Anayltics_Push/README.md)
+10. [Anayltics & Push](Walkthrough%20Guide/10_Anayltics_Push/README.md)
 11. [Chatbot](Walkthrough%20Guide/11_Chatbot)
 12. [Authentication](Walkthrough%20Guide/12_Authentication)
 
