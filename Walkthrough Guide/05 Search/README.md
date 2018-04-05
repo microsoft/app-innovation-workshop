@@ -61,7 +61,7 @@ We can now run the indexer for the first time. Once its completed, navigate back
 ![Azure Search Explorer](Assets/SearchExplorer.png)
 
 # Next Steps 
-[API Management](../06%20API%20Management)
+[API Management](../07%20API%20Management)
 
 
 

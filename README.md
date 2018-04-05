@@ -65,26 +65,18 @@ Although you can go and explore the content and walkthrough by yourself, the ric
 
 You can find a walkthrough guide for the project that outlines how you too can build and deploy your own version of the app and backend services. 
 
-**General**
-
-1. [Setup](Walkthrough%20Guide/01%20Setup/)
-
-**Azure**
-
-2. [Architecture Options](Walkthrough%20Guide/02%20Architecture&20Options)
-3. [Web API & App Services](Walkthrough%20Guide/03%20Web%20API)
-4. [Data Storage](Walkthrough%20Guide/04%20Data&20Storage)
-4. [Search](Walkthrough%20Guide/05%20Search)
-6. [API Management](Walkthrough%20Guide/06%20API%20Management)
-7. [Functions & Cognitive Services](Walkthrough%20Guide/07%20Functions%20and%20Cognitive%20Services)
-
-**Mobile App**
-
-8. [Overview](Walkthrough%20Guide/08%20Mobile%20Overview)
-9. [Network Services](Walkthrough%20Guide/09%20Mobile%20Network%20Services)
-10. [Anayltics & Push](Walkthrough%20Guide/12%20Anayltics/README.md)
-11. [Chatbot](Walkthrough%20Guide/10%20Chatbot)
-12. [Authentication](Walkthrough%20Guide/11%20Authentication)
+### [1. Setup](Walkthrough%20Guide/01%20Setup/)
+### [2. Architecture Options](Walkthrough%20Guide/02%20Architecture&20Options)
+### [3. Web API & App Services](Walkthrough%20Guide/03%20Web%20API)
+### [4. Data Storage](Walkthrough%20Guide/04%20Data&20Storage)
+### [5. Search](Walkthrough%20Guide/05%20Search)
+### [6. Functions & Cognitive Services](Walkthrough%20Guide/06%20Functions%20and%20Cognitive%20Services)
+### [7. API Management](Walkthrough%20Guide/07%20API%20Management)
+### [8. Mobile App Overview](Walkthrough%20Guide/08%20Mobile%20Overview)
+### [9. Mobile Network Services](Walkthrough%20Guide/09%20Mobile%20Network%20Services)
+### [10. Chatbot](Walkthrough%20Guide/10%20Chatbot)
+### [11. Authentication](Walkthrough%20Guide/11%20Authentication)
+### [12. Anayltics](Walkthrough%20Guide/12%20Anayltics/README.md)
 
 &nbsp;
 
