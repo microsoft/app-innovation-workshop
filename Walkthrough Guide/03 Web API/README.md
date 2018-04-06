@@ -215,3 +215,4 @@ The likelihood of running into this problem can be substantially mitigated with 
 ---
 ### Further Reading
 * [Offical Documentation](https://docs.microsoft.com/en-us/azure/app-service/)
+* [Adding API documentation with Swagger](https://docs.microsoft.com/en-us/aspnet/core/tutorials/web-api-help-pages-using-swagger)
