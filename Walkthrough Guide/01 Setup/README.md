@@ -8,9 +8,11 @@
 
 Please bring your own **Windows or Mac** laptop. To participate in this workshop, some prework needs to be done. So please make sure you prepared your environment bringing the following prerequisites.
 
-- [Microsoft Azure Account](https://aka.ms/azft-mobile) (with a Subscription)
+- [Microsoft Azure Account with a Subscription](https://aka.ms/azft-mobile)
 - [Visual Studio for Windows or Mac](https://www.visualstudio.com/) (Community Version or higher)
   - [Xamarin Tooling](https://developer.xamarin.com/guides/cross-platform/getting_started/installation/windows/)
+  - Android SDK 8.1 Oreo (API Level 27)
+  - iOS SDK 11
 - [Visual Studio Code](https://code.visualstudio.com/)
   - [Azure Functions Extension](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-azurefunctions)
 - [Postman](https://www.getpostman.com/)
@@ -21,13 +23,11 @@ The setup of a Xamarin development environment can get a little bit tricky and t
 
 ### Microsoft Azure
 
-Creating a Microsoft Azure Account is easy! Just head over to the [Azure Website](https://azure.microsoft.com/en-us/free/) and create a free Account. If you already have a Microsoft, Outlook, Office 365 or Active Directory Account from you company, you can re-use it.
+Creating a Microsoft Azure Account is easy! Just head over to the [Microsoft Azure for Mobile Landingpage](https://aka.ms/azft-mobile) and create a free Account. If you already have a Microsoft, Outlook, Office 365 or Active Directory Account from you company, you can re-use it.
 
 ![Free Azure Account](Assets/FreeAzureAccount.png)
 
-Although the free Account includes a bunch of services that you can use, in this workshop we will work with advanced resources, which we need an Azure Subscription for.
-
-An Azure Subscriptuon is basically the way to pay for charged services and can be backed by a Credit Card or a company agreement.
+Although the free Account includes a bunch of services that you can use, in this workshop we will work with advanced resources, which we need an Azure Subscription for. An Azure Subscriptuon is basically the way to pay for charged services and can be backed by a Credit Card or a company agreement.
 
 You can check the Subscriptions for you account when visiting the [Azure Portal](https://portal.azure.com) and selecting ***Subscriptions*** from the side menu.
 
@@ -56,6 +56,3 @@ If you want to build iOS solutions, make sure that XCode is also installed on th
 To make sure your environment works as expected and is able to compile and execute Xamarin apps, your can simply open the [`ContosoMaintenance.sln`](/ContosoMaintenance.sln) solution with Visual Studio and select the `ContosoFieldService.iOS` or `ContosoFieldService.Droid` project as your Startup project. If the application gets compiled and the app can be started, you are good to go.
 
 ![Visual Studio Running Xamarin iOS and Android App](Assets/VSMacRunningiOSandAndroid.png)
-
-# Next Steps 
-[Archicture Options](../02%20Architecture&20Options/README.md)
