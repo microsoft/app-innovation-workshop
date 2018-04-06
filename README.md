@@ -65,6 +65,8 @@ Although you can go and explore the content and walkthrough by yourself, the ric
 
 You can find a walkthrough guide for the project that outlines how you too can build and deploy your own version of the app and backend services. 
 
+> **Hint:** We highly recommend you setup and configure your system *before* attending one of the guided sessions. Although we’ve allowed an hour in the morning to assist in trouble shooting configurations, we won’t have time to do a fresh installation.
+
 ### [1. Setup](Walkthrough%20Guide/01%20Setup/)
 ### [2. Architecture Options](Walkthrough%20Guide/02%20Architecture%20Options)
 ### [3. Web API & App Services](Walkthrough%20Guide/03%20Web%20API)
