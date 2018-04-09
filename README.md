@@ -78,7 +78,7 @@ You can find a walkthrough guide for the project that outlines how you too can b
 ### [9. Mobile Network Services](Walkthrough%20Guide/09%20Mobile%20Network%20Services)
 ### [10. Chatbot](Walkthrough%20Guide/10%20Chatbot)
 ### [11. Authentication](Walkthrough%20Guide/11%20Authentication)
-### [12. Anayltics](Walkthrough%20Guide/12%20Anayltics/README.md)
+### [12. Analytics](Walkthrough%20Guide/12%20Anayltics/README.md)
 
 &nbsp;
 
