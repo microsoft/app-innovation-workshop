@@ -1,45 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
 <Project Sdk="Microsoft.NET.Sdk.Web">
-
-  <PropertyGroup>
-    <TargetFramework>netcoreapp2.0</TargetFramework>
-    <ApplicationInsightsResourceId>/subscriptions/0ec6dbb0-b89b-4bb3-9140-14e3d244e0ee/resourcegroups/mcwrothie/providers/microsoft.insights/components/mcw-api-ai</ApplicationInsightsResourceId>
-    <ApplicationInsightsAnnotationResourceId>/subscriptions/0ec6dbb0-b89b-4bb3-9140-14e3d244e0ee/resourcegroups/mcwrothie/providers/microsoft.insights/components/mcw-api-ai</ApplicationInsightsAnnotationResourceId>
-  </PropertyGroup>
-
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'DebugBackend|AnyCPU' ">
-    <IntermediateOutputPath>obj\Debug\netcoreapp2.0</IntermediateOutputPath>
-    <DebugSymbols>true</DebugSymbols>
-    <Optimize>false</Optimize>
-    <DefineConstants>TRACE;DEBUG;NETCOREAPP2_0</DefineConstants>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'ReleaseBackend|AnyCPU' ">
-    <IntermediateOutputPath>obj\Release\netcoreapp2.0</IntermediateOutputPath>
-    <Optimize>true</Optimize>
-    <DefineConstants>TRACE;RELEASE;NETCOREAPP2_0</DefineConstants>
-  </PropertyGroup>
-  <ItemGroup>
-    <Folder Include="wwwroot\" />
-    <Folder Include="Services\" />
-    <Folder Include="Models\" />
-    <Folder Include="Services\Blob Storage\" />
-    <Folder Include="DummyData\" />
-    <Folder Include="Services\Storage Queue\" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.5" />
-    <PackageReference Include="Microsoft.Azure.DocumentDB.Core" Version="1.9.1" />
-    <PackageReference Include="Microsoft.Azure.Search" Version="3.0.5" />
-    <PackageReference Include="WindowsAzure.Storage" Version="9.1.0" />
-    <PackageReference Include="Microsoft.ApplicationInsights.AspNetCore" Version="2.2.1" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="2.0.0" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <WCFMetadata Include="Connected Services" />
-  </ItemGroup>
-
+    <PropertyGroup>
+        <TargetFramework>netcoreapp2.0</TargetFramework>
+        <ApplicationInsightsResourceId>/subscriptions/0ec6dbb0-b89b-4bb3-9140-14e3d244e0ee/resourcegroups/mcwrothie/providers/microsoft.insights/components/mcw-api-ai</ApplicationInsightsResourceId>
+        <ApplicationInsightsAnnotationResourceId>/subscriptions/0ec6dbb0-b89b-4bb3-9140-14e3d244e0ee/resourcegroups/mcwrothie/providers/microsoft.insights/components/mcw-api-ai</ApplicationInsightsAnnotationResourceId>
+    </PropertyGroup>
+    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'DebugBackend|AnyCPU' ">
+        <IntermediateOutputPath>obj\Debug\netcoreapp2.0</IntermediateOutputPath>
+        <DebugSymbols>true</DebugSymbols>
+        <Optimize>false</Optimize>
+        <DefineConstants>TRACE;DEBUG;NETCOREAPP2_0</DefineConstants>
+    </PropertyGroup>
+    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'ReleaseBackend|AnyCPU' ">
+        <IntermediateOutputPath>obj\Release\netcoreapp2.0</IntermediateOutputPath>
+        <Optimize>true</Optimize>
+        <DefineConstants>TRACE;RELEASE;NETCOREAPP2_0</DefineConstants>
+    </PropertyGroup>
+    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+        <DocumentationFile>bin\Debug\netcoreapp2.0\ContosoMaintenance.WebAPI.xml</DocumentationFile>
+        <NoWarn>1701;1702;1705;1591</NoWarn>
+    </PropertyGroup>
+    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+        <DocumentationFile>bin\Release\netcoreapp2.0\ContosoMaintenance.WebAPI.xml</DocumentationFile>
+        <NoWarn>1701;1702;1705;1591</NoWarn>
+    </PropertyGroup>
+    <ItemGroup>
+        <Folder Include="wwwroot\" />
+        <Folder Include="Services\" />
+        <Folder Include="Models\" />
+        <Folder Include="Services\Blob Storage\" />
+        <Folder Include="Helpers\" />
+        <Folder Include="Services\Storage Queue\" />
+    </ItemGroup>
+    <ItemGroup>
+        <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.5" />
+        <PackageReference Include="Microsoft.Azure.DocumentDB.Core" Version="1.9.1" />
+        <PackageReference Include="Microsoft.Azure.Search" Version="3.0.5" />
+        <PackageReference Include="WindowsAzure.Storage" Version="9.1.0" />
+        <PackageReference Include="Microsoft.ApplicationInsights.AspNetCore" Version="2.2.1" />
+        <PackageReference Include="Swashbuckle.AspNetCore" Version="2.3.0" />
+    </ItemGroup>
+    <ItemGroup>
+        <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="2.0.0" />
+    </ItemGroup>
+    <ItemGroup>
+        <WCFMetadata Include="Connected Services" />
+    </ItemGroup>
 </Project>
