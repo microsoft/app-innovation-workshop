@@ -81,7 +81,7 @@ namespace ContosoMaintenance.WebAPI.Controllers
 
             if (id == null)
             {
-                return BadRequest();
+                return BadRequest("Can't find item to delete.");
             }
 
             T item = await DBRepository.GetItemAsync(id);
