@@ -17,9 +17,10 @@ namespace ContosoMaintenance.WebAPI.Controllers
 
         public SearchController(IConfiguration configuration)
         {
-            serviceClient = new SearchServiceClient(configuration["AzureSearch:AzureSearchServiceName"], new SearchCredentials(configuration["AzureSearch:AzureSearchApiKey"]));                                          
+            serviceClient = new SearchServiceClient(configuration["AzureSearch:AzureSearchServiceName"], new SearchCredentials(configuration["AzureSearch:AzureSearchApiKey"]));
         }
 
+        [HttpGet]
         [Route("/api/search/jobs")]
         public async Task<List<Job>> Get(string keyword)
         {
@@ -43,10 +44,10 @@ namespace ContosoMaintenance.WebAPI.Controllers
                     Details = document.Document.Details,
                     Status = document.Document.Status,
                 };
-           
+
                 jobList.Add(job);
             }
-            return jobList; 
+            return jobList;
         }
 
 
