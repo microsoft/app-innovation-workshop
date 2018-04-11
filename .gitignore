@@ -326,3 +326,4 @@ Thumbs.db
 /Mobile/Droid/app.config
 /Mobile/iOS/app.config
 /Mobile/UITests/app.config
+Mobile/Droid/Resources/Resource.designer.cs
