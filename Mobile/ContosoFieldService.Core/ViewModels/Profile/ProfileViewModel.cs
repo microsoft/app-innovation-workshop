@@ -65,7 +65,7 @@ namespace ContosoFieldService.ViewModels
 
         protected override void ViewIsAppearing(object sender, EventArgs e)
         {
-            Name = AuthenticationService.CurrentUser?.Name;
+            Name = AuthenticationService.CurrentUser?.Name ?? "Anonymous";
             GravatarSource = Helpers.Extensions.EmailToGravatarUrl(AuthenticationService.CurrentUserEmail);
 
             RaisePropertyChanged("Name");
