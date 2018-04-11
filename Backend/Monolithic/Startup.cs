@@ -1,4 +1,6 @@
 ﻿using System;
+using System.IO;
+using System.Reflection;
 using System.Threading.Tasks;
 using ContosoMaintenance.WebAPI.Services;
 using ContosoMaintenance.WebAPI.Services.BlobStorage;
@@ -8,6 +10,8 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Newtonsoft.Json;
+using Swashbuckle.AspNetCore.Swagger;
 
 namespace ContosoMaintenance.WebAPI
 {
@@ -62,7 +66,23 @@ namespace ContosoMaintenance.WebAPI
                 options.Authority = $"{authorityBase}{Configuration["ActiveDirectory:SignUpSignInPolicy"]}/v2.0/";
             });
 
-            services.AddMvc();
+            services.AddMvc()
+                    .AddJsonOptions(options =>
+                    {
+                        // Pretty Print Swagger JSON
+                        options.SerializerSettings.Formatting = Formatting.Indented;
+                    });
+
+            // Register the Swagger generator
+            services.AddSwaggerGen(c =>
+            {
+                c.SwaggerDoc("1.0", new Info { Title = "Contoso Maintenance API", Version = "1.0" });
+
+                // Set the comments path for the Swagger JSON and UI.
+                var xmlFile = $"{Assembly.GetEntryAssembly().GetName().Name}.xml";
+                var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
+                c.IncludeXmlComments(xmlPath);
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -72,6 +92,14 @@ namespace ContosoMaintenance.WebAPI
             {
                 app.UseDeveloperExceptionPage();
             }
+
+            // Swagger
+            app.UseSwagger();
+            app.UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint("/swagger/1.0/swagger.json", "Contoso Maintenance API 1.0");
+                c.RoutePrefix = string.Empty; // Makes Swagger UI the root page
+            });
 
             app.UseAuthentication();
             app.UseMvc();
