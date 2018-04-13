@@ -1,24 +1,51 @@
 {
-    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
-    "contentVersion": "1.0.0.0",
-    "parameters": {
-        "databaseAccountName": {
-            "value": "__AzureDBName__"
-        },
-        "webAppName": {
-            "value": "__AzureWebName__"
-        },
-        "azureSearchname": {
-            "value": "__AzureSearchName__"
-        },
-        "azureVisionname": {
-            "value": "__AzureVisionName__"
-        },
-        "storageAccountName": {
-            "value": "__AzureStorageName__"
-        },
-        "Location": {
-            "value": "__AzureLocation__"
-        }
+  "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "storageAccountType": {
+      "value": "Standard_LRS"
+    },
+    "webAppSvcPlanSize": {
+      "value": "F1"
+    },
+    "webAppSvcPlanSku": {
+      "value": "Free"
+    },
+    "webAppName": {
+      "value": ""
+    },
+    "functionAppName": {
+      "value": ""
+    },
+    "computerVisionSku": {
+      "value": "F0"
+    },
+    "azureSearchSku": {
+      "value": "free"
+    },
+    "azureSearchReplicaCount": {
+      "value": 1
+    },
+    "azureSearchPartitionCount": {
+      "value": 1
+    },
+    "cosmosDatabaseId": {
+      "value": ""
+    },
+    "photosBlobContainerName": {
+      "value": ""
+    },
+    "storageQueueName": {
+      "value": ""
+    },
+    "adTenant": {
+      "value": ""
+    },
+    "adAppId": {
+      "value": ""
+    },
+    "adPolicy": {
+      "value": ""
     }
+  }
 }
