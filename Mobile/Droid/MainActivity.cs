@@ -16,44 +16,46 @@ using Microsoft.AppCenter.Push;
 using Plugin.Permissions;
 using ContosoFieldService.Services;
 using Microsoft.Identity.Client;
+using Plugin.CurrentActivity;
 
 namespace ContosoFieldService.Droid
 {
-	[Activity(Label = "Field Service", Icon = "@drawable/icon", Theme = "@style/MyTheme", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
-	public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity
-	{
-		protected override void OnCreate(Bundle bundle)
-		{
-			TabLayoutResource = Resource.Layout.Tabbar;
-			ToolbarResource = Resource.Layout.Toolbar;
+    [Activity(Label = "Field Service", Icon = "@drawable/icon", Theme = "@style/MyTheme", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
+    public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity
+    {
+        protected override void OnCreate(Bundle bundle)
+        {
+            TabLayoutResource = Resource.Layout.Tabbar;
+            ToolbarResource = Resource.Layout.Toolbar;
 
-			base.OnCreate(bundle);
+            base.OnCreate(bundle);
 
-			global::Xamarin.Forms.Forms.Init(this, bundle);
-			CachedImageRenderer.Init(false);
-			//ImageCircleRenderer.Init();
-			//AnimationViewRenderer.Init();
-			FormsMaps.Init(this, bundle);
-			CarouselViewRenderer.Init();
+            global::Xamarin.Forms.Forms.Init(this, bundle);
+            CachedImageRenderer.Init(false);
+            //ImageCircleRenderer.Init();
+            //AnimationViewRenderer.Init();
+            FormsMaps.Init(this, bundle);
+            CarouselViewRenderer.Init();
+            Plugin.CurrentActivity.CrossCurrentActivity.Current.Activity = this;
 
-			// Configure App Center Push
-			Push.SetSenderId("597659151602");
+            // Configure App Center Push
+            Push.SetSenderId("597659151602");
 
-			// Configure Authentication
-			AuthenticationService.UIParent = new UIParent(Xamarin.Forms.Forms.Context as Activity);
+            // Configure Authentication
+            AuthenticationService.UIParent = new UIParent(this);
 
-			LoadApplication(new App());
-		}
+            LoadApplication(new App());
+        }
 
-		public override void OnRequestPermissionsResult(int requestCode, string[] permissions, Permission[] grantResults)
-		{
-			PermissionsImplementation.Current.OnRequestPermissionsResult(requestCode, permissions, grantResults);
-		}
+        public override void OnRequestPermissionsResult(int requestCode, string[] permissions, Permission[] grantResults)
+        {
+            PermissionsImplementation.Current.OnRequestPermissionsResult(requestCode, permissions, grantResults);
+        }
 
-		protected override void OnActivityResult(int requestCode, Result resultCode, Intent data)
-		{
-			base.OnActivityResult(requestCode, resultCode, data);
-			AuthenticationContinuationHelper.SetAuthenticationContinuationEventArgs(requestCode, resultCode, data);
-		}
-	}
+        protected override void OnActivityResult(int requestCode, Result resultCode, Intent data)
+        {
+            base.OnActivityResult(requestCode, resultCode, data);
+            AuthenticationContinuationHelper.SetAuthenticationContinuationEventArgs(requestCode, resultCode, data);
+        }
+    }
 }
