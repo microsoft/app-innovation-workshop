@@ -8,7 +8,7 @@ As we are collecting and displaying different types of information like *Jobs*, 
 
 Whenever it comes to unstructured data an NoSQL approaches in the Microsoft Azure ecosystem, Cosmos DB should be our database of choice. It is a globally-distributed, multi-model database service which makes it super flexible to use and extremely easy to scale to other regions.
 
-Beside *Disk Space* and *Consistency*, Cosmos DB's main scale dimension is *Throughput*. For each collection, developers can reserve throughput for their data, which ensures the 99.99th percentile of latency for reads to under 10 ms and for writes to under 15 ms. Pre-reserved Throughput which is defined by request units (RUs) is mainly defining the price of a Cosmos DB instance. Fetching of a single 1KB document by id spends roughly 1 RU. You can use the [Cosmos DB capacity plannter tool](https://www.documentdb.com/capacityplanner) to calculate, how many RUs your databse might need.
+Beside *Disk Space* and *Consistency*, Cosmos DB's main scale dimension is *Throughput*. For each collection, developers can reserve throughput for their data, which ensures the 99.99th percentile of latency for reads to under 10 ms and for writes to under 15 ms. Pre-reserved Throughput which is defined by request units (RUs) is mainly determining the price of a Cosmos DB instance. Fetching of a single 1KB document by id spends roughly 1 RU. You can use the [Cosmos DB capacity planner tool](https://www.documentdb.com/capacityplanner) to calculate, how many RUs your database might need.
 
 ### 1.1 Create a Cosmos DB instance
 
