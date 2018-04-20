@@ -26,8 +26,8 @@
         <item name="android:colorFocusedHighlight">@color/ListViewSelected</item>
         <item name="android:colorActivatedHighlight">@color/ListViewSelected</item>
         <item name="android:activatedBackgroundIndicator">@color/ListViewSelected</item>
-        <!-- Set onscreen Navigation Bar color -->
-        <item name="android:navigationBarColor">#000</item>
+        <!-- Set on-screen Navigation Bar color -->
+        <item name="android:navigationBarColor">#000000</item>
     </style>
     <style name="AppCompatDialogStyle" parent="Theme.AppCompat.Light.Dialog">
         <item name="colorAccent">#00D8CB</item>
