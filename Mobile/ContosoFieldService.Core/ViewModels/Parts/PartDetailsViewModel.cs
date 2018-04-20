@@ -67,7 +67,15 @@ namespace ContosoFieldService.ViewModels
             entry.KeyValues.Add("appName", "Field Service");
             entry.KeyValues.Add("companyName", "Contoso Maintenance");
 
-            Application.Current.AppLinks.RegisterLink(entry);
+            try
+            {
+                Application.Current.AppLinks.RegisterLink(entry);
+            }
+            catch (Exception ex)
+            {
+                // Crashes on Android currents
+                // TODO: Fix DeepLink support on Android
+            }
 
         }
 
