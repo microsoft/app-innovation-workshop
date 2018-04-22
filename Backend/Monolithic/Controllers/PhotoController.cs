@@ -31,9 +31,18 @@ namespace ContosoMaintenance.WebAPI.Controllers
             this.queue = queue;
 
             jobRepository = new DocumentDBRepositoryBase<Job>();
-            jobRepository.Initialize(configuration["AzureCosmosDb:Endpoint"], configuration["AzureCosmosDb:Key"], configuration["AzureCosmosDb:DatabaseId"]);
+            jobRepository.Initialize(
+                configuration["AzureCosmosDb:Endpoint"],
+                configuration["AzureCosmosDb:Key"],
+                configuration["AzureCosmosDb:DatabaseId"]);
         }
 
+        /// <summary>
+        /// Uploads a photo and adds it to a Job
+        /// </summary>
+        /// <returns>The updated Job with the photo attached to it</returns>
+        /// <param name="jobId">Job ID.</param>
+        /// <param name="file">File</param>
         [HttpPost("{jobId}")]
         public async Task<IActionResult> UploadPhoto(string jobId, IFormFile file)
         {
@@ -44,13 +53,14 @@ namespace ContosoMaintenance.WebAPI.Controllers
             if (job == null)
                 return BadRequest("Can't find the job to attach the photo to");
 
+
+            // Create Blob Name
+            var photoId = Guid.NewGuid().ToString();
+            var fileEnding = file.FileName.Substring(file.FileName.LastIndexOf('.'));
+            var blobName = photoId + fileEnding;
+
             try
             {
-                // Create Blob
-                var photoId = Guid.NewGuid().ToString();
-                var fileEnding = file.FileName.Substring(file.FileName.LastIndexOf('.'));
-                var blobName = photoId + fileEnding;
-
                 // Upload photo to blob
                 var uri = await blobStorage.UploadAsync(string.Format($"{blobName}"), file.OpenReadStream());
 
@@ -69,26 +79,26 @@ namespace ContosoMaintenance.WebAPI.Controllers
 
                 job.Photos.Add(photo);
                 var updatedJob = await jobRepository.UpdateItemAsync(jobId, job);
-
-                try
-                {
-                    // Create a message on our queue for the Azure Function to process the image.
-                    string json = JsonConvert.SerializeObject(new Models.PhotoProcess() { PhotoId = photoId, BlobName = blobName, JobId = jobId }, Formatting.Indented);
-                    await queue.AddMessage(json);
-                }
-                catch (ArgumentException)
-                {
-                    // Appears if Azure Storage Queue is not configured correctly which happens during the workshop,
-                    // as Storage Queues appear at a later point.
-                }
-
-                // Return job object
-                return new ObjectResult(job);
             }
-            catch
+            catch (StorageException)
             {
-                return new ObjectResult(false);
+                return StatusCode(500, "Uploading the file failed. Please check your Storage Configuration in the App Settings");
             }
+
+            try
+            {
+                // Create a message on our queue for the Azure Function to process the image.
+                string json = JsonConvert.SerializeObject(new Models.PhotoProcess() { PhotoId = photoId, BlobName = blobName, JobId = jobId }, Formatting.Indented);
+                await queue.AddMessage(json);
+            }
+            catch (ArgumentException)
+            {
+                // Appears if Azure Storage Queue is not configured correctly which happens during the workshop,
+                // as Storage Queues appear at a later point.
+            }
+
+            // Return the updated Job
+            return new ObjectResult(job);
         }
     }
 }
