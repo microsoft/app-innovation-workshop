@@ -20,6 +20,11 @@ namespace ContosoMaintenance.WebAPI.Controllers
             serviceClient = new SearchServiceClient(configuration["AzureSearch:AzureSearchServiceName"], new SearchCredentials(configuration["AzureSearch:AzureSearchApiKey"]));
         }
 
+        /// <summary>
+        /// Searches for a Job by a keyword
+        /// </summary>
+        /// <returns>Result list of Jobs</returns>
+        /// <param name="keyword">Search keyword</param>
         [HttpGet]
         [Route("/api/search/jobs")]
         public async Task<List<Job>> Get(string keyword)
