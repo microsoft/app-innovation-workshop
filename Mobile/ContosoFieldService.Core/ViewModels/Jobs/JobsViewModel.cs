@@ -163,7 +163,8 @@ namespace ContosoFieldService.ViewModels
         /// Reloads the data.
         /// </summary>
         /// <returns>The data.</returns>
-        /// <param name="isSilent">If set to <c>true</c> is silent.</param>
+        /// <param name="isSilent">If set to <c>true</c> no loading indicators will be shown.</param>
+        /// <param name="force">If set to <c>true</c> cache will be ignored.</param>
         async Task ReloadData(bool isSilent = false, bool force = false)
         {
             IsRefreshing = !isSilent;
@@ -171,23 +172,41 @@ namespace ContosoFieldService.ViewModels
 
             try
             {
-                if (Plugin.Connectivity.CrossConnectivity.Current.IsConnected)
-                {
-                    // Download jobs from server
-                    var localJobs = await jobsApiService.GetJobsAsync(force);
-
-                    // Group jobs by JobStatus
-                    var groupedJobs = GroupJobs(localJobs);
-                    Jobs.ReplaceRange(groupedJobs);
-                }
-                else
-                {
+                // Inform user about missing connectivity but proceed as data could have been cached
+                if (!Plugin.Connectivity.CrossConnectivity.Current.IsConnected)
                     await CoreMethods.DisplayAlert("Network Error", "No internet connectivity found", "OK");
-                }
+
+                // Get jobs from server or cache
+                var newJobs = await jobsApiService.GetJobsAsync(force);
+
+                // Group jobs by JobStatus
+                var groupedJobs = GroupJobs(newJobs);
+                Jobs.ReplaceRange(groupedJobs);
             }
-            catch (Exception)
+            // TODO: Handle Exceptions centralized in BaseViewModel
+            catch (UriFormatException)
             {
-                await CoreMethods.DisplayAlert("Error", "An error occured while communicating with the backend. Please check your settings and try again.", "Ok");
+                // No or invalid BaseUrl set in Constants.cs
+                await CoreMethods.DisplayAlert(
+                    "Backend Error",
+                    "No backend connection has been specified or the specified URL is malformed.",
+                    "Ok");
+            }
+            catch (ArgumentException)
+            {
+                // Backend not found at specified BaseUrl in Constants.cs or call limit reached
+                await CoreMethods.DisplayAlert(
+                    "Backend Error",
+                    "Cannot communicate with specified backend. Maybe your call rate limit is exceeded.",
+                    "Ok");
+            }
+            catch (Exception ex)
+            {
+                // Everything else
+                await CoreMethods.DisplayAlert(
+                    "Backend Error",
+                    "An error occured while communicating with the backend. Please check your settings and try again.",
+                    "Ok");
             }
 
             IsRefreshing = false;

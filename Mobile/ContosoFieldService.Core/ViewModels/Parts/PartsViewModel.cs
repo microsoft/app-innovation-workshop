@@ -121,25 +121,58 @@ namespace ContosoFieldService.ViewModels
         #endregion
 
         #region Private Methods
-        async Task ReloadData(bool isSilent = false)
+
+        /// <summary>
+        /// Reloads the data.
+        /// </summary>
+        /// <returns>The data.</returns>
+        /// <param name="isSilent">If set to <c>true</c> no loading indicators will be shown.</param>
+        /// <param name="force">If set to <c>true</c> cache will be ignored.</param>
+        async Task ReloadData(bool isSilent = false, bool force = false)
         {
             IsRefreshing = !isSilent;
             IsLoading = true;
 
             try
             {
-                var parts = await partsApiService.GetPartsAsync();
-                Parts.Clear();
-                Parts.AddRange(parts);
+                // Inform user about missing connectivity but proceed as data could have been cached
+                if (!Plugin.Connectivity.CrossConnectivity.Current.IsConnected)
+                    await CoreMethods.DisplayAlert("Network Error", "No internet connectivity found", "OK");
+
+                // Get parts from server or cache
+                var newParts = await partsApiService.GetPartsAsync();
+                Parts.ReplaceRange(newParts);
             }
-            catch
+            // TODO: Handle Exceptions centralized in BaseViewModel
+            catch (UriFormatException)
             {
-                await CoreMethods.DisplayAlert("Connection Error", "An error occured while communicating with the backend. Please check your settings and try again.", "Ok");
+                // No or invalid BaseUrl set in Constants.cs
+                await CoreMethods.DisplayAlert(
+                    "Backend Error",
+                    "No backend connection has been specified or the specified URL is malformed.",
+                    "Ok");
+            }
+            catch (ArgumentException)
+            {
+                // Backend not found at specified BaseUrl in Constants.cs or call limit reached
+                await CoreMethods.DisplayAlert(
+                    "Backend Error",
+                    "Cannot communicate with specified backend. Maybe your call rate limit is exceeded.",
+                    "Ok");
+            }
+            catch (Exception ex)
+            {
+                // Everything else
+                await CoreMethods.DisplayAlert(
+                    "Backend Error",
+                    "An error occured while communicating with the backend. Please check your settings and try again.",
+                    "Ok");
             }
 
             IsRefreshing = false;
             IsLoading = false;
         }
+
         #endregion
 
         #region Private Fields
