@@ -26,6 +26,10 @@ namespace ContosoMaintenance.WebAPI.Controllers
             parts.Initialize(configuration["AzureCosmosDb:Endpoint"], configuration["AzureCosmosDb:Key"], configuration["AzureCosmosDb:DatabaseId"]);
         }
 
+        /// <summary>
+        /// Generates some dummy data to play around with and writes them to the database
+        /// </summary>
+        /// <returns>The dummy data async.</returns>
         [HttpGet]
         public async Task<string> CreateDummyDataAsync()
         {
