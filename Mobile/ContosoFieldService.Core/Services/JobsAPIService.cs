@@ -36,7 +36,10 @@ namespace ContosoFieldService.Services
 
     public class JobsAPIService : BaseAPIService
     {
-        public async Task<List<Job>> GetJobsAsync(bool force = false)
+        // Create an instance of the Refit RestService for the job interface.
+        readonly IJobServiceAPI contosoMaintenanceApi = RestService.For<IJobServiceAPI>(Constants.BaseUrl);
+
+        public async Task<(ResponseType type, List<Job> result)> GetJobsAsync(bool force = false)
         {
             var key = "Jobs";
 
@@ -44,18 +47,15 @@ namespace ContosoFieldService.Services
             if (!CrossConnectivity.Current.IsConnected && Barrel.Current.Exists(key))
             {
                 // If no connectivity, we'll return the cached jobs list.
-                return Barrel.Current.Get<List<Job>>(key);
+                return (ResponseType.NotConnected, Barrel.Current.Get<List<Job>>(key));
             }
 
             // If the data isn't too old, we'll go ahead and return it rather than call the backend again.
             if (!force && !Barrel.Current.IsExpired(key) && Barrel.Current.Exists(key))
             {
                 var jobs = Barrel.Current.Get<IEnumerable<Job>>(key);
-                return jobs.ToList();
+                return (ResponseType.Success, jobs.ToList());
             }
-
-            // Create an instance of the Refit RestService for the job interface.
-            var contosoMaintenanceApi = RestService.For<IJobServiceAPI>(Helpers.Constants.BaseUrl);
 
             // Use Polly to handle retrying
             var pollyResult = await Policy.ExecuteAndCaptureAsync(async () => await contosoMaintenanceApi.GetJobs(Constants.ApiManagementKey));
@@ -63,15 +63,14 @@ namespace ContosoFieldService.Services
             {
                 // Save jobs into the cache
                 Barrel.Current.Add(key, pollyResult.Result, TimeSpan.FromMinutes(5));
-                return pollyResult.Result;
+                return (ResponseType.Success, pollyResult.Result);
             }
 
-            return null;
+            return (ResponseType.Error, null);
         }
 
         public async Task<Job> GetJobByIdAsync(string id)
         {
-            var contosoMaintenanceApi = RestService.For<IJobServiceAPI>(Constants.BaseUrl);
             var pollyResult = await Policy.ExecuteAndCaptureAsync(async () => await contosoMaintenanceApi.GetJobById(id, Constants.ApiManagementKey));
             if (pollyResult.Result != null)
             {
@@ -83,7 +82,6 @@ namespace ContosoFieldService.Services
 
         public async Task<List<Job>> SearchJobsAsync(string keyword)
         {
-            var contosoMaintenanceApi = RestService.For<IJobServiceAPI>(Constants.BaseUrl);
             var pollyResult = await Policy.ExecuteAndCaptureAsync(async () => await contosoMaintenanceApi.SearchJobs(keyword, Constants.ApiManagementKey));
             if (pollyResult.Result != null)
             {
@@ -96,7 +94,6 @@ namespace ContosoFieldService.Services
 
         public async Task<Job> CreateJobAsync(Job job)
         {
-            var contosoMaintenanceApi = RestService.For<IJobServiceAPI>(Constants.BaseUrl);
             var pollyResult = await Policy.ExecuteAndCaptureAsync(async () => await contosoMaintenanceApi.CreateJob(job, Constants.ApiManagementKey));
             if (pollyResult.Result != null)
             {
@@ -108,7 +105,6 @@ namespace ContosoFieldService.Services
 
         public async Task<Job> DeleteJobByIdAsync(string id)
         {
-            var contosoMaintenanceApi = RestService.For<IJobServiceAPI>(Constants.BaseUrl);
             var pollyResult = await Policy.ExecuteAndCaptureAsync(async () => await contosoMaintenanceApi.DeleteJob(id, "Bearer " + AuthenticationService.AccessToken, Constants.ApiManagementKey));
             if (pollyResult.Result != null)
             {
@@ -120,7 +116,6 @@ namespace ContosoFieldService.Services
 
         public async Task<Job> UpdateJob(Job job)
         {
-            var contosoMaintenanceApi = RestService.For<IJobServiceAPI>(Helpers.Constants.BaseUrl);
             return await contosoMaintenanceApi.UpdateJob(job.Id, job, Constants.ApiManagementKey);
         }
     }
