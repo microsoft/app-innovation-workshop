@@ -13,7 +13,7 @@ using MonkeyCache.FileStore;
 
 namespace ContosoFieldService.ViewModels
 {
-    public class WorkingJobViewModel : FreshBasePageModel
+    public class WorkingJobViewModel : BaseViewModel
     {
         JobsAPIService jobService = new JobsAPIService();
         PhotoAPIService photoService = new PhotoAPIService();
@@ -52,8 +52,13 @@ namespace ContosoFieldService.ViewModels
             timer.Start();
 
             selectedJob.Status = JobStatus.InProgress;
-            var updatedJob = await jobService.UpdateJob(selectedJob);
-            jobService.InvalidateCache("Jobs");
+            var response = await jobService.UpdateJob(selectedJob);
+            await HandleResponseCodeAsync(response.code);
+
+            if (response.result != null)
+                selectedJob = response.result;
+
+            jobService.InvalidateCache();
         }
 
         void Timer_Elapsed(object sender, ElapsedEventArgs e)
@@ -78,9 +83,11 @@ namespace ContosoFieldService.ViewModels
 
                     //TODO: Show Loading indicators
                     selectedJob.Status = JobStatus.Complete;
-                    var updatedJob = await jobService.UpdateJob(selectedJob);
 
-                    await CoreMethods.PopPageModel(updatedJob, true, true);
+                    var response = await jobService.UpdateJob(selectedJob);
+                    await HandleResponseCodeAsync(response.code);
+
+                    await CoreMethods.PopPageModel(response.result, true, true);
                 });
             }
         }

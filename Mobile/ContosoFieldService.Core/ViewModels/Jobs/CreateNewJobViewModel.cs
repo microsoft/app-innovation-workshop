@@ -9,7 +9,7 @@ using Spatial = Microsoft.Azure.Documents.Spatial;
 
 namespace ContosoFieldService.ViewModels
 {
-    public class CreateNewJobViewModel : FreshBasePageModel
+    public class CreateNewJobViewModel : BaseViewModel
     {
         #region Bindable Properties 
         public string Name { get; set; }
@@ -39,18 +39,20 @@ namespace ContosoFieldService.ViewModels
                         DueDate = DueDate
                     };
 
-                    try
-                    {
-                        var location = await Plugin.Geolocator.CrossGeolocator.Current.GetPositionAsync();
-                        job.Address = new Location { Point = new Models.Point(location.Latitude, location.Longitude) };
 
-                        job = await jobApiService.CreateJobAsync(job);
+                    // Add current location to the job
+                    var location = await Plugin.Geolocator.CrossGeolocator.Current.GetPositionAsync();
+                    job.Address = new Location { Point = new Models.Point(location.Latitude, location.Longitude) };
+
+                    // Add job to database
+                    var response = await jobApiService.CreateJobAsync(job);
+                    await HandleResponseCodeAsync(response.code);
+
+                    if (response.result != null)
+                    {
+                        job = response.result;
                         Analytics.TrackEvent("New Job Created");
                         await CoreMethods.PopPageModel(job, true, true);
-                    }
-                    catch (Exception)
-                    {
-                        await CoreMethods.DisplayAlert("Network Error", "No connectivity", "OK");
                     }
                 });
             }

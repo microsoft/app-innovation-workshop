@@ -9,10 +9,11 @@ using System.Linq;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using MonkeyCache.FileStore;
+using ContosoFieldService.Helpers;
 
 namespace ContosoFieldService.ViewModels
 {
-    public class JobsViewModel : FreshBasePageModel
+    public class JobsViewModel : BaseViewModel
     {
         #region Bindable Properties 
         public ObservableRangeCollection<GroupedJobs> Jobs { get; set; }
@@ -97,11 +98,25 @@ namespace ContosoFieldService.ViewModels
             {
                 return new Command(async () =>
                 {
-                    var searchResults = await jobsApiService.SearchJobsAsync(SearchText);
-                    Jobs.ReplaceRange(new List<GroupedJobs>
+                    IsRefreshing = true;
+                    IsLoading = true;
+
+                    var response = await jobsApiService.SearchJobsAsync(SearchText);
+
+                    // Notify user about errors if applicable
+                    await HandleResponseCodeAsync(response.code);
+
+                    // Handle Response Result
+                    if (response.result != null)
                     {
-                        new GroupedJobs("Search Results", searchResults)
-                    });
+                        Jobs.ReplaceRange(new List<GroupedJobs>
+                        {
+                            new GroupedJobs("Search Results", response.result)
+                        });
+                    }
+
+                    IsRefreshing = false;
+                    IsLoading = false;
                 });
             }
         }
@@ -170,43 +185,17 @@ namespace ContosoFieldService.ViewModels
             IsRefreshing = !isSilent;
             IsLoading = true;
 
-            try
+            var response = await jobsApiService.GetJobsAsync(force);
+
+            // Notify user about errors if applicable
+            await HandleResponseCodeAsync(response.code);
+
+            // Handle Response Result
+            if (response.result != null)
             {
-                // Inform user about missing connectivity but proceed as data could have been cached
-                if (!Plugin.Connectivity.CrossConnectivity.Current.IsConnected)
-                    await CoreMethods.DisplayAlert("Network Error", "No internet connectivity found", "OK");
-
-                // Get jobs from server or cache
-                var newJobs = await jobsApiService.GetJobsAsync(force);
-
                 // Group jobs by JobStatus
-                var groupedJobs = GroupJobs(newJobs);
+                var groupedJobs = GroupJobs(response.result);
                 Jobs.ReplaceRange(groupedJobs);
-            }
-            // TODO: Handle Exceptions centralized in BaseViewModel
-            catch (UriFormatException)
-            {
-                // No or invalid BaseUrl set in Constants.cs
-                await CoreMethods.DisplayAlert(
-                    "Backend Error",
-                    "No backend connection has been specified or the specified URL is malformed.",
-                    "Ok");
-            }
-            catch (ArgumentException)
-            {
-                // Backend not found at specified BaseUrl in Constants.cs or call limit reached
-                await CoreMethods.DisplayAlert(
-                    "Backend Error",
-                    "Cannot communicate with specified backend. Maybe your call rate limit is exceeded.",
-                    "Ok");
-            }
-            catch (Exception ex)
-            {
-                // Everything else
-                await CoreMethods.DisplayAlert(
-                    "Backend Error",
-                    "An error occured while communicating with the backend. Please check your settings and try again.",
-                    "Ok");
             }
 
             IsRefreshing = false;
