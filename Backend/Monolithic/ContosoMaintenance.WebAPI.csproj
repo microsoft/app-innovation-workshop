@@ -46,4 +46,7 @@
     <ItemGroup>
         <WCFMetadata Include="Connected Services" />
     </ItemGroup>
+    <ItemGroup>
+      <Compile Remove="Controllers\EmployeeController.cs" />
+    </ItemGroup>
 </Project>
