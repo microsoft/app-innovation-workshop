@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace ContosoFieldService.ViewModels
 {
-    public class PartsViewModel : FreshBasePageModel
+    public class PartsViewModel : BaseViewModel
     {
         public ObservableRangeCollection<Part> Parts { get; set; }
         public bool IsRefreshing
@@ -70,9 +70,11 @@ namespace ContosoFieldService.ViewModels
             {
                 return new Command(async () =>
                 {
-                    var searchResults = await partsApiService.SearchPartsAsync(SearchText);
+                    var response = await partsApiService.SearchPartsAsync(SearchText);
+                    await HandleResponseCodeAsync(response.code);
+
                     Parts.Clear();
-                    Parts.AddRange(searchResults);
+                    Parts.AddRange(response.result);
                 });
             }
         }
@@ -133,40 +135,15 @@ namespace ContosoFieldService.ViewModels
             IsRefreshing = !isSilent;
             IsLoading = true;
 
-            try
-            {
-                // Inform user about missing connectivity but proceed as data could have been cached
-                if (!Plugin.Connectivity.CrossConnectivity.Current.IsConnected)
-                    await CoreMethods.DisplayAlert("Network Error", "No internet connectivity found", "OK");
+            var response = await partsApiService.GetPartsAsync(force);
 
-                // Get parts from server or cache
-                var newParts = await partsApiService.GetPartsAsync();
-                Parts.ReplaceRange(newParts);
-            }
-            // TODO: Handle Exceptions centralized in BaseViewModel
-            catch (UriFormatException)
+            // Notify user about errors if applicable
+            await HandleResponseCodeAsync(response.code);
+
+            // Handle Response Result
+            if (response.result != null)
             {
-                // No or invalid BaseUrl set in Constants.cs
-                await CoreMethods.DisplayAlert(
-                    "Backend Error",
-                    "No backend connection has been specified or the specified URL is malformed.",
-                    "Ok");
-            }
-            catch (ArgumentException)
-            {
-                // Backend not found at specified BaseUrl in Constants.cs or call limit reached
-                await CoreMethods.DisplayAlert(
-                    "Backend Error",
-                    "Cannot communicate with specified backend. Maybe your call rate limit is exceeded.",
-                    "Ok");
-            }
-            catch (Exception ex)
-            {
-                // Everything else
-                await CoreMethods.DisplayAlert(
-                    "Backend Error",
-                    "An error occured while communicating with the backend. Please check your settings and try again.",
-                    "Ok");
+                Parts.ReplaceRange(response.result);
             }
 
             IsRefreshing = false;

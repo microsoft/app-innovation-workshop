@@ -11,7 +11,7 @@ using ContosoFieldService.ViewModels.Jobs;
 
 namespace ContosoFieldService.ViewModels
 {
-    public class JobDetailsViewModel : FreshBasePageModel
+    public class JobDetailsViewModel : BaseViewModel
     {
         Photo selectedPhoto;
         public Photo SelectedPhoto
@@ -98,11 +98,13 @@ namespace ContosoFieldService.ViewModels
                     if ("Delete" == await CoreMethods.DisplayActionSheet("You're going to delete this job and it'll be embrassing for all if we need to restore it...", "Canel", "Delete"))
                     {
                         var jobsService = new Services.JobsAPIService();
-                        var deletedJob = await jobsService.DeleteJobByIdAsync(selectedJob.Id);
-                        if (deletedJob != null)
+                        var response = await jobsService.DeleteJobByIdAsync(selectedJob.Id);
+                        await HandleResponseCodeAsync(response.code);
+
+                        if (response.result != null)
                         {
-                            jobsService.InvalidateCache("Jobs");
-                            await CoreMethods.PopPageModel(deletedJob);
+                            jobsService.InvalidateCache();
+                            await CoreMethods.PopPageModel(response.result);
                         }
                         else
                         {

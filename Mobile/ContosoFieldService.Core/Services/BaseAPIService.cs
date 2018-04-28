@@ -12,6 +12,7 @@ namespace ContosoFieldService.Services
     {
         protected AuthenticationService authenticationService;
         protected Policy Policy;
+        protected string CacheKey;
 
         protected BaseAPIService()
         {
@@ -49,8 +50,11 @@ namespace ContosoFieldService.Services
                 });
         }
 
-        public void InvalidateCache(string key)
+        public void InvalidateCache(string key = "")
         {
+            if (key.Equals(""))
+                key = CacheKey;
+
             Barrel.Current.Empty(key);
         }
     }

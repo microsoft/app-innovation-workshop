@@ -30,61 +30,69 @@ namespace ContosoFieldService.Services
 
     public class PartsAPIService : BaseAPIService
     {
-        public async Task<Part> CreatePartAsync(Part part)
+        // Create an instance of the Refit RestService for the part interface.
+        readonly IPartsServiceAPI api = RestService.For<IPartsServiceAPI>(Helpers.Constants.BaseUrl);
+
+        public PartsAPIService()
         {
-            var contosoMaintenanceApi = RestService.For<IPartsServiceAPI>(Helpers.Constants.BaseUrl);
-            return await contosoMaintenanceApi.CreatePart(part, Constants.ApiManagementKey);
+            CacheKey = "Parts";
         }
 
-        public async Task<List<Part>> GetPartsAsync(bool force = false)
+        public async Task<(ResponseCode code, List<Part> result)> GetPartsAsync(bool force = false)
         {
-            var key = "Parts";
-
             // Handle online/offline scenario
-            if (!CrossConnectivity.Current.IsConnected && Barrel.Current.Exists(key))
+            if (!CrossConnectivity.Current.IsConnected && Barrel.Current.Exists(CacheKey))
             {
                 // If no connectivity, we'll return the cached list.
-                return Barrel.Current.Get<List<Part>>(key);
+                return (ResponseCode.NotConnected, Barrel.Current.Get<List<Part>>(CacheKey));
             }
 
             // If the data isn't too old, we'll go ahead and return it rather than call the backend again.
-            if (!force && !Barrel.Current.IsExpired(key) && Barrel.Current.Exists(key))
+            if (!force && !Barrel.Current.IsExpired(CacheKey) && Barrel.Current.Exists(CacheKey))
             {
-                var parts = Barrel.Current.Get<IEnumerable<Part>>(key);
-                return parts.ToList();
+                var parts = Barrel.Current.Get<IEnumerable<Part>>(CacheKey);
+                return (ResponseCode.Success, parts.ToList());
             }
 
-            // Create an instance of the Refit RestService for the part interface.
-            var contosoMaintenanceApi = RestService.For<IPartsServiceAPI>(Helpers.Constants.BaseUrl);
+            try
+            {
+                // Use Polly to handle retrying
+                var pollyResult = await Policy.ExecuteAndCaptureAsync(async () => await api.GetParts(Constants.ApiManagementKey));
+                if (pollyResult.Result != null)
+                {
+                    // Save parts into the cache
+                    Barrel.Current.Add(CacheKey, pollyResult.Result, TimeSpan.FromMinutes(5));
+                    return (ResponseCode.Success, pollyResult.Result);
+                }
+            }
+            catch (UriFormatException)
+            {
+                // No or invalid BaseUrl set in Constants.cs
+                return (ResponseCode.ConfigurationError, null);
+            }
+            catch (ArgumentException)
+            {
+                // Backend not found at specified BaseUrl in Constants.cs or call limit reached
+                return (ResponseCode.BackendNotFound, null);
+            }
+            catch (Exception)
+            {
+                // Everything else
+                return (ResponseCode.Error, null);
+            }
 
-            // Use Polly to handle retrying
-            var pollyResult = await Policy.ExecuteAndCaptureAsync(async () => await contosoMaintenanceApi.GetParts(Constants.ApiManagementKey));
+            return (ResponseCode.Error, null);
+        }
+
+        public async Task<(ResponseCode code, List<Part> result)> SearchPartsAsync(string keyword)
+        {
+            var pollyResult = await Policy.ExecuteAndCaptureAsync(async () => await api.SearchParts(keyword, Constants.ApiManagementKey));
             if (pollyResult.Result != null)
             {
-                // Save parts into the cache
-                Barrel.Current.Add(key, pollyResult.Result, TimeSpan.FromMinutes(5));
-                return pollyResult.Result;
+                return (ResponseCode.Success, pollyResult.Result);
             }
 
-            return null;
-        }
-
-        public async Task<Part> GetPartByIdAsync(string id)
-        {
-            var contosoMaintenanceApi = RestService.For<IPartsServiceAPI>(Helpers.Constants.BaseUrl);
-            return await contosoMaintenanceApi.GetPartById(id, Constants.ApiManagementKey);
-        }
-
-        public async Task<Part> DeletePartByIdAsync(string id)
-        {
-            var contosoMaintenanceApi = RestService.For<IPartsServiceAPI>(Helpers.Constants.BaseUrl);
-            return await contosoMaintenanceApi.DeletePart(id, "Bearer " + AuthenticationService.AccessToken, Constants.ApiManagementKey);
-        }
-
-        public async Task<List<Part>> SearchPartsAsync(string keyword)
-        {
-            var contosoMaintenanceApi = RestService.For<IPartsServiceAPI>(Helpers.Constants.BaseUrl);
-            return await contosoMaintenanceApi.SearchParts(keyword, Constants.ApiManagementKey);
+            return (ResponseCode.Error, null);
         }
     }
 }
