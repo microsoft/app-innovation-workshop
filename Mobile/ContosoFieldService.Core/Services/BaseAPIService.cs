@@ -52,7 +52,7 @@ namespace ContosoFieldService.Services
 
         public void InvalidateCache(string key = "")
         {
-            if (key.Equals(""))
+            if (string.IsNullOrEmpty(key))
                 key = CacheKey;
 
             Barrel.Current.Empty(key);
