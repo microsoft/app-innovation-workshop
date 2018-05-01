@@ -1,22 +1,17 @@
-﻿using System;
-
+﻿
 using Android.App;
 using Android.Content;
 using Android.Content.PM;
-using Android.Runtime;
-using Android.Views;
-using Android.Widget;
 using Android.OS;
-using ImageCircle.Forms.Plugin.Droid;
-using FFImageLoading.Forms.Droid;
 using CarouselView.FormsPlugin.Android;
-using FFImageLoading.Transformations;
-using Xamarin;
-using Microsoft.AppCenter.Push;
-using Plugin.Permissions;
 using ContosoFieldService.Services;
+using FFImageLoading.Forms.Droid;
+using Firebase;
+using Microsoft.AppCenter.Push;
 using Microsoft.Identity.Client;
-using Plugin.CurrentActivity;
+using Plugin.Permissions;
+using Xamarin;
+using Xamarin.Forms.Platform.Android.AppLinks;
 
 namespace ContosoFieldService.Droid
 {
@@ -28,6 +23,8 @@ namespace ContosoFieldService.Droid
         MainLauncher = true,
         ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation,
         ResizeableActivity = true)]
+    [IntentFilter(new[] { Intent.ActionView }, Categories = new[] { Intent.CategoryBrowsable, Intent.CategoryDefault }, DataScheme = "http", DataHost = "contosomaintenance.azurewebsites.net", DataPathPrefix = "/part/")]
+    [IntentFilter(new[] { Intent.ActionView }, Categories = new[] { Intent.CategoryBrowsable, Intent.CategoryDefault }, DataScheme = "https", DataHost = "contosomaintenance.azurewebsites.net", DataPathPrefix = "/part/")]
     public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity
     {
         protected override void OnCreate(Bundle bundle)
@@ -47,6 +44,10 @@ namespace ContosoFieldService.Droid
 
             // Configure App Center Push
             Push.SetSenderId("597659151602");
+
+            // Initialize App Indexing and Deep Links
+            FirebaseApp.InitializeApp(this);
+            AndroidAppLinks.Init(this);
 
             // Configure Authentication
             AuthenticationService.UIParent = new UIParent(this);
