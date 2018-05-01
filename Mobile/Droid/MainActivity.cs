@@ -20,7 +20,14 @@ using Plugin.CurrentActivity;
 
 namespace ContosoFieldService.Droid
 {
-    [Activity(Label = "Field Service", Icon = "@drawable/icon", Theme = "@style/MyTheme", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation, ResizeableActivity = true)]
+    [Activity(
+        Label = "Field Service",
+        Icon = "@mipmap/icon",
+        RoundIcon = "@mipmap/icon_round",
+        Theme = "@style/MyTheme",
+        MainLauncher = true,
+        ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation,
+        ResizeableActivity = true)]
     public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity
     {
         protected override void OnCreate(Bundle bundle)
