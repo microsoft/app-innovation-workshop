@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using Microsoft.Azure.WebJobs;
 using Microsoft.Azure.WebJobs.Host;
+using Microsoft.Azure.WebJobs.Extensions.CosmosDB;
 using System.IO;
 using System.Net.Http;
 using System.Net.Http.Headers;
@@ -22,7 +23,7 @@ namespace ContosoMaintenance.Functions
             [QueueTrigger("processphotos")] PhotoProcess queueItem,
 
             // Inputs
-            [DocumentDB("contosomaintenance", "jobs", Id = "{jobId}", ConnectionStringSetting = "CosmosDb")] Job job,
+            [CosmosDB("contosomaintenance", "jobs", Id = "{jobId}", ConnectionStringSetting = "CosmosDb")] Job job,
             [Blob("images-large/{blobName}", FileAccess.Read)] byte[] imageLarge,
 
             // Outputs
