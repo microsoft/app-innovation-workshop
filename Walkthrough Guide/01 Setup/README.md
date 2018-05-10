@@ -8,14 +8,20 @@
 
 Please bring your own **Windows or Mac** laptop. To participate in this workshop, some prework needs to be done. So please make sure you prepared your environment bringing the following prerequisites.
 
+### Mandatory
 - [Microsoft Azure Account with a Subscription](https://aka.ms/azft-mobile)
+- [Visual Studio Code](https://code.visualstudio.com/)
+  - [Azure App Service Extension](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-azureappservice)
+  - [Azure Functions Extension](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-azurefunctions)
+- [.NET Core SDK](https://www.microsoft.com/net/download/windows/build) (x64 for Windows)
+- [Postman](https://www.getpostman.com/)
+
+### Optional
+
 - [Visual Studio for Windows or Mac](https://www.visualstudio.com/) (Community Version or higher)
   - [Xamarin Tooling](https://developer.xamarin.com/guides/cross-platform/getting_started/installation/windows/)
   - Android SDK 8.1 Oreo (API Level 27)
   - iOS SDK 11
-- [Visual Studio Code](https://code.visualstudio.com/)
-  - [Azure Functions Extension](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-azurefunctions)
-- [Postman](https://www.getpostman.com/)
 
 The setup of a Xamarin development environment can get a little bit tricky and time consuming as it has dependancies on many SDKs and technologies from different companies.
 
