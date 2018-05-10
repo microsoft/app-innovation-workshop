@@ -113,7 +113,7 @@ http://myawesomestartupapi.azurewebsites.net/api/ping
 This shows that the backend is responding as expected! Before we move onto deploying storage services, you might want to read some tips and tricks for running App Services like a pro. 
 
 ## Next Steps
-[Data Storage](../04%20Data&20Storage/README.md)
+[Data Storage](../04%20Data%20Storage/README.md)
 
 ---
 
