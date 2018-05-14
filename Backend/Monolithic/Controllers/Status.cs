@@ -7,7 +7,7 @@ namespace ContosoMaintenance.WebAPI.Controllers
     public class Status : Controller
     {
         /// <summary>
-        /// Sends a Ping
+        /// Test the application by sending a ping
         /// </summary>
         /// <returns>Pong</returns>
         [HttpGet]
@@ -17,13 +17,13 @@ namespace ContosoMaintenance.WebAPI.Controllers
         }
 
         /// <summary>
-        /// Produces a dummy error for  demo purposes
+        /// Produces a dummy error for demo purposes
         /// </summary>
         [HttpGet]
         [Route("error")]
         public string Error()
         {
-            throw new NotImplementedException("This error is intended.");
+            throw new NotImplementedException("This Demo Error was intended.");
         }
     }
 }

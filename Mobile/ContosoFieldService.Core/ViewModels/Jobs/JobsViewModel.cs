@@ -9,10 +9,11 @@ using System.Linq;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using MonkeyCache.FileStore;
+using ContosoFieldService.Helpers;
 
 namespace ContosoFieldService.ViewModels
 {
-    public class JobsViewModel : FreshBasePageModel
+    public class JobsViewModel : BaseViewModel
     {
         #region Bindable Properties 
         public ObservableRangeCollection<GroupedJobs> Jobs { get; set; }
@@ -97,11 +98,25 @@ namespace ContosoFieldService.ViewModels
             {
                 return new Command(async () =>
                 {
-                    var searchResults = await jobsApiService.SearchJobsAsync(SearchText);
-                    Jobs.ReplaceRange(new List<GroupedJobs>
+                    IsRefreshing = true;
+                    IsLoading = true;
+
+                    var response = await jobsApiService.SearchJobsAsync(SearchText);
+
+                    // Notify user about errors if applicable
+                    await HandleResponseCodeAsync(response.code);
+
+                    // Handle Response Result
+                    if (response.result != null)
                     {
-                        new GroupedJobs("Search Results", searchResults)
-                    });
+                        Jobs.ReplaceRange(new List<GroupedJobs>
+                        {
+                            new GroupedJobs("Search Results", response.result)
+                        });
+                    }
+
+                    IsRefreshing = false;
+                    IsLoading = false;
                 });
             }
         }
@@ -163,31 +178,24 @@ namespace ContosoFieldService.ViewModels
         /// Reloads the data.
         /// </summary>
         /// <returns>The data.</returns>
-        /// <param name="isSilent">If set to <c>true</c> is silent.</param>
+        /// <param name="isSilent">If set to <c>true</c> no loading indicators will be shown.</param>
+        /// <param name="force">If set to <c>true</c> cache will be ignored.</param>
         async Task ReloadData(bool isSilent = false, bool force = false)
         {
             IsRefreshing = !isSilent;
             IsLoading = true;
 
-            try
-            {
-                if (Plugin.Connectivity.CrossConnectivity.Current.IsConnected)
-                {
-                    // Download jobs from server
-                    var localJobs = await jobsApiService.GetJobsAsync(force);
+            var response = await jobsApiService.GetJobsAsync(force);
 
-                    // Group jobs by JobStatus
-                    var groupedJobs = GroupJobs(localJobs);
-                    Jobs.ReplaceRange(groupedJobs);
-                }
-                else
-                {
-                    await CoreMethods.DisplayAlert("Network Error", "No internet connectivity found", "OK");
-                }
-            }
-            catch (Exception)
+            // Notify user about errors if applicable
+            await HandleResponseCodeAsync(response.code);
+
+            // Handle Response Result
+            if (response.result != null)
             {
-                await CoreMethods.DisplayAlert("Error", "An error occured while communicating with the backend. Please check your settings and try again.", "Ok");
+                // Group jobs by JobStatus
+                var groupedJobs = GroupJobs(response.result);
+                Jobs.ReplaceRange(groupedJobs);
             }
 
             IsRefreshing = false;
