@@ -4,6 +4,10 @@
 
 Adding Authentication to our app and backend is a little outside of the scope of today's workshop due to time constraints. We believe Authentication is an important enough topic that we've opted to include a guide for you to get an understanding of the key concepts required to implement any Identity Provider into your projects. For that, we chose [Azure Active Directory B2C](https://azure.microsoft.com/services/active-directory-b2c/) to manage users and authentication as our service of choice.
 
+> **Hint:** The Mobile App uses the [OAuth 2.0 Implicit Authentication flow](https://oauth.net/2/grant-types/implicit/), which shows the user an Web Browser windows instead of native Textboxes for entering username and password. This adds security as users don't have to trust the app developer to store and hanlde their passwords securely.
+>
+> Although Azure ADB2C also supports a [native login with resource owner password credentials flow (ROPC)](https://docs.microsoft.com/en-us/azure/active-directory-b2c/configure-ropc?WT.mc_id=b2c-twitter-masoucou), it is [not recommended from a security perspective](https://www.scottbrady91.com/OAuth/Why-the-Resource-Owner-Password-Credentials-Grant-Type-is-not-Authentication-nor-Suitable-for-Modern-Applications).
+
 #### Why Azure Active Directory B2C
 
 For our business driven application, Azure Active Directory B2C (short: Azure ADB2C) is a perfect match because of the following reasons:
@@ -356,3 +360,4 @@ There are several cool things you can do with Azure Active Directory, that will 
 - [Customize the Login UI](https://docs.microsoft.com/en-us/azure/active-directory-b2c/active-directory-b2c-reference-ui-customization)
 - [Enable Multifactor authentication](https://docs.microsoft.com/en-us/azure/active-directory-b2c/active-directory-b2c-reference-mfa)
 - [Login with and existing Azure Active Directory Account](https://docs.microsoft.com/en-us/azure/active-directory-b2c/active-directory-b2c-setup-aad-custom)
+- [Configure the resource owner password credentials flow (ROPC) for native login](https://docs.microsoft.com/en-us/azure/active-directory-b2c/configure-ropc)
