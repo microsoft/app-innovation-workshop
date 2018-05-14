@@ -33,10 +33,17 @@ namespace ContosoMaintenance.WebAPI
             // Inject Blob Storage
             services.AddScoped<IAzureBlobStorage>(factory =>
             {
-                return new AzureBlobStorage(new AzureBlobSettings(
-                    Configuration["AzureStorage:StorageAccountName"],
-                    Configuration["AzureStorage:Key"],
-                    Configuration["AzureStorage:PhotosBlobContainerName"]));
+                try
+                {
+                    return new AzureBlobStorage(new AzureBlobSettings(
+                        Configuration["AzureStorage:StorageAccountName"],
+                        Configuration["AzureStorage:Key"],
+                        Configuration["AzureStorage:PhotosBlobContainerName"]));
+                }
+                catch (ArgumentException)
+                {
+                    throw new ArgumentException("No Azure Storage connection found at specified URL. Please make sure to provide a valid Storage Cofiguration in the Application Settigs.");
+                }
             });
 
             // Inject Storage Queue
@@ -67,13 +74,13 @@ namespace ContosoMaintenance.WebAPI
             });
 
             services.AddMvc()
-                    .AddJsonOptions(options =>
-                    {
-                        // Pretty Print Swagger JSON
-                        options.SerializerSettings.Formatting = Formatting.Indented;
-                    });
+                .AddJsonOptions(options =>
+                {
+                    // Pretty Print Swagger output JSON
+                    options.SerializerSettings.Formatting = Formatting.Indented;
+                });
 
-            // Register the Swagger generator
+            // Configure the Swagger generator
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("1.0", new Info { Title = "Contoso Maintenance API", Version = "1.0" });
@@ -88,12 +95,15 @@ namespace ContosoMaintenance.WebAPI
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
-            if (env.IsDevelopment())
-            {
-                app.UseDeveloperExceptionPage();
-            }
+            // As this is a demo, we always show the rich exception page.
+            // Make sure to hide it in production environments in real-world scearios to 
+            // hide your code from attackers.
+            //if (env.IsDevelopment())
+            //{
+            app.UseDeveloperExceptionPage();
+            //}
 
-            // Swagger
+            // Activate Swagger and cofigure its UI
             app.UseSwagger();
             app.UseSwaggerUI(c =>
             {

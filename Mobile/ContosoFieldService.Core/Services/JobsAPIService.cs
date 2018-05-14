@@ -36,92 +36,113 @@ namespace ContosoFieldService.Services
 
     public class JobsAPIService : BaseAPIService
     {
-        public async Task<List<Job>> GetJobsAsync(bool force = false)
-        {
-            var key = "Jobs";
+        // Create an instance of the Refit RestService for the job interface.
+        readonly IJobServiceAPI api = RestService.For<IJobServiceAPI>(Constants.BaseUrl);
 
+        public JobsAPIService()
+        {
+            CacheKey = "Jobs";
+        }
+
+        public async Task<(ResponseCode code, List<Job> result)> GetJobsAsync(bool force = false)
+        {
             // Handle online/offline scenario
-            if (!CrossConnectivity.Current.IsConnected && Barrel.Current.Exists(key))
+            if (!CrossConnectivity.Current.IsConnected && Barrel.Current.Exists(CacheKey))
             {
                 // If no connectivity, we'll return the cached jobs list.
-                return Barrel.Current.Get<List<Job>>(key);
+                return (ResponseCode.NotConnected, Barrel.Current.Get<List<Job>>(CacheKey));
             }
 
             // If the data isn't too old, we'll go ahead and return it rather than call the backend again.
-            if (!force && !Barrel.Current.IsExpired(key) && Barrel.Current.Exists(key))
+            if (!force && !Barrel.Current.IsExpired(CacheKey) && Barrel.Current.Exists(CacheKey))
             {
-                var jobs = Barrel.Current.Get<IEnumerable<Job>>(key);
-                return jobs.ToList();
+                var jobs = Barrel.Current.Get<IEnumerable<Job>>(CacheKey);
+                return (ResponseCode.Success, jobs.ToList());
             }
 
-            // Create an instance of the Refit RestService for the job interface.
-            var contosoMaintenanceApi = RestService.For<IJobServiceAPI>(Helpers.Constants.BaseUrl);
-
-            // Use Polly to handle retrying
-            var pollyResult = await Policy.ExecuteAndCaptureAsync(async () => await contosoMaintenanceApi.GetJobs(Constants.ApiManagementKey));
-            if (pollyResult.Result != null)
+            try
             {
-                // Save jobs into the cache
-                Barrel.Current.Add(key, pollyResult.Result, TimeSpan.FromMinutes(5));
-                return pollyResult.Result;
+                // Use Polly to handle retrying
+                var pollyResult = await Policy.ExecuteAndCaptureAsync(async () => await api.GetJobs(Constants.ApiManagementKey));
+                if (pollyResult.Result != null)
+                {
+                    // Save jobs into the cache
+                    Barrel.Current.Add(CacheKey, pollyResult.Result, TimeSpan.FromMinutes(5));
+                    return (ResponseCode.Success, pollyResult.Result);
+                }
+            }
+            catch (UriFormatException)
+            {
+                // No or invalid BaseUrl set in Constants.cs
+                return (ResponseCode.ConfigurationError, null);
+            }
+            catch (ArgumentException)
+            {
+                // Backend not found at specified BaseUrl in Constants.cs or call limit reached
+                return (ResponseCode.BackendNotFound, null);
+            }
+            catch (Exception)
+            {
+                // Everything else
+                return (ResponseCode.Error, null);
             }
 
-            return null;
+            return (ResponseCode.Error, null);
         }
 
-        public async Task<Job> GetJobByIdAsync(string id)
+        public async Task<(ResponseCode code, Job result)> GetJobByIdAsync(string id)
         {
-            var contosoMaintenanceApi = RestService.For<IJobServiceAPI>(Constants.BaseUrl);
-            var pollyResult = await Policy.ExecuteAndCaptureAsync(async () => await contosoMaintenanceApi.GetJobById(id, Constants.ApiManagementKey));
+            var pollyResult = await Policy.ExecuteAndCaptureAsync(async () => await api.GetJobById(id, Constants.ApiManagementKey));
             if (pollyResult.Result != null)
             {
-                return pollyResult.Result;
+                return (ResponseCode.Success, pollyResult.Result);
             }
 
-            return null;
+            return (ResponseCode.Error, null);
         }
 
-        public async Task<List<Job>> SearchJobsAsync(string keyword)
+        public async Task<(ResponseCode code, List<Job> result)> SearchJobsAsync(string keyword)
         {
-            var contosoMaintenanceApi = RestService.For<IJobServiceAPI>(Constants.BaseUrl);
-            var pollyResult = await Policy.ExecuteAndCaptureAsync(async () => await contosoMaintenanceApi.SearchJobs(keyword, Constants.ApiManagementKey));
+            var pollyResult = await Policy.ExecuteAndCaptureAsync(async () => await api.SearchJobs(keyword, Constants.ApiManagementKey));
             if (pollyResult.Result != null)
             {
-                return pollyResult.Result;
+                return (ResponseCode.Success, pollyResult.Result);
             }
 
-            return null;
-
+            return (ResponseCode.Error, null);
         }
 
-        public async Task<Job> CreateJobAsync(Job job)
+        public async Task<(ResponseCode code, Job result)> CreateJobAsync(Job job)
         {
-            var contosoMaintenanceApi = RestService.For<IJobServiceAPI>(Constants.BaseUrl);
-            var pollyResult = await Policy.ExecuteAndCaptureAsync(async () => await contosoMaintenanceApi.CreateJob(job, Constants.ApiManagementKey));
+            var pollyResult = await Policy.ExecuteAndCaptureAsync(async () => await api.CreateJob(job, Constants.ApiManagementKey));
             if (pollyResult.Result != null)
             {
-                return pollyResult.Result;
+                return (ResponseCode.Success, pollyResult.Result);
             }
 
-            return null;
+            return (ResponseCode.Error, null);
         }
 
-        public async Task<Job> DeleteJobByIdAsync(string id)
+        public async Task<(ResponseCode code, Job result)> DeleteJobByIdAsync(string id)
         {
-            var contosoMaintenanceApi = RestService.For<IJobServiceAPI>(Constants.BaseUrl);
-            var pollyResult = await Policy.ExecuteAndCaptureAsync(async () => await contosoMaintenanceApi.DeleteJob(id, "Bearer " + AuthenticationService.AccessToken, Constants.ApiManagementKey));
+            var pollyResult = await Policy.ExecuteAndCaptureAsync(async () => await api.DeleteJob(id, "Bearer " + AuthenticationService.AccessToken, Constants.ApiManagementKey));
             if (pollyResult.Result != null)
             {
-                return pollyResult.Result;
+                return (ResponseCode.Success, pollyResult.Result);
             }
 
-            return null;
+            return (ResponseCode.Error, null);
         }
 
-        public async Task<Job> UpdateJob(Job job)
+        public async Task<(ResponseCode code, Job result)> UpdateJob(Job job)
         {
-            var contosoMaintenanceApi = RestService.For<IJobServiceAPI>(Helpers.Constants.BaseUrl);
-            return await contosoMaintenanceApi.UpdateJob(job.Id, job, Constants.ApiManagementKey);
+            var results = await api.UpdateJob(job.Id, job, Constants.ApiManagementKey);
+            if (results != null)
+            {
+                return (ResponseCode.Success, results);
+            }
+
+            return (ResponseCode.Error, null);
         }
     }
 }

@@ -15,13 +15,28 @@ namespace ContosoMaintenance.WebAPI.Controllers
 
         public BaseController(IConfiguration configuration)
         {
-            // Initialize Azure Cosmos DB instance for this controller
-            DBRepository.Initialize(
-                configuration["AzureCosmosDb:Endpoint"],
-                configuration["AzureCosmosDb:Key"],
-                configuration["AzureCosmosDb:DatabaseId"]);
+            try
+            {
+                // Initialize Azure Cosmos DB instance for this controller
+                DBRepository.Initialize(
+                    configuration["AzureCosmosDb:Endpoint"],
+                    configuration["AzureCosmosDb:Key"],
+                    configuration["AzureCosmosDb:DatabaseId"]);
+            }
+            catch (Exception ex)
+            {
+                if (ex is UriFormatException || ex is AggregateException)
+                {
+                    // Could not initialize database connection. Please make sure, that the connection information is set up correctly in the Application Settings.                    
+                    throw new ArgumentException("No database connection found at specified URL. Please make sure to provide a valid Cosmos DB Edpoint in the Application Settigs.");
+                }
+            }
         }
 
+        /// <summary>
+        /// Get all items from the database
+        /// </summary>
+        /// <returns>The all.</returns>
         [HttpGet]
         public virtual async Task<IActionResult> GetAll()
         {
@@ -29,6 +44,11 @@ namespace ContosoMaintenance.WebAPI.Controllers
             return new ObjectResult(items);
         }
 
+        /// <summary>
+        /// Gets a single item by its ID
+        /// </summary>
+        /// <returns>A single item from the database</returns>
+        /// <param name="id">Item ID</param>
         [HttpGet("{id}")]
         public async Task<IActionResult> GetById(string id)
         {
@@ -39,6 +59,11 @@ namespace ContosoMaintenance.WebAPI.Controllers
             return new ObjectResult(items);
         }
 
+        /// <summary>
+        /// Creates a new item
+        /// </summary>
+        /// <returns>The created item </returns>
+        /// <param name="item">The item to be created</param>
         [HttpPost]
         public async Task<IActionResult> Create([FromBody] T item)
         {
@@ -52,6 +77,12 @@ namespace ContosoMaintenance.WebAPI.Controllers
             return new ObjectResult(item);
         }
 
+        /// <summary>
+        /// Updates a single item
+        /// </summary>
+        /// <returns>The updated item</returns>
+        /// <param name="id">Item ID</param>
+        /// <param name="item">Updated version of the item to be updated</param>
         [HttpPut("{id}")]
         public async Task<IActionResult> Update(string id, [FromBody] T item)
         {
@@ -70,6 +101,11 @@ namespace ContosoMaintenance.WebAPI.Controllers
             return new ObjectResult(item);
         }
 
+        /// <summary>
+        /// Soft-deletes a single item
+        /// </summary>
+        /// <returns>The soft-deleted item with IsDeleted set to true</returns>
+        /// <param name="id">Item ID</param>
         [Authorize]
         [HttpDelete("{id}")]
         public async Task<ActionResult> DeleteAsync(string id)

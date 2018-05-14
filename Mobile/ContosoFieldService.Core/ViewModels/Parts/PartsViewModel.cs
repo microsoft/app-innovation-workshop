@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace ContosoFieldService.ViewModels
 {
-    public class PartsViewModel : FreshBasePageModel
+    public class PartsViewModel : BaseViewModel
     {
         public ObservableRangeCollection<Part> Parts { get; set; }
         public bool IsRefreshing
@@ -70,9 +70,11 @@ namespace ContosoFieldService.ViewModels
             {
                 return new Command(async () =>
                 {
-                    var searchResults = await partsApiService.SearchPartsAsync(SearchText);
+                    var response = await partsApiService.SearchPartsAsync(SearchText);
+                    await HandleResponseCodeAsync(response.code);
+
                     Parts.Clear();
-                    Parts.AddRange(searchResults);
+                    Parts.AddRange(response.result);
                 });
             }
         }
@@ -121,25 +123,33 @@ namespace ContosoFieldService.ViewModels
         #endregion
 
         #region Private Methods
-        async Task ReloadData(bool isSilent = false)
+
+        /// <summary>
+        /// Reloads the data.
+        /// </summary>
+        /// <returns>The data.</returns>
+        /// <param name="isSilent">If set to <c>true</c> no loading indicators will be shown.</param>
+        /// <param name="force">If set to <c>true</c> cache will be ignored.</param>
+        async Task ReloadData(bool isSilent = false, bool force = false)
         {
             IsRefreshing = !isSilent;
             IsLoading = true;
 
-            try
+            var response = await partsApiService.GetPartsAsync(force);
+
+            // Notify user about errors if applicable
+            await HandleResponseCodeAsync(response.code);
+
+            // Handle Response Result
+            if (response.result != null)
             {
-                var parts = await partsApiService.GetPartsAsync();
-                Parts.Clear();
-                Parts.AddRange(parts);
-            }
-            catch
-            {
-                await CoreMethods.DisplayAlert("Connection Error", "An error occured while communicating with the backend. Please check your settings and try again.", "Ok");
+                Parts.ReplaceRange(response.result);
             }
 
             IsRefreshing = false;
             IsLoading = false;
         }
+
         #endregion
 
         #region Private Fields
