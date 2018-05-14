@@ -15,7 +15,14 @@ using Xamarin.Forms.Platform.Android.AppLinks;
 
 namespace ContosoFieldService.Droid
 {
-    [Activity(Label = "Field Service", Icon = "@drawable/icon", Theme = "@style/MyTheme", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
+    [Activity(
+        Label = "Field Service",
+        Icon = "@mipmap/icon",
+        RoundIcon = "@mipmap/icon_round",
+        Theme = "@style/MyTheme",
+        MainLauncher = true,
+        ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation,
+        ResizeableActivity = true)]
     [IntentFilter(new[] { Intent.ActionView }, Categories = new[] { Intent.CategoryBrowsable, Intent.CategoryDefault }, DataScheme = "http", DataHost = "contosomaintenance.azurewebsites.net", DataPathPrefix = "/part/")]
     [IntentFilter(new[] { Intent.ActionView }, Categories = new[] { Intent.CategoryBrowsable, Intent.CategoryDefault }, DataScheme = "https", DataHost = "contosomaintenance.azurewebsites.net", DataPathPrefix = "/part/")]
     public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity
