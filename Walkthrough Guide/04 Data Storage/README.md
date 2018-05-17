@@ -80,7 +80,6 @@ Add the settings in the format `Settings:Key` and take the values from the ***Ke
 
 - **`AzureCosmosDb:Endpoint`:** Uri of the Cosmos DB instance
 - **`AzureCosmosDb:Key`:** Primary Key of the Cosmos DB instance
-- **`AzureCosmosDb:DatabaseId`:** Any name for a database (e.g. contosomaintenance)
 
 The `DatabaseId` is the top-level domain of the collections that will be used (or generated) by the backend. A single Cosmos DB instance can consist of multiple databases. At the moment, we do not have any databases but the backend code will use this Key to create one.
 

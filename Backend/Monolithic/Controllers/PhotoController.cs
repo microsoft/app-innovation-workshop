@@ -10,6 +10,7 @@ using Newtonsoft.Json;
 using ContosoMaintenance.WebAPI.Models;
 using ContosoMaintenance.WebAPI.Services;
 using Microsoft.Extensions.Configuration;
+using ContosoMaintenance.WebAPI.Helpers;
 
 namespace ContosoMaintenance.WebAPI.Controllers
 {
@@ -29,7 +30,7 @@ namespace ContosoMaintenance.WebAPI.Controllers
             jobRepository.Initialize(
                 configuration["AzureCosmosDb:Endpoint"],
                 configuration["AzureCosmosDb:Key"],
-                configuration["AzureCosmosDb:DatabaseId"]);
+                Constants.DatabaseId]);
         }
 
         /// <summary>
