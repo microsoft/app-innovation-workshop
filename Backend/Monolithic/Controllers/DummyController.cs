@@ -7,6 +7,7 @@ using Microsoft.Extensions.Configuration;
 using ContosoMaintenance.WebAPI.Services;
 using ContosoMaintenance.WebAPI.DummyData;
 using ContosoMaintenance.WebAPI.Models;
+using ContosoMaintenance.WebAPI.Helpers;
 
 namespace ContosoMaintenance.WebAPI.Controllers
 {
@@ -18,8 +19,8 @@ namespace ContosoMaintenance.WebAPI.Controllers
 
         public DummyController(IConfiguration configuration)
         {
-            jobs.Initialize(configuration["AzureCosmosDb:Endpoint"], configuration["AzureCosmosDb:Key"], configuration["AzureCosmosDb:DatabaseId"]);
-            parts.Initialize(configuration["AzureCosmosDb:Endpoint"], configuration["AzureCosmosDb:Key"], configuration["AzureCosmosDb:DatabaseId"]);
+            jobs.Initialize(configuration["AzureCosmosDb:Endpoint"], configuration["AzureCosmosDb:Key"], Constants.DatabaseId);
+            parts.Initialize(configuration["AzureCosmosDb:Endpoint"], configuration["AzureCosmosDb:Key"], Constants.DatabaseId);
         }
 
         /// <summary>
