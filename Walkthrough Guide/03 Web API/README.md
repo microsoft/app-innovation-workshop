@@ -97,7 +97,7 @@ You should see something similar to the image below:
 
 Azure App Service has many options for how to deploy our code. These include continuous integration, which can link to Visual Studio Team Services or GitHub. We could also use FTP to upload the project, but we're not animals, so we won't - let's use Visual Studio Code for that.
 
-The good news is: The full ASP.NET Core WebAPI code for the backend logic is already written for us and is located in the `Backend/Monolithic` folder of the workshop. But before we can upload it to the cloud, we need to **compile** it to make it machine readable. So we quickly have to dive into the .NET Developer's world! for this, right-click the `Monolithic` folder in Visual Studio Code and select ***Open in Terminal / Command Line***.
+The good news is: The full ASP.NET Core WebAPI code for the backend logic is already written for us and is located in the `Backend/Monolithic` folder of the workshop. But before we can upload it to the cloud, we need to **compile** it to make it machine readable. So we quickly have to dive into the .NET Developer's world! For this, right-click the `Monolithic` folder in Visual Studio Code and select ***Open in Terminal / Command Line***.
 
 The Terminal window in Visual Studio Code pops up and we can enter the command to compile the application.
 
