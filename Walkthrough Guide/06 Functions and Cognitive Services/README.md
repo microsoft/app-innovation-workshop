@@ -82,13 +82,11 @@ There are multiple ways to add Azure Functions. One is to click the small ***+**
 
 #### 2.1.2 Tooling
 
-The best and most convenient tooling for Azure Functions still delivers Visual Studio for Windows. The cross-platform code editor Visual Studio Code supports Azure Functions tooling when the [Azure Functions Extension](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-azurefunctions) gets added. Unfortunately, the *stable* **Azure Functions Runtime is Windows only**. As the Azure Function in this workshop is using this runtime, Windows is needed for this step.
+The cross-platform code editor Visual Studio Code supports Azure Functions tooling when the [Azure Functions Extension](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-azurefunctions) gets added. Open the [`Backend/Functions`](/Backend/Functions/) folder from the repository in Visual Studio Code and explore the code.
 
-> **Hint:** Once the next Version of the Azure Functions runtime (which will be crossed-platform) reaches a stable state, this workshop will be updated to use Visual Studio Code and the new runtime.
+![Explore Azure Functions in Visual Studio Code](Assets/VSCodeAzureFunction.png)
 
-![Visual Studio Azure Functions](Assets/VSAzureFunctions.png)
-
-Open the [`/Functions`](/Backend/Functions/) folder from the repository in Visual Studio Code and explore the code.
+Let's quickly explore what has been pre-written for us here!
 
 #### 2.1.3 Triggers
 
@@ -111,7 +109,7 @@ When an Azure Function awakes, it can fetch additional **Inputs** from multiple 
 
 ```csharp
 // Inputs
-[DocumentDB("contosomaintenance", "jobs", Id = "{jobId}", ConnectionStringSetting = "CosmosDb")] Job job,
+[CosmosDB("contosomaintenance", "jobs", Id = "{jobId}", ConnectionStringSetting = "CosmosDb")] Job job,
 [Blob("images-large/{photoId}.jpg", FileAccess.Read)] byte[] imageLarge,
 ```
 
@@ -164,11 +162,29 @@ Scroll up and click ***Save*** to set the Environment Variables for the Function
 
 ### 2.6 Deploy to Azure
 
-To deploy the Function to Azure, open it in **Visual Studio for Windows**, right-click the `ContosoMaintenence.Functions` project and select ***Publish***. When the publish window appears, select ***Azure Function App*** and choose ***Select existing***.
+Similat to the ASP.NET Core Web API project, we also need to compile the Azure Function code into an executable, before we can upload it to the cloud. For this, right-click the `Functions` folder in Visual Studio Code and select ***Open in Terminal / Command Line***.
 
-![Publish Azure Function From Visual Studio Windows](Assets/PublisAzureFunctionsFromVS.png)
+The Terminal window in Visual Studio Code pops up and we can enter the command to compile the application.
 
-Select your Function App in the uppopping window and review the Publish Summary before hitting the ***Publish*** button.
+```bash
+dotnet build
+```
+
+The output should look like this and we should see the **Build succeeded** message.
+
+![Build an Azure Function in Visual Studio Code](Assets/VSCodeAzureFunctionBuild.png)
+
+Again, building (compiling) the code generated two more folders for us: `/bin` and `/obj`. Here we can find executable files that we can upload to the cloud. As an Azure Function only constists of .NET code, no `dotnet publish` is needed for it. 
+
+Inside our `Functions` folder, we should now find a `bin/Debug/netstandard2.0` folder that contains our ready-to-run backend logic. Now you can simply right-click this `netstandard2.0` folder and select ***Deploy to Function App***.
+
+![Deploy an Azure Function in Visual Studio Code](Assets/VSCodeAzureFunctionDeploy.png)
+
+Follow the process of selecting a Subscription and Function App to publish to, confirm the publish process.
+
+> **Hint:** Visual Studio Code might ask you, if you want to override the Remote Runtime. This is because at the time of the creation of this workshop, the Azure Functions Runtime `~1` is set as default when creating a new function app. As we are already using the `beta` version of Runtime 2 in this workshop, we need to update this in Azure, too.
+
+> **Hint:** Sometimes, Visual Studio Code fails to load Subscriptions for your account when publishing. To fix this, go back to the ***Azure*** tab in Visual Studio Code and refresh the list of Subscriptions. Now start the Publish process again.
 
 ### 2.7 Test your Azure Function
 
