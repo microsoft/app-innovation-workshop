@@ -73,6 +73,10 @@ Once the extensions has been installed successfull and Visual Stuido Code has be
 
 ![Screenshot of Visual Studio Code showing Subscriptions in the Azure Tab](Assets/VSCodeAzureSubs.png)
 
+Now you are good to go! Open the recently downloaded and unzipped Workshop folder in Visual Studio Code by clicking ***File -> Open...*** in the menu and select the full folder. The result should look similar to this:
+
+![Screenshot of Visual Studio Code opened the workshop folder](Assets/VSCodeOpenWSFolder.png)
+
 ### Mobile Development with Xamarin (optional)
 
 If you want to compile the Xamarin Application on you own, you will need to install the Xamarin tooling. You don't need to have this, to follow the workshop but if you already are a Xamarin Developer or always wanted to get started, give it a go! The setup of a Xamarin development environment can get a little bit tricky and time consuming as it has dependancies on many SDKs and technologies from different companies.
