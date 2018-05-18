@@ -94,23 +94,44 @@ You should see something similar to the image below:
  ![Create new App Service Plan](Assets/AppServiceDeployed.png)
 
 ### 1.5 Deploy your apps to App Service
- Azure App Service has many options for how to deploy our code. These include continuous integration, which can link to Visual Studio Team Services or GitHub. 
- 
- We could also use FTP to upload the project, but we're not animals, so we won't. Below you can see how I publish using the built-in Azure integrations in Visual Studio for macOS. You'll find the same is possible in Windows, but the UI might be slightly different. 
 
- ![Open the Web API Project in Visual Studio](Assets/VisualStudioMacWebApiProject.png)
-Navigate to **Build** > **Publish** > **Publish to Azure**
- ![Open the Web API Project in Visual Studio](Assets/VS4MacAppServicePublish.png)
+Azure App Service has many options for how to deploy our code. These include continuous integration, which can link to Visual Studio Team Services or GitHub. We could also use FTP to upload the project, but we're not animals, so we won't - let's use Visual Studio Code for that.
 
-After the app has been successfully published, you should be taken to the app using your default browser.
-![Deployed API with no UI](Assets/DeployedWebAPI.png)
+The good news is: The full ASP.NET Core WebAPI code for the backend logic is already written for us and is located in the `Backend/Monolithic` folder of the workshop. But before we can upload it to the cloud, we need to **compile** it to make it machine readable. So we quickly have to dive into the .NET Developer's world! for this, right-click the `Monolithic` folder in Visual Studio Code and select ***Open in Terminal / Command Line***.
 
-We haven't created a user interface so you can expect to see an empty page, not dissimilar to the above. To test if the deployment is work and the app is accepting HTTP requests correctly, let's go ahead and navigate to the **/api/ping** endpoint. In my case, I'll use the following URL: 
+The Terminal window in Visual Studio Code pops up and we can enter the command to compile the application.
 
-http://myawesomestartupapi.azurewebsites.net/api/ping
+```bash
+dotnet build
+```
+
+The output should look like this and we should see the **Build succeeded** message.
+
+![VSCode run dotnet build](Assets/VSCodeDotnetBuild.png)
+
+Building (compiling) the code generated two more folders for us: `/bin` and `/obj`. Here we can find executable files that we can upload to the web. As an ASP.NET Core project does not only consist of .NET code, but also contains some HTML, CSS and JavaScript, we need to bundle all the files together. So let's run another command.
+
+```bash
+dotnet publish
+```
+
+Once this command ran successfully, we have everything we need. Inside our `Monolithic` folder, we should now find a `bin/Debug/netcoreapp2.0/publish` folder that contains our ready-to-run backend logic. Now you can simply right-click this `publish` folder and select ***Deploy to Web App***.
+
+![VSCode Deploy to Web App](Assets/VSCodePublishWebApp.png)
+
+Follow the process of selecting a Subscription and Web App to publish to, confirm the publish process and enjoy your Web API.
+
+> **Hint:** Sometimes, Visual Studio Code fails to load Subscriptions for your account when publishing. To fix this, go back to the ***Azure*** tab in Visual Studio Code and refresh the list of Subscriptions. Now start the Publish process again.
+
+After a few seconds, you Web App should display the published code and look like this:
+
+![Deployed API with Swagger UI](Assets/DeployedWebAPI.png)
+
+To test if the deployment is work and the app is accepting HTTP requests correctly, let's go ahead and navigate to the **/api/ping** endpoint. In my case, I'll use the following URL: `http://myawesomestartupapi.azurewebsites.net/api/ping`.
 
 ![Deployed API with no UI](Assets/AppServiceDeploymentTest.png)
-This shows that the backend is responding as expected! Before we move onto deploying storage services, you might want to read some tips and tricks for running App Services like a pro. 
+
+This shows that the backend is responding as expected! Before we move onto deploying storage services, you might want to read some tips and tricks for running App Services like a pro.
 
 ## Next Steps
 [Data Storage](../04%20Data&20Storage/README.md)
