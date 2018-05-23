@@ -30,8 +30,10 @@ namespace ContosoFieldService.Services
 
     public class PartsAPIService : BaseAPIService
     {
-        // Create an instance of the Refit RestService for the part interface.
-        readonly IPartsServiceAPI api = RestService.For<IPartsServiceAPI>(Helpers.Constants.BaseUrl);
+        // Note: Usually, we would create only one instance of the IPartsServiceAPI here and
+        // Re-use it for every operation. For this demo, we can chance the BaseUrl at runtime, so we
+        // Need a way to create the api for every single call
+        // readonly IPartsServiceAPI api = RestService.For<IPartsServiceAPI>(Helpers.Constants.BaseUrl);
 
         public PartsAPIService()
         {
@@ -56,6 +58,8 @@ namespace ContosoFieldService.Services
 
             try
             {
+                IPartsServiceAPI api = RestService.For<IPartsServiceAPI>(Helpers.Constants.BaseUrl);
+
                 // Use Polly to handle retrying
                 var pollyResult = await Policy.ExecuteAndCaptureAsync(async () => await api.GetParts(Constants.ApiManagementKey));
                 if (pollyResult.Result != null)
@@ -86,6 +90,8 @@ namespace ContosoFieldService.Services
 
         public async Task<(ResponseCode code, List<Part> result)> SearchPartsAsync(string keyword)
         {
+            IPartsServiceAPI api = RestService.For<IPartsServiceAPI>(Helpers.Constants.BaseUrl);
+
             var pollyResult = await Policy.ExecuteAndCaptureAsync(async () => await api.SearchParts(keyword, Constants.ApiManagementKey));
             if (pollyResult.Result != null)
             {
