@@ -36,8 +36,10 @@ namespace ContosoFieldService.Services
 
     public class JobsAPIService : BaseAPIService
     {
-        // Create an instance of the Refit RestService for the job interface.
-        readonly IJobServiceAPI api = RestService.For<IJobServiceAPI>(Constants.BaseUrl);
+        // Note: Usually, we would create only one instance of the IJobServiceAPI here and
+        // Re-use it for every operation. For this demo, we can chance the BaseUrl at runtime, so we
+        // Need a way to create the api for every single call
+        // IJobServiceAPI api = RestService.For<IJobServiceAPI>(Constants.BaseUrl);
 
         public JobsAPIService()
         {
@@ -62,6 +64,9 @@ namespace ContosoFieldService.Services
 
             try
             {
+                // Create an instance of the Refit RestService for the job interface.
+                IJobServiceAPI api = RestService.For<IJobServiceAPI>(Constants.BaseUrl);
+
                 // Use Polly to handle retrying
                 var pollyResult = await Policy.ExecuteAndCaptureAsync(async () => await api.GetJobs(Constants.ApiManagementKey));
                 if (pollyResult.Result != null)
@@ -92,6 +97,9 @@ namespace ContosoFieldService.Services
 
         public async Task<(ResponseCode code, Job result)> GetJobByIdAsync(string id)
         {
+            // Create an instance of the Refit RestService for the job interface.
+            IJobServiceAPI api = RestService.For<IJobServiceAPI>(Constants.BaseUrl);
+
             var pollyResult = await Policy.ExecuteAndCaptureAsync(async () => await api.GetJobById(id, Constants.ApiManagementKey));
             if (pollyResult.Result != null)
             {
@@ -103,6 +111,9 @@ namespace ContosoFieldService.Services
 
         public async Task<(ResponseCode code, List<Job> result)> SearchJobsAsync(string keyword)
         {
+            // Create an instance of the Refit RestService for the job interface.
+            IJobServiceAPI api = RestService.For<IJobServiceAPI>(Constants.BaseUrl);
+
             var pollyResult = await Policy.ExecuteAndCaptureAsync(async () => await api.SearchJobs(keyword, Constants.ApiManagementKey));
             if (pollyResult.Result != null)
             {
@@ -114,6 +125,9 @@ namespace ContosoFieldService.Services
 
         public async Task<(ResponseCode code, Job result)> CreateJobAsync(Job job)
         {
+            // Create an instance of the Refit RestService for the job interface.
+            IJobServiceAPI api = RestService.For<IJobServiceAPI>(Constants.BaseUrl);
+
             var pollyResult = await Policy.ExecuteAndCaptureAsync(async () => await api.CreateJob(job, Constants.ApiManagementKey));
             if (pollyResult.Result != null)
             {
@@ -125,6 +139,9 @@ namespace ContosoFieldService.Services
 
         public async Task<(ResponseCode code, Job result)> DeleteJobByIdAsync(string id)
         {
+            // Create an instance of the Refit RestService for the job interface.
+            IJobServiceAPI api = RestService.For<IJobServiceAPI>(Constants.BaseUrl);
+
             var pollyResult = await Policy.ExecuteAndCaptureAsync(async () => await api.DeleteJob(id, "Bearer " + AuthenticationService.AccessToken, Constants.ApiManagementKey));
             if (pollyResult.Result != null)
             {
@@ -136,6 +153,9 @@ namespace ContosoFieldService.Services
 
         public async Task<(ResponseCode code, Job result)> UpdateJob(Job job)
         {
+            // Create an instance of the Refit RestService for the job interface.
+            IJobServiceAPI api = RestService.For<IJobServiceAPI>(Constants.BaseUrl);
+
             var results = await api.UpdateJob(job.Id, job, Constants.ApiManagementKey);
             if (results != null)
             {
