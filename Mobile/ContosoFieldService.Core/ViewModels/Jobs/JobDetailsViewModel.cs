@@ -134,7 +134,7 @@ namespace ContosoFieldService.ViewModels
                 selectedJob = (Job)initData;
                 Name = selectedJob.Name;
                 Details = selectedJob.Details;
-                DueDate = DateTime.Now.Humanize();
+                DueDate = selectedJob.DueDate.Humanize();
 
                 Age = selectedJob.CreatedAt.Humanize();
                 Details = string.IsNullOrEmpty(selectedJob.Details) ? "Not Supplied" : selectedJob.Details;
