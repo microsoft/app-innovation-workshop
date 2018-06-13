@@ -56,20 +56,6 @@
     <Compile Include="PageObjects\JobDetailsPage.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\iOS\ContosoFieldService.iOS.csproj">
-      <Project>{E2745280-BDD1-4F5D-B976-199B9AA7602C}</Project>
-      <Name>ContosoFieldService.iOS</Name>
-      <ReferenceOutputAssembly>False</ReferenceOutputAssembly>
-      <Private>False</Private>
-    </ProjectReference>
-    <ProjectReference Include="..\Droid\ContosoFieldService.Droid.csproj">
-      <Project>{7ABD1905-E31B-4857-B4EA-B47ED1C55D0C}</Project>
-      <Name>ContosoFieldService.Droid</Name>
-      <ReferenceOutputAssembly>False</ReferenceOutputAssembly>
-      <Private>False</Private>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
