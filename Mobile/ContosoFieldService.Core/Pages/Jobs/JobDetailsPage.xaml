@@ -44,13 +44,12 @@
 
                 <!-- Job Name Banner --> 
                 <Frame       
-                    x:Name="JobName"
-                    AutomationId="JobName"
                     CornerRadius="0"
                     HasShadow="false"
                     BackgroundColor="{StaticResource AccentColorRed}" >
                 
-                    <Label                         
+                    <Label    
+                        AutomationId="JobName"
                         Text="{Binding Name}" 
                         HorizontalTextAlignment="Center"
                         FontFamily="{StaticResource FontFamilyMedium}" 

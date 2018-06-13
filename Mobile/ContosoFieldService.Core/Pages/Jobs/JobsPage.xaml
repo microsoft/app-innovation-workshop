@@ -25,8 +25,7 @@
     </ContentPage.ToolbarItems>
       
     <ListView 
-        x:Name="listView"
-        AutomationId="listView"
+        AutomationId="jobsListView"
         ItemsSource="{Binding Jobs}" 
         BackgroundColor="Transparent" 
         HasUnevenRows="true"
@@ -55,7 +54,8 @@
                 <ViewCell>
                     <Grid 
                         BackgroundColor="{StaticResource BackgroundColorItem}"
-                        ColumnSpacing="0">
+                        ColumnSpacing="0"
+                        AutomationId="jobItem">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="*" />
                             <RowDefinition Height="Auto" />
