@@ -36,7 +36,7 @@
                 "operationId": "Search Jobs",
                 "parameters": [
                     {
-                        "name": "searchTerm",
+                        "name": "keyword",
                         "in": "query",
                         "required": true,
                         "type": "string"
