@@ -40,7 +40,12 @@ Once you've selected your Cosmos DB account, you should be able to use the drop-
 **Important Note**
 The Index name must be set to "job-index", because it is referred to by name in the mobile application.
 
-We need to configure what data we wish to send back down to the device with a search query as well as which properties we'll use to search. The Index is difficult to modify (apart from adding new fields) after we've created it, so its always worth double checking the values. 
+We need to configure what data we wish to send back down to the device with a search query as well as which properties we'll use to search. The Index is difficult to modify (apart from adding new fields) after we've created it, so its always worth double checking the values.
+
+**Important**
+You need to create a _suggester_ called 'suggestions'. This is referred to by the _search_ API which we're writing. To do this, tick the 'suggester' box and enter 'suggestions' as its name. Then you also need to mark at least one field as being part of the suggester. We suggest(!) that the _Name_ and _Details_ fields are marked as such.
+
+Note that the screenshot above is slightly out of date, and the _Suggester_ is now presented as a checkbox on the main screen, rather than another tab. Also note that at the moment the Suggester details aren't visible in the index once you've created (this is a shortcoming of the current Azure portal).
 
 Once you've completed this setup, click "Create". 
 
