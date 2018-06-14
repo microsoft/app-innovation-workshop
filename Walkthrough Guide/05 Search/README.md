@@ -38,7 +38,7 @@ Once you've selected your Cosmos DB account, you should be able to use the drop-
 
 ![Azure Search Create Index](Assets/CreateJobIndexBasic.png)
 **Important Note**
-The Index name must be set to "job-index". 
+The Index name must be set to "job-index", because it is referred to by name in the mobile application.
 
 We need to configure what data we wish to send back down to the device with a search query as well as which properties we'll use to search. The Index is difficult to modify (apart from adding new fields) after we've created it, so its always worth double checking the values. 
 
