@@ -80,9 +80,9 @@ After you are satisfied with LUIS model (you should be proud 😊), it is time t
 
 ![Model Publishing](Assets/PublishMain.png)
 
-You will notice under your relevant region; you will have an initial starter key at the bottom of the publish. This key include insufficient bandwidth that is suitable only for basic testing. 
+You will notice that under your relevant region you will have an initial starter key at the bottom of the publish page. This key includes low bandwidth that is suitable only for basic testing. 
 
-To get production grade key, you need to go to [Azure Portal](https://portal.azure.com) and issue new cognitive service key.
+To get a production grade key, you need to go to [Azure Portal](https://portal.azure.com) and issue a new cognitive service key.
 
 Under New -> AI + Cognitive Services you will find Azure marketplace services for provisioning a new LUIS key that can be used in production.
 
