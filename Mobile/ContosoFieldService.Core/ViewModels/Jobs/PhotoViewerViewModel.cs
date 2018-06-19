@@ -4,7 +4,7 @@ using ContosoFieldService.Models;
 using FreshMvvm;
 using Xamarin.Forms;
 
-namespace ContosoFieldService.ViewModels.Jobs
+namespace ContosoFieldService.ViewModels
 {
     public class PhotoViewerViewModel : FreshBasePageModel
     {
