@@ -1,13 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Windows.Input;
 using ContosoFieldService.Models;
 using FreshMvvm;
 using Humanizer;
 using Plugin.Share;
 using Plugin.Share.Abstractions;
 using Xamarin.Forms;
-using System.Windows.Input;
-using ContosoFieldService.ViewModels.Jobs;
 
 namespace ContosoFieldService.ViewModels
 {
