@@ -7,6 +7,7 @@ using Plugin.Connectivity;
 using MonkeyCache.FileStore;
 using System.Linq;
 using System;
+using Microsoft.AppCenter.Crashes;
 
 namespace ContosoFieldService.Services
 {
@@ -74,8 +75,11 @@ namespace ContosoFieldService.Services
                 // No or invalid BaseUrl set in Constants.cs
                 return (ResponseCode.ConfigurationError, null);
             }
-            catch (ArgumentException)
+            catch (ArgumentException ex)
             {
+                //Lets report this exception to App Center 
+                Crashes.TrackError(ex);
+
                 // Backend not found at specified BaseUrl in Constants.cs or call limit reached
                 return (ResponseCode.BackendNotFound, null);
             }
