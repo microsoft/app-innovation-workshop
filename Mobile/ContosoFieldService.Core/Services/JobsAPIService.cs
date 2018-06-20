@@ -21,7 +21,7 @@ namespace ContosoFieldService.Services
         [Get("/job/{id}/")]
         Task<Job> GetJobById(string id, [Header("Ocp-Apim-Subscription-Key")] string apiManagementKey);
 
-        [Get("/search/jobs/?keyword={keyword}")]
+        [Get("/jobs?keyword={keyword}")]
         Task<List<Job>> SearchJobs(string keyword, [Header("Ocp-Apim-Subscription-Key")] string apiManagementKey);
 
         [Post("/job/")]
