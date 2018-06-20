@@ -21,8 +21,8 @@ namespace ContosoFieldService.Services
         [Get("/job/{id}/")]
         Task<Job> GetJobById(string id, [Header("Ocp-Apim-Subscription-Key")] string apiManagementKey);
 
-        [Get("/search/jobs/?keyword={keyword}")]
-        Task<List<Job>> SearchJobs(string keyword, [Header("Ocp-Apim-Subscription-Key")] string apiManagementKey);
+        [Get("/jobs?keyword={keyword}&suggestions={enableSuggestions}")]
+        Task<List<Job>> SearchJobs(string keyword, bool enableSuggestions, [Header("Ocp-Apim-Subscription-Key")] string apiManagementKey);
 
         [Post("/job/")]
         Task<Job> CreateJob([Body] Job job, [Header("Ocp-Apim-Subscription-Key")] string apiManagementKey);
@@ -109,12 +109,12 @@ namespace ContosoFieldService.Services
             return (ResponseCode.Error, null);
         }
 
-        public async Task<(ResponseCode code, List<Job> result)> SearchJobsAsync(string keyword)
+        public async Task<(ResponseCode code, List<Job> result)> SearchJobsAsync(string keyword, bool enableSuggestions = false)
         {
             // Create an instance of the Refit RestService for the job interface.
             IJobServiceAPI api = RestService.For<IJobServiceAPI>(Constants.BaseUrl);
 
-            var pollyResult = await Policy.ExecuteAndCaptureAsync(async () => await api.SearchJobs(keyword, Constants.ApiManagementKey));
+            var pollyResult = await Policy.ExecuteAndCaptureAsync(async () => await api.SearchJobs(keyword, enableSuggestions, Constants.ApiManagementKey));
             if (pollyResult.Result != null)
             {
                 return (ResponseCode.Success, pollyResult.Result);

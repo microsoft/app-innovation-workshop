@@ -46,7 +46,7 @@ namespace ContosoFieldService.ViewModels
                     ReloadData(true).GetAwaiter().GetResult();
                 }
                 else
-                    Search.Execute(value);
+                    Suggest.Execute(value);
             }
         }
 
@@ -120,6 +120,38 @@ namespace ContosoFieldService.ViewModels
                 });
             }
         }
+
+        public Command Suggest
+        {
+            get
+            {
+                return new Command(async () =>
+                {
+                    IsRefreshing = true;
+                    IsLoading = true;
+
+                    var response = await jobsApiService.SearchJobsAsync(SearchText, true);
+
+                    // Notify user about errors if applicable
+                    await HandleResponseCodeAsync(response.code);
+
+                    // Handle Response Result
+                    if (response.result != null)
+                    {
+                        Jobs.ReplaceRange(new List<GroupedJobs>
+                        {
+                            new GroupedJobs("Suggestions", response.result)
+                        });
+                    }
+
+                    IsRefreshing = false;
+                    IsLoading = false;
+                });
+            }
+        }
+
+
+
 
         public Command AddJobClicked
         {
