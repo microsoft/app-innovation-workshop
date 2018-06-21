@@ -45,7 +45,7 @@ namespace ContosoFieldService.ViewModels
                     // Run ReloadData syncronously
                     ReloadData(true).GetAwaiter().GetResult();
                 }
-                else
+                else if(searchText.Length > 1)
                     Suggest.Execute(value);
             }
         }
