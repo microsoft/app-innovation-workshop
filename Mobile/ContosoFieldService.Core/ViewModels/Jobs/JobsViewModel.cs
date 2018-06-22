@@ -45,7 +45,7 @@ namespace ContosoFieldService.ViewModels
                     // Run ReloadData syncronously
                     ReloadData(true).GetAwaiter().GetResult();
                 }
-                else
+                else if(searchText.Length > 1)
                     Suggest.Execute(value);
             }
         }
@@ -127,7 +127,6 @@ namespace ContosoFieldService.ViewModels
             {
                 return new Command(async () =>
                 {
-                    IsRefreshing = true;
                     IsLoading = true;
 
                     var response = await jobsApiService.SearchJobsAsync(SearchText, true);
@@ -144,7 +143,6 @@ namespace ContosoFieldService.ViewModels
                         });
                     }
 
-                    IsRefreshing = false;
                     IsLoading = false;
                 });
             }
