@@ -127,7 +127,6 @@ namespace ContosoFieldService.ViewModels
             {
                 return new Command(async () =>
                 {
-                    IsRefreshing = true;
                     IsLoading = true;
 
                     var response = await jobsApiService.SearchJobsAsync(SearchText, true);
@@ -144,7 +143,6 @@ namespace ContosoFieldService.ViewModels
                         });
                     }
 
-                    IsRefreshing = false;
                     IsLoading = false;
                 });
             }
