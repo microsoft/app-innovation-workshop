@@ -131,7 +131,7 @@ namespace ContosoFieldService.ViewModels
             if (initData != null)
             {
                 selectedJob = (Job)initData;
-                Name = selectedJob.Name;
+                Name = Helpers.Extensions.RemoveHitHighlightTags(selectedJob.Name, "[", "]");
                 Details = selectedJob.Details;
                 DueDate = selectedJob.DueDate.Humanize();
 
