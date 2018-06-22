@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using ContosoMaintenance.WebAPI.Models;
 using ContosoMaintenance.WebAPI.Services;
+using Microsoft.ApplicationInsights;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Azure.Search;
 using Microsoft.Azure.Search.Models;
@@ -14,6 +15,7 @@ namespace ContosoMaintenance.WebAPI.Controllers
     public class SearchController : Controller
     {
         SearchServiceClient serviceClient;
+        TelemetryClient telemetry = new TelemetryClient();
 
         public SearchController(IConfiguration configuration)
         {
@@ -33,41 +35,62 @@ namespace ContosoMaintenance.WebAPI.Controllers
             var indexClient = serviceClient.Indexes.GetClient("job-index");
             var jobList = new List<Job>();
 
+            if(string.IsNullOrEmpty(keyword))
+                return jobList;
+
             if(suggestions)
             {
-                var sp = new SuggestParameters();
-                sp.HighlightPreTag = "[";
-                sp.HighlightPostTag = "]";
-                sp.UseFuzzyMatching = true;
-                sp.MinimumCoverage = 75;
-                sp.Top = 100;
-
-                var response = await indexClient.Documents.SuggestAsync<Job>(keyword, "suggestions", sp);
-
-                foreach (var document in response.Results)
+                try
                 {
-                    var job = new Job
+                    var sp = new SuggestParameters();
+                    sp.HighlightPreTag = "[";
+                    sp.HighlightPostTag = "]";
+                    sp.UseFuzzyMatching = true;
+                    sp.MinimumCoverage = 75;
+                    sp.Top = 100;
+               
+                    var response = await indexClient.Documents.SuggestAsync<Job>(keyword, "suggestions", sp);
+                    foreach (var document in response.Results)
                     {
-                        Name = document.Text,
-                        Details = document.Document.Details,
-                        Status = document.Document.Status,
-                    };
-                    jobList.Add(job);
+                        var job = new Job
+                        {
+                            Name = document.Text,
+                            Details = document.Document.Details,
+                            Status = document.Document.Status,
+                        };
+                        jobList.Add(job);
+                    }
+                }
+                catch(Exception ex)
+                {
+                    var properties = new Dictionary <string, string>();
+                    properties.Add("Keyword", keyword);
+                    properties.Add("IsSuggestins", suggestions.ToString());
+                    telemetry.TrackException(ex, properties);
                 }
             }
             else
             {
-                var sp = new SearchParameters();
-                var response = await indexClient.Documents.SearchAsync<Job>(keyword, sp);
-                foreach (var document in response.Results)
+                try
                 {
-                    Job job = new Job
+                    var sp = new SearchParameters();
+                    var response = await indexClient.Documents.SearchAsync<Job>(keyword, sp);
+                    foreach (var document in response.Results)
                     {
-                        Name = document.Document.Name,
-                        Details = document.Document.Details
-                    };
-                    jobList.Add(job);
+                        Job job = new Job
+                        {
+                            Name = document.Document.Name,
+                            Details = document.Document.Details
+                        };
+                        jobList.Add(job);
+                    }
                 }
+                catch(Exception ex)
+                {
+                    var properties = new Dictionary <string, string>();
+                    properties.Add("Keyword", keyword);
+                    telemetry.TrackException(ex, properties);
+                }               
             }
             return jobList;
         }

@@ -38,7 +38,7 @@ namespace ContosoFieldService.Services
     public class JobsAPIService : BaseAPIService
     {
         // Note: Usually, we would create only one instance of the IJobServiceAPI here and
-        // Re-use it for every operation. For this demo, we can chance the BaseUrl at runtime, so we
+        // Re-use it for every operation. For this demo, we can change the BaseUrl at runtime, so we
         // Need a way to create the api for every single call
         // IJobServiceAPI api = RestService.For<IJobServiceAPI>(Constants.BaseUrl);
 
@@ -77,8 +77,11 @@ namespace ContosoFieldService.Services
                     return (ResponseCode.Success, pollyResult.Result);
                 }
             }
-            catch (UriFormatException)
+            catch (UriFormatException ex)
             {
+                //Lets report this exception to App Center 
+                Crashes.TrackError(ex);
+
                 // No or invalid BaseUrl set in Constants.cs
                 return (ResponseCode.ConfigurationError, null);
             }
@@ -90,8 +93,11 @@ namespace ContosoFieldService.Services
                 // Backend not found at specified BaseUrl in Constants.cs or call limit reached
                 return (ResponseCode.BackendNotFound, null);
             }
-            catch (Exception)
+            catch (Exception ex)
             {
+                //Lets report this exception to App Center 
+                Crashes.TrackError(ex);
+
                 // Everything else
                 return (ResponseCode.Error, null);
             }
