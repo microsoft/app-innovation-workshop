@@ -26,35 +26,24 @@ namespace ContosoFieldService.Helpers
             return $"https://www.gravatar.com/avatar/{hash}?s=512";
         }
 
-        public static FormattedString ConvertNameToFormattedString(this Job job)
-        {
-            return NewConvertNameToFormattedString(job);
-        }
-
-        private static FormattedString NewConvertNameToFormattedString(Job job)
-        {
+        public static FormattedString ConvertNameToFormattedString(this Job job, string highlightHitStartTag, string highlightHitEndTag)
+        {          
             FormattedString formattedString = new FormattedString();
 
             //The job name has a hit!
-            if(job.Name.Contains("[") && job.Name.Contains("]"))
+            if(job.Name.Contains(highlightHitStartTag) && job.Name.Contains(highlightHitEndTag))
             {
                 //Copy job name 
                 var name = job.Name;
-                Console.WriteLine($"Job Name: {name}");
 
                 //Get the stand and end index position in string of the area to bold. 
-                var highlightPosition = PositionOfHighlight(name);
+                var highlightPosition = PositionOfHighlight(name, highlightHitStartTag, highlightHitEndTag);
+                name = RemoveHitHighlightTags(name, highlightHitStartTag, highlightHitEndTag);
 
                 //Length of the text to highlight minus the brakets 
                 var lengthOfPreHighlight = highlightPosition.Item1;
                 var lengthOfHighlight = highlightPosition.Item2 - highlightPosition.Item1 +1;
                 var lengthOfPostHighlight = name.Length - (lengthOfPreHighlight + lengthOfHighlight);
-
-                //Remove the brackets from name 
-                name = name.Remove(highlightPosition.Item1, 1);
-                name = name.Remove(highlightPosition.Item2 + 1, 1);
-
-                Console.WriteLine($"Removed brackets and left with : {name}");
 
                 if (highlightPosition.Item1 == 0)
                 {
@@ -101,7 +90,7 @@ namespace ContosoFieldService.Helpers
             return formattedString;
         }
 
-        private static Tuple<int, int> PositionOfHighlight(string name)
+        private static Tuple<int, int> PositionOfHighlight(string name, string preTag, string postTag)
         {
             /* We want to get the index positions for creating bold whilst taking into account that we'll be
              * removing the brackets which will effect the end position */
@@ -118,68 +107,24 @@ namespace ContosoFieldService.Helpers
             for (int i = 0; i < charArray.Length; i++)
             {
                 var character = charArray[i];
-                if (character == char.Parse("["))
+                if (character == char.Parse(preTag))
                     startOfHighlight = i;
 
-                if (character == char.Parse("]"))
+                if (character == char.Parse(postTag))
                     endofHighlight = i - 2;
             }
             return Tuple.Create(startOfHighlight, endofHighlight);
-        }
+        }      
 
-        private static FormattedString LegacyConvertNameToFormattedString(Job job)
+        public static string RemoveHitHighlightTags(string value, string preTag, string postTag)
         {
-            //We want to return a FormattedString which is a Xamarin.Forms Type that allows us to style text elements
-            var formattedString = new FormattedString();
+            var highlightPosition = PositionOfHighlight(value, preTag, postTag);
 
-            //We'll use regex to nd content between square brackets [contents]
-            var regexPattern = @"\[(\w*)\]";
+            //Remove the brackets from name 
+            value = value.Remove(highlightPosition.Item1, 1);
+            value = value.Remove(highlightPosition.Item2 + 1, 1);
 
-            //Lets create a MatchCollection which will contain any matches from our job.name. 
-            var patternMatches = Regex.Matches(job.Name, regexPattern);
-            System.Diagnostics.Debug.WriteLine($"Text: {job.Name}");
-
-
-            //If the name doesn't contain a matches then we just a default FormattedString with the name set. No extra work is required.  
-            if (patternMatches.Count == 0)
-            {
-                formattedString = new FormattedString { Spans = { new Span { Text = job.Name } } };
-            }
-            else
-            {
-                //We create a list of matched wordsready for use in building the FormattedStrings property.
-                var highlightedWords = new List<string>();
-
-                //We loop through the matches and copy the values to a list of strings for easier use. 
-                foreach (Match match in patternMatches)
-                {
-                    highlightedWords.Add(RemoveBrackets(match.Value));
-                    Console.WriteLine($"match : {match}");
-                }
-
-                //We split the name input parts based on our RegEx. "Hello [World]" would become an array of string containing two items, "Hello" and "World";
-                var splitList = Regex.Split(job.Name, regexPattern);
-
-                //We then loop through each subString and add a span, checking that the contents isn't contained in the highlightedWords property. 
-                foreach (var subString in splitList)
-                {
-                    if (highlightedWords.Contains(subString) == true)
-                        //We have found that the text is a highlighted word and thus needs to be bold. 
-                        formattedString.Spans.Add(new Span { Text = subString, FontAttributes = FontAttributes.Bold });
-                    else
-                        //The text isn't a highlighted item so we 
-                        formattedString.Spans.Add(new Span { Text = subString });
-                }
-            }
-            return formattedString;
-        }
-
-        static string RemoveBrackets(string input)
-        {
-            var removedPreTag = input.Replace("[", "");
-            var removedPostTag = removedPreTag.Replace("]", "");
-            var removedWhiteSpaceTag = removedPostTag.Remove(0);
-            return removedPostTag;
+            return value;
         }
     }
 

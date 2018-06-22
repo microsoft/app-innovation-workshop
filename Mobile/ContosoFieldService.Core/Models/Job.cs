@@ -36,7 +36,7 @@ namespace ContosoFieldService.Models
         {
             get
             {
-                return this.ConvertNameToFormattedString();
+                return this.ConvertNameToFormattedString("[", "]");
             }
         }
 
