@@ -1,3 +1,4 @@
+
 ![Banner](Assets/Banner.png)
 
 # 1. Architecture Options 
