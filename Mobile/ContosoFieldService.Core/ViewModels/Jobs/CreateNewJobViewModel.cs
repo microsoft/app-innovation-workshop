@@ -3,6 +3,7 @@ using ContosoFieldService.Models;
 using ContosoFieldService.Services;
 using FreshMvvm;
 using Microsoft.AppCenter.Analytics;
+using Xamarin.Essentials;
 using Xamarin.Forms;
 using Spatial = Microsoft.Azure.Documents.Spatial;
 
@@ -41,8 +42,8 @@ namespace ContosoFieldService.ViewModels
 
 
                     // Add current location to the job
-                    var location = await Plugin.Geolocator.CrossGeolocator.Current.GetPositionAsync();
-                    job.Address = new Location { Point = new Models.Point(location.Latitude, location.Longitude) };
+                    var location = await Geolocation.GetLastKnownLocationAsync();
+                    job.Address = new Models.Location { Point = new Models.Point(location.Latitude, location.Longitude) };
 
                     // Add job to database
                     var response = await jobApiService.CreateJobAsync(job);
