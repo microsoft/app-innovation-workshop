@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Windows.Input;
 using ContosoFieldService.Models;
 using FreshMvvm;
 using Humanizer;
@@ -128,9 +129,9 @@ namespace ContosoFieldService.ViewModels
             if (initData != null)
             {
                 selectedJob = (Job)initData;
-                Name = selectedJob.Name;
+                Name = Helpers.Extensions.RemoveHitHighlightTags(selectedJob.Name, "[", "]");
                 Details = selectedJob.Details;
-                DueDate = DateTime.Now.Humanize();
+                DueDate = selectedJob.DueDate.Humanize();
 
                 Age = selectedJob.CreatedAt.Humanize();
                 Details = string.IsNullOrEmpty(selectedJob.Details) ? "Not Supplied" : selectedJob.Details;
