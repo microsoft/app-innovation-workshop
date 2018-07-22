@@ -45,7 +45,6 @@
     <PackageReference Include="Refit" Version="4.6.16" />
     <PackageReference Include="SkiaSharp.Svg" Version="1.60.0" />
     <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="5.2.4" />
-    <PackageReference Include="WindowsAzure.Storage" Version="9.3.0" />
     <PackageReference Include="Xamarin.FFImageLoading.Forms" Version="2.4.3.840" />
     <PackageReference Include="Xamarin.FFImageLoading.Transformations" Version="2.4.3.840" />
   </ItemGroup>

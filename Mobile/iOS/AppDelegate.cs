@@ -5,7 +5,6 @@ using CarouselView.FormsPlugin.iOS;
 using FFImageLoading.Forms.Touch;
 using FFImageLoading.Transformations;
 using Foundation;
-using MikeCodesDotNET.iOS;
 using UIKit;
 using Xamarin;
 using Xamarin.Forms;
