@@ -1,11 +1,9 @@
 ﻿using System;
 using ContosoFieldService.Models;
 using ContosoFieldService.Services;
-using FreshMvvm;
 using Microsoft.AppCenter.Analytics;
 using Xamarin.Essentials;
 using Xamarin.Forms;
-using Spatial = Microsoft.Azure.Documents.Spatial;
 
 
 namespace ContosoFieldService.ViewModels
