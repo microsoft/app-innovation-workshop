@@ -1,6 +1,3 @@
-using Plugin.Settings;
-using Plugin.Settings.Abstractions;
-
 namespace ContosoFieldService.Helpers
 {
     /// <summary>

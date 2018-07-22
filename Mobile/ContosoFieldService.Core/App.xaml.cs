@@ -10,11 +10,11 @@ using Microsoft.AppCenter.Crashes;
 using Microsoft.AppCenter.Push;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
-using Plugin.VersionTracking;
 using Microsoft.AppCenter.Distribute;
 using ContosoFieldService.Services;
 using MonkeyCache.FileStore;
 using DLToolkit.Forms.Controls;
+using Xamarin.Essentials;
 
 [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 namespace ContosoFieldService
@@ -65,7 +65,7 @@ namespace ContosoFieldService
         protected override async void OnStart()
         {
             // Handle when your app starts
-            CrossVersionTracking.Current.Track();
+            VersionTracking.Track();
 
             // Only start Visual Studio App Center when running in a real-world scenario
             // which means on a physical device in Release mode and not in a Test cloud

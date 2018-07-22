@@ -5,11 +5,11 @@ using System.Net;
 using System.Net.Http;
 using System.Threading.Tasks;
 using ContosoFieldService.Models;
-using Plugin.Connectivity;
 using Polly;
 using Refit;
 using ContosoFieldService.Helpers;
 using MonkeyCache.FileStore;
+using Xamarin.Essentials;
 
 namespace ContosoFieldService.Services
 {
@@ -49,7 +49,7 @@ namespace ContosoFieldService.Services
         public async Task<(ResponseCode code, List<Job> result)> GetJobsAsync(bool force = false)
         {
             // Handle online/offline scenario
-            if (!CrossConnectivity.Current.IsConnected && Barrel.Current.Exists(CacheKey))
+            if (Connectivity.NetworkAccess != NetworkAccess.Internet && Barrel.Current.Exists(CacheKey))
             {
                 // If no connectivity, we'll return the cached jobs list.
                 return (ResponseCode.NotConnected, Barrel.Current.Get<List<Job>>(CacheKey));
