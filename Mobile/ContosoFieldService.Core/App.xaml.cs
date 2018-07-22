@@ -34,6 +34,10 @@ namespace ContosoFieldService
             Settings.LoginViewShown = false;
 #endif
 
+
+            // Stop the keyboard overlaying the chatbot webview on Android (it isn't a problem on iOS).
+            AndroidSpecific.Application.SetWindowSoftInputModeAdjust(this, AndroidSpecific.WindowSoftInputModeAdjust.Resize);
+
             // As iOS and Android follow fundamenntally different navigation patterns, we split up the 
             // navigation style between iOS and Android here. iOS is using a Tabbed Navigation, 
             // while Android uses a Navigation Drawer (Hamburger Menu)
