@@ -98,10 +98,12 @@ namespace ContosoMaintenance.WebAPI
             // As this is a demo, we always show the rich exception page.
             // Make sure to hide it in production environments in real-world scearios to 
             // hide your code from attackers.
-            //if (env.IsDevelopment())
-            //{
-            app.UseDeveloperExceptionPage();
-            //}
+            if (env.IsDevelopment())
+            {
+                app.UseDeveloperExceptionPage();
+                app.UseHsts();
+                app.UseHttpsRedirection();
+            }
 
             // Activate Swagger and cofigure its UI
             app.UseSwagger();
