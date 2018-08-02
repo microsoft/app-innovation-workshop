@@ -143,6 +143,8 @@
                 </StackLayout>
             </StackLayout>
         </flow:FlowListView.Header>
+
+       
         
         <flow:FlowListView.FlowColumnTemplate>
             <DataTemplate>
@@ -167,7 +169,7 @@
                     Text="Options" />
 
                 <!-- The iOS version uses a custom button and renderer -->
-                <Grid Grid.Row="1" ColumnSpacing="1" RowSpacing="1" Margin="0,0,15,0"> 
+                <Grid ColumnSpacing="1" RowSpacing="1" Margin="0,0,0,0"> 
                     <Grid.RowDefinitions>
                         <RowDefinition Height="Auto" />
                         <RowDefinition Height="Auto" />
