@@ -15,6 +15,7 @@ using Microsoft.AppCenter.Distribute;
 using ContosoFieldService.Services;
 using MonkeyCache.FileStore;
 using DLToolkit.Forms.Controls;
+using AndroidSpecific = Xamarin.Forms.PlatformConfiguration.AndroidSpecific; 
 
 [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 namespace ContosoFieldService
@@ -33,6 +34,10 @@ namespace ContosoFieldService
 #if DEBUG
             Settings.LoginViewShown = false;
 #endif
+
+
+            // Stop the keyboard overlaying the chatbot webview on Android (it isn't a problem on iOS).
+            AndroidSpecific.Application.SetWindowSoftInputModeAdjust(this, AndroidSpecific.WindowSoftInputModeAdjust.Resize);
 
             // As iOS and Android follow fundamenntally different navigation patterns, we split up the 
             // navigation style between iOS and Android here. iOS is using a Tabbed Navigation, 

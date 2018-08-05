@@ -147,6 +147,19 @@ namespace ContosoMaintenance.WebAPI.DummyData
             return Addresses[r];
         }
 
+        DateTime GetRandomDate(bool fromPast = true)
+        {
+            Random rnd = new Random();
+            int days = rnd.Next(5, 50);
+            if (fromPast)
+            {
+                return DateTime.Now.Subtract(new TimeSpan(days, 0, 0, 0));
+            }
+            else
+            {
+                return DateTime.Now.Add(new TimeSpan(days, 0, 0, 0));
+            }
+        }
 
         void PopulateCustomers()
         {
@@ -488,6 +501,8 @@ namespace ContosoMaintenance.WebAPI.DummyData
         {
             var job1 = new Job
             {
+                CreatedAt = GetRandomDate(),
+                DueDate = GetRandomDate(false),
                 Name = "Repair CFM56 on B737-300",
                 Details = "Lorem ipsum dolor sit amet, has ei munere dolore, id mel doming assentior. Cu menandri consulatu vis, sea adhuc graece ea. Ius vocent disputando accommodare id. Ei sit porro scribentur, viderer volumus eos te, vocibus commune detraxit est ad. Ei veniam omnesque mediocritatem ius, vix no paulo neglegentur, ne nec civibus maluisset reformidans.",
                 Type = JobType.Repair,
@@ -499,6 +514,8 @@ namespace ContosoMaintenance.WebAPI.DummyData
 
             var job2 = new Job
             {
+                CreatedAt = GetRandomDate(),
+                DueDate = GetRandomDate(false),
                 Name = "Service B767-600 CFM56 Engine",
                 Details = "Lorem ipsum dolor sit amet, has ei munere dolore, id mel doming assentior. Cu menandri consulatu vis, sea adhuc graece ea. Ius vocent disputando accommodare id. Ei sit porro scribentur, viderer volumus eos te, vocibus commune detraxit est ad. Ei veniam omnesque mediocritatem ius, vix no paulo neglegentur, ne nec civibus maluisset reformidans.",
                 Type = JobType.Service,
@@ -510,6 +527,8 @@ namespace ContosoMaintenance.WebAPI.DummyData
 
             var job3 = new Job
             {
+                CreatedAt = GetRandomDate(),
+                DueDate = GetRandomDate(false),
                 Name = "Paint 787",
                 Details = "Lorem ipsum dolor sit amet, has ei munere dolore, id mel doming assentior. Cu menandri consulatu vis, sea adhuc graece ea. Ius vocent disputando accommodare id. Ei sit porro scribentur, viderer volumus eos te, vocibus commune detraxit est ad. Ei veniam omnesque mediocritatem ius, vix no paulo neglegentur, ne nec civibus maluisset reformidans.",
                 Type = JobType.Service,
@@ -521,6 +540,8 @@ namespace ContosoMaintenance.WebAPI.DummyData
 
             var job4 = new Job
             {
+                CreatedAt = GetRandomDate(),
+                DueDate = GetRandomDate(false),
                 Name = "Service A318 CFM56 Engine",
                 Details = "Lorem ipsum dolor sit amet, has ei munere dolore, id mel doming assentior. Cu menandri consulatu vis, sea adhuc graece ea. Ius vocent disputando accommodare id. Ei sit porro scribentur, viderer volumus eos te, vocibus commune detraxit est ad. Ei veniam omnesque mediocritatem ius, vix no paulo neglegentur, ne nec civibus maluisset reformidans.",
                 Type = JobType.Service,
@@ -532,6 +553,8 @@ namespace ContosoMaintenance.WebAPI.DummyData
 
             var job5 = new Job
             {
+                CreatedAt = GetRandomDate(),
+                DueDate = GetRandomDate(false),
                 Name = "Service DHC8-400 PW150 Engine",
                 Details = "Lorem ipsum dolor sit amet, has ei munere dolore, id mel doming assentior. Cu menandri consulatu vis, sea adhuc graece ea. Ius vocent disputando accommodare id. Ei sit porro scribentur, viderer volumus eos te, vocibus commune detraxit est ad. Ei veniam omnesque mediocritatem ius, vix no paulo neglegentur, ne nec civibus maluisset reformidans.",
                 Type = JobType.Service,
@@ -543,6 +566,8 @@ namespace ContosoMaintenance.WebAPI.DummyData
 
             var job6 = new Job
             {
+                CreatedAt = GetRandomDate(),
+                DueDate = GetRandomDate(false),
                 Name = "Repair Rolls-Royce Trent 100",
                 Details = "Lorem ipsum dolor sit amet, has ei munere dolore, id mel doming assentior. Cu menandri consulatu vis, sea adhuc graece ea. Ius vocent disputando accommodare id. Ei sit porro scribentur, viderer volumus eos te, vocibus commune detraxit est ad. Ei veniam omnesque mediocritatem ius, vix no paulo neglegentur, ne nec civibus maluisset reformidans.",
                 Type = JobType.Repair,
@@ -554,6 +579,8 @@ namespace ContosoMaintenance.WebAPI.DummyData
 
             var job7 = new Job
             {
+                CreatedAt = GetRandomDate(),
+                DueDate = GetRandomDate(false),
                 Name = "Service PW4000",
                 Details = "Lorem ipsum dolor sit amet, has ei munere dolore, id mel doming assentior. Cu menandri consulatu vis, sea adhuc graece ea. Ius vocent disputando accommodare id. Ei sit porro scribentur, viderer volumus eos te, vocibus commune detraxit est ad. Ei veniam omnesque mediocritatem ius, vix no paulo neglegentur, ne nec civibus maluisset reformidans.",
                 Type = JobType.Service,
@@ -565,6 +592,8 @@ namespace ContosoMaintenance.WebAPI.DummyData
 
             var job8 = new Job
             {
+                CreatedAt = GetRandomDate(),
+                DueDate = GetRandomDate(false),
                 Name = "Repair CF6-80A on B737-200",
                 Details = "Lorem ipsum dolor sit amet, has ei munere dolore, id mel doming assentior. Cu menandri consulatu vis, sea adhuc graece ea. Ius vocent disputando accommodare id. Ei sit porro scribentur, viderer volumus eos te, vocibus commune detraxit est ad. Ei veniam omnesque mediocritatem ius, vix no paulo neglegentur, ne nec civibus maluisset reformidans.",
                 Type = JobType.Repair,
@@ -576,6 +605,8 @@ namespace ContosoMaintenance.WebAPI.DummyData
 
             var job9 = new Job
             {
+                CreatedAt = GetRandomDate(),
+                DueDate = GetRandomDate(false),
                 Name = "Inspect Airframe on 787",
                 Details = "Lorem ipsum dolor sit amet, has ei munere dolore, id mel doming assentior. Cu menandri consulatu vis, sea adhuc graece ea. Ius vocent disputando accommodare id. Ei sit porro scribentur, viderer volumus eos te, vocibus commune detraxit est ad. Ei veniam omnesque mediocritatem ius, vix no paulo neglegentur, ne nec civibus maluisset reformidans.",
                 Type = JobType.Service,
@@ -586,6 +617,8 @@ namespace ContosoMaintenance.WebAPI.DummyData
 
             var job10 = new Job
             {
+                CreatedAt = GetRandomDate(),
+                DueDate = GetRandomDate(false),
                 Name = "Install new cooker in 747",
                 Details = "Lorem ipsum dolor sit amet, has ei munere dolore, id mel doming assentior. Cu menandri consulatu vis, sea adhuc graece ea. Ius vocent disputando accommodare id. Ei sit porro scribentur, viderer volumus eos te, vocibus commune detraxit est ad. Ei veniam omnesque mediocritatem ius, vix no paulo neglegentur, ne nec civibus maluisset reformidans.",
                 Type = JobType.Installation,
@@ -596,6 +629,8 @@ namespace ContosoMaintenance.WebAPI.DummyData
 
             var job11 = new Job
             {
+                CreatedAt = GetRandomDate(),
+                DueDate = GetRandomDate(false),
                 Name = "Paint ATR 42",
                 Details = "Lorem ipsum dolor sit amet, has ei munere dolore, id mel doming assentior. Cu menandri consulatu vis, sea adhuc graece ea. Ius vocent disputando accommodare id. Ei sit porro scribentur, viderer volumus eos te, vocibus commune detraxit est ad. Ei veniam omnesque mediocritatem ius, vix no paulo neglegentur, ne nec civibus maluisset reformidans.",
                 Type = JobType.Service,
@@ -606,6 +641,8 @@ namespace ContosoMaintenance.WebAPI.DummyData
 
             var job12 = new Job
             {
+                CreatedAt = GetRandomDate(),
+                DueDate = GetRandomDate(false),
                 Name = "Paint CASA C-295",
                 Details = "Lorem ipsum dolor sit amet, has ei munere dolore, id mel doming assentior. Cu menandri consulatu vis, sea adhuc graece ea. Ius vocent disputando accommodare id. Ei sit porro scribentur, viderer volumus eos te, vocibus commune detraxit est ad. Ei veniam omnesque mediocritatem ius, vix no paulo neglegentur, ne nec civibus maluisset reformidans.",
                 Type = JobType.Service,
@@ -616,6 +653,8 @@ namespace ContosoMaintenance.WebAPI.DummyData
 
             var job13 = new Job
             {
+                CreatedAt = GetRandomDate(),
+                DueDate = GetRandomDate(false),
                 Name = "Paint Boeing 737",
                 Details = "Lorem ipsum dolor sit amet, has ei munere dolore, id mel doming assentior. Cu menandri consulatu vis, sea adhuc graece ea. Ius vocent disputando accommodare id. Ei sit porro scribentur, viderer volumus eos te, vocibus commune detraxit est ad. Ei veniam omnesque mediocritatem ius, vix no paulo neglegentur, ne nec civibus maluisset reformidans.",
                 Type = JobType.Service,
@@ -626,6 +665,8 @@ namespace ContosoMaintenance.WebAPI.DummyData
 
             var job14 = new Job
             {
+                CreatedAt = GetRandomDate(),
+                DueDate = GetRandomDate(false),
                 Name = "Repair composite structure of main door",
                 Details = "Lorem ipsum dolor sit amet, has ei munere dolore, id mel doming assentior. Cu menandri consulatu vis, sea adhuc graece ea. Ius vocent disputando accommodare id. Ei sit porro scribentur, viderer volumus eos te, vocibus commune detraxit est ad. Ei veniam omnesque mediocritatem ius, vix no paulo neglegentur, ne nec civibus maluisset reformidans.",
                 Type = JobType.Service,
@@ -636,6 +677,8 @@ namespace ContosoMaintenance.WebAPI.DummyData
 
             var job15 = new Job
             {
+                CreatedAt = GetRandomDate(),
+                DueDate = GetRandomDate(false),
                 Name = "Replace Oil",
                 Details = "Lorem ipsum dolor sit amet, has ei munere dolore, id mel doming assentior. Cu menandri consulatu vis, sea adhuc graece ea. Ius vocent disputando accommodare id. Ei sit porro scribentur, viderer volumus eos te, vocibus commune detraxit est ad. Ei veniam omnesque mediocritatem ius, vix no paulo neglegentur, ne nec civibus maluisset reformidans.",
                 Type = JobType.Service,
@@ -646,6 +689,8 @@ namespace ContosoMaintenance.WebAPI.DummyData
 
             var job16 = new Job
             {
+                CreatedAt = GetRandomDate(),
+                DueDate = GetRandomDate(false),
                 Name = "Borescope Examination on A380",
                 Details = "Lorem ipsum dolor sit amet, has ei munere dolore, id mel doming assentior. Cu menandri consulatu vis, sea adhuc graece ea. Ius vocent disputando accommodare id. Ei sit porro scribentur, viderer volumus eos te, vocibus commune detraxit est ad. Ei veniam omnesque mediocritatem ius, vix no paulo neglegentur, ne nec civibus maluisset reformidans.",
                 Type = JobType.Service,
@@ -656,6 +701,8 @@ namespace ContosoMaintenance.WebAPI.DummyData
 
             var job17 = new Job
             {
+                CreatedAt = GetRandomDate(),
+                DueDate = GetRandomDate(false),
                 Name = "Borescope Examination of PW127",
                 Details = "Lorem ipsum dolor sit amet, has ei munere dolore, id mel doming assentior. Cu menandri consulatu vis, sea adhuc graece ea. Ius vocent disputando accommodare id. Ei sit porro scribentur, viderer volumus eos te, vocibus commune detraxit est ad. Ei veniam omnesque mediocritatem ius, vix no paulo neglegentur, ne nec civibus maluisset reformidans.",
                 Type = JobType.Service,
@@ -666,6 +713,8 @@ namespace ContosoMaintenance.WebAPI.DummyData
 
             var job18 = new Job
             {
+                CreatedAt = GetRandomDate(),
+                DueDate = GetRandomDate(false),
                 Name = "Borescope Examination of CF6",
                 Details = "Lorem ipsum dolor sit amet, has ei munere dolore, id mel doming assentior. Cu menandri consulatu vis, sea adhuc graece ea. Ius vocent disputando accommodare id. Ei sit porro scribentur, viderer volumus eos te, vocibus commune detraxit est ad. Ei veniam omnesque mediocritatem ius, vix no paulo neglegentur, ne nec civibus maluisset reformidans.",
                 Type = JobType.Service,
@@ -676,6 +725,8 @@ namespace ContosoMaintenance.WebAPI.DummyData
 
             var job19 = new Job
             {
+                CreatedAt = GetRandomDate(),
+                DueDate = GetRandomDate(false),
                 Name = "Fault Isolation on 787 navigation system",
                 Details = "Lorem ipsum dolor sit amet, has ei munere dolore, id mel doming assentior. Cu menandri consulatu vis, sea adhuc graece ea. Ius vocent disputando accommodare id. Ei sit porro scribentur, viderer volumus eos te, vocibus commune detraxit est ad. Ei veniam omnesque mediocritatem ius, vix no paulo neglegentur, ne nec civibus maluisset reformidans.",
                 Type = JobType.Service,
@@ -683,8 +734,6 @@ namespace ContosoMaintenance.WebAPI.DummyData
                 Address = GetRandomAddress(),
             };
             Jobs.Add(job19);
-
-
 
         }
 

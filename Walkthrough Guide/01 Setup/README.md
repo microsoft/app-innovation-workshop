@@ -18,14 +18,20 @@ Please bring your own **Windows or Mac** laptop. To participate in this workshop
 
 ### Optional
 
+You can completely follow the workshop without compiling the Mobile App on your own, as the full content is focused on architecting and creating Backends. However, if you already are a Xamarin Developer or always wanted to get started, install the Xamarin Tooling as well.
+
 - [Visual Studio for Windows or Mac](https://www.visualstudio.com/) (Community Version or higher)
   - [Xamarin Tooling](https://developer.xamarin.com/guides/cross-platform/getting_started/installation/windows/)
   - Android SDK 8.1 Oreo (API Level 27)
   - iOS SDK 11
 
-The setup of a Xamarin development environment can get a little bit tricky and time consuming as it has dependancies on many SDKs and technologies from different companies.
-
 ## Prepare your environment
+
+### Download the workshop
+
+You will need some contents of this workshop like the source code for the backeend on your local machine. So it is a good idea, to download the full repository as a ZIP file and extact it somewhere locally. You can easily do this by clicking the  ***Clone or download*** button on the start page and select ***Download ZIP***.
+
+![Azure Subscription Overview](Assets/GitHubDownload.png)
 
 ### Microsoft Azure
 
@@ -41,7 +47,39 @@ You can check the Subscriptions for you account when visiting the [Azure Portal]
 
 If no Subscriptions appear, visit the [Azure Subscription Portal](https://account.azure.com/Subscriptions) to add one.
 
-### Mobile Development with Xamarin
+## Test your configuration
+
+### .NET Core
+
+Most parts of this workshop are written in .NET Core 2.0 and we need to compile a few things from time to time. For this, we need to the [.NET Core SDK](https://www.microsoft.com/net/download/windows/build) installed. To check if the installation has been successful, open the *Terminal* or *Command Prompt* on your machine and type in
+
+```bash
+dotnet --info
+```
+
+If the command line answers you similar like shown in the screenshot below, your machine can now run and compile .NET code.
+
+![Visual Studio Running Xamarin iOS and Android App](Assets/DotnetInfoBash.png)
+
+### Visual Studio Code
+
+Open Visual Studio Code and navigate to the ***Extensions*** tab on the left (or select ***View -> Extensions*** from the menu) and make sure that you installed the **Azure App Service** and **Azure Functions**  extensions at least. If you don't have them installed, you can search for them in the Extensions tab.
+
+Note, that you need to ***Reload*** Visual Stuido Code after installing extensions!
+
+![Screenshot of Visual Studio Code for Reloading Extensions](Assets/VSCodeReloadExtensions.png)
+
+Once the extensions has been installed successfull and Visual Stuido Code has been reloaded, you should see a new ***Azure*** tab on the side. Select it and make sure that you are logged in with you Azure account. Please verify, that you see at least one of your subscriptions here.
+
+![Screenshot of Visual Studio Code showing Subscriptions in the Azure Tab](Assets/VSCodeAzureSubs.png)
+
+Now you are good to go! Open the recently downloaded and unzipped Workshop folder in Visual Studio Code by clicking ***File -> Open...*** in the menu and select the full folder. The result should look similar to this:
+
+![Screenshot of Visual Studio Code opened the workshop folder](Assets/VSCodeOpenWSFolder.png)
+
+### Mobile Development with Xamarin (optional)
+
+If you want to compile the Xamarin Application on you own, you will need to install the Xamarin tooling. You don't need to have this, to follow the workshop but if you already are a Xamarin Developer or always wanted to get started, give it a go! The setup of a Xamarin development environment can get a little bit tricky and time consuming as it has dependancies on many SDKs and technologies from different companies.
 
 #### Windows
 
@@ -57,7 +95,7 @@ When using a Mac, the best Xamarin Tooling provides Visual Studio for Mac. Xamar
 
 If you want to build iOS solutions, make sure that XCode is also installed on the same device!
 
-#### Test your configuration
+#### Test your installation
 
 To make sure your environment works as expected and is able to compile and execute Xamarin apps, your can simply open the [`ContosoMaintenance.sln`](/ContosoMaintenance.sln) solution with Visual Studio and select the `ContosoFieldService.iOS` or `ContosoFieldService.Droid` project as your Startup project. If the application gets compiled and the app can be started, you are good to go.
 
