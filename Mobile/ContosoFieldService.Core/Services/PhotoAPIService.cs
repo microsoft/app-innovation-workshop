@@ -15,10 +15,10 @@ namespace ContosoFieldService.Services
 
     public class PhotoAPIService
     {
-        readonly IPhotoServiceAPI api = RestService.For<IPhotoServiceAPI>(Constants.BaseUrl);
-
         public async Task<Job> UploadPhotoAsync(string jobId, MediaFile file)
         {
+            IPhotoServiceAPI api = RestService.For<IPhotoServiceAPI>(Constants.BaseUrl);
+
             var streamPart = new StreamPart(file.GetStream(), "photo.jpg", "image/jpeg");
             var updatedJob = await api.UploadPhoto(jobId, streamPart, Constants.ApiManagementKey);
             return updatedJob;

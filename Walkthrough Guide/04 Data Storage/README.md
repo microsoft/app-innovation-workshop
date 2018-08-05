@@ -87,7 +87,7 @@ The `DatabaseId` is the top-level domain of the collections that will be used (o
 
 #### 1.4.1 Fetch from Cosmos DB for the first time
 
-Once we add the connection information to the App Service Settings, the Web API should be able to connect to the database. We can check that by calling the **Jobs API endpoint** at `/api/jobs` to fetch a list of all Jobs from the databse.
+Once we add the connection information to the App Service Settings, the Web API should be able to connect to the database. We can check that by calling the **Jobs API endpoint** at `/api/job` to fetch a list of all Jobs from the databse.
 
 ![Empty List Of Jobs](Assets/EmptyListOfJobs.png)
 
