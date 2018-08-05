@@ -30,7 +30,7 @@ namespace ContosoMaintenance.WebAPI.Controllers
             jobRepository.Initialize(
                 configuration["AzureCosmosDb:Endpoint"],
                 configuration["AzureCosmosDb:Key"],
-                Constants.DatabaseId]);
+                Constants.DatabaseId);
         }
 
         /// <summary>

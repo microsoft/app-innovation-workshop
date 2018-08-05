@@ -61,8 +61,7 @@ As you might have seen, the connection details to the Cosmos DB are not hard-cod
 ```json
 "AzureCosmosDb": {
     "Endpoint": "",
-    "Key": "",
-    "DatabaseId": ""
+    "Key": ""
 }
 ```
 
@@ -80,8 +79,6 @@ Add the settings in the format `Settings:Key` and take the values from the ***Ke
 
 - **`AzureCosmosDb:Endpoint`:** Uri of the Cosmos DB instance
 - **`AzureCosmosDb:Key`:** Primary Key of the Cosmos DB instance
-
-The `DatabaseId` is the top-level domain of the collections that will be used (or generated) by the backend. A single Cosmos DB instance can consist of multiple databases. At the moment, we do not have any databases but the backend code will use this Key to create one.
 
 ### 1.4 Generate data
 
@@ -217,9 +214,7 @@ Similar to the Cosmos DB configuration above, the Web API backend project also m
 ```json
 "AzureStorage": {
     "StorageAccountName": "",
-    "Key": "",
-    "PhotosBlobContainerName": "",
-    "QueueName": ""
+    "Key": ""
 }
 ```
 
