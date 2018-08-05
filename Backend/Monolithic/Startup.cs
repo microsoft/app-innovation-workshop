@@ -2,6 +2,7 @@
 using System.IO;
 using System.Reflection;
 using System.Threading.Tasks;
+using ContosoMaintenance.WebAPI.Helpers;
 using ContosoMaintenance.WebAPI.Services;
 using ContosoMaintenance.WebAPI.Services.BlobStorage;
 using ContosoMaintenance.WebAPI.Services.StorageQueue;
@@ -38,7 +39,7 @@ namespace ContosoMaintenance.WebAPI
                     return new AzureBlobStorage(new AzureBlobSettings(
                         Configuration["AzureStorage:StorageAccountName"],
                         Configuration["AzureStorage:Key"],
-                        Configuration["AzureStorage:PhotosBlobContainerName"]));
+                        Constants.PhotosBlobContainerName));
                 }
                 catch (ArgumentException)
                 {
@@ -52,7 +53,7 @@ namespace ContosoMaintenance.WebAPI
                 return new AzureStorageQueue(new AzureStorageQueueSettings(
                     Configuration["AzureStorage:StorageAccountName"],
                     Configuration["AzureStorage:Key"],
-                    Configuration["AzureStorage:QueueName"]));
+                    Constants.QueueName));
             });
 
             // Add Azure Active Directory B2C Authentication
