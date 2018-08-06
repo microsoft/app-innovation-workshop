@@ -6,6 +6,7 @@ using System.Xml.Linq;
 using Microsoft.Extensions.Configuration;
 using Microsoft.AspNetCore.Authorization;
 using System.Security.Claims;
+using ContosoMaintenance.WebAPI.Helpers;
 
 namespace ContosoMaintenance.WebAPI.Controllers
 {
@@ -21,7 +22,7 @@ namespace ContosoMaintenance.WebAPI.Controllers
                 DBRepository.Initialize(
                     configuration["AzureCosmosDb:Endpoint"],
                     configuration["AzureCosmosDb:Key"],
-                    configuration["AzureCosmosDb:DatabaseId"]);
+                    Constants.DatabaseId);
             }
             catch (Exception ex)
             {
