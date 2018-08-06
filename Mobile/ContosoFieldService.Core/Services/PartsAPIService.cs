@@ -3,12 +3,10 @@ using System.Threading.Tasks;
 using ContosoFieldService.Models;
 using Refit;
 using ContosoFieldService.Helpers;
-using Plugin.Connectivity;
 using MonkeyCache.FileStore;
 using System.Linq;
 using System;
-using Microsoft.AppCenter.Crashes;
-
+using Xamarin.Essentials;
 namespace ContosoFieldService.Services
 {
     public interface IPartsServiceAPI
@@ -44,7 +42,7 @@ namespace ContosoFieldService.Services
         public async Task<(ResponseCode code, List<Part> result)> GetPartsAsync(bool force = false)
         {
             // Handle online/offline scenario
-            if (!CrossConnectivity.Current.IsConnected && Barrel.Current.Exists(CacheKey))
+            if (Connectivity.NetworkAccess != NetworkAccess.Internet && Barrel.Current.Exists(CacheKey))
             {
                 // If no connectivity, we'll return the cached list.
                 return (ResponseCode.NotConnected, Barrel.Current.Get<List<Part>>(CacheKey));
