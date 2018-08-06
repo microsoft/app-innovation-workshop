@@ -15,7 +15,7 @@ namespace ContosoMaintenance.Functions
 {
     public static class ResizeImage
     {
-        private static HttpClient httpClient = new HttpClient();
+        static readonly HttpClient httpClient = new HttpClient();
 
         [FunctionName("ProcessPhotosQueue")]
         public static async Task Run(
@@ -61,10 +61,10 @@ namespace ContosoMaintenance.Functions
         private static async Task CropImageSmartAsync(byte[] inputImage, Stream outputImage, int width, int height)
         {
             // Add Microsoft Azure Cognitive Service Token to HttpClient header
-            httpClient.DefaultRequestHeaders.Add("Ocp-Apim-Subscription-Key", Environment.GetEnvironmentVariable("Ocp-Apim-Subscription-Key"));
+            httpClient.DefaultRequestHeaders.Add("Ocp-Apim-Subscription-Key", Environment.GetEnvironmentVariable("CognitiveServicesKey"));
 
             // Create Cognitive Service request url with parameters
-            var url = $"https://northeurope.api.cognitive.microsoft.com/vision/v1.0/generateThumbnail?width={width}&height={height}&smartCropping=true";
+            var url = $"{Environment.GetEnvironmentVariable("CognitiveServicesEndpoint")}/generateThumbnail?width={width}&height={height}&smartCropping=true";
 
             using (ByteArrayContent content = new ByteArrayContent(inputImage))
             {
