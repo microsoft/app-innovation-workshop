@@ -4,9 +4,10 @@ using System.Windows.Input;
 using ContosoFieldService.Models;
 using FreshMvvm;
 using Humanizer;
-using Plugin.Share;
-using Plugin.Share.Abstractions;
 using Xamarin.Forms;
+using System.Windows.Input;
+using ContosoFieldService.ViewModels.Jobs;
+using Xamarin.Essentials;
 
 namespace ContosoFieldService.ViewModels
 {
@@ -63,14 +64,11 @@ namespace ContosoFieldService.ViewModels
             {
                 return new Command(async () =>
                 {
-                    if (!CrossShare.IsSupported)
-                        return;
-
-                    await CrossShare.Current.Share(new ShareMessage
+                    await DataTransfer.RequestAsync(new ShareTextRequest
                     {
                         Title = selectedJob.Name,
                         Text = selectedJob.Details,
-                        Url = $"{Helpers.Constants.BaseUrl}job/{selectedJob.Id}"
+                        Uri = $"{Helpers.Constants.BaseUrl}job/{selectedJob.Id}"
                     });
                 });
             }
