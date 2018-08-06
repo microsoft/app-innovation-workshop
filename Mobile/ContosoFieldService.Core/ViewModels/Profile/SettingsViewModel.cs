@@ -3,7 +3,7 @@ using System.Collections.ObjectModel;
 using ContosoFieldService.Models;
 using FreshMvvm;
 using Microsoft.AppCenter.Push;
-using Plugin.VersionTracking;
+using Xamarin.Essentials;
 using Xamarin.Forms;
 
 namespace ContosoFieldService.ViewModels
@@ -144,7 +144,7 @@ namespace ContosoFieldService.ViewModels
 
         public SettingsViewModel()
         {
-            Version = $"{CrossVersionTracking.Current.CurrentVersion} (Build {CrossVersionTracking.Current.CurrentBuild})";
+            Version = $"{VersionTracking.CurrentVersion} (Build {VersionTracking.CurrentBuild})";
 
             ThirdPartyLibraries = new ObservableCollection<ThirdPartyLibrary>();
             ThirdPartyLibraries.Add(new ThirdPartyLibrary("CarouselView", "Alex Rainman", "https://github.com/alexrainman/CarouselView"));
@@ -165,7 +165,7 @@ namespace ContosoFieldService.ViewModels
         public override void Init(object initData)
         {
             base.Init(initData);
-            Version = $"{CrossVersionTracking.Current.CurrentVersion} (Build {CrossVersionTracking.Current.CurrentBuild})";
+            Version = $"{VersionTracking.CurrentVersion} (Build {VersionTracking.CurrentBuild})";
         }
 
         protected override async void ViewIsAppearing(object sender, EventArgs e)

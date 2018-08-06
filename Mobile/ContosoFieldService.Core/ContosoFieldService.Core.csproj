@@ -21,38 +21,32 @@
     <DefineConstants>TRACE;RELEASE;NETSTANDARD2_0</DefineConstants>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="Xam.Plugins.Settings" Version="3.1.1" />
-    <PackageReference Include="SkiaSharp.Svg" Version="1.59.1" />
     <PackageReference Include="Refractored.MvvmHelpers" Version="1.3.0" />
-    <PackageReference Include="Humanizer" Version="2.2.0" />
     <PackageReference Include="Corcav.Behaviors" Version="2.3.7" />
-    <PackageReference Include="Xam.Plugin.Geolocator" Version="4.2.0" />
-    <PackageReference Include="Polly" Version="5.8.0" />
-    <PackageReference Include="Plugin.VersionTracking" Version="2.1.0" />
     <PackageReference Include="CarouselView.FormsPlugin" Version="5.2.0" />
     <PackageReference Include="FreshMvvm" Version="2.2.4" />
-    <PackageReference Include="refit" Version="4.3.0" />
-    <PackageReference Include="Microsoft.AppCenter.Analytics" Version="1.5.0" />
-    <PackageReference Include="Microsoft.AppCenter.Crashes" Version="1.5.0" />
-    <PackageReference Include="Microsoft.AppCenter.Push" Version="1.5.0" />
-    <PackageReference Include="Microsoft.AppCenter" Version="1.5.0" />
-    <PackageReference Include="Microsoft.AppCenter.Distribute" Version="1.5.0" />
     <PackageReference Include="FormsToolkit" Version="2.0.1" />
-    <PackageReference Include="Xam.Plugin.Media" Version="3.1.3" />
-    <PackageReference Include="Xam.Plugins.Forms.ImageCircle" Version="2.0.2" />
-    <PackageReference Include="Xamarin.Forms" Version="2.5.0.280555" />
-    <PackageReference Include="Xamarin.Forms.Maps" Version="2.5.0.280555" />
-    <PackageReference Include="WindowsAzure.Storage" Version="9.1.0" />
-    <PackageReference Include="Xam.Plugin.Connectivity" Version="3.1.1" />
     <PackageReference Include="Microsoft.Azure.DocumentDB.Core" Version="1.9.1" />
-    <PackageReference Include="Microsoft.Identity.Client" Version="1.1.2-preview0008" />
-    <PackageReference Include="MonkeyCache" Version="0.1.0.1-beta" />
-    <PackageReference Include="MonkeyCache.FileStore" Version="0.1.0.1-beta" />
-    <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="5.2.1" />
-    <PackageReference Include="Plugin.Share" Version="7.1.1" />
-    <PackageReference Include="Xamarin.FFImageLoading.Forms" Version="2.3.5" />
-    <PackageReference Include="Xamarin.FFImageLoading.Transformations" Version="2.3.5" />
-    <PackageReference Include="DLToolkit.Forms.Controls.FlowListView" Version="2.0.10" />
+    <PackageReference Include="Xam.Plugin.Media" Version="4.0.1.1" />
+    <PackageReference Include="Xamarin.Essentials" Version="0.8.0-preview" />
+    <PackageReference Include="Xamarin.Forms" Version="3.1.0.637273" />
+    <PackageReference Include="Xamarin.Forms.Maps" Version="3.1.0.637273" />
+    <PackageReference Include="DLToolkit.Forms.Controls.FlowListView" Version="2.0.11" />
+    <PackageReference Include="Humanizer" Version="2.4.2" />
+    <PackageReference Include="Microsoft.AppCenter" Version="1.8.0" />
+    <PackageReference Include="Microsoft.AppCenter.Analytics" Version="1.8.0" />
+    <PackageReference Include="Microsoft.AppCenter.Crashes" Version="1.8.0" />
+    <PackageReference Include="Microsoft.AppCenter.Distribute" Version="1.8.0" />
+    <PackageReference Include="Microsoft.AppCenter.Push" Version="1.8.0" />
+    <PackageReference Include="MonkeyCache" Version="0.1.0.10-beta" />
+    <PackageReference Include="Microsoft.Identity.Client" Version="1.1.4-preview0002" />
+    <PackageReference Include="MonkeyCache.FileStore" Version="0.1.0.10-beta" />
+    <PackageReference Include="Polly" Version="6.1.0" />
+    <PackageReference Include="Refit" Version="4.6.16" />
+    <PackageReference Include="SkiaSharp.Svg" Version="1.60.0" />
+    <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="5.2.4" />
+    <PackageReference Include="Xamarin.FFImageLoading.Forms" Version="2.4.3.840" />
+    <PackageReference Include="Xamarin.FFImageLoading.Transformations" Version="2.4.3.840" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Pages\" />

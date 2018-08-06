@@ -3,13 +3,14 @@ using Android.App;
 using Android.Content;
 using Android.Content.PM;
 using Android.OS;
+using Android.Runtime;
 using CarouselView.FormsPlugin.Android;
 using ContosoFieldService.Services;
 using FFImageLoading.Forms.Droid;
 using Firebase;
 using Microsoft.AppCenter.Push;
 using Microsoft.Identity.Client;
-using Plugin.Permissions;
+using Plugin.CurrentActivity;
 using Xamarin;
 using Xamarin.Forms.Platform.Android.AppLinks;
 
@@ -35,12 +36,12 @@ namespace ContosoFieldService.Droid
             base.OnCreate(bundle);
 
             global::Xamarin.Forms.Forms.Init(this, bundle);
+            CrossCurrentActivity.Current.Init(this, bundle);
             CachedImageRenderer.Init(false);
-            //ImageCircleRenderer.Init();
             //AnimationViewRenderer.Init();
             FormsMaps.Init(this, bundle);
             CarouselViewRenderer.Init();
-            Plugin.CurrentActivity.CrossCurrentActivity.Current.Activity = this;
+            Xamarin.Essentials.Platform.Init(this, bundle);
 
             // Configure App Center Push
             Push.SetSenderId("597659151602");
@@ -55,9 +56,11 @@ namespace ContosoFieldService.Droid
             LoadApplication(new App());
         }
 
-        public override void OnRequestPermissionsResult(int requestCode, string[] permissions, Permission[] grantResults)
+        public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)
         {
-            PermissionsImplementation.Current.OnRequestPermissionsResult(requestCode, permissions, grantResults);
+            Xamarin.Essentials.Platform.OnRequestPermissionsResult(requestCode, permissions, grantResults);
+
+            base.OnRequestPermissionsResult(requestCode, permissions, grantResults);
         }
 
         protected override void OnActivityResult(int requestCode, Result resultCode, Intent data)

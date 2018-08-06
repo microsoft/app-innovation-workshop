@@ -5,8 +5,6 @@ using CarouselView.FormsPlugin.iOS;
 using FFImageLoading.Forms.Touch;
 using FFImageLoading.Transformations;
 using Foundation;
-using ImageCircle.Forms.Plugin.iOS;
-using MikeCodesDotNET.iOS;
 using UIKit;
 using Xamarin;
 using Xamarin.Forms;
@@ -23,7 +21,6 @@ namespace ContosoFieldService.iOS
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
             global::Xamarin.Forms.Forms.Init();
-            ImageCircleRenderer.Init();
             //AnimationViewRenderer.Init();
             FormsMaps.Init();
             CachedImageRenderer.Init();
