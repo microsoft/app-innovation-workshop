@@ -5,7 +5,7 @@ using ContosoFieldService.ViewModels;
 
 namespace ContosoFieldService.Pages
 {
-    [XamlCompilation(XamlCompilationOptions.Skip)]
+    [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class JobDetailsPage : ContentPage
     {
         public JobDetailsPage()
