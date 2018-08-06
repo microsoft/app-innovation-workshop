@@ -140,7 +140,8 @@ Of course, all these Trigger, Input and Output [Bindings](https://docs.microsoft
         "AzureWebJobsStorage": "<Storage Connection String>",
         "AzureWebJobsDashboard": "<Storage Connection String>",
         "CosmosDb": "<CosmosDB Connection String>",
-        "Ocp-Apim-Subscription-Key": "<Cognitive Services Computer Vision API Key>"
+        "CognitiveServicesEndpoint": "<Cognitive Services Computer Vision Endpoint>",
+        "CognitiveServicesKey": "<Cognitive Services Computer Vision API Key>"
     }
 }
 ```
@@ -156,7 +157,8 @@ Add the settings like the following - getting the values from the relevant secti
 - **AzureWebJobsDashboard:** *Key 1 Connection String* from the Storage Account ***Access keys*** section (should be already set)
 - **AzureWebJobsStorage:** *Key 1 Connection String* from the Storage Account ***Access keys*** section (should be already set)
 - **CosmosDB:** *Primary Connection String* from the Cosmos DB ***Keys*** section
-- **Ocp-Apim-Subscription-Key:** *Key 1* from the Cognitive Service ***Keys*** section
+- **CognitiveServicesEndpoint:** *Endpoint* from the Cognitive Service ***Overview*** section
+- **CognitiveServicesKey:** *Key 1* from the Cognitive Service ***Keys*** section
 
 Scroll up and click ***Save*** to set the Environment Variables for the Function App.
 
