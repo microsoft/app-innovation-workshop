@@ -7,6 +7,8 @@ using MonkeyCache.FileStore;
 using System.Linq;
 using System;
 using Xamarin.Essentials;
+using Microsoft.AppCenter.Crashes;
+
 namespace ContosoFieldService.Services
 {
     public interface IPartsServiceAPI

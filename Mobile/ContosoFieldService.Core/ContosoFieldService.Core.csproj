@@ -1,124 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <Project Sdk="Microsoft.NET.Sdk">
-
-  <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
-    <RootNamespace>ContosoFieldService</RootNamespace>
-  </PropertyGroup>
-
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <NoWarn>1701;1702;1705;1998;NU1701;</NoWarn>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'DebugBackend|AnyCPU' ">
-    <NoWarn>1701;1702;1705;1998;NU1701;</NoWarn>
-    <IntermediateOutputPath>obj\Debug\netstandard2.0</IntermediateOutputPath>
-    <DebugSymbols>true</DebugSymbols>
-    <Optimize>false</Optimize>
-    <DefineConstants>TRACE;DEBUG;NETSTANDARD2_0</DefineConstants>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'ReleaseBackend|AnyCPU' ">
-    <IntermediateOutputPath>obj\Release\netstandard2.0</IntermediateOutputPath>
-    <Optimize>true</Optimize>
-    <DefineConstants>TRACE;RELEASE;NETSTANDARD2_0</DefineConstants>
-  </PropertyGroup>
-  <ItemGroup>
-    <PackageReference Include="Refractored.MvvmHelpers" Version="1.3.0" />
-    <PackageReference Include="Corcav.Behaviors" Version="2.3.7" />
-    <PackageReference Include="CarouselView.FormsPlugin" Version="5.2.0" />
-    <PackageReference Include="FreshMvvm" Version="2.2.4" />
-    <PackageReference Include="FormsToolkit" Version="2.0.1" />
-    <PackageReference Include="Microsoft.Azure.DocumentDB.Core" Version="1.9.1" />
-    <PackageReference Include="Xam.Plugin.Media" Version="4.0.1.1" />
-    <PackageReference Include="Xamarin.Essentials" Version="0.8.0-preview" />
-    <PackageReference Include="Xamarin.Forms" Version="3.1.0.637273" />
-    <PackageReference Include="Xamarin.Forms.Maps" Version="3.1.0.637273" />
-    <PackageReference Include="DLToolkit.Forms.Controls.FlowListView" Version="2.0.11" />
-    <PackageReference Include="Humanizer" Version="2.4.2" />
-    <PackageReference Include="Microsoft.AppCenter" Version="1.8.0" />
-    <PackageReference Include="Microsoft.AppCenter.Analytics" Version="1.8.0" />
-    <PackageReference Include="Microsoft.AppCenter.Crashes" Version="1.8.0" />
-    <PackageReference Include="Microsoft.AppCenter.Distribute" Version="1.8.0" />
-    <PackageReference Include="Microsoft.AppCenter.Push" Version="1.8.0" />
-    <PackageReference Include="MonkeyCache" Version="0.1.0.10-beta" />
-    <PackageReference Include="Microsoft.Identity.Client" Version="1.1.4-preview0002" />
-    <PackageReference Include="MonkeyCache.FileStore" Version="0.1.0.10-beta" />
-    <PackageReference Include="Polly" Version="6.1.0" />
-    <PackageReference Include="Refit" Version="4.6.16" />
-    <PackageReference Include="SkiaSharp.Svg" Version="1.60.0" />
-    <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="5.2.4" />
-    <PackageReference Include="Xamarin.FFImageLoading.Forms" Version="2.4.3.840" />
-    <PackageReference Include="Xamarin.FFImageLoading.Transformations" Version="2.4.3.840" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Pages\" />
-    <Folder Include="ViewModels\" />
-    <Folder Include="Helpers\" />
-    <Folder Include="Resources\" />
-    <Folder Include="Models\" />
-    <Folder Include="Services\" />
-    <Folder Include="Pages\Jobs\" />
-    <Folder Include="ViewModels\Jobs\" />
-    <Folder Include="ViewModels\Android\" />
-    <Folder Include="Pages\Android\" />
-    <Folder Include="Pages\Profile\" />
-    <Folder Include="Abstractions\" />
-    <Folder Include="Pages\Parts\" />
-    <Folder Include="Converters\" />
-    <Folder Include="Themes\" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Remove="App.xaml" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="App.xaml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Condition=" '$(EnableDefaultCompileItems)' == 'true' " Update="Pages\Jobs\CreateNewJobPage.xaml.cs">
-      <DependentUpon>..\Pages\CreateNewJobPage.xaml</DependentUpon>
-    </Compile>
-    <Compile Condition=" '$(EnableDefaultCompileItems)' == 'true' " Update="Pages\Jobs\JobsPage.xaml.cs">
-      <DependentUpon>..\Pages\JobsPage.xaml</DependentUpon>
-    </Compile>
-    <Compile Condition=" '$(EnableDefaultCompileItems)' == 'true' " Update="Pages\Jobs\JobDetailsPage.xaml.cs">
-      <DependentUpon>..\Pages\JobDetailsPage.xaml</DependentUpon>
-    </Compile>
-    <Compile Condition=" '$(EnableDefaultCompileItems)' == 'true' " Update="Pages\Me\BotPage.xaml.cs">
-      <DependentUpon>..\Pages\BotPage.xaml</DependentUpon>
-    </Compile>
-    <Compile Condition=" '$(EnableDefaultCompileItems)' == 'true' " Update="Pages\Me\ProfilePage.xaml.cs">
-      <DependentUpon>..\Pages\ProfilePage.xaml</DependentUpon>
-    </Compile>
-    <Compile Condition=" '$(EnableDefaultCompileItems)' == 'true' " Update="Pages\Me\SettingsPage.xaml.cs">
-      <DependentUpon>..\Pages\SettingsPage.xaml</DependentUpon>
-    </Compile>
-    <Compile Condition=" '$(EnableDefaultCompileItems)' == 'true' " Update="Pages\Parts\PartDetailPage.xaml.cs">
-      <DependentUpon>PartDetailsPage.xaml</DependentUpon>
-    </Compile>
-    <Compile Condition=" '$(EnableDefaultCompileItems)' == 'true' " Update="Pages\Profile\BotPage.xaml.cs">
-      <DependentUpon>BotPage.xaml</DependentUpon>
-    </Compile>
-    <Compile Condition=" '$(EnableDefaultCompileItems)' == 'true' " Update="Pages\Profile\ProfilePage.xaml.cs">
-      <DependentUpon>ProfilePage.xaml</DependentUpon>
-    </Compile>
-    <Compile Condition=" '$(EnableDefaultCompileItems)' == 'true' " Update="Pages\Profile\SettingsPage.xaml.cs">
-      <DependentUpon>SettingsPage.xaml</DependentUpon>
-    </Compile>
-    <Compile Update="Themes\LightTheme.xaml.cs">
-      <DependentUpon>Light.xaml</DependentUpon>
-    </Compile>
-    <Compile Update="Themes\DarkTheme.xaml.cs">
-      <DependentUpon>Dark.xaml</DependentUpon>
-    </Compile>
-    <Compile Update="Themes\Dark.xaml.cs">
-      <DependentUpon>Dark.xaml</DependentUpon>
-    </Compile>
-    <Compile Update="Themes\Light.xaml.cs">
-      <DependentUpon>Light.xaml</DependentUpon>
-    </Compile>
-    <Compile Condition=" '$(EnableDefaultCompileItems)' == 'true' " Update="Themes\Default.xaml.cs">
-      <DependentUpon>Base.xaml</DependentUpon>
-    </Compile>
-    <Compile Condition=" '$(EnableDefaultCompileItems)' == 'true' " Update="Themes\Base.xaml.cs">
-      <DependentUpon>Base.xaml</DependentUpon>
-    </Compile>
-  </ItemGroup>
+    <PropertyGroup>
+        <TargetFramework>netstandard2.0</TargetFramework>
+        <RootNamespace>ContosoFieldService</RootNamespace>
+    </PropertyGroup>
+    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+        <NoWarn>1701;1702;1705;1998;NU1701;</NoWarn>
+    </PropertyGroup>
+    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'DebugBackend|AnyCPU' ">
+        <NoWarn>1701;1702;1705;1998;NU1701;</NoWarn>
+        <IntermediateOutputPath>obj\Debug\netstandard2.0</IntermediateOutputPath>
+        <DebugSymbols>true</DebugSymbols>
+        <Optimize>false</Optimize>
+        <DefineConstants>TRACE;DEBUG;NETSTANDARD2_0</DefineConstants>
+    </PropertyGroup>
+    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'ReleaseBackend|AnyCPU' ">
+        <IntermediateOutputPath>obj\Release\netstandard2.0</IntermediateOutputPath>
+        <Optimize>true</Optimize>
+        <DefineConstants>TRACE;RELEASE;NETSTANDARD2_0</DefineConstants>
+    </PropertyGroup>
+    <ItemGroup>
+        <PackageReference Include="Refractored.MvvmHelpers" Version="1.3.0" />
+        <PackageReference Include="Corcav.Behaviors" Version="2.3.7" />
+        <PackageReference Include="CarouselView.FormsPlugin" Version="5.2.0" />
+        <PackageReference Include="FreshMvvm" Version="2.2.4" />
+        <PackageReference Include="FormsToolkit" Version="2.0.1" />
+        <PackageReference Include="Microsoft.Azure.DocumentDB.Core" Version="1.9.1" />
+        <PackageReference Include="Xamarin.Essentials" Version="0.9.1-preview" />
+        <PackageReference Include="DLToolkit.Forms.Controls.FlowListView" Version="2.0.11" />
+        <PackageReference Include="Humanizer" Version="2.4.2" />
+        <PackageReference Include="Microsoft.AppCenter" Version="1.8.0" />
+        <PackageReference Include="Microsoft.AppCenter.Analytics" Version="1.8.0" />
+        <PackageReference Include="Microsoft.AppCenter.Crashes" Version="1.8.0" />
+        <PackageReference Include="Microsoft.AppCenter.Distribute" Version="1.8.0" />
+        <PackageReference Include="Microsoft.AppCenter.Push" Version="1.8.0" />
+        <PackageReference Include="MonkeyCache" Version="0.1.0.10-beta" />
+        <PackageReference Include="Microsoft.Identity.Client" Version="1.1.4-preview0002" />
+        <PackageReference Include="MonkeyCache.FileStore" Version="0.1.0.10-beta" />
+        <PackageReference Include="Polly" Version="6.1.0" />
+        <PackageReference Include="SkiaSharp.Svg" Version="1.60.0" />
+        <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="5.2.4" />
+        <PackageReference Include="Xamarin.FFImageLoading.Forms" Version="2.4.3.840" />
+        <PackageReference Include="Xamarin.FFImageLoading.Transformations" Version="2.4.3.840" />
+        <PackageReference Include="Xamarin.Forms" Version="3.1.0.697729" />
+        <PackageReference Include="Xamarin.Forms.Maps" Version="3.1.0.697729" />
+        <PackageReference Include="Refit" Version="4.6.30" />
+        <PackageReference Include="Xam.Plugin.Media" Version="3.1.3" />
+    </ItemGroup>
 </Project>
