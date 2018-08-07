@@ -10,6 +10,8 @@ using Refit;
 using ContosoFieldService.Helpers;
 using MonkeyCache.FileStore;
 using Xamarin.Essentials;
+using Microsoft.AppCenter.Crashes;
+
 namespace ContosoFieldService.Services
 {
     public interface IJobServiceAPI

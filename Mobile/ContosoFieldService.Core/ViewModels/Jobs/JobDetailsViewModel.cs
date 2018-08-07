@@ -1,12 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Windows.Input;
+﻿using System.Collections.Generic;
 using ContosoFieldService.Models;
-using FreshMvvm;
 using Humanizer;
 using Xamarin.Forms;
-using System.Windows.Input;
-using ContosoFieldService.ViewModels.Jobs;
 using Xamarin.Essentials;
 
 namespace ContosoFieldService.ViewModels
