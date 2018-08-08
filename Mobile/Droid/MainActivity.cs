@@ -36,7 +36,7 @@ namespace ContosoFieldService.Droid
             base.OnCreate(bundle);
 
             global::Xamarin.Forms.Forms.Init(this, bundle);
-            CrossCurrentActivity.Current.Init(this, bundle);
+            //CrossCurrentActivity.Current.Init(this, bundle);
             CachedImageRenderer.Init(false);
             //AnimationViewRenderer.Init();
             FormsMaps.Init(this, bundle);
