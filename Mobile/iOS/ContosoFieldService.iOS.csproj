@@ -129,12 +129,6 @@
         <Reference Include="Corcav.Behaviors">
             <HintPath>..\..\packages\Corcav.Behaviors.2.3.7\lib\dotnet\Corcav.Behaviors.dll</HintPath>
         </Reference>
-        <Reference Include="Plugin.VersionTracking.Abstractions">
-            <HintPath>..\..\packages\Plugin.VersionTracking.2.1.0\lib\Xamarin.iOS10\Plugin.VersionTracking.Abstractions.dll</HintPath>
-        </Reference>
-        <Reference Include="Plugin.VersionTracking">
-            <HintPath>..\..\packages\Plugin.VersionTracking.2.1.0\lib\Xamarin.iOS10\Plugin.VersionTracking.dll</HintPath>
-        </Reference>
         <Reference Include="CarouselView.FormsPlugin.Abstractions">
             <HintPath>..\..\packages\CarouselView.FormsPlugin.5.2.0\lib\Xamarin.iOS10\CarouselView.FormsPlugin.Abstractions.dll</HintPath>
         </Reference>
@@ -311,6 +305,12 @@
         </Reference>
         <Reference Include="Plugin.Media">
             <HintPath>..\..\packages\Xam.Plugin.Media.3.1.3\lib\Xamarin.iOS10\Plugin.Media.dll</HintPath>
+        </Reference>
+        <Reference Include="Plugin.VersionTracking.Abstractions">
+          <HintPath>..\..\packages\Plugin.VersionTracking.2.1.0\lib\Xamarin.iOS10\Plugin.VersionTracking.Abstractions.dll</HintPath>
+        </Reference>
+        <Reference Include="Plugin.VersionTracking">
+          <HintPath>..\..\packages\Plugin.VersionTracking.2.1.0\lib\Xamarin.iOS10\Plugin.VersionTracking.dll</HintPath>
         </Reference>
     </ItemGroup>
     <ItemGroup>
