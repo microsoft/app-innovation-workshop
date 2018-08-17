@@ -66,8 +66,7 @@ For this workshop, a B1 Basic site will be more than enough to run this project.
 
 Once you have created your app service plan and saved it, Click "Create".
  
- ![Create new App Service Plan](Assets/CreateNewAppServicePlan.png)
- 
+![Create new App Service Plan](Assets/CreateNewAppServicePlan.png)
 
 The deployment of the new service can take a few minutes, but you can watch its progress in the "Bell" notification area in the toolbar. 
 
@@ -76,20 +75,24 @@ Right now the App Service Plan doesn't contain any Apps. We will want at least o
 
  ![Create new App Service Plan](Assets/WebAPISearchResults.png)
 
-* Select 'Web App' from the list and click Create. 
-
- ![Create new App Service Plan](Assets/NewWebAppConfiguration.png)
+Select ***Web App*** from the list and click ***Create***. 
 
 We'll need to provide a unique app name, which will become part of the URL we use to navigate to the service. We should also select our subscription service, and most importantly, we'll want to run this app in the App Service Plan we just deployed. 
 
-Given that we're running our app in Platform as a Service, we don't need to worry too much about the underlying operating system. With that said, I highly recommend picking Windows as we've thoroughly tested this workshop with that configuration. 
+Given that we're running our app in Platform as a Service, we don't need to worry too much about the underlying operating system. With that said, I highly recommend picking Windows as we've thoroughly tested this workshop with that configuration.
+
+![Create new App Service Plan](Assets/NewWebAppConfiguration.png)
+
+* **App name:** myawesomestartupapi
+* **Resource group:** *choose the one you created earlier*
+* **OS:** Windows
+* **App Service plan/Location:** *choose the one you created earlier*
+* **Application Insights:** On
+* **Application Insights Location:** *choose the closest one*
 
 With all the configuration options set, hit "Create" and hold tight. Once the deployment has finished, we should be able to navigate to our app through the browser and see a generic Azure landing page. 
 
-Because my app name was: MyAwesomeStartupAPI
-The unique URL would be: https://myawesomestartupapi.azurewebsites.net
-
-You should see something similar to the image below: 
+Because my app name was: "yAwesomeStartupAPI", the unique URL would be: `https://myawesomestartupapi.azurewebsites.net`. You should see something similar to the image below, when browsing it.
 
  ![Create new App Service Plan](Assets/AppServiceDeployed.png)
 
