@@ -69,6 +69,8 @@ Add a *Function App* to your solution using the following properties.
 - **Hosting Plan:** Consumption Plan
 - **Location:** Same as your Web App
 - **Storage:** Use existing (same Storage Account as created for Blob Storage)
+- **Application Insights:** On
+- **Application Insights Location:** Pick closest (same as App Service)
 
 Click the ***Create*** button and wait until Azure provisioned your Function App.
 
@@ -190,9 +192,9 @@ Follow the process of selecting a Subscription and Function App to publish to, c
 
 ### 2.7 Test your Azure Function
 
-Back in the [Azure Portal](https://portal.azure.com), we can monitor how our Azure Function behaves. For this, select the ***Monitor*** tab beneth your Function.
+Back in the [Azure Portal](https://portal.azure.com), we can monitor how our Azure Function behaves. For this, select the ***Monitor*** tab beneath your Function.
 
-For each execution, we can check *Status* and *Execution Time* as well as additional details like *Logs* and *Parameters* when clickinng on  a single execution.
+For each execution, we can check *Status* and *Execution Time* as well as additional details like *Logs* when clicking on a single execution.
 
 ![Check Function Success in the Azure Portal](Assets/CheckFunctionSuccess.png)
 
@@ -200,6 +202,10 @@ To check if the Function is runninng as expected, we can trigger it by uploading
 
 Once the photo has been uploaded, we should see a successful execution of the Azure Function in the Portal and two new resized pictures in the Blob Storage.
 
----
+# Additional Resouces   
+
+- [Monitoring Azure Functions with Application Insights](https://docs.microsoft.com/en-us/azure/azure-functions/functions-monitoring)
+
+
 # Next Steps 
 [Mobile Options](../08%20Mobile%20Overview/README.md)
