@@ -202,6 +202,10 @@ To check if the Function is runninng as expected, we can trigger it by uploading
 
 Once the photo has been uploaded, we should see a successful execution of the Azure Function in the Portal and two new resized pictures in the Blob Storage.
 
----
+# Additional Resouces   
+
+- [Monitoring Azure Functions with Application Insights](https://docs.microsoft.com/en-us/azure/azure-functions/functions-monitoring)
+
+
 # Next Steps 
 [Mobile Options](../08%20Mobile%20Overview/README.md)
