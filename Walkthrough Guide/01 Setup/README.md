@@ -13,7 +13,7 @@ Please bring your own **Windows or Mac** laptop. To participate in this workshop
 - [Visual Studio Code](https://code.visualstudio.com/)
   - [Azure App Service Extension](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-azureappservice)
   - [Azure Functions Extension](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-azurefunctions)
-- [.NET Core 2.1 SDK](https://www.microsoft.com/net/download/windows/build) (choose x64 for Windows)
+- [.NET Core 2.1 SDK](https://www.microsoft.com/net/download/windows/build) (choose x64 Installer on Windows)
 - [Postman](https://www.getpostman.com/)
 
 ### Optional
