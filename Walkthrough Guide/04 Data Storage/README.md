@@ -67,7 +67,7 @@ As you might have seen, the connection details to the Cosmos DB are not hard-cod
 
 [View in project](/Backend/Monolithic/appsettings.json#L21-L24)
 
-As these settings are empty, let's set them in the Web Api's environment variables!
+As these settings are empty, let's set them in the Web API's environment variables!
 
 #### 1.3.2 Add Connection Information to Environment Variables
 
@@ -75,10 +75,10 @@ Navigate to the Web API App Service in the Azure Portal and open the ***Applicat
 
 ![Add App Service App Settings](Assets/AddAppServiceAppSettings.png)
 
-Add the settings in the format `Settings:Key` and take the values from the ***Keys*** section of your Cosmos DB instance. Hit ***Save*** at the top of the page once you are set.
+Add the settings in the format `Settings__Key` (two underscores) and take the values from the ***Keys*** section of your Cosmos DB instance. Hit ***Save*** at the top of the page once you are set.
 
-- **`AzureCosmosDb:Endpoint`:** Uri of the Cosmos DB instance
-- **`AzureCosmosDb:Key`:** Primary Key of the Cosmos DB instance
+- **`AzureCosmosDb__Endpoint`:** Uri of the Cosmos DB instance
+- **`AzureCosmosDb__Key`:** Primary Key of the Cosmos DB instance
 
 ### 1.4 Generate data
 
@@ -224,12 +224,10 @@ These environment variables can also be set in the ***Application Settings*** se
 
 ![Add Azure Storage to Settings](Assets/AddStorageAppSettings.png)
 
-Add the settings in the format `Settings:Key` and take the values from your Storage Account's ***Access Keys*** section.
+Add the settings in the format `Settings__Key` (two underscores) and take the values from your Storage Account's ***Access Keys*** section.
 
-- **`AzureStorage:StorageAccountName`:** Storage Account name (e.g. myawesomestartupstorage)
-- **`AzureStorage:Key`:** Key 1 key from the ***Access Keys*** section
-- **`AzureStorage:PhotosBlobContainerName`:** images-large
-- **`AzureStorage:QueueName`:** processphotos
+- **`AzureStorage__StorageAccountName`:** Storage Account name (e.g. myawesomestartupstorage)
+- **`AzureStorage__Key`:** Key 1 key from the ***Access Keys*** section
 
 Once you click the ***Save*** button at the top of the page, the backend will choose this Storage Account and the  `images-large` blob container to upload photos.
 
