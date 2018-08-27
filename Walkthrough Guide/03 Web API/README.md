@@ -150,9 +150,9 @@ The output should contain your image.
 
 ![List of local Docker images](Assets/ListDockerImages.png)
 
-To deploy that image into your App Service now, you need to publish it to a Container Registry (like Dockerhub or Azure Container Registry), sothat your App Service can pull it from there. For the ease of use, we will use an image, that we have already published for you now. But if you are interested, on how to publish your own image, you can read detials about that here: [Push images to Docker Cloud](https://docs.docker.com/docker-cloud/builds/push-images/).
+To deploy that image into your App Service now, you need to publish it to a Container Registry (like Dockerhub or Azure Container Registry), sothat your App Service can pull it from there. For the ease of use, we will use an [image, that we have already published](https://hub.docker.com/r/robinmanuelthiel/contosomaintenance-monolith/) for you now. But if you are interested, on how to publish your own image, you can read detials about that here: [Push images to Docker Cloud](https://docs.docker.com/docker-cloud/builds/push-images/).
 
-Now open the [Azure Portal](https://portal.azure.com) and navigate to your Docker based App Service, that you have created earlier. When you scroll down to the ***Container Settings*** on the left side, you can find a configuration for public images from Docker Hub. Here we can enter the name of our (or your own) image like `robinmanuelthiel/contosomaintenance-monolith` and ***Save*** the settings.
+Now open the [Azure Portal](https://portal.azure.com) and navigate to your Docker based App Service, that you have created earlier. When you scroll down to the ***Container Settings*** on the left side, you can find a configuration for public images from Docker Hub. Here we can enter the name of our (or your own) image like [`robinmanuelthiel/contosomaintenance-monolith`](https://hub.docker.com/r/robinmanuelthiel/contosomaintenance-monolith/) and ***Save*** the settings.
 
 ![Select Container in App Service](Assets/SelectContainerAppService.png)
 
