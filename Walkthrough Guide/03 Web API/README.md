@@ -168,35 +168,8 @@ To test if the deployment is work and the app is accepting HTTP requests correct
 
 This shows that the backend is responding as expected! Before we move onto deploying storage services, you might want to read some tips and tricks for running App Services like a pro.
 
-### 1.6 Application Settings
-Although not entirely best pratice, for ease of deployment and learning, we're going to use Application Settings to store API Keys and other configuration info. It's worth configuring the Application Settings Keys ahead of time to avoid mistyping later on in the tutorials. Below is an exhaustive list of settings used in the Web API: 
-
-**Cosmos DB** 
-- **`AzureCosmosDb:DatabaseId`** 
-- **`AzureCosmosDb:Endpoint`** 
-- **`AzureCosmosDb:Key`** 
-
-**Azure Storage**
-- **`AzureStorage:Key`** 
-- **`AzureStorage:PhotosBlobContainerName`** 
-- **`AzureStorage:QueueName`** 
-- **`AzureStorage:StorageAccountName`** 
-
-**Azure Search**
-- **`AzureSearch:AzureSearchApiKey`** 
-- **`AzureSearch:AzureSearchServiceName`** 
-
-**Active Directory B2C**
-- **`ActiveDirectory:ApplicationId`** 
-- **`ActiveDirectory:SignUpSignInPolicy`** 
-- **`ActiveDirectory:Tenant`** 
-
-**Aplication Insights**
-- **`ApplicationInsights:InstrumentationKey`** 
-
 ## Next Steps
 [Data Storage](../04%20Data%20Storage/README.md)
-
 
 &nbsp;
 &nbsp;
