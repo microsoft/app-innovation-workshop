@@ -63,6 +63,8 @@ namespace ContosoFieldService
                 navContainer.AddPage<JobsViewModel>("Jobs");
                 navContainer.AddPage<PartsViewModel>("Parts");
                 navContainer.AddPage<ProfileViewModel>("Me");
+                navContainer.AddPage<BotViewModel>("Bot");
+                navContainer.AddPage<SettingsViewModel>("Settings");
                 MainPage = navContainer;
             }
         }

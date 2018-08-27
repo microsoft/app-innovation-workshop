@@ -17,60 +17,72 @@
         </ResourceDictionary>
     </ContentPage.Resources>
 
-    <StackLayout Spacing="0">
-        <StackLayout 
-            Orientation="Horizontal" 
-            BackgroundColor="{StaticResource AccentColorDark}"
-            HeightRequest="160">   
-            
-            <Label 
-                Style="{StaticResource LargeLabelStyle}"
-                VerticalOptions="CenterAndExpand"
-                VerticalTextAlignment="Center"
-                HorizontalOptions="Center"
-                HorizontalTextAlignment="Center"
-                Margin="{StaticResource DefaultThickness}"
-                TextColor="White"
-                Text="Contoso Maintenance"/>
-        </StackLayout>
+    
+    <ListView 
+        x:Name="listView"
+        HasUnevenRows="true"
+        ItemsSource="{Binding MenuItems}" 
+        SelectedItem="{Binding SelectedItem}"
+        BackgroundColor="Transparent"
+        SeparatorVisibility="None">
+        <behaviors:Interaction.Behaviors>
+            <behaviors:BehaviorCollection>
+                <behaviors:EventToCommand EventName="ItemSelected" Command="{Binding NavigateCommand}" />
+            </behaviors:BehaviorCollection>
+        </behaviors:Interaction.Behaviors>
         
-        <ListView 
-            x:Name="listView"
-            HasUnevenRows="true"
-            ItemsSource="{Binding MenuItems}" 
-            SelectedItem="{Binding SelectedItem}"
-            BackgroundColor="Transparent"
-            SeparatorVisibility="None">
-            <behaviors:Interaction.Behaviors>
-                <behaviors:BehaviorCollection>
-                    <behaviors:EventToCommand EventName="ItemSelected" Command="{Binding NavigateCommand}" />
-                </behaviors:BehaviorCollection>
-            </behaviors:Interaction.Behaviors>
+        <ListView.Header>
+            <Grid
+                BackgroundColor="{StaticResource AccentColorDark}"
+                HeightRequest="160">
+                
+                <StackLayout
+                    VerticalOptions="Center">   
+                    
+                    <Label 
+                        Style="{StaticResource LargeLabelStyle}"
+                        HorizontalOptions="Start"
+                        HorizontalTextAlignment="Start"
+                        Margin="25,0,10,0"
+                        TextColor="White"
+                        Text="Contoso Maintenance"/>
+                    <Label 
+                        Style="{StaticResource SectionHaderLabelStyle}"
+                        HorizontalOptions="Start"
+                        HorizontalTextAlignment="Start"
+                        Margin="25,0,10,0"
+                        TextColor="White"
+                        Text="Workshop Demo App" />
+                </StackLayout>
+                
+            </Grid>
             
-            <ListView.ItemTemplate>
-                <DataTemplate>
-                    <ViewCell>
-                        <StackLayout
-                            Padding="20"
-                            Orientation="Horizontal">
-                            
-                            <Image
-                                HeightRequest="20"
-                                WidthRequest="30"
-                                Source="{Binding Image}"
-                                VerticalOptions="Center" />
-                            
-                            <Label
-                                Margin="10,0,0,0"
-                                VerticalTextAlignment="Center"
-                                VerticalOptions="Center"
-                                Text="{Binding Label}"
-                                TextColor="#EEEEEE"
-                                FontSize="16" />
-                        </StackLayout>
-                    </ViewCell>
-                </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>
-    </StackLayout>
+            
+        </ListView.Header>
+        
+        <ListView.ItemTemplate>
+            <DataTemplate>
+                <ViewCell>
+                    <StackLayout
+                        Padding="20"
+                        Orientation="Horizontal">
+                        
+                        <Image
+                            HeightRequest="20"
+                            WidthRequest="30"
+                            Source="{Binding Image}"
+                            VerticalOptions="Center" />
+                        
+                        <Label
+                            Margin="10,0,0,0"
+                            VerticalTextAlignment="Center"
+                            VerticalOptions="Center"
+                            Text="{Binding Label}"
+                            TextColor="#EEEEEE"
+                            FontSize="16" />
+                    </StackLayout>
+                </ViewCell>
+            </DataTemplate>
+        </ListView.ItemTemplate>
+    </ListView>
 </ContentPage>
