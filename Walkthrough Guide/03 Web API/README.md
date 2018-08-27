@@ -2,107 +2,113 @@
 
 # App Service
 
-Azure App Service is Microsoft’s fully managed, highly scalable platform for hosting web, mobile and API apps built using .NET, Java, Ruby, Node.js, PHP, and Python.
+Azure App Service is Microsoft’s fully managed, highly scalable platform for hosting web, mobile and API apps built using .NET, Java, Ruby, Node.js, PHP, and Python or Docker containers.
 
- App Service is fully managed and allows us to set the maximum number of instances on which we want to run our backend app on. Microsoft will then manage the scaling and load balancing across multiple instances to ensure your app perform well under heavy load. Microsoft manages the underlying compute infrastructure required to run our code, as well as patching and updating the OS and Frameworks when required. 
+App Service is fully managed and allows us to set the maximum number of instances on which we want to run our backend app on. Microsoft will then manage the scaling and load balancing across multiple instances to ensure your app perform well under heavy load. Microsoft manages the underlying compute infrastructure required to run our code, as well as patching and updating the OS and Frameworks when required.
 
-Before we can deploy an App Service instance, we need to create a resource group to hold today's services. 
+## 1. Resource Group
 
-### 1.1 Resource Group
+Before we can deploy an App Service instance, we need to create a resource group to hold today's services. Resource groups can be thought of as logical folders for your Azure Services (Resources). You may wish to create separate resource groups per department, or you may want to have one resource group per project. Resource groups are great for grouping all the services associated with a solution together. During development, it means you can quickly delete all the resources in one operation!
 
-Resource groups can be thought of as containers for your Azure Services (Resources). You may wish to create separate resource groups per location, or you may want to have one resource group per project.
+In this workshop, we’ll be deploying just one resource group to manage all of our required services. When in production, it means we can see how much the services are costing us and how the resources are being used.
 
-In this workshop, we’ll be deploying just one resource group to manage all of our required services. 
+### 1.1 Create a new Resource Group
 
-Resource groups are great for grouping all the services associated with a solution together. During development, it means you can quickly delete all the resources in one operation! 
+![Create a new Resource Group](Assets/CreateResourceGroup.png)
 
-when in production, it means we can see how much the services are costing us and how the resources are being used.
+Navigate to the [portal.azure.com](portal.azure.com) and sign in with your credentials.
 
-### 1.2 Create Resource Group
-![Create new Resource Group](Assets/CreateResourceGroup.png)
-
-Navigate to the [portal.azure.com](portal.azure.com) and sign in with your MSDN credentials.
-
-1. Click 'Resource Groups' in the top-left corner.
-2. Click 'Add' to bring up configuration pane. 
-3. Supply configuration data. Keep in mind its difficult to change resource group names later. 
-4. Click 'Create' and relax. 
+1. Click ***Resource groups*** in the top-left corner.
+2. Click ***Add*** to bring up configuration pane.
+3. Supply configuration data. Keep in mind its difficult to change resource group names later.
+4. Click ***Create*** and relax.
 
 Navigate to the newly created Resource Group.
 
 ![Create new Resource Group](Assets/EmptyResourceGroup.png)
 
-### 1.3 App Service Plan
+And voilà, we are done. Now we can start to add services to our newly created Resource Group!
 
-#### 1.3.1 Overview 
-In-App Service, an app runs in an App Service plan. The App Service plan defines a set of compute resources for a web app to run. These compute resources are analogous to the server farm in conventional web hosting. One or more apps can be configured to run on the same computing resources (or in the same App Service plan).
+## 2. Create a new App Service (Web App)
 
-When you create an App Service plan in a certain region (for example, West Europe), a set of compute resources is created for that plan in that region. Whatever apps you put into this App Service plan run on these compute resources as defined by your App Service plan. Each App Service plan defines:
+Web Apps are one of the App Services, that we can deploy to Azure. They can be configured easily at the [Azure Portal](https://portal.azure.com). You can find them, by clicking the ***Create a resource*** button at the top-left corner and selecting the ***Web*** category.
 
-* **Region** (West Europe, South UK, etc.)
-* **Number of VM instances**
-* **Size of VM instances** (Small, Medium, Large)
-* **Pricing tier** (Free, Shared, Basic, Standard, Premium, PremiumV2, Isolated, Consumption)
+![Create new App Service Web App](Assets/CreateNewAppService.png)
 
-#### 1.3.2 Create App Service Plan
+### 2.1 Configure your App Service
 
-From within your new Resource Group, do the following: 
-* Click "Add" in the top bar. 
-* Search for "App Service Plan"
+As you can see in the configuration blade, we have to configure a few things, before creating a new App Service, as App Name, Subscription, Resource Group, OS and App Service Plan / Location. Let's go through all of them in detail quickly, to understand, what we are configuring here.
 
- ![Search for App Service Plan](Assets/AddNewAppServicePlan.png)
+#### App name
 
- ![Create new App Service Plan](Assets/CreateNewAppServicePlan.png)
+This is the name of your application and as you can see, the name will resolve into an web address like `yourname.azurewebsites.net`. After creation of your App Service, it weill be publically available at this address. Of course, you can also assign a custom domain to it later.
 
- Creating an App Service Plan is easy, but we have to consider where our users are? We want our services to be running as close to our users as possible as this dramatically increases performance. 
+#### Subscription
 
- ![Create new App Service Plan](Assets/ConfigureAppServicePlan.png)
+By the end of the day, someone has to pay for all these services, that we are provisioning. Behind every Azure Subscription is a payment model that takes care of our cost. One Azure Account can have multiple Subscriptions.
 
- We also need to consider how much Compute resources we think we'll need to meet demand.
- 
-  Clicking 'View all', shows all the different options we have (it's a lot!). I won't list what their differences are as their listed in the portal, but keep it mind, with the cloud we don't need to default to over-provisioning. We can scale up later if we have to! 
+#### Resource Group
 
-For this workshop, a B1 Basic site will be more than enough to run this project. More complex development projects should use something in the Standard range of pricing plans. Production apps should be set up in Standard or Premium pricing plans. 
+We have learned about the concept of Resource Groups earlier in this module. During the creation process of every Azure Resource, we can select a Resource Group, to assign it to.
 
-Once you have created your app service plan and saved it, Click "Create".
- 
-![Create new App Service Plan](Assets/CreateNewAppServicePlan.png)
+#### OS
 
-The deployment of the new service can take a few minutes, but you can watch its progress in the "Bell" notification area in the toolbar. 
+App Services, can be based on Windows, Linux or Docker as their core technology. This becomes important, when taking a look at the programming framework, that we are using for the application's logic itself. While .NET Framework for example only runs on Windows, Node.js is more performant on a Linux host. If we want to provide a Docker container instead of deploying our application directly to the App Service, we can do that as well.
 
-### 1.4 Adding an App to our App Service Plan
-Right now the App Service Plan doesn't contain any Apps. We will want at least one app for our ASP.NET Core 2.0 Web API service. To create this, let's navigate back to the Resource Group and click "Add" again. This time, we'll be searching for a "Web API". 
+> **Hint:** At this workshop, the Backend API Logic is written with .NET Core, which runs cross-platform. So you can choose both, Windows and Linux. We also provide it as a Docker image, so you can also choose Docker as the operation system of your App Service. Just choose, whatever you are most interested in!
 
- ![Create new App Service Plan](Assets/WebAPISearchResults.png)
+#### App Service Plan
 
-Select ***Web App*** from the list and click ***Create***. 
+An App Service, is just the logical instance of an application, so it has to run within an **App Service Plan**, which is provides the actual hardware for it. You can run multiple App Services within the same App Service Plan, if you want to, but be aware, that they share the App Service Plan's Resources then. We will create an App Service Plan step by step in the following sections of this module.
 
-We'll need to provide a unique app name, which will become part of the URL we use to navigate to the service. We should also select our subscription service, and most importantly, we'll want to run this app in the App Service Plan we just deployed. 
+### 2.2 Create an App Service Plan
 
-Given that we're running our app in Platform as a Service, we don't need to worry too much about the underlying operating system. With that said, I highly recommend picking Windows as we've thoroughly tested this workshop with that configuration.
+In App Service, an app runs in an App Service plan. The App Service plan defines a set of compute resources for a web app to run. These compute resources are analogous to the server farm in conventional web hosting. One or more apps can be configured to run on the same computing resources (or in the same App Service plan). When you create an App Service plan in a certain region (for example, West Europe), a set of compute resources is created for that plan in that region. Whatever apps you put into this App Service plan run on these compute resources as defined by your App Service plan.
 
-![Create new App Service Plan](Assets/NewWebAppConfiguration.png)
+To create a new App Service Plan for our Web App, click the ***App Service Plan/Location*** button in the Web App Create wizard **AFTER YOU HAVE SELECTED AN OS** and click on the ***Create new*** button.
 
-* **App name:** myawesomestartupapi
-* **Resource group:** *choose the one you created earlier*
-* **OS:** Windows
-* **App Service plan/Location:** *choose the one you created earlier*
-* **Application Insights:** On
-* **Application Insights Location:** *choose the closest one*
+![Create new App Service Plan](Assets/CreateNewAppServicePlan2.png)
 
-With all the configuration options set, hit "Create" and hold tight. Once the deployment has finished, we should be able to navigate to our app through the browser and see a generic Azure landing page. 
+Fill in the following values:
 
-Because my app name was: "yAwesomeStartupAPI", the unique URL would be: `https://myawesomestartupapi.azurewebsites.net`. You should see something similar to the image below, when browsing it.
+- **App Service plan:** `myawesomestartupplan` (or similar)
+- **Location:** *Choose a location near your customers*
+- **Pricing tier:** B1
 
- ![Create new App Service Plan](Assets/AppServiceDeployed.png)
+Creating an App Service Plan is easy, but we have to consider where our users are? We want our services to be running as close to our users as possible as this dramatically increases performance. We also need to consider how much Compute resources we think we'll need to meet demand.
 
-### 1.5 Deploy your apps to App Service
+Clicking ***Pricing Tier***, shows all the different options we have (it's a lot!). I won't list what their differences are as their listed in the portal, but keep it mind, with the cloud we don't need to default to over-provisioning. We can scale up later if we have to! For this workshop, a B1 Basic site will be more than enough to run this project. More complex development projects should use something in the Standard range of pricing plans. Production apps should be set up in Standard or Premium pricing plans.
+
+![Select App Service Plan Pricing Tier](Assets/SelectAppServicePlanTier.png)
+
+The pricing tier and with it the size of your App Service can be changed later, when you need to scale-up the service. Once you have configured your app service plan, click ***Ok***.
+
+After you configured everything, the App Service Plan configuration should now look like this:
+
+- **App name:** `myawesomestartupapi` (or similar)
+- **Resource group:** *choose the one you created earlier*
+- **OS:** Windows, Linus or Docker
+- **App Service plan/Location:** *choose the one you created earlier*
+- **Application Insights:** On
+- **Application Insights Location:** *choose the closest one*
+
+With all the configuration options set, hit "Create" and hold tight. Once the deployment has finished, we should be able to navigate to our app through the browser and see a generic Azure landing page. The deployment of the new service can take a few minutes, but you can watch its progress in the "Bell" notification area in the toolbar. 
+
+Because my app name was: "myawesomestartupapi", the unique URL would be: `https://myawesomestartupapi.azurewebsites.net`. You should see something similar to the image below, when browsing it.
+
+![Create new App Service Plan](Assets/AppServiceDeployed.png)
+
+## 3. Deploy your apps to App Service
 
 Azure App Service has many options for how to deploy our code. These include continuous integration, which can link to Visual Studio Team Services or GitHub. We could also use FTP to upload the project, but we're not animals, so we won't - let's use Visual Studio Code for that.
 
-The good news is: The full ASP.NET Core WebAPI code for the backend logic is already written for us and is located in the `Backend/Monolithic` folder of the workshop. But before we can upload it to the cloud, we need to **compile** it to make it machine readable. So we quickly have to dive into the .NET Developer's world! For this, right-click the `Monolithic` folder in Visual Studio Code and select ***Open in Terminal / Command Line***.
+The good news is: The full ASP.NET Core WebAPI code for the backend logic is already written for us and is located in the `Backend/Monolithic` folder of the workshop. But before we can upload it to the cloud, we need to **compile** it to make it machine readable, or create a Docker image for it. We will go through both options during this module.
 
-The Terminal window in Visual Studio Code pops up and we can enter the command to compile the application.
+### 3.1 Compile or containerize the application
+
+#### Option 1: Compiling the code by yourself
+
+We quickly have to dive into the .NET Developer's world! For this, right-click the `Monolithic` folder in Visual Studio Code and select ***Open in Terminal / Command Line***. The Terminal window in Visual Studio Code pops up and we can enter the command to compile the application.
 
 ```bash
 dotnet build
@@ -124,9 +130,35 @@ Once this command ran successfully, we have everything we need. Inside our `Mono
 
 Follow the process of selecting a Subscription and Web App to publish to, confirm the publish process and enjoy your Web API.
 
-> **Hint:** Sometimes, Visual Studio Code fails to load Subscriptions for your account when publishing. To fix this, go back to the ***Azure*** tab in Visual Studio Code and refresh the list of Subscriptions. Now start the Publish process again.
+#### Option 2: Create and use a Docker image
 
-After a few seconds, you Web App should display the published code and look like this:
+If you want to "containerize" the code, you can use the [`Dockerfile`](../Backend/Monolithic/Dockerfile), that comes with the ASP.NET Core project in the `Backend/Monolithic` folder of the workshop. It describes everything Docker needs, to create an image out of it.
+
+Right-click the `Monolithic` folder in Visual Studio Code and select ***Open in Terminal / Command Line***. The Terminal window in Visual Studio Code pops up and we can enter the command to compile the application.
+
+```bash
+docker image build -t yourname/contosomaintenance-monolith:latest .
+```
+
+That triggers the creation process of the Docker image, based on the Dockerfile in the repository. During that process, the offical [.NET Core SDK Docker Image](https://hub.docker.com/r/microsoft/dotnet/) gets downloaded from Dockerhub and the code will be compiled in there. To verify, that the image got created successfully, you can list all images on your machine with the following command.
+
+```bash
+docker images
+```
+
+The output should contain your image.
+
+![List of local Docker images](Assets/ListDockerImages.png)
+
+To deploy that image into your App Service now, you need to publish it to a Container Registry (like Dockerhub or Azure Container Registry), sothat your App Service can pull it from there. For the ease of use, we will use an image, that we have already published for you now. But if you are interested, on how to publish your own image, you can read detials about that here: [Push images to Docker Cloud](https://docs.docker.com/docker-cloud/builds/push-images/).
+
+Now open the [Azure Portal](https://portal.azure.com) and navigate to your Docker based App Service, that you have created earlier. When you scroll down to the ***Container Settings*** on the left side, you can find a configuration for public images from Docker Hub. Here we can enter the name of our (or your own) image like `robinmanuelthiel/contosomaintenance-monolith` and ***Save*** the settings.
+
+![Select Container in App Service](Assets/SelectContainerAppService.png)
+
+### 3.2 Verify, your app is running
+
+After a few seconds, after refreshing the browser, your Web App should display the published code and look like this:
 
 ![Deployed API with Swagger UI](Assets/DeployedWebAPI.png)
 
@@ -165,7 +197,16 @@ Although not entirely best pratice, for ease of deployment and learning, we're g
 ## Next Steps
 [Data Storage](../04%20Data%20Storage/README.md)
 
+
+&nbsp;
+&nbsp;
+&nbsp;
+
 ---
+
+&nbsp;
+&nbsp;
+&nbsp;
 
 ![Banner](Assets/TipsTricks.png)
 # Tips & Tricks
