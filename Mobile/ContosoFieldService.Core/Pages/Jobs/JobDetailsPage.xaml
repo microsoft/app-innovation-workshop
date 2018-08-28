@@ -50,7 +50,7 @@
                 
                     <Label    
                         AutomationId="JobName"
-                        Text="{Binding Name}" 
+                        FormattedText="{Binding NameAsFormattedString}" 
                         HorizontalTextAlignment="Center"
                         FontFamily="{StaticResource FontFamilyMedium}" 
                         TextColor="#ffffff"
