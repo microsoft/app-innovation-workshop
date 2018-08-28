@@ -18,12 +18,23 @@ namespace ContosoMaintenance.WebAPI
 {
     public class Startup
     {
+        public IConfiguration Configuration { get; }
+
+        // public Startup(IHostingEnvironment env)
+        // {
+        //     var builder = new ConfigurationBuilder()
+        //        .SetBasePath(Directory.GetCurrentDirectory())
+        //        .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true)
+        //        .AddJsonFile($"appsettings.{env.EnvironmentName}.json", optional: true)
+        //        .AddEnvironmentVariables();
+
+        //     Configuration = builder.Build();
+        // }
+
         public Startup(IConfiguration configuration)
-        {
+        {            
             Configuration = configuration;
         }
-
-        public IConfiguration Configuration { get; }
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
