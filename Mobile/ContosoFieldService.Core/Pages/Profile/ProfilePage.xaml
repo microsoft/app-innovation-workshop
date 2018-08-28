@@ -5,10 +5,17 @@
     xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
     xmlns:fftransformations="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations"
     xmlns:controls="clr-namespace:CarouselView.FormsPlugin.Abstractions;assembly=CarouselView.FormsPlugin.Abstractions"
+    xmlns:converters="clr-namespace:ContosoFieldService.Converters;assembly=ContosoFieldService.Core"
     x:Class="ContosoFieldService.Pages.ProfilePage"
     BackgroundColor="{StaticResource BackgroundColorDark}"
     Title="Me">
-
+    
+    <ContentPage.Resources>
+        <ResourceDictionary>            
+            <converters:NegateBooleanConverter x:Key="NegateBooleanConverter" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    
     <ScrollView>
         <StackLayout Spacing="{StaticResource DefaultMargin}">
 
@@ -86,7 +93,7 @@
                     AutomationId="lblFullName"
                     Style="{DynamicResource RegularLabelStyle}"
                     Text="{Binding Name}" 
-                    HorizontalTextAlignment="Center" />                  
+                    HorizontalTextAlignment="Center" />                
             </Grid>
 
             <StackLayout
@@ -100,22 +107,31 @@
                         </ResourceDictionary.MergedDictionaries>
                     </ResourceDictionary>
                 </StackLayout.Resources>
-
-                <!-- Motivational Banner --> 
-                <Frame       
-                    x:Name="btnMotivationalBanner"
-                    AutomationId="btnMotiviationalBanner"
-                    CornerRadius="0"
-                    HasShadow="false"
-                    BackgroundColor="{StaticResource AccentColor}" >
                 
-                    <Label                         
-                        Text="You're crushing it!" 
-                        HorizontalTextAlignment="Center"
-                        FontFamily="{StaticResource FontFamilyMedium}" 
-                        TextColor="#ffffff"
-                        FontSize="{StaticResource FontSizeLarge}" />
-                </Frame>
+                <!-- Login / Logout Button -->
+                <Button
+                    AutomationId="btnLogin"
+                    IsVisible="{Binding IsLoggedIn, Converter={StaticResource NegateBooleanConverter}}"
+                    Style="{StaticResource FullWidthButtonStyle}"
+                    BackgroundColor="{StaticResource AccentColor}" 
+                    Text="Login" 
+                    Command="{Binding Login}" />
+                <Button
+                    AutomationId="btnLogout"
+                    IsVisible="{Binding IsLoggedIn}"
+                    Style="{StaticResource FullWidthButtonStyle}"
+                    BackgroundColor="{StaticResource AccentColor}" 
+                    Text="Logout" 
+                    Command="{Binding Logout}" />
+
+                <!-- Motivational Banner -->                                 
+                <Label                         
+                    Text="You're crushing it!" 
+                    Margin="0,20"
+                    HorizontalTextAlignment="Center"
+                    FontFamily="{StaticResource FontFamilyMedium}" 
+                    TextColor="{StaticResource AccentColorRed}"
+                    FontSize="{StaticResource FontSizeLarge}" />
 
                 <!-- Stats Carousel -->
                 <controls:CarouselViewControl 

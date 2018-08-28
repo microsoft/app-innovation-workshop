@@ -126,6 +126,7 @@ namespace ContosoFieldService.Services
             CurrentUser = null;
             AccessToken = null;
             IsLoggedIn = false;
+            CurrentUserEmail = null;
         }
 
         IUser GetUserByPolicy(IEnumerable<IUser> users, string policy)
