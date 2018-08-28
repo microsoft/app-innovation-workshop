@@ -31,7 +31,7 @@ namespace ContosoFieldService.Helpers
             FormattedString formattedString = new FormattedString();
 
             //The job name has a hit!
-            if(job.Name.Contains(highlightHitStartTag) && job.Name.Contains(highlightHitEndTag))
+            if(job.Name?.Contains(highlightHitStartTag) == true && job.Name?.Contains(highlightHitEndTag) == true)
             {
                 //Copy job name 
                 var name = job.Name;
