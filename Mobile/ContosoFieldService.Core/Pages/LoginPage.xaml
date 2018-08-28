@@ -11,13 +11,13 @@
     <Grid Margin="{StaticResource DefaultThickness}">
 
         <Grid.RowDefinitions>
-            <RowDefinition Height="*" />
-            <RowDefinition Height="Auto" />
+            <RowDefinition Height="3*" />
+            <RowDefinition Height="2*" />
         </Grid.RowDefinitions>
 
         <StackLayout Padding="{StaticResource DefaultThickness}" VerticalOptions="Center">
             <Image 
-                Margin="0,00,0,20"
+                Margin="0,0,0,20"
                 Source="icon_greentool.png"
                 HorizontalOptions="Center"
                 WidthRequest="60"/>
@@ -35,7 +35,7 @@
                 Text="Login to get started." />
         </StackLayout>
 
-        <StackLayout Padding="{StaticResource DefaultThickness}" Grid.Row="1" Margin="0,0,0,40" Spacing="10">
+        <StackLayout Padding="{StaticResource DefaultThickness}" Grid.Row="1" VerticalOptions="Center" Spacing="10">
             <Button 
                 x:Name="btnLogin"
                 AutomationId="btnLogin"
