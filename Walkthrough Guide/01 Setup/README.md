@@ -13,9 +13,13 @@ Please bring your own **Windows or Mac** laptop. To participate in this workshop
 - [Visual Studio Code](https://code.visualstudio.com/)
   - [Azure App Service Extension](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-azureappservice)
   - [Azure Functions Extension](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-azurefunctions)
-- [.NET Core 2.1 SDK](https://www.microsoft.com/net/download/windows/build) (choose x64 Installer on Windows)
 - [Postman](https://www.getpostman.com/)
-- [Docker](https://www.docker.com/get-started) (if you want to follow the container paths)
+
+### Recommended
+- [.NET Core 2.1 SDK](https://www.microsoft.com/net/download/windows/build) (choose x64 Installer on Windows)
+- [Docker](https://www.docker.com/get-started)
+- [Azure CLI 2.0](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli?view=azure-cli-latest)
+- [Terraform](https://www.terraform.io/intro/getting-started/install.html)
 
 ### Optional
 
