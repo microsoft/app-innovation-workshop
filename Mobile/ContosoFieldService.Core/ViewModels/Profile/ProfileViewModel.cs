@@ -15,8 +15,27 @@ namespace ContosoFieldService.ViewModels
 
         public int JobsCompleted = 0;
         public int JumboEnginesServiced = 0;
-        public string GravatarSource { get; set; }
-        public string Name { get; set; }
+
+        string name;
+        public string Name
+        {
+            get { return name; }
+            set { name = value; RaisePropertyChanged(); }
+        }
+
+        string gravatarSource;
+        public string GravatarSource
+        {
+            get { return gravatarSource; }
+            set { gravatarSource = value; RaisePropertyChanged(); }
+        }
+
+        bool isLoggedIn;
+        public bool IsLoggedIn
+        {
+            get { return isLoggedIn; }
+            set { isLoggedIn = value; RaisePropertyChanged(); }
+        }
 
         public Command ChatToBot
         {
@@ -44,6 +63,49 @@ namespace ContosoFieldService.ViewModels
             }
         }
 
+        public Command Login
+        {
+            get
+            {
+                return new Command(async () =>
+                {
+                    try
+                    {
+                        var result = await authenticationService.LoginAsync();
+                        if (result != null)
+                        {
+                            Analytics.TrackEvent("User Logged In");
+                            Name = AuthenticationService.CurrentUser?.Name;
+                            GravatarSource = Helpers.Extensions.EmailToGravatarUrl(AuthenticationService.CurrentUserEmail);
+                            IsLoggedIn = AuthenticationService.IsLoggedIn;                            
+                        }
+                        else
+                        {
+                            await CoreMethods.DisplayAlert("Could not sign in", "Authentication failed.", "Ok");
+                        }
+                    }
+                    catch
+                    {
+                        await CoreMethods.DisplayAlert("Authentication failed", "Please make sure, that authentication got configured correctly. You can proceed without logging in for now.", "Ok");
+                    }
+                });
+            }
+        }
+
+        public Command Logout
+        {
+            get
+            {
+                return new Command(() =>
+                {
+                    authenticationService.Logout();
+                    Name = AuthenticationService.CurrentUser?.Name ?? "Anonymous";
+                    GravatarSource = Helpers.Extensions.EmailToGravatarUrl(AuthenticationService.CurrentUserEmail);
+                    IsLoggedIn = AuthenticationService.IsLoggedIn;                        
+                });
+            }
+        }
+
         public ProfileViewModel()
         {
             authenticationService = new AuthenticationService();
@@ -67,9 +129,7 @@ namespace ContosoFieldService.ViewModels
         {
             Name = AuthenticationService.CurrentUser?.Name ?? "Anonymous";
             GravatarSource = Helpers.Extensions.EmailToGravatarUrl(AuthenticationService.CurrentUserEmail);
-
-            RaisePropertyChanged("Name");
-            RaisePropertyChanged("GravatarSource");
+            IsLoggedIn = AuthenticationService.IsLoggedIn;
         }
     }
 
