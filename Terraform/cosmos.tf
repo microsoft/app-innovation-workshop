@@ -8,7 +8,7 @@ resource "azurerm_cosmosdb_account" "workshop" {
     enable_automatic_failover = false
 
     consistency_policy {
-        consistency_level       = "BoundedStaleness"
+        consistency_level       = "Session"
         max_interval_in_seconds = 10
         max_staleness_prefix    = 200
     }
