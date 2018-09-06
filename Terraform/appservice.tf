@@ -18,7 +18,7 @@ resource "azurerm_app_service" "workshop" {
   app_settings {
     APPINSIGHTS_INSTRUMENTATIONKEY = "${azurerm_application_insights.workshop.instrumentation_key}"
 
-    AzureCosmosDb__EndPoint = "${azurerm_cosmosdb_account.workshop.endpoint}"
+    AzureCosmosDb__Endpoint = "${azurerm_cosmosdb_account.workshop.endpoint}"
     AzureCosmosDb__Key      = "${azurerm_cosmosdb_account.workshop.primary_master_key}"
 
     AzureStorage__StorageAccountName = "${azurerm_storage_account.workshop.name}"
