@@ -33,6 +33,7 @@ namespace ContosoFieldService.ViewModels
         public string ContactName { get; set; }
         public string CompanyName { get; set; }
         public Models.Point Point { get; set; }
+        public FormattedString NameAsFormattedString { get; set; }
 
 
         Job selectedJob;
@@ -124,7 +125,8 @@ namespace ContosoFieldService.ViewModels
             if (initData != null)
             {
                 selectedJob = (Job)initData;
-                Name = Helpers.Extensions.RemoveHitHighlightTags(selectedJob.Name, "[", "]");
+                Name = selectedJob.Name;
+                NameAsFormattedString = selectedJob.NameAsFormattedString;
                 Details = selectedJob.Details;
                 DueDate = selectedJob.DueDate.Humanize();
 

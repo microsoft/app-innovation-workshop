@@ -5,7 +5,7 @@
         <RootNamespace>ContosoFieldService</RootNamespace>
     </PropertyGroup>
     <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-        <NoWarn>1701;1702;1705;1998;NU1701;</NoWarn>
+        <NoWarn>1701;1702;1705;1998;NU1701;AvoidAsyncVoid;UseAsyncSuffix</NoWarn>
     </PropertyGroup>
     <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'DebugBackend|AnyCPU' ">
         <NoWarn>1701;1702;1705;1998;NU1701;</NoWarn>

@@ -13,8 +13,13 @@ Please bring your own **Windows or Mac** laptop. To participate in this workshop
 - [Visual Studio Code](https://code.visualstudio.com/)
   - [Azure App Service Extension](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-azureappservice)
   - [Azure Functions Extension](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-azurefunctions)
-- [.NET Core SDK](https://www.microsoft.com/net/download/windows/build) (x64 for Windows)
 - [Postman](https://www.getpostman.com/)
+
+### Recommended
+- [.NET Core 2.1 SDK](https://www.microsoft.com/net/download/windows/build) (choose x64 Installer on Windows)
+- [Docker](https://www.docker.com/get-started)
+- [Azure CLI 2.0](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli?view=azure-cli-latest)
+- [Terraform](https://www.terraform.io/intro/getting-started/install.html)
 
 ### Optional
 
@@ -51,7 +56,7 @@ If no Subscriptions appear, visit the [Azure Subscription Portal](https://accoun
 
 ### .NET Core
 
-Most parts of this workshop are written in .NET Core 2.0 and we need to compile a few things from time to time. For this, we need to the [.NET Core SDK](https://www.microsoft.com/net/download/windows/build) installed. To check if the installation has been successful, open the *Terminal* or *Command Prompt* on your machine and type in
+Most parts of this workshop are written in .NET Core 2.1 and we need to compile a few things from time to time. For this, we need to the [.NET Core SDK](https://www.microsoft.com/net/download/windows/build) installed. To check if the installation has been successful, open the *Terminal* or *Command Prompt* on your machine and type in
 
 ```bash
 dotnet --info
