@@ -15,10 +15,6 @@ resource "azurerm_app_service" "workshop" {
   resource_group_name       = "${azurerm_resource_group.workshop.name}"
   app_service_plan_id       = "${azurerm_app_service_plan.workshop.id}"
 
-  site_config {
-    scm_type = "LocalGit"
-  }
-
   app_settings {
     APPINSIGHTS_INSTRUMENTATIONKEY = "${azurerm_application_insights.workshop.instrumentation_key}"
 
