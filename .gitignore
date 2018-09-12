@@ -327,3 +327,13 @@ Thumbs.db
 /Mobile/iOS/app.config
 /Mobile/UITests/app.config
 Mobile/Droid/Resources/Resource.designer.cs
+
+#  Local .terraform directories
+**/.terraform/*
+
+# .tfstate files
+*.tfstate
+*.tfstate.*
+
+# .tfvars files
+*.tfvars
