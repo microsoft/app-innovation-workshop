@@ -106,6 +106,7 @@ You can find a walkthrough guide for the project that outlines how you too can b
 - **Mohamed Saif** ([GitHub](https://github.com/mohamedsaif))
 - **Michael Sivers** ([GitHub](https://github.com/msivers))
 - **Simona Tarantola** ([LinkedIn](https://www.linkedin.com/in/simona-tarantola-a654917/))
+- **Jim Paine** ([GitHub](https://github.com/JimPaine))
 
 
 ## Contributing
