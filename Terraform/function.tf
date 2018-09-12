@@ -18,7 +18,7 @@ resource "azurerm_function_app" "workshop" {
   storage_connection_string = "${azurerm_storage_account.workshop.primary_connection_string}"
 
   # looks like at the moment for v2 http version has to be http1.1 and app has to be 32bit
-  version = "beta"
+  version = "~2"
 
   app_settings {
     APPINSIGHTS_INSTRUMENTATIONKEY = "${azurerm_application_insights.workshop.instrumentation_key}"
