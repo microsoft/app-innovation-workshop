@@ -100,11 +100,11 @@ Because my app name was: "myawesomestartupapi", the unique URL would be: `https:
 
 ## 3. Deploy your apps to App Service
 
-Azure App Service has many options for how to deploy our code. These include continuous integration, which can link to Visual Studio Team Services or GitHub. We could also use FTP to upload the project, but we're not animals, so we won't - let's use Visual Studio Code for that.
+Azure App Service has many options for how to deploy our code. These include continuous integration, which can link to Visual Studio Team Services or GitHub. We could also use FTP to upload the project, but we're not animals, so we won't.
 
-The good news is: The full ASP.NET Core WebAPI code for the backend logic is already written for us and is located in the `Backend/Monolithic` folder of the workshop. But before we can upload it to the cloud, we need to **compile** it to make it machine readable, or create a Docker image for it. We will go through both options during this module.
+The good news is: The full ASP.NET Core WebAPI code for the backend logic is already written for us and is located in the `Backend/Monolithic` folder of the workshop. But before we can upload it to the cloud, we need to **compile** it to make it machine readable, or **create a Docker image** for it. We will go through both options during this module.
 
-### 3.1 Compile or containerize the application
+### 3.1 Compile the application or use Docker
 
 #### Option 1: Compiling the code by yourself
 
@@ -132,15 +132,44 @@ Follow the process of selecting a Subscription and Web App to publish to, confir
 
 #### Option 2: Create and use a Docker image
 
-If you want to "containerize" the code, you can use the [`Dockerfile`](../Backend/Monolithic/Dockerfile), that comes with the ASP.NET Core project in the `Backend/Monolithic` folder of the workshop. It describes everything Docker needs, to create an image out of it.
 
-Right-click the `Monolithic` folder in Visual Studio Code and select ***Open in Terminal / Command Line***. The Terminal window in Visual Studio Code pops up and we can enter the command to compile the application.
+
+> **Hint:** If you just want to *use* containers, but want to skip the whole part of building a container, creating an Azure Container Registry and pushing the container to it, you can skip these steps and simple use the [`robinmanuelthiel/contosomaintenance-api`](https://hub.docker.com/r/robinmanuelthiel/contosomaintenance-api/) image from Docker Hub in the last step.
+
+To work with Docker images, you usually need a container registry to upload your containers to, so that cloud services can pull them from there. You can use the popular [Docker Hub](https://azure.microsoft.com/services/container-registry/), but Azure offers its own Azure Container Registry as well.
+
+![Create an Azure Container Registry](Assets/CreateAzureContainerRegistry.png)
+
+To create a new registry, open the [Azure Portal](https://portal.azure.com), click ***Create a resource***, ***Containers***, ***Container Registry*** and configure it like this:
+
+- **Registry Name:** `myawesomestartup` (or similar)
+- **Subscription:** *choose the one you created earlier*
+- **Resource group:** *choose the one you created earlier*
+- **Location:** *same as your App Service*
+- **Admin user:** Enable
+- **SKU:** Basic
+
+Click the ***Create*** button and wait until your Container Registry got provisioned.
+
+In the ***Keys*** section of your Container Registry, you will find important information, like **Registry Name**, **Login Server**, **Username** and **Password**, that you will need to tag and upload a Docker image to it.
+
+![Create an Azure Container Registry](Assets/AzureContainerRegistryKeys.png)
+
+In your Command Line, run the following command, to log into your freshly created Container Registry. Make sure, to replace `myawesomestartup.azurecr.io` with your **Login Server**.
 
 ```bash
-docker image build -t yourname/contosomaintenance-monolith:latest .
+docker login myawesomestartup.azurecr.io -u <username> -p <password>
 ```
 
-That triggers the creation process of the Docker image, based on the Dockerfile in the repository. During that process, the offical [.NET Core SDK Docker Image](https://hub.docker.com/r/microsoft/dotnet/) gets downloaded from Dockerhub and the code will be compiled in there. To verify, that the image got created successfully, you can list all images on your machine with the following command.
+To "containerize" the Backend code, you can use the [`Dockerfile`](../Backend/Monolithic/Dockerfile), that comes with the ASP.NET Core project in the `Backend/Monolithic` folder of the workshop. It describes everything Docker needs, to create an image out of it.
+
+Right-click the `Monolithic` folder in Visual Studio Code and select ***Open in Terminal / Command Line***. The Terminal window in Visual Studio Code pops up and we can enter the command to build the docker image.
+
+```bash
+docker image build -t myawesomestartup.azurecr.io/contosomaintenance/api:latest .
+```
+
+That triggers the creation process of the Docker image, based on the Dockerfile in the repository. During that process, the official [.NET Core SDK Docker Image](https://hub.docker.com/r/microsoft/dotnet/) gets downloaded from Dockerhub and the code will be compiled in there. To verify, that the image got created successfully, you can list all images on your machine with the following command.
 
 ```bash
 docker images
@@ -150,11 +179,19 @@ The output should contain your image.
 
 ![List of local Docker images](Assets/ListDockerImages.png)
 
-To deploy that image into your App Service now, you need to publish it to a Container Registry (like Dockerhub or Azure Container Registry), sothat your App Service can pull it from there. For the ease of use, we will use an [image, that we have already published](https://hub.docker.com/r/robinmanuelthiel/contosomaintenance-api/) for you now. But if you are interested, on how to publish your own image, you can read detials about that here: [Push images to Docker Cloud](https://docs.docker.com/docker-cloud/builds/push-images/).
+Now we can push the image do our Azure Container Registry with the following command.
 
-Now open the [Azure Portal](https://portal.azure.com) and navigate to your Docker based App Service, that you have created earlier. When you scroll down to the ***Container Settings*** on the left side, you can find a configuration for public images from Docker Hub. Here we can enter the name of our (or your own) image like [`robinmanuelthiel/contosomaintenance-api`](https://hub.docker.com/r/robinmanuelthiel/contosomaintenance-api/) and ***Save*** the settings.
+```bash
+docker push myawesomestartup.azurecr.io/contosomaintenance/api
+```
+
+Next, we open the [Azure Portal](https://portal.azure.com) and navigate to your Docker based App Service, that you have created earlier. When you scroll down to the ***Container Settings*** on the left side, you can find a configuration for image sources (like Azure Container Registry or Docker Hub).
 
 ![Select Container in App Service](Assets/SelectContainerAppService.png)
+
+Here we can connect to our Container Registry. Select our container and ***Save*** the settings.
+
+> **Hint:** You can enable ***Continuous Deployment*** at the bottom of the Container Settings, to update the application automatically, when a new version of your container gets pushed to the Container Registry.
 
 ### 3.2 Verify, your app is running
 
