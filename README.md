@@ -2,9 +2,9 @@
 
 <img src="Resources/Design/Design%20Board%20Final.png">
 
-# Mobile Cloud Workshop
+# App Innovation Workshop
 
-Welcome to the Microsoft Mobile Cloud Workshop. We've created this workshop to showcase the speed and ease at which you can leverage Microsoft's cloud platform to build Data-Driven Intelligent Apps. The workshop will give you insights and **hands-on labs** on how to leverage innovative scalable Cloud Backend Services for your applications.
+Welcome to the Microsoft App Innovation Workshop. We've created this workshop to showcase the speed and ease at which you can leverage Microsoft's cloud platform to build data-driven intelligent apps. The workshop will give you insights and **hands-on labs** on how to leverage innovative scalable Cloud Backend Services for your applications.
 
 #### Who is it for?
 
@@ -107,7 +107,6 @@ You can find a walkthrough guide for the project that outlines how you too can b
 - **Michael Sivers** ([GitHub](https://github.com/msivers))
 - **Simona Tarantola** ([LinkedIn](https://www.linkedin.com/in/simona-tarantola-a654917/))
 - **Jim Paine** ([GitHub](https://github.com/JimPaine))
-
 
 ## Contributing
 
