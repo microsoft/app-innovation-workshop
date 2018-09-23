@@ -32,12 +32,13 @@ namespace ContosoFieldService.iOS
             //HACK to get the linker to behave
             var ignore = new CircleTransformation();
 
+
+
+#if ENABLE_TEST_CLOUD
             // Code for starting up the Xamarin Test Cloud Agent
-            // TODO: Make sure, the Agent is not started, when you want to distribute to the App Store.
-            // Apple will reject that. Currently, we are UI Testing the Release version in Azure DevOps.
-            // So a compiler flag would be a solution.
             Xamarin.Calabash.Start();
-            
+#endif
+
             var formsApp = new App();
 
             UIApplication.SharedApplication.SetStatusBarStyle(UIStatusBarStyle.LightContent, false);

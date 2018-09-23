@@ -10,8 +10,8 @@ namespace ContosoFieldService.Droid.Services
     {
         public bool IsRunningInRealWorld()
         {
-#if DEBUG
-            //return false;
+#if ENABLE_TEST_CLOUD
+            return false;
 #endif
 
             if (Build.Fingerprint.Contains("vbox") || Build.Fingerprint.Contains("generic") ||

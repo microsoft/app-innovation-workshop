@@ -44,28 +44,16 @@
         <AndroidSupportedAbis>armeabi-v7a;x86;armeabi</AndroidSupportedAbis>
         <JavaMaximumHeapSize>1024m</JavaMaximumHeapSize>
     </PropertyGroup>
-    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'DebugBackend|AnyCPU' ">
-        <DebugSymbols>true</DebugSymbols>
-        <DebugType>full</DebugType>
-        <Optimize>false</Optimize>
-        <OutputPath>bin\DebugBackend</OutputPath>
-        <DefineConstants>DEBUG;</DefineConstants>
-        <ErrorReport>prompt</ErrorReport>
-        <WarningLevel>4</WarningLevel>
-        <AndroidLinkMode>None</AndroidLinkMode>
-        <AndroidSupportedAbis>arm64-v8a;armeabi;armeabi-v7a;x86</AndroidSupportedAbis>
-    </PropertyGroup>
-    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'ReleaseBackend|AnyCPU' ">
-        <DebugSymbols>true</DebugSymbols>
-        <DebugType>pdbonly</DebugType>
-        <Optimize>true</Optimize>
-        <OutputPath>bin\ReleaseBackend</OutputPath>
-        <ErrorReport>prompt</ErrorReport>
-        <WarningLevel>4</WarningLevel>
-        <AndroidManagedSymbols>true</AndroidManagedSymbols>
-        <AndroidUseSharedRuntime>false</AndroidUseSharedRuntime>
-        <EmbedAssembliesIntoApk>true</EmbedAssembliesIntoApk>
-        <AndroidSupportedAbis>armeabi-v7a</AndroidSupportedAbis>
+    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Test Cloud|AnyCPU' ">
+      <DebugSymbols>true</DebugSymbols>
+      <DebugType>pdbonly</DebugType>
+      <Optimize>true</Optimize>
+      <OutputPath>bin\Test Cloud</OutputPath>
+      <DefineConstants>ENABLE_TEST_CLOUD;</DefineConstants>
+      <WarningLevel>4</WarningLevel>
+      <JavaMaximumHeapSize></JavaMaximumHeapSize>
+      <EmbedAssembliesIntoApk>true</EmbedAssembliesIntoApk>
+      <AndroidUseSharedRuntime>false</AndroidUseSharedRuntime>
     </PropertyGroup>
     <ItemGroup>
         <Reference Include="Microsoft.Identity.Client, Version=1.1.4.0, Culture=neutral, PublicKeyToken=0a613f4dd989e8ae, processorArchitecture=MSIL">

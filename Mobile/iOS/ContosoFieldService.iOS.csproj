@@ -16,7 +16,7 @@
         <DebugType>full</DebugType>
         <Optimize>false</Optimize>
         <OutputPath>bin\iPhoneSimulator\Debug</OutputPath>
-        <DefineConstants>DEBUG;ENABLE_TEST_CLOUD;</DefineConstants>
+        <DefineConstants>__IOS__;__MOBILE__;__UNIFIED__;DEBUG;</DefineConstants>
         <ErrorReport>prompt</ErrorReport>
         <WarningLevel>4</WarningLevel>
         <CodesignKey>iPhone Developer</CodesignKey>
@@ -32,7 +32,6 @@
         </MtouchVerbosity>
     </PropertyGroup>
     <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhone' ">
-        <DebugType>pdbonly</DebugType>
         <Optimize>true</Optimize>
         <OutputPath>bin\iPhone\Release</OutputPath>
         <DefineConstants>
@@ -50,7 +49,6 @@
         <CodesignProvision>Contoso Maintenance In-House</CodesignProvision>
     </PropertyGroup>
     <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhoneSimulator' ">
-        <DebugType>pdbonly</DebugType>
         <Optimize>true</Optimize>
         <OutputPath>bin\iPhoneSimulator\Release</OutputPath>
         <DefineConstants>
@@ -71,7 +69,7 @@
         <DebugType>full</DebugType>
         <Optimize>false</Optimize>
         <OutputPath>bin\iPhone\Debug</OutputPath>
-        <DefineConstants>DEBUG;ENABLE_TEST_CLOUD;</DefineConstants>
+        <DefineConstants>__IOS__;__MOBILE__;__UNIFIED__;DEBUG;</DefineConstants>
         <ErrorReport>prompt</ErrorReport>
         <WarningLevel>4</WarningLevel>
         <CodesignKey>iPhone Developer</CodesignKey>
@@ -89,28 +87,32 @@
         </MtouchVerbosity>
         <CodesignProvision>Contoso Maintenance Development</CodesignProvision>
     </PropertyGroup>
-    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'DebugBackend|AnyCPU' ">
-        <Optimize>false</Optimize>
-        <OutputPath>bin\DebugBackend</OutputPath>
-        <DefineConstants>
-        </DefineConstants>
-        <WarningLevel>4</WarningLevel>
-        <CodesignKey>iPhone Developer</CodesignKey>
-        <MtouchNoSymbolStrip>true</MtouchNoSymbolStrip>
-        <MtouchVerbosity>
-        </MtouchVerbosity>
+    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Test Cloud|iPhone' ">
+      <Optimize>true</Optimize>
+      <OutputPath>bin\iPhone\Test Cloud</OutputPath>
+      <DefineConstants>__IOS__;__MOBILE__;__UNIFIED__;ENABLE_TEST_CLOUD;</DefineConstants>
+      <WarningLevel>4</WarningLevel>
+      <CodesignKey>iPhone Distribution: Xamarin Inc</CodesignKey>
+      <MtouchVerbosity></MtouchVerbosity>
+      <MtouchFloat32>true</MtouchFloat32>
+      <CodesignEntitlements>Entitlements.prod.plist</CodesignEntitlements>
+      <MtouchArch>ARM64</MtouchArch>
+      <MtouchHttpClientHandler>HttpClientHandler</MtouchHttpClientHandler>
+      <CodesignProvision>Contoso Maintenance In-House</CodesignProvision>
+      <MtouchLink>None</MtouchLink>
     </PropertyGroup>
-    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'ReleaseBackend|AnyCPU' ">
-        <Optimize>false</Optimize>
-        <OutputPath>bin\ReleaseBackend</OutputPath>
-        <DefineConstants>
-        </DefineConstants>
-        <WarningLevel>4</WarningLevel>
-        <CodesignKey>iPhone Developer: Michael James (354MN7UPEZ)</CodesignKey>
-        <MtouchNoSymbolStrip>true</MtouchNoSymbolStrip>
-        <MtouchVerbosity>
-        </MtouchVerbosity>
-        <CodesignProvision>VS: WildCard Development</CodesignProvision>
+    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Test Cloud|iPhoneSimulator' ">
+      <Optimize>true</Optimize>
+      <OutputPath>bin\iPhoneSimulator\Test Cloud</OutputPath>
+      <DefineConstants>__IOS__;__MOBILE__;__UNIFIED__;ENABLE_TEST_CLOUD;</DefineConstants>
+      <WarningLevel>4</WarningLevel>
+      <CodesignKey>iPhone Developer: Michael James (354MN7UPEZ)</CodesignKey>
+      <MtouchNoSymbolStrip>true</MtouchNoSymbolStrip>
+      <MtouchVerbosity></MtouchVerbosity>
+      <MtouchLink>None</MtouchLink>
+      <MtouchArch>x86_64</MtouchArch>
+      <MtouchHttpClientHandler>HttpClientHandler</MtouchHttpClientHandler>
+      <CodesignProvision>VS: WildCard Development</CodesignProvision>
     </PropertyGroup>
     <ItemGroup>
         <Reference Include="Microsoft.Identity.Client, Version=1.1.4.0, Culture=neutral, PublicKeyToken=0a613f4dd989e8ae, processorArchitecture=MSIL">

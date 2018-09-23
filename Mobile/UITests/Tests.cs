@@ -15,8 +15,6 @@ namespace ContosoFieldService.UITests
         IApp app;
         Platform platform;
 
-        string testJobName = "Paint Boeing 737";
-
         LoginPage loginPage;
         JobsPage jobsPage;
         JobsDetailsPage jobsDetailsPage;
@@ -25,7 +23,7 @@ namespace ContosoFieldService.UITests
         {
             this.platform = platform;
             this.loginPage = new LoginPage();
-            this.jobsPage = new JobsPage(testJobName);
+            this.jobsPage = new JobsPage();
             this.jobsDetailsPage = new JobsDetailsPage();
         }
 
@@ -53,18 +51,21 @@ namespace ContosoFieldService.UITests
             app.WaitForElement(jobsPage.JobsListView);
             app.Screenshot("Jobs list shown.");
 
-            // Scroll down to Paint Boeing 737 job
-            app.ScrollDownTo(jobsPage.TestJob);
-            app.Screenshot("Paint Boeing 737 job shown.");
+            // Scroll down a bit
+            app.ScrollDown();
+            app.Screenshot("Scrolled down");
+            Assert.IsTrue(app.Query("jobItem").Any(), "No Jobs found.");
 
-            // Open job
-            app.Tap(jobsPage.TestJob);
+            // Open last job on page
+            var lastJobName = app.Query("lblName").LastOrDefault()?.Text;
+            Assert.IsTrue(lastJobName != null, "No Job Title Element found to click on.");
+            app.Tap(lastJobName);
             app.WaitForElement(jobsDetailsPage.JobName);
             app.Screenshot("Job Details shown.");
 
             // Check if displayed name is correct
             var jobNameText = app.Query(jobsDetailsPage.JobName).First().Text;
-            Assert.AreEqual(jobNameText, testJobName);
+            Assert.AreEqual(jobNameText, lastJobName, "Selected Job and displayed Job Details do not match.");
         }
     }
 }
