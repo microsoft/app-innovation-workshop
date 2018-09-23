@@ -1,0 +1,10 @@
+{
+    "IsEncrypted": false,
+    "Values": {
+        "AzureWebJobsStorage": "<Storage Connection String>",
+        "AzureWebJobsDashboard": "<Storage Connection String>",
+        "CosmosDb": "<CosmosDB Connection String>",
+        "CognitiveServicesEndpoint": "<Cognitive Services Computer Vision Endpoint>",
+        "CognitiveServicesKey": "<Cognitive Services Computer Vision API Key>"
+    }
+}

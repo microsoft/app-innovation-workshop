@@ -23,7 +23,7 @@ We used the following third party software for this project:
 
 - Swashbuckle.AspNetCore, Richard Morris ([MIT License](https://github.com/domaindrivendev/Swashbuckle.AspNetCore/blob/master/LICENSE))
 
-### Chatbot
+#### Chatbot
 
 - Autofac, Autofac Project ([MIT License](https://github.com/autofac/Autofac/blob/develop/LICENSE))
 - Chronic, Robert Wilczyński ([MIT License](https://github.com/robertwilczynski/nChronic/blob/master/LICENSE))
