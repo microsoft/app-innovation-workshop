@@ -48,6 +48,5 @@ terraform apply
 
 You will need to run the following steps from the main walkthrough to build and deploy the application.
 
-[Deploy App Service](https://github.com/MikeCodesDotNET/Mobile-Cloud-Workshop/tree/master/Walkthrough%20Guide/03%20Web%20API#3-deploy-your-apps-to-app-service)
-[Index data in Cosmos](https://github.com/MikeCodesDotNET/Mobile-Cloud-Workshop/tree/master/Walkthrough%20Guide/05%20Search#indexing-our-data)
-[Deploy Function](https://github.com/MikeCodesDotNET/Mobile-Cloud-Workshop/tree/master/Walkthrough%20Guide/06%20Functions%20and%20Cognitive%20Services#26-deploy-to-azure)
+- [Index data in Cosmos](https://github.com/MikeCodesDotNET/Mobile-Cloud-Workshop/tree/master/Walkthrough%20Guide/05%20Search#indexing-our-data)
+- [Deploy Function](https://github.com/MikeCodesDotNET/Mobile-Cloud-Workshop/tree/master/Walkthrough%20Guide/06%20Functions%20and%20Cognitive%20Services#26-deploy-to-azure)
