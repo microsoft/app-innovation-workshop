@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO;
+using System.Linq;
 using System.Reflection;
 using System.Threading.Tasks;
 using ContosoMaintenance.WebAPI.Helpers;
@@ -13,6 +14,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Newtonsoft.Json;
 using Swashbuckle.AspNetCore.Swagger;
+using Swashbuckle.AspNetCore.SwaggerGen;
 
 namespace ContosoMaintenance.WebAPI
 {
@@ -20,16 +22,6 @@ namespace ContosoMaintenance.WebAPI
     {
         public IConfiguration Configuration { get; }
 
-        // public Startup(IHostingEnvironment env)
-        // {
-        //     var builder = new ConfigurationBuilder()
-        //        .SetBasePath(Directory.GetCurrentDirectory())
-        //        .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true)
-        //        .AddJsonFile($"appsettings.{env.EnvironmentName}.json", optional: true)
-        //        .AddEnvironmentVariables();
-
-        //     Configuration = builder.Build();
-        // }
 
         public Startup(IConfiguration configuration)
         {            
@@ -92,16 +84,26 @@ namespace ContosoMaintenance.WebAPI
                     options.SerializerSettings.Formatting = Formatting.Indented;
                 });
 
-            // Configure the Swagger generator
-            services.AddSwaggerGen(c =>
-            {
-                c.SwaggerDoc("1.0", new Info { Title = "Contoso Maintenance API", Version = "1.0" });
+            // Configure the Swagger generator            
+            services.AddSwaggerGen(this.SwaggerGen("Job", "api/job"));
+            services.AddSwaggerGen(this.SwaggerGen("Part", "api/part"));
+            services.AddSwaggerGen(this.SwaggerGen("Dummy", "api/dummy"));
+            services.AddSwaggerGen(this.SwaggerGen("Photo", "api/photo"));
+            services.AddSwaggerGen(this.SwaggerGen("Search", "api/search"));
+        }
 
+        private Action<SwaggerGenOptions> SwaggerGen(string name, string filter)
+        {
+            return c =>
+            {
+                c.SwaggerDoc(name, new Info { Title = $"Contoso Maintenance API - {name}", Version = "1.0" });
+                
+                c.DocumentFilter<SwaggerFilter>(name, filter);
                 // Set the comments path for the Swagger JSON and UI.
                 var xmlFile = $"{Assembly.GetEntryAssembly().GetName().Name}.xml";
                 var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
                 c.IncludeXmlComments(xmlPath);
-            });
+            };
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -125,8 +127,12 @@ namespace ContosoMaintenance.WebAPI
             // Activate Swagger and cofigure its UI
             app.UseSwagger();
             app.UseSwaggerUI(c =>
-            {
-                c.SwaggerEndpoint("/swagger/1.0/swagger.json", "Contoso Maintenance API 1.0");
+            {                
+                c.SwaggerEndpoint("/swagger/Job/swagger.json", "Jobs");
+                c.SwaggerEndpoint("/swagger/Part/swagger.json", "Parts");
+                c.SwaggerEndpoint("/swagger/Dummy/swagger.json", "Dummy");
+                c.SwaggerEndpoint("/swagger/Photo/swagger.json", "Photo");
+                c.SwaggerEndpoint("/swagger/Search/swagger.json", "Search");
                 c.RoutePrefix = string.Empty; // Makes Swagger UI the root page
             });
 
