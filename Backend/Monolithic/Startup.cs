@@ -98,7 +98,11 @@ namespace ContosoMaintenance.WebAPI
             {
                 c.SwaggerDoc(name, new Info { Title = $"Contoso Maintenance API - {name}", Version = "1.0" });
                 
+                // The swagger filter takes the filter and removes any path that doesn't contain 
+                // the value of the filter in its route. Allowing for us to seperate out the generated
+                // swagger documents
                 c.DocumentFilter<SwaggerFilter>(name, filter);
+                
                 // Set the comments path for the Swagger JSON and UI.
                 var xmlFile = $"{Assembly.GetEntryAssembly().GetName().Name}.xml";
                 var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
