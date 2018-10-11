@@ -18,6 +18,8 @@ namespace ContosoMaintenance.WebAPI.Helpers
 
         public void Apply(SwaggerDocument swaggerDoc, DocumentFilterContext context)
         {
+            // Even though the filter is applied to a specific document they seem to get call for every document,
+            // so to ensure we only apply the fitler to the right document we check it is for the expected document
             if (!swaggerDoc.Info.Title.Contains(this.title)) return;
             swaggerDoc.Paths = swaggerDoc.Paths.Where(x => x.Key.Contains(filter)).ToDictionary(x => x.Key, x => x.Value);
         }
