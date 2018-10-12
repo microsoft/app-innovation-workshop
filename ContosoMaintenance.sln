@@ -12,7 +12,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{F9802EBB-7
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Platforms", "Platforms", "{ED42B7AC-B4AD-4784-8FEF-2953A8A7CEDC}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ContosoFieldService.Core", "Mobile\ContosoFieldService.Core\ContosoFieldService.Core.csproj", "{8D50D622-6D39-4894-B679-BB60C5D60648}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContosoFieldService.Core", "Mobile\ContosoFieldService.Core\ContosoFieldService.Core.csproj", "{8D50D622-6D39-4894-B679-BB60C5D60648}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Functions", "Functions", "{A5E6EEE2-C985-4C48-A6FD-BD95BFAA25EA}"
 EndProject
@@ -22,9 +22,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContosoFieldService.iOS", "
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BotWebApp", "BotWebApp", "{140A5FB1-CD49-4998-8196-74EF067452B3}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ContosoMaintenance.WebAPI", "Backend\Monolithic\ContosoMaintenance.WebAPI.csproj", "{61BFA852-2AAC-42BB-9073-B8857D45FE3A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContosoMaintenance.WebAPI", "Backend\Monolithic\ContosoMaintenance.WebAPI.csproj", "{61BFA852-2AAC-42BB-9073-B8857D45FE3A}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ContosoMaintenance.Functions", "Backend\Functions\ContosoMaintenance.Functions.csproj", "{0980AA2E-1C59-4AD4-A8B4-C38C8676F323}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContosoMaintenance.Functions", "Backend\Functions\ContosoMaintenance.Functions.csproj", "{0980AA2E-1C59-4AD4-A8B4-C38C8676F323}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContosoFieldService.UITests", "Mobile\UITests\ContosoFieldService.UITests.csproj", "{B6E498F2-60A4-44BE-B4D9-D8D2F953066D}"
 EndProject
@@ -275,53 +275,5 @@ Global
 		$0.DotNetNamingPolicy = $1
 		$1.DirectoryNamespaceAssociation = PrefixedHierarchical
 		$0.TextStylePolicy = $20
-		$2.FileWidth = 80
-		$2.scope = text/plain
-		$2.TabsToSpaces = True
-		$3.inheritsSet = null
-		$3.scope = text/x-csharp
-		$0.CSharpFormattingPolicy = $4
-		$4.scope = text/x-csharp
-		$5.inheritsSet = null
-		$5.scope = text/x-json
-		$0.JSONFormattingPolicy = $6
-		$6.AutoStructureCompletion = True
-		$6.BracePositions = SemiExpanded
-		$6.FormatOnPaste = True
-		$6.scope = text/x-json
-		$7.inheritsSet = null
-		$7.scope = text/x-web
-		$8.inheritsSet = null
-		$8.scope = text/x-vs
-		$9.inheritsSet = null
-		$9.scope = application/config+xml
-		$0.XmlFormattingPolicy = $19
-		$10.inheritsSet = null
-		$10.scope = application/config+xml
-		$11.inheritsSet = null
-		$11.scope = application/xml
-		$12.DefaultFormat = $13
-		$13.MaxAttributesPerLine = 999
-		$12.scope = application/xml
-		$14.inheritsSet = null
-		$14.scope = application/android+xml
-		$15.inheritsSet = null
-		$15.scope = application/android+xml
-		$16.inheritsSet = null
-		$16.scope = application/vnd.apple-xcode-storyboard
-		$17.inheritsSet = null
-		$17.scope = application/vnd.apple-xcode-storyboard
-		$18.inheritsSet = null
-		$18.scope = application/xaml+xml
-		$19.inheritsSet = null
-		$19.scope = application/xaml+xml
-		$20.inheritsSet = null
-		$20.scope = text/x-html
-		$0.HTMLFormattingPolicy = $21
-		$21.FormatOnPaste = True
-		$21.XHTMLCodingStyle = True
-		$21.scope = text/x-html
-		$0.StandardHeader = $22
-		$0.VersionControlPolicy = $23
 	EndGlobalSection
 EndGlobal
