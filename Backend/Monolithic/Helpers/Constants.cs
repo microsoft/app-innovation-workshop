@@ -1,5 +1,4 @@
-﻿using System;
-namespace ContosoMaintenance.WebAPI.Helpers
+﻿namespace ContosoMaintenance.WebAPI.Helpers
 {
     public static class Constants
     {

@@ -17,7 +17,6 @@
         <Folder Include="Services\" />
         <Folder Include="Models\" />
         <Folder Include="Services\Blob Storage\" />
-        <Folder Include="Helpers\" />
         <Folder Include="Services\Storage Queue\" />
     </ItemGroup>
     <ItemGroup>
