@@ -23,6 +23,13 @@ namespace ContosoFieldService.ViewModels
         Timer timer;
         int increment;
 
+        bool isUploading;
+        public bool IsUploading
+        {
+            get { return isUploading; }
+            set { isUploading = value; RaisePropertyChanged(); }
+        }
+
         public string Name { get; set; }
         public string Details { get; set; }
         public string Duration { get; set; }
@@ -120,12 +127,13 @@ namespace ContosoFieldService.ViewModels
                     if (file != null)
                     {
                         Analytics.TrackEvent("Taking a photo");
+                        IsUploading = true;
 
                         var updatedJob = await photoService.UploadPhotoAsync(selectedJob.Id, file);
                         jobService.InvalidateCache("Jobs");
                         Init(updatedJob);
 
-                        await CoreMethods.DisplayAlert("Saved", "Image Saved", "OK");
+                        IsUploading = false;
                     }
                 });
             }

@@ -28,6 +28,20 @@ namespace ContosoFieldService
                 return jobDetailsPageModel;
             }
         }
+        static WorkingJobViewModel workingJobViewModel;
+        public static WorkingJobViewModel WorkingJobViewModel
+        {
+            get
+            {
+                if (workingJobViewModel == null)
+                {
+                    workingJobViewModel = new WorkingJobViewModel();
+                    workingJobViewModel.Init(DummyData.GetDummyJobs().First());
+                }
+
+                return workingJobViewModel;
+            }
+        }
 
         static PartsViewModel partsPageModel;
         public static PartsViewModel PartsPageModel => partsPageModel ?? (partsPageModel = new PartsViewModel { Parts = DummyData.GetDummyParts() });

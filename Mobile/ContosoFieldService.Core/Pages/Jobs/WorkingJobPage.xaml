@@ -3,7 +3,8 @@
     xmlns="http://xamarin.com/schemas/2014/forms" 
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
     xmlns:design="clr-namespace:ContosoFieldService;assembly=ContosoFieldService.Core"
-    BindingContext="{x:Static design:PageModelLocator.JobDetailsPageModel}"
+    xmlns:lottie="clr-namespace:Lottie.Forms;assembly=Lottie.Forms" 
+    BindingContext="{x:Static design:PageModelLocator.WorkingJobViewModel}"
     x:Class="ContosoFieldService.Pages.WorkingJobPage"
     BackgroundColor="{StaticResource BackgroundColor}"
     Title="Working">
@@ -17,111 +18,143 @@
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </ContentPage.Resources>
+    
+    <Grid>
+        <ScrollView>
+            <StackLayout Spacing="0">
+                <StackLayout
+                    HeightRequest="250" 
+                    BackgroundColor="{StaticResource AccentColor}">
+                    
+                    <Label 
+                        x:Name="lblDuration"
+                        AutomationId="lblDuration"
+                        Text="{Binding Duration}" 
+                        TextColor="White"
+                        FontSize="32" 
+                        HorizontalTextAlignment="Center" 
+                        Margin="0,105,0,0">
+                    </Label>
+                    
+                    <Label 
+                        x:Name="lblBillable"
+                        AutomationId="lblBillable"
+                        Text="{Binding Billable}" 
+                        TextColor="White" 
+                        FontAttributes="Bold" 
+                        HorizontalTextAlignment="Center">
+                    </Label>
+                </StackLayout>
 
-    <ScrollView>
-        <StackLayout Spacing="0">
+                <!-- Quick Break --> 
+                <Button 
+                    x:Name="btnQuickBreak"
+                    AutomationId="btnQuickBreak"
+                    Style="{StaticResource FullWidthButtonStyle}"
+                    BackgroundColor="{DynamicResource AccentColorDarkOrange}" 
+                    Text="Quick Break"
+                    Command="{Binding QuickBreakClicked}" />
+
+                <StackLayout 
+                    Padding="{StaticResource DefaultThickness}"
+                    Spacing="{StaticResource DefaultMargin}">
+
+                    <!-- Overview -->
+                    <StackLayout  Spacing="{StaticResource DefaultMargin}">
+                        <Label 
+                            Style="{DynamicResource SectionHaderLabelStyle}"
+                            Text="Overview" />
+
+                        <!-- Job Name -->
+                        <StackLayout Spacing="0">  
+                            <Label 
+                                x:Name="lblJobName"
+                                AutomationId="lblJobName"
+                                Style="{DynamicResource PropertyLabelStyle}"
+                                Text="{Binding Name}" />
+
+                            <Label 
+                                Style="{DynamicResource PropertyFooterLabelStyle}"
+                                Text="Job Name" />
+                        </StackLayout>
+
+                        <!-- Estimated Duration -->
+                        <StackLayout Spacing="0">  
+                            <Label 
+                                x:Name="lblEstimatedDuration"
+                                AutomationId="lblEstimatedDuration"
+                                Style="{DynamicResource PropertyLabelStyle}"
+                                Text="2 hours" />
+
+                            <Label 
+                                Style="{DynamicResource PropertyFooterLabelStyle}"
+                                Text="Estimated Duration" />
+                        </StackLayout>
+                    </StackLayout>
+                    
+                    <!-- Divider -->
+                    <BoxView HeightRequest="1" BackgroundColor="{StaticResource SeparatorColor}" />
+
+                    <!-- Details -->
+                    <StackLayout  Spacing="{StaticResource DefaultMargin}">
+                        <Label 
+                            Style="{DynamicResource SectionHaderLabelStyle}"
+                            Text="Details" />
+
+                        <!-- Details Text -->
+                        <Label
+                            x:Name="lblDetailsTitle"
+                            AutomationId="lblDetailsTitle"
+                            Style="{DynamicResource RegularLabelStyle}"
+                            Text="{Binding Details}" />
+                    </StackLayout>
+                </StackLayout>
+
+                <!-- Snap a Photo --> 
+                <Button 
+                    Style="{StaticResource FullWidthButtonStyle}"
+                    BackgroundColor="{StaticResource AccentColorBlue}" 
+                    Text="Snap a Photo" 
+                    Command="{Binding SnapPhotoClicked}" />
+
+                <!-- Complete Job --> 
+                <Button 
+                    Style="{StaticResource FullWidthButtonStyle}"
+                    BackgroundColor="{StaticResource AccentColorRed}" 
+                    Text="Complete" 
+                    Command="{Binding CompleteClicked}" />
+                   
+            </StackLayout>
+        </ScrollView>
+    
+        <!-- Loading Overlay -->
+        <Grid IsVisible="{Binding IsUploading}">
+            <BoxView
+                VerticalOptions="Fill"
+                HorizontalOptions="Fill"
+                BackgroundColor="Black"
+                Opacity="0.8" />
+                
             <StackLayout
-                HeightRequest="250" 
-                BackgroundColor="{StaticResource AccentColor}">
-                
-                <Label 
-                    x:Name="lblDuration"
-                    AutomationId="lblDuration"
-                    Text="{Binding Duration}" 
+                Margin="20"
+                HorizontalOptions="Fill"
+                VerticalOptions="Center"> 
+                                    
+                <lottie:AnimationView 
+                    Animation="image-upload.json" 
+                    Loop="true" 
+                    AutoPlay="true"    
+                    VerticalOptions="Center"
+                    HeightRequest="300"
+                    WidthRequest="300"/>
+                    
+                <Label
+                    Text="UPLOADING"
+                    HorizontalTextAlignment="Center"
+                    FontAttributes="Bold"
                     TextColor="White"
-                    FontSize="32" 
-                    HorizontalTextAlignment="Center" 
-                    Margin="0,105,0,0">
-                </Label>
-                
-                <Label 
-                    x:Name="lblBillable"
-                    AutomationId="lblBillable"
-                    Text="{Binding Billable}" 
-                    TextColor="White" 
-                    FontAttributes="Bold" 
-                    HorizontalTextAlignment="Center">
-                </Label>
-            </StackLayout>
-
-            <!-- Quick Break --> 
-            <Button 
-                x:Name="btnQuickBreak"
-                AutomationId="btnQuickBreak"
-                Style="{StaticResource FullWidthButtonStyle}"
-                BackgroundColor="{DynamicResource AccentColorDarkOrange}" 
-                Text="Quick Break"
-                Command="{Binding QuickBreakClicked}" />
-
-            <StackLayout 
-                Padding="{StaticResource DefaultThickness}"
-                Spacing="{StaticResource DefaultMargin}">
-
-                <!-- Overview -->
-                <StackLayout  Spacing="{StaticResource DefaultMargin}">
-                    <Label 
-                        Style="{DynamicResource SectionHaderLabelStyle}"
-                        Text="Overview" />
-
-                    <!-- Job Name -->
-                    <StackLayout Spacing="0">  
-                        <Label 
-                            x:Name="lblJobName"
-                            AutomationId="lblJobName"
-                            Style="{DynamicResource PropertyLabelStyle}"
-                            Text="{Binding Name}" />
-
-                        <Label 
-                            Style="{DynamicResource PropertyFooterLabelStyle}"
-                            Text="Job Name" />
-                    </StackLayout>
-
-                    <!-- Estimated Duration -->
-                    <StackLayout Spacing="0">  
-                        <Label 
-                            x:Name="lblEstimatedDuration"
-                            AutomationId="lblEstimatedDuration"
-                            Style="{DynamicResource PropertyLabelStyle}"
-                            Text="2 hours" />
-
-                        <Label 
-                            Style="{DynamicResource PropertyFooterLabelStyle}"
-                            Text="Estimated Duration" />
-                    </StackLayout>
-                </StackLayout>
-                
-                <!-- Divider -->
-                <BoxView HeightRequest="1" BackgroundColor="{StaticResource SeparatorColor}" />
-
-                <!-- Details -->
-                <StackLayout  Spacing="{StaticResource DefaultMargin}">
-                    <Label 
-                        Style="{DynamicResource SectionHaderLabelStyle}"
-                        Text="Details" />
-
-                    <!-- Details Text -->
-                    <Label
-                        x:Name="lblDetailsTitle"
-                        AutomationId="lblDetailsTitle"
-                        Style="{DynamicResource RegularLabelStyle}"
-                        Text="{Binding Details}" />
-                </StackLayout>
-            </StackLayout>
-
-            <!-- Snap a Photo --> 
-            <Button 
-                Style="{StaticResource FullWidthButtonStyle}"
-                BackgroundColor="{StaticResource AccentColorBlue}" 
-                Text="Snap a Photo" 
-                Command="{Binding SnapPhotoClicked}" />
-
-            <!-- Complete Job --> 
-            <Button 
-                Style="{StaticResource FullWidthButtonStyle}"
-                BackgroundColor="{StaticResource AccentColorRed}" 
-                Text="Complete" 
-                Command="{Binding CompleteClicked}" />
-               
-        </StackLayout>
-    </ScrollView>
+                    HorizontalOptions="Center" />
+            </StackLayout>             
+        </Grid>
+    </Grid>
 </ContentPage>

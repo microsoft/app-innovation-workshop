@@ -314,6 +314,12 @@
         <Reference Include="Plugin.VersionTracking">
           <HintPath>..\..\packages\Plugin.VersionTracking.2.1.0\lib\Xamarin.iOS10\Plugin.VersionTracking.dll</HintPath>
         </Reference>
+        <Reference Include="Lottie.iOS">
+          <HintPath>..\..\packages\Com.Airbnb.iOS.Lottie.2.5.4\lib\xamarinios10\Lottie.iOS.dll</HintPath>
+        </Reference>
+        <Reference Include="Lottie.Forms">
+          <HintPath>..\..\packages\Com.Airbnb.Xamarin.Forms.Lottie.2.6.3\lib\xamarinios10\Lottie.Forms.dll</HintPath>
+        </Reference>
     </ItemGroup>
     <ItemGroup>
         <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Contents.json">
@@ -439,6 +445,7 @@
         <BundleResource Include="Resources\icon_share.png" />
         <BundleResource Include="Resources\icon_share%402x.png" />
         <BundleResource Include="Resources\icon_share%403x.png" />
+        <BundleResource Include="Resources\image-upload.json" />
     </ItemGroup>
     <ItemGroup>
         <Analyzer Include="..\..\packages\AsyncUsageAnalyzers.1.0.0-alpha003\analyzers\dotnet\AsyncUsageAnalyzers.dll" />
