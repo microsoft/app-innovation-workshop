@@ -154,6 +154,11 @@
                     FontAttributes="Bold"
                     TextColor="White"
                     HorizontalOptions="Center" />
+                <Label
+                    Text="Please do not leave this page."
+                    HorizontalTextAlignment="Center"
+                    TextColor="White"
+                    HorizontalOptions="Center" />
             </StackLayout>             
         </Grid>
     </Grid>
