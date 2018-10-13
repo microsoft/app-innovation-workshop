@@ -68,8 +68,8 @@
 
     <!-- Font Sizes -->
     <OnPlatform x:Key="FontSizeTitle" x:TypeArguments="x:Double">
-        <On Platform="iOS">34</On>
-        <On Platform="Android">34</On>
+        <On Platform="iOS">32</On>
+        <On Platform="Android">32</On>
     </OnPlatform>                        
 
     <OnPlatform x:Key="FontSizeLarge" x:TypeArguments="x:Double">

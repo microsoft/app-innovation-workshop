@@ -5,16 +5,18 @@
     xmlns:design="clr-namespace:ContosoFieldService;assembly=ContosoFieldService.Core"
     xmlns:converters="clr-namespace:ContosoFieldService.Converters;assembly=ContosoFieldService.Core"
     xmlns:flow="clr-namespace:DLToolkit.Forms.Controls;assembly=DLToolkit.Forms.Controls.FlowListView"    
+    xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+    xmlns:themes="using:ContosoFieldService.Themes"
     BindingContext="{x:Static design:PageModelLocator.JobDetailsPageModel}"
     x:Class="ContosoFieldService.Pages.JobDetailsPage"
     BackgroundColor="{StaticResource BackgroundColor}"
-    Title="Job Details" xmlns:themes="clr-namespace:ContosoFieldService.Themes">
+    Title="Job Details">
 
     <ContentPage.Resources>
         <ResourceDictionary>
             <converters:CountToVisibilityConverter x:Key="CountToVisibilityConverter" />
             
-            <ResourceDictionary.MergedDictionaries xmlns:themes="using:ContosoFieldService.Themes" >
+            <ResourceDictionary.MergedDictionaries  >
                 <!-- Light theme for this page -->
                 <themes:Light />
                 <themes:Styles />
@@ -40,10 +42,10 @@
         FlowItemsSource="{Binding Photos}">
 
         <flow:FlowListView.Header>
-            <StackLayout>
+            <StackLayout CompressedLayout.IsHeadless="true">
 
                 <!-- Job Name Banner --> 
-                <Frame       
+                <Frame
                     CornerRadius="0"
                     HasShadow="false"
                     BackgroundColor="{StaticResource AccentColorRed}" >
@@ -60,7 +62,8 @@
                 <!-- Overview Stack -->
                 <StackLayout
                     Padding="{StaticResource DefaultThickness}"
-                    Spacing="{StaticResource DefaultMargin}">
+                    Spacing="{StaticResource DefaultMargin}"
+                    CompressedLayout.IsHeadless="true">
 
                     <!-- Header -->
                     <Label
@@ -68,7 +71,7 @@
                         Text="Overview" />
 
                     <!-- Job Age -->   
-                    <StackLayout Spacing="0">
+                    <StackLayout Spacing="0" CompressedLayout.IsHeadless="true">
                         <Label 
                             x:Name="lblAge"
                             AutomationId="lblAge"
@@ -81,7 +84,7 @@
                     </StackLayout>
 
                     <!-- Due Date -->
-                    <StackLayout Spacing="0">
+                    <StackLayout Spacing="0" CompressedLayout.IsHeadless="true">
                         <Label 
                             x:Name="lblDueDate"
                             AutomationId="lblDueDate"
@@ -100,7 +103,8 @@
                 <!-- Details Stack -->
                 <StackLayout
                     Padding="{StaticResource DefaultThickness}"
-                    Spacing="{StaticResource DefaultMargin}">
+                    Spacing="{StaticResource DefaultMargin}"
+                    CompressedLayout.IsHeadless="true">
 
                     <!-- Header -->
                     <Label 
@@ -126,6 +130,7 @@
 
                 <!-- Photos Stack -->
                 <StackLayout
+                    CompressedLayout.IsHeadless="true"
                     Padding="{StaticResource DefaultThickness}"
                     Spacing="{StaticResource DefaultMargin}">
 
@@ -147,11 +152,11 @@
         
         <flow:FlowListView.FlowColumnTemplate>
             <DataTemplate>
-                <Grid HeightRequest="107">
+                <Grid HeightRequest="107" CompressedLayout.IsHeadless="true">
                     <Grid.Margin>
                         <Thickness Left="{StaticResource DefaultMargin}" Top="0" Right="0" Bottom="{StaticResource DefaultMargin}" />
                     </Grid.Margin>
-                    <Image Source="{Binding IconUrl}" Aspect="AspectFill" />
+                    <ffimageloading:CachedImage Source="{Binding IconUrl}" Aspect="AspectFill" />
                 </Grid>
             </DataTemplate>
         </flow:FlowListView.FlowColumnTemplate>
@@ -161,14 +166,15 @@
             <!-- Job Options -->
             <StackLayout
                 Padding="{StaticResource DefaultThickness}"
-                Spacing="{StaticResource DefaultMargin}">
+                Spacing="{StaticResource DefaultMargin}"
+                CompressedLayout.IsHeadless="true">
 
                 <Label 
                     Style="{DynamicResource SectionHaderLabelStyle}" 
                     Text="Options" />
 
                 <!-- The iOS version uses a custom button and renderer -->
-                <Grid ColumnSpacing="1" RowSpacing="1" Margin="0,0,0,0"> 
+                <Grid ColumnSpacing="1" RowSpacing="1" Margin="0" CompressedLayout.IsHeadless="true"> 
                     <Grid.RowDefinitions>
                         <RowDefinition Height="Auto" />
                         <RowDefinition Height="Auto" />

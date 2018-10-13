@@ -3,18 +3,17 @@ using System.Collections.Generic;
 using ContosoFieldService.Abstractions;
 using ContosoFieldService.Helpers;
 using ContosoFieldService.ViewModels;
+using DLToolkit.Forms.Controls;
 using FreshMvvm;
 using Microsoft.AppCenter;
 using Microsoft.AppCenter.Analytics;
 using Microsoft.AppCenter.Crashes;
+using Microsoft.AppCenter.Distribute;
 using Microsoft.AppCenter.Push;
+using MonkeyCache.FileStore;
+using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
-using Microsoft.AppCenter.Distribute;
-using ContosoFieldService.Services;
-using MonkeyCache.FileStore;
-using DLToolkit.Forms.Controls;
-using Xamarin.Essentials;
 
 [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 namespace ContosoFieldService
@@ -26,14 +25,8 @@ namespace ContosoFieldService
             InitializeComponent();
             FlowListView.Init();
 
-
             // Configure Monkey Cache
             Barrel.ApplicationId = "ContosoFieldService";
-
-#if DEBUG
-            Settings.LoginViewShown = false;
-#endif
-
 
             // Stop the keyboard overlaying the chatbot webview on Android (it isn't a problem on iOS).
             Xamarin.Forms.PlatformConfiguration.AndroidSpecific.Application.SetWindowSoftInputModeAdjust(this, Xamarin.Forms.PlatformConfiguration.AndroidSpecific.WindowSoftInputModeAdjust.Resize);

@@ -375,9 +375,7 @@
         <AndroidResource Include="Resources\layout\Tabbar.axml" />
         <AndroidResource Include="Resources\layout\Toolbar.axml" />
         <AndroidResource Include="Resources\values\styles.xml" />
-        <AndroidResource Include="Resources\drawable\myface.jpg" />
         <AndroidResource Include="Resources\drawable\icon_comments.png" />
-        <AndroidResource Include="Resources\drawable\ba747.jpeg" />
         <AndroidResource Include="Resources\drawable-hdpi\icon_user.png" />
         <AndroidResource Include="Resources\drawable-mdpi\icon_user.png" />
         <AndroidResource Include="Resources\drawable-xhdpi\icon_user.png" />
@@ -451,9 +449,6 @@
     </ItemGroup>
     <ItemGroup>
         <Folder Include="Renderers\" />
-    </ItemGroup>
-    <ItemGroup>
-        <Analyzer Include="..\..\packages\AsyncUsageAnalyzers.1.0.0-alpha003\analyzers\dotnet\AsyncUsageAnalyzers.dll" />
     </ItemGroup>
     <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
     <Import Project="..\..\packages\Xamarin.GooglePlayServices.Basement.60.1142.0\build\MonoAndroid80\Xamarin.GooglePlayServices.Basement.targets" Condition="Exists('..\..\packages\Xamarin.GooglePlayServices.Basement.60.1142.0\build\MonoAndroid80\Xamarin.GooglePlayServices.Basement.targets')" />

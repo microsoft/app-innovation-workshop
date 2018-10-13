@@ -71,9 +71,9 @@ namespace ContosoFieldService.ViewModels
             {
                 Application.Current.AppLinks.RegisterLink(entry);
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                // Crashes on Android currents
+                // Crashes on Android currently
                 // TODO: Fix DeepLink support on Android
             }
 

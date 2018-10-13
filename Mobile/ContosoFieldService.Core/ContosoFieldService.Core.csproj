@@ -50,4 +50,7 @@
         <PackageReference Include="Refit" Version="4.6.48" />
         <PackageReference Include="Xam.Plugin.Media" Version="4.0.1.5" />
     </ItemGroup>
+    <ItemGroup>
+      <EmbeddedResource Remove="Pages\Dashboard\DashboardPage.xaml" />
+    </ItemGroup>
 </Project>

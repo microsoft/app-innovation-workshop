@@ -2,15 +2,18 @@
 <ContentPage 
     xmlns="http://xamarin.com/schemas/2014/forms" 
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core" 
     x:Class="ContosoFieldService.Pages.CreateNewJobPage"
+    ios:Page.UseSafeArea="true"
     BackgroundColor="{StaticResource BackgroundColor}"
     Title="Create New Job">
 
     <ScrollView>
-        <StackLayout>
+        <StackLayout CompressedLayout.IsHeadless="true">
 
            <!-- Form Stack -->
             <StackLayout
+                CompressedLayout.IsHeadless="true"
                 Padding="{StaticResource DefaultThickness}"
                 Spacing="{StaticResource DefaultMargin}"
                 VerticalOptions="FillAndExpand">
@@ -58,17 +61,12 @@
                     Style="{StaticResource DatePickerStyle}"
                     Date="{Binding DueDate}"
                     MinimumDate="{Binding CurrentDate}" />
-          </StackLayout>  
+            </StackLayout>  
             
-           <StackLayout VerticalOptions="End" Spacing="0">
-                <StackLayout.Margin>
-                    <OnPlatform x:TypeArguments="Thickness">
-                        <!-- Extra Bottom-Margin for iPhone X -->
-                        <!-- TODO: Use Safe Areas -->
-                        <On Platform="iOS" Value="0,0,0,20" />
-                    </OnPlatform>
-                </StackLayout.Margin>
-                
+            <StackLayout
+                VerticalOptions="End"
+                Spacing="0"
+                CompressedLayout.IsHeadless="true">
                 <Button 
                     Style="{StaticResource FullWidthButtonStyle}"                    
                     Text="Create" 
