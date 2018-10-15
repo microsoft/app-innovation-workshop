@@ -363,6 +363,12 @@
         <Reference Include="Plugin.Media">
           <HintPath>..\..\packages\Xam.Plugin.Media.3.1.3\lib\MonoAndroid10\Plugin.Media.dll</HintPath>
         </Reference>
+        <Reference Include="Lottie.Android">
+          <HintPath>..\..\packages\Com.Airbnb.Android.Lottie.2.6.0\lib\monoandroid81\Lottie.Android.dll</HintPath>
+        </Reference>
+        <Reference Include="Lottie.Forms">
+          <HintPath>..\..\packages\Com.Airbnb.Xamarin.Forms.Lottie.2.6.3\lib\monoandroid81\Lottie.Forms.dll</HintPath>
+        </Reference>
     </ItemGroup>
     <ItemGroup>
         <Compile Include="MainActivity.cs" />
@@ -455,6 +461,7 @@
         <AndroidAsset Include="Assets\icon_comments%402x.png" />
         <AndroidAsset Include="Assets\icon_usersettings%402x.png" />
         <AndroidAsset Include="Assets\photoupload.json" />
+        <AndroidAsset Include="Assets\image-upload.json" />
     </ItemGroup>
     <ItemGroup>
         <Folder Include="Renderers\" />
