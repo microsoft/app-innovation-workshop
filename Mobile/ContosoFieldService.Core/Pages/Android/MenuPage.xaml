@@ -4,19 +4,8 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
     x:Class="ContosoFieldService.Pages.Android.MenuPage"
     xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
-    xmlns:fftransformations="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations"
     xmlns:behaviors="clr-namespace:Corcav.Behaviors;assembly=Corcav.Behaviors"
     BackgroundColor="{StaticResource BackgroundColorDark}">
-
-    <ContentPage.Resources>
-        <ResourceDictionary>
-            <ResourceDictionary.MergedDictionaries>
-                <!-- Light theme for this page -->
-                <themes:Dark xmlns:themes="using:ContosoFieldService.Themes" />
-            </ResourceDictionary.MergedDictionaries>
-        </ResourceDictionary>
-    </ContentPage.Resources>
-
     
     <ListView 
         x:Name="listView"
@@ -25,6 +14,7 @@
         SelectedItem="{Binding SelectedItem}"
         BackgroundColor="Transparent"
         SeparatorVisibility="None">
+        
         <behaviors:Interaction.Behaviors>
             <behaviors:BehaviorCollection>
                 <behaviors:EventToCommand EventName="ItemSelected" Command="{Binding NavigateCommand}" />
@@ -37,8 +27,8 @@
                 HeightRequest="160">
                 
                 <StackLayout
-                    VerticalOptions="Center">   
-                    
+                    VerticalOptions="Center"
+                    CompressedLayout.IsHeadless="true">
                     <Label 
                         Style="{StaticResource LargeLabelStyle}"
                         HorizontalOptions="Start"
@@ -53,11 +43,8 @@
                         Margin="25,0,10,0"
                         TextColor="White"
                         Text="Workshop Demo App" />
-                </StackLayout>
-                
+                </StackLayout>                
             </Grid>
-            
-            
         </ListView.Header>
         
         <ListView.ItemTemplate>
@@ -67,12 +54,12 @@
                         Padding="20"
                         Orientation="Horizontal">
                         
-                        <Image
+                        <ffimageloading:CachedImage
                             HeightRequest="20"
                             WidthRequest="30"
                             Source="{Binding Image}"
                             VerticalOptions="Center" />
-                        
+                            
                         <Label
                             Margin="10,0,0,0"
                             VerticalTextAlignment="Center"

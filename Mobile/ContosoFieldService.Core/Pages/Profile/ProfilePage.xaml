@@ -6,6 +6,7 @@
     xmlns:fftransformations="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations"
     xmlns:controls="clr-namespace:CarouselView.FormsPlugin.Abstractions;assembly=CarouselView.FormsPlugin.Abstractions"
     xmlns:converters="clr-namespace:ContosoFieldService.Converters;assembly=ContosoFieldService.Core"
+    xmlns:themes="using:ContosoFieldService.Themes"
     x:Class="ContosoFieldService.Pages.ProfilePage"
     BackgroundColor="{StaticResource BackgroundColorDark}"
     Title="Me">
@@ -17,12 +18,16 @@
     </ContentPage.Resources>
     
     <ScrollView>
-        <StackLayout Spacing="{StaticResource DefaultMargin}">
+        <StackLayout 
+            Spacing="{StaticResource DefaultMargin}" 
+            CompressedLayout.IsHeadless="true">
 
             <!-- Profile Header -->            
             <Grid 
                 Padding="{StaticResource DefaultThickness}"
-                HorizontalOptions="FillAndExpand" >
+                HorizontalOptions="FillAndExpand"
+                CompressedLayout.IsHeadless="true">
+                
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*" />
                     <ColumnDefinition Width="Auto" />
@@ -42,7 +47,7 @@
                     HorizontalOptions="Center"
                     HeightRequest="50" 
                     WidthRequest="50" 
-                    BorderRadius="25" 
+                    CornerRadius="25" 
                     BackgroundColor="{StaticResource BackgroundColor}" 
                     Image="icon_bot.png" 
                     Command="{Binding ChatToBot}"  />
@@ -60,14 +65,8 @@
                     Source="{Binding GravatarSource}">
                     <ffimageloading:CachedImage.Transformations>
                         <fftransformations:CircleTransformation 
-                            BorderHexColor="#FFFFFF">
-                            <fftransformations:CircleTransformation.BorderSize>
-                                <OnPlatform x:TypeArguments="x:Double">
-                                  <On Platform="iOS" Value="40" />
-                                  <On Platform="Android" Value="30" />
-                                </OnPlatform>
-                            </fftransformations:CircleTransformation.BorderSize>
-                        </fftransformations:CircleTransformation>
+                            BorderHexColor="#FFFFFF"
+                            BorderSize="{OnPlatform iOS=40, Android=30}" />
                     </ffimageloading:CachedImage.Transformations>
                 </ffimageloading:CachedImage>
 
@@ -80,7 +79,7 @@
                     HorizontalOptions="Center" 
                     WidthRequest="50" 
                     HeightRequest="50" 
-                    BorderRadius="25" 
+                    CornerRadius="25" 
                     BackgroundColor="{StaticResource BackgroundColor}"
                     Image="icon_usersettings.png" 
                     Command="{Binding ShowSettings}" />
@@ -100,7 +99,7 @@
                 BackgroundColor="{StaticResource BackgroundColor}">
                 <StackLayout.Resources>
                     <ResourceDictionary>
-                        <ResourceDictionary.MergedDictionaries xmlns:themes="using:ContosoFieldService.Themes">
+                        <ResourceDictionary.MergedDictionaries>
                             <!-- Light theme for this page -->
                             <themes:Light />
                             <themes:Styles />
@@ -150,7 +149,7 @@
                     
                     <controls:CarouselViewControl.ItemTemplate>
                         <DataTemplate>
-                            <StackLayout Orientation="Vertical" Padding="15,10,5,5">
+                            <StackLayout Orientation="Vertical" Padding="15,10,5,5" CompressedLayout.IsHeadless="true">
                                 <Label 
                                     Style="{DynamicResource SectionHaderLabelStyle}" 
                                     HorizontalOptions="StartAndExpand"
@@ -158,9 +157,10 @@
 
                                 <StackLayout
                                     Orientation="Horizontal"
-                                    Margin="0,10,0,0">
+                                    Margin="0,10,0,0"
+                                    CompressedLayout.IsHeadless="true">
                                     
-                                    <StackLayout Orientation="Vertical" HorizontalOptions="CenterAndExpand">
+                                    <StackLayout Orientation="Vertical" HorizontalOptions="CenterAndExpand" CompressedLayout.IsHeadless="true">
                                         <Label 
                                             x:Name="lblValueOne"
                                             AutomationId="lblValueOne"
@@ -177,7 +177,7 @@
                                     
                                     <BoxView WidthRequest="1" BackgroundColor="{DynamicResource SeparatorColor}" />
 
-                                    <StackLayout Orientation="Vertical" HorizontalOptions="CenterAndExpand">
+                                    <StackLayout Orientation="Vertical" HorizontalOptions="CenterAndExpand" CompressedLayout.IsHeadless="true">
                                         <Label 
                                             x:Name="lblValueTwo"
                                             AutomationId="lblValueTwo"
@@ -201,10 +201,10 @@
                 <BoxView HeightRequest="1" BackgroundColor="{StaticResource SeparatorColor}" />
 
                 <!-- Stats -->
-                <StackLayout Padding="{StaticResource DefaultThickness}">
+                <StackLayout Padding="{StaticResource DefaultThickness}" CompressedLayout.IsHeadless="true">
 
                     <!-- Stats Title -->
-                    <StackLayout Orientation="Horizontal">
+                    <StackLayout Orientation="Horizontal" CompressedLayout.IsHeadless="true">
                         <Label 
                             Style="{DynamicResource SectionHaderLabelStyle}" 
                             HorizontalOptions="StartAndExpand"
@@ -219,7 +219,7 @@
                     </StackLayout>
 
                     <!-- Jobs Completed -->
-                    <StackLayout Spacing="0">
+                    <StackLayout Spacing="0" CompressedLayout.IsHeadless="true">
                         <Label 
                             x:Name="lblJobsCompletedTotal"
                             AutomationId="lblJobsCompletedTotal"
@@ -232,7 +232,7 @@
                     </StackLayout>
 
                     <!-- 747 Engines Services -->
-                    <StackLayout Spacing="0">
+                    <StackLayout Spacing="0" CompressedLayout.IsHeadless="true">
                         <Label 
                             x:Name="lblEnginesServicedTotal"
                             AutomationId="lblEnginesServicedTotal"
@@ -249,7 +249,7 @@
                 <BoxView HeightRequest="1" BackgroundColor="{StaticResource SeparatorColor}" />
 
                 <!-- Insights -->
-                <StackLayout Padding="{StaticResource DefaultThickness}">
+                <StackLayout Padding="{StaticResource DefaultThickness}" CompressedLayout.IsHeadless="true">
 
                     <!-- Insights Title -->
                     <StackLayout Orientation="Horizontal">
@@ -265,7 +265,7 @@
                     </StackLayout>
 
                     <!-- Subline -->
-                    <StackLayout Spacing="0">
+                    <StackLayout Spacing="0" CompressedLayout.IsHeadless="true">
                         <Label 
                             x:Name="lblProcess"
                             AutomationId="lblProcess"
@@ -284,7 +284,8 @@
                 <!-- Sync -->
                 <StackLayout 
                     Orientation="Horizontal" 
-                    Padding="{StaticResource DefaultThickness}">
+                    Padding="{StaticResource DefaultThickness}"
+                    CompressedLayout.IsHeadless="true">
                     
                     <Label 
                         Style="{DynamicResource PropertyFooterLabelStyle}"

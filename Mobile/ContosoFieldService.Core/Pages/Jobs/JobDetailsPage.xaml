@@ -5,16 +5,18 @@
     xmlns:design="clr-namespace:ContosoFieldService;assembly=ContosoFieldService.Core"
     xmlns:converters="clr-namespace:ContosoFieldService.Converters;assembly=ContosoFieldService.Core"
     xmlns:flow="clr-namespace:DLToolkit.Forms.Controls;assembly=DLToolkit.Forms.Controls.FlowListView"    
+    xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+    xmlns:themes="using:ContosoFieldService.Themes"
     BindingContext="{x:Static design:PageModelLocator.JobDetailsPageModel}"
     x:Class="ContosoFieldService.Pages.JobDetailsPage"
     BackgroundColor="{StaticResource BackgroundColor}"
-    Title="Job Details" xmlns:themes="clr-namespace:ContosoFieldService.Themes">
+    Title="Job Details">
 
     <ContentPage.Resources>
         <ResourceDictionary>
             <converters:CountToVisibilityConverter x:Key="CountToVisibilityConverter" />
             
-            <ResourceDictionary.MergedDictionaries xmlns:themes="using:ContosoFieldService.Themes" >
+            <ResourceDictionary.MergedDictionaries  >
                 <!-- Light theme for this page -->
                 <themes:Light />
                 <themes:Styles />
@@ -40,10 +42,10 @@
         FlowItemsSource="{Binding Photos}">
 
         <flow:FlowListView.Header>
-            <StackLayout>
+            <StackLayout CompressedLayout.IsHeadless="true">
 
                 <!-- Job Name Banner --> 
-                <Frame       
+                <Frame
                     CornerRadius="0"
                     HasShadow="false"
                     BackgroundColor="{StaticResource AccentColorRed}" >
@@ -60,7 +62,8 @@
                 <!-- Overview Stack -->
                 <StackLayout
                     Padding="{StaticResource DefaultThickness}"
-                    Spacing="{StaticResource DefaultMargin}">
+                    Spacing="{StaticResource DefaultMargin}"
+                    CompressedLayout.IsHeadless="true">
 
                     <!-- Header -->
                     <Label
@@ -68,7 +71,10 @@
                         Text="Overview" />
 
                     <!-- Job Age -->   
-                    <StackLayout Spacing="0">
+                    <StackLayout 
+                        Spacing="0"
+                        CompressedLayout.IsHeadless="true">
+                        
                         <Label 
                             x:Name="lblAge"
                             AutomationId="lblAge"
@@ -81,7 +87,10 @@
                     </StackLayout>
 
                     <!-- Due Date -->
-                    <StackLayout Spacing="0">
+                    <StackLayout
+                        Spacing="0" 
+                        CompressedLayout.IsHeadless="true">
+                        
                         <Label 
                             x:Name="lblDueDate"
                             AutomationId="lblDueDate"
@@ -100,7 +109,8 @@
                 <!-- Details Stack -->
                 <StackLayout
                     Padding="{StaticResource DefaultThickness}"
-                    Spacing="{StaticResource DefaultMargin}">
+                    Spacing="{StaticResource DefaultMargin}"
+                    CompressedLayout.IsHeadless="true">
 
                     <!-- Header -->
                     <Label 
@@ -127,7 +137,8 @@
                 <!-- Photos Stack -->
                 <StackLayout
                     Padding="{StaticResource DefaultThickness}"
-                    Spacing="{StaticResource DefaultMargin}">
+                    Spacing="{StaticResource DefaultMargin}"
+                    CompressedLayout.IsHeadless="true">
 
                     <!-- Header -->
                     <Label 
@@ -142,8 +153,6 @@
                 </StackLayout>
             </StackLayout>
         </flow:FlowListView.Header>
-
-       
         
         <flow:FlowListView.FlowColumnTemplate>
             <DataTemplate>
@@ -151,7 +160,7 @@
                     <Grid.Margin>
                         <Thickness Left="{StaticResource DefaultMargin}" Top="0" Right="0" Bottom="{StaticResource DefaultMargin}" />
                     </Grid.Margin>
-                    <Image Source="{Binding IconUrl}" Aspect="AspectFill" />
+                    <ffimageloading:CachedImage Source="{Binding IconUrl}" Aspect="AspectFill" />
                 </Grid>
             </DataTemplate>
         </flow:FlowListView.FlowColumnTemplate>
@@ -161,14 +170,21 @@
             <!-- Job Options -->
             <StackLayout
                 Padding="{StaticResource DefaultThickness}"
-                Spacing="{StaticResource DefaultMargin}">
+                Spacing="{StaticResource DefaultMargin}"
+                CompressedLayout.IsHeadless="true">
 
                 <Label 
                     Style="{DynamicResource SectionHaderLabelStyle}" 
                     Text="Options" />
 
                 <!-- The iOS version uses a custom button and renderer -->
-                <Grid ColumnSpacing="1" RowSpacing="1" Margin="0,0,0,0"> 
+                <Grid
+                    ColumnSpacing="1"
+                    RowSpacing="1"
+                    Margin="0"
+                    BackgroundColor="{OnPlatform iOS={StaticResource SeparatorColor}}"
+                    CompressedLayout.IsHeadless="true"> 
+                    
                     <Grid.RowDefinitions>
                         <RowDefinition Height="Auto" />
                         <RowDefinition Height="Auto" />
@@ -177,11 +193,6 @@
                         <ColumnDefinition Width="*" />
                         <ColumnDefinition Width="*" />
                     </Grid.ColumnDefinitions>
-                    <Grid.BackgroundColor>
-                        <OnPlatform x:TypeArguments="Color">
-                            <On Platform="iOS" Value="{StaticResource SeparatorColor}" />
-                        </OnPlatform>
-                    </Grid.BackgroundColor>
 
                     <!-- Start Job -->
                     <Button 
@@ -192,21 +203,10 @@
                         FontSize="{StaticResource FontSizeLarge}" 
                         FontFamily="{StaticResource FontFamilyMedium}"
                         CornerRadius="0"  
-                        Text="Start Job" 
-                        Command="{Binding StartJobClicked}">
-                        <Button.BackgroundColor>
-                            <OnPlatform x:TypeArguments="Color">
-                                <On Platform="iOS" Value="{StaticResource BackgroundColor}" />
-                                <On Platform="Android" Value="{StaticResource AccentColor}" />
-                            </OnPlatform>
-                        </Button.BackgroundColor>
-                        <Button.TextColor>
-                            <OnPlatform x:TypeArguments="Color">
-                                <On Platform="iOS" Value="{StaticResource AccentColor}" />
-                                <On Platform="Android" Value="White" />
-                            </OnPlatform>
-                        </Button.TextColor>
-                    </Button>
+                        Text="Start Job"
+                        BackgroundColor="{OnPlatform iOS={StaticResource BackgroundColor}, Android={StaticResource AccentColor}"
+                        TextColor="{OnPlatform iOS={StaticResource AccentColor}, Android=White}"
+                        Command="{Binding StartJobClicked}" />
 
                     <!-- Edit Button -->
                     <Button 
@@ -218,20 +218,9 @@
                         FontFamily="{StaticResource FontFamilyMedium}"
                         CornerRadius="0" 
                         Text="Edit Job"
-                        Command="{Binding EditJobClicked}">
-                        <Button.BackgroundColor>
-                            <OnPlatform x:TypeArguments="Color">
-                                <On Platform="iOS" Value="{StaticResource BackgroundColor}" />
-                                <On Platform="Android" Value="{StaticResource AccentColorOrange}" />
-                            </OnPlatform>                                
-                        </Button.BackgroundColor>
-                        <Button.TextColor>
-                            <OnPlatform x:TypeArguments="Color">
-                                <On Platform="iOS" Value="{StaticResource AccentColorOrange}" />
-                                <On Platform="Android" Value="White" />
-                            </OnPlatform>
-                        </Button.TextColor>
-                    </Button>
+                        BackgroundColor="{OnPlatform iOS={StaticResource BackgroundColor}, Android={StaticResource AccentColorOrange}"
+                        TextColor="{OnPlatform iOS={StaticResource AccentColorOrange}, Android=White}"
+                        Command="{Binding EditJobClicked}" />
 
                     <!-- Delete Job -->
                     <Button
@@ -243,20 +232,9 @@
                         FontFamily="{StaticResource FontFamilyMedium}"
                         CornerRadius="0" 
                         Text="Delete Job"
-                        Command="{Binding DeleteJobClicked}">
-                        <Button.BackgroundColor>
-                            <OnPlatform x:TypeArguments="Color">
-                                <On Platform="iOS" Value="{StaticResource BackgroundColor}" />
-                                <On Platform="Android" Value="{StaticResource AccentColorRed}" />
-                            </OnPlatform>
-                        </Button.BackgroundColor>
-                        <Button.TextColor>
-                            <OnPlatform x:TypeArguments="Color">
-                                <On Platform="iOS" Value="{StaticResource AccentColorRed}" />
-                                <On Platform="Android" Value="White" />
-                            </OnPlatform>
-                        </Button.TextColor>
-                    </Button>
+                        BackgroundColor="{OnPlatform iOS={StaticResource BackgroundColor}, Android={StaticResource AccentColorRed}"
+                        TextColor="{OnPlatform iOS={StaticResource AccentColorRed}, Android=White}"
+                        Command="{Binding DeleteJobClicked}" />                       
 
                     <!-- Order Parts -->
                     <Button 
@@ -268,20 +246,9 @@
                         FontFamily="{StaticResource FontFamilyMedium}"
                         CornerRadius="0" 
                         Text="Order Parts"
-                        Command="{Binding OrderPartsClicked}">
-                        <Button.BackgroundColor>
-                            <OnPlatform x:TypeArguments="Color">
-                                <On Platform="iOS" Value="{StaticResource BackgroundColor}" />
-                                <On Platform="Android" Value="{StaticResource AccentColorBlue}" />
-                            </OnPlatform>
-                        </Button.BackgroundColor>
-                        <Button.TextColor>
-                            <OnPlatform x:TypeArguments="Color">
-                                <On Platform="iOS" Value="{StaticResource AccentColorBlue}" />
-                                <On Platform="Android" Value="White" />
-                            </OnPlatform>
-                        </Button.TextColor>
-                    </Button>
+                        BackgroundColor="{OnPlatform iOS={StaticResource BackgroundColor}, Android={StaticResource AccentColorBlue}"
+                        TextColor="{OnPlatform iOS={StaticResource AccentColorBlue}, Android=White}"
+                        Command="{Binding OrderPartsClicked}" />
                </Grid> 
             </StackLayout>
         </flow:FlowListView.Footer>

@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    x:Class="ContosoFieldService.Pages.JobsPage"
     xmlns:converters="clr-namespace:ContosoFieldService.Converters;assembly=ContosoFieldService.Core"
     xmlns:design="clr-namespace:ContosoFieldService;assembly=ContosoFieldService.Core"
     BindingContext="{x:Static design:PageModelLocator.JobsPageModel}"
-    x:Class="ContosoFieldService.Pages.JobsPage"
     BackgroundColor="{StaticResource BackgroundColor}"
     IsBusy="{Binding IsLoading, Mode=OneWay}"
     Title="Jobs">
@@ -56,6 +56,7 @@
                         BackgroundColor="{StaticResource BackgroundColorItem}"
                         ColumnSpacing="0"
                         AutomationId="jobItem">
+                        
                         <Grid.RowDefinitions>
                             <RowDefinition Height="*" />
                             <RowDefinition Height="Auto" />
