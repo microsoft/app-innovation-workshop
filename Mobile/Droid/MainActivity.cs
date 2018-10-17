@@ -15,7 +15,7 @@ using Xamarin.Forms.Platform.Android.AppLinks;
 namespace ContosoFieldService.Droid
 {
     [Activity(
-        Label = "Field Service",
+        Label = "Contoso",
         Icon = "@mipmap/icon",
         RoundIcon = "@mipmap/icon_round",
         Theme = "@style/MyTheme",
