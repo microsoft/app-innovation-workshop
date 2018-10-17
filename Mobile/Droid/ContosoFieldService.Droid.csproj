@@ -154,12 +154,6 @@
         <Reference Include="Xamarin.GooglePlayServices.AppIndexing">
             <HintPath>..\..\packages\Xamarin.GooglePlayServices.AppIndexing.60.1142.1\lib\MonoAndroid80\Xamarin.GooglePlayServices.AppIndexing.dll</HintPath>
         </Reference>
-        <Reference Include="MonkeyCache">
-            <HintPath>..\..\packages\MonkeyCache.0.1.0.10-beta\lib\monoandroid50\MonkeyCache.dll</HintPath>
-        </Reference>
-        <Reference Include="MonkeyCache.FileStore">
-            <HintPath>..\..\packages\MonkeyCache.FileStore.0.1.0.10-beta\lib\monoandroid50\MonkeyCache.FileStore.dll</HintPath>
-        </Reference>
         <Reference Include="Polly">
             <HintPath>..\..\packages\Polly.6.1.0\lib\netstandard2.0\Polly.dll</HintPath>
         </Reference>
@@ -267,9 +261,6 @@
         </Reference>
         <Reference Include="System.Numerics" />
         <Reference Include="System.Numerics.Vectors" />
-        <Reference Include="Humanizer">
-          <HintPath>..\..\packages\Humanizer.Core.2.5.1\lib\netstandard2.0\Humanizer.dll</HintPath>
-        </Reference>
         <Reference Include="Microsoft.AppCenter.Android.Bindings">
           <HintPath>..\..\packages\Microsoft.AppCenter.1.9.0\lib\MonoAndroid403\Microsoft.AppCenter.Android.Bindings.dll</HintPath>
         </Reference>
@@ -324,9 +315,6 @@
         <Reference Include="Microsoft.Identity.Client">
           <HintPath>..\..\packages\Microsoft.Identity.Client.2.2.0-preview\lib\monoandroid81\Microsoft.Identity.Client.dll</HintPath>
         </Reference>
-        <Reference Include="Xamarin.Essentials">
-          <HintPath>..\..\packages\Xamarin.Essentials.0.10.0-preview\lib\monoandroid81\Xamarin.Essentials.dll</HintPath>
-        </Reference>
         <Reference Include="FormsViewGroup">
           <HintPath>..\..\packages\Xamarin.Forms.3.2.0.871581\lib\MonoAndroid10\FormsViewGroup.dll</HintPath>
         </Reference>
@@ -357,12 +345,23 @@
         <Reference Include="Xamarin.Forms.Maps">
           <HintPath>..\..\packages\Xamarin.Forms.Maps.3.2.0.871581\lib\MonoAndroid10\Xamarin.Forms.Maps.dll</HintPath>
         </Reference>
+        <Reference Include="Xamarin.Essentials">
+          <HintPath>..\..\packages\Xamarin.Essentials.0.11.0-preview\lib\monoandroid81\Xamarin.Essentials.dll</HintPath>
+        </Reference>
+        <Reference Include="Humanizer">
+          <HintPath>..\..\packages\Humanizer.Core.2.5.1\lib\netstandard2.0\Humanizer.dll</HintPath>
+        </Reference>
+        <Reference Include="MonkeyCache">
+          <HintPath>..\..\packages\MonkeyCache.1.0.0-beta\lib\monoandroid81\MonkeyCache.dll</HintPath>
+        </Reference>
+        <Reference Include="MonkeyCache.FileStore">
+          <HintPath>..\..\packages\MonkeyCache.FileStore.1.0.0-beta\lib\monoandroid81\MonkeyCache.FileStore.dll</HintPath>
+        </Reference>
     </ItemGroup>
     <ItemGroup>
         <Compile Include="MainActivity.cs" />
         <Compile Include="Resources\Resource.designer.cs" />
         <Compile Include="Properties\AssemblyInfo.cs" />
-        <Compile Include="Helpers\Settings.cs" />
         <Compile Include="Services\EnvironmentService.cs" />
     </ItemGroup>
     <ItemGroup>
@@ -375,16 +374,12 @@
         <AndroidResource Include="Resources\layout\Tabbar.axml" />
         <AndroidResource Include="Resources\layout\Toolbar.axml" />
         <AndroidResource Include="Resources\values\styles.xml" />
-        <AndroidResource Include="Resources\drawable\myface.jpg" />
-        <AndroidResource Include="Resources\drawable\icon_comments.png" />
-        <AndroidResource Include="Resources\drawable\ba747.jpeg" />
         <AndroidResource Include="Resources\drawable-hdpi\icon_user.png" />
         <AndroidResource Include="Resources\drawable-mdpi\icon_user.png" />
         <AndroidResource Include="Resources\drawable-xhdpi\icon_user.png" />
         <AndroidResource Include="Resources\drawable-xxhdpi\icon_user.png" />
         <AndroidResource Include="Resources\drawable-xxxhdpi\icon_user.png" />
         <AndroidResource Include="Resources\drawable-hdpi\icon_dashboard.png" />
-        <AndroidResource Include="Resources\drawable-mdpi\icon_dashboard.png" />
         <AndroidResource Include="Resources\drawable-xhdpi\icon_dashboard.png" />
         <AndroidResource Include="Resources\drawable-xxhdpi\icon_dashboard.png" />
         <AndroidResource Include="Resources\drawable-xxxhdpi\icon_dashboard.png" />
@@ -443,17 +438,10 @@
         </ProjectReference>
     </ItemGroup>
     <ItemGroup>
-        <AndroidAsset Include="Assets\progress_balls.json" />
-        <AndroidAsset Include="Assets\progress_circle.json" />
-        <AndroidAsset Include="Assets\icon_comments%402x.png" />
-        <AndroidAsset Include="Assets\icon_usersettings%402x.png" />
         <AndroidAsset Include="Assets\photoupload.json" />
     </ItemGroup>
     <ItemGroup>
-        <Folder Include="Renderers\" />
-    </ItemGroup>
-    <ItemGroup>
-        <Analyzer Include="..\..\packages\AsyncUsageAnalyzers.1.0.0-alpha003\analyzers\dotnet\AsyncUsageAnalyzers.dll" />
+      <GoogleServicesJson Include="google-services.json" />
     </ItemGroup>
     <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
     <Import Project="..\..\packages\Xamarin.GooglePlayServices.Basement.60.1142.0\build\MonoAndroid80\Xamarin.GooglePlayServices.Basement.targets" Condition="Exists('..\..\packages\Xamarin.GooglePlayServices.Basement.60.1142.0\build\MonoAndroid80\Xamarin.GooglePlayServices.Basement.targets')" />

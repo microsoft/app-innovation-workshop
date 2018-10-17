@@ -1,5 +1,4 @@
-﻿
-using Android.App;
+﻿using Android.App;
 using Android.Content;
 using Android.Content.PM;
 using Android.OS;
@@ -10,7 +9,6 @@ using FFImageLoading.Forms.Platform;
 using Firebase;
 using Microsoft.AppCenter.Push;
 using Microsoft.Identity.Client;
-using Plugin.CurrentActivity;
 using Xamarin;
 using Xamarin.Forms.Platform.Android.AppLinks;
 
@@ -39,7 +37,6 @@ namespace ContosoFieldService.Droid
             Xamarin.Forms.Forms.SetFlags("FastRenderers_Experimental");
 
             global::Xamarin.Forms.Forms.Init(this, bundle);
-            //CrossCurrentActivity.Current.Init(this, bundle);
             CachedImageRenderer.Init(false);
             //AnimationViewRenderer.Init();
             FormsMaps.Init(this, bundle);
@@ -47,7 +44,7 @@ namespace ContosoFieldService.Droid
             Xamarin.Essentials.Platform.Init(this, bundle);
 
             // Configure App Center Push
-            Push.SetSenderId("597659151602");
+            //Push.SetSenderId("597659151602");
 
             // Initialize App Indexing and Deep Links
             FirebaseApp.InitializeApp(this);

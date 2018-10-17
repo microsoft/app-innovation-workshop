@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "597659151602",
+    "firebase_url": "https://contoso-maintenance.firebaseio.com",
+    "project_id": "contoso-maintenance",
+    "storage_bucket": "contoso-maintenance.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:597659151602:android:5c7479c43f637c54",
+        "android_client_info": {
+          "package_name": "com.contoso.contosomaintenance"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "597659151602-t3ton1urgr0njbj5vr6nhm1cc00nrnvj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAMxSzSAIunqa3G3DBhJIHZHdoOXgmI0uo"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

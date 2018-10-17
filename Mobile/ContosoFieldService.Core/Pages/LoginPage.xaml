@@ -18,7 +18,7 @@
         <Grid FlexLayout.Grow="1" CompressedLayout.IsHeadless="true">
             <ffimageloading:CachedImage    
                 HeightRequest="1"
-                Margin="{OnIdiom Default='100', Phone='50,20,50,0'}"               
+                Margin="{OnIdiom Default='300,20,300,0', Phone='100,20,100,0'}"               
                 Source="icon_greentool.png"/>
         </Grid>
 
