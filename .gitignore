@@ -337,3 +337,4 @@ Mobile/Droid/Resources/Resource.designer.cs
 
 # .tfvars files
 *.tfvars
+Mobile/Droid/Resources/Resource.designer.cs
