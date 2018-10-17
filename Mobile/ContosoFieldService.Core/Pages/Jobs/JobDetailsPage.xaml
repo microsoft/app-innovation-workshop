@@ -136,7 +136,6 @@
 
                 <!-- Photos Stack -->
                 <StackLayout
-                    CompressedLayout.IsHeadless="true"
                     Padding="{StaticResource DefaultThickness}"
                     Spacing="{StaticResource DefaultMargin}"
                     CompressedLayout.IsHeadless="true">
