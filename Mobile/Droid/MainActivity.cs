@@ -7,6 +7,7 @@ using CarouselView.FormsPlugin.Android;
 using ContosoFieldService.Services;
 using FFImageLoading.Forms.Platform;
 using Firebase;
+using Lottie.Forms.Droid;
 using Microsoft.AppCenter.Push;
 using Microsoft.Identity.Client;
 using Xamarin;
@@ -38,7 +39,7 @@ namespace ContosoFieldService.Droid
 
             global::Xamarin.Forms.Forms.Init(this, bundle);
             CachedImageRenderer.Init(false);
-            //AnimationViewRenderer.Init();
+            AnimationViewRenderer.Init();
             FormsMaps.Init(this, bundle);
             CarouselViewRenderer.Init();
             Xamarin.Essentials.Platform.Init(this, bundle);

@@ -4,7 +4,8 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
     xmlns:design="clr-namespace:ContosoFieldService;assembly=ContosoFieldService.Core"
     xmlns:themes="using:ContosoFieldService.Themes"
-    BindingContext="{x:Static design:PageModelLocator.JobDetailsPageModel}"
+    xmlns:lottie="clr-namespace:Lottie.Forms;assembly=Lottie.Forms" 
+    BindingContext="{x:Static design:PageModelLocator.WorkingJobViewModel}"
     x:Class="ContosoFieldService.Pages.WorkingJobPage"
     BackgroundColor="{StaticResource BackgroundColor}"
     Title="Working">
@@ -18,8 +19,7 @@
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </ContentPage.Resources>
-    
-        
+     
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="*" />
@@ -153,5 +153,40 @@
                 Text="Complete" 
                 Command="{Binding CompleteClicked}" />               
         </StackLayout>
+      
+        <!-- Loading Overlay -->
+        <Grid IsVisible="{Binding IsUploading}" Grid.RowSpan="2">
+            <BoxView
+                VerticalOptions="Fill"
+                HorizontalOptions="Fill"
+                BackgroundColor="Black"
+                Opacity="0.8" />
+                
+            <StackLayout
+                Margin="20"
+                HorizontalOptions="Fill"
+                VerticalOptions="Center"> 
+                                    
+                <lottie:AnimationView 
+                    Animation="image-upload.json" 
+                    Loop="true" 
+                    AutoPlay="true"    
+                    VerticalOptions="Center"
+                    HeightRequest="300"
+                    WidthRequest="300"/>
+                    
+                <Label
+                    Text="UPLOADING"
+                    HorizontalTextAlignment="Center"
+                    FontAttributes="Bold"
+                    TextColor="White"
+                    HorizontalOptions="Center" />
+                <Label
+                    Text="Please do not leave this page."
+                    HorizontalTextAlignment="Center"
+                    TextColor="White"
+                    HorizontalOptions="Center" />
+            </StackLayout>             
+        </Grid>
     </Grid>
 </ContentPage>

@@ -48,5 +48,6 @@
         <PackageReference Include="FormsToolkit" Version="2.0.1" />
         <PackageReference Include="MonkeyCache" Version="1.0.0-beta" />
         <PackageReference Include="MonkeyCache.FileStore" Version="1.0.0-beta" />
+        <PackageReference Include="Com.Airbnb.Xamarin.Forms.Lottie" Version="2.6.3" />
     </ItemGroup>
 </Project>

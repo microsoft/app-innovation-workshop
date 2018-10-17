@@ -357,6 +357,12 @@
         <Reference Include="MonkeyCache.FileStore">
           <HintPath>..\..\packages\MonkeyCache.FileStore.1.0.0-beta\lib\monoandroid81\MonkeyCache.FileStore.dll</HintPath>
         </Reference>
+        <Reference Include="Lottie.Android">
+          <HintPath>..\..\packages\Com.Airbnb.Android.Lottie.2.6.0\lib\monoandroid81\Lottie.Android.dll</HintPath>
+        </Reference>
+        <Reference Include="Lottie.Forms">
+          <HintPath>..\..\packages\Com.Airbnb.Xamarin.Forms.Lottie.2.6.3\lib\monoandroid81\Lottie.Forms.dll</HintPath>
+        </Reference>
     </ItemGroup>
     <ItemGroup>
         <Compile Include="MainActivity.cs" />
@@ -439,6 +445,7 @@
     </ItemGroup>
     <ItemGroup>
         <AndroidAsset Include="Assets\photoupload.json" />
+        <AndroidAsset Include="Assets\image-upload.json" />
     </ItemGroup>
     <ItemGroup>
       <GoogleServicesJson Include="google-services.json" />
