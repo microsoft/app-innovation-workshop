@@ -29,6 +29,7 @@
                 <StackLayout
                     VerticalOptions="Center"
                     CompressedLayout.IsHeadless="true">
+
                     <Label 
                         Style="{StaticResource LargeLabelStyle}"
                         HorizontalOptions="Start"

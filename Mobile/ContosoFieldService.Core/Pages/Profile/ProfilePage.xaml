@@ -27,7 +27,7 @@
                 Padding="{StaticResource DefaultThickness}"
                 HorizontalOptions="FillAndExpand"
                 CompressedLayout.IsHeadless="true">
-                
+
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*" />
                     <ColumnDefinition Width="Auto" />

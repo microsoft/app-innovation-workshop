@@ -19,7 +19,7 @@
         <DefineConstants>__IOS__;__MOBILE__;__UNIFIED__;DEBUG;</DefineConstants>
         <ErrorReport>prompt</ErrorReport>
         <WarningLevel>4</WarningLevel>
-        <CodesignKey>iPhone Developer</CodesignKey>
+        <CodesignKey>iPhone Developer: Robin-Manuel Thiel (C2T8GG5ZBQ)</CodesignKey>
         <MtouchDebug>true</MtouchDebug>
         <MtouchNoSymbolStrip>true</MtouchNoSymbolStrip>
         <MtouchFastDev>true</MtouchFastDev>
@@ -31,6 +31,7 @@
         <MtouchVerbosity>
         </MtouchVerbosity>
         <CodesignEntitlements>Entitlements.dev.plist</CodesignEntitlements>
+        <CodesignProvision>VS: WildCard Development</CodesignProvision>
     </PropertyGroup>
     <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhone' ">
         <Optimize>true</Optimize>

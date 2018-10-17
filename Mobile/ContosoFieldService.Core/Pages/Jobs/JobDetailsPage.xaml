@@ -70,7 +70,7 @@
                         Style="{DynamicResource SectionHaderLabelStyle}" 
                         Text="Overview" />
 
-                    <!-- Job Age -->   
+                    <!-- Job Age --> 
                     <StackLayout 
                         Spacing="0"
                         CompressedLayout.IsHeadless="true">
@@ -136,6 +136,7 @@
 
                 <!-- Photos Stack -->
                 <StackLayout
+                    CompressedLayout.IsHeadless="true"
                     Padding="{StaticResource DefaultThickness}"
                     Spacing="{StaticResource DefaultMargin}"
                     CompressedLayout.IsHeadless="true">
@@ -156,7 +157,7 @@
         
         <flow:FlowListView.FlowColumnTemplate>
             <DataTemplate>
-                <Grid HeightRequest="107">
+                <Grid HeightRequest="107" CompressedLayout.IsHeadless="true">
                     <Grid.Margin>
                         <Thickness Left="{StaticResource DefaultMargin}" Top="0" Right="0" Bottom="{StaticResource DefaultMargin}" />
                     </Grid.Margin>
