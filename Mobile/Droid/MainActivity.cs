@@ -35,6 +35,9 @@ namespace ContosoFieldService.Droid
 
             base.OnCreate(bundle);
 
+            // Use Android Fast Renderers
+            Xamarin.Forms.Forms.SetFlags("FastRenderers_Experimental");
+
             global::Xamarin.Forms.Forms.Init(this, bundle);
             //CrossCurrentActivity.Current.Init(this, bundle);
             CachedImageRenderer.Init(false);
