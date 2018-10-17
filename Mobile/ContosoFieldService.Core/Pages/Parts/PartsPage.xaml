@@ -5,10 +5,7 @@
     xmlns:design="clr-namespace:ContosoFieldService;assembly=ContosoFieldService.Core"
     BindingContext="{x:Static design:PageModelLocator.PartsPageModel}"    
     x:Class="ContosoFieldService.Pages.PartsPage"
-    xmlns:controls="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin.Abstractions"
     xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
-    xmlns:fftransformations="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations"
-    xmlns:lottie="clr-namespace:Lottie.Forms;assembly=Lottie.Forms"
     BackgroundColor="{StaticResource BackgroundColor}"
     Title="Parts">
 
@@ -42,6 +39,7 @@
                         <Grid 
                             BackgroundColor="{StaticResource BackgroundColorItem}"
                             ColumnSpacing="0">
+                            
                             <Grid.RowDefinitions>                                
                                 <RowDefinition Height="*" />
                                 <RowDefinition Height="Auto" />
@@ -65,8 +63,7 @@
                                 Aspect="AspectFit" 
                                 HeightRequest="50" 
                                 WidthRequest="50" 
-                                Source="{Binding ImageSource}">
-                            </ffimageloading:CachedImage>
+                                Source="{Binding ImageSource}" />
 
                             <StackLayout 
                                 Grid.Column="2"

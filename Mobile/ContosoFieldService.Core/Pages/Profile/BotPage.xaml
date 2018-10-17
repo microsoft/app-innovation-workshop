@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
-             x:Class="ContosoFieldService.Pages.BotPage"
-             Title="Chat with the Bot">
+<ContentPage 
+    xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    x:Class="ContosoFieldService.Pages.BotPage"
+    Title="Chat with the Bot">
 	<ContentPage.Content>
-        <WebView Source="https://webchat.botframework.com/embed/contosomaintenance-bot?s=LYkrY0IK4Ts.cwA.0xg.wI5VIC1MLYkUNKJU1Bli233_sZUEdMB2DO9U1hUleno">
-        </WebView>
+        <WebView Source="https://webchat.botframework.com/embed/contosomaintenance-bot?s=LYkrY0IK4Ts.cwA.0xg.wI5VIC1MLYkUNKJU1Bli233_sZUEdMB2DO9U1hUleno" />
 	</ContentPage.Content>
 </ContentPage>

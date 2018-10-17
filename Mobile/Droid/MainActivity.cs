@@ -1,24 +1,22 @@
-﻿
-using Android.App;
+﻿using Android.App;
 using Android.Content;
 using Android.Content.PM;
 using Android.OS;
 using Android.Runtime;
 using CarouselView.FormsPlugin.Android;
 using ContosoFieldService.Services;
-using FFImageLoading.Forms.Droid;
+using FFImageLoading.Forms.Platform;
 using Firebase;
 using Lottie.Forms.Droid;
 using Microsoft.AppCenter.Push;
 using Microsoft.Identity.Client;
-using Plugin.CurrentActivity;
 using Xamarin;
 using Xamarin.Forms.Platform.Android.AppLinks;
 
 namespace ContosoFieldService.Droid
 {
     [Activity(
-        Label = "Field Service",
+        Label = "Contoso",
         Icon = "@mipmap/icon",
         RoundIcon = "@mipmap/icon_round",
         Theme = "@style/MyTheme",
@@ -36,8 +34,10 @@ namespace ContosoFieldService.Droid
 
             base.OnCreate(bundle);
 
+            // Use Android Fast Renderers
+            Xamarin.Forms.Forms.SetFlags("FastRenderers_Experimental");
+
             global::Xamarin.Forms.Forms.Init(this, bundle);
-            //CrossCurrentActivity.Current.Init(this, bundle);
             CachedImageRenderer.Init(false);
             AnimationViewRenderer.Init();
             FormsMaps.Init(this, bundle);
@@ -45,7 +45,7 @@ namespace ContosoFieldService.Droid
             Xamarin.Essentials.Platform.Init(this, bundle);
 
             // Configure App Center Push
-            Push.SetSenderId("597659151602");
+            //Push.SetSenderId("597659151602");
 
             // Initialize App Indexing and Deep Links
             FirebaseApp.InitializeApp(this);
@@ -60,7 +60,6 @@ namespace ContosoFieldService.Droid
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)
         {
             Xamarin.Essentials.Platform.OnRequestPermissionsResult(requestCode, permissions, grantResults);
-
             base.OnRequestPermissionsResult(requestCode, permissions, grantResults);
         }
 

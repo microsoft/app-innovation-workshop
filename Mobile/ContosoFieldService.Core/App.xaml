@@ -20,6 +20,16 @@
 
                 <!-- Set Default Theme -->
                 <themes:Dark />
+                
+                <!-- Whenever a page or control should to be themed differently, add the following to the Resources -->
+                <!--
+                <ResourceDictionary>
+                    <ResourceDictionary.MergedDictionaries>                    
+                        <themes:Light />
+                        <themes:Styles />
+                    </ResourceDictionary.MergedDictionaries>
+                </ResourceDictionary>
+                -->                
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Application.Resources>

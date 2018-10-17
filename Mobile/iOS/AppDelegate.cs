@@ -1,15 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using CarouselView.FormsPlugin.iOS;
-using FFImageLoading.Forms.Touch;
+﻿using CarouselView.FormsPlugin.iOS;
+using FFImageLoading.Forms.Platform;
 using FFImageLoading.Transformations;
 using Foundation;
 using UIKit;
 using Xamarin;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.iOS;
-using Plugin.VersionTracking;
 using Microsoft.AppCenter.Distribute;
 using Microsoft.Identity.Client;
 
@@ -21,7 +17,6 @@ namespace ContosoFieldService.iOS
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
             global::Xamarin.Forms.Forms.Init();
-            //AnimationViewRenderer.Init();
             FormsMaps.Init();
             CachedImageRenderer.Init();
             CarouselViewRenderer.Init();
@@ -29,10 +24,8 @@ namespace ContosoFieldService.iOS
             // Configure App Center
             Distribute.DontCheckForUpdatesInDebug();
 
-            //HACK to get the linker to behave
+            // HACK: Get the linker to behave
             var ignore = new CircleTransformation();
-
-
 
 #if ENABLE_TEST_CLOUD
             // Code for starting up the Xamarin Test Cloud Agent
@@ -40,10 +33,8 @@ namespace ContosoFieldService.iOS
 #endif
 
             var formsApp = new App();
-
             UIApplication.SharedApplication.SetStatusBarStyle(UIStatusBarStyle.LightContent, false);
-
-            UITabBar.Appearance.BarTintColor = ((Color)formsApp.Resources["BackgroundColor"]).ToUIColor(); ;
+            UITabBar.Appearance.BarTintColor = ((Color)formsApp.Resources["BackgroundColor"]).ToUIColor();
             UITabBar.Appearance.TintColor = ((Color)formsApp.Resources["AccentColor"]).ToUIColor();
 
             LoadApplication(formsApp);
