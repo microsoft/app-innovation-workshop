@@ -6,7 +6,7 @@ using Android.OS;
 using Android.Runtime;
 using CarouselView.FormsPlugin.Android;
 using ContosoFieldService.Services;
-using FFImageLoading.Forms.Droid;
+using FFImageLoading.Forms.Platform;
 using Firebase;
 using Microsoft.AppCenter.Push;
 using Microsoft.Identity.Client;
@@ -62,7 +62,6 @@ namespace ContosoFieldService.Droid
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)
         {
             Xamarin.Essentials.Platform.OnRequestPermissionsResult(requestCode, permissions, grantResults);
-
             base.OnRequestPermissionsResult(requestCode, permissions, grantResults);
         }
 

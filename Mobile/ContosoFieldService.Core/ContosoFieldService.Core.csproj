@@ -27,8 +27,6 @@
         <PackageReference Include="Corcav.Behaviors" Version="2.3.7" />
         <PackageReference Include="CarouselView.FormsPlugin" Version="5.2.0" />
         <PackageReference Include="FreshMvvm" Version="2.2.4" />
-        <PackageReference Include="FormsToolkit" Version="2.0.1" />
-        <PackageReference Include="Microsoft.Azure.DocumentDB.Core" Version="2.1.2" />
         <PackageReference Include="Xamarin.Essentials" Version="0.9.1-preview" />
         <PackageReference Include="DLToolkit.Forms.Controls.FlowListView" Version="2.0.11" />
         <PackageReference Include="Humanizer" Version="2.5.1" />
@@ -49,5 +47,6 @@
         <PackageReference Include="Xamarin.Forms.Maps" Version="3.2.0.871581" />
         <PackageReference Include="Refit" Version="4.6.48" />
         <PackageReference Include="Xam.Plugin.Media" Version="4.0.1.5" />
+        <PackageReference Include="FormsToolkit" Version="2.0.1" />
     </ItemGroup>
 </Project>

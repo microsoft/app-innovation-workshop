@@ -30,6 +30,7 @@
         <DeviceSpecificBuild>false</DeviceSpecificBuild>
         <MtouchVerbosity>
         </MtouchVerbosity>
+        <CodesignEntitlements>Entitlements.dev.plist</CodesignEntitlements>
     </PropertyGroup>
     <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhone' ">
         <Optimize>true</Optimize>
@@ -38,7 +39,7 @@
         </DefineConstants>
         <ErrorReport>prompt</ErrorReport>
         <WarningLevel>4</WarningLevel>
-        <CodesignKey>iPhone Distribution: Xamarin Inc</CodesignKey>
+        <CodesignKey>iPhone Distribution</CodesignKey>
         <MtouchFloat32>true</MtouchFloat32>
         <CodesignEntitlements>Entitlements.prod.plist</CodesignEntitlements>
         <MtouchLink>None</MtouchLink>
@@ -46,7 +47,6 @@
         <MtouchHttpClientHandler>HttpClientHandler</MtouchHttpClientHandler>
         <MtouchVerbosity>
         </MtouchVerbosity>
-        <CodesignProvision>Contoso Maintenance In-House</CodesignProvision>
     </PropertyGroup>
     <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhoneSimulator' ">
         <Optimize>true</Optimize>
@@ -55,14 +55,14 @@
         </DefineConstants>
         <ErrorReport>prompt</ErrorReport>
         <WarningLevel>4</WarningLevel>
-        <CodesignKey>iPhone Developer: Michael James (354MN7UPEZ)</CodesignKey>
+        <CodesignKey>iPhone Distribution</CodesignKey>
         <MtouchNoSymbolStrip>true</MtouchNoSymbolStrip>
         <MtouchLink>None</MtouchLink>
         <MtouchArch>x86_64</MtouchArch>
         <MtouchHttpClientHandler>HttpClientHandler</MtouchHttpClientHandler>
         <MtouchVerbosity>
         </MtouchVerbosity>
-        <CodesignProvision>VS: WildCard Development</CodesignProvision>
+        <CodesignEntitlements>Entitlements.prod.plist</CodesignEntitlements>
     </PropertyGroup>
     <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhone' ">
         <DebugSymbols>true</DebugSymbols>
@@ -72,7 +72,7 @@
         <DefineConstants>__IOS__;__MOBILE__;__UNIFIED__;DEBUG;</DefineConstants>
         <ErrorReport>prompt</ErrorReport>
         <WarningLevel>4</WarningLevel>
-        <CodesignKey>iPhone Developer</CodesignKey>
+        <CodesignKey>iPhone Developer: Robin-Manuel Thiel (C2T8GG5ZBQ)</CodesignKey>
         <DeviceSpecificBuild>true</DeviceSpecificBuild>
         <MtouchDebug>true</MtouchDebug>
         <MtouchNoSymbolStrip>true</MtouchNoSymbolStrip>
@@ -85,20 +85,19 @@
         <MtouchHttpClientHandler>HttpClientHandler</MtouchHttpClientHandler>
         <MtouchVerbosity>
         </MtouchVerbosity>
-        <CodesignProvision>Contoso Maintenance Development</CodesignProvision>
+        <CodesignProvision>VS: WildCard Development</CodesignProvision>
     </PropertyGroup>
     <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Test Cloud|iPhone' ">
       <Optimize>true</Optimize>
       <OutputPath>bin\iPhone\Test Cloud</OutputPath>
       <DefineConstants>__IOS__;__MOBILE__;__UNIFIED__;ENABLE_TEST_CLOUD;</DefineConstants>
       <WarningLevel>4</WarningLevel>
-      <CodesignKey>iPhone Distribution: Xamarin Inc</CodesignKey>
+      <CodesignKey>iPhone Developer</CodesignKey>
       <MtouchVerbosity></MtouchVerbosity>
       <MtouchFloat32>true</MtouchFloat32>
       <CodesignEntitlements>Entitlements.prod.plist</CodesignEntitlements>
       <MtouchArch>ARM64</MtouchArch>
       <MtouchHttpClientHandler>HttpClientHandler</MtouchHttpClientHandler>
-      <CodesignProvision>Contoso Maintenance In-House</CodesignProvision>
       <MtouchLink>None</MtouchLink>
     </PropertyGroup>
     <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Test Cloud|iPhoneSimulator' ">
@@ -106,13 +105,13 @@
       <OutputPath>bin\iPhoneSimulator\Test Cloud</OutputPath>
       <DefineConstants>__IOS__;__MOBILE__;__UNIFIED__;ENABLE_TEST_CLOUD;</DefineConstants>
       <WarningLevel>4</WarningLevel>
-      <CodesignKey>iPhone Developer: Michael James (354MN7UPEZ)</CodesignKey>
+      <CodesignKey>iPhone Developer</CodesignKey>
       <MtouchNoSymbolStrip>true</MtouchNoSymbolStrip>
       <MtouchVerbosity></MtouchVerbosity>
       <MtouchLink>None</MtouchLink>
       <MtouchArch>x86_64</MtouchArch>
       <MtouchHttpClientHandler>HttpClientHandler</MtouchHttpClientHandler>
-      <CodesignProvision>VS: WildCard Development</CodesignProvision>
+      <CodesignEntitlements>Entitlements.prod.plist</CodesignEntitlements>
     </PropertyGroup>
     <ItemGroup>
         <Reference Include="System" />
@@ -406,14 +405,8 @@
         </ProjectReference>
     </ItemGroup>
     <ItemGroup>
-        <BundleResource Include="Resources\myface.jpg" />
-        <BundleResource Include="Resources\progress_balls.json" />
-        <BundleResource Include="Resources\progress_circle.json" />
         <BundleResource Include="Resources\icon_greentool.png" />
-        <BundleResource Include="Resources\ba747.jpeg" />
-        <BundleResource Include="Resources\icon_comments%402x.png" />
         <BundleResource Include="Resources\icon_add%402x.png" />
-        <BundleResource Include="Resources\trash-icon.png" />
         <BundleResource Include="Resources\icon_jobs_default.png" />
         <BundleResource Include="Resources\icon_dashboard.png" />
         <BundleResource Include="Resources\icon_jobs.png" />
@@ -433,9 +426,6 @@
         <BundleResource Include="Resources\icon_share.png" />
         <BundleResource Include="Resources\icon_share%402x.png" />
         <BundleResource Include="Resources\icon_share%403x.png" />
-    </ItemGroup>
-    <ItemGroup>
-        <Analyzer Include="..\..\packages\AsyncUsageAnalyzers.1.0.0-alpha003\analyzers\dotnet\AsyncUsageAnalyzers.dll" />
     </ItemGroup>
     <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
     <Import Project="..\..\packages\NETStandard.Library.2.0.3\build\netstandard2.0\NETStandard.Library.targets" Condition="Exists('..\..\packages\NETStandard.Library.2.0.3\build\netstandard2.0\NETStandard.Library.targets')" />
