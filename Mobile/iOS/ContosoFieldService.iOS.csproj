@@ -30,7 +30,6 @@
         <DeviceSpecificBuild>false</DeviceSpecificBuild>
         <MtouchVerbosity>
         </MtouchVerbosity>
-        <CodesignEntitlements>Entitlements.dev.plist</CodesignEntitlements>
     </PropertyGroup>
     <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhone' ">
         <Optimize>true</Optimize>
@@ -62,7 +61,6 @@
         <MtouchHttpClientHandler>HttpClientHandler</MtouchHttpClientHandler>
         <MtouchVerbosity>
         </MtouchVerbosity>
-        <CodesignEntitlements>Entitlements.prod.plist</CodesignEntitlements>
     </PropertyGroup>
     <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhone' ">
         <DebugSymbols>true</DebugSymbols>
