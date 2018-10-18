@@ -312,9 +312,6 @@
         <Reference Include="Plugin.Media">
           <HintPath>..\..\packages\Xam.Plugin.Media.4.0.1.5\lib\monoandroid71\Plugin.Media.dll</HintPath>
         </Reference>
-        <Reference Include="Microsoft.Identity.Client">
-          <HintPath>..\..\packages\Microsoft.Identity.Client.2.2.0-preview\lib\monoandroid81\Microsoft.Identity.Client.dll</HintPath>
-        </Reference>
         <Reference Include="FormsViewGroup">
           <HintPath>..\..\packages\Xamarin.Forms.3.2.0.871581\lib\MonoAndroid10\FormsViewGroup.dll</HintPath>
         </Reference>
@@ -362,6 +359,9 @@
         </Reference>
         <Reference Include="Lottie.Forms">
           <HintPath>..\..\packages\Com.Airbnb.Xamarin.Forms.Lottie.2.6.3\lib\monoandroid81\Lottie.Forms.dll</HintPath>
+        </Reference>
+        <Reference Include="Microsoft.Identity.Client">
+          <HintPath>..\..\packages\Microsoft.Identity.Client.1.1.4-preview0002\lib\monoandroid81\Microsoft.Identity.Client.dll</HintPath>
         </Reference>
     </ItemGroup>
     <ItemGroup>
