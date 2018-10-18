@@ -1,0 +1,61 @@
+# Select the Agent to run the builds on
+pool:
+  vmImage: 'macOS 10.13'
+
+steps:
+# To manually select a Xamarin SDK version on the Microsoft-hosted macOS agent,
+# configure this task with the SDK version you want to target and set the "enabled" property to true.
+# See https://go.microsoft.com/fwlink/?linkid=871629
+- script: sudo $AGENT_HOMEDIRECTORY/scripts/select-xamarin-sdk.sh 5_4_1 
+  displayName: 'Select the Xamarin SDK version'
+  enabled: false
+
+# Install NuGet on Build Agend and restore packages fot the whole solutions
+- task: NuGetToolInstaller@0
+  displayName: 'Install NuGet'
+- task: NuGetCommand@2
+  displayName: 'Restore NuGet packages for solution'
+  inputs:
+    restoreSolution: '**/*.sln'
+
+# Build iOS Application
+- task: XamariniOS@2
+  displayName: 'Build Xamarin.iOS app'
+  inputs:
+    solutionFile: '**/*.iOS.csproj'
+    configuration: '$(BuildConfiguration)'
+    buildForSimulator: true
+    packageApp: false
+
+# Build Android Application
+- task: XamarinAndroid@1
+  displayName: 'Build Xamarin.Android app'
+  inputs:
+    projectFile: '**/*.Droid.csproj'
+    configuration: '$(BuildConfiguration)'
+    msbuildVersionOption: latest
+    
+# Build UI Tests
+- task: MSBuild@1
+  displayName: 'Build Xamarin.UITest tests'
+  inputs:
+    solution: '**/*.UITests.csproj'
+    configuration: '$(BuildConfiguration)'
+    
+# Build Web API
+- task: DotNetCoreCLI@2
+  displayName: 'Build ASP.NET Core Web API'
+  inputs:
+    projects: '**/*.WebAPI.csproj'
+
+# Build Azure Functions
+- task: DotNetCoreCLI@2
+  displayName: 'Build .NET Core Functions'
+  inputs:
+    projects: '**/*.Functions.csproj'
+
+# Build Chatbot
+- task: DotNetCoreCLI@2
+  displayName: 'Build .NET Core Chat Bot'
+  inputs:
+    projects: '**/*.Bot.csproj'
