@@ -1,5 +1,4 @@
-﻿using System;
-using Android.OS;
+﻿using Android.OS;
 using ContosoFieldService.Abstractions;
 using ContosoFieldService.Droid.Services;
 

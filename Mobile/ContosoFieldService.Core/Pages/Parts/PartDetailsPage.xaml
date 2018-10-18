@@ -4,6 +4,7 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
     xmlns:design="clr-namespace:ContosoFieldService;assembly=ContosoFieldService.Core"
+    xmlns:themes="using:ContosoFieldService.Themes"
     BindingContext="{x:Static design:PageModelLocator.PartDetailsPageModel}"    
     x:Class="ContosoFieldService.Pages.PartDetailsPage"    
     BackgroundColor="{StaticResource BackgroundColor}"
@@ -11,7 +12,7 @@
 
     <ContentPage.Resources>
         <ResourceDictionary>
-            <ResourceDictionary.MergedDictionaries xmlns:themes="using:ContosoFieldService.Themes" >
+            <ResourceDictionary.MergedDictionaries>
                 <!-- Light theme for this page -->
                 <themes:Light />
                 <themes:Styles />
@@ -20,7 +21,7 @@
     </ContentPage.Resources>
 
     <ScrollView>
-        <StackLayout>
+        <StackLayout CompressedLayout.IsHeadless="true">
 
             <!-- Part Name Banner --> 
             <Frame       
@@ -48,7 +49,8 @@
             <!-- Overview Stack -->
             <StackLayout
                 Padding="{StaticResource DefaultThickness}"
-                Spacing="{StaticResource DefaultMargin}">
+                Spacing="{StaticResource DefaultMargin}"
+                CompressedLayout.IsHeadless="true">
 
                 <!-- Header -->
                 <Label
@@ -56,7 +58,10 @@
                     Text="Overview" />
 
                 <!-- Part Name -->
-                <StackLayout Spacing="0">
+                <StackLayout 
+                    Spacing="0"
+                    CompressedLayout.IsHeadless="true">
+                    
                     <Label 
                         x:Name="lblName"
                         AutomationId="lblName"
@@ -70,7 +75,10 @@
                 </StackLayout>
 
                 <!-- Part Name -->
-                <StackLayout Spacing="0">
+                <StackLayout
+                    Spacing="0"
+                    CompressedLayout.IsHeadless="true">
+                    
                     <Label 
                         x:Name="lblManufacturer"
                         AutomationId="lblManufacturer"
@@ -88,10 +96,10 @@
             <BoxView HeightRequest="1" BackgroundColor="{StaticResource SeparatorColor}" />
 
             <!-- Customer Info Stack -->
-           <!-- Overview Stack -->
             <StackLayout
                 Padding="{StaticResource DefaultThickness}"
-                Spacing="{StaticResource DefaultMargin}">
+                Spacing="{StaticResource DefaultMargin}"
+                CompressedLayout.IsHeadless="true">
 
                 <!-- Header -->
                 <Label
@@ -113,7 +121,10 @@
                 </StackLayout>
 
                 <!-- Part Model Number -->
-                <StackLayout Spacing="0">
+                <StackLayout
+                    Spacing="0"
+                    CompressedLayout.IsHeadless="true">
+                    
                     <Label 
                         x:Name="lblModelNumber"
                         AutomationId="lblModelNumber"
@@ -127,7 +138,10 @@
                 </StackLayout>
 
                 <!-- Part Price -->
-                <StackLayout Spacing="0">
+                <StackLayout
+                    Spacing="0"
+                    CompressedLayout.IsHeadless="true">
+                    
                     <Label 
                         x:Name="lblPrice"
                         AutomationId="lblPrice"
@@ -144,17 +158,12 @@
             <Button 
                 Text="Place Order" 
                 TextColor="#ffffff"               
-                BorderRadius="0" 
+                CornerRadius="0" 
                 BackgroundColor="{StaticResource AccentColor}" 
                 FontFamily="{StaticResource FontFamilyMedium}"
                 FontSize="{StaticResource FontSizeLarge}" 
-                Command="{Binding OrderPart}">
-                <Button.Margin>
-                    <OnPlatform x:TypeArguments="Thickness">
-                      <On Platform="Android" Value="{StaticResource DefaultThickness}" />
-                    </OnPlatform>
-                </Button.Margin>
-            </Button>
+                Command="{Binding OrderPart}"
+                Margin="{OnPlatform Android={StaticResource DefaultThickness}}" />
         </StackLayout>
     </ScrollView>
 </ContentPage>

@@ -16,10 +16,13 @@
         BackgroundColor="#222E38">
             
         <ListView.Header>
-            <StackLayout>
+            <StackLayout CompressedLayout.IsHeadless="true">
 
                 <!-- Version -->
-                <StackLayout Padding="{StaticResource DefaultThickness}">
+                <StackLayout 
+                    Padding="{StaticResource DefaultThickness}" 
+                    CompressedLayout.IsHeadless="true">
+                    
                     <Label Style="{DynamicResource SectionHaderLabelStyle}" Text="Version" />
                     <Label Style="{DynamicResource PropertyLabelStyle}" x:Name="VersionLabel" Text="{Binding Version}"/>
                 </StackLayout>                
@@ -27,7 +30,10 @@
                 <BoxView HeightRequest="1" BackgroundColor="{DynamicResource SeparatorColor}" />
 
                 <!-- Configuration -->
-                <StackLayout Padding="{StaticResource DefaultThickness}">
+                <StackLayout 
+                    Padding="{StaticResource DefaultThickness}" 
+                    CompressedLayout.IsHeadless="true">
+                    
                     <Label Style="{DynamicResource SectionHaderLabelStyle}" Text="Configuration" />
                     <Label Style="{DynamicResource PropertyFooterLabelStyle}" Margin="0,0,0,10" Text="For testing purposes, you can override the connection to the backend here. These settings will be reset next time you start the app."/>
 
@@ -87,7 +93,10 @@
 
                 <BoxView HeightRequest="1" BackgroundColor="{DynamicResource SeparatorColor}" />
 
-                <StackLayout Padding="{StaticResource DefaultThickness}">
+                <StackLayout
+                    Padding="{StaticResource DefaultThickness}" 
+                    CompressedLayout.IsHeadless="true">
+                    
                     <Label Style="{DynamicResource SectionHaderLabelStyle}" Text="3rd Party Libraries" />  
                     <Label Style="{DynamicResource PropertyFooterLabelStyle}" Text="Credits to these incredible community projects that made my life easier!"/>
                 </StackLayout>
@@ -100,6 +109,7 @@
                     <Grid 
                         BackgroundColor="{StaticResource BackgroundColorDark}"
                         ColumnSpacing="0">
+                        
                         <Grid.RowDefinitions>
                             <RowDefinition Height="*" />
                             <RowDefinition Height="Auto" />
@@ -152,16 +162,25 @@
         </ListView.ItemTemplate>
 
         <ListView.Footer>
-            <StackLayout>
+            <StackLayout CompressedLayout.IsHeadless="true">
                 
                 <BoxView HeightRequest="1" BackgroundColor="{DynamicResource SeparatorColor}" />
 
                 <!-- Additional Information -->
-                <StackLayout Padding="{StaticResource DefaultThickness}">
+                <StackLayout
+                    Padding="{StaticResource DefaultThickness}"
+                    CompressedLayout.IsHeadless="true">
+                    
                     <Label Style="{DynamicResource SectionHaderLabelStyle}" Text="Additional Information" />
                     <Label Style="{DynamicResource PropertyFooterLabelStyle}" Text="This application has been built using Visual Studio Tools for Xamarin and is using Xamarin.Forms as its UI Framework. The full Frontend- and Backend code is open source and can be used for demos or as reference project."/>
                 </StackLayout> 
-                <Button Text="Browse at GitHub" Style="{DynamicResource FullWidthButtonStyle}" BackgroundColor="{StaticResource AccentColorRed}" Command="{Binding GitHubCommand}" Margin="0,10,0,0" />
+                
+                <Button 
+                    Text="Browse at GitHub"
+                    Style="{DynamicResource FullWidthButtonStyle}"
+                    BackgroundColor="{StaticResource AccentColorRed}"
+                    Command="{Binding GitHubCommand}"
+                    Margin="0,10,0,0" />
             </StackLayout>
         </ListView.Footer>
     </ListView>

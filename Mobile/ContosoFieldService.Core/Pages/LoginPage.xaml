@@ -3,24 +3,29 @@
     xmlns="http://xamarin.com/schemas/2014/forms" 
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
     xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
-    xmlns:fftransformations="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations"    
+    xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core" 
+    ios:Page.UseSafeArea="true"
     x:Class="ContosoFieldService.Pages.LoginPage"
     BackgroundColor="{StaticResource BackgroundColor}"
     Title="Login">
+    
+    <FlexLayout 
+        Direction="Column"
+        JustifyContent="End"
+        Margin="{StaticResource DefaultThickness}"
+        CompressedLayout.IsHeadless="true">
+        
+        <Grid FlexLayout.Grow="1" CompressedLayout.IsHeadless="true">
+            <ffimageloading:CachedImage    
+                HeightRequest="1"
+                Margin="{OnIdiom Default='300,20,300,0', Phone='100,20,100,0'}"
+                Source="icon_greentool.png"/>
+        </Grid>
 
-    <Grid Margin="{StaticResource DefaultThickness}">
-
-        <Grid.RowDefinitions>
-            <RowDefinition Height="3*" />
-            <RowDefinition Height="2*" />
-        </Grid.RowDefinitions>
-
-        <StackLayout Padding="{StaticResource DefaultThickness}" VerticalOptions="Center">
-            <Image 
-                Margin="0,0,0,20"
-                Source="icon_greentool.png"
-                HorizontalOptions="Center"
-                WidthRequest="60"/>
+        <StackLayout
+            Padding="{StaticResource DefaultThickness}"
+            Margin="0,10,0,20"
+            CompressedLayout.IsHeadless="true">
             
             <Label 
                 x:Name="lblWelcome"
@@ -34,8 +39,11 @@
                 HorizontalTextAlignment="Center"
                 Text="Login to get started." />
         </StackLayout>
-
-        <StackLayout Padding="{StaticResource DefaultThickness}" Grid.Row="1" VerticalOptions="Center" Spacing="10">
+        
+        <StackLayout            
+            Padding="{StaticResource DefaultThickness}"            
+            Spacing="10"
+            CompressedLayout.IsHeadless="true">
             <Button 
                 x:Name="btnLogin"
                 AutomationId="btnLogin"
@@ -45,11 +53,14 @@
 
             <Button 
                 AutomationId="btnProceed"
+                FlexLayout.Grow="1"
                 Command="{Binding ProceedWithoutLogin}"
                 BackgroundColor="Transparent"
                 BorderWidth="0"
                 TextColor="{StaticResource AccentColor}"
                 Text="Proceed without Login" />  
         </StackLayout>
-    </Grid>
+        
+        <BoxView />
+    </FlexLayout>
 </ContentPage>

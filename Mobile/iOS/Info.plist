@@ -3,9 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key>CFBundleDisplayName</key>
-	<string>Field Service</string>
+	<string>Contoso</string>
 	<key>CFBundleName</key>
-	<string>Field Service</string>
+	<string>Contoso Maintenance</string>
 	<key>CFBundleIdentifier</key>
 	<string>com.contoso.contosomaintenance</string>
 	<key>CFBundleShortVersionString</key>
