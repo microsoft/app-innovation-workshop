@@ -14,19 +14,19 @@ namespace ContosoFieldService.Services
     public interface IPartsServiceAPI
     {
         [Get("/part/")]
-        Task<List<Part>> GetParts([Header("Ocp-Apim-Subscription-Key")] string apiManagementKey);
+        Task<List<Part>> GetParts();
 
         [Get("/part/{id}/")]
-        Task<Part> GetPartById(string id, [Header("Ocp-Apim-Subscription-Key")] string apiManagementKey);
+        Task<Part> GetPartById(string id);
 
         [Get("/search/parts/?keyword={keyword}")]
-        Task<List<Part>> SearchParts(string keyword, [Header("Ocp-Apim-Subscription-Key")] string apiManagementKey);
+        Task<List<Part>> SearchParts(string keyword);
 
         [Post("/part/")]
-        Task<Part> CreatePart([Body] Part part, [Header("Ocp-Apim-Subscription-Key")] string apiManagementKey);
+        Task<Part> CreatePart([Body] Part part);
 
         [Post("/part/{id}/")]
-        Task<Part> DeletePart(string id, [Header("Authorization")] string authorization, [Header("Ocp-Apim-Subscription-Key")] string apiManagementKey);
+        Task<Part> DeletePart(string id, [Header("Authorization")] string authorization);
     }
 
     public class PartsAPIService : BaseAPIService
@@ -34,7 +34,7 @@ namespace ContosoFieldService.Services
         // Note: Usually, we would create only one instance of the IPartsServiceAPI here and
         // Re-use it for every operation. For this demo, we can chance the BaseUrl at runtime, so we
         // Need a way to create the api for every single call
-        // readonly IPartsServiceAPI api = RestService.For<IPartsServiceAPI>(Helpers.Constants.BaseUrl);
+        // readonly IPartsServiceAPI api = GetManagedApiService<IPartsServiceAPI>();
 
         public PartsAPIService()
         {
@@ -59,10 +59,10 @@ namespace ContosoFieldService.Services
 
             try
             {
-                IPartsServiceAPI api = RestService.For<IPartsServiceAPI>(Helpers.Constants.BaseUrl);
+                IPartsServiceAPI api = GetManagedApiService<IPartsServiceAPI>();
 
                 // Use Polly to handle retrying
-                var pollyResult = await Policy.ExecuteAndCaptureAsync(async () => await api.GetParts(Constants.ApiManagementKey));
+                var pollyResult = await Policy.ExecuteAndCaptureAsync(async () => await api.GetParts());
                 if (pollyResult.Result != null)
                 {
                     // Save parts into the cache
@@ -94,9 +94,9 @@ namespace ContosoFieldService.Services
 
         public async Task<(ResponseCode code, List<Part> result)> SearchPartsAsync(string keyword)
         {
-            IPartsServiceAPI api = RestService.For<IPartsServiceAPI>(Helpers.Constants.BaseUrl);
+            IPartsServiceAPI api = GetManagedApiService<IPartsServiceAPI>();
 
-            var pollyResult = await Policy.ExecuteAndCaptureAsync(async () => await api.SearchParts(keyword, Constants.ApiManagementKey));
+            var pollyResult = await Policy.ExecuteAndCaptureAsync(async () => await api.SearchParts(keyword));
             if (pollyResult.Result != null)
             {
                 return (ResponseCode.Success, pollyResult.Result);

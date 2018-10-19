@@ -2,7 +2,6 @@
 using ContosoFieldService.Models;
 using Plugin.Media.Abstractions;
 using Refit;
-using ContosoFieldService.Helpers;
 
 namespace ContosoFieldService.Services
 {
@@ -10,17 +9,17 @@ namespace ContosoFieldService.Services
     {
         [Multipart]
         [Post("/photo/{jobId}/")]
-        Task<Job> UploadPhoto(string jobId, [AliasAs("file")] StreamPart stream, [Header("Ocp-Apim-Subscription-Key")] string apiManagementKey);
+        Task<Job> UploadPhoto(string jobId, [AliasAs("file")] StreamPart stream);
     }
 
-    public class PhotoAPIService
+    public class PhotoAPIService : BaseAPIService
     {
         public async Task<Job> UploadPhotoAsync(string jobId, MediaFile file)
         {
-            IPhotoServiceAPI api = RestService.For<IPhotoServiceAPI>(Constants.BaseUrl);
+            IPhotoServiceAPI api = GetManagedApiService<IPhotoServiceAPI>();
 
             var streamPart = new StreamPart(file.GetStream(), "photo.jpg", "image/jpeg");
-            var updatedJob = await api.UploadPhoto(jobId, streamPart, Constants.ApiManagementKey);
+            var updatedJob = await api.UploadPhoto(jobId, streamPart);
             return updatedJob;
         }
     }
