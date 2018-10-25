@@ -2,11 +2,11 @@
 
 # Setting Up
 
-> **Hint:** We highly recommend you setup and configure your system *before* attending the mobile workshop. Although we’ve allowed an hour in the morning to assist in trouble shooting configurations, we won’t have time to do a fresh installation.
+> **Hint:** We highly recommend you setup and configure your system *before* attending the mobile workshop. Although we’ve allowed an hour in the morning to assist in troubleshooting configurations, we won’t have time to do a fresh installation.
 
 ## Prerequisites
 
-Please bring your own **Windows or Mac** laptop. To participate in this workshop, some prework needs to be done. So please make sure you prepared your environment bringing the following prerequisites.
+Please bring your own **Windows or Mac** laptop. To participate in this workshop, some pre-work needs to be done. So please make sure you prepared your environment by setting up the following prerequisites:
 
 ### Mandatory
 - [Microsoft Azure Account with a Subscription](https://aka.ms/azft-mobile)
@@ -23,7 +23,7 @@ Please bring your own **Windows or Mac** laptop. To participate in this workshop
 
 ### Optional
 
-You can completely follow the workshop without compiling the Mobile App on your own, as the full content is focused on architecting and creating Backends. However, if you already are a Xamarin Developer or always wanted to get started, install the Xamarin Tooling as well.
+You can completely follow the workshop without compiling the Mobile App on your own, as the full content is focused on architecting and creating Backends. However, if you already are a Xamarin Developer or always wanted to get started, install the Xamarin Tooling as well:
 
 - [Visual Studio for Windows or Mac](https://www.visualstudio.com/) (Community Version or higher)
   - [Xamarin Tooling](https://developer.xamarin.com/guides/cross-platform/getting_started/installation/windows/)
@@ -34,7 +34,7 @@ You can completely follow the workshop without compiling the Mobile App on your 
 
 ### Download the workshop
 
-You will need some contents of this workshop like the source code for the backeend on your local machine. So it is a good idea, to download the full repository as a ZIP file and extact it somewhere locally. You can easily do this by clicking the  ***Clone or download*** button on the start page and select ***Download ZIP***.
+You will need some of the contents of this workshop like the source code for the backend on your local machine. So it is a good idea to download the full repository as a ZIP file and extact it somewhere locally. You can easily do this by clicking the  ***Clone or download*** button on the start page and select ***Download ZIP***.
 
 ![Azure Subscription Overview](Assets/GitHubDownload.png)
 
