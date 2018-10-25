@@ -44,7 +44,7 @@ Creating a Microsoft Azure Account is easy! Just head over to the [Microsoft Azu
 
 ![Free Azure Account](Assets/FreeAzureAccount.png)
 
-Although the free Account includes a bunch of services that you can use, in this workshop we will work with advanced resources, which we need an Azure Subscription for. An Azure Subscriptuon is basically the way to pay for charged services and can be backed by a Credit Card or a company agreement.
+Although the free Account includes a bunch of services that you can use, in this workshop we will work with advanced resources, which we need an Azure Subscription for. An Azure Subscription is basically the way to pay for charged services and can be backed by a Credit Card or a company agreement.
 
 You can check the Subscriptions for you account when visiting the [Azure Portal](https://portal.azure.com) and selecting ***Subscriptions*** from the side menu.
 
@@ -56,13 +56,13 @@ If no Subscriptions appear, visit the [Azure Subscription Portal](https://accoun
 
 ### .NET Core
 
-Most parts of this workshop are written in .NET Core 2.1 and we need to compile a few things from time to time. For this, we need to the [.NET Core SDK](https://www.microsoft.com/net/download/windows/build) installed. To check if the installation has been successful, open the *Terminal* or *Command Prompt* on your machine and type in
+Most parts of this workshop are written in .NET Core 2.1 and we need to compile a few things from time to time. For this, we need the [.NET Core SDK](https://www.microsoft.com/net/download/windows/build) installed. To check if the installation has been successful, open the *Terminal* or *Command Prompt* on your machine and type in
 
 ```bash
 dotnet --info
 ```
 
-If the command line answers you similar like shown in the screenshot below, your machine can now run and compile .NET code.
+If the command line responds in a similar way to what is shown in the screenshot below, your machine can now run and compile .NET code:
 
 ![Visual Studio Running Xamarin iOS and Android App](Assets/DotnetInfoBash.png)
 
@@ -74,7 +74,7 @@ Note, that you need to ***Reload*** Visual Stuido Code after installing extensio
 
 ![Screenshot of Visual Studio Code for Reloading Extensions](Assets/VSCodeReloadExtensions.png)
 
-Once the extensions has been installed successfull and Visual Stuido Code has been reloaded, you should see a new ***Azure*** tab on the side. Select it and make sure that you are logged in with you Azure account. Please verify, that you see at least one of your subscriptions here.
+Once the extensions have been installed successfully and Visual Stuido Code has been reloaded, you should see a new ***Azure*** tab on the side. Select it and make sure that you are logged in with your Azure account. Please verify that you see at least one of your subscriptions here:
 
 ![Screenshot of Visual Studio Code showing Subscriptions in the Azure Tab](Assets/VSCodeAzureSubs.png)
 
@@ -88,20 +88,20 @@ If you want to compile the Xamarin Application on you own, you will need to inst
 
 #### Windows
 
-When working in Windows, Visual Studio will be the best IDE for you! You can check internally if you have a license for the paid versions or even go with the free Community Edition. Both will work for you.
+When working in Windows, Visual Studio will be the best IDE for you! You can check internally to see if your company has a licence for the paid versions or even go with the free Community Edition. Both will work for you.
 
-Please [follow this guide](https://developer.xamarin.com/guides/cross-platform/getting_started/installation/windows/) to install the Xamarin Tooling for Visual Studio on Windows and make sure, you have at least Android API Level 16 and an Android Emulator installed.
+Please [follow this guide](https://developer.xamarin.com/guides/cross-platform/getting_started/installation/windows/) to install the Xamarin Tooling for Visual Studio on Windows and make sure you have at least Android API Level 16 and an Android Emulator installed.
 
 When working on Windows, you won't be able to build iOS solutions unless you connect your machine with a Mac in your network. To follow this workshop, an iOS configuration is not mandatory! [Follow this guide](https://developer.xamarin.com/guides/ios/getting_started/installation/windows/) if you want to connect to a Mac Build Host anyway.
 
 #### Mac
 
-When using a Mac, the best Xamarin Tooling provides Visual Studio for Mac. Xamarin should be installed during the installation of Visual Studio. Please [follow this guide](https://docs.microsoft.com/en-us/visualstudio/mac/installation) to make sure you don't miss anything.
+When using a Mac, the best Xamarin Tooling is available in Visual Studio for Mac. Xamarin should be installed during the installation of Visual Studio. Please [follow this guide](https://docs.microsoft.com/en-us/visualstudio/mac/installation) to make sure you don't miss anything.
 
-If you want to build iOS solutions, make sure that XCode is also installed on the same device!
+If you want to build iOS solutions, make sure that Xcode is also installed on the same device!
 
 #### Test your installation
 
-To make sure your environment works as expected and is able to compile and execute Xamarin apps, your can simply open the [`ContosoMaintenance.sln`](/ContosoMaintenance.sln) solution with Visual Studio and select the `ContosoFieldService.iOS` or `ContosoFieldService.Droid` project as your Startup project. If the application gets compiled and the app can be started, you are good to go.
+To make sure your environment works as expected and is able to compile and execute Xamarin apps, you can simply open the [`ContosoMaintenance.sln`](/ContosoMaintenance.sln) solution with Visual Studio and select the `ContosoFieldService.iOS` or `ContosoFieldService.Droid` project as your Startup project. If the application gets compiled and the app can be started, you are good to go.
 
 ![Visual Studio Running Xamarin iOS and Android App](Assets/VSMacRunningiOSandAndroid.png)
