@@ -137,7 +137,7 @@ namespace ContosoMaintenance.WebAPI.Services
 
             //Container
             CloudBlobContainer blobContainer = blobClient.GetContainerReference(settings.ContainerName);
-            await blobContainer.CreateIfNotExistsAsync();
+            await blobContainer.CreateIfNotExistsAsync(BlobContainerPublicAccessType.Blob, null, null);
 
             return blobContainer;
         }
