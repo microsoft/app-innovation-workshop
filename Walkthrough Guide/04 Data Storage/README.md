@@ -2,13 +2,13 @@
 
 # Data Storage
 
-As we are collecting and displaying different types of information like *Jobs*, *Parts*, *Users* and *photos*, we need to store them somewhere in the cloud. For this, we chose two different types of storages: **Blob Storage** for raw files like images and a **NoSQL Database** for storing unstructured data like Jobs.
+As we are collecting and displaying different types of information like *Jobs*, *Parts*, *Users* and *photos*, we need to store them somewhere in the cloud. For this, we chose two different types of storage: **Blob Storage** for raw files like images and a **NoSQL Database** for storing unstructured data like Jobs.
 
 ## 1. Azure Cosmos DB for unstructured data
 
-Whenever it comes to unstructured data an NoSQL approaches in the Microsoft Azure ecosystem, Cosmos DB should be our database of choice. It is a globally-distributed, multi-model database service which makes it super flexible to use and extremely easy to scale to other regions.
+Whenever it comes to unstructured data and NoSQL approaches in the Microsoft Azure ecosystem, Cosmos DB should be our database of choice. It is a globally-distributed, multi-model database service which makes it super flexible to use and extremely easy to scale to other regions.
 
-Beside *Disk Space* and *Consistency*, Cosmos DB's main scale dimension is *Throughput*. For each collection, developers can reserve throughput for their data, which ensures the 99.99th percentile of latency for reads to under 10 ms and for writes to under 15 ms. Pre-reserved Throughput which is defined by request units (RUs) is mainly determining the price of a Cosmos DB instance. Fetching of a single 1KB document by id spends roughly 1 RU. You can use the [Cosmos DB capacity planner tool](https://www.documentdb.com/capacityplanner) to calculate, how many RUs your database might need.
+Beside *Disk Space* and *Consistency*, Cosmos DB's main scale dimension is *Throughput*. For each collection, developers can reserve throughput for their data, which ensures the 99.99th percentile of latency for reads to under 10 ms and for writes to under 15 ms. Pre-reserved Throughput which is defined by request units (RUs) is mainly determining the price of a Cosmos DB instance. Fetching of a single 1KB document by id spends roughly 1 RU. You can use the [Cosmos DB capacity planner tool](https://www.documentdb.com/capacityplanner) to calculate how many RU's your database might need.
 
 ### 1.1 Create a Cosmos DB instance
 
@@ -32,19 +32,19 @@ After a few seconds, Azure should have created the database service and we can s
 
 #### 1.2.1 Scalability and Consistency
 
-As we can see from the ***Overview*** section, Azure Cosmos DB is all about scalability and availability. We get greeted by a map that shows us, which regions our data gets synchronized to and we can easily add and remove regions by selecting or deselecting them on the map or the ***Replicate data globally section*** in the side menu.
+As we can see from the ***Overview*** section, Azure Cosmos DB is all about scalability and availability. We get greeted by a map that shows us which regions our data gets synchronized to, and we can easily add and remove regions by selecting or deselecting them on the map or the ***Replicate data globally section*** in the side menu.
 
-With scaling databases to multiple instances, *Consistency* immediately come to our minds. By default, Cosmos DB uses *Session consistency* but we can choose from five different [Consistency levels](https://docs.microsoft.com/en-us/azure/cosmos-db/consistency-levels) in the ***Default Consistency*** menu, if we feel the need to change that.
+With scaling databases to multiple instances, *Consistency* immediately comes to our minds. By default, Cosmos DB uses *Session consistency* but we can choose from five different [Consistency levels](https://docs.microsoft.com/en-us/azure/cosmos-db/consistency-levels) in the ***Default Consistency*** menu, if we feel the need to change that.
 
-> **Hint:** Even when selecting multiple regions for Azure Cosmos DB, the connection string will always stay the same. That's a very nice feature, which allows your backend to not care about the location of your database at all. Cosmos DB has its own traffic manager that will route your query to the fastest location autimatically.
+> **Hint:** Even when selecting multiple regions for Azure Cosmos DB, the connection string will always stay the same. That's a very nice feature, which allows your backend to not care about the location of your database at all. Cosmos DB has its own traffic manager that will route your query to the fastest location automatically.
 
 #### 1.2.2 Security Keys
 
-Like every other database, Azure Cosmos DB offers security through access control using Keys. Head over to the ***Keys*** section of the data base to check your keys for different access levels (read-write and read-only) and connection strings. We will need these information later, when we connect the Cosmos DB to the Web API.
+Like every other database, Azure Cosmos DB offers security through access control using Keys. Head over to the ***Keys*** section of the database to check your keys for different access levels (read-write and read-only) and connection strings. We will need this information later, when we connect the Cosmos DB to the Web API.
 
 #### 1.2.3 Data Explorer
 
-One nice feature of Azure Cosmos DB is the ***Data Explorer*** that can be found in the side menu and offers a live view on the data that sits inside the database. We can also edit and query the documents here.
+One nice feature of Azure Cosmos DB is the ***Data Explorer*** that can be found in the side menu, and offers a live view of the data that sits inside the database. We can also edit and query the documents here.
 
 At the moment our database is empty, but we will come back later to take a look at what's going on here.
 
@@ -88,7 +88,7 @@ Once we add the connection information to the App Service Settings, the Web API 
 
 ![Empty List Of Jobs](Assets/EmptyListOfJobs.png)
 
-As we can see, (of course) there are no jobs inside the database at the moment. But we don't get an error message but an empty list. That means, that there is at least "something" inside of our database now. The [`DocumentDBRepositoryBase.cs`](/Backend/Monolithic/Services/DocumentDBRepositoryBase.cs#L97-L138) class creates databases and collections that are not existant automatically when it gets asked for them.
+As we can see, (of course) there are no jobs inside the database at the moment. But we don't get an error message but an empty list. That means that there is at least "something" inside of our database now. The [`DocumentDBRepositoryBase.cs`](/Backend/Monolithic/Services/DocumentDBRepositoryBase.cs#L97-L138) class creates databases and collections that are not existant automatically when it gets asked for them.
 
 Let's check the Cosmos DB's ***Data Explorer*** at the Azure Portal to see what happened!
 
@@ -98,7 +98,7 @@ As we can see, a `contosomaintenance` database has been created with an empty `j
 
 #### 1.4.2 Add a new document manually
 
-Time to add our first job manually! Let's click the ***New Document*** button in the `jobs` collection and add a JSON document like the following one in the editor to add a dummy job that points to the Microsoft headquarter in Redmond.
+Time to add our first job manually! Let's click the ***New Document*** button in the `jobs` collection and add a JSON document like the following one in the editor to add a dummy job that points to the Microsoft headquarters in Redmond.
 
 ```json
 {
@@ -132,7 +132,7 @@ Once we hit ***Save***, we should be able to return to our API and fetch the lis
 
 #### 1.4.3 Generate Dummy Data
 
-To have actual data in the Cosmos DB instance to play around with and to avoid having you to write a bunch of dummy Jobs and Parts manually, we have prepared some dummy data for this workshop. Once the Cosmos DB connection is configured, you can call the `api/dummy` endpoint of your Web API to fill the database.
+To have actual data in the Cosmos DB instance to play around with and to avoid having you write a bunch of dummy Jobs and Parts manually, we have prepared some dummy data for this workshop. Once the Cosmos DB connection is configured, you can call the `api/dummy` endpoint of your Web API to fill the database.
 
 [//]: # (Empty line for spacing)
 &nbsp;
@@ -143,11 +143,11 @@ Now that we can store documents for *Jobs*, *Parts* and other unstructured data 
 
 ### 2.1 Create a Storage Account
 
-For that, head over to the [Azure Portal](https://portal.azure.com), click the ***New*** button, open the ***Storage*** category and select ***Storage Account*** to add some cloud storage to store your files at.
+For that, head over to the [Azure Portal](https://portal.azure.com), click the ***New*** button, open the ***Storage*** category and select ***Storage Account*** to add some cloud storage to store your files.
 
 ![Add a Storage Account in the Azure Portal](Assets/AddStorageAccount.png)
 
-Choose the following settings and hit the Create button to start provisioning the Storage Account.
+Choose the following settings and hit the Create button to start provisioning the Storage Account:
 
 - **ID:** myawesomestartupstorage
 - **Deployment model:** Resource manager
@@ -160,7 +160,7 @@ Choose the following settings and hit the Create button to start provisioning th
 
 ### 2.2 Explore Azure Blob Storage
 
-After a few seconds, Azure provisioned a Storage Account for us and we can navigate to it in the Azure Portal.
+After a few seconds, Azure has provisioned a Storage Account for us and we can navigate to it in the Azure Portal.
 
 ![Add a Storage Account in the Azure Portal](Assets/StorageAccountOverview.png)
 
@@ -170,7 +170,7 @@ Besides Blob Storage, an Azure Storage Account bundles all kinds of storages lik
 
 #### 2.2.2 Security Keys
 
-Similar to what we saw with Cosmos DB, Azure Storage is also secured with Access Keys to manage control. We will need also these information later, when we connect the Storage Account to the Web API the same way we did with Cosmos DB before.
+Similar to what we saw with Cosmos DB, Azure Storage is also secured with Access Keys to manage control. We will also need this information later, when we connect the Storage Account to the Web API the same way we did with Cosmos DB before.
 
 #### 2.2.3 Configuration
 
@@ -180,7 +180,7 @@ We can upgrade and configure our Storage Account to use Solid State Disks (Premi
 
 #### 2.3.1 Create Blob containers for photos
 
-Before we connect the dots between the Web API backend and the Storage Account, we should create **Containers** for storing the uploaded photos at. Navigate to the ***Browse blobs*** section in the menu on the left and create a new container using the ***Add Container*** button.
+Before we connect the dots between the Web API backend and the Storage Account, we should create **Containers** for storing the uploaded photos. Navigate to the ***Browse blobs*** section in the menu on the left and create a new container using the ***Add Container*** button.
 
 ![Add a Blob Storage Container](Assets/AddBlobContainer.png)
 
@@ -189,7 +189,7 @@ Let's create a container for the uploaded images in their original size with ano
 - **Name:** images-large
 - **Public access level:** Blob (anonymous read access for blobs only)
 
-The `images-large` containter will be used by the backend to upload all pictures that have been taken with the device camera to. Later in this workshop, we will down-scale these images automatically for performance enhancements at it is not a best practice to always download full-size images.
+The `images-large` containter will be used by the backend to upload all pictures that have been taken with the device camera. Later in this workshop, we will down-scale these images automatically for performance enhancements as it is not a best practice to always download full-size images.
 
 So let's also create two more containers for scaled images with the same properties, so that we end up with three containers.
 
@@ -201,7 +201,7 @@ So let's also create two more containers for scaled images with the same propert
 
 #### 2.3.2 Add Storage Queue
 
-Now that we have added Containers for uploaded photos, we use another Storage Type of Azure Storage Accounts: Storage Queues. Those are simple message queues that can handle any kind of information and saves them until they got processed. Although we do not need the Storage Queue for the image upload directly, it will become important later at this workshop and it is a good time to create it now.
+Now that we have added Containers for uploaded photos, we use another Storage Type of Azure Storage Accounts: Storage Queues. Those are simple message queues that can handle any kind of information and saves them until they got processed. Although we do not need the Storage Queue for the image upload directly, it will become important later in this workshop and it is a good time to create it now.
 
 ![Add Storage Queue](Assets/AddStorageQueue.png)
 
@@ -237,7 +237,7 @@ Let's test if everything works as expected and send our first photo to the Web A
 
 #### 2.4.1 Uploading a photo
 
-The API endpoint for the photo upload is  `/api/photo/{jobId}` and we can basically upload any file we want. You can choose a picture from the web or your computer or use the [Demo-AirplaneAssembly.jpg](Assets/Demo-AirplaneAssembly.jpg) ([Source](https://en.wikipedia.org/wiki/Airplane)) from this repository. Make sure to send the picture as **form-data** file to the API as it expects it in the [`PhotoController.cs`](/Backend/Monolithic/Controllers/PhotoController.cs#L30).
+The API endpoint for the photo upload is  `/api/photo/{jobId}` and we can basically upload any file we want. You can choose a picture from the web or your computer or use the [Demo-AirplaneAssembly.jpg](Assets/Demo-AirplaneAssembly.jpg) ([Source](https://en.wikipedia.org/wiki/Airplane)) from this repository. Make sure to send the picture as a **form-data** file to the API as it expects it in the [`PhotoController.cs`](/Backend/Monolithic/Controllers/PhotoController.cs#L30).
 
 Take the `id` from any job in your Cosmos DB to build the url and attach the photo to a specific *Job*.
 
