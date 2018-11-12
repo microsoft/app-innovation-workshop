@@ -15,12 +15,12 @@ Select Azure Search and click 'Create'.
 
 
 ![Azure Search Configure](Assets/ConfigureSearchService.png)
-You'll have a few options for pricing, but for this demo, we should have plenty of capacity left over if we use the Free tier. Once you've deployed Azure Search, go to the resource 
+You'll have a few options for pricing, but for this demo we should have plenty of capacity left over if we use the Free tier. Once you've deployed Azure Search, go to the resource 
 
 ![Azure Search Overview](Assets/SearchOverview.png)
 
 ### Indexing our data
-There are two ways to get data into Azure Search. The easiest is to make use of the automatic indexers. With the indexers, we're able to point Azure Search to our database and have it on a schedule look for new data. This can lead to situations where the database and search index are out-of-sync so be wary of using this approach in production. Instead, you should manage the search index manually using the lovely SDKs provided. 
+There are two ways to get data into Azure Search. The easiest is to make use of the automatic indexers. With the indexers, we're able to point Azure Search to our database and have it follow a schedule to look for new data. This can lead to situations where the database and search index are out-of-sync so be wary of using this approach in production. Instead, you should manage the search index manually using the lovely SDKs provided. 
 
 For ease of use, we'll make use of the Indexers to get some data quickly into our index. 
 
@@ -40,7 +40,7 @@ Once you've selected your Cosmos DB account, you should be able to use the drop-
 **Important Note**
 The Index name must be set to "job-index", because it is referred to by name in the mobile application.
 
-We need to configure what data we wish to send back down to the device with a search query as well as which properties we'll use to search. The Index is difficult to modify (apart from adding new fields) after we've created it, so its always worth double checking the values.
+We need to configure what data we wish to send back down to the device with a search query, as well as which properties we'll use to search. The Index is difficult to modify (apart from adding new fields) after we've created it, so its always worth double checking the values.
 
 **Important**
 You need to create a _suggester_ called 'suggestions'. This is referred to by the _search_ API which we're writing. To do this, tick the 'suggester' box and enter 'suggestions' as its name. Then you also need to mark at least one field as being part of the suggester. We suggest(!) that the _Name_ and _Details_ fields are marked as such.
@@ -50,7 +50,7 @@ Note that the screenshot above is slightly out of date, and the _Suggester_ is n
 Once you've completed this setup, click "Create". 
 
 ![Azure Search Create Updates](Assets/IndexerSchedule.png)
-You can now set the frequenancy at which Azure Search will look for new data. I recommend for this demo setting it to be 5 minutes. We can do this by selecting "custom". 
+You can now set the frequency at which Azure Search will look for new data. I recommend for this demo setting it to be 5 minutes. We can do this by selecting "custom". 
 
 ![Azure Search Customer Timer](Assets/CustomTimer.png)
 We also want to track deletions, so go ahead and check the tickbox and select the 'isDelete' item from the drop-down menu and set the marker value to "true". 
