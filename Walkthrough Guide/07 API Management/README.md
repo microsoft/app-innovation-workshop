@@ -1,12 +1,12 @@
 # API Management
 
-Azure API Management is a turnkey solution for publishing APIs for external and internal consumption. It allows for the quick creation of consistent and modern API gateways for existing or new backend services hosted anywhere, enabling security and protection of the APIs from abuse and overuse. We like to think of API Management as businesses digital transformation hub as it empowers organisations to scale developer onboarding as well as monitoring the health of services. 
+Azure API Management is a turnkey solution for publishing APIs for external and internal consumption. It allows for the quick creation of consistent and modern API gateways for existing or new backend services hosted anywhere, enabling security and protection of the APIs from abuse and overuse. We like to think of API Management as a business digital transformation hub as it empowers organisations to scale developer onboarding as well as monitoring the health of services. 
 
 ![Highlighted Architecture Diagram](Assets/HighlightedArchitecture.png)
 
 #### Why API Management
 
-We'll be using API Management in today's workshop to act as both a gateway our Azure Resources and as a source of documentation about what features we've made available to consumers of our services. 
+We'll be using API Management in today's workshop to act as both a gateway to our Azure Resources and as a source of documentation about what features we've made available to consumers of our services: 
 
 - Package and publish APIs to developers and partners
 - Onboard developers via self-service portal
@@ -25,7 +25,7 @@ We'll be using API Management in today's workshop to act as both a gateway our A
 You can find a our API Management portal running [here](https://contosomaintenance.portal.azure-api.net/)
 
 ### Exploring APIs
-You can explore APIs with API Management and even get automatically generated snippets in a variety of languages which demonstrate whats required to interact with the Azure services.
+You can explore APIs with API Management and even get automatically generated snippets in a variety of languages which demonstrate what's required to interact with the Azure services.
 
 ![Developer Portal showing the Get Job API](Assets/DeveloperPortalApiView.png)
 
@@ -41,7 +41,7 @@ Select the ***API Management*** result. You'll then navigate to the Creation bla
 
 ![Search for API Management](Assets/ApiManagementFillInfo.png)
 
-Choose the following settings and hit the Create button to start provisioning the API Management instance.
+Choose the following settings and hit the Create button to start provisioning the API Management instance:
 
 - **Name:** myawesomeneapi
 - **Resouce Group:** Use existing
@@ -60,11 +60,11 @@ It's worth checking that the service is active after deployment as this can take
 
 ## 2. Understanding our usage
 
-We're using API Management as our access layer, routing all HTTP requests to our backend through it. You can see this below in this basic diagram (it's not the entire architecture, but more of a high-level overview).
+We're using API Management as our access layer, routing all HTTP requests to our backend through it. You can see this below in this basic diagram (it's not the entire architecture, but more of a high-level overview):
 
 ![Search for API Management](Assets/RequestFlow.png)
 
-If we imagine the flow for searching jobs. Our request leaves the phone, hits our API Management, which will route it to the nearest instance of our backend. The backend that takes the request and routes it to the correct controller, which has the implementation for interacting with Azure Search.
+If we imagine the flow for searching jobs. Our request leaves the phone, hits our API Management service, which will route it to the nearest instance of our backend. The backend then takes the request and routes it to the correct controller, which has the implementation for interacting with Azure Search.
 
 ## 3. Configuring API Management
 
@@ -80,7 +80,7 @@ To kick off, we'll create the Parts API manually, and then for the rest of the A
 
 #### 3.1.1 Parts
 
-Parts is one of the easiest APIs to implement within the project as we'll only be requesting an array of parts from our backend. We don't-have any variables within our queries or other elements that could complicate the request.
+Parts is one of the easiest APIs to implement within the project as we'll only be requesting an array of parts from our backend. We don't have any variables within our queries or other elements that could complicate the request.
 
 ![Search for API Management](Assets/AddAPIPartsFirstStep.png)
 
@@ -90,7 +90,7 @@ Click on the ***Add API*** Button and select ***Blank API***.
 
 ![Search for API Management](Assets/AddingPartsAPI.png)
 
-We can then provide a few details about our API.
+We can then provide a few details about our API:
 
 - **Display Name:** This name is displayed in the Developer portal.
 - **Name:** Provides a unique name for the API.
@@ -112,7 +112,7 @@ We can then click on ***Add Operation***.
 
 ![Search for API Management](Assets/CreatePartsGETOperation.png)
 
-By default, operations will be set configured for GET Requests, but we can change this using the drop-down menu.
+By default, operations will be configured for GET Requests, but we can change this using the drop-down menu.
 
 - **HTTP Verb:** You can choose from one of the predefined HTTP verbs.
 - **URL:** A URL path for the API.
