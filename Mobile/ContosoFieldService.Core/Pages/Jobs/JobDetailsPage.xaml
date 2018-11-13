@@ -156,7 +156,7 @@
         
         <flow:FlowListView.FlowColumnTemplate>
             <DataTemplate>
-                <Grid HeightRequest="107" CompressedLayout.IsHeadless="true">
+                <Grid HeightRequest="107">
                     <Grid.Margin>
                         <Thickness Left="{StaticResource DefaultMargin}" Top="0" Right="0" Bottom="{StaticResource DefaultMargin}" />
                     </Grid.Margin>
