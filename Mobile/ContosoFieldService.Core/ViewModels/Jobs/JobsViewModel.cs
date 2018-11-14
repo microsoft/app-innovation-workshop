@@ -192,7 +192,7 @@ namespace ContosoFieldService.ViewModels
             base.ReverseInit(returnedData);
             SelectedJob = null;
 
-            if (returnedData is Job job && job.IsDeleted)
+            if (returnedData is Job job)
             {
                 // Job got deleted
                 // Reload data

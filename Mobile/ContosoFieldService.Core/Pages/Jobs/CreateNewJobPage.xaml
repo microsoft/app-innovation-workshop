@@ -7,13 +7,17 @@
     ios:Page.UseSafeArea="true"
     BackgroundColor="{StaticResource BackgroundColor}"
     Title="Create New Job">
+    
+    <Grid CompressedLayout.IsHeadless="true">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
 
-    <ScrollView>
-        <StackLayout CompressedLayout.IsHeadless="true">
-
-           <!-- Form Stack -->
+        <!-- Form Stack -->
+        <ScrollView>
             <StackLayout
-                CompressedLayout.IsHeadless="true"
+                CompressedLayout.IsHeadless="true"                
                 Padding="{StaticResource DefaultThickness}"
                 Spacing="{StaticResource DefaultMargin}"
                 VerticalOptions="FillAndExpand">
@@ -62,22 +66,23 @@
                     Date="{Binding DueDate}"
                     MinimumDate="{Binding CurrentDate}" />
             </StackLayout>  
-            
-            <StackLayout
-                VerticalOptions="End"
-                Spacing="0"
-                CompressedLayout.IsHeadless="true">
-                <Button 
-                    Style="{StaticResource FullWidthButtonStyle}"                    
-                    Text="Create" 
-                    Command="{Binding CreateJobClicked}" />
+        </ScrollView>
+        
+        <StackLayout
+            Grid.Row="1"
+            Spacing="0"
+            CompressedLayout.IsHeadless="true"
+            Padding="{OnPlatform Default='0,10,0,0', iOS='0,10,0,20'}">
+            <Button 
+                Style="{StaticResource FullWidthButtonStyle}"                    
+                Text="Create" 
+                Command="{Binding CreateJobClicked}" />
 
-                <Button 
-                    Style="{StaticResource FullWidthButtonStyle}"
-                    Text="Cancel"                    
-                    BackgroundColor="{StaticResource AccentColorRed}" 
-                    Command="{Binding CancelClicked}" />
-            </StackLayout>
+            <Button 
+                Style="{StaticResource FullWidthButtonStyle}"
+                Text="Cancel"                    
+                BackgroundColor="{StaticResource AccentColorRed}" 
+                Command="{Binding CancelClicked}" />
         </StackLayout>
-    </ScrollView>
+    </Grid>
 </ContentPage>
