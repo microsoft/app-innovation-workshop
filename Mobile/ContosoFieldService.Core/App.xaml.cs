@@ -40,7 +40,7 @@ namespace ContosoFieldService
                 // Tab Bar Color is set in AppDelegate.cs within the iOS project
                 var tabbedNavigation = new FreshTabbedFONavigationContainer("Contoso");
                 tabbedNavigation.BarBackgroundColor = (Color)Current.Resources["BackgroundColorDark"];
-                tabbedNavigation.BarTextColor = (Color)Current.Resources["AccentColor"];
+                tabbedNavigation.BarTextColor = Color.White; // Status Bar Color
 
                 // Add first level navigationpages as tabs
                 tabbedNavigation.AddTab<JobsViewModel>("Jobs", "icon_jobs.png");
