@@ -129,11 +129,20 @@ namespace ContosoFieldService.ViewModels
                         Analytics.TrackEvent("Taking a photo");
                         IsUploading = true;
 
-                        var updatedJob = await photoService.UploadPhotoAsync(selectedJob.Id, file);
-                        jobService.InvalidateCache("Jobs");
-                        Init(updatedJob);
-
-                        IsUploading = false;
+                        try
+                        {
+                            var updatedJob = await photoService.UploadPhotoAsync(selectedJob.Id, file);
+                            jobService.InvalidateCache("Jobs");
+                            Init(updatedJob);
+                        }
+                        catch (Exception)
+                        {
+                            await CoreMethods.DisplayAlert("Upload Error", "The picture could not be uploaded. Please make sure, that the Storage Connection to the Backend is configured correctly.", "OK");
+                        }
+                        finally
+                        {
+                            IsUploading = false;
+                        }
                     }
                 });
             }
