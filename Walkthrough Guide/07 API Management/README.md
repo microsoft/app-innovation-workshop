@@ -14,7 +14,7 @@ We'll be using API Management in today's workshop to act as both a gateway our A
 - Manage and control API access and protect them from abuse
 - Monetize APIs or parts of it
 - Bundle multiple APIs together
-- Add new capabilities to existing APIs, such as respone caching
+- Add new capabilities to existing APIs, such as response caching
 - Insights of usage and health from analytics reports
 
 #### What does it cost
