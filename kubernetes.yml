@@ -1,0 +1,41 @@
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata:
+  name: wxdeployment
+spec:
+  replicas: 2
+  strategy:
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 1
+  minReadySeconds: 5 
+  template:
+    metadata:
+      labels:
+        app: wx
+    spec:
+      containers:
+      - name: wx
+        image: fralos.azurecr.io/lido/wxserver
+        ports:
+          - containerPort: 80
+        env:
+          - name: dbHost
+            value: "wxserverdb.postgres.database.azure.com"
+          - name: dbUser
+            value: "wxserver"
+          - name: dbPassword
+            value: "e5%CuHG@uN32TlNbMvi7dw6o&5Lw8VYb"
+          - name: dbPort
+            value: "5432"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: wx-loadbalancer
+spec:
+  type: LoadBalancer
+  ports:
+  - port: 80
+  selector:
+    app: wx
