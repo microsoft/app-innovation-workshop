@@ -51,7 +51,7 @@ namespace ContosoFieldService.ViewModels
                     {
                         job = response.result;
                         Analytics.TrackEvent("New Job Created");
-                        await CoreMethods.PopPageModel(job, true, true);
+                        await CoreMethods.PopPageModel(job, false, true);
                     }
                 });
             }
