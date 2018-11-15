@@ -1,0 +1,32 @@
+﻿@using Microsoft.AspNetCore.Http.Features
+
+@{
+    var consentFeature = Context.Features.Get<ITrackingConsentFeature>();
+    var showBanner = !consentFeature?.CanTrack ?? false;
+    var cookieString = consentFeature?.CreateConsentCookie();
+}
+
+@if (showBanner)
+{
+    <nav id="cookieConsent" class="navbar navbar-default navbar-fixed-bottom " role="alert">
+        <div class="container">
+            <div class="">
+                <p class="navbar-text">
+                    By clicking "Accept All Cookies” you agree to the storing of cookies on your device to enhance this sites functionality
+                </p>
+
+            </div>
+            <div class="pull-right">
+                <button type="button" class="btn btn-dark navbar-btn" data-cookie-string="@cookieString">Accept All Cookies</button>
+            </div>
+        </div>
+    </nav>
+    <script>
+        (function () {
+            document.querySelector("#cookieConsent button[data-cookie-string]").addEventListener("click", function (el) {
+                document.cookie = el.target.dataset.cookieString;
+                document.querySelector("#cookieConsent").classList.add("hidden");
+            }, false);
+        })();
+    </script>
+}

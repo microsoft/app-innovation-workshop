@@ -1,0 +1,47 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+@model ContosoMaintenance.Web.Models.ViewModels.JobsViewModel
+
+
+<div class="container">
+    <div id="jobs">
+        @if (Model.Jobs == null || !Model.Jobs.Any())
+        {
+        <div class="alert alert-danger" role="alert">
+           No Jobs Found
+        </div>
+        }
+        <div class="row">
+            <div class="col-md-12">
+                @foreach (var group in Model.Jobs.GroupBy(x => x.Status))
+                {
+                    <div class="list-group-header">
+                        <h2>Jobs @group.Key</h2>
+                    </div>
+                    @foreach (var j in group)
+                    {
+                        <a href="/Jobs/Edit/@j.Id" class="list-group-item list-group-item-action flex-column align-items-start job-@j.Status">
+                            <div class="d-flex w-100 justify-content-between">
+                                <h5 class="mb-1">@j.Name</h5>
+                            </div>
+                            <p>@j.Address.City</p>
+                            <p>
+                                <span><b>Assigned To: </b></span>
+                                @if (j.AssignedTo != null)
+                                {
+                                    @j.AssignedTo.FirstName
+                                }
+                                <br />
+                                <span><b>Due: </b></span>@j.CreatedAt.ToString("ddd dd MMMM")
+                            </p>
+
+                        </a>
+                    }
+                }
+            </div>
+
+
+        </div>
+    </div>
+</div>
