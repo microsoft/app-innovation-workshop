@@ -1,9 +1,13 @@
+#######################################################
+# API                                                 #
+#######################################################
+
 apiVersion: apps/v1beta1
 kind: Deployment
 metadata:
-  name: wxdeployment
+  name: contosomaintenance-api
 spec:
-  replicas: 2
+  replicas: 3
   strategy:
     rollingUpdate:
       maxSurge: 1
@@ -12,30 +16,92 @@ spec:
   template:
     metadata:
       labels:
-        app: wx
+        app: contosomaintenance-api
     spec:
       containers:
-      - name: wx
-        image: fralos.azurecr.io/lido/wxserver
-        ports:
+        - name: contosomaintenance-api
+          image: robinmanuelthiel/contosomaintenance-api
+          env:
+            - name: AzureCosmosDb__Endpoint
+              valueFrom:
+                secretKeyRef:
+                  name: appsettings
+                  key: CosmosDb__Endpoint
+            - name: AzureCosmosDb__Key
+              valueFrom:
+                secretKeyRef:
+                  name: appsettings
+                  key: CosmosDb__Key      
+          ports:
           - containerPort: 80
-        env:
-          - name: dbHost
-            value: "wxserverdb.postgres.database.azure.com"
-          - name: dbUser
-            value: "wxserver"
-          - name: dbPassword
-            value: "e5%CuHG@uN32TlNbMvi7dw6o&5Lw8VYb"
-          - name: dbPort
-            value: "5432"
+          - containerPort: 443
+          resources:
+            requests:
+              memory: "64Mi"
+              cpu: "250m"
+            limits:
+              memory: "128Mi"
+              cpu: "500m"
 ---
 apiVersion: v1
 kind: Service
 metadata:
-  name: wx-loadbalancer
+  name: contosomaintenance-api
 spec:
   type: LoadBalancer
   ports:
-  - port: 80
+  - name: http
+    port: 80
+  - name: https
+    port: 443
   selector:
-    app: wx
+    app: contosomaintenance-api
+---
+
+#######################################################
+# Chatbot                                             #
+#######################################################
+
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata:
+  name: contosomaintenance-bot
+spec:
+  replicas: 1
+  strategy:
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 1
+  minReadySeconds: 5 
+  template:
+    metadata:
+      labels:
+        app: contosomaintenance-bot
+    spec:
+      containers:
+        - name: contosomaintenance-bot
+          image: robinmanuelthiel/contosomaintenance-bot
+          ports:
+          - containerPort: 80
+          - containerPort: 443
+          resources:
+            requests:
+              memory: "64Mi"
+              cpu: "250m"
+            limits:
+              memory: "128Mi"
+              cpu: "500m"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: contosomaintenance-bot
+spec:
+  type: LoadBalancer
+  ports:
+  - name: http
+    port: 80
+  - name: https
+    port: 443
+  selector:
+    app: contosomaintenance-bot
