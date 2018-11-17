@@ -19,7 +19,7 @@ Although you can go and explore the content and walkthrough by yourself, the ric
 <table>
   <tr>
     <td nowrap><a href="https://azure.microsoft.com/en-us/services/app-service/">App Service</a></td>
-    <td rowspan="11"><img src="Resources/Architecture.png"></td>
+    <td rowspan="12"><img src="Resources/Architecture.png"></td>
   </tr>
   <tr>
     <td nowrap><a href="https://azure.microsoft.com/en-us/services/cosmos-db/">Cosmos DB</a></td>
@@ -41,6 +41,9 @@ Although you can go and explore the content and walkthrough by yourself, the ric
   </tr>
   <tr>
     <td nowrap><a href="https://azure.microsoft.com/en-us/services/bot-service/">Bot Service</a></td>
+  </tr>
+  <tr>
+    <td nowrap><a href="https://dev.azure.com/">Azure DevOps</a></td>
   </tr>
   <tr>
     <td nowrap><a href="https://appcenter.ms/">App Center</a></td>

@@ -33,6 +33,17 @@ And voilà, we are done. Now we can start to add services to our newly created R
 
 Container Registry...
 
+<details><summary>stuff with *mark* **down**</summary><p>
+
+## _formatted_ **heading** with [a](link)
+
+---
+{{standard 3-backtick code block omitted from here due to escaping issues}}
+---
+
+Collapsible until here.
+</p></details>
+
 ## 3. Create the compute layer with App Services or Container Orchestrators
 
 When it comes to the compute layer of our backend architecture, we have a bunch of options.
