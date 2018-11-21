@@ -5,8 +5,7 @@ Deciding how to architect a solution isn't an easy task and depending on who you
 
 We're looking for a solution that allows us lots of flexibility with minimal maintenance.  We're interested in focusing on the business problem rather than deploying and maintaining a set of virtual machines. 
 
-It's for the reason that we'll opt to use Platform as a Service (PaaS) as much as possible within our design. 
- 
+It's for this reason that we'll opt to use Platform as a Service (PaaS) as much as possible within our design.  
 
 
 ## The real architecture
@@ -14,7 +13,8 @@ It's for the reason that we'll opt to use Platform as a Service (PaaS) as much a
 Above you can see a high-level overview of our production architecture. Some key decisions: 
 
 ### Orchestration 
-We were going to leverage our .NET skills and build a ASP.NET Web API targeting .NET Core; we've lots of flexibility on where and how to host the code. 
+
+We are going to leverage our .NET skills and build a ASP.NET Web API targeting .NET Core; we've lots of flexibility on where and how to host the code. 
 
 We picked Azure App Service as it supports great IDE integration for both Visual Studio PC and Visual Studio Mac, as well as offering all the PaaS goodness we need to focus on other parts of the solution.  
 
@@ -48,9 +48,9 @@ If you're interested in helping, then please reach out to us!
 Learn more about [Service Fabric](https://azure.microsoft.com/en-us/services/service-fabric/)
 
 ## Connecting to remote resources securely
-ExpressRoute is an Azure service that lets you create private connections between Microsoft datacenters and infrastructure that’s on your premises or in a colocation facility. ExpressRoute connections do not go over the public Internet, instead ExpressRoute uses dedicated connectivity from your resources to Azure. This provides reliability and speeds guarantees with lower latencies than typical connections over the Internet. Microsoft Azure ExpressRoute lets you extend your on-premises networks into the Microsoft cloud over a private connection facilitated by a connectivity provider. Connectivity can be from an any-to-any (IP VPN) network, a point-to-point Ethernet network, or a virtual cross-connection through a connectivity provider at a co-location facility.
+ExpressRoute is an Azure service that lets you create private connections between Microsoft datacenters and infrastructure that’s on your premises or in a co-location facility. ExpressRoute connections do not go over the public Internet, instead ExpressRoute uses dedicated connectivity from your resources to Azure. This provides reliability and speeds guaranteed with lower latencies better than typical connections over the Internet. Microsoft Azure ExpressRoute lets you extend your on-premises networks into the Microsoft Cloud over a private connection facilitated by a connectivity provider. Connectivity can be from an any-to-any (IP VPN) network, a point-to-point Ethernet network, or a virtual cross-connection through a connectivity provider at a co-location facility.
 
-Microsoft uses industry standard dynamic routing protocol (BGP) to exchange routes between your on-premises network, your instances in Azure, and Microsoft public addresses. We establish multiple BGP sessions with your network for different traffic profiles. The advantage of ExpressRoute connections over S2S VPN or accessing Microsoft cloud services over internet are as follows;
+Microsoft uses industry standard dynamic routing protocol (BGP) to exchange routes between your on-premises network, your instances in Azure, and Microsoft public addresses. We establish multiple BGP sessions with your network for different traffic profiles. The advantage of ExpressRoute connections over S2S VPN or accessing Microsoft cloud services over internet are as follows:
 
 * more reliability
 * faster speeds
@@ -62,9 +62,9 @@ Bandwidth options available in ExpressRoute are 50 Mbps, 100 Mbps, 200 Mbps, 500
 
 ![Express Route Connectivity Model](Assets/ERConnectivityModel.png)
 
-There are three ways to connect customer’s on-premise infrastructure to Azure (or microsoft cloud services) using ExpressRoute, they are; 
+There are three ways to connect customer’s on-premise infrastructure to Azure (or microsoft cloud services) using ExpressRoute, they are:
  
-1. WAN integration (or call IPVPN or MPLS or any-to-any connectivity) 
+1. WAN integration (or call IPVPN, MPLS or any-to-any connectivity) 
 2. Cloud Exchange through Co-Location Provider 
 3. Point-to-Point Ethernet Connection 
 

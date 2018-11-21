@@ -1,7 +1,7 @@
 ![Banner](Assets/Banner.png)
 
 # Mobile App Network Services 
-Our mobile app connects to our Azure API Management sending HTTP requests to remote services to request resources. The implementation within this demo is very lightweight and designed for use in a POC rather than a production app. If you’d like to see a more resilient approach to building networking services then check out the “resilient networking” branch. Here we’ve implemented a [data caching and a request retry policy](https://github.com/MikeCodesDotNet/Mobile-Cloud-Workshop/blob/b4833120d9ceb70abb8753581f133f3467665edd/Mobile/ContosoFieldService.Core/Services/JobsAPIService.cs#L45), which exponentially delays retry attempts.  We’ll cover this in more detail later, but for our standard app, we’re using an MVP approach. 
+Our mobile app connects to our Azure API Management service, sending HTTP requests to remote services to request resources. The implementation within this demo is very lightweight and designed for use in a POC rather than a production app. If you’d like to see a more resilient approach to building networking services then check out the “resilient networking” branch. Here we’ve implemented a [data caching and a request retry policy](https://github.com/MikeCodesDotNet/Mobile-Cloud-Workshop/blob/b4833120d9ceb70abb8753581f133f3467665edd/Mobile/ContosoFieldService.Core/Services/JobsAPIService.cs#L45), which exponentially delays retry attempts.  We’ll cover this in more detail later, but for our standard app, we’re using an MVP approach. 
 
 We separate out each API from the API management service that we’ll be interacting with. In this case, you’ll see the following directory structure in the [Xamarin.Forms main shared library.](https://github.com/MikeCodesDotNet/Mobile-Cloud-Workshop/tree/master/Mobile/ContosoFieldService.Core) 
 
@@ -19,9 +19,9 @@ We separate out each API from the API management service that we’ll be interac
 Each file contains two classes (we know this is bad practice, but keep with us 😏), where you can easily see how we’ve abstracted away our REST calls using a 3rd party package. 
 
 ## Refit
-Refit is a REST library for .NET developers to easily interact with remote APIs . It make heavy usage of generics and abstractions to minimises the amount of boiler-plate code required to make http requests.
+Refit is a REST library for .NET developers to easily interact with remote APIs . It makes heavy usage of generics and abstractions to minimise the amount of boiler-plate code required to make http requests.
 
-It requires us to define our REST API calls as a C# Interface which is then used with a HTTPClient to handle all the requests"
+It requires us to define our REST API calls as a C# Interface which is then used with a HTTPClient to handle all the requests.
 
 
 #### Security 
@@ -67,7 +67,7 @@ Task<Job> UpdateJob(string id, [Body] Job job);
 ```
 
 #### Using the service Interface
-Our service implementation is pretty straight forward. We create a class to handle the service implementation. Well stub out the methods to map closely to our interface. 
+Our service implementation is pretty straight forward. We create a class to handle the service implementation. We'll stub out the methods to map closely to our interface. 
 
  ```cs
  
@@ -116,7 +116,7 @@ public async Task<Job> GetJobByIdAsync(string id)
 
 **Resilient**
 
-To build a service layer that is resilient to network outages or poor connectivity, we would want to grab a few extra packages. The first being the Xamarin Connectivity Plugin. This allows us to query what our network connectivity looks like before we decide how to process a request for data. We may want to return a cached copy if its still valid and we’ve poor connectivity. Alternatively we may want to do a remote fetch and save the response for next time.  To help combat against poor connectivity, we also use Polly to handle timeouts and retry logic. You can see in the example below, we will try 5 times before giving up. 
+To build a service layer that is resilient to network outages or poor connectivity, we will want to grab a few extra packages. The first being the Xamarin Connectivity Plugin. This allows us to query what our network connectivity looks like before we decide how to process a request for data. We may want to return a cached copy if it's still valid and we’ve poor connectivity. Alternatively we may want to do a remote fetch and save the response for next time.  To help combat against poor connectivity, we also use Polly to handle timeouts and retry logic. You can see in the example below, we will try 5 times before giving up. 
 
 ```cs
 

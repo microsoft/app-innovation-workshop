@@ -4,7 +4,7 @@
 
 Adding Authentication to our app and backend is a little outside of the scope of today's workshop due to time constraints. We believe Authentication is an important enough topic that we've opted to include a guide for you to get an understanding of the key concepts required to implement any Identity Provider into your projects. For that, we chose [Azure Active Directory B2C](https://azure.microsoft.com/services/active-directory-b2c/) to manage users and authentication as our service of choice.
 
-> **Hint:** The Mobile App uses the [OAuth 2.0 Implicit Authentication flow](https://oauth.net/2/grant-types/implicit/), which shows the user an Web Browser windows instead of native Textboxes for entering username and password. This adds security as users don't have to trust the app developer to store and hanlde their passwords securely.
+> **Hint:** The Mobile App uses the [OAuth 2.0 Implicit Authentication flow](https://oauth.net/2/grant-types/implicit/), which shows the user a Web Browser window instead of native Textboxes for entering username and password. This adds security as users don't have to trust the app developer to store and handle their passwords securely.
 >
 > Although Azure ADB2C also supports a [native login with resource owner password credentials flow (ROPC)](https://docs.microsoft.com/en-us/azure/active-directory-b2c/configure-ropc?WT.mc_id=b2c-twitter-masoucou), it is [not recommended from a security perspective](https://www.scottbrady91.com/OAuth/Why-the-Resource-Owner-Password-Credentials-Grant-Type-is-not-Authentication-nor-Suitable-for-Modern-Applications).
 
@@ -29,7 +29,7 @@ Creating a new Azure Active Directory Service is a bit tricky and requires some 
 
 ### 1.1 Create a new Tenant
 
-Browse to the [Azure Portal](https://portal.azure.com), click the ***Create a new resource*** button, search for *"Azure Active Directory B2C"* and click the ***Create*** button of the regarding blade to start the creation wizard.
+Browse to the [Azure Portal](https://portal.azure.com), click the ***Create a new resource*** button, search for *"Azure Active Directory B2C"* and click the ***Create*** button on the relevant blade to start the creation wizard.
 
 ![Create a new AADB2C Tenant](Assets/CreateNewAADB2C.png)
 
@@ -45,7 +45,7 @@ Once the Tenant has been created, it needs to be linked to an Azure Subscription
 
 ![Link Existing AADB2C Tenant](Assets/LinkExistingAADB2CTenant.png)
 
-Fill in the required information and hit **Create**.
+Fill in the required information and hit **Create**:
 
 - **Azure ADB2C Tenant:** Your recently created Tenant
 - **Azure ADB2C Resource name:** *Filled in automatically*
@@ -59,13 +59,13 @@ When we navigate to the B2C Tenant that we have just created, we will not see ma
 
 ### 2.1 Add a new Sign-up or sign-in policy
 
-Enabling users to log into our Active Directory or to create an Account in there by themselves is a good start. For this, we need a *Policy*. In Active Directory, Policies define how users can log in, which Authentication Providers (like Facebook) they can use and what important information is, that users have to provide.
+Enabling users to log into our Active Directory or to create an Account in there by themselves is a good start. For this, we need a *Policy*. In Active Directory, Policies define how users can log in, which Authentication Providers (like Facebook) they can use and what important information is that users have to provide.
 
-To add a new Policy, click on ***Sign-up or sign-in policies*** in the side menu of the Azure AD B2C window and add a new Policy using the ***Add*** button at the top.
+To add a new Policy, click on ***Sign-up or sign-in policies*** in the side menu of the Azure ADB2C window and add a new Policy using the ***Add*** button at the top.
 
 ![Add Policy](Assets/AddPolicy.png)
 
-When defining a new policy, Azure will ask you for a bunch of attributes so let's inspect them quickly to make the right choices.
+When defining a new policy, Azure will ask you for a bunch of attributes so let's inspect them quickly to make the right choices:
 
 #### Identity providers
 
@@ -73,11 +73,11 @@ The services, we want to allow users to register at and log into our application
 
 #### Sign-up attributes
 
-We already talked about these. Here we can define, which information a user has to provide to us, when he signs up for our application for the first time.
+We already talked about these. Here we can define, which information a user has to provide to us, when they sign up for our application for the first time.
 
 #### Application claims
 
-This is the information that Active Directory gives back to our application once the user logs in. We definitely  want to get his **User's Object ID** but also might want to get his name or address back.
+This is the information that Active Directory gives back to our application once the user logs in. We definitely  want to get their **User's Object ID** but also might want to get their name or address back.
 
 #### Multifactor authentication
 
@@ -89,7 +89,7 @@ As you can see later, the Login UI looks pretty poor by default. Here we can cha
 
 ![Configure Policy](Assets/ConfigurePolicy.png)
 
-Create your first policy with the inputs below and confirm your selections with the ***Create*** button.
+Create your first policy with the inputs below and confirm your selections with the ***Create*** button:
 
 - **Name:** GenericSignUpSignIn
 - **Identity providers:** Email signup
@@ -106,7 +106,7 @@ Now that users can sign-up and log into our Active Directory, we need to registe
 
 Select the ***Applications*** menu and click the ***Add*** button from the new blade that appears.
 
-Here you're going to give the Azure AD B2C application a name and specify whether it should contain a Web API and Native client. You want to do both, so we select ***Yes*** on both options which let a bunch of options appear.
+Here you're going to give the Azure ADB2C application a name and specify whether it should contain a Web API and Native client. You want to do both, so we select ***Yes*** on both options which cause a bunch of options to appear.
 
 ![Add new AD Application](Assets/AddNewAdApp.png)
 
@@ -148,7 +148,7 @@ Click the ***API Access*** menu item and add a new API for our application and s
 
 ## 4. Connect the Web Api Backend with Azure Active Directory
 
-Not that the Active Directory is set up, we can connect it to the Backend and introduce it as the Identity Provider of choice. As ASP.Net Core has support for authentication built-in, not much code is needed, to add Active Directory Authentication application-wide.
+Now that the Active Directory is set up, we can connect it to the Backend and introduce it as the Identity Provider of choice. As ASP.Net Core has support for authentication built-in, not much code is needed to add Active Directory Authentication application-wide.
 
 > **Hint:** Remember, although we use existing libraries in our Backend and Frontend projects, Azure Active Directory B2C is based on open standards such as OpenID Connect and OAuth 2.0 and can be integrated into any framework out there.
 
@@ -195,7 +195,7 @@ As you can see, we use `Configuration` variables one more time to not hard code 
 
 [View in project](/Backend/Monolithic/appsettings.json#L30-L34)
 
-So let's set these variables to the correct values an head back to our App Service, open the ***Application Settings*** and add these variables here as we did before for CosmosDB and Storage.
+So let's set these variables to the correct values. Head back to our App Service, open the ***Application Settings*** and add these variables here as we did before for CosmosDB and Storage:
 
 - **`ActiveDirectory:Tenant`:** "{OUR_AD}.onmicrosoft.com"
 - **`ActiveDirectory:ApplicationId`:** *{ID_OF_THE_REGISTERED_APPLICATION}*
@@ -205,7 +205,7 @@ So let's set these variables to the correct values an head back to our App Servi
 
 Don't forget to hit ***Save*** after you have entered all the variables.
 
-Some of the API calls to our backend requires, that a user is authenticated to proceed. `DELETE` operations are a good example for that. The code in the [`BaseController.cs`](/Backend/Monolithic/Controllers/BaseController.cs) has an `[Authenticate]` attribute added to the Delete function. This will automatically refuse calls from unauthenticated clients. In a real-word scenario, you would also want to check if the User's ID matches the owner ID of the item that gets deleted to make sure the client has the right permissions.
+Some of the API calls to our backend requires that a user is authenticated to proceed. `DELETE` operations are a good example for that. The code in the [`BaseController.cs`](/Backend/Monolithic/Controllers/BaseController.cs) has an `[Authenticate]` attribute added to the Delete function. This will automatically refuse calls from unauthenticated clients. In a real-word scenario, you would also want to check if the User's ID matches the owner ID of the item that gets deleted to make sure the client has the right permissions.
 
 ```csharp
 [Authorize]
@@ -232,7 +232,7 @@ This basically means that if we fire a Delete request to the backend, without an
 
 Most of the authentication code is already written in the App but let's go through the important parts quickly, to understand how everything is glued together.
 
-Mostly, the whole process of Logging in, Logging out, Refreshing the Access Token in the background, handling the current user and so on lives in the [`AuthenticationService.cs`](/Mobile/ContosoFieldService.Core/Services/AuthenticationService.cs). Check it out, if you need more details on how Authentication is implemented on the client. It uses the [Microsoft.Identity.Client](https://www.nuget.org/packages/Microsoft.Identity.Client/) NuGet package (or MSAL) to take care of communicating to Azure AD B2C (and caching the tokens in response) for us. This removes a lot of work on our end.
+Mostly, the whole process of Logging in, Logging out, Refreshing the Access Token in the background, handling the current user and so on lives in the [`AuthenticationService.cs`](/Mobile/ContosoFieldService.Core/Services/AuthenticationService.cs). Check it out, if you need more details on how Authentication is implemented on the client. It uses the [Microsoft.Identity.Client](https://www.nuget.org/packages/Microsoft.Identity.Client/) NuGet package (or MSAL) to take care of communicating to Azure ADB2C (and caching the tokens in response) for us. This removes a lot of work on our end.
 
 The `AuthenticationService` gets configured with a set of variables in the [`Constants.cs`](/Mobile/ContosoFieldService.Core/Helpers/Constants.cs) file. As you can see, we define the recently created Scope "read_only" here.
 
@@ -344,9 +344,9 @@ A successful login flow would look like this:
 
 ### 6.2 Refresh Access Tokens
 
-Access Tokens usually have a short time to live to provide additional security and let potential attackers that stole and Access Token only operate for a small time.
+Access Tokens usually have a short time to live to provide additional security and let potential attackers that stole an Access Token only operate for a small time.
 
-To avoid that the user has to login and acquire a new token every 30 minutes, the Access Token can be refreshed silently in the background. Usually, a Rrefresh Token is used for this. The Mobile App uses the ADAL library, which already provides a functionality to refresh the Access Token. Check out the [`AuthenticationService.cs`](/Mobile/ContosoFieldService.Core/Services/AuthenticationService.cs) for implementation details.
+To avoid that the user has to login and acquire a new token every 30 minutes, the Access Token can be refreshed silently in the background. Usually, a Refresh Token is used for this. The Mobile App uses the ADAL library, which already provides a functionality to refresh the Access Token. Check out the [`AuthenticationService.cs`](/Mobile/ContosoFieldService.Core/Services/AuthenticationService.cs) for implementation details.
 
 The App tries to refresh the Access Token automatically when it receives a `401 Unauthorized` response and only shows the Login UI to the user if the background refresh failed.
 
@@ -354,7 +354,7 @@ Check out the [Mobile Network Services](/Walkthrough%20Guide/09%20Mobile%20Netwo
 
 # Additional Resouces
 
-There are several cool things you can do with Azure Active Directory, that will not be part of this workshop. If you want to go further, check out these links.
+There are several cool things you can do with Azure Active Directory that will not be part of this workshop. If you want to go further check out these links:
 
 - [Add Social Authentication Providers](https://docs.microsoft.com/en-us/azure/active-directory-b2c/active-directory-b2c-setup-fb-app)
 - [Customize the Login UI](https://docs.microsoft.com/en-us/azure/active-directory-b2c/active-directory-b2c-reference-ui-customization)

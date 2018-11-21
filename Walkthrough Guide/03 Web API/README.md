@@ -4,19 +4,19 @@
 
 Azure App Service is Microsoft’s fully managed, highly scalable platform for hosting web, mobile and API apps built using .NET, Java, Ruby, Node.js, PHP, and Python or Docker containers.
 
-App Service is fully managed and allows us to set the maximum number of instances on which we want to run our backend app on. Microsoft will then manage the scaling and load balancing across multiple instances to ensure your app perform well under heavy load. Microsoft manages the underlying compute infrastructure required to run our code, as well as patching and updating the OS and Frameworks when required.
+App Service is fully managed and allows us to set the maximum number of instances that we want to run our backend app on. Microsoft will then manage the scaling and load-balancing across multiple instances to ensure your app will perform well under heavy load. Microsoft manages the underlying compute infrastructure required to run our code, as well as patching and updating the OS and Frameworks when required.
 
 ## 1. Resource Group
 
 Before we can deploy an App Service instance, we need to create a resource group to hold today's services. Resource groups can be thought of as logical folders for your Azure Services (Resources). You may wish to create separate resource groups per department, or you may want to have one resource group per project. Resource groups are great for grouping all the services associated with a solution together. During development, it means you can quickly delete all the resources in one operation!
 
-In this workshop, we’ll be deploying just one resource group to manage all of our required services. When in production, it means we can see how much the services are costing us and how the resources are being used.
+In this workshop, we’ll be deploying just one resource group to manage all of our required services. When done like this in production it means we can see how much the services are costing us and how the resources are being used.
 
 ### 1.1 Create a new Resource Group
 
 ![Create a new Resource Group](Assets/CreateResourceGroup.png)
 
-Navigate to the [portal.azure.com](portal.azure.com) and sign in with your credentials.
+Navigate to [portal.azure.com](portal.azure.com) and sign in with your credentials.
 
 1. Click ***Resource groups*** in the top-left corner.
 2. Click ***Add*** to bring up configuration pane.
@@ -31,21 +31,21 @@ And voilà, we are done. Now we can start to add services to our newly created R
 
 ## 2. Create a new App Service (Web App)
 
-Web Apps are one of the App Services, that we can deploy to Azure. They can be configured easily at the [Azure Portal](https://portal.azure.com). You can find them, by clicking the ***Create a resource*** button at the top-left corner and selecting the ***Web*** category.
+Web Apps are one of the App Services that we can deploy to Azure. They can be configured easily at the [Azure Portal](https://portal.azure.com). You can find them, by clicking the ***Create a resource*** button at the top-left corner and selecting the ***Web*** category.
 
 ![Create new App Service Web App](Assets/CreateNewAppService.png)
 
 ### 2.1 Configure your App Service
 
-As you can see in the configuration blade, we have to configure a few things, before creating a new App Service, as App Name, Subscription, Resource Group, OS and App Service Plan / Location. Let's go through all of them in detail quickly, to understand, what we are configuring here.
+As you can see in the configuration blade, we have to configure a few things before creating a new App Service such as App Name, Subscription, Resource Group, OS and App Service Plan / Location. Let's go through all of them in detail quickly to understand what we are configuring here.
 
 #### App name
 
-This is the name of your application and as you can see, the name will resolve into an web address like `yourname.azurewebsites.net`. After creation of your App Service, it weill be publically available at this address. Of course, you can also assign a custom domain to it later.
+This is the name of your application and as you can see, the name will resolve into a web address like `yourname.azurewebsites.net`. After creation of your App Service, it will be publicly available at this address. Of course, you can also assign a custom domain to it later.
 
 #### Subscription
 
-By the end of the day, someone has to pay for all these services, that we are provisioning. Behind every Azure Subscription is a payment model that takes care of our cost. One Azure Account can have multiple Subscriptions.
+At the end of the day someone has to pay for all these services that we are provisioning. Behind every Azure Subscription is a payment model that takes care of our cost. One Azure Account can have multiple Subscriptions.
 
 #### Resource Group
 
@@ -55,11 +55,11 @@ We have learned about the concept of Resource Groups earlier in this module. Dur
 
 App Services, can be based on Windows, Linux or Docker as their core technology. This becomes important, when taking a look at the programming framework, that we are using for the application's logic itself. While .NET Framework for example only runs on Windows, Node.js is more performant on a Linux host. If we want to provide a Docker container instead of deploying our application directly to the App Service, we can do that as well.
 
-> **Hint:** At this workshop, the Backend API Logic is written with .NET Core, which runs cross-platform. So you can choose both, Windows and Linux. We also provide it as a Docker image, so you can also choose Docker as the operation system of your App Service. Just choose, whatever you are most interested in!
+> **Hint:** At this workshop, the Backend API Logic is written with .NET Core, which runs cross-platform. So you can choose both, Windows and Linux. We also provide it as a Docker image, so you can also choose Docker as the operating system of your App Service. Just choose whatever you are most interested in!
 
 #### App Service Plan
 
-An App Service, is just the logical instance of an application, so it has to run within an **App Service Plan**, which is provides the actual hardware for it. You can run multiple App Services within the same App Service Plan, if you want to, but be aware, that they share the App Service Plan's Resources then. We will create an App Service Plan step by step in the following sections of this module.
+An App Service is just the logical instance of an application, so it has to run within an **App Service Plan** which provides the actual hardware for it. You can run multiple App Services within the same App Service Plan if you want to, but be aware that they share the App Service Plan's Resources then. We will create an App Service Plan step by step in the following sections of this module.
 
 ### 2.2 Create an App Service Plan
 
@@ -77,7 +77,7 @@ Fill in the following values:
 
 Creating an App Service Plan is easy, but we have to consider where our users are? We want our services to be running as close to our users as possible as this dramatically increases performance. We also need to consider how much Compute resources we think we'll need to meet demand.
 
-Clicking ***Pricing Tier***, shows all the different options we have (it's a lot!). I won't list what their differences are as their listed in the portal, but keep it mind, with the cloud we don't need to default to over-provisioning. We can scale up later if we have to! For this workshop, a B1 Basic site will be more than enough to run this project. More complex development projects should use something in the Standard range of pricing plans. Production apps should be set up in Standard or Premium pricing plans.
+Clicking ***Pricing Tier*** shows all the different options we have, it's a lot! I won't list what their differences are as they're listed in the portal but keep in mind with the cloud we don't need to default to over-provisioning. We can scale up later if we have to! For this workshop, a B1 Basic site will be more than enough to run this project. More complex development projects should use something in the Standard range of pricing plans. Production apps should be set up in Standard or Premium pricing plans.
 
 ![Select App Service Plan Pricing Tier](Assets/SelectAppServicePlanTier.png)
 
@@ -100,7 +100,7 @@ Because my app name was: "myawesomestartupapi", the unique URL would be: `https:
 
 ## 3. Deploy your apps to App Service
 
-Azure App Service has many options for how to deploy our code. These include continuous integration, which can link to Visual Studio Team Services or GitHub. We could also use FTP to upload the project, but we're not animals, so we won't.
+Azure App Service has many options for how to deploy our code. These include continuous integration which can link to Visual Studio Team Services or GitHub. We could also use FTP to upload the project but we're not animals, so we won't.
 
 The good news is: The full ASP.NET Core WebAPI code for the backend logic is already written for us and is located in the `Backend/Monolithic` folder of the workshop. But before we can upload it to the cloud, we need to **compile** it to make it machine readable, or **create a Docker image** for it. We will go through both options during this module.
 
@@ -114,7 +114,7 @@ We quickly have to dive into the .NET Developer's world! For this, right-click t
 dotnet build
 ```
 
-The output should look like this and we should see the **Build succeeded** message.
+The output should look like this and we should see the **Build succeeded** message:
 
 ![VSCode run dotnet build](Assets/VSCodeDotnetBuild.png)
 
@@ -124,7 +124,7 @@ Building (compiling) the code generated two more folders for us: `/bin` and `/ob
 dotnet publish
 ```
 
-Once this command ran successfully, we have everything we need. Inside our `Monolithic` folder, we should now find a `bin/Debug/netcoreapp2.0/publish` folder that contains our ready-to-run backend logic. Now you can simply right-click this `publish` folder and select ***Deploy to Web App***.
+Once this command has run successfully, we have everything we need. Inside our `Monolithic` folder we should now find a `bin/Debug/netcoreapp2.0/publish` folder that contains our ready-to-run backend logic. Now you can simply right-click this `publish` folder and select ***Deploy to Web App***.
 
 ![VSCode Deploy to Web App](Assets/VSCodePublishWebApp.png)
 
@@ -151,11 +151,11 @@ To create a new registry, open the [Azure Portal](https://portal.azure.com), cli
 
 Click the ***Create*** button and wait until your Container Registry got provisioned.
 
-In the ***Keys*** section of your Container Registry, you will find important information, like **Registry Name**, **Login Server**, **Username** and **Password**, that you will need to tag and upload a Docker image to it.
+In the ***Keys*** section of your Container Registry, you will find important information like **Registry Name**, **Login Server**, **Username** and **Password**, that you will need to tag and upload a Docker image to.
 
 ![Create an Azure Container Registry](Assets/AzureContainerRegistryKeys.png)
 
-In your Command Line, run the following command, to log into your freshly created Container Registry. Make sure, to replace `myawesomestartup.azurecr.io` with your **Login Server**.
+In your Command Line, run the following command to log into your freshly created Container Registry:  (make sure to replace `myawesomestartup.azurecr.io` with your **Login Server**.)
 
 ```bash
 docker login myawesomestartup.azurecr.io -u <username> -p <password>
@@ -169,7 +169,7 @@ Right-click the `Monolithic` folder in Visual Studio Code and select ***Open in 
 docker image build -t myawesomestartup.azurecr.io/contosomaintenance/api:latest .
 ```
 
-That triggers the creation process of the Docker image, based on the Dockerfile in the repository. During that process, the official [.NET Core SDK Docker Image](https://hub.docker.com/r/microsoft/dotnet/) gets downloaded from Dockerhub and the code will be compiled in there. To verify, that the image got created successfully, you can list all images on your machine with the following command.
+That triggers the creation process of the Docker image, based on the Dockerfile in the repository. During that process, the official [.NET Core SDK Docker Image](https://hub.docker.com/r/microsoft/dotnet/) gets downloaded from Dockerhub and the code will be compiled in there. To verify that the image got created successfully, you can list all images on your machine with the following command.
 
 ```bash
 docker images
@@ -179,27 +179,27 @@ The output should contain your image.
 
 ![List of local Docker images](Assets/ListDockerImages.png)
 
-Now we can push the image do our Azure Container Registry with the following command.
+Now we can push the image to our Azure Container Registry with the following command:
 
 ```bash
 docker push myawesomestartup.azurecr.io/contosomaintenance/api
 ```
 
-Next, we open the [Azure Portal](https://portal.azure.com) and navigate to your Docker based App Service, that you have created earlier. When you scroll down to the ***Container Settings*** on the left side, you can find a configuration for image sources (like Azure Container Registry or Docker Hub).
+Next, we open the [Azure Portal](https://portal.azure.com) and navigate to your Docker based App Service that you have created earlier. When you scroll down to the ***Container Settings*** on the left-hand side, you can find a configuration for image sources (like Azure Container Registry or Docker Hub).
 
 ![Select Container in App Service](Assets/SelectContainerAppService.png)
 
 Here we can connect to our Container Registry. Select our container and ***Save*** the settings.
 
-> **Hint:** You can enable ***Continuous Deployment*** at the bottom of the Container Settings, to update the application automatically, when a new version of your container gets pushed to the Container Registry.
+> **Hint:** You can enable ***Continuous Deployment*** at the bottom of the Container Settings to update the application automatically when a new version of your container gets pushed to the Container Registry.
 
-### 3.2 Verify, your app is running
+### 3.2 Verify your app is running
 
 After a few seconds, after refreshing the browser, your Web App should display the published code and look like this:
 
 ![Deployed API with Swagger UI](Assets/DeployedWebAPI.png)
 
-To test if the deployment is work and the app is accepting HTTP requests correctly, let's go ahead and navigate to the **/api/ping** endpoint. In my case, I'll use the following URL: `http://myawesomestartupapi.azurewebsites.net/api/ping`.
+To test if the deployment is working and the app is accepting HTTP requests correctly, let's go ahead and navigate to the **/api/ping** endpoint. In my case, I'll use the following URL: `http://myawesomestartupapi.azurewebsites.net/api/ping`.
 
 ![Deployed API with no UI](Assets/AppServiceDeploymentTest.png)
 
@@ -223,18 +223,18 @@ This shows that the backend is responding as expected! Before we move onto deplo
 You've now deployed your first App Service instance! We'll now review some 'Pro tips' to help you get the most out of your Azure service. 
 
 ## Controlling Density 
-Most users will have a low number (usually less than 10) applications per App Service Plan. In scenarios where you expect you'll be running many more applications, it's crucial to prevent over-saturating the underlying compute capacity. 
+Most users will have a low number (usually fewer than 10) applications per App Service Plan. In scenarios where you expect you'll be running many more applications, it's crucial to prevent over-saturating the underlying compute capacity. 
 
 Let's imagine that we've deployed one instance of our admin web portal and two instances of our mobile web API to the same App Service Plan. By default, all apps contained in a given App Service Plan will run on all the available compute resources (servers) allocated. If we only have a single server in our App Service Plan, we'll find that this single server will run all our available apps. Alternatively, if we scale out the App Service Plan to run on two servers, we'll run all our applications (3 apps) on both sets of servers. 
 
-This approach is absolutely fine if you find that your apps are using approximately the same amount of compute resources. If this isn't the case, then you may find that one app is consuming the lions share of compute resources, thus degrading the entire system performance. In our case, the mobile API will likely drive significant consumption of server resources, so we need to mitigate its effects on the performance of the admin portal. 
+This approach is absolutely fine if you find that your apps are using approximately the same amount of compute resources. If this isn't the case, then you may find that one app is consuming the lion's share of compute resources, thus degrading the entire system performance. In our case, the mobile API will likely drive significant consumption of server resources, so we need to mitigate its effects on the performance of the admin portal. 
 
 To do this, what we can do is move lower-volume applications (such as the portal) into a single App Service Plan running on a single compute resource. 
 
 Place high demand apps into an App Service Plan which is configured to auto-scale based on CPU and memory utilisation. 
 
 ## Per-App Scaling 
-Another alternative for running large numbers of applications more efficiently is to use the per-app scaling feature of Azure App Service. We've [documententation](https://msdn.microsoft.com/en-us/magazine/mt793270.aspx) that covers per-app scaling in detail. Per-App scaling lets you control the maximum number of servers allocated to a given application, and you can do so per application. In this case, an application will run on the defined maximum number of servers and not on all available servers.
+Another alternative for running large numbers of applications more efficiently is to use the per-app scaling feature of Azure App Service. We have [documententation](https://msdn.microsoft.com/en-us/magazine/mt793270.aspx) that covers per-app scaling in detail. Per-App scaling lets you control the maximum number of servers allocated to a given application, and you can do so per application. In this case an application will run on the defined maximum number of servers and not on all available servers.
 
 ## Application Slots
 App Service has a feature called [deployment slots](https://docs.microsoft.com/en-gb/azure/app-service/web-sites-staged-publishing). In a nutshell, a deployment slot enables you to have another application (slot) other than your production app. It’s another application that you can use to test new code before swapping into production.
@@ -253,9 +253,9 @@ If resource competition is scoped just to scenarios such as running load tests, 
 * When the non-production slot is ready to be swapped into production, move it back to the same App Service Plan running the production slot. Then the slot swap operation can be carried out.
 
 ## Deploying to Production with no downtime 
-You have a successful application running on an App Service Plan, and you have a great team to make updates to your application on a daily basis. In this case, you don’t want to deploy bits directly into production. You want to control the deployment and minimize downtime. For that, you can use your application slots. Set your deployment to the “pre-production” slot, which can be configured with production setting, and deploy your latest code. You can now safely test your app. Once you’re satisfied, you can swap the new bits into production. The swap operation doesn’t restart your application, and in return, the Controller notifies the front-end load balancer to redirect traffic to the latest slots.
+You have a successful application running on an App Service Plan, and you have a great team to make updates to your application on a daily basis. In this case, you don’t want to deploy bits directly into production. You want to control the deployment and minimize downtime. For that, you can use your application slots. Set your deployment to the “pre-production” slot, which can be configured with production settings, and deploy your latest code. You can now safely test your app. Once you’re satisfied, you can swap the new bits into production. The swap operation doesn’t restart your application, and in return, the Controller notifies the front-end load balancer to redirect traffic to the latest slots.
 
-Some applications need to warm up before they can safely handle production load—for example, if your application needs to load data into cache, or for a .NET application to allow the .NET runtime to JIT your assemblies. In this case, you’ll also want to use application slots to warm up your application before swapping it into production.
+Some applications need to warm up before they can safely handle production load, for example, if your application needs to load data into cache, or for a .NET application to allow the .NET runtime to JIT your assemblies. In this case, you’ll also want to use application slots to warm up your application before swapping it into production.
 
 We often see customers having a pre-production slot that’s used to both test and warm up the application. You can use Continuous Deployment tools such as Visual Studio Release Manager to set up a pipeline for your code to get deployed into pre-production slots, run test for verification and warm all required paths in your app before swapping it into production.
 
@@ -277,7 +277,7 @@ Address: 51.140.59.233
 You’ll notice that an App Service scale unit is deployed on Azure Cloud Service (by the cloudapp.net suffix). WAWS stands for Windows Azure (when Azure was still called Windows) Web sites (the original name of App Service).
 
 ## Outbound Virtual IPs
-Most likely your application is connected to other Azure and non-Azure services. As such, your application makes outbound network calls to endpoints, not on the scale unit of your application. This includes calling out to Azure services such as SQL Database and Azure Storage. There are up to five VIPs (the one public VIP and four outbound dedicated VIPs) used for outbound communication. You can’t choose which VIP your app uses, and all outbound calls from all apps in scale unit are using the five allocated VIPs. If your application uses a service that requires you to whitelist IPs that are allowed to make API calls into such a service, you’ll need to register all five VIPs of the scale unit. To view which IPs are allocated to outbound VIPs for a given unit of scale (or for your app from your perspective) go to the Azure portal, as shown in the below image. 
+Most likely your application is connected to other Azure and non-Azure services. As such, your application makes outbound network calls to endpoints, not on the scale unit of your application. This includes calling out to Azure services such as SQL Database and Azure Storage. There are up to five VIPs (the one public VIP and four outbound dedicated VIPs) used for outbound communication. You can’t choose which VIP your app uses, and all outbound calls from all apps in scale units are using the five allocated VIPs. If your application uses a service that requires you to whitelist IPs that are allowed to make API calls into such a service, you’ll need to register all five VIPs of the scale unit. To view which IPs are allocated to outbound VIPs for a given unit of scale (or for your app from your perspective) go to the Azure portal, as shown in the below image. 
 
  ![Create new App Service Plan](Assets/OutboundVIP.png)
 
