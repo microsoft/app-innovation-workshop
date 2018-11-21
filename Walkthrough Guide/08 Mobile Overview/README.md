@@ -6,7 +6,7 @@ The mobile app currently runs on both iOS and Android devices using Xamarin.Form
 ![iPhone App Design](Assets/AppDesign.png)
 
 ### 2.1 Development SDK
-The apps have been developed with [Xamarin.Forms](https://github.com/xamarin/Xamarin.Forms) targetting .NET Standard 2.0. You should find all your favourite .NET libraries will work with both the backend (also targeting .NET Standard 2.0) and the mobile apps. 
+The apps have been developed with [Xamarin.Forms](https://github.com/xamarin/Xamarin.Forms) targeting .NET Standard 2.0. You should find all your favourite .NET libraries will work with both the backend (also targeting .NET Standard 2.0) and the mobile apps. 
 
 Using Xamarin.Forms makes it possible for us to write our app just once using C# and XAML and have it run natively on a variety of platforms. This is achieved because it's an abstraction API built on top of Xamarin's traditional mobile development SDKs. Looking at the architecture below, you can see that with traditional Xamarin we can achieve up to 75% code reuse through sharing the business logic of our app.
 

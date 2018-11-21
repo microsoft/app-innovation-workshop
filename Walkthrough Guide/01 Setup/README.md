@@ -74,6 +74,7 @@ Note, that you need to ***Reload*** Visual Stuido Code after installing extensio
 
 ![Screenshot of Visual Studio Code for Reloading Extensions](Assets/VSCodeReloadExtensions.png)
 
+
 Once the extensions have been installed successfully and Visual Stuido Code has been reloaded, you should see a new ***Azure*** tab on the side. Select it and make sure that you are logged in with your Azure account. Please verify that you see at least one of your subscriptions here:
 
 ![Screenshot of Visual Studio Code showing Subscriptions in the Azure Tab](Assets/VSCodeAzureSubs.png)
@@ -84,7 +85,7 @@ Now you are good to go! Open the recently downloaded and unzipped Workshop folde
 
 ### Mobile Development with Xamarin (optional)
 
-If you want to compile the Xamarin Application on you own, you will need to install the Xamarin tooling. You don't need to have this, to follow the workshop but if you already are a Xamarin Developer or always wanted to get started, give it a go! The setup of a Xamarin development environment can get a little bit tricky and time consuming as it has dependancies on many SDKs and technologies from different companies.
+If you want to compile the Xamarin Application on you own, you will need to install the Xamarin tooling. You don't need to have this, to follow the workshop but if you already are a Xamarin Developer or always wanted to get started, give it a go! The setup of a Xamarin development environment can get a little bit tricky and time consuming as it has dependencies on many SDKs and technologies from different companies.
 
 #### Windows
 

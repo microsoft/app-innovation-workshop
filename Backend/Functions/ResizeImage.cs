@@ -64,7 +64,7 @@ namespace ContosoMaintenance.Functions
             httpClient.DefaultRequestHeaders.Add("Ocp-Apim-Subscription-Key", Environment.GetEnvironmentVariable("CognitiveServicesKey"));
 
             // Create Cognitive Service request url with parameters
-            var url = $"{Environment.GetEnvironmentVariable("CognitiveServicesEndpoint")}/generateThumbnail?width={width}&height={height}&smartCropping=true";
+            var url = $"{Environment.GetEnvironmentVariable("CognitiveServicesEndpoint")}vision/v1.0/generateThumbnail?width={width}&height={height}&smartCropping=true";
 
             using (ByteArrayContent content = new ByteArrayContent(inputImage))
             {
