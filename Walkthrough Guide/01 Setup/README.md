@@ -96,7 +96,7 @@ When working on Windows, you won't be able to build iOS solutions unless you con
 
 #### Mac
 
-When using a Mac, the best Xamarin Tooling provides Visual Studio for Mac. Xamarin should be installed during the installation of Visual Studio. Please [follow this guide](https://docs.microsoft.com/en-us/visualstudio/mac/installation) to make sure you don't miss anything.
+When using a Mac, Visual Studio for Mac provides the best Xamarin Tooling. Xamarin should be installed during the installation of Visual Studio. Please [follow this guide](https://docs.microsoft.com/en-us/visualstudio/mac/installation) to make sure you don't miss anything.
 
 If you want to build iOS solutions, make sure that XCode is also installed on the same device!
 
