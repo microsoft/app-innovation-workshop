@@ -24,7 +24,7 @@ namespace ContosoMaintenance.WebAPI
 
 
         public Startup(IConfiguration configuration)
-        {            
+        {
             Configuration = configuration;
         }
 
@@ -96,13 +96,13 @@ namespace ContosoMaintenance.WebAPI
         {
             return c =>
             {
-                c.SwaggerDoc(name, new Info { Title = $"Contoso Maintenance API - {name}", Version = "1.0" });
-                
+                c.SwaggerDoc(name, new Info { Title = $"Contoso Maintenance: {name} API", Version = "1.0", Description = $"Host: {Environment.MachineName}" });
+
                 // The swagger filter takes the filter and removes any path that doesn't contain 
                 // the value of the filter in its route. Allowing for us to seperate out the generated
                 // swagger documents
                 c.DocumentFilter<SwaggerFilter>(name, filter);
-                
+
                 // Set the comments path for the Swagger JSON and UI.
                 var xmlFile = $"{Assembly.GetEntryAssembly().GetName().Name}.xml";
                 var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
@@ -117,7 +117,7 @@ namespace ContosoMaintenance.WebAPI
             // Make sure to hide it in production environments in real-world scearios to 
             // hide your code from attackers.
             app.UseDeveloperExceptionPage();
-                    
+
             // As this is a demo, we always show the rich exception page.
             // Make sure to hide it in production environments in real-world scearios to 
             // hide your code from attackers.
@@ -131,7 +131,7 @@ namespace ContosoMaintenance.WebAPI
             // Activate Swagger and cofigure its UI
             app.UseSwagger();
             app.UseSwaggerUI(c =>
-            {                
+            {
                 c.SwaggerEndpoint("/swagger/Job/swagger.json", "Jobs");
                 c.SwaggerEndpoint("/swagger/Part/swagger.json", "Parts");
                 c.SwaggerEndpoint("/swagger/Dummy/swagger.json", "Dummy");
