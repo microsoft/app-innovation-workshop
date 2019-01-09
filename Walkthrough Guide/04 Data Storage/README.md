@@ -216,7 +216,9 @@ Similar to the Cosmos DB configuration above, the Web API backend project also m
 
 [View in project](/Backend/Monolithic/appsettings.json#L15-L20)
 
-Add the following secrets to your application hosts (e.g. App Services or Azure Kubernetes Services) as descriped in the according Secrets sections.
+Add the following secrets to your application hosts (e.g. App Services or Azure Kubernetes Services) as described in the according Secrets sections. 
+
+> **Hint:** Here you can find the manal for [App Service Secrets](/Walkthrough%20Guide/03%20Web%20API/01%20App%20Service#use-secrets) and [ Kubernetes Secrets](/Walkthrough%20Guide/03%20Web%20API/02%20Kubernetes#use-secrets).
 
 - **`AzureStorage__StorageAccountName`:** Storage Account name (e.g. myawesomestartupstorage)
 - **`AzureStorage__Key`:** Key 1 key from the ***Access Keys*** section
@@ -259,5 +261,10 @@ And voilà, here it is. The API replaces the original name by a GUID ([View in p
 - [Modeling Data in Cosmos DB vs. traditional SQL Databases](https://docs.microsoft.com/en-us/azure/cosmos-db/modeling-data)
 - [Azure Cosmos DB RU Calculator and capacity planner](https://www.documentdb.com/capacityplanner)
 
-# Next Steps 
-[Search](../05%20Search)
+&nbsp;
+
+---
+### [Next Step: Data Storage](../06%20Functions%20and%20Cognitive%20Services)
+---
+
+&nbsp;
