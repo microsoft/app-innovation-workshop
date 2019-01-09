@@ -169,7 +169,7 @@ As we will deploy more Azure services throughout the workshop, that we need to c
 &nbsp;
 
 ---
-### [Next Step: Data Storage](../../04%20Data%20Storage/README.md)
+### [Next Step: Data Storage](../../04%20Data%20Storage)
 ---
 
 &nbsp;
