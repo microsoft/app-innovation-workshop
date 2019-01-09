@@ -111,6 +111,6 @@ Now we can finally start with the creation of the compute layer for our backend 
 
 > **Hint:** Your choice will only affect the compute layer. All other services like databases and storage will be the exact same regardless of your decision here.
 
-### [Azure App Services](Walkthrough%20Guide/02%20Web%20API/01%20App%20Service/)
+### [Azure App Services](01%20App%20Service/)
 
-### [Azure Kubernetes Service (AKS)](Walkthrough%20Guide/02%20Web%20API/02%20AKubernetes/)
+### [Azure Kubernetes Service (AKS)](02%20AKubernetes/)
