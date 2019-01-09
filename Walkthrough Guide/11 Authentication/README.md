@@ -195,7 +195,9 @@ As you can see, we use `Configuration` variables one more time to not hard code 
 
 [View in project](/Backend/Monolithic/appsettings.json#L30-L34)
 
-Add the following secrets to your application hosts (e.g. App Services or Azure Kubernetes Services) as descriped in the according Secrets sections.
+Add the following secrets to your application as described in the according Secrets sections for App Services or Kubernetes.
+
+> **Hint:** Here you can find the [App Service Secrets](/Walkthrough%20Guide/03%20Web%20API/01%20App%20Service#use-secrets) and [ Kubernetes Secrets](/Walkthrough%20Guide/03%20Web%20API/02%20Kubernetes#use-secrets) sections.
 
 - **`ActiveDirectory:Tenant`:** "{OUR_AD}.onmicrosoft.com"
 - **`ActiveDirectory:ApplicationId`:** *{ID_OF_THE_REGISTERED_APPLICATION}*

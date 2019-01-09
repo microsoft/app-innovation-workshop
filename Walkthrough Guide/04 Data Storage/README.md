@@ -71,7 +71,9 @@ As these settings are empty, let's set them in the Web API's environment variabl
 
 #### 1.3.2 Add Connection Information to application secrets
 
-Add the following secrets to your application hosts (e.g. App Services or Azure Kubernetes Services) as descriped in the according Secrets sections.
+Add the following secrets to your application as described in the according Secrets sections for App Services or Kubernetes.
+
+> **Hint:** Here you can find the [App Service Secrets](/Walkthrough%20Guide/03%20Web%20API/01%20App%20Service#use-secrets) and [ Kubernetes Secrets](/Walkthrough%20Guide/03%20Web%20API/02%20Kubernetes#use-secrets) sections.
 
 - **`AzureCosmosDb__Endpoint`:** Uri of the Cosmos DB instance
 - **`AzureCosmosDb__Key`:** Primary Key of the Cosmos DB instance
@@ -216,9 +218,9 @@ Similar to the Cosmos DB configuration above, the Web API backend project also m
 
 [View in project](/Backend/Monolithic/appsettings.json#L15-L20)
 
-Add the following secrets to your application hosts (e.g. App Services or Azure Kubernetes Services) as described in the according Secrets sections. 
+Add the following secrets to your application as described in the according Secrets sections for App Services or Kubernetes.
 
-> **Hint:** Here you can find the manal for [App Service Secrets](/Walkthrough%20Guide/03%20Web%20API/01%20App%20Service#use-secrets) and [ Kubernetes Secrets](/Walkthrough%20Guide/03%20Web%20API/02%20Kubernetes#use-secrets).
+> **Hint:** Here you can find the [App Service Secrets](/Walkthrough%20Guide/03%20Web%20API/01%20App%20Service#use-secrets) and [ Kubernetes Secrets](/Walkthrough%20Guide/03%20Web%20API/02%20Kubernetes#use-secrets) sections.
 
 - **`AzureStorage__StorageAccountName`:** Storage Account name (e.g. myawesomestartupstorage)
 - **`AzureStorage__Key`:** Key 1 key from the ***Access Keys*** section
