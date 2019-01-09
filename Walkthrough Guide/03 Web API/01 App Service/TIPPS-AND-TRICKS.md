@@ -1,4 +1,4 @@
-![Banner](../Assets/TipsTricks.png)
+![Banner](Assets/TipsTricks.png)
 # Tips & Tricks
 You've now deployed your first App Service instance! We'll now review some 'Pro tips' to help you get the most out of your Azure service. 
 
@@ -59,7 +59,7 @@ You’ll notice that an App Service scale unit is deployed on Azure Cloud Servic
 ## Outbound Virtual IPs
 Most likely your application is connected to other Azure and non-Azure services. As such, your application makes outbound network calls to endpoints, not on the scale unit of your application. This includes calling out to Azure services such as SQL Database and Azure Storage. There are up to five VIPs (the one public VIP and four outbound dedicated VIPs) used for outbound communication. You can’t choose which VIP your app uses, and all outbound calls from all apps in scale unit are using the five allocated VIPs. If your application uses a service that requires you to whitelist IPs that are allowed to make API calls into such a service, you’ll need to register all five VIPs of the scale unit. To view which IPs are allocated to outbound VIPs for a given unit of scale (or for your app from your perspective) go to the Azure portal, as shown in the below image. 
 
- ![Create new App Service Plan](../Assets/OutboundVIP.png)
+ ![Create new App Service Plan](Assets/OutboundVIP.png)
 
 If you require a dedicated set of inbound and outbound IPs, you should explore using a fully isolated and dedicated App Service Environment. 
 

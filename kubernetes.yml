@@ -26,12 +26,42 @@ spec:
               valueFrom:
                 secretKeyRef:
                   name: appsettings
-                  key: CosmosDb__Endpoint
+                  key: AzureCosmosDb__Endpoint
             - name: AzureCosmosDb__Key
               valueFrom:
                 secretKeyRef:
                   name: appsettings
-                  key: CosmosDb__Key      
+                  key: AzureCosmosDb__Key      
+            - name: AzureStorage__StorageAccountName
+              valueFrom:
+                secretKeyRef:
+                  name: appsettings
+                  key: AzureStorage__StorageAccountName      
+            - name: AzureStorage__Key
+              valueFrom:
+                secretKeyRef:
+                  name: appsettings
+                  key: AzureStorage__Key      
+            - name: ActiveDirectory__Tenant
+              valueFrom:
+                secretKeyRef:
+                  name: appsettings
+                  key: ActiveDirectory__Tenant     
+            - name: ActiveDirectory__ApplicationId
+              valueFrom:
+                secretKeyRef:
+                  name: appsettings
+                  key: ActiveDirectory__ApplicationId     
+            - name: ActiveDirectory__SignUpSignInPolicy
+              valueFrom:
+                secretKeyRef:
+                  name: appsettings
+                  key: ActiveDirectory__SignUpSignInPolicy     
+            - name: ApplicationInsights__InstrumentationKey
+              valueFrom:
+                secretKeyRef:
+                  name: appsettings
+                  key: ApplicationInsights__InstrumentationKey        
           ports:
           - containerPort: 80
           - containerPort: 443

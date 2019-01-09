@@ -145,10 +145,13 @@ For Kubernetes, those places are called [Kubernetes Secrets](https://kubernetes.
 
 ```bash
 kubectl create secret generic appsettings \
-    --from-literal=CosmosDb__Endpoint=<YOUR_COSMOSDB_ENDPOINT> \
-    --from-literal=CosmosDb__Key=<YOUR_COSMOSDB_KEY> \
+    --from-literal=AzureCosmosDb__Endpoint=<YOUR_COSMOSDB_ENDPOINT> \
+    --from-literal=AzureCosmosDb__Key=<YOUR_COSMOSDB_KEY> \
     --from-literal=AzureStorage__StorageAccountName=<YOUR_STORAGEACCOUNT_NAME> \
     --from-literal=AzureStorage__Key=<YOUR_STORAGEACCOUNT_KEY> \
+    --from-literal=ActiveDirectory__Tenant=<YOUR_ACTIVEDIRECTORY_TENANT> \
+    --from-literal=ActiveDirectory__ApplicationId=<YOUR_ACTIVEDIRECTORY_APPLICATIONID> \
+    --from-literal=ActiveDirectory__SignUpSignInPolicy=<YOUR_ACTIVEDIRECTORY_POLICY> \
     --from-literal=ApplicationInsights__InstrumentationKey=<YOUR_APPINSIGHTS_KEY>
 ```
 

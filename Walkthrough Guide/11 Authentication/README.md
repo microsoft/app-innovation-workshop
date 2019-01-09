@@ -199,9 +199,9 @@ Add the following secrets to your application as described in the according Secr
 
 > **Hint:** Here you can find the [App Service Secrets](/Walkthrough%20Guide/03%20Web%20API/01%20App%20Service#use-secrets) and [ Kubernetes Secrets](/Walkthrough%20Guide/03%20Web%20API/02%20Kubernetes#use-secrets) sections.
 
-- **`ActiveDirectory:Tenant`:** "{OUR_AD}.onmicrosoft.com"
-- **`ActiveDirectory:ApplicationId`:** *{ID_OF_THE_REGISTERED_APPLICATION}*
-- **`ActiveDirectory:SignUpSignInPolicy`:** B2C_1_GenericSignUpSignIn
+- **`ActiveDirectory__Tenant`:** "{OUR_AD}.onmicrosoft.com"
+- **`ActiveDirectory__ApplicationId`:** *{ID_OF_THE_REGISTERED_APPLICATION}*
+- **`ActiveDirectory__SignUpSignInPolicy`:** B2C_1_GenericSignUpSignIn
 
 Some of the API calls to our backend requires, that a user is authenticated to proceed. `DELETE` operations are a good example for that. The code in the [`BaseController.cs`](/Backend/Monolithic/Controllers/BaseController.cs) has an `[Authenticate]` attribute added to the Delete function. This will automatically refuse calls from unauthenticated clients. In a real-word scenario, you would also want to check if the User's ID matches the owner ID of the item that gets deleted to make sure the client has the right permissions.
 
