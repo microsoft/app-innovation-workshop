@@ -33,6 +33,7 @@ namespace ContosoMaintenance.Bot
                 // https://azure.microsoft.com/en-us/services/application-insights/
                 // .UseApplicationInsights()
                 .UseStartup<Startup>()
+                .UseUrls("http://+:3978/")
                 .Build();
     }
 }

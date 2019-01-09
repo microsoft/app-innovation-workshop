@@ -1,0 +1,169 @@
+{
+  "$schema": "http://schema.management.azure.com/schemas/2014-04-01-preview/deploymentTemplate.json",
+  "contentVersion": "1.0.0.0",
+  "resources": [
+    {
+      "apiVersion": "2018-09-01-preview",
+      "name": "contosomaintenance-network",
+      "type": "Microsoft.ServiceFabricMesh/networks",
+      "location": "westeurope",
+      "dependsOn": [],
+      "properties": {
+        "kind": "Local",
+        "description": "Service Fabric Mesh Network.",
+        "networkAddressPrefix": "10.0.0.0/24"
+      }
+    },
+    {
+      "apiVersion": "2018-09-01-preview",
+      "name": "contosomaintenance",
+      "type": "Microsoft.ServiceFabricMesh/applications",
+      "location": "westeurope",
+      "dependsOn": [
+        "Microsoft.ServiceFabricMesh/networks/contosomaintenance-network"
+      ],
+      "properties": {
+        "services": [
+          {
+            "name": "contosomaintenance-api",
+            "properties": {
+              "description": "Contoso Maintenance REST API",
+              "osType": "Linux",
+              "codePackages": [
+                {
+                  "name": "contosomaintenance-api",
+                  "image": "robinmanuelthiel/contosomaintenance-api:latest",
+                  "endpoints": [
+                    {
+                      "name": "http",
+                      "port": 80
+                    }
+                  ],
+                  "resources": {
+                    "requests": {
+                      "cpu": "0.5",
+                      "memoryInGB": "1"
+                    }
+                  }
+                }
+              ],
+              "replicaCount": "1",
+              "autoScalingPolicies": [
+                {
+                  "name": "AutoScaleWorkerRule",
+                  "trigger": {
+                    "kind": "AverageLoad",
+                    "metric": {
+                      "kind": "Resource",
+                      "name": "cpu"
+                    },
+                    "lowerLoadThreshold": "0.2",
+                    "upperLoadThreshold": "0.8",
+                    "scaleIntervalInSeconds": "60"
+                  },
+                  "mechanism": {
+                    "kind": "AddRemoveReplica",
+                    "minCount": "1",
+                    "maxCount": "40",
+                    "scaleIncrement": "1"
+                  }
+                }
+              ],
+              "networkRefs": [
+                {
+                  "name": "[resourceId('Microsoft.ServiceFabricMesh/networks', 'contosomaintenance-network')]",
+                  "endpointRefs": [
+                    {
+                      "name": "http"
+                    }
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "name": "contosomaintenance-bot",
+            "properties": {
+              "description": "Contoso Maintenance Chat Bot",
+              "osType": "Linux",
+              "codePackages": [
+                {
+                  "name": "contosomaintenance-bot",
+                  "image": "robinmanuelthiel/contosomaintenance-bot:0.2.0",
+                  "endpoints": [
+                    {
+                      "name": "http",
+                      "port": 3978
+                    }
+                  ],
+                  "resources": {
+                    "requests": {
+                      "cpu": "0.5",
+                      "memoryInGB": "1"
+                    }
+                  }
+                }
+              ],
+              "replicaCount": "1",
+              "networkRefs": [
+                {
+                  "name": "[resourceId('Microsoft.ServiceFabricMesh/networks', 'contosomaintenance-network')]",
+                  "endpointRefs": [
+                    {
+                      "name": "http"
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "apiVersion": "2018-09-01-preview",
+      "name": "contosomaintenance-ingress-gateway",
+      "type": "Microsoft.ServiceFabricMesh/gateways",
+      "location": "westeurope",
+      "tags": {},
+      "dependsOn": [
+        "Microsoft.ServiceFabricMesh/networks/contosomaintenance-network"
+      ],
+      "properties": {
+        "description": "Service Fabric Mesh Gateway.",
+        "sourceNetwork": {
+          "name": "Open"
+        },
+        "destinationNetwork": {
+          "name": "[resourceId('Microsoft.ServiceFabricMesh/networks', 'contosomaintenance-network')]"
+        },
+        "tcp": [
+          {
+            "name": "api",
+            "port": 8080,
+            "destination": {
+              "applicationName": "contosomaintenance",
+              "serviceName": "contosomaintenance-api",
+              "endpointName": "http"
+            }
+          },
+          {
+            "name": "bot",
+            "port": 8090,
+            "destination": {
+              "applicationName": "contosomaintenance",
+              "serviceName": "contosomaintenance-bot",
+              "endpointName": "http"
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "outputs": {
+    "publicIPAddress": {
+      "value": "[reference('contosomaintenance-ingress-gateway').ipAddress]",
+      "type": "string"
+    }
+  }
+}

@@ -31,6 +31,8 @@ And voilà, we are done. Now we can start to add services to our newly created R
 
 ## 2. Containers
 
+You want to work with containers? Great! Here are your options!
+
 Container Registry...
 
 <details><summary>stuff with *mark* **down**</summary><p>
@@ -51,4 +53,3 @@ When it comes to the compute layer of our backend architecture, we have a bunch 
 ### [Use Azure App Service](Walkthrough%20Guide/02%20Web%20API/01%20App%20Service/)
 
 ### [Use Azure Kubernetes Service](Walkthrough%20Guide/02%20Web%20API/02%20AKubernetes/)
-

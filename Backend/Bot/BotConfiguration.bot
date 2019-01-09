@@ -8,6 +8,14 @@
       "appId": "",
       "appPassword": "",
       "id": "1"
+    },
+    {
+      "type": "endpoint",
+      "name": "production",
+      "endpoint": "http://localhost:3978/api/messages",
+      "appId": "",
+      "appPassword": "",
+      "id": "1"
     }
   ],
   "padlock": "",
