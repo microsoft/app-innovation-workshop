@@ -69,13 +69,9 @@ As you might have seen, the connection details to the Cosmos DB are not hard-cod
 
 As these settings are empty, let's set them in the Web API's environment variables!
 
-#### 1.3.2 Add Connection Information to Environment Variables
+#### 1.3.2 Add Connection Information to application secrets
 
-Navigate to the Web API App Service in the Azure Portal and open the ***Application settings*** from the menu on the left. Scroll down to the ***Application settings*** section and you will see a table where we can add settings to.
-
-![Add App Service App Settings](Assets/AddAppServiceAppSettings.png)
-
-Add the settings in the format `Settings__Key` (two underscores) and take the values from the ***Keys*** section of your Cosmos DB instance. Hit ***Save*** at the top of the page once you are set.
+Add the following secrets to your application hosts (e.g. App Services or Azure Kubernetes Services) as descriped in the according Secrets sections.
 
 - **`AzureCosmosDb__Endpoint`:** Uri of the Cosmos DB instance
 - **`AzureCosmosDb__Key`:** Primary Key of the Cosmos DB instance
@@ -155,7 +151,7 @@ Choose the following settings and hit the Create button to start provisioning th
 - **Performance:** Standard
 - **Replication:** Locally-redundant storage (LRS)
 - **Secure transfer required:** Disabled
-- **Resouce Group:** Use existing
+- **Resource Group:** Use existing
 - **Location:** Same as your Web App
 
 ### 2.2 Explore Azure Blob Storage
@@ -220,16 +216,12 @@ Similar to the Cosmos DB configuration above, the Web API backend project also m
 
 [View in project](/Backend/Monolithic/appsettings.json#L15-L20)
 
-These environment variables can also be set in the ***Application Settings*** section of the App Servive, so let's navigate to our Web API and extend its environment variables!
-
-![Add Azure Storage to Settings](Assets/AddStorageAppSettings.png)
-
-Add the settings in the format `Settings__Key` (two underscores) and take the values from your Storage Account's ***Access Keys*** section.
+Add the following secrets to your application hosts (e.g. App Services or Azure Kubernetes Services) as descriped in the according Secrets sections.
 
 - **`AzureStorage__StorageAccountName`:** Storage Account name (e.g. myawesomestartupstorage)
 - **`AzureStorage__Key`:** Key 1 key from the ***Access Keys*** section
 
-Once you click the ***Save*** button at the top of the page, the backend will choose this Storage Account and the  `images-large` blob container to upload photos.
+Once this is done, the backend will choose this Storage Account and the  `images-large` blob container to upload photos.
 
 ### 2.4 Test the photo upload
 

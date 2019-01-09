@@ -195,15 +195,11 @@ As you can see, we use `Configuration` variables one more time to not hard code 
 
 [View in project](/Backend/Monolithic/appsettings.json#L30-L34)
 
-So let's set these variables to the correct values an head back to our App Service, open the ***Application Settings*** and add these variables here as we did before for CosmosDB and Storage.
+Add the following secrets to your application hosts (e.g. App Services or Azure Kubernetes Services) as descriped in the according Secrets sections.
 
 - **`ActiveDirectory:Tenant`:** "{OUR_AD}.onmicrosoft.com"
 - **`ActiveDirectory:ApplicationId`:** *{ID_OF_THE_REGISTERED_APPLICATION}*
 - **`ActiveDirectory:SignUpSignInPolicy`:** B2C_1_GenericSignUpSignIn
-
-![Add ADB2C Settings to Azure App Service Settings](Assets/AddADB2CSettings.png)
-
-Don't forget to hit ***Save*** after you have entered all the variables.
 
 Some of the API calls to our backend requires, that a user is authenticated to proceed. `DELETE` operations are a good example for that. The code in the [`BaseController.cs`](/Backend/Monolithic/Controllers/BaseController.cs) has an `[Authenticate]` attribute added to the Delete function. This will automatically refuse calls from unauthenticated clients. In a real-word scenario, you would also want to check if the User's ID matches the owner ID of the item that gets deleted to make sure the client has the right permissions.
 
