@@ -163,5 +163,10 @@ We can now repeat the same process for Search, but this time we'll want to make 
 
 > **Warning:** We're currently experiencing an issue with our implementation of Photo upload. Please bear with us while we resolve this. 
 
-# Next Steps 
-[Functions & Cognitive Services](../06%20Functions%20and%20Cognitive%20Services)
+&nbsp;
+
+---
+### [Next Step: Data Storage](../11%20Authentication)
+---
+
+&nbsp;

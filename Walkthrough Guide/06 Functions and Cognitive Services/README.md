@@ -207,5 +207,10 @@ Once the photo has been uploaded, we should see a successful execution of the Az
 - [Monitoring Azure Functions with Application Insights](https://docs.microsoft.com/en-us/azure/azure-functions/functions-monitoring)
 
 
-# Next Steps 
-[Mobile Options](../08%20Mobile%20Overview/README.md)
+&nbsp;
+
+---
+### [Next Step: Data Storage](../07%20API%20Management)
+---
+
+&nbsp;

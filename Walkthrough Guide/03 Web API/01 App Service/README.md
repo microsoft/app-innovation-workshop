@@ -158,7 +158,7 @@ Add the settings in the format `Settings__Key` (two underscores) and take the va
 &nbsp;
 
 ---
-### [Next Step: Data Storage](../04%20Data%20Storage/README.md)
+### [Next Step: Data Storage](../../04%20Data%20Storage/README.md)
 ---
 
 &nbsp;

@@ -165,5 +165,9 @@ kubectl apply -f kubernetes.yml
 As we will deploy more Azure services throughout the workshop, that we need to connect with each other, you will come back to this section quite often.
 
 &nbsp;
-## [Next Step: Data Storage](../04%20Data%20Storage/README.md)
+
+---
+### [Next Step: Data Storage](../../04%20Data%20Storage/README.md)
+---
+
 &nbsp;
