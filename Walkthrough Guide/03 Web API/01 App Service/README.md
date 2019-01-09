@@ -6,13 +6,13 @@ Azure App Service is Microsoft’s fully managed, highly scalable platform for h
 
 App Service is fully managed and allows us to set the maximum number of instances on which we want to run our backend app on. Microsoft will then manage the scaling and load balancing across multiple instances to ensure your app perform well under heavy load. Microsoft manages the underlying compute infrastructure required to run our code, as well as patching and updating the OS and Frameworks when required.
 
-## 2. Create a new App Service (Web App)
+## 1. Create a new App Service (Web App)
 
 Web Apps are one of the App Services, that we can deploy to Azure. They can be configured easily at the [Azure Portal](https://portal.azure.com). You can find them, by clicking the ***Create a resource*** button at the top-left corner and selecting the ***Web*** category.
 
 ![Create new App Service Web App](Assets/CreateNewAppService.png)
 
-### 2.1 Configure your App Service
+### 1.1 Configure your App Service
 
 As you can see in the configuration blade, we have to configure a few things, before creating a new App Service, as App Name, Subscription, Resource Group, OS and App Service Plan / Location. Let's go through all of them in detail quickly, to understand, what we are configuring here.
 
@@ -38,7 +38,7 @@ App Services, can be based on Windows, Linux or Docker as their core technology.
 
 An App Service, is just the logical instance of an application, so it has to run within an **App Service Plan**, which is provides the actual hardware for it. You can run multiple App Services within the same App Service Plan, if you want to, but be aware, that they share the App Service Plan's Resources then. We will create an App Service Plan step by step in the following sections of this module.
 
-### 2.2 Create an App Service Plan
+### 1.2 Create an App Service Plan
 
 In App Service, an app runs in an App Service plan. The App Service plan defines a set of compute resources for a web app to run. These compute resources are analogous to the server farm in conventional web hosting. One or more apps can be configured to run on the same computing resources (or in the same App Service plan). When you create an App Service plan in a certain region (for example, West Europe), a set of compute resources is created for that plan in that region. Whatever apps you put into this App Service plan run on these compute resources as defined by your App Service plan.
 
@@ -75,7 +75,7 @@ Because my app name was: "myawesomestartupapi", the unique URL would be: `https:
 
 ![Create new App Service Plan](Assets/AppServiceDeployed.png)
 
-## 3. Deploy your apps to App Service
+## 2. Deploy your apps to App Service
 
 Azure App Service has many options for how to deploy our code. These include continuous integration, which can link to Visual Studio Team Services or GitHub. We could also use FTP to upload the project, but we're not animals, so we won't.
 
@@ -85,7 +85,7 @@ We can also create a Docker image for it or use the pre-built images, that can f
 
 <details><summary>Build and deploy a code package</summary><p>
 
-### Compiling the code by yourself
+#### Compiling the code by yourself
 
 We quickly have to dive into the .NET Developer's world! For this, right-click the `Monolithic` folder in Visual Studio Code and select ***Open in Terminal / Command Line***. The Terminal window in Visual Studio Code pops up and we can enter the command to compile the application.
 
@@ -115,7 +115,7 @@ or
 
 <details><summary>Deploy a Docker container</summary><p>
 
-### Create and use a Docker image
+#### Create and use a Docker image
 
 Open the [Azure Portal](https://portal.azure.com) and navigate to your Docker based App Service, that you have created earlier. When you scroll down to the ***Container Settings*** on the left side, you can find a configuration for image sources (like Azure Container Registry or Docker Hub).
 
@@ -127,7 +127,7 @@ Here we can connect to our Container Registry. Select our container and ***Save*
 
 </p></details>
 
-### 3.2 Verify, your app is running
+### 2.2 Verify, your app is running
 
 After a few seconds, after refreshing the browser, your Web App should display the published code and look like this:
 
@@ -158,7 +158,7 @@ Add the settings in the format `Settings__Key` (two underscores) and take the va
 &nbsp;
 
 ---
-## [Next Step: Data Storage](../04%20Data%20Storage/README.md)
+### [Next Step: Data Storage](../04%20Data%20Storage/README.md)
 ---
 
 &nbsp;
