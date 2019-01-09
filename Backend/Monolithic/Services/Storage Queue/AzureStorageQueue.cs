@@ -17,7 +17,7 @@ namespace ContosoMaintenance.WebAPI.Services.StorageQueue
 
         public async Task AddMessage(string message)
         {
-            CloudStorageAccount storageAccount = new CloudStorageAccount(new StorageCredentials(settings.StorageAccount, settings.StorageKey), false);
+            CloudStorageAccount storageAccount = new CloudStorageAccount(new StorageCredentials(settings.StorageAccount, settings.StorageKey), true);
 
             CloudQueueClient queueClient = storageAccount.CreateCloudQueueClient();
             CloudQueue queue = queueClient.GetQueueReference(settings.QueueName);

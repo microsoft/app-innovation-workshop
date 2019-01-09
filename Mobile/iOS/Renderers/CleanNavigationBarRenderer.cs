@@ -3,7 +3,7 @@ using UIKit;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.iOS;
 
-[assembly: ExportRenderer(typeof(ContentPage), typeof(CleanNavigationBarRenderer))]
+[assembly: ExportRenderer(typeof(Page), typeof(CleanNavigationBarRenderer))]
 namespace ContosoFieldService.iOS.Renderers
 {
     public class CleanNavigationBarRenderer : PageRenderer
@@ -15,7 +15,7 @@ namespace ContosoFieldService.iOS.Renderers
             UINavigationBar.Appearance.SetTitleTextAttributes(new UITextAttributes
             {
                 Font = UIFont.FromName("MuseoSans-500", 18),
-                TextColor = UIColor.White
+                TextColor = UIColor.FromRGB(0, 216, 203)
             });
 
             // Remove transparency, shadow and separator line
@@ -23,8 +23,8 @@ namespace ContosoFieldService.iOS.Renderers
             UINavigationBar.Appearance.ShadowImage = new UIImage();
             UINavigationBar.Appearance.SetBackgroundImage(new UIImage(), UIBarMetrics.Default);
 
-            // White Status Bar
-            UIApplication.SharedApplication.SetStatusBarStyle(UIStatusBarStyle.LightContent, false);
+            // Set color of Back Button and Navigation Bar Buttons
+            UINavigationBar.Appearance.TintColor = UIColor.FromRGB(0, 216, 203);
         }
     }
 }

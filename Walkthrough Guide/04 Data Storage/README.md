@@ -86,13 +86,13 @@ Once we add the connection information to the App Service Settings, the Web API 
 
 ![Empty List Of Jobs](Assets/EmptyListOfJobs.png)
 
-As we can see, (of course) there are no jobs inside the database at the moment. But we don't get an error message but an empty list. That means, that there is at least "something" inside of our database now. The [`DocumentDBRepositoryBase.cs`](/Backend/Monolithic/Services/DocumentDBRepositoryBase.cs#L97-L138) class creates databases and collections that are not existant automatically when it gets asked for them.
+As we can see, (of course) there are no jobs inside the database at the moment. But we don't get an error message but an empty list. That means, that there is at least "something" inside of our database now. The [`DocumentDBRepositoryBase.cs`](/Backend/Monolithic/Services/DocumentDBRepositoryBase.cs#L97-L138) class creates databases and collections that are not existent automatically when it gets asked for them.
 
 Let's check the Cosmos DB's ***Data Explorer*** at the Azure Portal to see what happened!
 
 ![Cosmos DB With Empty Collection](Assets/CosmosWithEmptyCollection.png)
 
-As we can see, a `contosomaintenance` database has been created with an empty `jobs` collection. If we click at the ***Scale & Settings*** tap, we can see that the collection has been created with 400 RUs reserverd, which is the minimum. Whenever we see more traction on this collection, we can scale up here.
+As we can see, a `contosomaintenance` database has been created with an empty `jobs` collection. If we click at the ***Scale & Settings*** tap, we can see that the collection has been created with 400 RUs reserved, which is the minimum. Whenever we see more traction on this collection, we can scale up here.
 
 #### 1.4.2 Add a new document manually
 

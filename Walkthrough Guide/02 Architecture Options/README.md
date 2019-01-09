@@ -14,7 +14,7 @@ It's for the reason that we'll opt to use Platform as a Service (PaaS) as much a
 Above you can see a high-level overview of our production architecture. Some key decisions: 
 
 ### Orchestration 
-We were going to leverage our .NET skills and build a ASP.NET Web API targetting .NET Core; we've lots of flexibility on where and how to host the code. 
+We were going to leverage our .NET skills and build a ASP.NET Web API targeting .NET Core; we've lots of flexibility on where and how to host the code. 
 
 We picked Azure App Service as it supports great IDE integration for both Visual Studio PC and Visual Studio Mac, as well as offering all the PaaS goodness we need to focus on other parts of the solution.  
 

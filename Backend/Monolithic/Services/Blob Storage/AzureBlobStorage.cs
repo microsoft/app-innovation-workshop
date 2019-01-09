@@ -130,7 +130,7 @@ namespace ContosoMaintenance.WebAPI.Services
         {
             //Account
             CloudStorageAccount storageAccount = new CloudStorageAccount(
-                new StorageCredentials(settings.StorageAccount, settings.StorageKey), false);
+                new StorageCredentials(settings.StorageAccount, settings.StorageKey), true);
 
             //Client
             CloudBlobClient blobClient = storageAccount.CreateCloudBlobClient();
