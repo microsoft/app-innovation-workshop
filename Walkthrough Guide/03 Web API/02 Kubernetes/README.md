@@ -8,13 +8,13 @@ All you need to do is tell Microsoft Azure how powerful your worker nodes shall 
 
 > **Important:** Kubernetes is all about Containers. To deploy the application's services to a Kubernetes cluster, make sure you read the [Work with containers](../) article before.
 
-## Create a Kubernetes Cluster
+## 1. Create a Kubernetes Cluster
 
 Creating an AKS cluster in Azure is easy. Simply click the ***Create a resource*** button at the top-left corner of the [Azure Portal](https://portal.azure.com), select the ***Containers** section and click on ***Kubernetes Service***. A dialog appears and guides you through the creation of your AKS cluster.
 
 ![Screenshot of creating an AKS service in the Azure Portal](Assets/CreateAKSCluster.png)
 
-### Basic
+#### Basic
 
 First, we need to enter some basic information about our cluster, such as Subscription and Resource Group but also the Kubernetes Version we want to use and how powerful our cluster needs to be.
 
@@ -32,7 +32,7 @@ Enter the following values and proceed to the *Authentication* step.
 
 The **Node size** and **Node count** values determine the performance of your cluster. Kubernetes distributes the deployed services and incoming load across those nodes. The more you have, the more failure secure and high performant you are.
 
-### Authentication
+#### Authentication
 
 In Kubernetes, authentication plays an important role. You might want to enable **RBAC (Role Base Access Control)**, to define, which team members and Kubernetes services are allowed to do what. For auto-scaling, the AKS cluster also needs a **service principal**. This is a virtual user in the Active Directory and defines, what a non-human service is allowed to do. We would want AKS to allow to spin up additional VMs as Worker Nodes, when needed.
 
@@ -45,7 +45,7 @@ Enter the following values and proceed to the *Monitoring* step.
 
 > **Hint:** For the demo purpose of this workshop, you can leave **RBAC** off. In a real-world scenario, you would probably want to turn it on and follow the [Principle of least privilege](https://en.wikipedia.org/wiki/Principle_of_least_privilege) for enhanced security!
 
-### Monitoring
+#### Monitoring
 
 Being able to monitor you cluster at runtime can become mission critical, when facing issues are wanting to measure performance. So we should turn monitoring on an create a new **Log Analytics** workspace.
 
@@ -56,7 +56,7 @@ Enter the following values and proceed to the *Review + create* step.
 - **Enable container monitoring:** Yes
 - **Log Analytics workspace:** *create a new one in your region*
 
-### Review + create
+#### Review + create
 
 In the last step, the Azure Portal checks, if all your settings make sense and if a cluster can be created in the way you described it. Once the validation is completed successfully, you can hit the ***Create*** button and let Azure do its job.
 
@@ -64,7 +64,7 @@ Creating an AKS cluster can take some minutes, as a bunch of VMs are provisioned
 
 ![Screenshot of setting up AKS Review and Deployment Overview](Assets/CreateAKSClusterReviewAndDeploymentOverview.png)
 
-## Discover the service
+## 2. Discover the service
 
 After some minutes, you AKS has been created successfully and you should be able to open you cluster overview in the Azure Portal. As Kubernetes itself works mostly command line based or through its own [Web UI (the Kubernetes dashboard)](https://kubernetes.io/docs/tasks/access-application-cluster/web-ui-dashboard/), there is not too much to see here. What users can manage from this portal is mostly related to the underlying hardware or the Kubernetes installation itself.
 
@@ -84,11 +84,11 @@ Here you can set the Kubernetes version, that you want to have installed on your
 
 If your cluster needs more power, that's the place to go. Here you can add or remove Worker Node VMs from your cluster. If you don't want to do this manually, you should take a look at the [Cluster Auto Scaler](https://docs.microsoft.com/en-us/azure/aks/autoscaler) capabilities of AKS.
 
-## Deploy the applications
+## 3. Deploy the applications
 
 As mentioned, working with Kubernetes is mostly done via the command line. So you need the [`kubectl` tool](https://kubernetes.io/docs/tasks/tools/install-kubectl/) installed on your machine. Once you did this, you can connect your local environment with the AKS cluster.
 
-### Connect to the AKS cluster
+### 3.1 Connect to the AKS cluster
 
 To configure `kubectl` to connect to your Kubernetes cluster, use the [`az aks get-credentials`](https://docs.microsoft.com/en-us/cli/azure/aks?view=azure-cli-latest#az-aks-get-credentials) command. This command downloads credentials and configures the Kubernetes CLI to use them.
 
@@ -104,7 +104,7 @@ kubectl cluster-info
 kubectl get nodes
 ```
 
-### Run the applications
+### 3.2 Run the applications
 
 In Kubernetes, you work with manifest files. A Kubernetes manifest file defines a desired state for the cluster, such as what container images to run. In this workshop, a manifest is used to create all objects needed to run the samples. This manifest includes multiple [Kubernetes deployments](https://docs.microsoft.com/en-us/azure/aks/concepts-clusters-workloads#deployments-and-yaml-manifests). One for the Web API, one for the Chat Bot and so on. In addition, some [Kubernetes services](https://docs.microsoft.com/en-us/azure/aks/concepts-network#services) are created.
 
@@ -116,7 +116,7 @@ Pick the one for your needs and deploy the application using the [`kubectl apply
 kubectl apply -f kubernetes.yml
 ```
 
-### Test the application
+### 3.3 Test the application
 
 When the application runs, a Kubernetes service exposes the application front end to the internet. This process can take a few minutes to complete. To monitor progress, use the [`kubectl get service`](https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#get) command with the `--watch` argument.
 
