@@ -113,4 +113,4 @@ Now we can finally start with the creation of the compute layer for our backend 
 
 ### [Azure App Services](01%20App%20Service/)
 
-### [Azure Kubernetes Service (AKS)](02%20AKubernetes/)
+### [Azure Kubernetes Service (AKS)](02%20Kubernetes/)
