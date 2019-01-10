@@ -86,7 +86,7 @@ Here you can set the Kubernetes version, that you want to have installed on your
 
 If your cluster needs more power, that's the place to go. Here you can add or remove Worker Node VMs from your cluster. If you don't want to do this manually, you should take a look at the [Cluster Auto Scaler](https://docs.microsoft.com/en-us/azure/aks/autoscaler) capabilities of AKS.
 
-## 3. Deploy the applications
+## 3. Deploy to Kubernetes
 
 As mentioned, working with Kubernetes is mostly done via the command line. So you need the [`kubectl` tool](https://kubernetes.io/docs/tasks/tools/install-kubectl/) installed on your machine. Once you did this, you can connect your local environment with the AKS cluster.
 
@@ -98,24 +98,49 @@ To configure `kubectl` to connect to your Kubernetes cluster, use the [`az aks g
 az aks get-credentials --resource-group MyAwesomeNewStartup --name myawesomenewstartupaks
 ```
 
-To verify the connection to your cluster, use the following commands to get some cluster information and a list of the cluster nodes.
+To verify the connection to your cluster, use the following command to get a list of the cluster nodes.
 
 ```bash
-kubectl cluster-info
-
 kubectl get nodes
 ```
 
-### 3.2 Run the applications
+### 3.2 Create secrets
+
+Throughout the workshop we will create more and more services and need to connect them with each other. This will be mostly done by placing the services connection information (e.g. Connection Strings) in a securely stored but for the service accessible place. The demo application from this workshop depends on them to connect with the database, blob storage and so on.
+
+Before we can start deploying the actual applications, we have to create a [Kubernetes Secret](https://kubernetes.io/docs/concepts/configuration/secret) with placeholders for it. Don't worry too much about it now, we will cover Secrets in a bit down below. Just run the following command to create the mandatory `appsettings` secret, that we need for our application.
+
+```bash
+kubectl create secret generic appsettings \
+    --from-literal=AzureCosmosDb__Endpoint=YOUR_COSMOSDB_ENDPOINT \
+    --from-literal=AzureCosmosDb__Key=YOUR_COSMOSDB_KEY \
+    --from-literal=AzureStorage__StorageAccountName=YOUR_STORAGEACCOUNT_NAME \
+    --from-literal=AzureStorage__Key=YOUR_STORAGEACCOUNT_KEY \
+    --from-literal=ActiveDirectory__Tenant=YOUR_ACTIVEDIRECTORY_TENANT \
+    --from-literal=ActiveDirectory__ApplicationId=YOUR_ACTIVEDIRECTORY_APPLICATIONID \
+    --from-literal=ActiveDirectory__SignUpSignInPolicy=YOUR_ACTIVEDIRECTORY_POLICY \
+    --from-literal=ApplicationInsights__InstrumentationKey=YOUR_APPINSIGHTS_KEY
+```
+
+### 3.3 Deploy the applications
 
 In Kubernetes, you work with manifest files. A Kubernetes manifest file defines a desired state for the cluster, such as what container images to run. In this workshop, a manifest is used to create all objects needed to run the samples. This manifest includes multiple [Kubernetes deployments](https://docs.microsoft.com/en-us/azure/aks/concepts-clusters-workloads#deployments-and-yaml-manifests). One for the Web API, one for the Chat Bot and so on. In addition, some [Kubernetes services](https://docs.microsoft.com/en-us/azure/aks/concepts-network#services) are created.
 
-Depending on your setup and if you want to use your own Container Registry or DockerHub, you can choose between the different `kubernetes*.yml` files in this workshop repository.
-
-Pick the one for your needs and deploy the application using the [`kubectl apply`](https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#apply) command and specify the path and name of your manifest
+Deploy the application using the [`kubectl apply`](https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#apply) command and specify the path and name of your manifest file.
 
 ```bash
 kubectl apply -f kubernetes.yml
+```
+
+#### Use your own Container Registry
+
+If you don't use the images from Docker Hub but your own Container Registry like Azure Container Registry, make sure to use the `kubernetes..acr.yml` file for the deployment and adjusted the container image names in that file. You can see, that it uses an [Image Pull Secret](https://kubernetes.io/docs/concepts/configuration/secret/#using-imagepullsecrets) called `acr-credentials` to authenticate against your registry. So make sure to create one before you run the `kubectl apply` command.
+
+```bash
+kubectl create secret docker-registry acr-credentials \
+    --docker-server YOUR_ACR_NAME.azurecr.io \
+    --docker-username YOUR_ACR_USERNAME \
+    --docker-password YOUR_ACR_PASSWORD
 ```
 
 ### 3.3 Test the application
@@ -145,14 +170,14 @@ For Kubernetes, those places are called [Kubernetes Secrets](https://kubernetes.
 
 ```bash
 kubectl create secret generic appsettings \
-    --from-literal=AzureCosmosDb__Endpoint=<YOUR_COSMOSDB_ENDPOINT> \
-    --from-literal=AzureCosmosDb__Key=<YOUR_COSMOSDB_KEY> \
-    --from-literal=AzureStorage__StorageAccountName=<YOUR_STORAGEACCOUNT_NAME> \
-    --from-literal=AzureStorage__Key=<YOUR_STORAGEACCOUNT_KEY> \
-    --from-literal=ActiveDirectory__Tenant=<YOUR_ACTIVEDIRECTORY_TENANT> \
-    --from-literal=ActiveDirectory__ApplicationId=<YOUR_ACTIVEDIRECTORY_APPLICATIONID> \
-    --from-literal=ActiveDirectory__SignUpSignInPolicy=<YOUR_ACTIVEDIRECTORY_POLICY> \
-    --from-literal=ApplicationInsights__InstrumentationKey=<YOUR_APPINSIGHTS_KEY>
+    --from-literal=AzureCosmosDb__Endpoint=YOUR_COSMOSDB_ENDPOINT \
+    --from-literal=AzureCosmosDb__Key=YOUR_COSMOSDB_KEY \
+    --from-literal=AzureStorage__StorageAccountName=YOUR_STORAGEACCOUNT_NAME \
+    --from-literal=AzureStorage__Key=YOUR_STORAGEACCOUNT_KEY \
+    --from-literal=ActiveDirectory__Tenant=YOUR_ACTIVEDIRECTORY_TENANT \
+    --from-literal=ActiveDirectory__ApplicationId=YOUR_ACTIVEDIRECTORY_APPLICATIONID \
+    --from-literal=ActiveDirectory__SignUpSignInPolicy=YOUR_ACTIVEDIRECTORY_POLICY \
+    --from-literal=ApplicationInsights__InstrumentationKey=YOUR_APPINSIGHTS_KEY
 ```
 
 If you want to update the secrets, you will need to delete them first.
