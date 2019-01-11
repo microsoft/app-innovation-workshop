@@ -70,11 +70,11 @@ If the command line answers you similar like shown in the screenshot below, your
 
 Open Visual Studio Code and navigate to the ***Extensions*** tab on the left (or select ***View -> Extensions*** from the menu) and make sure that you installed the **Azure App Service** and **Azure Functions**  extensions at least. If you don't have them installed, you can search for them in the Extensions tab.
 
-Note, that you need to ***Reload*** Visual Stuido Code after installing extensions!
+Note, that you need to ***Reload*** Visual Studio Code after installing extensions!
 
 ![Screenshot of Visual Studio Code for Reloading Extensions](Assets/VSCodeReloadExtensions.png)
 
-Once the extensions has been installed successful and Visual Stuido Code has been reloaded, you should see a new ***Azure*** tab on the side. Select it and make sure that you are logged in with you Azure account. Please verify, that you see at least one of your subscriptions here.
+Once the extensions has been installed successful and Visual Studio Code has been reloaded, you should see a new ***Azure*** tab on the side. Select it and make sure that you are logged in with you Azure account. Please verify, that you see at least one of your subscriptions here.
 
 ![Screenshot of Visual Studio Code showing Subscriptions in the Azure Tab](Assets/VSCodeAzureSubs.png)
 
