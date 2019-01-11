@@ -50,7 +50,7 @@ Whenever a user uploads an image, they should get immediate feedback and should 
 We have already prepared an Azure Function so we don't need to start from scratch! In the repository, there is an Azure Function called [`ResizeImage.cs`](/Backend/Functions/ResizeImage.cs) that contains the code for our scenario:
 
 1. Get triggered by a Storage Queue message
-2. Take an image from Azure Blob Storage
+1. Take an image from Azure Blob Storage
 3. Upload it to the Cognitive Services Computer Vision API
 4. Write the resized images back to Azure Blob Storage
 5. Update the CosmosDB entry
