@@ -1,0 +1,32 @@
+﻿@{
+    ViewData["Title"] = "View Job";
+}
+@model ContosoMaintenance.Web.Models.Job
+
+<div id="job-header">
+    <h3>@Model.Name</h3>
+</div>
+<div id="job" class="container">
+
+
+    <div class="row">
+        <div class="col-md-8 order-md-1">
+            <h4 class="mb-3">Overview <span class="badge badge-dark pull-right">@Model.Status</span></h4>
+
+            <p class="mb-1">@Model.Details</p>
+            <div class="resp-container">
+                <iframe  class="resp-iframe" src="@($"https://maps.google.com/maps?q={Model.Address.Point.Coordinates[0]},{Model.Address.Point.Coordinates[1]}&z=15&output=embed")"  frameborder="0" style="border:0" allowfullscreen></iframe>
+            </div>
+        </div>
+        <div class="col-md-4 order-md-2 mb-4">
+            <h4>Actions</h4>
+            <a href="/Jobs/StartJob/@Model.Id" class="btn btn-lg btn-outline-info btn-block">Start Job </a>
+            <button class="btn btn-lg btn-outline-secondary btn-block">Edit Job </button>
+            <button class="btn btn-lg btn-outline-danger btn-block">Delete Job </button>
+            <button class="btn btn-lg btn-outline-primary btn-block">Order Parts </button>
+        </div>
+
+    </div>
+    <br />
+    <a href="/jobs" class="btn btn-dark">Return to all Jobs</a>
+</div>
