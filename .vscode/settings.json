@@ -1,4 +1,10 @@
 {
     "azureFunctions.projectLanguage": "C#",
-    "azureFunctions.projectRuntime": "beta"
+    "azureFunctions.projectRuntime": "beta",
+    "cSpell.words": [
+        "Contoso",
+        "contosomaintenance",
+        "robinmanuelthiel",
+        "westeurope"
+    ]
 }
