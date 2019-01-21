@@ -1,6 +1,6 @@
 # Initial environment provisioning
 
-## preqs
+## Prerequisites
 
 Ensure the following are installed
 
@@ -10,43 +10,36 @@ Ensure the following are installed
 
 ## Step 1
 
-Clone the GitHub repository to your local machine
+Open a console or terminal and navigate to the `Terraform` directory and login to the Azure CLI
 
-```
-git clone https://github.com/MikeCodesDotNET/Mobile-Cloud-Workshop.git
-```
-
-## Step 2
-
-Open a console or terminal and navigate to the Terraform directory and login to the Azure Cli
-
-```
+```bash
 az login
 ```
 
 Navigate to [https://aka.ms/devicelogin](https://aka.ms/devicelogin) and use the code output from the above command and login using an account associated to an Azure subscription.
 
-## Step 3 (Optional)
+## Step 2 (Optional)
 
-If your account is associated to more than one tenant or subscription then you can switch to the specific one you want to work with now using 
+If your account is associated to more than one tenant or subscription then you can switch to the specific one you want to work with now using
 
-```
+```bash
 az account set --subscription {subscription id}
 ```
 
-## Step 4
+## Step 3
 
 Now run Terraform so that it provisions the environment
 
-```
+```bash
 terraform init
 
 terraform apply
 ```
 
-## Step 5
+## Step 4
 
 You will need to run the following steps from the main walkthrough to build and deploy the application.
 
-- [Index data in Cosmos](https://github.com/MikeCodesDotNET/Mobile-Cloud-Workshop/tree/master/Walkthrough%20Guide/05%20Search#indexing-our-data)
-- [Deploy Function](https://github.com/MikeCodesDotNET/Mobile-Cloud-Workshop/tree/master/Walkthrough%20Guide/06%20Functions%20and%20Cognitive%20Services#26-deploy-to-azure)
+- Deploy the Web API to the App Service
+- Deploy the Azure Function to the Functions App
+- Trigger the `/api/dummy` endpoint to generate data in Cosmos DB
