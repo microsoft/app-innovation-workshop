@@ -1,12 +1,14 @@
-# Comment the following object to use local state
-terraform {
-  backend "azurerm" {
-    storage_account_name = "__TFSTATE-STORAGE-ACCOUNT-NAME__" # <-- TODO: Replace this
-    container_name       = "tfstate"
-    key                  = "terraform.tfstate"
-    access_key           = "__TFSTATE-STORAGE-ACCESS-KEY__"   # <-- TODO: Replace this
-  }
-}
+# Uncomment the following object to use remote state in Azure
+# Follow the official guide, to setup the Storage Account: https://docs.microsoft.com/en-us/azure/terraform/terraform-backend
+
+# terraform {
+#   backend "azurerm" {
+#     storage_account_name = "__TFSTATE-STORAGE-ACCOUNT-NAME__" # <-- Replace this
+#     container_name       = "tfstate"
+#     key                  = "terraform.tfstate"
+#     access_key           = "__TFSTATE-STORAGE-ACCESS-KEY__"   # <-- Replace this
+#   }
+# }
 
 variable "prefix" {
   description = "A personal prefix (1-10 chars) that is attached to every resource to ensure its name is unique."
