@@ -28,7 +28,7 @@ az account set --subscription {your_subscription_id}
 
 ## Step 3
 
-Now run Terraform so that it provisions the environment. Make sure to set a prefix to ensure that your resource names are unique.
+Now run Terraform so that it provisions the environment. Make sure to replace the `{your_unique_prefix}` variable with a personal prefix to ensure that your resource names are unique.
 
 ```bash
 terraform init
