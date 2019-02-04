@@ -31,12 +31,12 @@ az account set --subscription {your_subscription_id}
 Now run Terraform so that it provisions the environment. Make sure to replace the `{your_unique_prefix}` variable with a personal prefix to ensure that your resource names are unique.
 
 ```bash
-terraform init
+terraform init -backend=false
 
 terraform apply -var prefix={your_unique_prefix}
 ```
 
-> **Hint:** Terraform saves the state to your local machine by default. This is okay for testing but might cause problems when working in teams. Take a loot at the `Terraform/foundations.tf` file to see which lines to change, if you want to save state in Azure instead or take a look at the [official documentation](https://docs.microsoft.com/en-us/azure/terraform/terraform-backend).
+> **Hint:** Terraform saves the state to your local machine by default. This is okay for testing but might cause problems when working in teams. Take a loot at the `Terraform/foundations.tf` file to see which lines to change, if you want to save state in Azure instead. Afterwards, run `terraform init` again without the `-backend=false` option. Also, take a look at the [official documentation](https://docs.microsoft.com/en-us/azure/terraform/terraform-backend).
 
 ## Step 4
 

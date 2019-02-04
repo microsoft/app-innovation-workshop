@@ -1,17 +1,18 @@
-# Uncomment the following object to use remote state in Azure
-# Follow the official guide, to setup the Storage Account: https://docs.microsoft.com/en-us/azure/terraform/terraform-backend
+# Use Azure Storage as remote backend to save state.
+# Follow the official guide, to setup the Storage Account:
+# https://docs.microsoft.com/en-us/azure/terraform/terraform-backend
 
-# terraform {
-#   backend "azurerm" {
-#     storage_account_name = "__TFSTATE-STORAGE-ACCOUNT-NAME__" # <-- Replace this
-#     container_name       = "tfstate"
-#     key                  = "terraform.tfstate"
-#     access_key           = "__TFSTATE-STORAGE-ACCESS-KEY__"   # <-- Replace this
-#   }
-# }
+terraform {
+  backend "azurerm" {
+    storage_account_name = "__TFSTATE-STORAGE-ACCOUNT-NAME__" # <-- Replace this with your values
+    container_name       = "__TFSTATE-CONTAINER-NAME__"       # <-- Replace this with your values
+    access_key           = "__TFSTATE-STORAGE-ACCESS-KEY__"   # <-- Replace this with your values
+    key                  = "terraform.tfstate"
+  }
+}
 
 variable "prefix" {
-  description = "A personal prefix (1-10 chars) that is attached to every resource to ensure its name is unique."
+  description = "Choose a personal prefix (1-10 chars) that is attached to every resource to ensure a unique name."
 }
 
 variable "resource_name" {
