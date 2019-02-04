@@ -23,8 +23,8 @@ RUN dotnet publish --output /out/ --configuration Release
 
 # Download the official ASP.NET Core Runtime image 
 # to run the compiled application
-#FROM microsoft/dotnet:2.1.4-aspnetcore-runtime-alpine
-FROM microsoft/dotnet:2.1.4-aspnetcore-runtime-sac2016
+FROM microsoft/dotnet:2.1.4-aspnetcore-runtime-alpine
+#FROM microsoft/dotnet:2.1.4-aspnetcore-runtime-sac2016
 WORKDIR /app
 
 # Open HTTP and HTTPS ports
