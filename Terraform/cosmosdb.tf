@@ -9,8 +9,8 @@ resource "azurerm_cosmosdb_account" "workshop" {
 
   consistency_policy {
     consistency_level       = "Session"
-    max_interval_in_seconds = 10
-    max_staleness_prefix    = 200
+    max_interval_in_seconds = 5
+    max_staleness_prefix    = 100
   }
 
   geo_location {
