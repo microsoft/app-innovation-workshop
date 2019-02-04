@@ -1,23 +1,16 @@
 resource "azurerm_app_service_plan" "workshop" {
-  name                = "${var.resource_name}-service-plan"
+  name                = "${var.resource_name}serviceplan"
   location            = "${azurerm_resource_group.workshop.location}"
   resource_group_name = "${azurerm_resource_group.workshop.name}"
-
-  # Define Linux as Host OS
-  kind = "Linux"
 
   sku {
     tier = "Standard"
     size = "S1"
   }
-
-  properties {
-    reserved = true # Mandatory for Linux plans
-  }
 }
 
 resource "azurerm_app_service" "workshop" {
-  name                = "${var.resource_name}${random_id.workshop.dec}"
+  name                = "${var.resource_name}api"
   location            = "${azurerm_resource_group.workshop.location}"
   resource_group_name = "${azurerm_resource_group.workshop.name}"
   app_service_plan_id = "${azurerm_app_service_plan.workshop.id}"
@@ -34,10 +27,8 @@ resource "azurerm_app_service" "workshop" {
     WEBSITES_ENABLE_APP_SERVICE_STORAGE = false
   }
 
-  # Configure Docker Image to load on start
   site_config {
-    linux_fx_version = "DOCKER|robinmanuelthiel/contosomaintenance-api:latest"
-    always_on        = "true"
+    always_on = "true"
   }
 
   identity {

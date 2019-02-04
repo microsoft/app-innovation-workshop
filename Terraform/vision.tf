@@ -1,5 +1,5 @@
 resource "azurerm_template_deployment" "workshop" {
-  name                = "visionarm"
+  name                = "${var.resource_name}vision"
   resource_group_name = "${azurerm_resource_group.workshop.name}"
 
   template_body = <<DEPLOY

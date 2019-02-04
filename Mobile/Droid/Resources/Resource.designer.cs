@@ -2830,6 +2830,7 @@ namespace ContosoFieldService.Droid
 			global::Microsoft.Identity.Client.Resource.Id.actions = global::ContosoFieldService.Droid.Resource.Id.actions;
 			global::Microsoft.Identity.Client.Resource.Id.activity_chooser_view_content = global::ContosoFieldService.Droid.Resource.Id.activity_chooser_view_content;
 			global::Microsoft.Identity.Client.Resource.Id.add = global::ContosoFieldService.Droid.Resource.Id.add;
+			global::Microsoft.Identity.Client.Resource.Id.agentWebView = global::ContosoFieldService.Droid.Resource.Id.agentWebView;
 			global::Microsoft.Identity.Client.Resource.Id.alertTitle = global::ContosoFieldService.Droid.Resource.Id.alertTitle;
 			global::Microsoft.Identity.Client.Resource.Id.always = global::ContosoFieldService.Droid.Resource.Id.always;
 			global::Microsoft.Identity.Client.Resource.Id.async = global::ContosoFieldService.Droid.Resource.Id.async;
@@ -2976,6 +2977,8 @@ namespace ContosoFieldService.Droid
 			global::Microsoft.Identity.Client.Resource.Layout.select_dialog_singlechoice_material = global::ContosoFieldService.Droid.Resource.Layout.select_dialog_singlechoice_material;
 			global::Microsoft.Identity.Client.Resource.Layout.support_simple_spinner_dropdown_item = global::ContosoFieldService.Droid.Resource.Layout.support_simple_spinner_dropdown_item;
 			global::Microsoft.Identity.Client.Resource.Layout.tooltip = global::ContosoFieldService.Droid.Resource.Layout.tooltip;
+			global::Microsoft.Identity.Client.Resource.Layout.WebAuthenticationBroker = global::ContosoFieldService.Droid.Resource.Layout.WebAuthenticationBroker;
+			global::Microsoft.Identity.Client.Resource.String.ApplicationName = global::ContosoFieldService.Droid.Resource.String.ApplicationName;
 			global::Microsoft.Identity.Client.Resource.String.abc_action_bar_home_description = global::ContosoFieldService.Droid.Resource.String.abc_action_bar_home_description;
 			global::Microsoft.Identity.Client.Resource.String.abc_action_bar_up_description = global::ContosoFieldService.Droid.Resource.String.abc_action_bar_up_description;
 			global::Microsoft.Identity.Client.Resource.String.abc_action_menu_overflow_description = global::ContosoFieldService.Droid.Resource.String.abc_action_menu_overflow_description;
@@ -7578,6 +7581,9 @@ namespace ContosoFieldService.Droid
 			// aapt resource value: 0x7f0d0024
 			public const int adjust_width = 2131558436;
 			
+			// aapt resource value: 0x7f0d00f7
+			public const int agentWebView = 2131558647;
+			
 			// aapt resource value: 0x7f0d0098
 			public const int alertTitle = 2131558552;
 			
@@ -7824,8 +7830,8 @@ namespace ContosoFieldService.Droid
 			// aapt resource value: 0x7f0d001d
 			public const int lottie_layer_name = 2131558429;
 			
-			// aapt resource value: 0x7f0d00f8
-			public const int masked = 2131558648;
+			// aapt resource value: 0x7f0d00f9
+			public const int masked = 2131558649;
 			
 			// aapt resource value: 0x7f0d003f
 			public const int match_global_nicknames = 2131558463;
@@ -8220,8 +8226,8 @@ namespace ContosoFieldService.Droid
 			// aapt resource value: 0x7f0d0016
 			public const int view_offset_helper = 2131558422;
 			
-			// aapt resource value: 0x7f0d00f7
-			public const int visible = 2131558647;
+			// aapt resource value: 0x7f0d00f8
+			public const int visible = 2131558648;
 			
 			// aapt resource value: 0x7f0d00d9
 			public const int volume_item_container = 2131558617;
@@ -8538,6 +8544,9 @@ namespace ContosoFieldService.Droid
 			// aapt resource value: 0x7f040045
 			public const int vertical_viewpager = 2130968645;
 			
+			// aapt resource value: 0x7f040046
+			public const int WebAuthenticationBroker = 2130968646;
+			
 			static Layout()
 			{
 				global::Android.Runtime.ResourceIdManager.UpdateIdValues();
@@ -8572,6 +8581,9 @@ namespace ContosoFieldService.Droid
 		
 		public partial class String
 		{
+			
+			// aapt resource value: 0x7f090056
+			public const int ApplicationName = 2131296342;
 			
 			// aapt resource value: 0x7f09002f
 			public const int abc_action_bar_home_description = 2131296303;
@@ -8663,62 +8675,62 @@ namespace ContosoFieldService.Droid
 			// aapt resource value: 0x7f09004d
 			public const int appbar_scrolling_view_behavior = 2131296333;
 			
-			// aapt resource value: 0x7f090056
-			public const int appcenter_distribute_dialog_actioned_on_disabled_toast = 2131296342;
-			
 			// aapt resource value: 0x7f090057
-			public const int appcenter_distribute_download_progress_number_format = 2131296343;
+			public const int appcenter_distribute_dialog_actioned_on_disabled_toast = 2131296343;
 			
 			// aapt resource value: 0x7f090058
-			public const int appcenter_distribute_downloading_mandatory_update = 2131296344;
+			public const int appcenter_distribute_download_progress_number_format = 2131296344;
 			
 			// aapt resource value: 0x7f090059
-			public const int appcenter_distribute_install = 2131296345;
+			public const int appcenter_distribute_downloading_mandatory_update = 2131296345;
 			
 			// aapt resource value: 0x7f09005a
-			public const int appcenter_distribute_install_ready_message = 2131296346;
+			public const int appcenter_distribute_install = 2131296346;
 			
 			// aapt resource value: 0x7f09005b
-			public const int appcenter_distribute_install_ready_title = 2131296347;
+			public const int appcenter_distribute_install_ready_message = 2131296347;
 			
 			// aapt resource value: 0x7f09005c
-			public const int appcenter_distribute_notification_category = 2131296348;
+			public const int appcenter_distribute_install_ready_title = 2131296348;
 			
 			// aapt resource value: 0x7f09005d
-			public const int appcenter_distribute_unknown_sources_dialog_message = 2131296349;
+			public const int appcenter_distribute_notification_category = 2131296349;
 			
 			// aapt resource value: 0x7f09005e
-			public const int appcenter_distribute_unknown_sources_dialog_settings = 2131296350;
+			public const int appcenter_distribute_unknown_sources_dialog_message = 2131296350;
 			
 			// aapt resource value: 0x7f09005f
-			public const int appcenter_distribute_update_dialog_download = 2131296351;
+			public const int appcenter_distribute_unknown_sources_dialog_settings = 2131296351;
 			
 			// aapt resource value: 0x7f090060
-			public const int appcenter_distribute_update_dialog_message_mandatory = 2131296352;
+			public const int appcenter_distribute_update_dialog_download = 2131296352;
 			
 			// aapt resource value: 0x7f090061
-			public const int appcenter_distribute_update_dialog_message_optional = 2131296353;
+			public const int appcenter_distribute_update_dialog_message_mandatory = 2131296353;
 			
 			// aapt resource value: 0x7f090062
-			public const int appcenter_distribute_update_dialog_postpone = 2131296354;
+			public const int appcenter_distribute_update_dialog_message_optional = 2131296354;
 			
 			// aapt resource value: 0x7f090063
-			public const int appcenter_distribute_update_dialog_title = 2131296355;
+			public const int appcenter_distribute_update_dialog_postpone = 2131296355;
 			
 			// aapt resource value: 0x7f090064
-			public const int appcenter_distribute_update_dialog_view_release_notes = 2131296356;
+			public const int appcenter_distribute_update_dialog_title = 2131296356;
 			
 			// aapt resource value: 0x7f090065
-			public const int appcenter_distribute_update_failed_dialog_ignore = 2131296357;
+			public const int appcenter_distribute_update_dialog_view_release_notes = 2131296357;
 			
 			// aapt resource value: 0x7f090066
-			public const int appcenter_distribute_update_failed_dialog_message = 2131296358;
+			public const int appcenter_distribute_update_failed_dialog_ignore = 2131296358;
 			
 			// aapt resource value: 0x7f090067
-			public const int appcenter_distribute_update_failed_dialog_reinstall = 2131296359;
+			public const int appcenter_distribute_update_failed_dialog_message = 2131296359;
 			
 			// aapt resource value: 0x7f090068
-			public const int appcenter_distribute_update_failed_dialog_title = 2131296360;
+			public const int appcenter_distribute_update_failed_dialog_reinstall = 2131296360;
+			
+			// aapt resource value: 0x7f090069
+			public const int appcenter_distribute_update_failed_dialog_title = 2131296361;
 			
 			// aapt resource value: 0x7f09004e
 			public const int bottom_sheet_behavior = 2131296334;

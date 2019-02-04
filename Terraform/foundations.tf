@@ -1,13 +1,12 @@
-resource "azurerm_resource_group" "workshop" {
-  name     = "${var.resource_name}"
-  location = "northeurope"
+resource "random_id" "workshop" {
+  byte_length = 2
 }
 
-resource "random_id" "workshop" {
-  keepers = {
-    # Generate a new ID only when a new resource group is defined
-    resource_group = "${azurerm_resource_group.workshop.name}"
-  }
+resource "azurerm_resource_group" "workshop" {
+  name     = "${var.resource_name}-${random_id.workshop.dec}"
+  location = "westeurope"
+}
 
-  byte_length = 2
+variable "resource_name" {
+  default = "contosomaintenance"
 }
