@@ -1,5 +1,5 @@
 resource "azurerm_app_service_plan" "workshop" {
-  name                = "${var.resource_name}serviceplan"
+  name                = "${var.prefix}${var.resource_name}serviceplan"
   location            = "${azurerm_resource_group.workshop.location}"
   resource_group_name = "${azurerm_resource_group.workshop.name}"
 
@@ -10,7 +10,7 @@ resource "azurerm_app_service_plan" "workshop" {
 }
 
 resource "azurerm_app_service" "workshop" {
-  name                = "${var.resource_name}api"
+  name                = "${var.prefix}${var.resource_name}api"
   location            = "${azurerm_resource_group.workshop.location}"
   resource_group_name = "${azurerm_resource_group.workshop.name}"
   app_service_plan_id = "${azurerm_app_service_plan.workshop.id}"

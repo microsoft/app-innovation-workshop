@@ -1,5 +1,5 @@
 resource "azurerm_cosmosdb_account" "workshop" {
-  name                = "${var.resource_name}db"
+  name                = "${var.prefix}${var.resource_name}db"
   location            = "${azurerm_resource_group.workshop.location}"
   resource_group_name = "${azurerm_resource_group.workshop.name}"
   offer_type          = "Standard"
