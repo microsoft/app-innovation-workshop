@@ -1,0 +1,3 @@
+containerRegistry: __ContainerRegistry__
+apiImageName: __ApiImageName__
+apiImageTag: __ApiImageTag__

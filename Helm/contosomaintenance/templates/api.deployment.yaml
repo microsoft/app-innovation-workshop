@@ -1,0 +1,72 @@
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata:
+  name: contosomaintenance-api
+spec:
+  replicas: 3
+  strategy:
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 1
+  minReadySeconds: 5 
+  template:
+    metadata:
+      labels:
+        app: contosomaintenance-api
+    spec:
+      imagePullSecrets:
+      - name: acr-credentials
+      containers:
+        - name: contosomaintenance-api
+          image: {{ .Values.containerRegistry }}/{{ .Values.apiImageName }}:{{ .Values.apiImageTag }}
+          env:
+            - name: AzureCosmosDb__Endpoint
+              valueFrom:
+                secretKeyRef:
+                  name: appsettings
+                  key: AzureCosmosDb__Endpoint
+            - name: AzureCosmosDb__Key
+              valueFrom:
+                secretKeyRef:
+                  name: appsettings
+                  key: AzureCosmosDb__Key      
+            - name: AzureStorage__StorageAccountName
+              valueFrom:
+                secretKeyRef:
+                  name: appsettings
+                  key: AzureStorage__StorageAccountName      
+            - name: AzureStorage__Key
+              valueFrom:
+                secretKeyRef:
+                  name: appsettings
+                  key: AzureStorage__Key      
+            - name: ActiveDirectory__Tenant
+              valueFrom:
+                secretKeyRef:
+                  name: appsettings
+                  key: ActiveDirectory__Tenant     
+            - name: ActiveDirectory__ApplicationId
+              valueFrom:
+                secretKeyRef:
+                  name: appsettings
+                  key: ActiveDirectory__ApplicationId     
+            - name: ActiveDirectory__SignUpSignInPolicy
+              valueFrom:
+                secretKeyRef:
+                  name: appsettings
+                  key: ActiveDirectory__SignUpSignInPolicy     
+            - name: ApplicationInsights__InstrumentationKey
+              valueFrom:
+                secretKeyRef:
+                  name: appsettings
+                  key: ApplicationInsights__InstrumentationKey        
+          ports:
+          - containerPort: 80
+          - containerPort: 443
+          resources:
+            requests:
+              memory: "64Mi"
+              cpu: "250m"
+            limits:
+              memory: "128Mi"
+              cpu: "500m"
