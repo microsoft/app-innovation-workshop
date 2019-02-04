@@ -36,7 +36,7 @@ terraform init
 terraform apply -var prefix={your_unique_prefix}
 ```
 
-> **Hint:** Terraform saves the state to your local machine by default. This is okay for testing but might cause problems when working in teams. Take a loot at the `Terraform/foundations.tf` file to see which lines to change, if you want to save state in Azure instead.
+> **Hint:** Terraform saves the state to your local machine by default. This is okay for testing but might cause problems when working in teams. Take a loot at the `Terraform/foundations.tf` file to see which lines to change, if you want to save state in Azure instead or take a look at the [official documentation](https://docs.microsoft.com/en-us/azure/terraform/terraform-backend).
 
 ## Step 4
 
