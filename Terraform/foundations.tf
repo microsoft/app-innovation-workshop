@@ -4,15 +4,15 @@
 
 terraform {
   backend "azurerm" {
-    storage_account_name = "__TFSTATE-STORAGE-ACCOUNT-NAME__" # <-- Replace this
-    container_name       = "__TFSTATE-CONTAINER-NAME__"       # <-- Replace this
+    storage_account_name = "__TFSTATE-STORAGE-ACCOUNT-NAME__" # <-- Replace this with your values
+    container_name       = "__TFSTATE-CONTAINER-NAME__"       # <-- Replace this with your values
+    access_key           = "__TFSTATE-STORAGE-ACCESS-KEY__"   # <-- Replace this with your values
     key                  = "terraform.tfstate"
-    access_key           = "__TFSTATE-STORAGE-ACCESS-KEY__"   # <-- Replace this
   }
 }
 
 variable "prefix" {
-  description = "A personal prefix (1-10 chars) that is attached to every resource to ensure its name is unique."
+  description = "Choose a personal prefix (1-10 chars) that is attached to every resource to ensure a unique name."
 }
 
 variable "resource_name" {
