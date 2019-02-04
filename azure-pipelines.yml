@@ -14,9 +14,10 @@ steps:
 - task: NuGetToolInstaller@0
   displayName: 'Install NuGet'
 - task: NuGetCommand@2
-  displayName: 'Restore NuGet packages for solution'
+  displayName: 'Restore NuGet packages'
   inputs:
-    restoreSolution: '**/*.sln'
+    restoreSolution: '**/*.csproj'
+    restoreDirectory: '$(Build.Repository.LocalPath)/packages'
 
 # Build iOS Application
 - task: XamariniOS@2
