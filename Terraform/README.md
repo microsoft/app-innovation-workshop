@@ -23,7 +23,7 @@ Navigate to [https://aka.ms/devicelogin](https://aka.ms/devicelogin) and use the
 If your account is associated to more than one tenant or subscription then you can switch to the specific one you want to work with now using
 
 ```bash
-az account set --subscription {subscription id}
+az account set --subscription {your_subscription_id}
 ```
 
 ## Step 3
@@ -33,8 +33,10 @@ Now run Terraform so that it provisions the environment. Make sure to set a pref
 ```bash
 terraform init
 
-terraform apply -var prefix=your_unique_prefix
+terraform apply -var prefix={your_unique_prefix}
 ```
+
+> **Hint:** Terraform saves the state to your local machine by default. This is okay for testing but might cause problems when working in teams. Take a loot at the `Terraform/foundations.tf` file to see which lines to change, if you want to save state in Azure instead.
 
 ## Step 4
 
