@@ -1,0 +1,23 @@
+﻿
+<div id="messages" class="text-center">
+
+
+    @if (TempData["Message"] != null)
+    {
+        <div class="alert alert-primary alert-dismissible fade show" role="alert">
+            <strong>@TempData["Message"]</strong> @TempData["message-details"]
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+    }
+    @if (TempData["Error"] != null)
+    {
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+            <strong>@TempData["Error"]</strong> @TempData["error-details"]
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+    }
+</div>

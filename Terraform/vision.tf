@@ -1,5 +1,5 @@
 resource "azurerm_template_deployment" "workshop" {
-  name                = "visionarm"
+  name                = "${var.prefix}${var.resource_name}vision"
   resource_group_name = "${azurerm_resource_group.workshop.name}"
 
   template_body = <<DEPLOY
@@ -47,7 +47,7 @@ resource "azurerm_template_deployment" "workshop" {
   DEPLOY
 
   parameters {
-    "name"     = "vision${random_id.workshop.dec}"
+    "name"     = "${var.prefix}${var.resource_name}vision"
     "location" = "${azurerm_resource_group.workshop.location}"
     "apiType"  = "ComputerVision"
     "sku"      = "S1"

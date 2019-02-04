@@ -1,0 +1,26 @@
+﻿@model ErrorViewModel
+@{
+    ViewData["Title"] = "Error";
+}
+
+<div>
+    <div class="container">
+        <br />
+        <div class="jumbotron">
+            <h1 class="display-4">Error!</h1>
+            <p class="lead">An error occurred while processing your request.</p>
+            <hr class="my-4">
+            <p>
+                @Model.ServerException.Message
+            </p>
+            <p>
+                <code>
+                    @Model.ServerException.StackTrace
+                </code>
+            </p>
+            <a class="btn btn-primary btn-lg" href="/" role="button">Return Home</a>
+        </div>
+
+    </div>
+</div>
+

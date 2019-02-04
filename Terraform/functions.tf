@@ -1,9 +1,5 @@
-# We are using Docker for the Web App, so we have to use Linux
-# as Functions host. Currently, Consumption Plan for Azure Functions
-# is only in preview, so we host the Function on the Same App Service Plan as the API
-/*
 resource "azurerm_app_service_plan" "func" {
-  name                = "azure-functions-${var.resource_name}-service-plan"
+  name                = "${var.prefix}${var.resource_name}functionsserviceplan"
   location            = "${azurerm_resource_group.workshop.location}"
   resource_group_name = "${azurerm_resource_group.workshop.name}"
   kind                = "FunctionApp"
@@ -12,13 +8,13 @@ resource "azurerm_app_service_plan" "func" {
     tier = "Dynamic"
     size = "Y1"
   }
-}*/
+}
 
 resource "azurerm_function_app" "workshop" {
-  name                      = "func-${var.resource_name}${random_id.workshop.dec}"
+  name                      = "${var.prefix}${var.resource_name}functions"
   location                  = "${azurerm_resource_group.workshop.location}"
   resource_group_name       = "${azurerm_resource_group.workshop.name}"
-  app_service_plan_id       = "${azurerm_app_service_plan.workshop.id}"
+  app_service_plan_id       = "${azurerm_app_service_plan.func.id}"
   storage_connection_string = "${azurerm_storage_account.workshop.primary_connection_string}"
 
   # looks like at the moment for v2 http version has to be http1.1 and app has to be 32bit
