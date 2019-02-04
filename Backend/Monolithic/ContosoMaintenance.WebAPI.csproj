@@ -4,6 +4,7 @@
         <TargetFramework>netcoreapp2.1</TargetFramework>
         <ApplicationInsightsResourceId>/subscriptions/0ec6dbb0-b89b-4bb3-9140-14e3d244e0ee/resourcegroups/mcwrothie/providers/microsoft.insights/components/mcw-api-ai</ApplicationInsightsResourceId>
         <ApplicationInsightsAnnotationResourceId>/subscriptions/0ec6dbb0-b89b-4bb3-9140-14e3d244e0ee/resourcegroups/mcwrothie/providers/microsoft.insights/components/mcw-api-ai</ApplicationInsightsAnnotationResourceId>
+        <DockerDefaultTargetOS>Windows</DockerDefaultTargetOS>
     </PropertyGroup>
     <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
         <DocumentationFile>bin\Debug\netcoreapp2.1\ContosoMaintenance.WebAPI.xml</DocumentationFile>
@@ -22,6 +23,7 @@
     <ItemGroup>
         <PackageReference Include="Microsoft.Azure.DocumentDB.Core" Version="1.9.1" />
         <PackageReference Include="Microsoft.Azure.Search" Version="5.0.2" />
+        <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.0.2105168" />
         <PackageReference Include="WindowsAzure.Storage" Version="9.3.1" />
         <PackageReference Include="Microsoft.ApplicationInsights.AspNetCore" Version="2.4.1" />
         <PackageReference Include="Swashbuckle.AspNetCore" Version="3.0.0" />

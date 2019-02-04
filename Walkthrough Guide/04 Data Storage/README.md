@@ -69,13 +69,11 @@ As you might have seen, the connection details to the Cosmos DB are not hard-cod
 
 As these settings are empty, let's set them in the Web API's environment variables!
 
-#### 1.3.2 Add Connection Information to Environment Variables
+#### 1.3.2 Add Connection Information to application secrets
 
-Navigate to the Web API App Service in the Azure Portal and open the ***Application settings*** from the menu on the left. Scroll down to the ***Application settings*** section and you will see a table where we can add settings to.
+Add the following secrets to your application as described in the according Secrets sections for App Services or Kubernetes.
 
-![Add App Service App Settings](Assets/AddAppServiceAppSettings.png)
-
-Add the settings in the format `Settings__Key` (two underscores) and take the values from the ***Keys*** section of your Cosmos DB instance. Hit ***Save*** at the top of the page once you are set.
+> **Hint:** Here you can find the [App Service Secrets](/Walkthrough%20Guide/03%20Web%20API/01%20App%20Service#use-secrets) and [ Kubernetes Secrets](/Walkthrough%20Guide/03%20Web%20API/02%20Kubernetes#use-secrets) sections.
 
 - **`AzureCosmosDb__Endpoint`:** Uri of the Cosmos DB instance
 - **`AzureCosmosDb__Key`:** Primary Key of the Cosmos DB instance
@@ -155,7 +153,7 @@ Choose the following settings and hit the Create button to start provisioning th
 - **Performance:** Standard
 - **Replication:** Locally-redundant storage (LRS)
 - **Secure transfer required:** Disabled
-- **Resouce Group:** Use existing
+- **Resource Group:** Use existing
 - **Location:** Same as your Web App
 
 ### 2.2 Explore Azure Blob Storage
@@ -220,16 +218,14 @@ Similar to the Cosmos DB configuration above, the Web API backend project also m
 
 [View in project](/Backend/Monolithic/appsettings.json#L15-L20)
 
-These environment variables can also be set in the ***Application Settings*** section of the App Servive, so let's navigate to our Web API and extend its environment variables!
+Add the following secrets to your application as described in the according Secrets sections for App Services or Kubernetes.
 
-![Add Azure Storage to Settings](Assets/AddStorageAppSettings.png)
-
-Add the settings in the format `Settings__Key` (two underscores) and take the values from your Storage Account's ***Access Keys*** section.
+> **Hint:** Here you can find the [App Service Secrets](/Walkthrough%20Guide/03%20Web%20API/01%20App%20Service#use-secrets) and [ Kubernetes Secrets](/Walkthrough%20Guide/03%20Web%20API/02%20Kubernetes#use-secrets) sections.
 
 - **`AzureStorage__StorageAccountName`:** Storage Account name (e.g. myawesomestartupstorage)
 - **`AzureStorage__Key`:** Key 1 key from the ***Access Keys*** section
 
-Once you click the ***Save*** button at the top of the page, the backend will choose this Storage Account and the  `images-large` blob container to upload photos.
+Once this is done, the backend will choose this Storage Account and the  `images-large` blob container to upload photos.
 
 ### 2.4 Test the photo upload
 
@@ -267,5 +263,10 @@ And voilà, here it is. The API replaces the original name by a GUID ([View in p
 - [Modeling Data in Cosmos DB vs. traditional SQL Databases](https://docs.microsoft.com/en-us/azure/cosmos-db/modeling-data)
 - [Azure Cosmos DB RU Calculator and capacity planner](https://www.documentdb.com/capacityplanner)
 
-# Next Steps 
-[Search](../05%20Search)
+&nbsp;
+
+---
+### [Next Step: Data Storage](../06%20Functions%20and%20Cognitive%20Services)
+---
+
+&nbsp;
