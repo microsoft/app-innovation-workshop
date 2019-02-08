@@ -1,0 +1,31 @@
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata:
+  name: contosomaintenance-bot
+spec:
+  replicas: 1
+  strategy:
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 1
+  minReadySeconds: 5 
+  template:
+    metadata:
+      labels:
+        app: contosomaintenance-bot
+    spec:
+      imagePullSecrets:
+      - name: acr-credentials
+      containers:
+        - name: contosomaintenance-bot
+          image: {{ .Values.containerRegistry }}/{{ .Values.botImageName }}:{{ .Values.botImageTag }}
+          ports:
+          - containerPort: 80
+          - containerPort: 443
+          resources:
+            requests:
+              memory: "64Mi"
+              cpu: "250m"
+            limits:
+              memory: "128Mi"
+              cpu: "500m"

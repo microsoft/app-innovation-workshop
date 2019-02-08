@@ -1,0 +1,10 @@
+# containerRegistry: __ContainerRegistry__
+# apiImageName: __ApiImageName__
+# apiImageTag: __ApiImageTag__
+# botImageName: __BotImageName__
+# botImageTag: __BotImageTag__
+containerRegistry: rothiedemoregistry.azurecr.io
+apiImageName: rothiedemoregistry.azurecr.io/contosomaintenance-api
+apiImageTag: latest
+botImageName: rothiedemoregistry.azurecr.io/contosomaintenance-bot
+botImageTag: latest

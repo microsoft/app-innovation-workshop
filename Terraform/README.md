@@ -26,19 +26,52 @@ If your account is associated to more than one tenant or subscription then you c
 az account set --subscription {your_subscription_id}
 ```
 
-## Step 3
+## Step 3 (optional)
+
+To use Azure Kubernetes Service (AKS), you need to create a Service Principal first. For this, run the following commands.
+
+> **Hint:** You only need that, if you want to provision AKS with Terraform. You can skip this, by simple commenting out all lines in the `aks.tf` file.
+
+```bash
+az ad sp create-for-rbac --name {choose_a_name}
+```
+
+The output should look similar to the JSON below. Save the `appId` and `password` at a secure place, you will need them later.
+
+```bash
+{
+  "appId": "12345678-1234-1234-1234-123456789012",   // <- Save this
+  "displayName": "sp-demoaks",
+  "name": "http://sp-demoaks",
+  "password": "11111111-1111-1111-1111-11111111111", // <- Save this
+  "tenant": "12345678-1234-1234-1234-123456789012"
+}
+```
+
+Next, we need to assign *Contributor* roles to the Service Principal.
+
+```bash
+az role assignment create --assignee {your_sp_appId} --role Contributor
+```
+
+## Step 4
 
 Now run Terraform so that it provisions the environment. Make sure to replace the `{your_unique_prefix}` variable with a personal prefix to ensure that your resource names are unique.
 
 ```bash
 terraform init -backend=false
+```
 
-terraform apply -var prefix={your_unique_prefix}
+```bash
+terraform apply \
+  -var prefix={your_unique_prefix} \
+  -var sp_client_id={your_sp_appId} \
+  -var sp_client_secret={your_sp_password}
 ```
 
 > **Hint:** Terraform saves the state to your local machine by default. This is okay for testing but might cause problems when working in teams. Take a loot at the `Terraform/foundations.tf` file to see which lines to change, if you want to save state in Azure instead. Afterwards, run `terraform init` again without the `-backend=false` option. Also, take a look at the [official documentation](https://docs.microsoft.com/en-us/azure/terraform/terraform-backend).
 
-## Step 4
+## Step 5
 
 You will need to run the following steps from the main walkthrough to build and deploy the application.
 
