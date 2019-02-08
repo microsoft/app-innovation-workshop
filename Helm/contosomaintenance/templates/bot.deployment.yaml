@@ -14,8 +14,8 @@ spec:
       labels:
         app: contosomaintenance-bot
     spec:
-        imagePullSecrets:
-        - name: acr-credentials
+      imagePullSecrets:
+      - name: acr-credentials
       containers:
         - name: contosomaintenance-bot
           image: {{ .Values.containerRegistry }}/{{ .Values.botImageName }}:{{ .Values.botImageTag }}
