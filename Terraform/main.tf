@@ -1,3 +1,7 @@
+provider "azurerm" {
+  version = "~> 1.15"
+}
+
 # Use Azure Storage as remote backend to save state.
 # Follow the official guide, to setup the Storage Account:
 # https://docs.microsoft.com/en-us/azure/terraform/terraform-backend
@@ -9,15 +13,6 @@ terraform {
     access_key           = "__TFSTATE-STORAGE-ACCESS-KEY__"   # <-- Replace this with your values
     key                  = "terraform.tfstate"
   }
-}
-
-variable "prefix" {
-  description = "Choose a personal prefix (1-10 chars) that is attached to every resource to ensure a unique name."
-}
-
-variable "resource_name" {
-  default     = "contoso"
-  description = "Name of the project. Will be attached to every resource."
 }
 
 resource "azurerm_resource_group" "workshop" {
