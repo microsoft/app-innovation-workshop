@@ -16,7 +16,7 @@ Please bring your own **Windows or Mac** laptop. To participate in this workshop
 - [Postman](https://www.getpostman.com/)
 
 ### Recommended
-- [.NET Core 2.1 SDK](https://www.microsoft.com/net/download/windows/build) (choose x64 Installer on Windows)
+- [.NET Core 2.1 SDK](https://dotnet.microsoft.com/download) (choose x64 Installer on Windows)
 - [Docker](https://www.docker.com/get-started)
 - [Azure CLI 2.0](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli?view=azure-cli-latest)
 - [Terraform](https://www.terraform.io/intro/getting-started/install.html)
