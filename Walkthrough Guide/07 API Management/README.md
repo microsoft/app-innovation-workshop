@@ -166,7 +166,7 @@ We can now repeat the same process for Search, but this time we'll want to make 
 &nbsp;
 
 ---
-### [Next Step: Data Storage](../11%20Authentication)
+### [Next Step: Authentication](../11%20Authentication)
 ---
 
 &nbsp;
