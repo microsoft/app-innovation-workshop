@@ -210,7 +210,7 @@ Once the photo has been uploaded, we should see a successful execution of the Az
 &nbsp;
 
 ---
-### [Next Step: Data Storage](../07%20API%20Management)
+### [Next Step: API Management](../07%20API%20Management)
 ---
 
 &nbsp;
