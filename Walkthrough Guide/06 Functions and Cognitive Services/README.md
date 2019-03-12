@@ -65,7 +65,7 @@ Add a *Function App* to your solution using the following properties.
 
 - **App name:** myawesomenewstartupfunctions
 - **Resouce Group:** Use existing
-- **OS:** Windows
+- **OS:** Windows or Linux
 - **Hosting Plan:** Consumption Plan
 - **Location:** Same as your Web App
 - **Storage:** Use existing (same Storage Account as created for Blob Storage)
