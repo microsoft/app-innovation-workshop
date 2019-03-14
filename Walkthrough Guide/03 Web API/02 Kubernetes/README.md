@@ -189,7 +189,7 @@ kubectl delete secret appsettings
 Then you can create the secrets again. By design, [Kubernetes won't push Secret updates to running Pods](https://kubernetes.io/docs/concepts/configuration/secret/#secret-and-pod-lifetime-interaction). So make sure to re-deploy your application using the `kubectl apply` command again.
 
 ```bash
-kubectl apply -f kubernetes.yml
+kubectl replace -f kubernetes.yml --force
 ```
 
 As we will deploy more Azure services throughout the workshop, that we need to connect with each other, you will come back to this section quite often.
