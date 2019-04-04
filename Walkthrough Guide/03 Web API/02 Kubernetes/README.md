@@ -186,10 +186,10 @@ If you want to update the secrets, you will need to delete them first.
 kubectl delete secret appsettings
 ```
 
-Then you can create the secrets again. By design, [Kubernetes won't push Secret updates to running Pods](https://kubernetes.io/docs/concepts/configuration/secret/#secret-and-pod-lifetime-interaction). So make sure to re-deploy your application using the `kubectl apply` command again.
+Then you can create the secrets again. By design, [Kubernetes won't push Secret updates to running Pods](https://kubernetes.io/docs/concepts/configuration/secret/#secret-and-pod-lifetime-interaction). So make sure to restart the pods that are using the secret. As Kubernetes is self-healing, deleting the pods will spin them back up automatically.
 
 ```bash
-kubectl replace -f kubernetes.yml --force
+kubectl delete pods --selector='app in (contosomaintenance-api,contosomaintenance-bot)'
 ```
 
 As we will deploy more Azure services throughout the workshop, that we need to connect with each other, you will come back to this section quite often.
