@@ -11,12 +11,16 @@ jobs:
     - Xamarin.iOS
     - msbuild
   steps:
+  - task: NuGetToolInstaller@1
+    inputs:
+      versionSpec: 
+      checkLatest: true
+
   - task: NuGetCommand@2
     displayName: 'Restore NuGet packages'
     inputs:
       restoreSolution: 'Mobile/**/*.csproj'
       restoreDirectory: '$(Build.Repository.LocalPath)/packages'
-
 
   - task: replacetokens@3
     inputs:
