@@ -1,3 +1,6 @@
+variables:
+  BuildConfiguration: 'Release'
+
 jobs:
 - job:
   displayName: 'Build iOS app'
@@ -28,7 +31,11 @@ jobs:
     demands:
     - msbuild
     - visualstudio
-  steps:
-  - script: |
-     echo Hello from Windows
+  steps: 
+  - task: VSBuild@1
+    displayName: 'Build UWP project'
+    inputs:
+      solution: Mobile/ContosoFieldService.UWP/ContosoFieldService.UWP.csproj
+      configuration: '$(BuildConfiguration)'
+
 
