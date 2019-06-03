@@ -100,17 +100,17 @@ jobs:
   steps:
   - bash: echo "Hello from Android"
 
-
-- job:
-  displayName: 'Build Windows'
-  pool:
-    name: Hosted VS2017
-    demands:
-    - msbuild
-    - visualstudio
-  steps: 
-  - task: VSBuild@1
-    displayName: 'Build UWP project'
-    inputs:
-      solution: Mobile/ContosoFieldService.UWP/ContosoFieldService.UWP.csproj
-      configuration: '$(BuildConfiguration)'
+#
+#- job:
+#  displayName: 'Build Windows'
+#  pool:
+#    name: Hosted VS2017
+#    demands:
+#    - msbuild
+#    - visualstudio
+#  steps: 
+#  - task: VSBuild@1
+#    displayName: 'Build UWP project'
+#    inputs:
+#      solution: Mobile/ContosoFieldService.UWP/ContosoFieldService.UWP.csproj
+#      configuration: '$(BuildConfiguration)'
