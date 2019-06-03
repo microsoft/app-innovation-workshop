@@ -4,7 +4,7 @@ variables:
 
 jobs:
 - job:
-  displayName: 'Build iOS app'
+  displayName: 'Build iOS'
   pool:
     name: Hosted macOS
     demands:
@@ -87,7 +87,7 @@ jobs:
       publishLocation: 'Container'
 
 - job:
-  displayName: 'Build Android app'
+  displayName: 'Build Android'
   pool:
     name: Hosted macOS
     demands:
@@ -99,7 +99,7 @@ jobs:
 
 
 - job:
-  displayName: 'Build Windows app'
+  displayName: 'Build Windows'
   pool:
     name: Hosted VS2017
     demands:
