@@ -12,11 +12,11 @@ jobs:
     - msbuild
   steps:
   - task: NuGetCommand@2
+    displayName: 'Restore NuGet packages'
     inputs:
-      command: 'restore'
       restoreSolution: 'Mobile/**/*.csproj'
-      feedsToUse: 'select'
-      versioningScheme: 'off'
+      restoreDirectory: '$(Build.Repository.LocalPath)/packages'
+
 
   - task: replacetokens@3
     inputs:
