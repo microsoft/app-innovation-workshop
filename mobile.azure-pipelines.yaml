@@ -24,10 +24,11 @@ jobs:
 - job:
   displayName: 'Build Windows app'
   pool:
-    name: Windows
+    name: Hosted VS2017
     demands:
-    - xcode
-    - Xamarin.iOS
     - msbuild
+    - visualstudio
   steps:
-  - bash: echo "Hello from Windows"
+  - script: |
+     echo Hello from Windows
+
