@@ -18,7 +18,7 @@ jobs:
       feedsToUse: 'select'
       versioningScheme: 'off'
 
-  - task: replacetokens@3
+  - task: qetza.replacetokens.replacetokens-task.replacetokens@3
     inputs:
       rootDirectory: 'Mobile/ContosoFieldService.Core/Helpers'
       targetFiles: 'Constants.cs'
