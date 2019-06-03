@@ -1,5 +1,6 @@
 variables:
   BuildConfiguration: 'Release'
+  iOS-Certificate-Password: ''
 
 jobs:
 - job:
