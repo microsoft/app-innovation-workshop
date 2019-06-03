@@ -50,4 +50,29 @@
         <PackageReference Include="Com.Airbnb.Xamarin.Forms.Lottie" Version="2.6.3" />
         <PackageReference Include="Microsoft.Identity.Client" Version="1.1.4-preview0002" />
     </ItemGroup>
+    <ItemGroup>
+      <EmbeddedResource Update="Pages\Jobs\CreateNewJobPage.xaml">
+        <Generator>MSBuild:Compile</Generator>
+      </EmbeddedResource>
+      <EmbeddedResource Update="Pages\Jobs\JobsPage.xaml">
+        <Generator>MSBuild:Compile</Generator>
+      </EmbeddedResource>
+      <EmbeddedResource Update="Pages\Profile\ProfilePage.xaml">
+        <Generator>MSBuild:Compile</Generator>
+      </EmbeddedResource>
+      <EmbeddedResource Update="Themes\Base.xaml">
+        <Generator>MSBuild:Compile</Generator>
+      </EmbeddedResource>
+      <EmbeddedResource Update="Themes\Dark.xaml">
+        <Generator>MSBuild:Compile</Generator>
+      </EmbeddedResource>
+      <EmbeddedResource Update="Themes\Styles.xaml">
+        <Generator>MSBuild:Compile</Generator>
+      </EmbeddedResource>
+    </ItemGroup>
+    <ItemGroup>
+      <None Update="Pages\Profile\SettingsPage.xaml">
+        <Generator>MSBuild:Compile</Generator>
+      </None>
+    </ItemGroup>
 </Project>

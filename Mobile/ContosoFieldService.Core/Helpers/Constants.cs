@@ -3,7 +3,7 @@ namespace ContosoFieldService.Helpers
     public static class Constants
     {
         // Backend API
-        public static string BaseUrl = "__ApiManagementUrl__";
+        public static string BaseUrl = "https://rothiehenkelapi.azurewebsites.net/api";
         public static string ApiManagementKey = "__ApiManagementKey__";
 
         // Visual Studio App Center
