@@ -1,1 +1,20 @@
+jobs:
+- job: iOSBuild
+  pool:
+    name: Hosted macOS
+    demands:
+    - xcode
+    - Xamarin.iOS
+    - msbuild
+  steps:
+  - bash: echo "Hello from macOS"
 
+- job: AndoridBuild
+  pool:
+    name: Hosted macOS
+    demands:
+    - xcode
+    - Xamarin.iOS
+    - msbuild
+  steps:
+  - bash: echo "Hello from Android"
