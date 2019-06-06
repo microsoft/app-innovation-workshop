@@ -97,20 +97,27 @@ jobs:
     - msbuild
   steps:
   - task: NuGetToolInstaller@1
+    displayName: 'Install NuGet'
     inputs:
       versionSpec: 
+    
   - task: NuGetCommand@2
+    displayName: 'Restore NuGet packges'
     inputs:
       command: 'restore'
       restoreSolution: 'Mobile/**/*.csproj'
       restoreDirectory: '$(Build.Repository.LocalPath)/packages'
+
   - task: android-manifest-version@1
+    displayName: 'Bump version number'
     inputs:
       sourcePath: 'Mobile/Droid/Properties/AndroidManifest.xml'
       versionCodeOption: 'buildid'
       versionCode: '$(Build.BuildId)'
       printFile: false
+    
   - task: replacetokens@3
+    displayName: 'Replace tokens'
     inputs:
       rootDirectory: 'Mobile/ContosoFieldService.Core/Helpers'
       targetFiles: 'Constants.cs'
@@ -120,26 +127,34 @@ jobs:
       keepToken: false
       tokenPrefix: '__'
       tokenSuffix: '__'
+
   - task: XamarinAndroid@1
+    displayName: 'Build Xamarin.Android project'
     inputs:
       projectFile: 'Mobile/Droid/ContosoFieldService.Droid.csproj'
       outputDirectory: '$(Build.ArtifactStagingDirectory)'
       configuration: '$(BuildConfiguration)'
       jdkOption: 'JDKVersion'
+
   - task: XamarinAndroid@1
+    displayName: 'Build Xamarin.Android project (UI Test Version)'
     inputs:
       projectFile: 'Mobile/Droid/ContosoFieldService.Droid.csproj'
       outputDirectory: '$(Build.ArtifactStagingDirectory)/UITests'
       configuration: 'Test Cloud'
       jdkOption: 'JDKVersion'
+
   - task: AndroidSigning@3
+    displayName: 'Sign Android apps'
     inputs:
       apkFiles: '$(Build.ArtifactStagingDirectory)/**/*.apk'
       apksignerKeystoreFile: 'EMEAGBB-Keystore.jks'
       apksignerKeystorePassword: '$(Android-Keystore-Password)'
       apksignerKeystoreAlias: '$(Android-Keystore-Key)'
       apksignerKeyPassword: '$(Android-Keystrore-Key-Password)' 
+
   - task: PublishBuildArtifacts@1
+    displayName: 'Publish artifacts'
     inputs:
       PathtoPublish: '$(Build.ArtifactStagingDirectory)'
       ArtifactName: 'Android'
@@ -174,24 +189,33 @@ jobs:
 
   steps:
   - task: NuGetToolInstaller@1
+    displayName: 'Install NuGet'
     inputs:
       versionSpec: 
+
   - task: NuGetCommand@2
+    displayName: 'Restore NuGet packages'
     inputs:
       command: 'restore'
       restoreSolution: 'Mobile/**/*.csproj'
       restoreDirectory: '$(Build.Repository.LocalPath)/packages'
+
   - task: MSBuild@1
+    displayName: 'Build Xamarin.UITest project'
     inputs:
       solution: 'Mobile/UITests/ContosoFieldService.UITests.csproj'
       configuration: '$(BuildConfiguration)'
-      msbuildArguments: '/p:OutputPath="$(Build.ArtifactStagingDirectory)/UITests/Tests"'
+      msbuildArguments: '/p:OutputPath="$(Build.ArtifactStagingDirectory)"'
+
   - task: CopyFiles@2
+    displayName: 'Copy Test Cloud Runner from NuGet'
     inputs:
       SourceFolder: '$(Build.Repository.LocalPath)/packages/Xamarin.UITest.2.2.6/'
       Contents: '**'
-      TargetFolder: '$(Build.ArtifactStagingDirectory)/UITests/packages/Xamarin.UITest.2.2.6/'
+      TargetFolder: '$(Build.ArtifactStagingDirectory)/packages/Xamarin.UITest.2.2.6/'
+
   - task: PublishBuildArtifacts@1
+    displayName: 'Publish artifacts'
     inputs:
       PathtoPublish: '$(Build.ArtifactStagingDirectory)'
       ArtifactName: 'UI Tests'
