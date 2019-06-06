@@ -83,7 +83,7 @@ jobs:
   - task: PublishBuildArtifacts@1
     displayName: 'Publish artifacts'
     inputs:
-      PathtoPublish: '$(Build.ArtifactStagingDirectory)/**/*.ipa'
+      PathtoPublish: '$(Build.ArtifactStagingDirectory)'
       ArtifactName: 'iOS'
       publishLocation: 'Container'
 
