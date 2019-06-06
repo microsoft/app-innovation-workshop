@@ -15,6 +15,7 @@ jobs:
 
   steps:
   - task: NuGetToolInstaller@1
+    displayName: 'Install NuGet'
     inputs:
       checkLatest: true
 
@@ -25,6 +26,7 @@ jobs:
       restoreDirectory: '$(Build.Repository.LocalPath)/packages'
 
   - task: replacetokens@3
+    displayName: 'Replace tokens'
     inputs:
       rootDirectory: 'Mobile/ContosoFieldService.Core/Helpers'
       targetFiles: 'Constants.cs'
@@ -36,6 +38,7 @@ jobs:
       tokenSuffix: '__'
 
   - task: ios-bundle-version@1
+    displayName: 'Bump version number'
     inputs:
       sourcePath: 'Mobile/iOS/Info.plist'
       versionCodeOption: 'buildid'
@@ -43,17 +46,20 @@ jobs:
       printFile: false
 
   - task: InstallAppleCertificate@2
+    displayName: 'Install Apple Certificate'
     inputs:
       certSecureFile: 'Xamarin-Shared-In-House-Cert-PrivateKey.p12'
       certPwd: '$(iOS-Certificate-Password)'
       keychain: 'temp'
 
   - task: InstallAppleProvisioningProfile@1
+    displayName: 'Install Apple Privisioning profile'
     inputs:
       provisioningProfileLocation: 'secureFiles'
       provProfileSecureFile: 'Contoso_Maintenance_InHouse.mobileprovision'
 
   - task: XamariniOS@2
+    displayName: 'Build Xamarin.iOS project'
     inputs:
       solutionFile: 'Mobile/iOS/ContosoFieldService.iOS.csproj'
       configuration: '$(BuildConfiguration)'
@@ -64,6 +70,7 @@ jobs:
       signingProvisioningProfileID: '$(APPLE_PROV_PROFILE_UUID)'
 
   - task: XamariniOS@2
+    displayName: 'Build Xamarin.iOS project (UI Test Version)'
     inputs:
       solutionFile: 'Mobile/iOS/ContosoFieldService.iOS.csproj'
       configuration: 'Test Cloud'
@@ -74,6 +81,7 @@ jobs:
       signingProvisioningProfileID: '$(APPLE_PROV_PROFILE_UUID)'
 
   - task: PublishBuildArtifacts@1
+    displayName: 'Publish artifacts'
     inputs:
       PathtoPublish: '$(Build.ArtifactStagingDirectory)/**/*.ipa'
       ArtifactName: 'iOS'
