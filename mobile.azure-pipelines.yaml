@@ -1,5 +1,7 @@
 variables:
-  BuildConfiguration: 'Release'
+  - group: Mobile Constants
+  - name: BuildConfiguration
+    value: 'Release'
 
 jobs:
 - job:
