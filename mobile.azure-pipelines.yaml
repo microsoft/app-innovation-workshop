@@ -138,7 +138,7 @@ jobs:
       jdkOption: 'JDKVersion'
   - task: AndroidSigning@3
     inputs:
-      apkFiles: '$(build.binariesdirectory)/$(BuildConfiguration)/*.apk'
+      apkFiles: '$(Build.ArtifactStagingDirectory)/Android/*.apk'
       apksignerKeystoreFile: 'EMEAGBB-Keystore.jks'
       apksignerKeystorePassword: '$(Android-Keystore-Password)'
       apksignerKeystoreAlias: '$(Android-Keystore-Key)'
