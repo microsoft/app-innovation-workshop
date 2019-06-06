@@ -138,7 +138,7 @@ jobs:
       jdkOption: 'JDKVersion'
   - task: AndroidSigning@3
     inputs:
-      apkFiles: '$(Build.ArtifactStagingDirectory)/Android'
+      apkFiles: '$(build.binariesdirectory)/$(BuildConfiguration)/*.apk'
       apksignerKeystoreFile: 'EMEAGBB-Keystore.jks'
       apksignerKeystorePassword: '$(Android-Keystore-Password)'
       apksignerKeystoreAlias: '$(Android-Keystore-Key)'
@@ -193,7 +193,7 @@ jobs:
   - task: NuGetCommand@2
     inputs:
       command: 'restore'
-      restoreSolution: 'Mobile/UITests/**/*.csproj'
+      restoreSolution: 'Mobile/**/*.csproj'
       restoreDirectory: '$(Build.Repository.LocalPath)/packages'
   - task: MSBuild@1
     inputs:
