@@ -1,3 +1,5 @@
+trigger: none
+
 variables:
   - group: Signing Passwords
   - name: BuildConfiguration
@@ -210,9 +212,9 @@ jobs:
   - task: CopyFiles@2
     displayName: 'Copy Test Cloud Runner from NuGet'
     inputs:
-      SourceFolder: '$(Build.Repository.LocalPath)/packages/Xamarin.UITest.2.2.6/'
+      SourceFolder: '$(Build.Repository.LocalPath)/packages/Xamarin.UITest.3.0.0/'
       Contents: '**'
-      TargetFolder: '$(Build.ArtifactStagingDirectory)/packages/Xamarin.UITest.2.2.6/'
+      TargetFolder: '$(Build.ArtifactStagingDirectory)/packages/Xamarin.UITest.3.0.0/'
 
   - task: PublishBuildArtifacts@1
     displayName: 'Publish artifacts'
