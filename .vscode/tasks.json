@@ -1,0 +1,30 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Build Functions",
+      "command": "dotnet",
+      "type": "process",
+      "args": [
+        "build",
+        "${workspaceFolder}/Backend/Functions/ContosoMaintenance.Functions.csproj"
+      ],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "problemMatcher": "$msCompile"
+    },
+    {
+      "label": "Start Functions Host",
+      "type": "shell",
+      "dependsOn": "Build Functions",
+      "options": {
+        "cwd": "${workspaceFolder}/Backend/Functions/bin/Debug/netcoreapp2.2"
+      },
+      "command": "func host start",
+      "isBackground": true,
+      "problemMatcher": "$func-watch"
+    }
+  ]
+}

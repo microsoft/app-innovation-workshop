@@ -22,8 +22,8 @@ resource "azurerm_function_app" "workshop" {
 
   app_settings {
     APPINSIGHTS_INSTRUMENTATIONKEY = "${azurerm_application_insights.workshop.instrumentation_key}"
-
-    CosmosDB = "AccountEndpoint=${azurerm_cosmosdb_account.workshop.endpoint};AccountKey=${azurerm_cosmosdb_account.workshop.primary_master_key};"
+    FUNCTIONS_WORKER_RUNTIME       = "dotnet"
+    CosmosDB                       = "AccountEndpoint=${azurerm_cosmosdb_account.workshop.endpoint};AccountKey=${azurerm_cosmosdb_account.workshop.primary_master_key};"
 
     CognitiveServicesEndpoint = "${azurerm_template_deployment.workshop.outputs["vision_endpoint"]}"
     CognitiveServicesKey      = "${azurerm_template_deployment.workshop.outputs["vision_key"]}"

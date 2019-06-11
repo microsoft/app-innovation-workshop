@@ -27,7 +27,7 @@ namespace ContosoFieldService.iOS
             // HACK: Get the linker to behave
             var ignore = new CircleTransformation();
 
-#if ENABLE_TEST_CLOUD
+#if ENABLE_TEST_CLOUD || DEBUG
             // Code for starting up the Xamarin Test Cloud Agent
             Xamarin.Calabash.Start();
 #endif
