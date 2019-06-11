@@ -1,5 +1,6 @@
 variable "prefix" {
   description = "Choose a personal prefix (1-10 chars) that is attached to every resource to ensure a unique name."
+  default     = ""
 }
 
 variable "resource_name" {

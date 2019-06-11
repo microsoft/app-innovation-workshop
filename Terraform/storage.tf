@@ -1,5 +1,5 @@
 resource "azurerm_storage_account" "workshop" {
-  name                     = "${var.prefix}${var.resource_name}storage"
+  name                     = "${var.prefix}${var.resource_name}store"
   resource_group_name      = "${azurerm_resource_group.workshop.name}"
   location                 = "${azurerm_resource_group.workshop.location}"
   account_tier             = "Standard"

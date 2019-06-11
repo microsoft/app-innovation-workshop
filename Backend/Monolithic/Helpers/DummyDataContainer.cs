@@ -31,7 +31,7 @@ namespace ContosoMaintenance.WebAPI.DummyData
                 SerialNumber = "456732037463823902826",
                 PartNumber = "6262939036",
                 PriceInUSD = 599.12M,
-                ImageSource = "https://contosomaintenance.blob.core.windows.net/images-large/67a04a57-b51e-45d8-b75c-c343a273b6f7.png"
+                ImageSource = "https://cdn.pixabay.com/photo/2017/02/05/00/13/motorcycle-2038870_960_720.png"
             };
             Parts.Add(part1);
             var part2 = new Part
@@ -42,7 +42,7 @@ namespace ContosoMaintenance.WebAPI.DummyData
                 SerialNumber = "456732037463823902828",
                 PartNumber = "6262939038",
                 PriceInUSD = 35000000M,
-                ImageSource = "https://contosomaintenance.blob.core.windows.net/images-large/67a24a57-b51r-45d8-b75c-c343a273b6f8.png"
+                ImageSource = "https://upload.wikimedia.org/wikipedia/en/9/99/Engine_WP13.png"
             };
             Parts.Add(part2);
         }

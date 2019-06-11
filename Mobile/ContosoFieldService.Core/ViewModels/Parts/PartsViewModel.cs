@@ -48,7 +48,7 @@ namespace ContosoFieldService.ViewModels
             {
                 return new Command(async () =>
                 {
-                    await ReloadData();
+                    await ReloadData(false, true);
                 });
             }
         }

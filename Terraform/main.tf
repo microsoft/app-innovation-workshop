@@ -10,6 +10,6 @@ terraform {
 }
 
 resource "azurerm_resource_group" "workshop" {
-  name     = "${var.prefix}${var.resource_name}workshop"
+  name     = "${var.prefix}${var.resource_name}"
   location = "westeurope"
 }
