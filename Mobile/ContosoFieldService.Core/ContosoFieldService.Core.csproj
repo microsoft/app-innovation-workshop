@@ -26,28 +26,28 @@
         <PackageReference Include="Refractored.MvvmHelpers" Version="1.3.0" />
         <PackageReference Include="Corcav.Behaviors" Version="2.3.7" />
         <PackageReference Include="CarouselView.FormsPlugin" Version="5.2.0" />
-        <PackageReference Include="FreshMvvm" Version="2.2.4" />
-        <PackageReference Include="Xamarin.Essentials" Version="0.11.0-preview" />
+        <PackageReference Include="FreshMvvm" Version="3.0.0" />
+        <PackageReference Include="Xamarin.Essentials" Version="1.1.0" />
         <PackageReference Include="DLToolkit.Forms.Controls.FlowListView" Version="2.0.11" />
-        <PackageReference Include="Humanizer" Version="2.5.1" />
-        <PackageReference Include="Microsoft.AppCenter" Version="1.9.0" />
-        <PackageReference Include="Microsoft.AppCenter.Analytics" Version="1.9.0" />
-        <PackageReference Include="Microsoft.AppCenter.Crashes" Version="1.9.0" />
-        <PackageReference Include="Microsoft.AppCenter.Distribute" Version="1.9.0" />
-        <PackageReference Include="Microsoft.AppCenter.Push" Version="1.9.0" />
-        <PackageReference Include="Polly" Version="6.1.0" />
+        <PackageReference Include="Humanizer" Version="2.6.2" />
+        <PackageReference Include="Microsoft.AppCenter" Version="2.0.0" />
+        <PackageReference Include="Microsoft.AppCenter.Analytics" Version="2.0.0" />
+        <PackageReference Include="Microsoft.AppCenter.Crashes" Version="2.0.0" />
+        <PackageReference Include="Microsoft.AppCenter.Distribute" Version="2.0.0" />
+        <PackageReference Include="Microsoft.AppCenter.Push" Version="2.0.0" />
+        <PackageReference Include="Polly" Version="7.1.0" />
         <PackageReference Include="SkiaSharp.Svg" Version="1.60.0" />
-        <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="5.3.0" />
-        <PackageReference Include="Xamarin.FFImageLoading.Forms" Version="2.4.3.840" />
-        <PackageReference Include="Xamarin.FFImageLoading.Transformations" Version="2.4.3.840" />
-        <PackageReference Include="Xamarin.Forms" Version="3.2.0.871581" />
-        <PackageReference Include="Xamarin.Forms.Maps" Version="3.2.0.871581" />
-        <PackageReference Include="Refit" Version="4.6.48" />
+        <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="5.4.0" />
+        <PackageReference Include="Xamarin.FFImageLoading.Forms" Version="2.4.11.982" />
+        <PackageReference Include="Xamarin.FFImageLoading.Transformations" Version="2.4.11.982" />
+        <PackageReference Include="Xamarin.Forms" Version="4.0.0.482894" />
+        <PackageReference Include="Xamarin.Forms.Maps" Version="4.0.0.482894" />
+        <PackageReference Include="Refit" Version="4.7.9" />
         <PackageReference Include="Xam.Plugin.Media" Version="4.0.1.5" />
         <PackageReference Include="FormsToolkit" Version="2.0.1" />
-        <PackageReference Include="MonkeyCache" Version="1.0.0-beta" />
-        <PackageReference Include="MonkeyCache.FileStore" Version="1.0.0-beta" />
-        <PackageReference Include="Com.Airbnb.Xamarin.Forms.Lottie" Version="2.6.3" />
-        <PackageReference Include="Microsoft.Identity.Client" Version="1.1.4-preview0002" />
+        <PackageReference Include="MonkeyCache" Version="1.3.0" />
+        <PackageReference Include="MonkeyCache.FileStore" Version="1.3.0" />
+        <PackageReference Include="Com.Airbnb.Xamarin.Forms.Lottie" Version="2.7.1" />
+        <PackageReference Include="Microsoft.Identity.Client" Version="4.0.0" />
     </ItemGroup>
 </Project>

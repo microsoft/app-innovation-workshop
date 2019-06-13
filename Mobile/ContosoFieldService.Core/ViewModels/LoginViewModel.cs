@@ -47,7 +47,11 @@ namespace ContosoFieldService.ViewModels
 
         public LoginViewModel()
         {
-            authenticationService = new AuthenticationService();
+            authenticationService = new AuthenticationService(
+                Helpers.Constants.ApplicationId,
+                Helpers.Constants.Scopes,
+                App.ParentUI
+            );
         }
 
         public override void Init(object initData)

@@ -19,7 +19,7 @@ namespace ContosoFieldService.iOS
             global::Xamarin.Forms.Forms.Init();
             FormsMaps.Init();
             CachedImageRenderer.Init();
-            CarouselViewRenderer.Init();
+            CarouselView.FormsPlugin.iOS.CarouselViewRenderer.Init();
 
             // Configure App Center
             Distribute.DontCheckForUpdatesInDebug();

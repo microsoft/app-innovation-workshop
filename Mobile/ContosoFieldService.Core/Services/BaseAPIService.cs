@@ -5,21 +5,27 @@ using System.Threading;
 using Polly;
 using Refit;
 using MonkeyCache.FileStore;
+using Polly.Retry;
+using ContosoFieldService.Helpers;
 
 namespace ContosoFieldService.Services
 {
     public abstract class BaseAPIService
     {
         protected AuthenticationService authenticationService;
-        protected Policy Policy;
+        protected AsyncRetryPolicy Policy;
         protected string CacheKey;
 
         protected BaseAPIService()
         {
-            authenticationService = new AuthenticationService();
+            authenticationService = new AuthenticationService(
+                Constants.ApplicationId,
+                Constants.Scopes,
+                App.ParentUI
+            );
 
             // Define Policy
-            Policy = Policy
+            Policy = Polly.Policy
                 .Handle<ApiException>()
                 .Or<HttpRequestException>()
                 .Or<TimeoutException>()

@@ -57,7 +57,7 @@ namespace ContosoFieldService.UITests
             Assert.IsTrue(app.Query("jobItem").Any(), "No Jobs found.");
 
             // Open last job on page
-            var lastJobName = app.Query("lblName").FirstOrDefault()?.Text;
+            var lastJobName = app.Query("lblName").LastOrDefault()?.Text;
             Assert.IsTrue(lastJobName != null, "No Job Title Element found to click on.");
             app.Tap(lastJobName);
             app.WaitForElement(jobsDetailsPage.JobName);

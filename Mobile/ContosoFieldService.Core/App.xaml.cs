@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using ContosoFieldService.Abstractions;
 using ContosoFieldService.Helpers;
+using ContosoFieldService.Services;
 using ContosoFieldService.ViewModels;
 using DLToolkit.Forms.Controls;
 using FreshMvvm;
@@ -10,6 +11,7 @@ using Microsoft.AppCenter.Analytics;
 using Microsoft.AppCenter.Crashes;
 using Microsoft.AppCenter.Distribute;
 using Microsoft.AppCenter.Push;
+using Microsoft.Identity.Client;
 using MonkeyCache.FileStore;
 using Xamarin.Essentials;
 using Xamarin.Forms;
@@ -20,9 +22,12 @@ namespace ContosoFieldService
 {
     public partial class App : Application
     {
+        public static object ParentUI { get; set; } = null;
+
         public App()
         {
             InitializeComponent();
+
             FlowListView.Init();
 
             // Configure Monkey Cache

@@ -4,6 +4,7 @@ using FreshMvvm;
 using Microsoft.AppCenter.Analytics;
 using Xamarin.Forms;
 using ContosoFieldService.Services;
+using ContosoFieldService.Helpers;
 
 namespace ContosoFieldService.ViewModels
 {
@@ -75,7 +76,7 @@ namespace ContosoFieldService.ViewModels
                         if (result != null)
                         {
                             Analytics.TrackEvent("User Logged In");
-                            Name = AuthenticationService.CurrentUser?.Name;
+                            Name = AuthenticationService.CurrentAccount?.Username;
                             GravatarSource = Helpers.Extensions.EmailToGravatarUrl(AuthenticationService.CurrentUserEmail);
                             IsLoggedIn = AuthenticationService.IsLoggedIn;                            
                         }
@@ -96,10 +97,10 @@ namespace ContosoFieldService.ViewModels
         {
             get
             {
-                return new Command(() =>
+                return new Command(async () =>
                 {
-                    authenticationService.Logout();
-                    Name = AuthenticationService.CurrentUser?.Name ?? "Anonymous";
+                    await authenticationService.LogoutAsync();
+                    Name = AuthenticationService.CurrentAccount?.Username ?? "Anonymous";
                     GravatarSource = Helpers.Extensions.EmailToGravatarUrl(AuthenticationService.CurrentUserEmail);
                     IsLoggedIn = AuthenticationService.IsLoggedIn;                        
                 });
@@ -108,7 +109,11 @@ namespace ContosoFieldService.ViewModels
 
         public ProfileViewModel()
         {
-            authenticationService = new AuthenticationService();
+            authenticationService = new AuthenticationService(
+                Helpers.Constants.ApplicationId,
+                Helpers.Constants.Scopes,
+                App.ParentUI
+            );
         }
 
         public override void Init(object initData)
@@ -127,7 +132,7 @@ namespace ContosoFieldService.ViewModels
 
         protected override void ViewIsAppearing(object sender, EventArgs e)
         {
-            Name = AuthenticationService.CurrentUser?.Name ?? "Anonymous";
+            Name = AuthenticationService.CurrentAccount?.Username ?? "Anonymous";
             GravatarSource = Helpers.Extensions.EmailToGravatarUrl(AuthenticationService.CurrentUserEmail);
             IsLoggedIn = AuthenticationService.IsLoggedIn;
         }

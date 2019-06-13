@@ -1,15 +1,15 @@
+using System;
 using System.Collections.Generic;
-using Microsoft.Azure.WebJobs;
-using Microsoft.Azure.WebJobs.Host;
-using Microsoft.Azure.WebJobs.Extensions.CosmosDB;
 using System.IO;
+using System.Linq;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Threading.Tasks;
-using System;
-using System.Linq;
-using Newtonsoft.Json;
 using Microsoft.Azure.Documents;
+using Microsoft.Azure.WebJobs;
+using Microsoft.Azure.WebJobs.Extensions.CosmosDB;
+using Microsoft.Azure.WebJobs.Host;
+using Newtonsoft.Json;
 
 namespace ContosoMaintenance.Functions
 {
@@ -23,12 +23,10 @@ namespace ContosoMaintenance.Functions
             [QueueTrigger("processphotos")] PhotoProcess queueItem,
 
             // Inputs
-            [CosmosDB("contosomaintenance", "jobs", Id = "{jobId}", ConnectionStringSetting = "CosmosDb")] Job job,
-            [Blob("images-large/{blobName}", FileAccess.Read)] byte[] imageLarge,
+            [CosmosDB("contosomaintenance", "jobs", Id = "{jobId}", ConnectionStringSetting = "CosmosDb")] Job job, [Blob("images-large/{blobName}", FileAccess.Read)] byte[] imageLarge,
 
             // Outputs
-            [Blob("images-medium/{blobName}", FileAccess.Write)] Stream imageMedium,
-            [Blob("images-icon/{blobName}", FileAccess.Write)] Stream imageIcon,
+            [Blob("images-medium/{blobName}", FileAccess.Write)] Stream imageMedium, [Blob("images-icon/{blobName}", FileAccess.Write)] Stream imageIcon,
 
             // Logger
             TraceWriter log)
@@ -66,7 +64,7 @@ namespace ContosoMaintenance.Functions
             // Create Cognitive Service request url with parameters
             var url = $"{Environment.GetEnvironmentVariable("CognitiveServicesEndpoint")}vision/v1.0/generateThumbnail?width={width}&height={height}&smartCropping=true";
 
-            using (ByteArrayContent content = new ByteArrayContent(inputImage))
+            using(ByteArrayContent content = new ByteArrayContent(inputImage))
             {
                 // Send request
                 content.Headers.ContentType = new MediaTypeHeaderValue("application/octet-stream");
@@ -83,8 +81,10 @@ namespace ContosoMaintenance.Functions
     {
         [JsonProperty("jobId")]
         public string JobId { get; set; }
+
         [JsonProperty("photoId")]
         public string PhotoId { get; set; }
+
         [JsonProperty("blobName")]
         public string BlobName { get; set; }
     }
@@ -93,9 +93,11 @@ namespace ContosoMaintenance.Functions
     {
         [JsonProperty("id")]
         public string Id { get; set; }
+
         [JsonProperty("createdAt")]
         public DateTime CreatedAt { get; set; }
         public string Name { get; set; }
+
         [JsonProperty("isDeleted")]
         public bool IsDeleted { get; set; }
         public string Details { get; set; }
@@ -104,6 +106,7 @@ namespace ContosoMaintenance.Functions
         public string[] Attachements { get; set; }
         public dynamic Address { get; set; }
         public dynamic AssignedTo { get; set; }
+
         [JsonProperty("photos")]
         public List<Photo> Photos { get; set; }
     }
@@ -112,10 +115,13 @@ namespace ContosoMaintenance.Functions
     {
         [JsonProperty("id")]
         public string Id { get; set; }
+
         [JsonProperty("largeUrl")]
         public string LargeUrl { get; set; }
+
         [JsonProperty("mediumUrl")]
         public string MediumUrl { get; set; }
+
         [JsonProperty("iconUrl")]
         public string IconUrl { get; set; }
     }

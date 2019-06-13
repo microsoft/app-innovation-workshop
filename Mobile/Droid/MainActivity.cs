@@ -52,9 +52,9 @@ namespace ContosoFieldService.Droid
             AndroidAppLinks.Init(this);
 
             // Configure Authentication
-            AuthenticationService.UIParent = new UIParent(this);
-
-            LoadApplication(new App());
+            var app = new App();
+            app.ParentUI = this;
+            LoadApplication(app);
         }
 
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)

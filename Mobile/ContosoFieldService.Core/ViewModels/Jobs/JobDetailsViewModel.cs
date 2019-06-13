@@ -60,11 +60,10 @@ namespace ContosoFieldService.ViewModels
             {
                 return new Command(async () =>
                 {
-                    await DataTransfer.RequestAsync(new ShareTextRequest
+                    await Share.RequestAsync(new ShareTextRequest
                     {
                         Title = selectedJob.Name,
-                        Text = selectedJob.Details,
-                        Uri = $"{Helpers.Constants.BaseUrl}job/{selectedJob.Id}"
+                        Uri = $"{Helpers.Constants.BaseUrl}job/{selectedJob.Id}",
                     });
                 });
             }
