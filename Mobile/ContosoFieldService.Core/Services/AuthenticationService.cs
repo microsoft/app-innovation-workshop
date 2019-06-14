@@ -14,7 +14,7 @@ namespace ContosoFieldService.Services
     }
 
     public class AzureADB2CAuthenticationService : IAuthenticationService
-    {  
+    {
         public static IAccount CurrentAccount { get; private set; }
         public static string AccessToken { get; private set; }
         public static bool IsLoggedIn { get; private set; }
@@ -31,6 +31,8 @@ namespace ContosoFieldService.Services
             object parentUI
         )
         {
+            var tenant = "";
+
             client = PublicClientApplicationBuilder
                 .Create(clientId)
                 .WithRedirectUri(redirectUri)
@@ -40,7 +42,7 @@ namespace ContosoFieldService.Services
             this.parentUI = parentUI;
         }
 
-        public async Task<AuthenticationResult> LoginAsync()
+        public async Task LoginAsync()
         {
             try
             {
@@ -50,16 +52,102 @@ namespace ContosoFieldService.Services
                     .ExecuteAsync();
 
                 SetUserData(result);
-                return result;
             }
             catch (Exception ex)
             {
                 // User cancelled authentication
-                return null;
             }
         }
 
-        public async Task<AuthenticationResult> LoginSilentAsync()
+        public async Task LoginSilentAsync()
+        {
+            try
+            {
+                var accounts = await client.GetAccountsAsync();
+                var result = await client
+                    .AcquireTokenSilent(scopes, accounts.FirstOrDefault())
+                    .ExecuteAsync();
+
+                SetUserData(result);
+            }
+            catch (MsalUiRequiredException)
+            {
+                // No user logged in or silent refresh not possible
+            }
+        }
+
+        public async Task LogoutAsync()
+        {
+            await client.RemoveAsync(CurrentAccount);
+
+            // Reset properties
+            CurrentAccount = null;
+            AccessToken = null;
+            IsLoggedIn = false;
+            CurrentUserEmail = null;
+        }
+
+        private void SetUserData(AuthenticationResult result)
+        {
+            if (result == null)
+                return;
+
+            CurrentAccount = result.Account;
+            AccessToken = result.AccessToken;
+            IsLoggedIn = true;
+
+            // Get claims
+            var handler = new JwtSecurityTokenHandler();
+            var token = handler.ReadJwtToken(result.AccessToken);
+            CurrentUserEmail = token.Claims.FirstOrDefault(x => x.Type == "emails")?.Value;
+        }
+    }
+
+    public class AzureActiveDirectoryAuthenticationService : IAuthenticationService
+    {  
+        public static IAccount CurrentAccount { get; private set; }
+        public static string AccessToken { get; private set; }
+        public static bool IsLoggedIn { get; private set; }
+        public static string CurrentUserEmail { get; private set; }
+
+        readonly IPublicClientApplication client;
+        readonly string[] scopes;
+        readonly object parentUI;
+
+        public AzureActiveDirectoryAuthenticationService(
+            string clientId,
+            string redirectUri,
+            string[] scopes,
+            object parentUI
+        )
+        {
+            client = PublicClientApplicationBuilder
+                .Create(clientId)
+                .WithRedirectUri(redirectUri)
+                .Build();
+
+            this.scopes = scopes;
+            this.parentUI = parentUI;
+        }
+
+        public async Task LoginAsync()
+        {
+            try
+            {
+                var result = await client
+                    .AcquireTokenInteractive(scopes)
+                    .WithParentActivityOrWindow(parentUI)
+                    .ExecuteAsync();
+
+                SetUserData(result);
+            }
+            catch (Exception ex)
+            {
+                // User cancelled authentication
+            }
+        }
+
+        public async Task LoginSilentAsync()
         {
             try
             {
@@ -69,12 +157,10 @@ namespace ContosoFieldService.Services
                     .ExecuteAsync();
 
                 SetUserData(result);                    
-                return result;
             } 
             catch (MsalUiRequiredException)
             {
                 // No user logged in or silent refresh not possible
-                return null;
             }
         }
 
