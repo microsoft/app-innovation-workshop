@@ -12,16 +12,20 @@ namespace ContosoFieldService.Services
 {
     public abstract class BaseAPIService
     {
-        protected AuthenticationService authenticationService;
+        protected IAuthenticationService authenticationService;
         protected AsyncRetryPolicy Policy;
         protected string CacheKey;
 
         protected BaseAPIService()
         {
-            authenticationService = new AuthenticationService(
-                Constants.ApplicationId,
-                Constants.Scopes,
-                App.ParentUI
+            authenticationService = new AzureADB2CAuthenticationService(
+                Helpers.Constants.Tenant,
+                Helpers.Constants.ClientID,
+                Helpers.Constants.RedirectUri,
+                Helpers.Constants.SignUpAndInPolicy,
+                Helpers.Constants.Scopes,
+                App.ParentUI,
+                App.IOSKeyChainGroupName
             );
 
             // Define Policy

@@ -23,6 +23,7 @@ namespace ContosoFieldService
     public partial class App : Application
     {
         public static object ParentUI { get; set; } = null;
+        public static string IOSKeyChainGroupName { get; set; } = null;
 
         public App()
         {

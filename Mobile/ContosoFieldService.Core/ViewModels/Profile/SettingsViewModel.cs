@@ -55,7 +55,7 @@ namespace ContosoFieldService.ViewModels
             set
             {
                 azureADB2CApplicationId = value;
-                Helpers.Constants.ApplicationId = value;
+                Helpers.Constants.ClientID = value;
                 RaisePropertyChanged();
             }
         }
@@ -176,7 +176,7 @@ namespace ContosoFieldService.ViewModels
             BaseUrl = Helpers.Constants.BaseUrl;
             ApiManagementKey = Helpers.Constants.ApiManagementKey;
             AzureADB2CTenant = Helpers.Constants.Tenant;
-            AzureADB2CApplicationId = Helpers.Constants.ApplicationId;
+            AzureADB2CApplicationId = Helpers.Constants.ClientID;
             AzureADB2CSignUpSignInPolicy = Helpers.Constants.SignUpAndInPolicy;
             AzureADB2CScope = Helpers.Constants.Scopes[0];
         }

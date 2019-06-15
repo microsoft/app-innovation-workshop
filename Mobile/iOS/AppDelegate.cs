@@ -33,6 +33,8 @@ namespace ContosoFieldService.iOS
 #endif
 
             var formsApp = new App();
+            App.IOSKeyChainGroupName = "com.contoso.contosomaintenance";
+
             UIApplication.SharedApplication.SetStatusBarStyle(UIStatusBarStyle.LightContent, false);
             UITabBar.Appearance.BarTintColor = ((Color)formsApp.Resources["BackgroundColor"]).ToUIColor();
             UITabBar.Appearance.TintColor = ((Color)formsApp.Resources["AccentColor"]).ToUIColor();

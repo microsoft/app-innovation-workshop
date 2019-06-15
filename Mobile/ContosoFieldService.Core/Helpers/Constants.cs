@@ -12,11 +12,10 @@ namespace ContosoFieldService.Helpers
         public static string AppCenterUWPKey = "__UWPKey__";
 
         // Azure Active Directory B2C
-        public static string Tenant = "__ADB2CTenant__";
-        public static string SignUpAndInPolicy = "__ADB2CSignUpPolicy__";
-
-        public static string ApplicationId = "2acf5ccd-8cad-434d-a752-7629ad2d721f";
+        public static string Tenant = "contosomaintenance.onmicrosoft.com";  // Domain name
+        public static string ClientID = "2acf5ccd-8cad-434d-a752-7629ad2d721f"; // Application ID
         public static string RedirectUri = "msalcontosomaintenance://auth";
+        public static string SignUpAndInPolicy = "B2C_1_Generic";
         public static string[] Scopes = { "https://contosomaintenance.onmicrosoft.com/2acf5ccd-8cad-434d-a752-7629ad2d721f/mobile\n" };
     }
 }

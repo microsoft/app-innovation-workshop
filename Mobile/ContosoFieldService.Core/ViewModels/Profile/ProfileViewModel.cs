@@ -10,7 +10,7 @@ namespace ContosoFieldService.ViewModels
 {
     public class ProfileViewModel : FreshBasePageModel
     {
-        readonly AuthenticationService authenticationService;
+        readonly IAuthenticationService authenticationService;
 
         public ObservableCollection<Stats> Statistics { get; set; }
 
@@ -72,18 +72,15 @@ namespace ContosoFieldService.ViewModels
                 {
                     try
                     {
-                        var result = await authenticationService.LoginAsync();
-                        if (result != null)
+                        await authenticationService.LoginAsync();
+                        Analytics.TrackEvent("User Logged In");
+                        var currentUser = authenticationService.GetCurrentUser();
+                        if (currentUser != null)
                         {
-                            Analytics.TrackEvent("User Logged In");
-                            Name = AuthenticationService.CurrentAccount?.Username;
-                            GravatarSource = Helpers.Extensions.EmailToGravatarUrl(AuthenticationService.CurrentUserEmail);
-                            IsLoggedIn = AuthenticationService.IsLoggedIn;                            
+                            Name = currentUser.Name ?? "Anonymous";
+                            GravatarSource = Helpers.Extensions.EmailToGravatarUrl(currentUser.Email);
                         }
-                        else
-                        {
-                            await CoreMethods.DisplayAlert("Could not sign in", "Authentication failed.", "Ok");
-                        }
+                        IsLoggedIn = authenticationService.IsLoggedIn();
                     }
                     catch
                     {
@@ -100,19 +97,27 @@ namespace ContosoFieldService.ViewModels
                 return new Command(async () =>
                 {
                     await authenticationService.LogoutAsync();
-                    Name = AuthenticationService.CurrentAccount?.Username ?? "Anonymous";
-                    GravatarSource = Helpers.Extensions.EmailToGravatarUrl(AuthenticationService.CurrentUserEmail);
-                    IsLoggedIn = AuthenticationService.IsLoggedIn;                        
+                    var currentUser = authenticationService.GetCurrentUser();
+                    if (currentUser != null)
+                    {
+                        Name = currentUser.Name ?? "Anonymous";
+                        GravatarSource = Helpers.Extensions.EmailToGravatarUrl(currentUser.Email);
+                    }
+                    IsLoggedIn = authenticationService.IsLoggedIn();                     
                 });
             }
         }
 
         public ProfileViewModel()
         {
-            authenticationService = new AuthenticationService(
-                Helpers.Constants.ApplicationId,
+            authenticationService = new AzureADB2CAuthenticationService(
+                Helpers.Constants.Tenant,
+                Helpers.Constants.ClientID,
+                Helpers.Constants.RedirectUri,
+                Helpers.Constants.SignUpAndInPolicy,
                 Helpers.Constants.Scopes,
-                App.ParentUI
+                App.ParentUI,
+                App.IOSKeyChainGroupName
             );
         }
 
@@ -132,9 +137,13 @@ namespace ContosoFieldService.ViewModels
 
         protected override void ViewIsAppearing(object sender, EventArgs e)
         {
-            Name = AuthenticationService.CurrentAccount?.Username ?? "Anonymous";
-            GravatarSource = Helpers.Extensions.EmailToGravatarUrl(AuthenticationService.CurrentUserEmail);
-            IsLoggedIn = AuthenticationService.IsLoggedIn;
+            var currentUser = authenticationService.GetCurrentUser();
+            if (currentUser != null)
+            {
+                Name = currentUser.Name ?? "Anonymous";
+                GravatarSource = Helpers.Extensions.EmailToGravatarUrl(currentUser.Email);
+            }
+            IsLoggedIn = authenticationService.IsLoggedIn();
         }
     }
 

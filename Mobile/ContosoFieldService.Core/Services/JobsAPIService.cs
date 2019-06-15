@@ -152,7 +152,7 @@ namespace ContosoFieldService.Services
             // Create an instance of the Refit RestService for the job interface.
             IJobServiceAPI api = RestService.For<IJobServiceAPI>(Constants.BaseUrl);
 
-            var pollyResult = await Policy.ExecuteAndCaptureAsync(async () => await api.DeleteJob(id, "Bearer " + AuthenticationService.AccessToken, Constants.ApiManagementKey));
+            var pollyResult = await Policy.ExecuteAndCaptureAsync(async () => await api.DeleteJob(id, "Bearer " + authenticationService.GetCurrentUser().AccessToken, Constants.ApiManagementKey));
             if (pollyResult.Result != null)
             {
                 return (ResponseCode.Success, pollyResult.Result);

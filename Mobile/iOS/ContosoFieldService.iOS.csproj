@@ -33,6 +33,7 @@
     <MtouchVerbosity>
     </MtouchVerbosity>
     <CodesignProvision>VS: WildCard Development</CodesignProvision>
+    <CodesignEntitlements>Entitlements.dev.plist</CodesignEntitlements>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhone' ">
     <Optimize>true</Optimize>

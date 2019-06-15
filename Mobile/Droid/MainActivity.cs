@@ -53,7 +53,7 @@ namespace ContosoFieldService.Droid
 
             // Configure Authentication
             var app = new App();
-            app.ParentUI = this;
+            App.ParentUI = this;
             LoadApplication(app);
         }
 

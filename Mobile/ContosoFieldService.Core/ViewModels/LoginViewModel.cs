@@ -10,7 +10,7 @@ namespace ContosoFieldService.ViewModels
 {
     public class LoginViewModel : FreshBasePageModel
     {
-        readonly AuthenticationService authenticationService;
+        readonly IAuthenticationService authenticationService;
 
         public string GravatarSource { get; set; }
         public string Email { get; set; }
@@ -21,16 +21,8 @@ namespace ContosoFieldService.ViewModels
         {
             try
             {
-                var result = await authenticationService.LoginAsync();
-                if (result != null)
-                {
-                    Analytics.TrackEvent("User Logged In");
-                    await CoreMethods.PopPageModel(true, true);
-                }
-                else
-                {
-                    await CoreMethods.DisplayAlert("Could not sign in", "Authentication failed.", "Ok");
-                }
+                await authenticationService.LoginAsync();
+                await CoreMethods.PopPageModel(true, true);
             }
             catch
             {
@@ -47,10 +39,14 @@ namespace ContosoFieldService.ViewModels
 
         public LoginViewModel()
         {
-            authenticationService = new AuthenticationService(
-                Helpers.Constants.ApplicationId,
+            authenticationService = new AzureADB2CAuthenticationService(
+                Helpers.Constants.Tenant,
+                Helpers.Constants.ClientID,
+                Helpers.Constants.RedirectUri,
+                Helpers.Constants.SignUpAndInPolicy,
                 Helpers.Constants.Scopes,
-                App.ParentUI
+                App.ParentUI,
+                App.IOSKeyChainGroupName
             );
         }
 
