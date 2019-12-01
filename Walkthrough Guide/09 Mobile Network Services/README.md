@@ -25,14 +25,25 @@ It requires us to define our REST API calls as a C# Interface which is then used
 
 
 #### Security 
-Because we’re using Azure API Management, we have the ability to restrict access to our APIs through the use of API Keys. With a unique API key, we’re able to confirm that this app is allowed access to our services. We’ll want to ensure we add the API key to all our requests and Refit makes this super easy! We just need to add the _Headers_ attribute to our interface. Here we grab our API key from the constants class. 
+Because we’re using Azure API Management, we have the ability to restrict access to our APIs through the use of API Keys. With a unique API key, we’re able to confirm that this app is allowed access to our services. We’ll want to ensure we add the API key to all our requests and Refit makes this super easy! We just need to set the `Ocp-Apim-Subscription-Key` header in every request. Here we grab our API key from the constants class and add it to the default headers for the created services. 
 
 
  ```cs
-[Headers(Helpers.Constants.ApiManagementKey)]`
-public interface IJobServiceAPI`
+public abstract class BaseAPIService
 {
+    protected TService GetManagedApiService<TService>()
+    {
+        // Here we set up the stuff that is the same in each http request for our api.
+        // In this case it's the base url and the api management key header.
+        var client = new HttpClient
+        {
+            BaseAddress = new Uri(Constants.BaseUrl)
+        };
 
+        client.DefaultRequestHeaders.Add("Ocp-Apim-Subscription-Key", Constants.ApiManagementKey);
+
+        return RestService.For<TService>(client);
+    }
 }
 
 ```

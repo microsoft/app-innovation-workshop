@@ -2,6 +2,7 @@
 using System.Net;
 using System.Net.Http;
 using System.Threading;
+using ContosoFieldService.Helpers;
 using Polly;
 using Refit;
 using MonkeyCache.FileStore;
@@ -48,6 +49,20 @@ namespace ContosoFieldService.Services
                         Thread.Sleep(TimeSpan.FromSeconds(retry));
                     }
                 });
+        }
+
+        protected TService GetManagedApiService<TService>()
+        {
+            // Here we set up the stuff that is the same in each http request for our api.
+            // In this case it's the base url and the api management key header.
+            var client = new HttpClient
+            {
+                BaseAddress = new Uri(Constants.BaseUrl)
+            };
+
+            client.DefaultRequestHeaders.Add("Ocp-Apim-Subscription-Key", Constants.ApiManagementKey);
+
+            return RestService.For<TService>(client);
         }
 
         public void InvalidateCache(string key = "")
